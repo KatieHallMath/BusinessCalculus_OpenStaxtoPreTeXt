@@ -1,0 +1,1826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch2Sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Limit of a Function</title>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ol>
+<li>Using correct notation, describe the limit of a function.</li>
+<li>Use a table of values to estimate the limit of a function or to identify when the limit does not exist.</li>
+<li>Use a graph to estimate the limit of a function or to identify when the limit does not exist.</li>
+<li>Define one-sided limits and provide examples.</li>
+<li>Explain the relationship between one-sided and two-sided limits.</li>
+<li>Using correct notation, describe an infinite limit.</li>
+<li>Define a vertical asymptote.</li>
+</ol>
+
+<p id="fs-id1170572559700">The concept of a limit or limiting process, essential to the understanding of calculus, has been around for thousands of years. In fact, early mathematicians used a limiting process to obtain better and better approximations of areas of circles. Yet, the formal definition of a limit—as we know and understand it today—did not appear until the late 19th century. We therefore begin our quest to understand limits, as our mathematical ancestors did, by using an intuitive approach. At the end of this chapter, armed with a conceptual understanding of limits, we examine the formal definition of a limit.</p>
+<p id="fs-id1170572450938">We begin our exploration of limits by taking a look at the graphs of the functions</p>
+<me>f(x)=\frac{x^2-4}{x-2}, g(x)= \frac{|x-2|}{x-2}, \text{ and } h(x)=\frac{1}{(x-2)^2},</me>
+<p id="fs-id1170572216951">which are shown in <xref ref="CNX_Calc_Figure_02_02_001"/>. In particular, let’s focus our attention on the behavior of each graph at and around <m>x=2.</m></p>
+<figure xml:id="CNX_Calc_Figure_02_02_001">
+<image source="CNX_Calc_Figure_02_02_001.jpg" width="100%">
+<description>"Three graphs of functions.  The first is f(s) = (x^2 – 4) / (x-2), which is a line of slope, x intercept (-2,0), and open circle at (2,4). The second is g(x) = |x – 2 | / (x-2), which contains two lines: x=1 for x\gt 2 and x= -1 for x \lt  2. There are open circles at both endpoints (2, 1) and (-2, 1). The third is h(x) = 1 / (x-2)^2, in which the function curves asymptotically towards y=0 and x=2 in quadrants one and two."
+  </description></image> <caption>These graphs show the behavior of three different functions around <m>x=2.</m></caption>
+</figure>
+<p id="fs-id1170572175064">Each of the three functions is undefined at <m>x=2,</m> but if we make this statement and no other, we give a very incomplete picture of how each function behaves in the vicinity of <m>x=2.</m> To express the behavior of each graph in the vicinity of 2 more completely, we need to introduce the concept of a limit.</p>
+</introduction>
+<subsection id="fs-id1170572280146">
+<title>Intuitive Definition of a Limit</title>
+<p id="fs-id1170572449458">Let’s first take a closer look at how the function <m>f(x)=(x^2-4)/(x-2)</m> behaves around <m>x=2</m> in <xref ref="CNX_Calc_Figure_02_02_001"/>. As the values of <m>x</m> approach 2 from either side of 2, the values of <m>y=f(x)</m> approach 4. Mathematically, we say that the limit of <m>f(x)</m> as <m>x</m> approaches 2 is 4. Symbolically, we express this limit as</p>
+<me>\lim_{x\to2}f(x)=4.</me>
+<p id="fs-id1170572220702">From this very brief informal look at one limit, let’s start to develop an <term>intuitive definition of the limit</term>. We can think of the limit of a function at a number <m> a </m> as being the one real number <m> L </m> that the functional values approach as the <m>x</m>-values approach <m> a, </m> provided such a real number <m> L </m> exists. Stated more carefully, we have the following definition:</p>
+
+<definition>
+<p id="fs-id1170572151707">Let <m>f(x)</m> be a function defined at all values in an open interval containing <m> a </m>, with the possible exception of <m> a </m> itself, and let <m> L </m> be a real number. If <emphasis effect="italics">all</emphasis> values of the function <m>f(x)</m> approach the real number <m> L </m> as the values of <m>(x\neq a)</m> approach the number <m> a </m>, then we say that the limit of <m>f(x)</m> as <m>x</m> approaches <m> a </m> is <m> L </m>. (More succinct, as <m>x</m> gets closer to <m> a </m>, <m>f(x)</m> gets closer and stays close to <m> L </m>.) Symbolically, we express this idea as</p>
+<me>\lim_{x \to a} f(x)=L.</me>
+</definition>
+<p id="fs-id1170572244141">We can estimate limits by constructing tables of functional values and by looking at their graphs. This process is described in the following Problem-Solving Strategy.</p>
+<note id="fs-id1170571656330" class="problem-solving">
+<title>Problem-Solving Strategy: Evaluating a Limit Using a Table of Functional Values</title>
+<ol xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572480841" list-type="enumerated" number-style="arabic">
+<li>To evaluate <m>\displaystyle{\lim_{x \to a} f(x),}</m> we begin by completing a table of functional values. We should choose two sets of <m>x</m>-values—one set of values approaching <m> a </m> and less than <m> a </m>, and another set of values approaching <m> a </m> and greater than <m> a </m>. <xref ref="fs-id1170572204940"/> demonstrates what your tables might look like.<newline/>
+<table xml:id="fs-id1170572204940" summary="There are two tables. They both have two columns and five rows. The first table has headers x and f(x) in the first row. Under x in the first column are the values a-0.1, a-0.01, a-0.001, and a-0.0001. Under f(x) in the second column are values f(a-0.1), f(a-0.01), f(a-0.001), and f(a-0.0001). At the bottom is a note that one may “use additional values as necessary” in both columns. The second table has headers x and f(x) in the first row. Under x in the first column are the values a+0.1, a+0.01, a+0.001, and a+0.0001. Under f(x) in the second column are values f(a+0.1), f(a+0.01), f(a+0.001), and f(a+0.0001). At the bottom is a note that one may “use additional values as necessary” in both columns.">
+<title>Table of Functional Values for <m>\displaystyle{\lim_{x \to a} f(x)}</m></title>
+<tabular>
+<row valign="top" header ="yes">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>f(x)</m></cell>
+<cell halign ="left"/>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>f(x)</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left"><m>a-0.1</m></cell>
+<cell halign ="left"><m>f(a-0.1)</m></cell>
+<cell/>
+<cell halign ="left"><m>a+0.1</m></cell>
+<cell halign ="left"><m>f(a+0.1)</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left"><m>a-0.01</m></cell>
+<cell halign ="left"><m>f(a-0.01)</m></cell>
+<cell/>
+<cell halign ="left"><m>a+0.01</m></cell>
+<cell halign ="left"><m>f(a+0.01)</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left"><m>a-0.001</m></cell>
+<cell halign ="left"><m>f(a-0.001)</m></cell>
+<cell/>
+<cell halign ="left"><m>a+0.001</m></cell>
+<cell halign ="left"><m>f(a+0.001)</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left"><m>a-0.0001</m></cell>
+<cell halign ="left"><m>f(a-0.0001)</m></cell>
+<cell/>
+<cell halign ="left"><m>a+0.0001</m></cell>
+<cell halign ="left"><m>f(a+0.0001)</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left" colspan="2">Use additional values as necessary.</cell>
+<cell halign ="left" colspan="2">Use additional values as necessary.</cell>
+</row>
+</tabular>
+</table></li>
+<li>Next, let’s look at the values in each of the <m>f(x)</m> columns and determine whether the values seem to be approaching a single value as we move down each column. In our columns, we look at the sequence <m>f(a-0.1),f(a-0.01),f(a-0.001),f(a-0.0001),</m> and so on, and <m>f(a+0.1),f(a+0.01),f(a+0.001),f(a+0.0001),</m> and so on. (<emphasis effect="italics">Note</emphasis>: Although we have chosen the <m>x</m>-values <m>a\pm 0.1,a\pm 0.01,a\pm 0.001,a\pm 0.0001,</m> and so forth, and these values will probably work nearly every time, on very rare occasions we may need to modify our choices.)</li>
+<li>If both columns approach a common <emphasis effect="italics">y</emphasis>-value <m> L </m>, we state <m>\displaystyle{\lim_{x \to a} f(x)=L.}</m> We can use the following strategy to confirm the result obtained from the table or as an alternative method for estimating a limit.</li>
+<li>Using a graphing calculator or computer software that allows us graph functions, we can plot the function <m>f(x),</m> making sure the functional values of <m>f(x)</m> for <m>x</m>-values near <m> a </m> are in our window. We can use the trace feature to move along the graph of the function and watch the <emphasis effect="italics">y</emphasis>-value readout as the <m>x</m>-values approach <m> a </m>. If the <emphasis effect="italics">y</emphasis>-values approach <m> L </m> as our <m>x</m>-values approach <m> a </m> from both directions, then <m>\displaystyle{\lim_{x \to a} f(x)=L.}</m> We may need to zoom in on our graph and repeat this process several times.</li>
+</ol></note>
+<p id="fs-id1170572175147">We apply this Problem-Solving Strategy to compute a limit in <xref ref="fs-id1170571656691"/>.</p>
+<!--Commenting out trig
+<p id="fs-id1170572175147">We apply this Problem-Solving Strategy to compute a limit in <xref ref="fs-id1170572561451"/>.</p>
+<example xml:id="fs-id1170572561451">
+<title>Evaluating a Limit Using a Table of Functional Values 1</title>
+ <statement id="fs-id1170572106890">
+<p id="fs-id1170571596728">Evaluate <m>\lim_{x\to 0}\frac{\sin x}{x}</m> using a table of functional values.</p>
+</statement>
+<solution id="fs-id1170572552454">
+<p id="fs-id1170572169167">We have calculated the values of <m>f(x)=(\sin x)/x</m> for the values of <m>x</m> listed in <xref ref="fs-id1170572208852"/>.</p>
+<table xml:id="fs-id1170572208852" summary="There are two tables. They both have two columns and five rows. The first table has headers x and sin(x)/x in the first row. Under x in the first column are the values -0.1, -0.01, -0.001, and -0.0001. Under sin(x)/x in the second column are values 0.998334166468, 0.999983333417, 0.999999833333, and 0.999999998333. The second table has headers x and sin(x)/x in the first row. Under x in the first column are the values 0.1, 0.01, 0.001, and 0.0001. Under sin(x)/x in the second column are values 0.998334166468, 0.999983333417, 0.999999833333, and 0.999999998333.">
+<title>Table of Functional Values for <m>\lim_{x\to 0}\frac{\sin x }{x}</m></title>
+<tabular>
+<row valign="top" header="yes">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m> \frac{\sin x}{x}</m></cell>
+<cell halign ="left"/>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>\frac{\sin x}{x}</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.1</cell>
+<cell halign ="left">0.998334166468</cell>
+<cell morerows="3"/>
+<cell halign ="left">0.1</cell>
+<cell halign ="left">0.998334166468</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.01</cell>
+<cell halign ="left">0.999983333417</cell>
+<cell halign ="left">0.01</cell>
+<cell halign ="left">0.999983333417</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.001</cell>
+<cell halign ="left">0.999999833333</cell>
+<cell halign ="left">0.001</cell>
+<cell halign ="left">0.999999833333</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.0001</cell>
+<cell halign ="left">0.999999998333</cell>
+<cell halign ="left">0.0001</cell>
+<cell halign ="left">0.999999998333</cell>
+</row>
+</tabular>
+</table>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572236179"><emphasis effect="italics">Note</emphasis>: The values in this table were obtained using a calculator and using all the places given in the calculator output.</p><p id="fs-id1170572558630">As we read down each <m> \frac{\sin(x)}{x}</m> column, we see that the values in each column appear to be approaching one. Thus, it is fairly reasonable to conclude that <m>\lim_{x\to0}\frac{\sin x}{x}=1.</m> A calculator-or computer-generated graph of <m>f(x)= \frac{(\sin x)}{x}</m> would be similar to that shown in <xref ref="CNX_Calc_Figure_02_02_003"/>, and it confirms our estimate.</p>
+<figure xml:id="CNX_Calc_Figure_02_02_003">
+<image source="CNX_Calc_Figure_02_02_003.jpg" width="50%">
+<description>"A graph of f(x) = sin(x)/x over the interval [-6, 6]. The curving function has a y intercept at x=0 and x intercepts at y=pi and y=-pi.">
+</description></image> <caption>The graph of <m>f(x)=(\sin x)/x</m> confirms the estimate from <xref ref="fs-id1170572208852"/>.</caption>
+</figure>
+</solution>
+</example>-->
+
+<example xml:id="fs-id1170571656691">
+<!--
+<title>Evaluating a Limit Using a Table of Functional Values 2</title>-->
+<title>Evaluating a Limit Using a Table of Functional Values</title>
+ <statement id="fs-id1170572627386">
+<p id="fs-id1170572550814">Evaluate <m>\displaystyle{\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}}</m> using a table of functional values.</p>
+</statement>
+<solution id="fs-id1170572203578">
+<p id="fs-id1170572141980">As before, we use a table—in this case, <xref ref="fs-id1170571595483"/>—to list the values of the function for the given values of <m>x</m>.</p>
+<table xml:id="fs-id1170571595483" summary="There are two tables, each with six rows and two columns. The first table has headers x and (sqrt(x) – 2 ) / (x-4) in the first row. In the first column under x are the values 3.9, 3.99, 3.999, 3.9999, and 3.99999. In the second column are the values 0.251582341869, 0.25015644562, 0.250015627, 0.250001563, 0.25000016. The second table has the same headers in the first row. In the first column under x are the values 4.1, 4.01, 4.001, 4.0001, and 4.00001. In the second column are the values 0.248456731317, 0.24984394501, 0.249984377, 0.249998438, and 0.24999984.">
+<title>Table of Functional Values for <m>\displaystyle{\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}}</m></title>
+<tabular>
+<row valign="top" header="yes">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m> \frac{\sqrt{x}-2}{x-4}</m></cell>
+<cell halign ="left"/>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>\frac{\sqrt{x}-2}{x-4}</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left">3.9</cell>
+<cell halign ="left">0.251582341869</cell>
+<cell morerows="4"/>
+<cell halign ="left">4.1</cell>
+<cell halign ="left">0.248456731317</cell>
+</row>
+<row valign="top">
+<cell halign ="left">3.99</cell>
+<cell halign ="left">0.25015644562</cell>
+<cell morerows="4"/>
+<cell halign ="left">4.01</cell>
+<cell halign ="left">0.24984394501</cell>
+</row>
+<row valign="top">
+<cell halign ="left">3.999</cell>
+<cell halign ="left">0.250015627</cell>
+<cell morerows="4"/>
+<cell halign ="left">4.001</cell>
+<cell halign ="left">0.249984377</cell>
+</row>
+<row valign="top">
+<cell halign ="left">3.9999</cell>
+<cell halign ="left">0.250001563</cell>
+<cell morerows="4"/>
+<cell halign ="left">4.0001</cell>
+<cell halign ="left">0.249998438</cell>
+</row>
+<row valign="top">
+<cell halign ="left">3.99999</cell>
+<cell halign ="left">0.25000016</cell>
+<cell morerows="4"/>
+<cell halign ="left">4.00001</cell>
+<cell halign ="left">0.24999984</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1170572455426">After inspecting this table, we see that the functional values less than 4 appear to be decreasing toward 0.25 whereas the functional values greater than 4 appear to be increasing toward 0.25. We conclude that <m>\displaystyle{\lim_{x\to4} \frac{\sqrt{x}-2}{x-4}=0.25.}</m> We confirm this estimate using the graph of <m>f(x)=\frac{\sqrt{x}-2}{x-4}</m> shown in <xref ref="CNX_Calc_Figure_02_02_004"/>.</p>
+<figure xml:id="CNX_Calc_Figure_02_02_004">
+<image source="CNX_Calc_Figure_02_02_004.jpg" width="50%">
+<description>"A graph of the function f(x) = (sqrt(x) – 2 ) / (x-4) over the interval [0,8]. There is an open circle on the function at x=4. The function curves asymptotically towards the x axis and y axis in quadrant one."
+ </description></image> <caption>The graph of <m>f(x)= \frac{\sqrt{x}-2}{x-4}</m> confirms the estimate from <xref ref="fs-id1170571595483"/>.</caption>
+</figure>
+</solution>
+
+</example>
+
+<exercise>  <statement id="fs-id1170571596040">
+<p id="fs-id1170571596043">Estimate <m>\displaystyle{\lim_{x\to 1}\frac{\frac{1}{x}-1}{x-1}}</m> using a table of functional values. Use a graph to confirm your estimate.</p>
+</statement>
+<solution id="fs-id1170572227897">
+<p id="fs-id1170572227899"><m>\displaystyle{\lim_{x\to 1}\frac{\frac{1}{x}-1}{x-1}=-1}</m></p>
+</solution>
+<hint>
+
+<p id="fs-id1170571656412">Use 0.9, 0.99, 0.999, 0.9999, 0.99999 and 1.1, 1.01, 1.001, 1.0001, 1.00001 as your table values.</p>
+</hint>
+
+</exercise>
+
+<p id="fs-id1170572506486">At this point, we see from
+<!--<xref ref="fs-id1170572561451"/>-->
+<xref ref="fs-id1170571656691"/>
+  and <xref ref="fs-id1170571656691"/> that it may be just as easy, if not easier, to estimate a limit of a function by inspecting its graph as it is to estimate the limit by using a table of functional values. In <xref ref="fs-id1170572337207"/>, we evaluate a limit exclusively by looking at a graph rather than by using a table of functional values.</p>
+<example xml:id="fs-id1170572337207">
+<title>Evaluating a Limit Using a Graph</title>
+<statement id="fs-id1170572347396">
+<p id="fs-id1170572347401">For <m>g(x)</m> shown in <xref ref="CNX_Calc_Figure_02_02_006"/>, evaluate <m>\displaystyle{\lim_{x\to-1}g(x).}</m></p>
+<figure xml:id="CNX_Calc_Figure_02_02_006">
+<image source="CNX_Calc_Figure_02_02_006.jpg" width="50%">
+<description>"The graph of a generic curving function g(x). In quadrant two, there is an open circle on the function at (-1,3) and a closed circle one unit up at (-1, 4)."  </description></image> <caption>The graph of <m>g(x)</m> includes one value not on a smooth curve.</caption>
+</figure>
+</statement>
+<solution id="fs-id1170571654408">
+<p id="fs-id1170571654410">Despite the fact that <m>g(-1)=4,</m> as the <m>x</m>-values approach -1 from either side, the <m>g(x)</m> values approach 3. Therefore, <m>\displaystyle{\lim_{x\to-1}g(x)=3.}</m> Note that we can determine this limit without even knowing the algebraic expression of the function.</p>
+</solution>
+
+</example>
+<p id="fs-id1170571654758">Based on <xref ref="fs-id1170572337207"/>, we make the following observation: It is possible for the limit of a function to exist at a point, and for the function to be defined at this point, but the limit of the function and the value of the function at the point may be different.</p>
+<exercise><statement id="fs-id1170571656655">
+<p id="fs-id1170571656657">Use the graph of <m>h(x)</m> in <xref ref="CNX_Calc_Figure_02_02_007"/> to evaluate <m>\displaystyle{\lim_{x\to2}h(x),}</m> if possible.</p>
+<figure xml:id="CNX_Calc_Figure_02_02_007">
+<image source="CNX_Calc_Figure_02_02_007.jpg" width="50%">
+<description>"A graph of the function h(x), which is a parabola graphed over [-2.5, 5]. There is an open circle where the vertex should be at the point (2,-1)." </description> </image>
+</figure>
+</statement>
+<solution id="fs-id1170571593049">
+<p id="fs-id1170571593051"><m>\displaystyle{\lim_{x\to2}h(x)=-1.}</m></p>
+</solution>
+<hint>
+
+<p id="fs-id1170571657959">What <emphasis effect="italics">y</emphasis>-value does the function approach as the <m>x</m>-values approach 2?</p>
+</hint>
+
+</exercise>
+<p id="fs-id1170572086316">Looking at a table of functional values or looking at the graph of a function provides us with useful insight into the value of the limit of a function at a given point. However, these techniques rely too much on guesswork. We eventually need to develop alternative methods of evaluating limits. These new methods are more algebraic in nature and we explore them in the next section; however, at this point we introduce two special limits that are foundational to the techniques to come.</p>
+<theorem xml:id="fs-id1170572086324" class="theorem">
+<title>Two Important Limits</title>
+<p id="fs-id1170572243382">Let <m> a </m> be a real number and <emphasis effect="italics">c</emphasis> be a constant.</p>
+<ol id="fs-id1170571659112" list-type="enumerated" number-style="lower-roman">
+<li><me>\lim_{x \to a} x=a</me></li>
+<li><me>\lim_{x \to a} c=c</me></li>
+</ol>
+</theorem>
+<p id="fs-id1170571655925">We can make the following observations about these two limits.</p>
+<ol id="fs-id1170572305900" list-type="enumerated" number-style="lower-roman">
+<li>For the first limit, observe that as <m>x</m> approaches <m> a </m>, so does <m>f(x),</m> because <m>f(x)=x.</m> Consequently, <m>\displaystyle{\lim_{x \to a} x=a.}</m></li>
+<li>For the second limit, consider <xref ref="fs-id1170571613026"/>.</li>
+</ol>
+<table xml:id="fs-id1170571613026" summary="Two tables side by side, both containing two columns and five rows. The first table has headers x and f(x) = c in the first row. Under x in the first column are the values a-0.1, a-0.01, a-0.001, and a-0.0001. All of the values in the second column under the header are c. The second table has the same headers. Under x in the first column are the values a+0.1, a+0.01, a+0.001, and a+0.0001. All of the values in the second column under the header are c.">
+<title>Table of Functional Values for <m>\displaystyle{\lim_{x \to a} c=c}</m></title>
+<tabular>
+<row valign="top" header="yes">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>f(x)=c</m></cell>
+<cell/>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>f(x)=c</m></cell>
+</row>
+
+<row valign="top">
+<cell halign ="left"><m>a-0.1</m></cell>
+<cell halign ="left"><emphasis effect="italics">c</emphasis></cell>
+<cell />
+<cell halign ="left"><m>a+0.1</m></cell>
+<cell halign ="left"><emphasis effect="italics">c</emphasis></cell>
+</row>
+<row valign="top">
+<cell halign ="left"><m>a-0.01</m></cell>
+<cell halign ="left"><emphasis effect="italics">c</emphasis></cell>
+<cell />
+<cell halign ="left"><m>a+0.01</m></cell>
+<cell halign ="left"><emphasis effect="italics">c</emphasis></cell>
+</row>
+<row valign="top">
+<cell halign ="left"><m>a-0.001</m></cell>
+<cell halign ="left"><emphasis effect="italics">c</emphasis></cell>
+<cell />
+<cell halign ="left"><m>a+0.001</m></cell>
+<cell halign ="left"><emphasis effect="italics">c</emphasis></cell>
+</row>
+<row valign="top">
+<cell halign ="left"><m>a-0.0001</m></cell>
+<cell halign ="left"><emphasis effect="italics">c</emphasis></cell>
+<cell />
+<cell halign ="left"><m>a+0.0001</m></cell>
+<cell halign ="left"><emphasis effect="italics">c</emphasis></cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1170571576778">Observe that for all values of <m>x</m> (regardless of whether they are approaching <m> a </m>), the values <m>f(x)</m> remain constant at <emphasis effect="italics">c</emphasis>. We have no choice but to conclude <m>\displaystyle{\lim_{x \to a} c=c.}</m></p>
+</subsection>
+<subsection id="fs-id1170572342287">
+<title>The Existence of a Limit</title>
+<p id="fs-id1170572342292">As we consider the limit in the next example, keep in mind that for the limit of a function to exist at a point, the functional values must approach a single real-number value at that point. If the functional values do not approach a single value, then the limit does not exist.</p>
+
+<!-- Deleting Trig
+<example id="fs-id1170571656076">
+<title>Evaluating a Limit That Fails to Exist</title>
+<statement id="fs-id1170571656081">
+
+<p id="fs-id1170571656086">Evaluate <m>\lim_{x\to 0}\sin (1/x)</m> using a table of values.</p>
+</statement>
+<solution id="fs-id1170571614815">
+<p id="fs-id1170571614817"><xref ref="fs-id1170572233784"/> lists values for the function <m>\sin(1/x)</m> for the given values of <m>x</m>.</p>
+<table xml:id="fs-id1170572233784" summary="Two tables side by side, each with two columns and seven rows. The headers are the same, x and sin(1/x) in the first row. In the first table, the values in the first column under x are -0.1, -0.01, -0.001, -0.0001, -0.00001, and -0.000001. The values in the second column under the header are 0.544021110889, 0.50636564111, -0;.8268795405312, 0.305614388888, -0;.035748797987, and 0.349993504187. In the second column, the values in the first column under x are 0.1, 0.01, 0.001, 0.0001, 0.00001, and 0.000001. The values in the second column under the header are -0;.544021110889, -0;.50636564111, 0.826879540532, -0;.305614388888,  0.035748797987, and -0;.349993504187.">
+<title>Table of Functional Values for <m>\lim_{x\to0}\sin (\frac{1}{x})</m></title>
+<tabular>
+<row valign="top" header="yes">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>\sin(\frac{1}{x})</m></cell>
+<cell/>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>\sin(\frac{1}{x})</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.1</cell>
+<cell halign ="left">0.544021110889</cell>
+<cell />
+<cell halign ="left">0.1</cell>
+<cell halign ="left">-0.544021110889</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.01</cell>
+<cell halign ="left">0.50636564111</cell>
+<cell />
+<cell halign ="left">0.01</cell>
+<cell halign ="left">-0.50636564111</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.001</cell>
+<cell halign ="left">-0.8268795405312</cell>
+<cell />
+<cell halign ="left">0.001</cell>
+<cell halign ="left">0.826879540532</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.0001</cell>
+<cell halign ="left">0.305614388888</cell>
+<cell />
+<cell halign ="left">0.0001</cell>
+<cell halign ="left">-0.305614388888</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.00001</cell>
+<cell halign ="left">-0.035748797987</cell>
+<cell />
+<cell halign ="left">0.00001</cell>
+<cell halign ="left">0.035748797987</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.000001</cell>
+<cell halign ="left">0.349993504187</cell>
+<cell />
+<cell halign ="left">0.000001</cell>
+<cell halign ="left">-0.349993504187</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1170572420238">After examining the table of functional values, we can see that the <emphasis effect="italics">y</emphasis>-values do not seem to approach any one single value. It appears the limit does not exist. Before drawing this conclusion, let’s take a more systematic approach. Take the following sequence of <m>x</m>-values approaching 0:</p>
+<me> \frac{2}{\pi}, \frac{2}{3\pi}, \frac{2}{5\pi}, \frac{2}{7\pi}, \frac{2}{9\pi},\frac{2}{11\pi}, \dots .</me>
+<p id="fs-id1170572561333">The corresponding <emphasis effect="italics">y</emphasis>-values are</p>
+<me>1,-1,1,-1,1,-1, \dots .</me>
+<p id="fs-id1170571594790">At this point we can indeed conclude that <m>\lim_{x\to0}\sin (1/x)</m> does not exist. (Mathematicians frequently abbreviate “does not exist” as DNE. Thus, we would write <m>\lim_{x\to0}\sin (1/x)</m> DNE.) The graph of <m>f(x)=\sin (1/x)</m> is shown in <xref ref="CNX_Calc_Figure_02_02_008"/> and it gives a clearer picture of the behavior of <m>\sin(1/x)</m> as <m>x</m> approaches 0. You can see that <m>\sin(1/x)</m> oscillates ever more wildly between -1 and 1 as <m>x</m> approaches 0.</p>
+<figure xml:id="CNX_Calc_Figure_02_02_008">
+<image source="CNX_Calc_Figure_02_02_008.jpg" width="50%">
+<description>"The graph of the function f(x) = sin(1/x), which oscillates rapidly between -1 and 1 as x approaches 0. The oscillations are less frequent as the function moves away from 0 on the x axis."
+</description></image> <caption>The graph of <m>f(x)=\sin(1/x)</m> oscillates rapidly between -1 and 1 as <m>x</m> approaches 0.</caption>
+</figure>
+</solution>
+</example>
+-->
+
+<!-- Insert new example here-->
+<example>
+<statement>
+<title>Evaluating a Limit That Fails to Exist</title>
+<p>Evaluate <m>\displaystyle{\lim_{x\to 3}\frac{5}{x-3}}</m> using a table of values.</p>
+</statement>
+<solution>
+<p><xref ref="fs-id1170572233784"/> lists values for the function <m>\frac{5}{x-3}</m> for the given values of <m>x</m>.</p>
+<table xml:id="fs-id1170572233784" summary="Two tables side by side, each with two columns and seven rows. The headers are the same, x and 5/x-3 in the first row. In the first table, the values in the first column under x are 2.9, 2.99, 2.999, and 2.9999. The values in the second column under the header are -50, -500, -5000, and -50000. In the second column, the values in the first column under x are 3.1, 3.01, 3.001, and 3.0001. The values in the second column under the header are 50, 500, 5000, 50000.">
+<title>Table of Functional Values for <m>\displaystyle{\lim_{x\to3}\frac{5}{x-3}}</m></title>
+<tabular>
+<row valign="top" header="yes">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>\frac{5}{x-3}</m></cell>
+<cell/>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>\frac{5}{x-3}</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left">2.9</cell>
+<cell halign ="left">-50</cell>
+<cell />
+<cell halign ="left">3.1</cell>
+<cell halign ="left">50</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2.99</cell>
+<cell halign ="left">-500</cell>
+<cell />
+<cell halign ="left">3.01</cell>
+<cell halign ="left">500</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2.999</cell>
+<cell halign ="left">-5000</cell>
+<cell />
+<cell halign ="left">3.001</cell>
+<cell halign ="left">5000</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2.9999</cell>
+<cell halign ="left">-50000</cell>
+<cell />
+<cell halign ="left">3.0001</cell>
+<cell halign ="left">50000</cell>
+</row>
+</tabular>
+</table>
+<p>After examining the table of functional values, we can see that the <emphasis effect="italics">y</emphasis>-values do not seem to approach any one single value. It appears the limit does not exist. (Mathematicians frequently abbreviate “does not exist” as DNE. Thus, we would write <m>\displaystyle{\lim_{x\to3}\frac{5}{x-3}}</m> DNE.)</p>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1170572455167">
+<p id="fs-id1170572455169">Use a table of functional values to evaluate <m>\displaystyle{\lim_{x\to2} \frac{|x^2-4|}{x-2},}</m> if possible.</p>
+</statement>
+<solution id="fs-id1170572560591">
+<p id="fs-id1170572560593"><m>\displaystyle{\lim_{x\to2} \frac{|x^2-4|}{x-2}}</m> does not exist.</p>
+</solution>
+<hint>
+
+<p id="fs-id1170572560581">Use <m>x</m>-values 1.9, 1.99, 1.999, 1.9999, 1.9999 and 2.1, 2.01, 2.001, 2.0001, 2.00001 in your table.</p>
+</hint>
+
+</exercise>
+</subsection>
+<subsection id="fs-id1170572334719">
+<title>One-Sided Limits</title>
+<p id="fs-id1170572334724">Sometimes indicating that the limit of a function fails to exist at a point does not provide us with enough information about the behavior of the function at that particular point. To see this, we now revisit the function <m>g(x)=|x-2|/(x-2)</m> introduced at the beginning of the section (see <xref ref="CNX_Calc_Figure_02_02_001"/>(b)). As we pick values of <m>x</m> close to 2, <m>g(x)</m> does not approach a single value, so the limit as <m>x</m> approaches 2 does not exist—that is, <m>\displaystyle{\lim_{x\to2}g(x)}</m> DNE. However, this statement alone does not give us a complete picture of the behavior of the function around the <m>x</m>-value 2. To provide a more accurate description, we introduce the idea of a <term>one-sided limit</term>. For all values to the left of 2 (or <emphasis effect="italics">the negative side of</emphasis> 2), <m>g(x)=-1.</m> Thus, as <m>x</m> approaches 2 from the left, <m>g(x)</m> approaches -1. Mathematically, we say that the limit as <m>x</m> approaches 2 from the left is -1. Symbolically, we express this idea as</p>
+<me>\lim_{x\to 2^- }g(x)=-1.</me>
+<p id="fs-id1170571569214">Similarly, as <m>x</m> approaches 2 from the right (or <emphasis effect="italics">from the positive side</emphasis>), <m>g(x)</m> approaches 1. Symbolically, we express this idea as</p>
+<me>\lim_{x\to 2^+ }g(x)=1.</me>
+<p id="fs-id1170572307691">We can now present an informal definition of one-sided limits.</p>
+
+<definition> <!-- Change next /note to /definition and remove above note-->
+<p id="fs-id1170572307699">We define two types of <emphasis effect="bold">one-sided limits</emphasis>.</p>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572307707"><emphasis effect="italics">Limit from the left:</emphasis> Let <m>f(x)</m> be a function defined at all values in an open interval of the form <m>(c,a </m>), and let <m> L </m> be a real number. If the values of the function <m>f(x)</m> approach the real number <m> L </m> as the values of <m>x</m> (where <m>x\lt a ).</m> approach the number <m> a </m>, then we say that <m> L </m> is the limit of <m>f(x)</m> as <m>x</m> approaches a from the left. Symbolically, we express this idea as</p><me>\lim_{x\to a^{-} }f(x)=L.</me>
+<p id="fs-id1170571655616"><emphasis effect="italics">Limit from the right:</emphasis> Let <m>f(x)</m> be a function defined at all values in an open interval of the form <m>(a,c),</m> and let <m> L </m> be a real number. If the values of the function <m>f(x)</m> approach the real number L as the values of <m>x</m> (where <m>x\gt a .</m>) approach the number <m> a </m>, then we say that <m> L </m> is the limit of <m>f(x)</m> as <m>x</m> approaches <m> a </m> from the right. Symbolically, we express this idea as</p>
+<me>\lim_{x\to a^{+}}f(x)=L.</me>
+</definition>
+
+
+<example id="fs-id1170571614880">
+<title>Evaluating One-Sided Limits</title>
+ <statement id="fs-id1170571614884">
+<p id="fs-id1170571614889">For the function <m>f(x)=\begin{cases} x+1 \amp  x\lt 2 \\ x^2-4\amp x\geq 2 \end{cases},</m> evaluate each of the following limits.</p>
+<ol>
+<li><m>\lim_{x\to 2^- }f(x)</m></li>
+<li><m>\lim_{x\to 2^+ }f(x)</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170572307128">
+<p id="fs-id1170572307130">We can use tables of functional values again <xref ref="fs-id1170572347185"/>. Observe that for values of <m>x</m> less than 2, we use <m>f(x)=x+1</m> and for values of <m>x</m> greater than 2, we use <m>f(x)=x^2-4.</m></p>
+<table xml:id="fs-id1170572347185" summary="Two tables side by side, each with two columns and six rows. The headers are the same, x and f(x) = x+1 in the first row. In the first table, the values in the first column under x are 1.9, 1.99, 1.999, 1.9999, and 1.99999. The values in the second column under the header are 2.9, 2.99, 2.999, 2.9999, and 2.99999. In the second column, the values in the first column under x are 2.1, 2.01, 2.001, 2.0001, and 2.00001. The values in the second column under the header are 0.41, 0.0401, 0.004001, 0.00040001, and 0.0000400001.">
+<title>Table of Functional Values for <m>f(x)=f(x)=\begin{cases} x+1 \amp  x\lt 2 \\ x^2-4\amp x\geq 2 \end{cases}</m></title>
+<tabular>
+<row valign="top"  header="yes">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>f(x)=x+1</m></cell>
+<cell/>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>f(x)=x^2-4</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.9</cell>
+<cell halign ="left">2.9</cell>
+<cell morerows="4"/>
+<cell halign ="left">2.1</cell>
+<cell halign ="left">0.41</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.99</cell>
+<cell halign ="left">2.99</cell>
+<cell morerows="4"/>
+<cell halign ="left">2.01</cell>
+<cell halign ="left">0.0401</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.999</cell>
+<cell halign ="left">2.999</cell>
+<cell morerows="4"/>
+<cell halign ="left">2.001</cell>
+<cell halign ="left">0.004001</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.9999</cell>
+<cell halign ="left">2.9999</cell>
+<cell morerows="4"/>
+<cell halign ="left">2.0001</cell>
+<cell halign ="left">0.00040001</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.99999</cell>
+<cell halign ="left">2.99999</cell>
+<cell morerows="4"/>
+<cell halign ="left">2.00001</cell>
+<cell halign ="left">0.0000400001</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1170572233834">Based on this table, we can conclude that 1. <m>\displaystyle{\lim_{x\to 2^- }f(x)=3}</m> and 2. <m>\displaystyle{\lim_{x\to 2^+}f(x)=0.}</m> Therefore, the (two-sided) limit of <m>f(x)</m> does not exist at <m>x=2.</m> <xref ref="CNX_Calc_Figure_02_02_010"/> shows a graph of <m>f(x)</m> and reinforces our conclusion about these limits.</p>
+<figure xml:id="CNX_Calc_Figure_02_02_010">
+<image source="CNX_Calc_Figure_02_02_010.jpg" width="50%">
+<description>"The graph of the given piecewise function. The first piece is f(x) = x+1 if x \lt  2. The second piece is x^2 – 4 if x \gt = 2. The first piece is a line with x intercept at (-1, 0) and y intercept at (0,1). There is an open circle at (2,3), where the endpoint would be. The second piece is the right half of a parabola opening upward. The vertex at (2,0) is a solid circle."
+</description></image> <caption>The graph of <m>f(x)=f(x)=\begin{cases} x+1 \amp  x\lt 2 \\ x^2-4\amp x\geq 2 \end{cases}</m> has a break at <m>x=2.</m></caption>
+</figure>
+</solution>
+
+</example>
+<exercise><statement id="fs-id1170571612130">
+<p id="fs-id1170571612132">Use a table of functional values to estimate the following limits, if possible.</p>
+<ol>
+<li><m>\lim_{x\to 2^- } \frac{|x^2-4|}{x-2}</m></li>
+<li><m>\lim_{x\to 2^+ } \frac{|x^2-4|}{x-2}</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170572306436">
+<p id="fs-id1170572306438">1. <m>\displaystyle{\lim_{x\to 2^- } \frac{|x^2-4|}{x-2}=-4}</m>; 2. <m>\displaystyle{\lim_{x\to 2^+ } \frac{|x^2-4|}{x-2}=4}</m></p>
+</solution>
+<hint>
+
+<ol>
+<li>Use <m>x</m>-values 1.9, 1.99, 1.999, 1.9999, 1.9999 to estimate <m>\displaystyle{\lim_{x\to 2^- } \frac{|x^2-4|}{x-2}.}</m></li>
+<li>Use <m>x</m>-values 2.1, 2.01, 2.001, 2.0001, 2.00001 to estimate <m>\displaystyle{\lim_{x\to 2^+} \frac{|x^2-4|}{x-2}.}</m><newline/>
+(These tables are available from a previous Checkpoint problem.)</li>
+</ol>
+</hint>
+</exercise>
+<p id="fs-id1170571598062">Let us now consider the relationship between the limit of a function at a point and the limits from the right and left at that point. It seems clear that if the limit from the right and the limit from the left have a common value, then that common value is the limit of the function at that point. Similarly, if the limit from the left and the limit from the right take on different values, the limit of the function does not exist. These conclusions are summarized in <xref ref="fs-id1170571598073"/>.</p>
+<theorem xml:id="fs-id1170571598073" class="theorem">
+<title>Relating One-Sided and Two-Sided Limits</title>
+<p id="fs-id1170572560622">Let <m>f(x)</m> be a function defined at all values in an open interval containing <m> a </m>, with the possible exception of <m> a </m> itself, and let <m> L </m> be a real number. Then,</p>
+<me>\lim_{x \to a} f(x)=L. \text{ if and only if } \lim_{x\to a^{-} }f(x)=L \text{ and } \lim_{x\to a^{+}}f(x)=L.</me>
+</theorem>
+</subsection>
+<subsection id="fs-id1170571611973">
+<title>Infinite Limits</title>
+<p id="fs-id1170571611978">Evaluating the limit of a function at a point or evaluating the limit of a function from the right and left at a point helps us to characterize the behavior of a function around a given value. As we shall see, we can also describe the behavior of functions that do not have finite limits.</p>
+<p id="fs-id1170571611984">We now turn our attention to <m>h(x)=1/ (x-2)^2 ,</m> the third and final function introduced at the beginning of this section (see <xref ref="CNX_Calc_Figure_02_02_001"/>(c)). From its graph we see that as the values of <m>x</m> approach 2, the values of <m>h(x)=1/ (x-2)^2 </m> become larger and larger and, in fact, become infinite. Mathematically, we say that the limit of <m>h(x)</m> as <m>x</m> approaches 2 is positive infinity. Symbolically, we express this idea as</p>
+<me>\lim_{x\to 2}h(x)=+\infty.</me>
+<p id="fs-id1170571612271">More generally, we define <term>infinite limits</term> as follows:</p>
+
+<definition>
+<p id="fs-id1170571612282">We define three types of <emphasis effect="bold">infinite limits</emphasis>.</p>
+<p id="fs-id1170571612290"><emphasis effect="italics">Infinite limits from the left:</emphasis> Let <m>f(x)</m> be a function defined at all values in an open interval of the form <m>(b,a).</m></p>
+<ol id="fs-id1170571562562" list-type="enumerated" number-style="lower-roman">
+<li>If the values of <m>f(x)</m> increase without bound as the values of <m>x</m> (where <m> x \lt a </m>). approach the number <m> a </m>, then we say that the limit as <m>x</m> approaches <m> a </m> from the left is positive infinity and we write<newline/>
+<me>\lim_{x\to a^{-} }f(x)=+\infty.</me></li>
+<li>If the values of <m>f(x)</m> decrease without bound as the values of <m>x</m> (where <m> x \lt a </m>). approach the number <m> a </m>, then we say that the limit as <m>x</m> approaches <m> a </m> from the left is negative infinity and we write<newline/>
+<me>\lim_{x\to a^{-} }f(x)=-\infty.</me></li>
+</ol>
+<p id="fs-id1170572346754"><emphasis effect="italics">Infinite limits from the right</emphasis>: Let <m>f(x)</m> be a function defined at all values in an open interval of the form <m>(a,c).</m></p>
+<ol id="fs-id1170572346792" list-type="enumerated" number-style="lower-roman">
+<li>If the values of <m>f(x)</m> increase without bound as the values of <m>x</m> (where <m> x \gt a </m>). approach the number <m> a </m>, then we say that the limit as <m>x</m> approaches <m> a </m> from the right is positive infinity and we write<newline/>
+<me>\lim_{x\to a^{+}}f(x)=+\infty.</me></li>
+<li>If the values of <m>f(x)</m> decrease without bound as the values of <m>x</m> (where <m> x \gt a </m>). approach the number <m> a </m>, then we say that the limit as <m>x</m> approaches <m> a </m> from the right is negative infinity and we write<newline/>
+<me>\lim_{x\to a^{+}}f(x)=-\infty.</me></li>
+</ol>
+<p id="fs-id1170572512615"><emphasis effect="italics">Two-sided infinite limit:</emphasis> Let <m>f(x)</m> be defined for all <m>x\neq a</m> in an open interval containing <m> a </m>.</p>
+<ol id="fs-id1170572512650" list-type="enumerated" number-style="lower-roman">
+<li>If the values of <m>f(x)</m> increase without bound as the values of <m>x</m> (where <m> x \neq a </m>). approach the number <m> a </m>, then we say that the limit as <m>x</m> approaches <m> a </m> is positive infinity and we write<newline/>
+<me>\lim_{x \to a} f(x)=+\infty.</me></li>
+<li>If the values of <m>f(x)</m> decrease without bound as the values of <m>x</m> (where <m> x \neq a </m>). approach the number <m> a </m>, then we say that the limit as <m>x</m> approaches <m> a </m> is negative infinity and we write<newline/>
+<me>\lim_{x \to a} f(x)=-\infty.</me></li>
+</ol>
+</definition>
+<p id="fs-id1170572337910">It is important to understand that when we write statements such as <m>\displaystyle{\lim_{x \to a} f(x)=+\infty}</m> or <m>\displaystyle{\lim_{x \to a} f(x)=-\infty}</m> we are describing the behavior of the function, as we have just defined it. We are not asserting that a limit exists. For the limit of a function <m>f(x)</m> to exist at <m> a </m>, it must approach a real number <m> L </m> as <m>x</m> approaches <m> a </m>. That said, if, for example, <m>\displaystyle{\lim_{x \to a} f(x)=+\infty,}</m> we always write <m>\displaystyle{\lim_{x \to a} f(x)=+\infty}</m> rather than <m>\displaystyle{\lim_{x \to a} f(x)}</m> DNE.</p>
+<example xml:id="fs-id1170571611150">
+<title>Recognizing an Infinite Limit</title>
+<statement id="fs-id1170571611155">
+<p id="fs-id1170571611160">Evaluate each of the following limits, if possible. Use a table of functional values and graph <m>f(x)=1/x</m> to confirm your conclusion.</p>
+<ol>
+<li><m>\lim_{x\to 0^- }\frac{1}{x}</m></li>
+<li><m>\lim_{x\to 0^+ }\frac{1}{x}</m></li>
+<li><m>\lim_{x\to0}\frac{1}{x}</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170572346976">
+<p id="fs-id1170572346978">Begin by constructing a table of functional values.</p>
+<table xml:id="fs-id1170572346981" summary="Two tables side by side, each with two columns and seven rows. The headers are the same, x and 1/x in the first row. In the first table, the values in the first column under x are -.01, -0.01, -0.001, -0.0001, -0.00001, and -0.000001. The values in the second column under the header are -10, -100, -1000, -10,000, -100,000, and -1,000,000. In the second column, the values in the first column under x are 0.1, 0.01, 0.001, 0.0001, 0.00001 and 0.000001. The values in the second column under the header are 10, 100, 1000, 10,000, 100,000, 1,000,000.">
+<title>Table of Functional Values for <m>f(x)=\frac{1}{x}</m></title>
+<tabular>>
+<row valign="top" header="yes">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>\frac{1}{x}</m></cell>
+<cell/>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>\frac{1}{x}</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.1</cell>
+<cell halign ="left">-10</cell>
+<cell/>
+<cell halign ="left">0.1</cell>
+<cell halign ="left">10</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.01</cell>
+<cell halign ="left">-100</cell>
+<cell/>
+<cell halign ="left">0.01</cell>
+<cell halign ="left">100</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.001</cell>
+<cell halign ="left">-1000</cell>
+<cell/>
+<cell halign ="left">0.001</cell>
+<cell halign ="left">1000</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.0001</cell>
+<cell halign ="left">-10,000</cell>
+<cell/>
+<cell halign ="left">0.0001</cell>
+<cell halign ="left">10,000</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.00001</cell>
+<cell halign ="left">-100,000</cell>
+<cell/>
+<cell halign ="left">0.00001</cell>
+<cell halign ="left">100,000</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.000001</cell>
+<cell halign ="left">-1,000,000</cell>
+<cell/>
+<cell halign ="left">0.000001</cell>
+<cell halign ="left">1,000,000</cell>
+</row>
+</tabular>>
+</table>
+<ol>
+<li>The values of <m>1/x</m> decrease without bound as <m>x</m> approaches 0 from the left. We conclude that<newline/>
+<me>\lim_{x\to 0^- }\frac{1}{x}=-\infty.</me></li>
+<li>The values of <m>1/x</m> increase without bound as <m>x</m> approaches 0 from the right. We conclude that<newline/>
+<me>\lim_{x\to 0^+ }\frac{1}{x}=+\infty.</me></li>
+<li>Since <m>\displaystyle{\lim_{x\to 0^- }\frac{1}{x}=-\infty}</m> and <m>\displaystyle{\lim_{x\to 0^+ }\frac{1}{x}=+\infty}</m> have different values, we conclude that<newline/>
+<me>\lim_{x\to0}\frac{1}{x} \text{ DNE. }</me></li>
+</ol>
+<p id="fs-id1170571596248">The graph of <m>f(x)=1/x</m> in <xref ref="CNX_Calc_Figure_02_02_012"/> confirms these conclusions.</p>
+<figure xml:id="CNX_Calc_Figure_02_02_012">
+<image source="CNX_Calc_Figure_02_02_012.jpg" width="50%">
+<description>"The graph of the function f(x) = 1/x. The function curves asymptotically towards x=0 and y=0 in quadrants one and three." </description></image> <caption>The graph of <m>f(x)=1/x</m> confirms that the limit as <m>x</m> approaches 0 does not exist.</caption>
+</figure>
+</solution>
+</example>
+
+
+<exercise>  <statement id="fs-id1170571596336">
+<p id="fs-id1170571596338">Evaluate each of the following limits, if possible. Use a table of functional values and graph <m>f(x)=1/x^2</m> to confirm your conclusion.</p>
+<ol>
+<li><m>\lim_{x\to 0^- } \frac{1}{x^2}</m></li>
+<li><m>\lim_{x\to  0^+ } \frac{1}{x^2}</m></li>
+<li><m>\lim_{x\to 0} \frac{1}{x^2}</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170571612951">
+<p id="fs-id1170571612954">1. <m>\displaystyle{\lim_{x\to 0^- } \frac{1}{x^2}=+\infty;}</m> 2. <m>\displaystyle{\lim_{x\to 0^+ } \frac{1}{x^2}=+\infty;}</m> 3. <m>\displaystyle{\lim_{x\to 0} \frac{1}{x^2}=+\infty}</m></p>
+</solution>
+<hint>
+
+<p id="fs-id1170571612943">Follow the procedures from <xref ref="fs-id1170571611150"/>.</p>
+</hint>
+
+</exercise>
+<p id="fs-id1170572611930">It is useful to point out that functions of the form <m>f(x)=1/ (x-a)^n ,</m> where <m> n </m> is a positive integer, have infinite limits as <m>x</m> approaches <m> a </m> from either the left or right (<xref ref="CNX_Calc_Figure_02_02_014"/>). These limits are summarized in <xref ref="fs-id1170571654206"/>.</p>
+<figure xml:id="CNX_Calc_Figure_02_02_014">
+<image source="CNX_Calc_Figure_02_02_014.jpg" width="67%">
+<description>"Two graphs side by side of f(x) = 1 / (x-a)^n. The first graph shows the case where n is an odd positive integer, and the second shows the case where n is an even positive integer. In the first, the graph has two segments. Each curve asymptotically towards the x axis, also known as y=0, and x=a. The segment to the left of x=a is below the x axis, and the segment to the right of x=a is above the x axis. In the second graph, both segments are above the x axis." </description></image> <caption>The function <m>f(x)=1/ (x-a)^n </m> has infinite limits at <m> a </m>.</caption>
+</figure>
+<theorem xml:id="fs-id1170571654206" class="theorem">
+<title>Infinite Limits from Positive Integers</title>
+ <p id="fs-id1170571654222">If <m> n </m> is a positive even integer, then</p>
+<!--<me xml:id="fs-id1170571654230"> \lim_{x \to a}  \frac{1}{ (x-a)^n }=+\infty.</me> -->
+<p id="fs-id1170571654279">If <m> n </m> is a positive odd integer, then</p>
+<me>\lim_{x\to a^{+}} \frac{1}{ (x-a)^n }=+\infty</me>
+<p id="fs-id1170571654339">and</p>
+<me>\lim_{x\to a^{-} } \frac{1}{ (x-a)^n }=-\infty.</me>
+</theorem>
+<p id="fs-id1170571603730">We should also point out that in the graphs of <m>f(x)=1/ (x-a)^n ,</m> points on the graph having <m>x</m>-coordinates very near to <m> a </m> are very close to the vertical line <m>x=a.</m> That is, as <m>x</m> approaches <m> a </m>, the points on the graph of <m>f(x)</m> are closer to the line <m>x=a.</m> The line <m>x=a</m> is called a <term>vertical asymptote</term> of the graph. We formally define a vertical asymptote as follows:</p>
+<definition>
+<p id="fs-id1170571656454">Let <m>f(x)</m> be a function. If any of the following conditions hold, then the line <m>x=a</m> is a <emphasis effect="bold">vertical asymptote</emphasis> of <m>f(x).</m></p>
+<md>
+    <mrow> \lim_{x\to a^{-}}f(x) \amp =+\infty\text{ or }-\infty</mrow>
+    <mrow> \lim_{x\to a^{+}}f(x) \amp =+\infty\text{ or }-\infty </mrow>
+    <mrow> \amp \text{ or } </mrow>
+    <mrow> \lim_{x \to a} f(x) \amp =+\infty\text{ or }-\infty </mrow>
+</md>
+</definition>
+<example id="fs-id1170571656614">
+<title>Finding a Vertical Asymptote</title>
+ <statement id="fs-id1170571656619">
+<p id="fs-id1170571656624">Evaluate each of the following limits using <xref ref="fs-id1170571654206"/>. Identify any vertical asymptotes of the function <m>f(x)=1/ (x+3)^4.</m></p>
+<ol>
+<li><m>\lim_{x\to -3^- } \frac{1}{ (x+3)^4}</m></li>
+<li><m>\lim_{x\to -3^+ } \frac{1}{ (x+3)^4}</m></li>
+<li><m>\lim_{x\to-3} \frac{1}{ (x+3)^4}</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170572632996">
+<p id="fs-id1170572632998">We can use <xref ref="fs-id1170571654206"/> directly.</p>
+<ol>
+<li><m>\lim_{x\to -3^- } \frac{1}{ (x+3)^4}=+\infty</m></li>
+<li><m>\lim_{x\to -3^+ } \frac{1}{ (x+3)^4}=+\infty</m></li>
+<li><m>\lim_{x\to-3} \frac{1}{ (x+3)^4}=+\infty</m></li>
+</ol>
+<p id="fs-id1170571652076">The function <m>f(x)=1/ (x+3)^4</m> has a vertical asymptote of <m>x=-3.</m></p>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1170571652138">
+<p id="fs-id1170571652140">Evaluate each of the following limits. Identify any vertical asymptotes of the function <m>f(x)= \frac{1}{ (x-2)^3 }.</m></p>
+<ol>
+<li><m>\lim_{x\to 2^- } \frac{1}{ (x-2)^3 }</m></li>
+<li><m>\lim_{x\to 2^+ } \frac{1}{ (x-2)^3 }</m></li>
+<li><m>\lim_{x\to 2} \frac{1}{ (x-2)^3 }</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170571545549">
+<p id="fs-id1170571545551">1. <m>\displaystyle{\lim_{x\to 2^- } \frac{1}{ (x-2)^3 }=-\infty;}</m> 2. <m>\displaystyle{\lim_{x\to 2^+ } \frac{1}{ (x-2)^3 }=+\infty;}</m> 3. <m>\displaystyle{\lim_{x\to 2} \frac{1}{ (x-2)^3 }}</m> DNE. The line <m>x=2</m> is the vertical asymptote of <m>f(x)=1/ (x-2)^3 .</m></p>
+</solution>
+<hint>
+<p id="fs-id1170571545540">Use <xref ref="fs-id1170571654206"/>.</p>
+</hint>
+</exercise>
+<p id="fs-id1170572642379">In the next example we put our knowledge of various types of limits to use to analyze the behavior of a function at several different points.</p>
+<example id="fs-id1170572642384">
+<title>Behavior of a Function at Different Points</title>
+<statement id="fs-id1170572642388">
+<p id="fs-id1170572642393">Use the graph of <m>f(x)</m> in <xref ref="CNX_Calc_Figure_02_02_015"/> to determine each of the following values:</p>
+<ol>
+<li><m>\lim_{x\to -4^-}f(x);\lim_{x\to-4^+}f(x);\lim_{x\to-4}f(x);f(-4)</m></li>
+<li><m>\lim_{x\to -2^-}f(x);\lim_{x\to-2^+}f(x);\lim_{x\to-2}f(x);f(-2)</m></li>
+<li><m>\lim_{x\to 1^- }f(x);\lim_{x\to 1^+ }f(x);\lim_{x\to1}f(x);f(1)</m></li>
+<li><m>\lim_{x\to 3^- }f(x);\lim_{x\to 3^+ }f(x);\lim_{x\to3}f(x);f(3)</m></li>
+</ol>
+<figure xml:id="CNX_Calc_Figure_02_02_015">
+<image source="CNX_Calc_Figure_02_02_015.jpg" width="50%">
+<description>"The graph of a function f(x) described by the above limits and values. There is a smooth curve for values below x=-2; at (-2, 3), there is an open circle. There is a smooth curve between (-2, 1] with a closed circle at (1,6). There is an open circle at (1,3), and a smooth curve stretching from there down asymptotically to negative infinity along x=3. The function also curves asymptotically along x=3 on the other side, also stretching to negative infinity. The function then changes concavity in the first quadrant around y=4.5 and continues up."
+ </description></image> <caption>The graph shows <m>f(x).</m></caption>
+</figure>
+</statement>
+<solution id="fs-id1170571610255">
+<p id="fs-id1170571610257">Using <xref ref="fs-id1170571654206"/> and the graph for reference, we arrive at the following values:</p>
+<ol>
+<li><m>\lim_{x\to -4^-}f(x)=0;\lim_{x\to-4^+}f(x)=0;\lim_{x\to-4}f(x)=0;f(-4)=0</m></li>
+<li><m>\displaystyle{\lim_{x\to -2^-}f(x)=3.;\lim_{x\to-2^+}f(x)=3;\lim_{x\to-2}f(x)=3;f(-2)}</m> is undefined</li>
+<li><m>\displaystyle{\lim_{x\to 1^- }f(x)=6;\lim_{x\to 1^+ }f(x)=3;\lim_{x\to1}f(x)}</m> DNE; <m>f(1)=6</m></li>
+<li><m>\displaystyle{\lim_{x\to 3^- }f(x)=-\infty;\lim_{x\to 3^+ }f(x)=-\infty;\lim_{x\to3}f(x)=-\infty;f(3)}</m> is undefined</li>
+</ol>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1170572624473">
+<p id="fs-id1170572624475">Evaluate <m>\displaystyle{\lim_{x\to 1}f(x)}</m> for <m>f(x)</m> shown here:</p>
+<image source="CNX_Calc_Figure_02_02_016.jpg" width="50%">
+<description>"A graph of a piecewise function. The first segment curves from the third quadrant to the first, crossing through the second quadrant. Where the endpoint would be in the first quadrant is an open circle. The second segment starts at a closed circle a few units below the open circle. It curves down from quadrant one to quadrant four." </description> </image>
+
+
+</statement>
+<solution id="fs-id1170572624536">
+<p id="fs-id1170572624538">Does not exist.</p>
+</solution>
+<hint>
+
+<p id="fs-id1170572624532">Compare the limit from the right with the limit from the left.</p>
+</hint>
+
+</exercise>
+<example id="fs-id1170572624544">
+<title>Chapter Opener: Einstein’s Equation</title>
+ <statement id="fs-id1170572624549">
+<figure xml:id="CNX_Calc_Figure_02_02_018">
+<image source="CNX_Calc_Figure_02_02_018.jpg" width="50%">
+<description>"A picture of a futuristic spaceship speeding through deep space."
+ </description></image> <caption>(credit: NASA)</caption>
+</figure>
+<p id="fs-id1170572624574">In the chapter opener we mentioned briefly how Albert Einstein showed that a limit exists to how fast any object can travel. Given Einstein’s equation for the mass of a moving object, what is the value of this bound?</p>
+</statement>
+<solution id="fs-id1170572624580">
+<p id="fs-id1170572624583">Our starting point is Einstein’s equation for the mass of a moving object,</p>
+<me>m=\frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}},</me>
+<p id="fs-id1170572597831">where <m>m_0</m> is the object’s mass at rest, <emphasis effect="italics">v</emphasis> is its speed, and <emphasis effect="italics">c</emphasis> is the speed of light. To see how the mass changes at high speeds, we can graph the ratio of masses <m>m/m_0</m> as a function of the ratio of speeds, <m>v/c</m> (<xref ref="CNX_Calc_Figure_02_02_017"/>).</p>
+<figure xml:id="CNX_Calc_Figure_02_02_017">
+<image source="CNX_Calc_Figure_02_02_017.jpg" width="50%">
+<description>"A graph showing the ratio of masses as a function of the ratio of speed in Einstein’s equation for the mass of a moving object. The x axis is the ratio of the speeds, v/c. The y axis is the ratio of the masses, m/m0. The equation of the function is m = m0 / sqrt(1 –  v2 / c2 ). The graph is only in quadrant 1. It starts at (0,1) and curves up gently until about 0.8, where it increases seemingly exponentially; there is a vertical asymptote at v/c (or x) = 1."
+ </description></image> <caption>This graph shows the ratio of masses as a function of the ratio of speeds in Einstein’s equation for the mass of a moving object.</caption>
+</figure>
+<p id="fs-id1170572597910">We can see that as the ratio of speeds approaches 1—that is, as the speed of the object approaches the speed of light—the ratio of masses increases without bound. In other words, the function has a vertical asymptote at <m>v/c=1.</m> We can try a few values of this ratio to test this idea.</p>
+<table xml:id="fs-id1170572597937" summary="A table with three columns and four rows. The first row contains the headings v/c, sqrt(1 –  v2 / c2 ), and m / m0. The values of the first column under the header are 0.99, 0.999, and 0.9999. The values of the second column under the header are 0.1411, 0.0447, and 0.0141. The values of the third column under the header are 7.089, 22.37, and 70.71.">
+<title>Ratio of Masses and Speeds for a Moving Object</title>
+<tabular>
+<row valign="top" header="yes">
+<cell halign ="left"><m>\frac{v}{c}</m></cell>
+<cell halign ="left"><m>\sqrt{1-\frac{v^2}{c^2}}</m></cell>
+<cell halign ="left"><m> \frac{m}{m_0}</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.99</cell>
+<cell halign ="left">0.1411</cell>
+<cell halign ="left">7.089</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.999</cell>
+<cell halign ="left">0.0447</cell>
+<cell halign ="left">22.37</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.9999</cell>
+<cell halign ="left">0.0141</cell>
+<cell halign ="left">70.71</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1170572347624">Thus, according to <xref ref="fs-id1170572597937"/>, if an object with mass 100 kg is traveling at 0.9999<emphasis effect="italics">c</emphasis>, its mass becomes 7071 kg. Since no object can have an infinite mass, we conclude that no object can travel at or more than the speed of light.</p>
+</solution>
+</example>
+</subsection>
+<subsection id="fs-id1170572347643" class="key-concepts">
+<title>Key Concepts</title>
+<ul id="fs-id1170572347650" list-type="bulleted" bullet-style="bullet">
+<li>A table of values or graph may be used to estimate a limit.</li>
+<li>If the limit of a function at a point does not exist, it is still possible that the limits from the left and right at that point may exist.</li>
+<li>If the limits of a function from the left and right exist and are equal, then the limit of the function is that common value.</li>
+<li>We may use limits to describe infinite behavior of a function at a point.</li>
+</ul>
+</subsection>
+<subsection id="fs-id1170572347674" class="key-equations">
+<title>Key Equations</title>
+<ul id="fs-id1170572347681" list-type="bulleted" bullet-style="bullet">
+<li><emphasis effect="bold">Intuitive Definition of the Limit</emphasis><newline/>
+<m>\displaystyle{\lim_{x \to a} f(x)=L}</m></li>
+<li><emphasis effect="bold">Two Important Limits</emphasis><newline/>
+<m>\displaystyle{\lim_{x \to a} x=a \lim_{x \to a} c=c}</m></li>
+<li><emphasis effect="bold">One-Sided Limits</emphasis><newline/>
+<m>\displaystyle{\lim_{x\to a^{-} }f(x)=L \lim_{x\to a^{+}}f(x)=L}</m></li>
+<li><emphasis effect="bold">Infinite Limits from the Left</emphasis><newline/>
+<m>\displaystyle{\lim_{x\to a^{-} }f(x)=+\infty \lim_{x\to a^{-} }f(x)=-\infty}</m></li>
+<li><emphasis effect="bold">Infinite Limits from the Right</emphasis><newline/>
+<m>\displaystyle{\lim_{x\to a^{+}}f(x)=+\infty \lim_{x\to a^{+}}f(x)=-\infty}</m></li>
+<li><emphasis effect="bold">Two-Sided Infinite Limits</emphasis><newline/>
+<m>\displaystyle{\lim_{x \to a} f(x)=+\infty:\lim_{x\to a^{-} }f(x)=+\infty}</m> and <m>\displaystyle{\lim_{x\to a^{+}}f(x)=+\infty}</m><newline/>
+<m>\displaystyle{\lim_{x \to a} f(x)=-\infty:\lim_{x\to a^{-} }f(x)=-\infty}</m> and <m>\displaystyle{\lim_{x\to a^{+}}f(x)=-\infty}</m></li>
+</ul>
+</subsection>
+
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+<?ignore
+
+<section id="fs-id1170572347374" class="section-exercises">
+<p id="fs-id1170572347378">For the following exercises, consider the function <m>f(x)=<!-- Edit FRAC!--> \frac{x^2-1|x-1|}.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571655733">
+<p id="fs-id1170571655735"><emphasis effect="bold">[T]</emphasis> Complete the following table for the function. Round your solutions to four decimal places.</p>
+<table xml:id="fs-id1170571655743" class="unnumbered" summary="A table with four columns and five rows. The first row contains the headings x, f(x), x, and f(x). The values of the first column under the header are 0.9, .99, 0.999, and 0.9999. The values of the second column under the header are a, b, c, and d. The values of the third column under the header are 1.1, 1.01, 1.001, and 1.0001. The values of the fourth column under the header are e, f, g, and h.">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>f(x)</m></cell>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>f(x)</m></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">0.9</cell>
+<cell halign ="left">a.</cell>
+<cell halign ="left">1.1</cell>
+<cell halign ="left">e.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.99</cell>
+<cell halign ="left">b.</cell>
+<cell halign ="left">1.01</cell>
+<cell halign ="left">f.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.999</cell>
+<cell halign ="left">c.</cell>
+<cell halign ="left">1.001</cell>
+<cell halign ="left">g.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.9999</cell>
+<cell halign ="left">d.</cell>
+<cell halign ="left">1.0001</cell>
+<cell halign ="left">h.</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571657431">
+<p id="fs-id1170571657434">What do your results in the preceding exercise indicate about the two-sided limit <m>\lim_{x\to1}f(x)?</m> Explain your response.</p>
+</statement>
+<solution id="fs-id1170571657466">
+<p id="fs-id1170571657469"><m>\lim_{x\to1}f(x)</m> does not exist because <m>\lim_{x\to 1^- }f(x)=-2\neq \lim_{x\to 1^+ }f(x)=2.</m></p>
+</solution>
+
+<p id="fs-id1170572482580">For the following exercises, consider the function <m>f(x)=<m:msup>(1+x)1/x</m:msup>.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572482624">
+<p id="fs-id1170572482626"><emphasis effect="bold">[T]</emphasis> Make a table showing the values of <emphasis effect="italics">f</emphasis> for <m>x=-0.01,-0.001,-0.0001,-0.00001</m> and for <m>x=0.01,0.001,0.0001,0.00001.</m> Round your solutions to five decimal places.</p>
+<table xml:id="fs-id1170572482685" class="unnumbered" summary="A table with four columns and five rows. The first row contains the headings x, f(x), x, and f(x). The values of the first column under the header are -0.01, -0.001, -0.0001, and -0.00001. The values of the second column under the header are a, b, c, and d. The values of the third column under the header are 0.01, 0.001, 0.0001, and 0.00001. The values of the fourth column under the header are e, f, g, and h.">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>f(x)</m></cell>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>f(x)</m></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">-0.01</cell>
+<cell halign ="left">a.</cell>
+<cell halign ="left">0.01</cell>
+<cell halign ="left">e.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.001</cell>
+<cell halign ="left">b.</cell>
+<cell halign ="left">0.001</cell>
+<cell halign ="left">f.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.0001</cell>
+<cell halign ="left">c.</cell>
+<cell halign ="left">0.0001</cell>
+<cell halign ="left">g.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.00001</cell>
+<cell halign ="left">d.</cell>
+<cell halign ="left">0.00001</cell>
+<cell halign ="left">h.</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571654943">
+<p id="fs-id1170571654945">What does the table of values in the preceding exercise indicate about the function <m>f(x)=<m:msup>(1+x)1/x</m:msup>?</m></p>
+</statement>
+<solution id="fs-id1170571654988">
+<p id="fs-id1170571654990"><m>\lim_{x\to0}<m:msup>(1+x)1/x</m:msup>=2.7183</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572403246">
+<p id="fs-id1170572403249">To which mathematical constant does the limit in the preceding exercise appear to be getting closer?</p>
+</statement>
+
+<p id="fs-id1170572403269">In the following exercises, use the given values to set up a table to evaluate the limits. Round your solutions to eight decimal places.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572403275">
+<p id="fs-id1170572403278"><emphasis effect="bold">[T]</emphasis> <m>\lim_{x\to0}<!-- Edit FRAC!--> \frac{\sin 2xx}; \pm 0.1,\pm 0.01,\pm 0.001,\pm .0001</m></p>
+<table xml:id="fs-id1170572403332" class="unnumbered" summary="A table with four columns and five rows. The first row contains the headings x, sin(2x)/x, x, and sin(2x) / x. The values of the first column under the header are -0.1, -0.01, -0.001, and -0.0001. The values of the second column under the header are a, b, c, and d. The values of the third column under the header are 0.1, 0.01, 0.001, and 0.0001. The values of the fourth column under the header are e, f, g, and h.">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{\sin 2xx}</m></cell>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{\sin 2xx}</m></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">-0.1</cell>
+<cell halign ="left">a.</cell>
+<cell halign ="left">0.1</cell>
+<cell halign ="left">e.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.01</cell>
+<cell halign ="left">b.</cell>
+<cell halign ="left">0.01</cell>
+<cell halign ="left">f.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.001</cell>
+<cell halign ="left">c.</cell>
+<cell halign ="left">0.001</cell>
+<cell halign ="left">g.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.0001</cell>
+<cell halign ="left">d.</cell>
+<cell halign ="left">0.0001</cell>
+<cell halign ="left">h.</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+<solution id="fs-id1170571586211">
+<p id="fs-id1170571586213">a. 1.98669331; b. 1.99986667; c. 1.99999867; d. 1.99999999; e. 1.98669331; f. 1.99986667; g. 1.99999867; h. 1.99999999; <m>\lim_{x\to0}<!-- Edit FRAC!--> \frac{\sin 2xx}=2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571586253">
+<p id="fs-id1170571586255"><emphasis effect="bold">[T]</emphasis> <m>\lim_{x\to0}<!-- Edit FRAC!--> \frac{\sin 3xx}<m:mo/></m> \pm 0.1, \pm 0.01, \pm 0.001, \pm 0.0001</p>
+<table xml:id="fs-id1170572503481" class="unnumbered" summary="A table with four columns and five rows. The first row contains the headings x, sin(3x)/x, x, and sin(3x) / x. The values of the first column under the header are -0.1, -0.01, -0.001, and -0.0001. The values of the second column under the header are a, b, c, and d. The values of the third column under the header are 0.1, 0.01, 0.001, and 0.0001. The values of the fourth column under the header are e, f, g, and h.">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><emphasis effect="italics">X</emphasis></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{\sin 3xx}</m></cell>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{\sin 3xx}</m></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">-0.1</cell>
+<cell halign ="left">a.</cell>
+<cell halign ="left">0.1</cell>
+<cell halign ="left">e.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.01</cell>
+<cell halign ="left">b.</cell>
+<cell halign ="left">0.01</cell>
+<cell halign ="left">f.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.001</cell>
+<cell halign ="left">c.</cell>
+<cell halign ="left">0.001</cell>
+<cell halign ="left">g.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.0001</cell>
+<cell halign ="left">d.</cell>
+<cell halign ="left">0.0001</cell>
+<cell halign ="left">h.</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572499829">
+<p id="fs-id1170572499831">Use the preceding two exercises to conjecture (guess) the value of the following limit: <m>\lim_{x\to0}<!-- Edit FRAC!--> \frac{\sin axx}</m> for <m> a </m>, a positive real value.</p>
+</statement>
+<solution id="fs-id1170572499869">
+<p id="fs-id1170572499871"><m>\lim_{x\to0}<!-- Edit FRAC!--> \frac{\sin axx}=a</m></p>
+</solution>
+
+<p id="fs-id1170572499906"><emphasis effect="bold">[T]</emphasis> In the following exercises, set up a table of values to find the indicated limit. Round to eight digits.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572499917">
+<p id="fs-id1170572499919"><m>\lim_{x\to2}<!-- Edit FRAC!--> \frac{x^2-4x^2+x-6}</m></p>
+<table xml:id="fs-id1170572499971" class="unnumbered" summary="A table with four columns and five rows. The first row contains the headings x, (x^2 – 4) / (x^2 + x – 6), x, and (x^2 – 4) / (x^2 + x – 6). The values of the first column under the header are 1.9, 1.99, 1.999, and 1.9999. The values of the second column under the header are a, b, c, and d. The values of the third column under the header are 2.1, 2.01, 2.001, and 2.0001. The values of the fourth column under the header are e, f, g, and h.">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{x^2-4x^2+x-6}</m></cell>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{x^2-4x^2+x-6}</m></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">1.9</cell>
+<cell halign ="left">a.</cell>
+<cell halign ="left">2.1</cell>
+<cell halign ="left">e.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.99</cell>
+<cell halign ="left">b.</cell>
+<cell halign ="left">2.01</cell>
+<cell halign ="left">f.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.999</cell>
+<cell halign ="left">c.</cell>
+<cell halign ="left">2.001</cell>
+<cell halign ="left">g.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.9999</cell>
+<cell halign ="left">d.</cell>
+<cell halign ="left">2.0001</cell>
+<cell halign ="left">h.</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572232005">
+<p id="fs-id1170572232007"><m>\lim_{x\to1}(1-2x)</m></p>
+<table xml:id="fs-id1170572232040" class="unnumbered" summary="A table with four columns and five rows. The first row contains the headings x, 1-2x, x, and 1-2x. The values of the first column under the header are 0.9, 0.99, 0.999, and 0.9999. The values of the second column under the header are a, b, c, and d. The values of the third column under the header are 1.1, 1.01, 1.001, and 1.0001. The values of the fourth column under the header are e, f, g, and h.">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>1-2x</m></cell>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>1-2x</m></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">0.9</cell>
+<cell halign ="left">a.</cell>
+<cell halign ="left">1.1</cell>
+<cell halign ="left">e.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.99</cell>
+<cell halign ="left">b.</cell>
+<cell halign ="left">1.01</cell>
+<cell halign ="left">f.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.999</cell>
+<cell halign ="left">c.</cell>
+<cell halign ="left">1.001</cell>
+<cell halign ="left">g.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.9999</cell>
+<cell halign ="left">d.</cell>
+<cell halign ="left">1.0001</cell>
+<cell halign ="left">h.</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+<solution id="fs-id1170571600018">
+<p id="fs-id1170571600021">a. -0.80000000; b. -0.98000000; c. -0.99800000; d. -0.99980000; e. -1.2000000; f. -1.0200000; g. -1.0020000; h. -1.0002000; <m>\lim_{x\to1}(1-2x)=-1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571600066">
+<p id="fs-id1170571600068"><m>\lim_{x\to0}<!-- Edit FRAC!--> \frac{51-<m:msup>e1/x</m:msup>}</m></p>
+<table xml:id="fs-id1170572511246" class="unnumbered" summary="A table with four columns and five rows. The first row contains the headings x, 5 / (1 – e^ (1/x) ), x, and 5 / (1 – e^ (1/x) ). The values of the first column under the header are -0.1, -0.01, -0.001, and -0.0001. The values of the second column under the header are a, b, c, and d. The values of the third column under the header are 0.1, 0.01, 0.001, and 0.0001. The values of the fourth column under the header are e, f, g, and h.">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{51-<m:msup>e1/x</m:msup>}</m></cell>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{51-<m:msup>e1/x</m:msup>}</m></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">-0.1</cell>
+<cell halign ="left">a.</cell>
+<cell halign ="left">0.1</cell>
+<cell halign ="left">e.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.01</cell>
+<cell halign ="left">b.</cell>
+<cell halign ="left">0.01</cell>
+<cell halign ="left">f.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.001</cell>
+<cell halign ="left">c.</cell>
+<cell halign ="left">0.001</cell>
+<cell halign ="left">g.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.0001</cell>
+<cell halign ="left">d.</cell>
+<cell halign ="left">0.0001</cell>
+<cell halign ="left">h.</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571599596">
+<p id="fs-id1170571599598"><m>\lim_{z\to0}<!-- Edit FRAC!--> \frac{z-1z^2(z+3)}</m></p>
+<table xml:id="fs-id1170571599643" class="unnumbered" summary="A table with four columns and five rows. The first row contains the headings z, (z-1) / ((z^2)*(z+3)), z, and (z-1) / ((z^2)*(z+3)). The values of the first column under the header are -0.1, -0.01, -0.001, and -0.0001. The values of the second column under the header are a, b, c, and d. The values of the third column under the header are 0.1, 0.01, 0.001, and 0.0001. The values of the fourth column under the header are e, f, g, and h.">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><emphasis effect="italics">z</emphasis></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{z-1z^2(z+3)}</m></cell>
+<cell halign ="left"><emphasis effect="italics">z</emphasis></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{z-1z^2(z+3)}</m></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">-0.1</cell>
+<cell halign ="left">a.</cell>
+<cell halign ="left">0.1</cell>
+<cell halign ="left">e.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.01</cell>
+<cell halign ="left">b.</cell>
+<cell halign ="left">0.01</cell>
+<cell halign ="left">f.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.001</cell>
+<cell halign ="left">c.</cell>
+<cell halign ="left">0.001</cell>
+<cell halign ="left">g.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.0001</cell>
+<cell halign ="left">d.</cell>
+<cell halign ="left">0.0001</cell>
+<cell halign ="left">h.</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+<solution id="fs-id1170572306110">
+<p id="fs-id1170572306112">a. -37.931934; b. -3377.9264; c. -333,777.93; d. -33,337,778; e. -29.032258; f. -3289.0365; g. -332,889.04; h. -33,328,889 <m>\lim_{x\to0}<!-- Edit FRAC!--> \frac{z-1z^2(z+3)}=-\infty</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571653912">
+<p id="fs-id1170571653914"><m>\lim_{t\to 0^+ }<!-- Edit FRAC!--> \frac{\text{ cos }<m:mspace width="0.1em"/>tt}</m></p>
+<table xml:id="fs-id1170571653944" class="unnumbered" summary="A table with two columns and five rows. The first row contains the headings t and cos(t) / t. The values of the first column under the header are 0.1, 0.01, 0.001, and 0.0001. The values of the second column under the header are a, b, c, and d.">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><emphasis effect="italics">t</emphasis></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{\text{ cos }<m:mspace width="0.1em"/>tt}</m></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">0.1</cell>
+<cell halign ="left">a.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.01</cell>
+<cell halign ="left">b.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.001</cell>
+<cell halign ="left">c.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.0001</cell>
+<cell halign ="left">d.</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572174646">
+<p id="fs-id1170572174648"><m>\lim_{x\to2}<!-- Edit FRAC!--> \frac{1-\frac{2}{x}x^2-4}</m></p>
+<table xml:id="fs-id1170572174696" class="unnumbered" summary="A table with four columns and five rows. The first row contains the headings x, (1- (2/x)) / (x^2 – 4 ), x, and (1-(2/x)) / (x^2 – 4). The values of the first column under the header are 1.9, 1.99, 1.999, and 1.9999. The values of the second column under the header are a, b, c, and d. The values of the third column under the header are 2.1, 2.01, 2.001, and 2.0001. The values of the fourth column under the header are e, f, g, and h.">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{1-\frac{2}{x}x^2-4}</m></cell>
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m><!-- Edit FRAC!--> \frac{1-\frac{2}{x}x^2-4}</m></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">1.9</cell>
+<cell halign ="left">a.</cell>
+<cell halign ="left">2.1</cell>
+<cell halign ="left">e.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.99</cell>
+<cell halign ="left">b.</cell>
+<cell halign ="left">2.01</cell>
+<cell halign ="left">f.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.999</cell>
+<cell halign ="left">c.</cell>
+<cell halign ="left">2.001</cell>
+<cell halign ="left">g.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.9999</cell>
+<cell halign ="left">d.</cell>
+<cell halign ="left">2.0001</cell>
+<cell halign ="left">h.</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+<solution id="fs-id1170571610862">
+<p id="fs-id1170571610864">a. 0.13495277; b. 0.12594300; c. 0.12509381; d. 0.12500938; e. 0.11614402; f. 0.12406794; g. 0.12490631; h. 0.12499063; <m>∴\lim_{x\to2}<!-- Edit FRAC!--> \frac{1-\frac{2}{x}x^2-4}=0.1250=\frac{1}{8}</m></p>
+</solution>
+
+<p id="fs-id1170571610923"><emphasis effect="bold">[T]</emphasis> In the following exercises, set up a table of values and round to eight significant digits. Based on the table of values, make a guess about what the limit is. Then, use a calculator to graph the function and determine the limit. Was the conjecture correct? If not, why does the method of tables fail?</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571610935">
+<p id="fs-id1170571610937"><m>\lim_{θ\to0}\sin (<!-- Edit FRAC!--> \frac{\piθ})</m></p>
+<table xml:id="fs-id1170571610969" class="unnumbered" summary="A table with four columns and five rows. The first row contains the headings theta, sin(pi/theta), theta, sin(pi/theta). The values of the first column under the header are -0.1, -0.01, -0.001, and -0.0001. The values of the second column under the header are a, b, c, and d. The values of the third column under the header are 0.1, 0.01, 0.001, and 0.0001. The values of the fourth column under the header are e, f, g, and h.">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><emphasis effect="italics">θ</emphasis></cell>
+<cell halign ="left"><m>\sin (<!-- Edit FRAC!--> \frac{\piθ})</m></cell>
+<cell halign ="left"><emphasis effect="italics">θ</emphasis></cell>
+<cell halign ="left"><m>\sin (<!-- Edit FRAC!--> \frac{\piθ})</m></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">-0.1</cell>
+<cell halign ="left">a.</cell>
+<cell halign ="left">0.1</cell>
+<cell halign ="left">e.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.01</cell>
+<cell halign ="left">b.</cell>
+<cell halign ="left">0.01</cell>
+<cell halign ="left">f.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.001</cell>
+<cell halign ="left">c.</cell>
+<cell halign ="left">0.001</cell>
+<cell halign ="left">g.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">-0.0001</cell>
+<cell halign ="left">d.</cell>
+<cell halign ="left">0.0001</cell>
+<cell halign ="left">h.</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572480429">
+<p id="fs-id1170572480432"><m>\lim_{α\to 0^+ }\frac{1}{α}<m:mspace width="0.1em"/>\text{ cos }<m:mspace width="0.1em"/>(<!-- Edit FRAC!--> \frac{\piα})</m></p>
+<table xml:id="fs-id1170572480472" class="unnumbered" summary="A table with two columns and five rows. The first row contains the headings A and (1/alpha) * cos(pi/alpha). The values of the first column under the header are 0.1, 0.01, 0.001, and 0.0001. The values of the second column under the header are a, b, c, and d.">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><m> a </m></cell>
+<cell halign ="left"><m>\frac{1}{α}<m:mspace width="0.1em"/>\text{ cos }<m:mspace width="0.1em"/>(<!-- Edit FRAC!--> \frac{\piα})</m></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">0.1</cell>
+<cell halign ="left">a.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.01</cell>
+<cell halign ="left">b.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.001</cell>
+<cell halign ="left">c.</cell>
+</row>
+<row valign="top">
+<cell halign ="left">0.0001</cell>
+<cell halign ="left">d.</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+<solution id="fs-id1170572243168">
+<p id="fs-id1170572243170">a. -10.00000; b. -100.00000; c. -1000.0000; d. -10,000.000; Guess: <m>\lim_{α\to 0^+ }\frac{1}{α}<m:mspace width="0.1em"/>\text{ cos }<m:mspace width="0.1em"/>(<!-- Edit FRAC!--> \frac{\piα})=\infty,</m> actual: DNE<newline/>
+<description>"A graph of the function (1/alpha) * cos (pi / alpha), which oscillates gently until the interval [-.2, .2], where it oscillates rapidly, going to infinity and negative infinity as it approaches the y axis.">
+<image source="CNX_Calc_Figure_02_02_214.jpg" width="50%">
+</p>
+</solution>
+
+<p id="fs-id1170572243236">In the following exercises, consider the graph of the function <m>y=f(x)</m> shown here. Which of the statements about <m>y=f(x)</m> are true and which are false? Explain why a statement is false.</p>
+<description>"A graph of a piecewise function with three segments and a point. The first segment is a curve opening upward with vertex at (-8, -6). This vertex is an open circle, and there is a closed circle instead at (-8, -3).  The segment ends at (-2,3), where there is a closed circle. The second segment stretches up asymptotically to infinity along x=-2, changes direction to increasing at about (0,1.25), increases until about (2.25, 3), and decreases until (6,2), where there is an open circle. The last segment starts at (6,5), increases slightly, and then decreases into quadrant four, crossing the x axis at (10,0). All of the changes in direction are smooth curves.">
+<image source="CNX_Calc_Figure_02_02_201.jpg" width="50%">
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572243293">
+<p id="fs-id1170572243295"><m>\lim_{x\to10}f(x)=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572243337">
+<p id="fs-id1170572243339"><m>\lim_{x\to-2^+}f(x)=3</m></p>
+</statement>
+<solution id="fs-id1170572217350">
+<p id="fs-id1170572217353">False; <m>\lim_{x\to-2^+}f(x)=-\infty</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572217397">
+<p id="fs-id1170572217399"><m>\lim_{x\to-8}f(x)=f(-8)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572217505">
+<p id="fs-id1170572217507"><m>\lim_{x\to6}f(x)=5</m></p>
+</statement>
+<solution id="fs-id1170572548969">
+<p id="fs-id1170572548971">False; <m>\lim_{x\to6}f(x)</m> DNE since <m>\lim_{x\to 6^- }f(x)=2</m> and <m>\lim_{x\to 6^+ }f(x)=5.</m></p>
+</solution>
+
+<p id="fs-id1170572549072">In the following exercises, use the following graph of the function <m>y=f(x)</m> to find the values, if possible. Estimate when necessary.</p>
+<description>"A graph of a piecewise function with two segments. The first segment exists for x \lt =1, and the second segment exists for x \gt  1. The first segment is linear with a slope of 1 and goes through the origin. Its endpoint is a closed circle at (1,1). The second segment is also linear with a slope of -1. It begins with the open circle at (1,2).">
+<image source="CNX_Calc_Figure_02_02_202.jpg" width="50%">
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572549109">
+<p id="fs-id1170572549112"><m>\lim_{x\to 1^- }f(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572549153">
+<p id="fs-id1170572549155"><m>\lim_{x\to 1^+ }f(x)</m></p>
+</statement>
+<solution id="fs-id1170572540759">
+<p id="fs-id1170572540762">2</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572540769">
+<p id="fs-id1170572540771"><m>\lim_{x\to1}f(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572540809">
+<p id="fs-id1170572540812"><m>\lim_{x\to2}f(x)</m></p>
+</statement>
+<solution id="fs-id1170572540840">
+<p id="fs-id1170572540842">1</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572540850">
+<p id="fs-id1170572540852"><m>f(1)</m></p>
+</statement>
+
+<p id="fs-id1170572540874">In the following exercises, use the graph of the function <m>y=f(x)</m> shown here to find the values, if possible. Estimate when necessary.</p>
+<description>"A graph of a piecewise function with two segments. The first is a linear function for x \lt  0. There is an open circle at (0,1), and its slope is -1. The second segment is the right half of a parabola opening upward. Its vertex is a closed circle at (0, -4), and it goes through the point (2,0).">
+<image source="CNX_Calc_Figure_02_02_203.jpg" width="50%">
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572540911">
+<p id="fs-id1170572540913"><m>\lim_{x\to 0^- }f(x)</m></p>
+</statement>
+<solution id="fs-id1170571563280">
+<p id="fs-id1170571563282">1</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571563290">
+<p id="fs-id1170571563292"><m>\lim_{x\to 0^+ }f(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571563334">
+<p id="fs-id1170571563336"><m>\lim_{x\to0}f(x)</m></p>
+</statement>
+<solution id="fs-id1170571563364">
+<p id="fs-id1170571563366">DNE</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571563374">
+<p id="fs-id1170571563376"><m>\lim_{x\to2}f(x)</m></p>
+</statement>
+
+<p id="fs-id1170571563412">In the following exercises, use the graph of the function <m>y=f(x)</m> shown here to find the values, if possible. Estimate when necessary.</p>
+<description>"A graph of a piecewise function with three segments, all linear. The first exists for x \lt  -2, has a slope of 1, and ends at the open circle at (-2, 0). The second exists over the interval [-2, 2], has a slope of -1, goes through the origin, and has closed circles at its endpoints (-2, 2) and (2,-2). The third exists for x\gt 2, has a slope of 1, and begins at the open circle (2,2).">
+<image source="CNX_Calc_Figure_02_02_204.jpg" width="50%">
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571563450">
+<p id="fs-id1170571563452"><m>\lim_{x\to -2^-}f(x)</m></p>
+</statement>
+<solution id="fs-id1170572624061">
+<p id="fs-id1170572624064">0</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572624071">
+<p id="fs-id1170572624073"><m>\lim_{x\to-2^+}f(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572624117">
+<p id="fs-id1170572624119"><m>\lim_{x\to-2}f(x)</m></p>
+</statement>
+<solution id="fs-id1170572624150">
+<p id="fs-id1170572624152">DNE</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572624159">
+<p id="fs-id1170572624161"><m>\lim_{x\to 2^- }f(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572624203">
+<p id="fs-id1170572624205"><m>\lim_{x\to $1^+ }f(x)</m></p>
+</statement>
+<solution id="fs-id1170572624237">
+<p id="fs-id1170572624239">2</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572624246">
+<p id="fs-id1170572624249"><m>\lim_{x\to2}f(x)</m></p>
+</statement>
+
+<p id="fs-id1170572380917">In the following exercises, use the graph of the function <m>y=g(x)</m> shown here to find the values, if possible. Estimate when necessary.</p>
+<description>"A graph of a piecewise function with two segments. The first exists for x\gt =0 and is the left half of an upward opening parabola with vertex at the closed circle (0,3). The second exists for x\gt 0 and is the right half of a downward opening parabola with vertex at the open circle (0,0).">
+<image source="CNX_Calc_Figure_02_02_205.jpg" width="50%">
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572380956">
+<p id="fs-id1170572380958"><m>\lim_{x\to 0^- }g(x)</m></p>
+</statement>
+<solution id="fs-id1170572380990">
+<p id="fs-id1170572380992">3</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572380999">
+<p id="fs-id1170572381001"><m>\lim_{x\to 0^+ }g(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572381043">
+<p id="fs-id1170572381045"><m>\lim_{x\to0}g(x)</m></p>
+</statement>
+<solution id="fs-id1170572381074">
+<p id="fs-id1170572381076">DNE</p>
+</solution>
+
+<p id="fs-id1170572381081">In the following exercises, use the graph of the function <m>y=h(x)</m> shown here to find the values, if possible. Estimate when necessary.</p>
+<description>"A graph of a function with two curves approaching 0 from quadrant 1 and quadrant 3. The curve in quadrant one appears to be the top half of a parabola opening to the right of the y axis along the x axis with vertex at the origin. The curve in quadrant three appears to be the left half of a parabola opening downward with vertex at the origin.">
+<image source="CNX_Calc_Figure_02_02_206.jpg" width="50%">
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572372620">
+<p id="fs-id1170572372622"><m>\lim_{x\to 0^- }h(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572372664">
+<p id="fs-id1170572372666"><m>\lim_{x\to 0^+ }h(x)</m></p>
+</statement>
+<solution id="fs-id1170572372698">
+<p id="fs-id1170572372700">0</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572372708">
+<p id="fs-id1170572372710"><m>\lim_{x\to0}h(x)</m></p>
+</statement>
+
+<p id="fs-id1170572372746">In the following exercises, use the graph of the function <m>y=f(x)</m> shown here to find the values, if possible. Estimate when necessary.</p>
+<description>"A graph with a curve and a point. The point is a closed circle at (0,-2). The curve is part of an upward opening parabola with vertex at (1,-1). It exists for x \gt  0, and there is a closed circle at the origin.">
+<image source="CNX_Calc_Figure_02_02_207.jpg" width="50%">
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572372782">
+<p id="fs-id1170572372784"><m>\lim_{x\to 0^- }f(x)</m></p>
+</statement>
+<solution id="fs-id1170572267932">
+<p id="fs-id1170572267934">-2</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572267942">
+<p id="fs-id1170572267944"><m>\lim_{x\to 0^+ }f(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572267985">
+<p id="fs-id1170572267988"><m>\lim_{x\to0}f(x)</m></p>
+</statement>
+<solution id="fs-id1170572268016">
+<p id="fs-id1170572268018">DNE</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572268026">
+<p id="fs-id1170572268028"><m>\lim_{x\to1}f(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572268066">
+<p id="fs-id1170572268068"><m>\lim_{x\to2}f(x)</m></p>
+</statement>
+<solution id="fs-id1170572268097">
+<p id="fs-id1170572268099">0</p>
+</solution>
+
+<p id="fs-id1170572268104">In the following exercises, sketch the graph of a function with the given properties.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572268110">
+<p id="fs-id1170572268112"><m>\lim_{x\to2}f(x)=1,\lim_{x\to 4^- }f(x)=3,\lim_{x\to 4^+ }f(x)=6,x=4</m> is not defined.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572219516">
+<p id="fs-id1170572219518"><m>\lim_{x\to-\infty}f(x)=0,\lim_{x\to -1^-}f(x)=-\infty,</m> <m>\lim_{x\to-1^+}f(x)=\infty,\lim_{x\to0}f(x)=f(0),f(0)=1,\lim_{x\to\infty}f(x)=-\infty</m></p>
+</statement>
+<solution id="fs-id1170572435003">
+<p id="fs-id1170572435005">Answers may vary.<newline/>
+<description>"A graph of a piecewise function with two segments. The first segment is in quadrant three and asymptotically goes to negative infinity along the y axis and 0 along the x axis. The second segment consists of two curves. The first appears to be the left half of an upward opening parabola with vertex at (0,1). The second appears to be the right half of a downward opening parabola with vertex at (0,1) as well.">
+<image source="CNX_Calc_Figure_02_02_209.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572435029">
+<p id="fs-id1170572435031"><m>\lim_{x\to-\infty}f(x)=2,\lim_{x\to 3^- }f(x)=-\infty,</m> <m>\lim_{x\to 3^+ }f(x)=\infty,\lim_{x\to\infty}f(x)=2,f(0)= \frac{-1}{3}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572590128">
+<p id="fs-id1170572590130"><m>\lim_{x\to-\infty}f(x)=2,\lim_{x\to-2}f(x)=-\infty,</m> <m>\lim_{x\to\infty}f(x)=2,f(0)=0</m></p>
+</statement>
+<solution id="fs-id1170572552617">
+<p id="fs-id1170572552619">Answers may vary.<newline/>
+<description>"A graph containing two curves. The first goes to 2 asymptotically along y=2 and to negative infinity along x = -2. The second goes to negative infinity along x=-2 and to 2 along y=2.">
+<image source="CNX_Calc_Figure_02_02_211.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572552640">
+<p id="fs-id1170572552642"><m>\lim_{x\to-\infty}f(x)=0,\lim_{x\to<m:msup>-1-</m:msup>}f(x)=\infty,\lim_{x\to-1^+}f(x)=-\infty,</m> <m>f(0)=-1,\lim_{x\to 1^- }f(x)=-\infty,\lim_{x\to 1^+ }f(x)=\infty,\lim_{x\to\infty}f(x)=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572128795">
+<p id="fs-id1170572128797">Shock waves arise in many physical applications, ranging from supernovas to detonation waves. A graph of the density of a shock wave with respect to distance, <m>x</m>, is shown here. We are mainly interested in the location of the front of the shock, labeled <m><m:msub>x\text{ SF }</m:msub></m> in the diagram.</p>
+<description>"A graph in quadrant one of the density of a shockwave with three labeled points: p1 and p2 on the y axis, with p1 \gt  p2, and xsf on the x axis. It consists of y= p1 from 0 to xsf, x = xsf from y= p1 to y=p2, and y=p2 for values greater than or equal to xsf.">
+<image source="CNX_Calc_Figure_02_02_215.jpg" width="50%">
+
+<ol>
+<li>Evaluate <m>\lim_{x\to<m:msub>xSF</m:msub><m:msup><m:mrow/>+</m:msup>}ρ(x).</m></li>
+<li>Evaluate <m>\lim_{x\to<m:msub>xSF</m:msub><m:msup><m:mrow/>-</m:msup>}ρ(x).</m></li>
+<li>Evaluate <m>\lim_{x\to<m:msub>xSF</m:msub>}ρ(x).</m> Explain the physical meanings behind your answers.</li>
+</ol>
+</statement>
+<solution id="fs-id1170572478063">
+<p id="fs-id1170572478066">a. <m>ρ_2</m> b. <m>ρ_1</m> c. DNE unless <m>ρ_1=ρ_2.</m> As you approach <m><m:msub>x\text{ SF }</m:msub></m> from the right, you are in the high-density area of the shock. When you approach from the left, you have not experienced the “shock” yet and are at a lower density.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572478120">
+<p id="fs-id1170572478122">A track coach uses a camera with a fast shutter to estimate the position of a runner with respect to time. A table of the values of position of the athlete versus time is given here, where <m>x</m> is the position in meters of the runner and <emphasis effect="italics">t</emphasis> is time in seconds. What is <m>\lim_{t\to2}x(t)?</m> What does it mean physically?</p>
+<table xml:id="fs-id1170572541741" class="unnumbered" summary="A table with two columns and seven rows. The first row contains the headings t (sec) and x (m). The values of the first column under the header are 1.75, 1.95, 1.99, 2.01, 2.05, and 2.25. The values of the second column under the header are 4.5, 6.1, 6.42, 6.58, 6.9, and 8.5.">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row valign="top">
+<cell halign ="left"><emphasis effect="italics">t</emphasis> <emphasis effect="bold">(sec)</emphasis></cell>
+<cell halign ="left"><m>x</m> <emphasis effect="bold">(m)</emphasis></cell>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<cell halign ="left">1.75</cell>
+<cell halign ="left">4.5</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.95</cell>
+<cell halign ="left">6.1</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1.99</cell>
+<cell halign ="left">6.42</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2.01</cell>
+<cell halign ="left">6.58</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2.05</cell>
+<cell halign ="left">6.9</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2.25</cell>
+<cell halign ="left">8.5</cell>
+</row>
+</tbody>
+</tgroup>
+</table>
+</statement>
+
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1170572541944">
+<term>infinite limit</term>
+<meaning id="fs-id1170572541950">A function has an infinite limit at a point <m> a </m> if it either increases or decreases without bound as it approaches <m> a </m></meaning>
+</definition>
+<definition id="fs-id1170572467930">
+<term>intuitive definition of the limit</term>
+<meaning id="fs-id1170572467935">If all values of the function <m>f(x)</m> approach the real number <m> L </m> as the values of <m>x(\neq a)</m> approach <m> a </m>, <m>f(x)</m> approaches <m> L </m></meaning>
+</definition>
+<definition id="fs-id1170572467997">
+<term>one-sided limit</term>
+<meaning id="fs-id1170572468002">A one-sided limit of a function is a limit taken from either the left or the right</meaning>
+</definition>
+<definition id="fs-id1170572468006">
+<term>vertical asymptote</term>
+<meaning id="fs-id1170572468012">A function has a vertical asymptote at <m>x=a</m> if the limit as <m>x</m> approaches <m> a </m> from the right or left is infinite</meaning>
+</definition>
+</glossary>
+</document>
+?>

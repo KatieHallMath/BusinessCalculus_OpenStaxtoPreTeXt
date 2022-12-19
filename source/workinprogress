@@ -1,0 +1,944 @@
+ Suppose the data in <xref ref="fs-id1170573493744"/> show the number of units a company sells as a function of the price per item.</p>
+<table xml:id="fs-id1170573493744" summary="A table with 2 rows and 5 columns. The first row is labeled &#x201C;p&#x201D; and has the values &#x201C;6; 8; 10; 12; 14&#x201D;. The second row is labeled &#x201C;n&#x201D; and has the values &#x201C;19.4; 18.5; 16.2; 13.8; 12.2&#x201D;." class="column-header">
+<title>Number of Units Sold <m>n</m> (in Thousands) as a Function of Price per Unit <m>p</m> (in Dollars)</title>
+<tgroup cols="6">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<tbody>
+<row valign="top">
+<entry align="left"><m><m:mtext mathvariant="bold-italic">p</m:mtext></m></entry>
+<entry align="left"><m> 6 </m></entry>
+<entry align="left"><m> 8 </m></entry>
+<entry align="left"><m> 10 </m></entry>
+<entry align="left"><m> 12 </m></entry>
+<entry align="left"><m> 14 </m></entry>
+</row>
+<row valign="top">
+<entry align="left"><m><m:mtext mathvariant="bold-italic">n</m:mtext></m></entry>
+<entry align="center"><m> 19.4 </m></entry>
+<entry align="center"><m> 18.5 </m></entry>
+<entry align="center"><m> 16.2 </m></entry>
+<entry align="center"><m> 13.8 </m></entry>
+<entry align="center"><m> 12.2 </m></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p id="fs-id1170573355032">In <xref ref="CNX_Calc_Figure_01_02_008"/>, we see the graph the number of units sold (in thousands) as a function of price (in dollars). We note from the shape of the graph that the number of units sold is likely a linear function of price per item, and the data can be closely approximated by the linear function <m>n= −1.04 p+ 26 </m> for <m> 0 \leq p\leq  25 ,</m> where <m>n</m> predicts the number of units sold in thousands. Using this linear function, the revenue (in thousands of dollars) can be estimated by the quadratic function</p>
+<me>R(p)=p·( −1.04 p+ 26 )= −1.04 <m:msup>p 2 </m:msup>+ 26 p</me>
+<p id="fs-id1170573419099">for <m> 0 \leq p\leq  25 .</m> In <xref ref="fs-id1170573569241"/>, we use this quadratic function to predict the amount of revenue the company receives depending on the price the company charges per item. Note that we cannot conclude definitively the actual number of units sold for values of <m>p,</m> for which no data are collected. However, given the other data values and the graph shown, it seems reasonable that the number of units sold (in thousands) if the price charged is <m>p</m> dollars may be close to the values predicted by the linear function <m>n= −1.04 p+ 26 .</m></p>
+<figure xml:id="CNX_Calc_Figure_01_02_008">
+<description>"An image of a graph. The y axis runs from 0 to 28 and is labeled &#x201C;n, units sold in thousands&#x201D;. The x axis runs from 0 to 28 and is labeled &#x201C;p, price in dollars&#x201D;. The graph is of the function &#x201C;n = -1.04p + 26&#x201D;, which is a decreasing line function that starts at the y intercept point (0, 26). There are 5 points plotted on the graph at (6, 19.4), (8, 18.5), (10, 16.2), (12, 13.8), and (14, 12.2). The points are not on the graph of the function line, but are very close to it. The function has an x intercept at the point (25, 0).">
+<image source="CNX_Calc_Figure_01_02_008.jpg" width="50%">
+
+<!-- NOTE: Move description inside image tag. --> </description> </image> <caption>The data collected for the number of items sold as a function of price is roughly linear. We use the linear function <m>n= −1.04 p+ 26 </m> to estimate this function.</caption>
+</figure>
+<example id="fs-id1170573569241">
+
+<!-- Move title outside statement--> <statement id="fs-id1170573417595">
+<title>Maximizing Revenue</title>
+<p id="fs-id1170573417597">A company is interested in predicting the amount of revenue it will receive depending on the price it charges for a particular item. Using the data from <xref ref="fs-id1170573493744"/>, the company arrives at the following quadratic function to model revenue <m>R</m> as a function of price per item <m>p:</p>  <!-- weird here-->
+<me>R(p)=p·( −1.04 p+ 26 )= −1.04 <m:msup>p 2 </m:msup>+ 26 p</me>
+<p id="fs-id1170573398640">for <m> 0 \leq p\leq  25 .</m></p>
+<ol>
+<li>Predict the revenue if the company sells the item at a price of <m>p=\$ 5 /<m> and <m>p=\$ 17 .</m></li>
+<li>Find the zeros of this function and interpret the meaning of the zeros.</li>
+<li>Sketch a graph of <m>R.</m></li>
+<li>Use the graph to determine the value of <m>p</m> that maximizes revenue. Find the maximum revenue.</li>
+</ol>
+</statement>
+<solution id="fs-id1170573356030">
+<ol>
+<li>Evaluating the revenue function at <m>p= 5 </m> and <m>p= 17 ,</m> we can conclude that<newline/>
+<!--weird-->
+<equation xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170573413586" class="unnumbered"><label/><m><m:mtable><m:mtr/><m:mtr><m:mtd columnalign="left">R( 5 )= −1.04 <m:msup>( 5 ) 2 </m:msup>+ 26 ( 5 )= 104 , <m:mtext>so revenue</m:mtext> = <m:mtext>$104,000;</m:mtext></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left">R( 17 )= −1.04 <m:msup>( 17 ) 2 </m:msup>+ 26 ( 17 )= 141.44 , <m:mtext>so revenue</m:mtext> = <m:mtext>$144,440.</m:mtext></m:mtd></m:mtr></m:mtable></me></li>
+<li>The zeros of this function can be found by solving the equation <m> −1.04 <m:msup>p 2 </m:msup>+ 26 p= 0 .</m> When we factor the quadratic expression, we get <m>p( −1.04 p+ 26 )= 0 .</m> The solutions to this equation are given by <m>p= 0 , 25 .</m> For these values of <m>p,</m> the revenue is zero. When <m>p=\$ 0 ,</m> the revenue is zero because the company is giving away its merchandise for free. When <m>p=\$ 25 ,</m> the revenue is zero because the price is too high, and no one will buy any items.</li>
+<li>Knowing the fact that the function is quadratic, we also know the graph is a parabola. Since the leading coefficient is negative, the parabola opens downward. One property of parabolas is that they are symmetric about the axis, so since the zeros are at <m>p= 0 </m> and <m>p= 25 ,</m> the parabola must be symmetric about the line halfway between them, or <m>p= 12.5 .</m><newline/>
+<description>"An image of a graph. The y axis runs from 0 to 170 and is labeled &#x201C;R, revenue in thousands of dollars&#x201D;. The x axis runs from 0 to 28 and is labeled &#x201C;p, price in dollars&#x201D;. The graph is of the function &#x201C;n = -1.04(p squared) + 26p&#x201D;, which is a parabola that starts at the origin. The function increases until the maximum point at (12.5, 162.5) and then begins decreasing. The function has x intercepts at the origin and the point (25, 0). The y intercept is at the origin.">
+<image source="CNX_Calc_Figure_01_02_009.jpg" width="50%">
+</li>
+<li>The function is a parabola with zeros at <m>p= 0 </m> and <m>p= 25 ,</m> and it is symmetric about the line <m>p= 12.5 ,</m> so the maximum revenue occurs at a price of <m>p=\$ 12.50 </m> per item. At that price, the revenue is <m>R(p)= −1.04 <m:msup>( 12.5 ) 2 </m:msup>+ 26 ( 12.5 )=\$ 162 , 500 .</m></li>
+</ol>
+</solution>
+
+</example>
+</section>
+</section>
+<section id="fs-id1170573418015">
+<title>Algebraic Functions</title>
+<p id="fs-id1170573581900">By allowing for quotients and fractional powers in polynomial functions, we create a larger class of functions. An <term>algebraic function</term> is one that involves addition, subtraction, multiplication, division, rational powers, and roots. Two types of algebraic functions are rational functions and root functions.</p>
+<p id="fs-id1170573420004">Just as rational numbers are quotients of integers, rational functions are quotients of polynomials. In particular, a <term>rational function</term> is any function of the form <m>f(x)=p(x) /q(x),</m> where <m>p(x)</m> and <m>q(x)</m> are polynomials. For example,</p>
+<me>f(x)=<!-- Edit FRAC!--> \frac{ 3 x− 1  5 x+ 2 }<m:mspace width="3em"/>\text{ and }<m:mspace width="3em"/>g(x)=<!-- Edit FRAC!--> \frac{ 4 x^2 + 1 }</me>
+<p id="fs-id1170573362465">are rational functions. A <term>root function</term> is a power function of the form <m>f(x)=<m:msup>x 1  /n</m:msup>,</m> where <m>n</m> is a positive integer greater than one. For example, <m>f(x)=<m:msup>x 1  / 2 </m:msup>=\sqrt{x}</m> is the square-root function and <m>g(x)=<m:msup>x 1  / 3 </m:msup>=<m:mroot>x 3 </m:mroot></m> is the cube-root function. By allowing for compositions of root functions and rational functions, we can create other algebraic functions. For example, <m>f(x)=\sqrt{ 4 −x^2 }</m> is an algebraic function.</p>
+<example id="fs-id1170573533981">
+
+<!-- Move title outside statement--> <statement id="fs-id1170573533988">
+<title>Finding Domain and Range for Algebraic Functions</title>
+<p id="fs-id1170573533990">For each of the following functions, find the domain and range.</p>
+<ol>
+<li><m>f(x)=<!-- Edit FRAC!--> \frac{ 3 x− 1  5 x+ 2 }</m></li>
+<li>
+To find the domain of <m>f</m>, we need <m> 4 –x^2 \geq  0 </m>. Or, <m> 4 \geq x^2 </m> Or <m>x^2 \leq  4 </m>, the solution to which is <m>– 2 \leq x\leq  2 </m>. Therefore, the domain is <m>
+{x|– 2 \leq x\leq  2 }
+</m>. If <m>– 2 \leq x\leq  2 </m>, then <m> 0 \leq  4 –x^2 \leq  4 </m>. Therefore, <m> 0 \leq \sqrt{ 4 –x^2 }\leq  2 </m> and the range of <m>f</m> is <m>{y| 0 \leq x\leq  2 }</m>.
+
+</li>
+</ol>
+</statement>
+<solution id="fs-id1170573442524">
+<ol>
+<li>It is not possible to divide by zero, so the domain is the set of real numbers <m>x</m> such that <m>x\neq - 2  / 5 .</m> To find the range, we need to find the values <m>y</m> for which there exists a real number <m>x</m> such that<me>y=<!-- Edit FRAC!--> \frac{ 3 x− 1  5 x+ 2 }.</me><newline/>
+When we multiply both sides of this equation by <m> 5 x+ 2 ,</m> we see that <m>x</m> must satisfy the equation<me> 5 xy+ 2 y= 3 x− 1 .</me><newline/>
+<p id="fs-id1170573361465">From this equation, we can see that <m>x</m> must satisfy</p>
+<me> 2 y+ 1 =x( 3 − 5 y).</me><newline/>
+If <m>y= 3  / 5 ,</m> this equation has no solution. On the other hand, as long as <m>y\neq  3  / 5 ,</m><me>x=<!-- Edit FRAC!--> \frac{ 2 y+ 1  3 − 5 y}</me><newline/>
+satisfies this equation. We can conclude that the range of <m>f</m> is <m>{y|y\neq  3  / 5 }.</m></li>
+<li>To find the domain of <m>f,</m> we need <m> 4 −x^2 \geq  0 .</m> When we factor, we write <m> 4 −x^2 =( 2 −x)( 2 +x)\geq  0 .</m> This inequality holds if and only if both terms are positive or both terms are negative. For both terms to be positive, we need to find <m>x</m> such that<me> 2 −x\geq  0 <m:mspace width="2em"/>\text{ and }<m:mspace width="2em"/> 2 +x\geq  0 .</me><newline/>
+These two inequalities reduce to <m> 2 \geq x</m> and <m>x\geq  −2 .</m> Therefore, the set <m>{x|− 2 \leq x\leq  2 }</m> must be part of the domain. For both terms to be negative, we need<me> 2 −x\leq  0 <m:mspace width="2em"/>\text{ and }<m:mspace width="2em"/> 2 +x\geq  0 .</me><newline/>
+These two inequalities also reduce to <m> 2 \leq x</m> and <m>x\geq  −2 .</m> There are no values of <m>x</m> that satisfy both of these inequalities. Thus, we can conclude the domain of this function is <m>{x|− 2 \leq x\leq  2 }.</m><newline/>
+If <m> −2 \leq x\leq  2 ,</m> then <m> 0 \leq  4 −x^2 \leq  4 .</m> Therefore, <m> 0 \leq \sqrt{ 4 −x^2 }\leq  2 ,</m> and the range of <m>f</m> is <m>{y| 0 \leq y\leq  2 }.</m></li>
+</ol>
+</solution>
+
+</example>
+<exercise>
+<!-- Move title outside statement--> <statement id="fs-id1170573419982">
+<p id="fs-id1170573419984">Find the domain and range for the function <m>f(x)=( 5 x+ 2 ) /( 2 x− 1 ).</m></p>
+</statement>
+<solution id="fs-id1170573361747">
+<p id="fs-id1170573361749">The domain is the set of real numbers <m>x</m> such that <m>x\neq  1  / 2 .</m> The range is the set <m>{y|y\neq  5  / 2 }.</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042095747">The denominator cannot be zero. Solve the equation <m>y=( 5 x+ 2 ) /( 2 x− 1 )</m> for <m>x</m> to find the range.</p>
+</hint>
+</note>
+<p id="fs-id1170573351913">The root functions <m>f(x)=<m:msup>x 1  /n</m:msup></m> have defining characteristics depending on whether <m>n</m> is odd or even. For all even integers <m>n\geq  2 ,</m> the domain of <m>f(x)=<m:msup>x 1  /n</m:msup></m> is the interval <m>[ 0 ,\infty).</m> For all odd integers <m>n\geq  1 ,</m> the domain of <m>f(x)=<m:msup>x 1  /n</m:msup></m> is the set of all real numbers. Since <m><m:msup>x 1  /n</m:msup>=<m:msup>(-x) 1  /n</m:msup></m> for odd integers <m>n,f(x)=<m:msup>x 1  /n</m:msup></m> is an odd function if <m>n</m> is odd. See the graphs of root functions for different values of <m>n</m> in <xref ref="CNX_Calc_Figure_01_02_022"/>.</p>
+<figure xml:id="CNX_Calc_Figure_01_02_022">
+<description>"An image of two graphs. The first graph is labeled &#x201C;a&#x201D; and has an x axis that runs from -2 to 9 and a y axis that runs from -4 to 4. The first graph is of two functions. The first function is &#x201C;f(x) = square root of x&#x201D;, which is a curved function that begins at the origin and increases. The second function is &#x201C;f(x) = x to the 4th root&#x201D;, which is a curved function that begins at the origin and increases, but increases at a slower rate than the first function. The second graph is labeled &#x201C;b&#x201D; and has an x axis that runs from -8 to 8 and a y axis that runs from -4 to 4. The second graph is of two functions. The first function is &#x201C;f(x) = cube root of x&#x201D;, which is a curved function that increases until the origin, becomes vertical at the origin, and then increases again after the origin. The second function is &#x201C;f(x) = x to the 5th root&#x201D;, which is a curved function that increases until the origin, becomes vertical at the origin, and then increases again after the origin, but increases at a slower rate than the first function.">
+<image source="CNX_Calc_Figure_01_02_022.jpg" width="50%">
+
+<!-- NOTE: Move description inside image tag. --> </description> </image> <caption>(a) If <m>n</m> is even, the domain of <m>f(x)=<m:mroot>xn</m:mroot></m> is <m>[ 0 ,\infty).</m> (b) If <m>n</m> is odd, the domain of <m>f(x)=<m:mroot>xn</m:mroot></m> is <m>(-\infty,\infty)</m> and the function <m>f(x)=<m:mroot>xn</m:mroot></m> is an odd function.</caption>
+</figure>
+<example id="fs-id1170573415022">
+
+<!-- Move title outside statement--> <statement id="fs-id1170573415030">
+<title>Finding Domains for Algebraic Functions</title>
+<p id="fs-id1170573415032">For each of the following functions, determine the domain of the function.</p>
+<ol>
+<li><m>f(x)=<!-- Edit FRAC!--> \frac{ 3 x^2 − 1 }</m></li>
+<li><m>f(x)=<!-- Edit FRAC!--> \frac{ 2 x+ 5  3 x^2 + 4 }</m></li>
+<li><m>f(x)=\sqrt{ 4 − 3 x}</m></li>
+<li><m>f(x)=<m:mroot> 2 x− 1  3 </m:mroot></m></li>
+</ol>
+</statement>
+<solution id="fs-id1170573356387">
+<ol>
+<li>You cannot divide by zero, so the domain is the set of values <m>x</m> such that <m>x^2 − 1 \neq  0 .</m> Therefore, the domain is <m>{x|x\neq \pm 1 }.</m></li>
+<li>You need to determine the values of <m>x</m> for which the denominator is zero. Since <m> 3 x^2 + 4 \geq  4 </m> for all real numbers <m>x,</m> the denominator is never zero. Therefore, the domain is <m>(-\infty,\infty).</m></li>
+<li>Since the square root of a negative number is not a real number, the domain is the set of values <m>x</m> for which <m> 4 − 3 x\geq  0 .</m> Therefore, the domain is <m>{x|x\leq  4  / 3 }.</m></li>
+<li>The cube root is defined for all real numbers, so the domain is the interval <m>(-\infty,\infty)</m></li>
+</ol>
+</solution>
+
+</example>
+<exercise>
+
+<!-- Move title outside statement--> <statement id="fs-id1170573502744">
+<p id="fs-id1170573502746">Find the domain for each of the following functions: <m>f(x)=( 5 − 2 x) /(x^2 + 2 )</m> and <m>g(x)=\sqrt{ 5 x− 1 }.</m></p>
+</statement>
+<solution id="fs-id1170573534211">
+<p id="fs-id1170573534213">The domain of <m>f</m> is <m>(-\infty,\infty)</m> The domain of <m>g</m> is <m>{x|x\geq  1  / 5 }.</m></p>
+</solution>
+<hint>
+
+<p id="fs-id1165041839824">Determine the values of <m>x</m> when the expression in the denominator of <m>f</m> is nonzero, and find the values of <m>x</m> when the expression inside the radical of <m>g</m> is nonnegative.</p>
+</hint>
+
+</note>
+</section>
+<section id="fs-id1170573354775">
+<title>Transcendental Functions</title>
+<p id="fs-id1170573354780">Thus far, we have discussed algebraic functions. Some functions, however, cannot be described by basic algebraic operations. These functions are known as <term>transcendental functions</term> because they are said to “transcend,” or go beyond, algebra. The most common transcendental functions are trigonometric, exponential, and logarithmic functions. A <emphasis effect="italics">trigonometric function</emphasis> relates the ratios of two sides of a right triangle. They are <m>sinx,cosx,tanx,cotx,secx,\text{ and } cscx.</m> (We discuss trigonometric functions later in the chapter.) An exponential function is a function of the form <m>f(x)=<m:msup>bx</m:msup>,</m> where the base <m>b\gt  0 ,b\neq  1 .</m> A <term>logarithmic function</term> is a function of the form <m>f(x)=<m:msub>logb</m:msub>(x)</m> for some constant <m>b\gt  0 ,b\neq  1 ,</m> where <m><m:msub>logb</m:msub>(x)=y</m> if and only if <m><m:msup>by</m:msup>=x.</m> (We also discuss exponential and logarithmic functions later in the chapter.)</p>
+<example id="fs-id1170573359428">
+
+<!-- Move title outside statement--> <statement id="fs-id1170573359435">
+<title>Classifying Algebraic and Transcendental Functions</title>
+<p id="fs-id1170573359437">Classify each of the following functions, a. through c., as algebraic or transcendental.</p>
+<ol>
+<li><m>f(x)=<!-- Edit FRAC!--> \frac{\sqrt{x^3 + 1 } 4 x+ 2 }</m></li>
+<li><m>f(x)=<m:msup> 2 x^2 </m:msup></m></li>
+<li><m>f(x)=\sin( 2 x)</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170573502841">
+<ol>
+<li>Since this function involves basic algebraic operations only, it is an algebraic function.</li>
+<li>This function cannot be written as a formula that involves only basic algebraic operations, so it is transcendental. (Note that algebraic functions can only have powers that are rational numbers.)</li>
+<li>As in part b., this function cannot be written using a formula involving basic algebraic operations only; therefore, this function is transcendental.</li>
+</ol>
+</solution>
+
+</example>
+<exercise>
+
+<!-- Move title outside statement--> <statement id="fs-id1170573420617">
+<p id="fs-id1170573577836">Is <m>f(x)=x / 2 <m> an algebraic or a transcendental function?</p>
+</statement>
+<solution id="fs-id1170573577861">
+<p id="fs-id1170573577863">Algebraic</p>
+</solution>
+
+</note>
+</section>
+<section id="fs-id1170573534040">
+<title>Piecewise-Defined Functions</title>
+<p id="fs-id1170573534045">Sometimes a function is defined by different formulas on different parts of its domain. A function with this property is known as a <term>piecewise-defined function</term>. The absolute value function is an example of a piecewise-defined function because the formula changes with the sign of </mx:</p>
+<me>f(x)={<m:mtable><m:mtr><m:mtd>-x,x\lt  0 </m:mtd></m:mtr><m:mtr><m:mtd>x,x\geq  0 </m:mtd></m:mtr></m:mtable>.</me>
+<p id="fs-id1170573439264">Other piecewise-defined functions may be represented by completely different formulas, depending on the part of the domain in which a point falls. To graph a piecewise-defined function, we graph each part of the function in its respective domain, on the same coordinate system. If the formula for a function is different for <m>x\lt a</m> and <m>x\gt a,<\m> we need to pay special attention to what happens at <m>x=a</m> when we graph the function. Sometimes the graph needs to include an open or closed circle to indicate the value of the function at <m>x=a.</m> We examine this in the next example.</p>
+<example id="fs-id1170573574369">
+
+<!-- Move title outside statement--> <statement id="fs-id1170573574377">
+<title>Graphing a Piecewise-Defined Function</title>
+<p id="fs-id1170573574379">Sketch a graph of the following piecewise-defined function:</p>
+<me>f(x)={<m:mtable columnalign="left"><m:mtr><m:mtd>x+ 3 ,<m:mspace width="3em"/>x\lt  1 </m:mtd></m:mtr><m:mtr><m:mtd><m:msup>(x− 2 ) 2 </m:msup>,<m:mspace width="1.5em"/>x\geq  1 </m:mtd></m:mtr></m:mtable>.</me>
+</statement>
+<solution id="fs-id1170573569580">
+<p id="fs-id1170573569585">Graph the linear function <m>y=x+ 3 </m> on the interval <m>(-\infty, 1 )</m> and graph the quadratic function <m>y=<m:msup>(x− 2 ) 2 </m:msup></m> on the interval <m>[ 1 ,\infty).</m> Since the value of the function at <m>x= 1 </m> is given by the formula <m>f(x)=<m:msup>(x− 2 ) 2 </m:msup>,</m> we see that <m>f( 1 )= 1 .</m> To indicate this on the graph, we draw a closed circle at the point <m>( 1 , 1 ).</m> The value of the function is given by <m>f(x)=x+ 2 </m> for all <m>x\lt  1 ,</m> but not at <m>x= 1 .</m> To indicate this on the graph, we draw an open circle at <m>( 1 , 4 ).</m></p>
+<figure xml:id="CNX_Calc_Figure_01_02_011">
+<description>"An image of a graph. The x axis runs from -7 to 5 and the y axis runs from -4 to 6. The graph is of a function that has two pieces. The first piece is an increasing line that ends at the open circle point (1, 4) and has the label &#x201C;f(x) = x + 3, for x \lt  1&#x201D;. The second piece is parabolic and begins at the closed circle point (1, 1). After the point (1, 1), the piece begins to decrease until the point (2, 0) then begins to increase. This piece has the label &#x201C;f(x) = (x - 2) squared, for x \gt = 1&#x201D;.The function has x intercepts at (-3, 0) and (2, 0) and a y intercept at (0, 3).">
+<image source="CNX_Calc_Figure_01_02_011.jpg" width="50%">
+
+<!-- NOTE: Move description inside image tag. --> </description> </image> <caption>This piecewise-defined function is linear for <m>x\lt  1 </m> and quadratic for <m>x\geq  1 .</m></caption>
+</figure>
+</solution>
+
+</example>
+<exercise>
+
+<!-- Move title outside statement--> <statement id="fs-id1170573569348">
+<p id="fs-id1170573569350">Sketch a graph of the function</p>
+<me>f(x)={<m:mtable><m:mtr><m:mtd> 2 −x,x\leq  2 </m:mtd></m:mtr><m:mtr><m:mtd>x+ 2 ,x\gt  2 </m:mtd></m:mtr></m:mtable>.</me>
+</statement>
+<solution id="fs-id1170573351774">
+<p id="fs-id1170573351776"><newline/><description>"An image of a graph. The x axis runs from -6 to 5 and the y axis runs from -2 to 7. The graph is of a function that has two pieces. The first piece is a decreasing line that ends at the closed circle point (2, 0) and has the label &#x201C;f(x) = 2 - x, for x \lt = 2. The second piece is an increasing line and begins at the open circle point (2, 4) and has the label &#x201C;f(x) = x + 2, for x \gt  2.The function has an x intercept at (2, 0) and a y intercept at (0, 2).">
+<image source="CNX_Calc_Figure_01_02_012.jpg" width="50%">
+</p>
+</solution>
+<hint>
+
+<p id="fs-id1165042134867">Graph one linear function for <m>x\leq  2 </m> and then graph a different linear function for <m>x\gt  2 .</m></p>
+</hint>
+
+</note>
+<example id="fs-id1170573351795">
+
+<!-- Move title outside statement--> <statement id="fs-id1170573351803">
+<title>Parking Fees Described by a Piecewise-Defined Function</title>
+<p id="fs-id1170573351805">In a big city, drivers are charged variable rates for parking in a parking garage. They are charged $10 for the first hour or any part of the first hour and an additional $2 for each hour or part thereof up to a maximum of $30 for the day. The parking garage is open from 6 a.m. to 12 midnight.</p>
+<ol>
+<li>Write a piecewise-defined function that describes the cost <m>C</m> to park in the parking garage as a function of hours parked <m>x.</m></li>
+<li>Sketch a graph of this function <m>C(x).</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170573419085">
+<ol>
+<li>Since the parking garage is open 18 hours each day, the domain for this function is <m>\{x| 0 \lt x\leq  18 }.</m> The cost to park a car at this parking garage can be described piecewise by the function<me>C(x)={<m:mtable><m:mtr><m:mtd> 10 , 0 \lt x\leq  1 </m:mtd></m:mtr><m:mtr><m:mtd> 12 , 1 \lt x\leq  2 </m:mtd></m:mtr><m:mtr><m:mtd> 14 , 2 \lt x\leq  3 </m:mtd></m:mtr><m:mtr><m:mtd> 16 , 3 \lt x\leq  4 </m:mtd></m:mtr><m:mtr><m:mtd>⋮</m:mtd></m:mtr><m:mtr><m:mtd> 30 , 10 \lt x\leq  18 </m:mtd></m:mtr></m:mtable>.</me></li>
+<li>The graph of the function consists of several horizontal line segments.<newline/>
+<description>"An image of a graph. The x axis runs from 0 to 18 and is labeled &#x201C;x, hours&#x201D;. The y axis runs from 0 to 32 and is labeled &#x201C;y, cost in dollars&#x201D;. The function consists 11 pieces, all horizontal line segments that begin with an open circle and end with a closed circle. The first piece starts at x = 0 and ends at x = 1 and is at y = 10. The second piece starts at x = 1 and ends at x = 2 and is at y = 12. The third piece starts at x = 2 and ends at x = 3 and is at y = 14. The fourth piece starts at x = 3 and ends at x = 4 and is at y = 16. The fifth piece starts at x = 4 and ends at x = 5 and is at y = 18. The sixth piece starts at x = 5 and ends at x = 6 and is at y = 20. The seventh piece starts at x = 6 and ends at x = 7 and is at y = 22. The eighth piece starts at x = 7 and ends at x = 8 and is at y = 24. The ninth piece starts at x = 8 and ends at x = 9 and is at y = 26. The tenth piece starts at x = 9 and ends at x = 10 and is at y = 28. The eleventh piece starts at x = 10 and ends at x = 18 and is at y = 30.">
+<image source="CNX_Calc_Figure_01_02_013.jpg" width="50%">
+</li>
+</ol>
+</solution>
+
+</example>
+<exercise>
+
+<!-- Move title outside statement--> <statement id="fs-id1170573582212">
+<p id="fs-id1170573582214">The cost of mailing a letter is a function of the weight of the letter. Suppose the cost of mailing a letter is <m> 49 \text{ cents }</m> for the first ounce and <m> 21 \text{ cents }</m> for each additional ounce. Write a piecewise-defined function describing the cost <m>C</m> as a function of the weight <m>x</m> for <m> 0 \lt x\leq  3 ,</m> where <m>C</m> is measured in cents and <m>x</m> is measured in ounces.</p>
+</statement>
+<solution id="fs-id1170573359601">
+<p id="fs-id1170573359603"><m>C(x)={<m:mtable><m:mtr><m:mtd> 49 , 0 \lt x\leq  1 </m:mtd></m:mtr><m:mtr><m:mtd> 70 , 1 \lt x\leq  2 </m:mtd></m:mtr><m:mtr><m:mtd> 91 , 2 \lt x\leq  3 </m:mtd></m:mtr></m:mtable></m></p>
+</solution>
+<hint>
+
+<p id="fs-id1165041961814">The piecewise-defined function is constant on the intervals <m>( 0 , 1 ],( 1 , 2 ],\dots.</m></p>
+</hint>
+
+</note>
+</section>
+<section id="fs-id1170573361974">
+<title>Transformations of Functions</title>
+<p id="fs-id1170573361979">We have seen several cases in which we have added, subtracted, or multiplied constants to form variations of simple functions. In the previous example, for instance, we subtracted 2 from the argument of the function <m>y=x^2 </m> to get the function <m>f(x)=<m:msup>(x− 2 ) 2 </m:msup>.</m> This subtraction represents a shift of the function <m>y=x^2 </m> two units to the right. A shift, horizontally or vertically, is a type of <term>transformation of a function</term>. Other transformations include horizontal and vertical scalings, and reflections about the axes.</p>
+<p id="fs-id1170573362047">A vertical shift of a function occurs if we add or subtract the same constant to each output <m>y.</m> For <m>c\gt  0 ,</m> the graph of <m>f(x)+c</m> is a shift of the graph of <m>f(x)</m> up <m>c</m> units, whereas the graph of <m>f(x)−c</m> is a shift of the graph of <m>f(x)</m> down <m>c</m> units. For example, the graph of the function <m>f(x)=x^3 + 4 </m> is the graph of <m>y=x^3 </m> shifted up <m> 4 </m> units; the graph of the function <m>f(x)=x^3 − 4 </m> is the graph of <m>y=x^3 </m> shifted down <m> 4 </m> units (<xref ref="CNX_Calc_Figure_01_02_023"/>).</p>
+<figure xml:id="CNX_Calc_Figure_01_02_023">
+<description>"An image of two graphs. The first graph is labeled &#x201C;a&#x201D; and has an x axis that runs from -4 to 4 and a y axis that runs from -1 to 10. The graph is of two functions. The first function is &#x201C;f(x) = x squared&#x201D;, which is a parabola that decreases until the origin and then increases again after the origin. The second function is &#x201C;f(x) = (x squared) + 4&#x201D;, which is a parabola that decreases until the point (0, 4) and then increases again after the origin. The two functions are the same in shape, but the second function is shifted up 4 units. The second graph is labeled &#x201C;b&#x201D; and has an x axis that runs from -4 to 4 and a y axis that runs from -5 to 6. The graph is of two functions. The first function is &#x201C;f(x) = x squared&#x201D;, which is a parabola that decreases until the origin and then increases again after the origin. The second function is &#x201C;f(x) = (x squared) - 4&#x201D;, which is a parabola that decreases until the point (0, -4) and then increases again after the origin. The two functions are the same in shape, but the second function is shifted down 4 units.">
+<image source="CNX_Calc_Figure_01_02_023.jpg" width="50%">
+
+<!-- NOTE: Move description inside image tag. --> </description> </image> <caption>(a) For <m>c\gt  0 ,</m> the graph of <m>y=f(x)+c</m> is a vertical shift up <m>c</m> units of the graph of <m>y=f(x).</m> (b) For <m>c\gt  0 ,</m> the graph of <m>y=f(x)−c</m> is a vertical shift down <m>c</m> units of the graph of <m>y=f(x).</m></caption>
+</figure>
+<p id="fs-id1170573582792">A horizontal shift of a function occurs if we add or subtract the same constant to each input <m>x.</m> For <m>c\gt  0 ,</m> the graph of <m>f(x+c)</m> is a shift of the graph of <m>f(x)</m> to the left <m>c</m> units; the graph of <m>f(x−c)</m> is a shift of the graph of <m>f(x)</m> to the right <m>c</m> units. Why does the graph shift left when adding a constant and shift right when subtracting a constant? To answer this question, let’s look at an example.</p>
+<p id="fs-id1170573581704">Consider the function <m>f(x)=|x+ 3 |</m> and evaluate this function at <m>x− 3 .</m> Since <m>f(x− 3 )=|x|</m> and <m>x− 3 \lt x,</m> the graph of <m>f(x)=|x+ 3 |</m> is the graph of <m>y=|x|</m> shifted left 3 units. Similarly, the graph of <m>f(x)=|x− 3 |</m> is the graph of <m>y=|x|</m> shifted right <m> 3 </m> units (<xref ref="CNX_Calc_Figure_01_02_015"/>).</p>
+<figure xml:id="CNX_Calc_Figure_01_02_015">
+<description>"An image of two graphs. The first graph is labeled &#x201C;a&#x201D; and has an x axis that runs from -8 to 5 and a y axis that runs from -3 to 5. The graph is of two functions. The first function is &#x201C;f(x) = absolute value of x&#x201D;, which decreases in a straight line until the origin and then increases in a straight line again after the origin. The second function is &#x201C;f(x) = absolute value of (x + 3)&#x201D;, which decreases in a straight line until the point (-3, 0) and then increases in a straight line again after the point (-3, 0). The two functions are the same in shape, but the second function is shifted left 3 units. The second graph is labeled &#x201C;b&#x201D; and has an x axis that runs from -5 to 8 and a y axis that runs from -3 to 5. The graph is of two functions. The first function is &#x201C;f(x) = absolute value of x&#x201D;, which decreases in a straight line until the origin and then increases in a straight line again after the origin. The second function is &#x201C;f(x) = absolute value of (x - 3)&#x201D;, which decreases in a straight line until the point (3, 0) and then increases in a straight line again after the point (3, 0). The two functions are the same in shape, but the second function is shifted right 3 units.">
+<image source="CNX_Calc_Figure_01_02_015.jpg" width="50%">
+
+<!-- NOTE: Move description inside image tag. --> </description> </image> <caption>(a) For <m>c\gt  0 ,</m> the graph of <m>y=f(x+c)</m> is a horizontal shift left <m>c</m> units of the graph of <m>y=f(x).</m> (b) For <m>c\gt  0 ,</m> the graph of <m>y=f(x−c)</m> is a horizontal shift right <m>c</m> units of the graph of <m>y=f(x).</m></caption>
+</figure>
+<p id="fs-id1170573582097">A vertical scaling of a graph occurs if we multiply all outputs <m>y</m> of a function by the same positive constant. For <m>c\gt  0 ,</m> the graph of the function <m>cf(x)</m> is the graph of <m>f(x)</m> scaled vertically by a factor of <m>c.</m> If <m>c\gt  1 ,</m> the values of the outputs for the function <m>cf(x)</m> are larger than the values of the outputs for the function <m>f(x);</m> therefore, the graph has been stretched vertically. If <m> 0 \lt c\lt  1 ,</m> then the outputs of the function <m>cf(x)</m> are smaller, so the graph has been compressed. For example, the graph of the function <m>f(x)= 3 x^2 </m> is the graph of <m>y=x^2 </m> stretched vertically by a factor of 3, whereas the graph of <m>f(x)=x^2  / 3 </m> is the graph of <m>y=x^2 </m> compressed vertically by a factor of <m> 3 </m> (<xref ref="CNX_Calc_Figure_01_02_024"/>).</p>
+<figure xml:id="CNX_Calc_Figure_01_02_024">
+<description>"An image of two graphs. The first graph is labeled &#x201C;a&#x201D; and has an x axis that runs from -3 to 3 and a y axis that runs from -2 to 9. The graph is of two functions. The first function is &#x201C;f(x) = x squared&#x201D;, which is a parabola that decreases until the origin and then increases again after the origin. The second function is &#x201C;f(x) = 3(x squared)&#x201D;, which is a parabola that decreases until the origin and then increases again after the origin, but is vertically stretched and thus increases at a quicker rate than the first function. The second graph is labeled &#x201C;b&#x201D; and has an x axis that runs from -4 to 4 and a y axis that runs from -2 to 9. The graph is of two functions. The first function is &#x201C;f(x) = x squared&#x201D;, which is a parabola that decreases until the origin and then increases again after the origin. The second function is &#x201C;f(x) = (1/3)(x squared)&#x201D;, which is a parabola that decreases until the origin and then increases again after the origin, but is vertically compressed and thus increases at a slower rate than the first function.">
+<image source="CNX_Calc_Figure_01_02_024.jpg" width="50%">
+
+<!-- NOTE: Move description inside image tag. --> </description> </image> <caption>(a) If <m>c\gt  1 ,</m> the graph of <m>y=cf(x)</m> is a vertical stretch of the graph of <m>y=f(x).</m> (b) If <m> 0 \lt c\lt  1 ,</m> the graph of <m>y=cf(x)</m> is a vertical compression of the graph of <m>y=f(x).</m></caption>
+</figure>
+<p id="fs-id1170573569978">The horizontal scaling of a function occurs if we multiply the inputs <m>x</m> by the same positive constant. For <m>c\gt  0 ,</m> the graph of the function <m>f(cx)</m> is the graph of <m>f(x)</m> scaled horizontally by a factor of <m>c.</m> If <m>c\gt  1 ,</m> the graph of <m>f(cx)</m> is the graph of <m>f(x)</m> compressed horizontally. If <m> 0 \lt c\lt  1 ,</m> the graph of <m>f(cx)</m> is the graph of <m>f(x)</m> stretched horizontally. For example, consider the function <m>f(x)=\sqrt{ 2 x}</m> and evaluate <m>f</m> at <m>x / 2 .</m> Since <m>f(x / 2 )=\sqrt{x},</m> the graph of <m>f(x)=\sqrt{ 2 x}</m> is the graph of <m>y=\sqrt{x}</m> compressed horizontally. The graph of <m>y=\sqrt{x / 2 }</m> is a horizontal stretch of the graph of <m>y=\sqrt{x}</m> (<xref ref="CNX_Calc_Figure_01_02_017"/>).</p>
+<figure xml:id="CNX_Calc_Figure_01_02_017">
+<description>"An image of two graphs. Both graphs have an x axis that runs from -2 to 4 and a y axis that runs from -2 to 5. The first graph is labeled &#x201C;a&#x201D; and is of two functions. The first graph is of two functions. The first function is &#x201C;f(x) = square root of x&#x201D;, which is a curved function that begins at the origin and increases. The second function is &#x201C;f(x) = square root of 2x&#x201D;, which is a curved function that begins at the origin and increases, but increases at a faster rate than the first function. The second graph is labeled &#x201C;b&#x201D; and is of two functions. The first function is &#x201C;f(x) = square root of x&#x201D;, which is a curved function that begins at the origin and increases. The second function is &#x201C;f(x) = square root of (x/2)&#x201D;, which is a curved function that begins at the origin and increases, but increases at a slower rate than the first function.">
+<image source="CNX_Calc_Figure_01_02_017.jpg" width="50%">
+
+<!-- NOTE: Move description inside image tag. --> </description> </image> <caption>(a) If <m>c\gt  1 ,</m> the graph of <m>y=f(cx)</m> is a horizontal compression of the graph of <m>y=f(x).</m> (b) If <m> 0 \lt c\lt  1 ,</m> the graph of <m>y=f(cx)</m> is a horizontal stretch of the graph of <m>y=f(x).</m></caption>
+</figure>
+<p id="fs-id1170573582412">We have explored what happens to the graph of a function <m>f</m> when we multiply <m>f</m> by a constant <m>c\gt  0 </m> to get a new function <m>cf(x).</m> We have also discussed what happens to the graph of a function <m>f</m> when we multiply the independent variable <m>x</m> by <m>c\gt  0 </m> to get a new function <m>f(cx).</m> However, we have not addressed what happens to the graph of the function if the constant <m>c</m> is negative. If we have a constant <m>c\lt  0 ,</m> we can write <emphasis effect="italics">c</emphasis> as a positive number multiplied by <m> −1 ;</m> but, what kind of transformation do we get when we multiply the function or its argument by <m> −1 ?</m> When we multiply all the outputs by <m> −1 ,</m> we get a reflection about the <m>x</m>-axis. When we multiply all inputs by <m> −1 ,</m> we get a reflection about the <m>y</m>-axis. For example, the graph of <m>f(x)=-(x^3 + 1 )</m> is the graph of <m>y=(x^3 + 1 )</m> reflected about the <m>x</m>-axis. The graph of <m>f(x)=<m:msup>(-x) 3 </m:msup>+ 1 </m> is the graph of <m>y=x^3 + 1 </m> reflected about the <m>y</m>-axis (<xref ref="CNX_Calc_Figure_01_02_018"/>).</p>
+<figure xml:id="CNX_Calc_Figure_01_02_018">
+<description>"An image of two graphs. Both graphs have an x axis that runs from -3 to 3 and a y axis that runs from -5 to 6. The first graph is labeled &#x201C;a&#x201D; and is of two functions. The first graph is of two functions. The first function is &#x201C;f(x) = x cubed + 1&#x201D;, which is a curved increasing function that has an x intercept at (-1, 0) and a y intercept at (0, 1). The second function is &#x201C;f(x) = -(x cubed + 1)&#x201D;, which is a curved decreasing function that has an x intercept at (-1, 0) and a y intercept at (0, -1). The second graph is labeled &#x201C;b&#x201D; and is of two functions. The first function is &#x201C;f(x) = x cubed + 1&#x201D;, which is a curved increasing function that has an x intercept at (-1, 0) and a y intercept at (0, 1). The second function is &#x201C;f(x) = (-x) cubed + 1&#x201D;, which is a curved decreasing function that has an x intercept at (1, 0) and a y intercept at (0, 1). The first function increases at the same rate the second function decreases for the same values of x.">
+<image source="CNX_Calc_Figure_01_02_018.jpg" width="50%">
+
+<!-- NOTE: Move description inside image tag. --> </description> </image> <caption>(a) The graph of <m>y=-f(x)</m> is the graph of <m>y=f(x)</m> reflected about the <m>x</m>-axis. (b) The graph of <m>y=f(-x)</m> is the graph of <m>y=f(x)</m> reflected about the<newline/><m>y</m>-axis.</caption>
+</figure>
+<p id="fs-id1170573580155">If the graph of a function consists of more than one transformation of another graph, it is important to transform the graph in the correct order. Given a function <m>f(x),</m> the graph of the related function <m>y=cf(a(x+b))+d</m> can be obtained from the graph of <m>y=f(x)</m> by performing the transformations in the following order.</p>
+<list id="fs-id1170573580235" list-type="enumerated" number-style="arabic">
+<li>Horizontal shift of the graph of <m>y=f(x).</m> If <m>b\gt  0 ,</m> shift left. If <m>b\lt  0 ,</m> shift right.</li>
+<li>Horizontal scaling of the graph of <m>y=f(x+b)</m> by a factor of <m>|a|.</m> If <m>a\lt  0 ,</m> reflect the graph about the <m>y</m>-axis.</li>
+<li>Vertical scaling of the graph of <m>y=f(a(x+b))</m> by a factor of <m>|c|.</m> If <m>c\lt  0 ,</m> reflect the graph about the <m>x</m>-axis.</li>
+<li>Vertical shift of the graph of <m>y=cf(a(x+b)).</m> If <m>d\gt  0 ,</m> shift up. If <m>d\lt  0 ,</m> shift down.</li>
+</ol>
+<p id="fs-id1170573580474">We can summarize the different transformations and their related effects on the graph of a function in the following table.</p>
+<table id="fs-id1170573580486" summary="A table with 8 rows and 2 columns. The first column is labeled &#x201C;Transformation of f(c \gt  0)&#x201D; and has the values &#x201C;f(x) +c; f(x) -c; f(x + c); f(x - c); cf(x); f(cx); -f(x); f(-x)&#x201D;. The second column is labeled &#x201C;Effect on the graph of f&#x201D; and the values are &#x201C;Vertical shift up c units; Vertical shift down c units; Shift left by c units; Shift right by c units; &#x2018;Vertical stretch if c \gt  1, Vertical compression is 0 \lt  c \lt  1&#x2032;; &#x2018;Horizontal stretch if 0 \lt  c \lt  1, horizontal compression if c \gt  1&#x2032;; reflection about the x-axis; reflection about the y-axis&#x201D;.">
+<title>Transformations of Functions</title>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row valign="top">
+<entry align="left"><emphasis effect="bold">Transformation of <m>f(c\gt  0 )</m></emphasis></entry>
+<entry align="left"><emphasis effect="bold">Effect on the graph of</emphasis> <m>f</m></entry>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<entry align="left"><m>f(x)+c</m></entry>
+<entry align="left">Vertical shift up <m>c</m> units</entry>
+</row>
+<row valign="top">
+<entry align="left"><m>f(x)−c</m></entry>
+<entry align="left">Vertical shift down <m>c</m> units</entry>
+</row>
+<row valign="top">
+<entry align="left"><m>f(x+c)</m></entry>
+<entry align="left">Shift left by <m>c</m> units</entry>
+</row>
+<row valign="top">
+<entry align="left"><m>f(x−c)</m></entry>
+<entry align="left">Shift right by <m>c</m> units</entry>
+</row>
+<row valign="top">
+<entry align="left"><m>cf(x)</m></entry>
+<entry align="left">Vertical stretch if <m>c\gt  1 ;</m><newline/>vertical compression if <m> 0 \lt c\lt  1 </m></entry>
+</row>
+<row valign="top">
+<entry align="left"><m>f(cx)</m></entry>
+<entry align="left">Horizontal stretch if <m> 0 \lt c\lt  1 ;</m> horizontal compression if <m>c\gt  1 </m></entry>
+</row>
+<row valign="top">
+<entry align="left"><m>-f(x)</m></entry>
+<entry align="left">Reflection about the <m>x</m>-axis</entry>
+</row>
+<row valign="top">
+<entry align="left"><m>f(-x)</m></entry>
+<entry align="left">Reflection about the <m>y</m>-axis</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<example id="fs-id1170573580888">
+
+<!-- Move title outside statement--> <statement id="fs-id1170573580895">
+<title>Transforming a Function</title>
+<p id="fs-id1170573580897">For each of the following functions, a. and b., sketch a graph by using a sequence of transformations of a well-known function.</p>
+<ol>
+<li><m>f(x)=-|x+ 2 |− 3 </m></li>
+<li><m>f(x)= 3 \sqrt{-x}+ 1 </m></li>
+</ol>
+</statement>
+<solution id="fs-id1170573580978">
+<ol>
+<li>Starting with the graph of <m>y=|x|,</m> shift <m> 2 </m> units to the left, reflect about the <m>x</m>-axis, and then shift down 3 units.<newline/>
+<figure xml:id="CNX_Calc_Figure_01_02_019">
+<description>"An image of a graph. The x axis runs from -7 to 7 and a y axis runs from -7 to 7. The graph contains four functions. The first function is &#x201C;f(x) = absolute value of x&#x201D; and is labeled starting function. It decreases in a straight line until the origin and then increases in a straight line again after the origin. The second function is &#x201C;f(x) = absolute value of (x + 2)&#x201D;, which decreases in a straight line until the point (-2, 0) and then increases in a straight line again after the point (-2, 0). The second function is the same shape as the first function, but is shifted left 2 units. The third function is &#x201C;f(x) = -(absolute value of (x + 2))&#x201D;, which increases in a straight line until the point (-2, 0) and then decreases in a straight line again after the point (-2, 0). The third function is the second function reflected about the x axis. The fourth function is &#x201C;f(x) = -(absolute value of (x + 2)) - 3&#x201D; and is labeled &#x201C;transformed function&#x201D;. It increases in a straight line until the point (-2, -3) and then decreases in a straight line again after the point (-2, -3). The fourth function is the third function shifted down 3 units.">
+<image source="CNX_Calc_Figure_01_02_019.jpg" width="50%">
+
+<!-- NOTE: Move description inside image tag. --> </description> </image> <caption>The function <m>f(x)=-|x+ 2 |− 3 </m> can be viewed as a sequence of three transformations of the function <m>y=|x|.</m></caption>
+</figure></li>
+<li>Starting with the graph of <m>y=\sqrt{x},</m> reflect about the <m>y</m>-axis, stretch the graph vertically by a factor of 3, and move up 1 unit.<newline/>
+<figure xml:id="CNX_Calc_Figure_01_02_020">
+<description>"An image of a graph. The x axis runs from -7 to 7 and a y axis runs from -2 to 10. The graph contains four functions. The first function is &#x201C;f(x) = square root of x&#x201D; and is labeled starting function. It is a curved function that begins at the origin and increases. The second function is &#x201C;f(x) = square root of -x&#x201D;, which is a curved function that decreases until it reaches the origin, where it stops. The second function is the first function reflected about the y axis. The third function is &#x201C;f(x) = 3(square root of -x)&#x201D;, which is a curved function that decreases until it reaches the origin, where it stops. The third function decreases at a quicker rate than the second function. The fourth function is &#x201C;f(x) = 3(square root of -x) + 1&#x201D; and is labeled &#x201C;transformed function&#x201D;. Itis a curved function that decreases until it reaches the point (0, 1), where it stops. The fourth function is the third function shifted up 1 unit.">
+<image source="CNX_Calc_Figure_01_02_020.jpg" width="50%">
+
+<!-- NOTE: Move description inside image tag. --> </description> </image> <caption>The function <m>f(x)= 3 \sqrt{-x}+ 1 </m> can be viewed as a sequence of three transformations of the function <m>y=\sqrt{x}.</m></caption>
+</figure>
+</li></ol>
+</solution>
+
+</example>
+<exercise>
+
+<!-- Move title outside statement--> <statement id="fs-id1170573581207">
+<p id="fs-id1170573581209">Describe how the function <m>f(x)=-<m:msup>(x+ 1 ) 2 </m:msup>− 4 </m> can be graphed using the graph of <m>y=x^2 </m> and a sequence of transformations.</p>
+</statement>
+<solution id="fs-id1170573581273">
+<p id="fs-id1170573581275">Shift the graph <m>y=x^2 </m> to the left 1 unit, reflect about the <m>x</m>-axis, then shift down 4 units.</p>
+</solution>
+<hint>
+
+<p id="fs-id1165041953684">Use <xref ref="fs-id1170573580486"/>.</p>
+</hint>
+
+</note>
+</section>
+<section id="fs-id1170573581300" class="key-concepts">
+<title>Key Concepts</title>
+<list id="fs-id1170573581308" list-type="bulleted" bullet-style="bullet">
+<li>The power function <m>f(x)=x^n</m> is an even function if <m>n</m> is even and <m>n\neq  0 ,</m> and it is an odd function if <m>n</m> is odd.</li>
+<li>The root function <m>f(x)=<m:msup>x 1  /n</m:msup/m> has the domain <m>[ 0 ,\infty)</m> if <m>n</m> is even and the domain <m>(-\infty,\infty)</m> if <m>n</m> is odd. If <m>n</m> is odd, then <m>f(x)=<m:msup>x 1  /n</m:msup></m> is an odd function.</li>
+<li>The domain of the rational function <m>f(x)=p(x) /q(x),</m> where <m>p(x)</m> and <m>q(x)</m> are polynomial functions, is the set of <m>x</m> such that <m>q(x)\neq  0 .</m></li>
+<li>Functions that involve the basic operations of addition, subtraction, multiplication, division, and powers are algebraic functions. All other functions are transcendental. Trigonometric, exponential, and logarithmic functions are examples of transcendental functions.</li>
+<li>A polynomial function <m>f</m> with degree <m>n\geq  1 </m> satisfies <m>f(x)\to \pm\infty</m> as <m>x\to \pm\infty.</m> The sign of the output as <m>x\to \infty</m> depends on the sign of the leading coefficient only and on whether <m>n</m> is even or odd.</li>
+<li>Vertical and horizontal shifts, vertical and horizontal scalings, and reflections about the <m>x</m>- and <m>y</m>-axes are examples of transformations of functions.</li>
+</ol>
+</section>
+<section id="fs-id1170573581640" class="key-equations">
+<title>Key Equations</title>
+<list id="fs-id1170573581648" list-type="bulleted" bullet-style="bullet">
+<li><emphasis effect="bold">Point-slope equation of a line</emphasis><newline/>
+<m>y−y_1=m(x−x_1)</m></li>
+<li><emphasis effect="bold">Slope-intercept form of a line</emphasis><newline/>
+<m>y=mx+b</m></li>
+<li><emphasis effect="bold">Standard form of a line</emphasis><newline/>
+<m>ax+by=c</m></li>
+<li><emphasis effect="bold">Polynomial function</emphasis><newline/>
+<m>f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0</m></li>
+</ol>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="fs-id1170573587689" class="section-exercises">
+<p id="fs-id1170573587694">For the following exercises, for each pair of points, a. find the slope of the line passing through the points and b. indicate whether the line is increasing, decreasing, horizontal, or vertical.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170573587701">
+<p id="fs-id1170573587703"><m>( −2 , 4 )<m> and <m>( 1 , 1 )<m></p>
+</statement>
+<solution id="fs-id1170573587741">
+<p id="fs-id1170573587743">a. −1 b. Decreasing</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573587751">
+<p id="fs-id1170573587754"><m>( −1 , 4 )<m> and <m>( 3 , −1 )<m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573587802">
+<p id="fs-id1170573587804"><m>( 3 , 5 )<m> and <m>( −1 , 2 )<m></p>
+</statement>
+<solution id="fs-id1170573587842">
+<p id="fs-id1170573587845">a. 3/4 b. Increasing</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573587852">
+<p id="fs-id1170573587854"><m>( 6 , 4 )<m> and <m>( 4 , −3 )<m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573587902">
+<p id="fs-id1170573587905"><m>( 2 , 3 )<m> and <m>( 5 , 7 )<m></p>
+</statement>
+<solution id="fs-id1170573587942">
+<p id="fs-id1170573587945">a. 4/3 b. Increasing</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573587952">
+<p id="fs-id1170573587954"><m>( 1 , 9 )<m> and <m>( −8 , 5 )<m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588002">
+<p id="fs-id1170573588005"><m>( 2 , 4 )<m> and <m>( 1 , 4 )<m></p>
+</statement>
+<solution id="fs-id1170573588042">
+<p id="fs-id1170573588045">a. 0 b. Horizontal</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588052">
+<p id="fs-id1170573588054"><m>( 1 , 4 )<m> and <m>( 1 , 0 )<m></p>
+</statement>
+
+<p id="fs-id1170573588100">For the following exercises, write the equation of the line satisfying the given conditions in slope-intercept form.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588107">
+<p id="fs-id1170573588109">Slope <m>= −6 ,<m> passes through <m>( 1 , 3 )<m></p>
+</statement>
+<solution id="fs-id1170573588138">
+<p id="fs-id1170573588140"><m>y= −6 x+ 9 <m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588162">
+<p id="fs-id1170573588164">Slope <m>= 3 ,<m> passes through <m>( −3 , 2 )<m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588219">
+<p id="fs-id1170573588221">Slope <m>=<!-- Edit FRAC!--> \frac{ 1  3 },<m> passes through <m>( 0 , 4 )<m></p>
+</statement>
+<solution id="fs-id1170573588253">
+<p id="fs-id1170573588255"><m>y=<!-- Edit FRAC!--> \frac{ 1  3 }x+ 4 <m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588280">
+<p id="fs-id1170573588282">Slope <m>=<!-- Edit FRAC!--> \frac{ 2  5 }, x<m>-intercept <m>= 8 <m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588339">
+<p id="fs-id1170573588342">Passing through <m>( 2 , 1 )<m> and <m>( −2 , −1 )<m></p>
+</statement>
+<solution id="fs-id1170573588379">
+<p id="fs-id1170573588382"><m>y=<!-- Edit FRAC!--> \frac{ 1  2 }x<m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588402">
+<p id="fs-id1170573588404">Passing through <m>( −3 , 7 )<m> and <m>( 1 , 2 )<m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588475">
+<p id="fs-id1170573588477"><m>x<m>-intercept <m>= 5 <m> and <m>y<m>-intercept <m>= −3 <m></p>
+</statement>
+<solution id="fs-id1170573588503">
+<p id="fs-id1170573588505"><m>y=<!-- Edit FRAC!--> \frac{ 3  5 }x− 3 <m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588529">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170573588531"><m>x<m>-intercept <m>= −6 <m> and <m>y<m>-intercept <m>= 9 <m></p></statement>
+
+<p id="fs-id1170573588583">For the following exercises, for each linear equation, a. give the slope <m>m<m> and <m>y<m>-intercept <emphasis effect="italics">b</emphasis>, if any, and b. graph the line.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588602">
+<p id="fs-id1170573588604"><m>y= 2 x− 3 <m></p>
+</statement>
+<solution id="fs-id1170573588623">
+<p id="fs-id1170573588625">a. <m>(m= 2 ,b= −3 )<m> b.<newline/><description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph shows an increasing straight line function with a y intercept at (0, -3) and a x intercept at (1.5, 0).">
+<image source="CNX_Calc_Figure_01_02_201.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588669">
+<p id="fs-id1170573588672"><m>y=−<!-- Edit FRAC!--> \frac{ 1  7 }x+ 1 <m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588747">
+<p id="fs-id1170573588749"><m>f(x)= −6 x<m></p>
+</statement>
+<solution id="fs-id1170573588771">
+<p id="fs-id1170573588773">a. <m>(m= −6 ,b= 0 )<m> b.<newline/><description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph shows a decreasing straight line function with a y intercept and x intercept both at the origin. There is an unlabeled point on the function at (0.5, -3).">
+<image source="CNX_Calc_Figure_01_02_203.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588818">
+<p id="fs-id1170573588820"><m>f(x)= −5 x+ 4 <m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588893">
+<p id="fs-id1170573588895"><m> 4 y+ 24 = 0 <m></p>
+</statement>
+<solution id="fs-id1170573588913">
+<p id="fs-id1170573588916">a. <m>(m= 0 ,b= −6 )<m> b.<newline/><description>"An image of a graph. The x axis runs from -3 to 3 and the y axis runs from -7 to 1. The graph shows a horizontal straight line function with a y intercept at (0, -6) and no x intercept.">
+<image source="CNX_Calc_Figure_01_02_205.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573588960">
+<p id="fs-id1170573588962"><m> 8 x− 4 = 0 <m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589007">
+<p id="fs-id1170573589009"><m> 2 x+ 3 y= 6 <m></p>
+</statement>
+<solution id="fs-id1170573589029">
+<p id="fs-id1170573589031">a. <m>(m=−<!-- Edit FRAC!--> \frac{ 2  3 },b= 2 )<m> b.<newline/><description>"An image of a graph. The x axis runs from -3 to 3 and the y axis runs from -4 to 4. The graph shows a decreasing straight line function with a y intercept at (0, 2) and a x intercept at (3, 0).">
+<image source="CNX_Calc_Figure_01_02_207.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589081">
+<p id="fs-id1170573589083"><m> 6 x− 5 y+ 15 = 0 <m></p>
+</statement>
+
+<p id="fs-id1170573589155">For the following exercises, for each polynomial, a. find the degree; b. find the zeros, if any; c. find the <m>y<m>-intercept(s), if any; d. use the leading coefficient to determine the graph’s end behavior; and e. determine algebraically whether the polynomial is even, odd, or neither.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589170">
+<p id="fs-id1170573589173"><m>f(x)= 2 x^2 − 3 x− 5 <m></p>
+</statement>
+<solution id="fs-id1170573589208">
+<p id="fs-id1170573589210">a. 2 b. <m><!-- Edit FRAC!--> \frac{ 5  2 }, −1 ;<m> c. −5 d. Both ends rise e. Neither</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589234">
+<p id="fs-id1170573589236"><m>f(x)= −3 x^2 + 6 x<m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589286">
+<p id="fs-id1170573589289"><m>f(x)=<!-- Edit FRAC!--> \frac{ 1  2 }x^2 − 1 <m></p>
+</statement>
+<solution id="fs-id1170573589321">
+<p id="fs-id1170573589323">a. 2 b. <m>\pm \sqrt{ 2 }<m> c. −1 d. Both ends rise e. Even</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589340">
+<p id="fs-id1170573589342"><m>f(x)=x^3 + 3 x^2 −x− 3 <m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589405">
+<p id="fs-id1170573589407"><m>f(x)= 3 x−x^3 <m></p>
+</statement>
+<solution id="fs-id1170573589436">
+<p id="fs-id1170573589438">a. 3 b. 0, <m>\pm \sqrt{ 3 }<m> c. 0 d. Left end rises, right end falls e. Odd</p>
+</solution>
+
+<p id="fs-id1170573589452">For the following exercises, use the graph of <m>f(x)=x^2 <m> to graph each transformed function <m>g.<m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589484">
+<p id="fs-id1170573589486"><m>g(x)=x^2 − 1 <m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589535">
+<p id="fs-id1170573589537"><m>g(x)=<m:msup>(x+ 3 ) 2 </m:msup>+ 1 <m></p>
+</statement>
+<solution id="fs-id1170573589575">
+<p id="fs-id1170573589577"><newline/><description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph shows a parabolic function that decreases until the point (-3, 1), then begins increasing. The y intercept is not shown and there are no x intercepts. There are two unplotted points at (-4, 2) and (-2, 2).">
+<image source="CNX_Calc_Figure_01_02_210.jpg" width="50%">
+</p>
+</solution>
+
+<p id="fs-id1170573589595">For the following exercises, use the graph of <m>f(x)=\sqrt{x}<m> to graph each transformed function <m>g.<m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589625">
+<p id="fs-id1170573589627"><m>g(x)=\sqrt{x+ 2 }<m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589675">
+<p id="fs-id1170573589677"><m>g(x)=-\sqrt{x}− 1 <m></p>
+</statement>
+<solution id="fs-id1170573589704">
+<p id="fs-id1170573589706"><newline/><description>"An image of a graph. The x axis runs from -5 to 20 and the y axis runs from -8 to 2. The graph shows a curved function that begins at the point (0, -1), then begins decreasing. The y intercept is at (0, -1) and there is no x intercept. There is an unplotted point at (9, -4).">
+<image source="CNX_Calc_Figure_01_02_212.jpg" width="50%">
+</p>
+</solution>
+
+<p id="fs-id1170573589723">For the following exercises, use the graph of <m>y=f(x)<m> to graph each transformed function <m>g.<m></p>
+<description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph shows a function that starts at point (-3, 0), where it begins to increase until the point (-1, 2). After the point (-1, 2), the function becomes a horizontal line and stays that way until the point (1, 2). After the point (1, 2), the function begins to decrease until the point (3, 0), where the function ends.">
+<image source="CNX_Calc_Figure_01_02_213.jpg" width="50%">
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589770">
+<p id="fs-id1170573589772"><m>g(x)=f(x)+ 1 <m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589826">
+<p id="fs-id1170573589828"><m>g(x)=f(x− 1 )+ 2 <m></p>
+</statement>
+<solution id="fs-id1170573589864">
+<p id="fs-id1170573589867"><newline/><description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph shows a function that starts at point (-2, 2), where it begins to increase until the point (0, 4). After the point (0, 4), the function becomes a horizontal line and stays that way until the point (2, 4). After the point (2, 4), the function begins to decrease until the point (4, 2), where the function ends.">
+<image source="CNX_Calc_Figure_01_02_215.jpg" width="50%">
+</p>
+</solution>
+
+<p id="fs-id1170573589885">For the following exercises, for each of the piecewise-defined functions, a. evaluate at the given values of the independent variable and b. sketch the graph.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170573589892">
+<p id="fs-id1170573589894"><m>f(x)={<m:mtable><m:mtr><m:mtd> 4 x+ 3 ,x\leq  0 </m:mtd></m:mtr><m:mtr><m:mtd>-x+ 1 ,x\gt  0 </m:mtd></m:mtr></m:mtable>; f( −3 );f( 0 );f( 2 )<m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573590039">
+<p id="fs-id1170573590042"><m>f(x)={<m:mtable><m:mtr><m:mtd>x^2 − 3 ,x\lt  0 </m:mtd></m:mtr><m:mtr><m:mtd> 4 x− 3 ,x\geq  0 </m:mtd></m:mtr></m:mtable>; f( −4 );f( 0 );f( 2 )<m></p>
+</statement>
+<solution id="fs-id1170573590150">
+<p id="fs-id1170573590152">a. <m> 13 , −3 , 5 <m> b.<newline/><description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph is of a function that has two pieces. The first piece is a decreasing curve that ends at the point (0, -3). The second piece is an increasing line that begins at the point (0, -3). The function has a x intercepts at the approximate point (1.7, 0) and the point (0.75, 0) and a y intercept at (0, -3).">
+<image source="CNX_Calc_Figure_01_02_217.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573590188">
+<p id="fs-id1170573590190"><m>h(x)={<m:mtable><m:mtr><m:mtd>x+ 1 ,x\leq  5 </m:mtd></m:mtr><m:mtr><m:mtd> 4 ,x\gt  5 </m:mtd></m:mtr></m:mtable>; h( 0 );h(π);h( 5 )<m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573590321">
+<p id="fs-id1170573590323"><m>g(x)={<m:mtable columnalign="left">
+<m:mtr><m:mtd><!-- Edit FRAC!--> \frac{ 3 x− 2 },x\neq  2 </m:mtd></m:mtr><m:mtr><m:mtd> 4 ,x= 2 </m:mtd></m:mtr></m:mtable>;g( 0 );g( −4 );g( 2 )<m></p>
+</statement>
+<solution id="fs-id1170573590430">
+<p id="fs-id1170573590432">a. <m><!-- Edit FRAC!--> \frac{ −3  2 },<!-- Edit FRAC!--> \frac{ −1  2 }, 4 <m> b.<newline/><description>"An image of a graph. The x axis runs from -10 to 10 and the y axis runs from -10 to 10. The graph is of a function that begins slightly below the x axis and begins to decrease. As the function approaches the unplotted vertical line of &#x201C;x = 2&#x201D;, it decreases at a faster rate but never reaches the line &#x201C;x = 2&#x201D;. On the right side of the unplotted line &#x201C;x = 2&#x201D;, the function starts at the top of graph and begins decreasing and approaches the unplotted horizontal line &#x201C;y = 0&#x201D;, but never reaches &#x201C;y = 0&#x201D;. There function also includes a plotted point at (2, 4). There is a y intercept at (0, -1.5) and no x intercept.">
+<image source="CNX_Calc_Figure_01_02_219.jpg" width="50%">
+</p>
+</solution>
+
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170573595284">For the following exercises, determine whether the statement is <emphasis effect="italics">true or false</emphasis>. Explain why.</p>
+<!-- Move title outside statement--> <statement id="fs-id1170573595290">
+<p id="fs-id1170573595292"><m>f(x)=( 4 x+ 1 ) /( 7 x− 2 )<m> is a transcendental function.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573595356">
+<p id="fs-id1170573595358"><m>g(x)=<m:mroot>x 3 </m:mroot><m> is an odd root function</p>
+</statement>
+<solution id="fs-id1170573595382">
+<p id="fs-id1170573595384">True; <m>n= 3 <m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573595400">
+<p id="fs-id1170573595403">A logarithmic function is an algebraic function.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573595417">
+<p id="fs-id1170573595419">A function of the form <m>f(x)=x^b ,<m> where <m>b<m> is a real valued constant, is an exponential function.</p>
+</statement>
+<solution id="fs-id1170573595450">
+<p id="fs-id1170573595452">False; <m>f(x)=x^b ,<m> where <m>b<m> is a real-valued constant, is a power function</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573595486">
+<p id="fs-id1170573595489">The domain of an even root function is all real numbers.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573595502">
+<p id="fs-id1170573595505"><emphasis effect="bold">[T]</emphasis> A company purchases some computer equipment for $20,500. At the end of a 3-year period, the value of the equipment has decreased linearly to $12,300.</p>
+<ol>
+<li>Find a function <m>y=V(t)<m> that determines the value <emphasis effect="italics">V</emphasis> of the equipment at the end of <emphasis effect="italics">t</emphasis> years.</li>
+<li>Find and interpret the meaning of the <m>x<m>- and <m>y<m>-intercepts for this situation.</li>
+<li>What is the value of the equipment at the end of 5 years?</li>
+<li>When will the value of the equipment be $3000?</li>
+</ol>
+</statement>
+<solution id="fs-id1170573595575">
+<p id="fs-id1170573595577">a. <m>V(t)= −2733 t+ 20500 <m> b. <m>( 0 , 20 , 500 )<m> means that the initial purchase price of the equipment is $20,500; <m>( 7.5 , 0 )<m> means that in 7.5 years the computer equipment has no value. c. $6835 d. In approximately 6.4 years</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573595646">
+<p id="fs-id1170573595648"><emphasis effect="bold">[T]</emphasis> Total online shopping during the Christmas holidays has increased dramatically during the past 5 years. In 2012 <m>(t= 0 ),<m> total online holiday sales were $42.3 billion, whereas in 2013 they were $48.1 billion.</p>
+<ol>
+<li>Find a linear function <emphasis effect="italics">S</emphasis> that estimates the total online holiday sales in the year <emphasis effect="italics">t</emphasis>.</li>
+<li>Interpret the slope of the graph of <emphasis effect="italics">S</emphasis>.</li>
+<li>Use part a. to predict the year when online shopping during Christmas will reach $60 billion.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573595741">
+<p id="fs-id1170573595744"><emphasis effect="bold">[T]</emphasis> A family bakery makes cupcakes and sells them at local outdoor festivals. For a music festival, there is a fixed cost of $125 to set up a cupcake stand. The owner estimates that it costs $0.75 to make each cupcake. The owner is interested in determining the total cost <m>C<m> as a function of number of cupcakes made.</p>
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170573595758" list-type="enumerated" number-style="lower-alpha"><li>Find a linear function that relates cost <emphasis effect="italics">C</emphasis> to <emphasis effect="italics">x</emphasis>, the number of cupcakes made.</li>
+<li>Find the cost to bake 160 cupcakes.</li>
+<li>If the owner sells the cupcakes for $1.50 apiece, how many cupcakes does she need to sell to start making profit? (<emphasis effect="italics">Hint</emphasis>: Use the INTERSECTION function on a calculator to find this number.)</li>
+</ol></statement>
+<solution id="fs-id1170573595788">
+<p id="fs-id1170573595790">a. <m>C= 0.75 x+ 125 <m> b. $245 c. 167 cupcakes</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573595814">
+<p id="fs-id1170573595816"><emphasis effect="bold">[T]</emphasis> A house purchased for $250,000 is expected to be worth twice its purchase price in 18 years.</p>
+<ol>
+<li>Find a linear function that models the price <emphasis effect="italics">P</emphasis> of the house versus the number of years <emphasis effect="italics">t</emphasis> since the original purchase.</li>
+<li>Interpret the slope of the graph of <emphasis effect="italics">P</emphasis>.</li>
+<li>Find the price of the house 15 years from when it was originally purchased.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573595904">
+<p id="fs-id1170573595907"><emphasis effect="bold">[T]</emphasis> A car was purchased for $26,000. The value of the car depreciates by $1500 per year.</p>
+<ol>
+<li>Find a linear function that models the value <emphasis effect="italics">V</emphasis> of the car after <emphasis effect="italics">t</emphasis> years.</li>
+<li>Find and interpret <m>V( 4 ).<m></li>
+</ol>
+</statement>
+<solution id="fs-id1170573595956">
+<p id="fs-id1170573595958">a. <m>V(t)= −1500 t+ 26,000 <m> b. In 4 years, the value of the car is $20,000.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573595994">
+<p id="fs-id1170573595996"><emphasis effect="bold">[T]</emphasis> A condominium in an upscale part of the city was purchased for $432,000. In 35 years it is worth $60,500. Find the rate of depreciation.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573596016">
+<p id="fs-id1170573596018"><emphasis effect="bold">[T]</emphasis> The total cost <emphasis effect="italics">C</emphasis> (in thousands of dollars) to produce a certain item is modeled by the function <m>C(x)= 10.50 x+ 28,500 ,<m> where <emphasis effect="italics">x</emphasis> is the number of items produced. Determine the cost to produce 175 items.</p>
+</statement>
+<solution id="fs-id1170573596070">
+<p id="fs-id1170573596072">$30,337.50</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573596079">
+<p id="fs-id1170573596081"><emphasis effect="bold">[T]</emphasis> A professor asks her class to report the amount of time <emphasis effect="italics">t</emphasis> they spent writing two assignments. Most students report that it takes them about 45 minutes to type a four-page assignment and about 1.5 hours to type a nine-page assignment.</p>
+<ol>
+<li>Find the linear function <m>y=N(t)<m> that models this situation, where <m>N<m> is the number of pages typed and <emphasis effect="italics">t</emphasis> is the time in minutes.</li>
+<li>Use part a. to determine how many pages can be typed in 2 hours.</li>
+<li>Use part a. to determine how long it takes to type a 20-page assignment.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573596197">
+<p id="fs-id1170573596199"><emphasis effect="bold">[T]</emphasis> The output (as a percent of total capacity) of nuclear power plants in the United States can be modeled by the function <m>P(t)= 1.8576 t+ 68.052 ,<m> where <emphasis effect="italics">t</emphasis> is time in years and <m>t= 0 <m> corresponds to the beginning of 2000. Use the model to predict the percentage output in 2015.</p>
+</statement>
+<solution id="fs-id1170573596250">
+<p id="fs-id1170573596252">96% of the total capacity</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573596260">
+<p id="fs-id1170573596262"><emphasis effect="bold">[T]</emphasis> The admissions office at a public university estimates that 65% of the students offered admission to the class of 2019 will actually enroll.</p>
+<ol>
+<li>Find the linear function <m>y=N(x),<m> where <m>N<m> is the number of students that actually enroll and <m>x<m> is the number of all students offered admission to the class of 2019.</li>
+<li>If the university wants the 2019 freshman class size to be 1350, determine how many students should be admitted.</li>
+</ol>
+</statement>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1170573596356">
+<term>algebraic function</term>
+<meaning id="fs-id1170573596362">a function involving any combination of only the basic operations of addition, subtraction, multiplication, division, powers, and roots applied to an input variable <m>x<m></meaning>
+</definition>
+<definition id="fs-id1170573596371">
+<term>cubic function</term>
+<meaning id="fs-id1170573596376">a polynomial of degree 3; that is, a function of the form <m>f(x)=ax^3 +bx^2 +cx+d,<m> where <m>a\neq  0 <m></meaning>
+</definition>
+<definition id="fs-id1170573596434">
+<term>degree</term>
+<meaning id="fs-id1170573596439">for a polynomial function, the value of the largest exponent of any term</meaning>
+</definition>
+<definition id="fs-id1170573596443">
+<term>linear function</term>
+<meaning id="fs-id1170573596448">a function that can be written in the form <m>f(x)=mx+b<m></meaning>
+</definition>
+<definition id="fs-id1170573596475">
+<term>logarithmic function</term>
+<meaning id="fs-id1170573596481">a function of the form <m>f(x)=<m:msub>logb</m:msub>(x)<m> for some base <m>b\gt  0 ,b\neq  1 <m> such that <m>y=<m:msub>logb</m:msub>(x)<m> if and only if <m><m:msup>by</m:msup>=x<m></meaning>
+</definition>
+<definition id="fs-id1170573596572">
+<term>mathematical model</term>
+<meaning id="fs-id1170573596577">A method of simulating real-life situations with mathematical equations</meaning>
+</definition>
+<definition id="fs-id1170573596582">
+<term>piecewise-defined function</term>
+<meaning id="fs-id1170573596587">a function that is defined differently on different parts of its domain</meaning>
+</definition>
+<definition id="fs-id1170573596592">
+<term>point-slope equation</term>
+<meaning id="fs-id1170573596597">equation of a linear function indicating its slope and a point on the graph of the function</meaning>
+</definition>
+<definition id="fs-id1170573596602">
+<term>polynomial function</term>
+<meaning id="fs-id1170573596608">a function of the form <m>f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0<m></meaning>
+</definition>
+<definition id="fs-id1170573596682">
+<term>power function</term>
+<meaning id="fs-id1170573596687">a function of the form <m>f(x)=x^n<m> for any positive integer <m>n\geq  1 <m></meaning>
+</definition>
+<definition id="fs-id1170573596721">
+<term>quadratic function</term>
+<meaning id="fs-id1170573596726">a polynomial of degree 2; that is, a function of the form <m>f(x)=ax^2 +bx+c<m> where <m>a\neq  0 <m></meaning>
+</definition>
+<definition id="fs-id1170573596772">
+<term>rational function</term>
+<meaning id="fs-id1170573596778">a function of the form <m>f(x)=p(x) /q(x),<m> where <m>p(x)<m> and <m>q(x)<m> are polynomials</meaning>
+</definition>
+<definition id="fs-id1170573596850">
+<term>root function</term>
+<meaning id="fs-id1170573596855">a function of the form <m>f(x)=<m:msup>x 1  /n</m:msup><m> for any integer <m>n\geq  2 <m></meaning>
+</definition>
+<definition id="fs-id1170573596895">
+<term>slope</term>
+<meaning id="fs-id1170573596900">the change in <emphasis effect="italics">y</emphasis> for each unit change in <emphasis effect="italics">x</emphasis></meaning>
+</definition>
+<definition id="fs-id1170573596915">
+<term>slope-intercept form</term>
+<meaning id="fs-id1170573596921">equation of a linear function indicating its slope and <emphasis effect="italics">y</emphasis>-intercept</meaning>
+</definition>
+<definition id="fs-id1170573596940">
+<term>transcendental function</term>
+<meaning id="fs-id1170573596946">a function that cannot be expressed by a combination of basic arithmetic operations</meaning>
+</definition>
+<definition id="fs-id1170573596950">
+<term>transformation of a function</term>
+<meaning id="fs-id1170573596956">a shift, scaling, or reflection of a function</meaning>
+</definition>
+</glossary>
+</document>

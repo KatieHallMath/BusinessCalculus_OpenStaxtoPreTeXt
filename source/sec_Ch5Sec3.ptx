@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch5Sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Fundamental Theorem of Calculus</title>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ul>
+<li>Describe the meaning of the Mean Value Theorem for Integrals.</li>
+<li>State the meaning of the Fundamental Theorem of Calculus, Part 1.</li>
+<li>Use the Fundamental Theorem of Calculus, Part 1, to evaluate derivatives of integrals.</li>
+<li>State the meaning of the Fundamental Theorem of Calculus, Part 2.</li>
+<li>Use the Fundamental Theorem of Calculus, Part 2, to evaluate definite integrals.</li>
+<li>Explain the relationship between differentiation and integration.</li>
+</ul>
+<p id="fs-id1170572470452">In the previous two sections, we looked at the definite integral and its relationship to the area under the curve of a function. Unfortunately, so far, the only tools we have available to calculate the value of a definite integral are geometric area formulas and limits of Riemann sums, and both approaches are extremely cumbersome. In this section we look at some more powerful and useful techniques for evaluating definite integrals.</p>
+<p id="fs-id1170572224159">These new techniques rely on the relationship between differentiation and integration. This relationship was discovered and explored by both Sir Isaac Newton and Gottfried Wilhelm Leibniz (among others) during the late 1600s and early 1700s, and it is codified in what we now call the <term>Fundamental Theorem of Calculus</term>, which has two parts that we examine in this section. Its very name indicates how central this theorem is to the entire development of calculus.</p>
+<note id="fs-id1170572212389" class="media-2">
+<p id="fs-id1170572403410">Isaac Newton’s contributions to mathematics and physics changed the way we look at the world. The relationships he discovered, codified as Newton’s laws and the law of universal gravitation, are still taught as foundational material in physics today, and his calculus has spawned entire fields of mathematics. To learn more, read a <url href="http://www.openstax.org/l/20_newtonbio">brief biography</url> of Newton with multimedia clips.</p>
+</note>
+<p id="fs-id1170571656836">Before we get to this crucial theorem, however, let’s examine another important theorem, the Mean Value Theorem for Integrals, which is needed to prove the Fundamental Theorem of Calculus.</p>
+</introduction>
+<subsection id="fs-id1170572209175">
+<title>The Mean Value Theorem for Integrals</title>
+<p id="fs-id1170572295468">The <term>Mean Value Theorem for Integrals</term> states that a continuous function on a closed interval takes on its average value at the same point in that interval. The theorem guarantees that if <m>f(x)</m> is continuous, a point <m>c</m> exists in an interval <m>[a,b]</m> such that the value of the function at <m>c</m> is equal to the average value of <m>f(x)</m> over <m>[a,b].</m> We state this theorem mathematically with the help of the formula for the average value of a function that we presented at the end of the preceding section.</p>
+<theorem xml:id="fs-id1170572224851">
+<title>The Mean Value Theorem for Integrals</title>
+<p id="fs-id1170572382252">If <m>f(x)</m> is continuous over an interval <m>[a,b],</m> then there is at least one point <m>c\in [a,b]</m> such that</p>
+<me>f(c)=\frac{1}{b-a} \displaystyle{ \int_{a}^{b} f(x)dx}.</me>
+<p id="fs-id1170572370703">This formula can also be stated as</p>
+<me>\displaystyle{ \int_{a}^{b} f(x)dx}=f(c)(b-a).</me>
+<!--Commenting out proof
+<proof>
+<p id="fs-id1170572169022">Since <m>f(x)</m> is continuous on <m>[a,b],</m> by the extreme value theorem (see <xref ref="sec_Ch4Sec3">Maxima and Minima</xref>), it assumes minimum and maximum values—<m>m</m> and <m>M</m>, respectively—on <m>[a,b].</m> Then, for all <m>x</m> in <m>[a,b],</m> we have <m>m\leq f(x)\leq M.</m> Therefore, by the comparison theorem (see <xref ref="sec_Ch5Sec2">The Definite Integral </xref> ), we have </p>
+<me>m(b-a)\leq \displaystyle{ \int_{a}^{b} f(x)dx}\leq M(b-a).</me>
+<p id="fs-id1170572622216">Dividing by <m>b-a</m> gives us</p>
+<me>m\leq \frac{1}{b-a} \displaystyle{ \int_{a}^{b} f(x)dx}\leq M.</me>
+<p id="fs-id1170572204800">Since <m>\frac{1}{b-a} \displaystyle{ \int_{a}^{b} f}(x)dx</m> is a number between <m>m</m> and <m>M</m>, and since <m>f(x)</m> is continuous and assumes the values <m>m</m> and <m>M</m> over <m>[a,b],</m> by the Intermediate Value Theorem (see <xref ref="sec_Ch2Sec4">Continuity</xref>), there is a number <m>c</m> over <m>[a,b]</m> such that</p>
+<me>f(c)=\frac{1}{b-a} \displaystyle{ \int_{a}^{b} f(x)dx},</me>
+<p id="fs-id1170572224806">and the proof is complete.</p>
+</proof>-->
+</theorem>
+<example xml:id="fs-id1170572141909">
+<title>Finding the Average Value of a Function</title>
+<statement id="fs-id1170571648750">
+<p id="fs-id1170572232678">Find the average value of the function <m>f(x)=8-2x</m> over the interval <m>[0,4]</m> and find <m>c</m> such that <m>f(c)</m> equals the average value of the function over <m>[0,4].</m></p>
+</statement>
+<solution id="fs-id1170572114676">
+<p id="fs-id1170572230416">The formula states the mean value of <m>f(x)</m> is given by</p>
+<me>\frac{1}{4-0}\displaystyle{ \int_{0}^{4} (8-2x)dx}.</me>
+<p id="fs-id1170572589327">We can see in <xref ref="CNX_Calc_Figure_05_03_001"/> that the function represents a straight line and forms a right triangle bounded by the <m>x</m>- and <m>y</m>-axes. The area of the triangle is <m>A=\frac{1}{2}(\text{ base })}{(\text{ height }).</m> We have</p>
+<me>A=\frac{1}{2}(4)}{(8)=16.</me>
+<p id="fs-id1170572549185">The average value is found by multiplying the area by <m>1/(4-0).</m> Thus, the average value of the function is</p>
+<me>\frac{1}{4}(16)=4.</me>
+<p id="fs-id1170572559549">Set the average value equal to <m>f(c)</m> and solve for <m>c</m>.</p>
+<md><mrow>8-2c\amp =\amp 4</mrow><mrow>c\amp =\amp 2</mrow></md>
+<p id="fs-id1170572111868">At <m>c=2,f(2)=4.</m></p>
+<figure xml:id="CNX_Calc_Figure_05_03_001">
+  <image source="CNX_Calc_Figure_05_03_002.jpg" width="50%">
+<description>"The graph of a decreasing line f(x) = 8 &#x2013; 2x over [-1,4.5]. The line y=4 is drawn over [0,4], which intersects with the line at (2,4). A line is drawn down from (2,4) to the x axis and from (4,4) to the y axis. The area under y=4 is shaded." </description></image> <caption>By the Mean Value Theorem, the continuous function <m>f(x)</m> takes on its average value at <m>c</m> at least once over a closed interval.</caption>
+</figure>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1170572479215">
+<p id="fs-id1170572139814">Find the average value of the function <m>f(x)=\frac{x}{2}</m> over the interval <m>[0,6]</m> and find <m>c</m> such that <m>f(c)</m> equals the average value of the function over <m>[0,6].</m></p>
+</statement>
+<solution id="fs-id1170571656289">
+<p id="fs-id1170572130145"><m>\text{ Average value }=1.5;c=3</m></p>
+</solution>
+<hint>
+<p id="fs-id1170572208610">Use the procedures from <xref ref="fs-id1170572141909"/> to solve the problem</p>
+</hint></exercise>
+<example xml:id="fs-id1170572451873">
+<title>Finding the Point Where a Function Takes on Its Average Value</title>
+ <statement id="fs-id1170572212178">
+<p id="fs-id1170572505444">Given <m>\displaystyle{ \int_{0}^{3} x^2dx}=9,</m> find <m>c</m> such that <m>f(c)</m> equals the average value of <m>f(x)=x^2</m> over <m>[0,3].</m></p>
+</statement>
+<solution id="fs-id1170572215711">
+<p id="fs-id1170571816124">We are looking for the value of <m>c</m> such that</p>
+<me>f(c)=\frac{1}{3-0}\displaystyle{ \int_{0}^{3} x^2dx}=\frac{1}{3}(9)=3.</me>
+<p id="fs-id1170572135349">Replacing <m>f(c)</m> with <m>c^2</m>, we have</p>
+<md><mrow>c^2\amp = 3</mrow><mrow>c\amp = \pm \sqrt{3}.</mrow></md>
+<p id="fs-id1170572222654">Since <m>- \sqrt{3}</m> is outside the interval, take only the positive value. Thus, <m>c=\sqrt{3}</m> (<xref ref="CNX_Calc_Figure_05_03_002"/>).</p>
+<figure xml:id="CNX_Calc_Figure_05_03_002">
+  <image source="CNX_Calc_Figure_05_03_003.jpg" width="50%">
+<description>"A graph of the parabola f(x) = x^2 over [-2, 3]. The area under the curve and above the x axis is shaded, and the point (sqrt(3), 3) is marked."  </description></image> <caption>Over the interval <m>[0,3],</m> the function <m>f(x)=x^2</m> takes on its average value at <m>c=\sqrt{3}.</m></caption>
+</figure>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1170572230035">
+<p id="fs-id1170572101794">Given <m>\displaystyle{ \int_{0}^{3} (2x^2-1)dx}=15,</m> find <m>c</m> such that <m>f(c)</m> equals the average value of <m>f(x)=2x^2-1</m> over <m>[0,3].</m></p>
+</statement>
+<solution id="fs-id1170572492430">
+<p id="fs-id1170571653986"><m>c=\sqrt{3}</m></p>
+</solution>
+<hint>
+<p id="fs-id1170572137926">Use the procedures from <xref ref="fs-id1170572451873"/> to solve the problem.</p>
+</hint></exercise>
+</subsection>
+<subsection id="fs-id1170572229749">
+<title>Fundamental Theorem of Calculus Part 1: Integrals and Antiderivatives</title>
+<p id="fs-id1170571639757">As mentioned earlier, the Fundamental Theorem of Calculus is an extremely powerful theorem that establishes the relationship between differentiation and integration, and gives us a way to evaluate definite integrals without using Riemann sums or calculating areas. The theorem is comprised of two parts, the first of which, the <term>Fundamental Theorem of Calculus, Part 1</term>, is stated here. Part 1 establishes the relationship between differentiation and integration.</p>
+<theorem xml:id="fs-id1170571704350"> <!-- Change next end note to end theorem -->
+<title>Fundamental Theorem of Calculus, Part 1</title>
+<p id="fs-id1170571679188">If <m>f(x)</m> is continuous over an interval <m>[a,b],</m> and the function <m>F(x)</m> is defined by</p>
+<me>F(x)=\displaystyle{ \int_{a}^{x} f(t)dt},</me>
+<p id="fs-id1170572307182">then <m>F'(x)=f(x)</m> over <m>[a,b].</m></p>
+<p id="fs-id1170572114562">Before we delve into the proof, a couple of subtleties are worth mentioning here. First, a comment on the notation. Note that we have defined a function, <m>F(x),</m> as the definite integral of another function, <m>f(t),</m> from the point <m>a</m> to the point <m>x</m>. At first glance, this is confusing, because we have said several times that a definite integral is a number, and here it looks like it’s a function. The key here is to notice that for any particular value of <m>x</m>, the definite integral is a number. So the function <m>F(x)</m> returns a number (the value of the definite integral) for each value of <m>x</m>.</p>
+<p id="fs-id1170572480292">Second, it is worth commenting on some of the key implications of this theorem. There is a reason it is called the <em>Fundamental Theorem of Calculus</em>. Not only does it establish a relationship between integration and differentiation, but also it guarantees that any integrable function has an antiderivative. Specifically, it guarantees that any continuous function has an antiderivative.</p>
+<!--Commenting out proof
+<proof>
+<p id="fs-id1170571656780">Applying the definition of the derivative, we have</p>
+<md>
+  <mrow>F'(x)\amp =\lim_{h\to 0} \frac{F(x+h)-F(x)}{h}</mrow>
+  <mrow> \amp =\lim_{h\to 0} \frac{1}{h}\left[\displaystyle{ \int_{a}^{x+h} f(t)dt}-\displaystyle{ \int_{a}^{x} f(t)dt}\right]</mrow>
+  <mrow> \amp =\lim_{h\to 0} \frac{1}{h}\left[\displaystyle{ \int_{a}^{x+h} f(t)dt}+\displaystyle{ \int_{x}^{a} f(t)dt}\right]</mrow>
+  <mrow> \amp =\lim_{h\to 0} \frac{1}{h}\displaystyle{ \int_{x}^{x+h} f(t)dt}.</mrow></md>
+<p id="fs-id1170572608050">Looking carefully at this last expression, we see <m>\frac{1}{h}\displaystyle{ \int_{x}^{x+h} f(t)dt}</m> is just the average value of the function <m>f(x)</m> over the interval <m>[x,x+h].</m> Therefore, by <xref ref="fs-id1170572224851"/>, there is some number <m>c</m> in <m>[x,x+h]</m> such that</p>
+<me>\frac{1}{h}\displaystyle{ \int_{x}^{x+h} f(x)dx}=f(c).</me>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572246217">In addition, since <m>c</m> is between <m>x</m> and <m>x</m> + <m>h</m>, <m>c</m> approaches <m>x</m> as <m>h</m> approaches zero. Also, since <m>f(x)</m> is continuous, we have <m>\lim_{h\to 0}f(c)=\lim_{c\to x}f(c)=f(x).</m> Putting all these pieces together, we have</p><md><mrow>F'(x) \amp =\lim_{h\to 0} \frac{1}{h}\displaystyle{ \int_{x}^{x+h} f(x)dx}</mrow><mrow> \amp =\lim_{h\to 0}f(c)</mrow><mrow> \amp =f(x),</mrow></md>
+<p id="fs-id1170572505513">and the proof is complete.</p>
+</proof>-->
+</theorem>
+<example xml:id="fs-id1170572601345">
+<title>Finding a Derivative with the Fundamental Theorem of Calculus</title>
+ <statement id="fs-id1170571600553">
+<p id="fs-id1170572498741">Use the <xref ref="fs-id1170571704350"/> to find the derivative of</p>
+<me>g(x)=\displaystyle{ \int_{1}^{x} \frac{1}{t^3+1}dt.}</me>
+</statement>
+<solution id="fs-id1170572430852">
+<p id="fs-id1170572346816">According to the Fundamental Theorem of Calculus, the derivative is given by</p>
+<me>g'(x) =\frac{1}{x^3+1}.</me>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1170572088075">
+<p id="fs-id1170572088078">Use the Fundamental Theorem of Calculus, Part 1 to find the derivative of <m>g(r)=\displaystyle{ \int_{0}^{r} \sqrt{x^2+4}dx}.</m></p>
+</statement>
+<solution id="fs-id1170571586150">
+<p id="fs-id1170571586152"><m>g'(r) =\sqrt{r^2+4}</m></p>
+</solution>
+<hint>
+<p id="fs-id1170572099767">Follow the procedures from <xref ref="fs-id1170572601345"/> to solve the problem.</p>
+</hint></exercise>
+<!--Commenting out trig
+<example xml:id="fs-id1170572134770">
+<title>Using the Fundamental Theorem and the Chain Rule to Calculate Derivatives</title>
+<statement id="fs-id1170572512078">
+<p id="fs-id1170572481877">Let <m>F(x)=\displaystyle{ \int_{1}^{\sqrt{x}} \sin tdt}.</m> Find <m>F'(x) .</m></p>
+</statement>
+<solution id="fs-id1170572103650">
+<p id="fs-id1170572103655">Letting <m>u(x)=\sqrt{x},</m> we have <m>F(x)=\displaystyle{ \int_{1}^{u(x)} \sin tdt}.</m> Thus, by the Fundamental Theorem of Calculus and the chain rule,</p>
+<md><mrow>F'(x) \amp =\sin(u(x))\frac{du}{dx} </mrow><mrow> \amp =\sin(u(x))\cdot (\frac{1}{2}x^{-1/2})</mrow><mrow> \amp =\frac{\sin\sqrt{x}}{2\sqrt{x}}.</mrow></md>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1170572370684">
+<p id="fs-id1170572370686">Let <m>F(x)=\displaystyle{ \int_{1}^{x^3}  \cos  tdt}.</m> Find <m>F'(x) .</m></p>
+</statement>
+<solution id="fs-id1170572557215">
+<p id="fs-id1170572557217"><m>F'(x) =3x^2\cos x^3</m></p>
+</solution>
+<hint>
+<p id="fs-id1170572481931">Use the chain rule to solve the problem.</p>
+</hint></exercise>
+-->
+<example>
+<title>Using the Fundamental Theorem and the Chain Rule to Calculate Derivatives</title>
+<statement>
+<p>Let <m>F(x)=\displaystyle{ \int_{1}^{\sqrt{x}} \ln t\;dt}.</m> Find <m>F'(x) .</m></p>
+</statement>
+<solution id="fs-id1170572103650">
+<p>Letting <m>u(x)=\sqrt{x},</m> we have <m>F(x)=\displaystyle{ \int_{1}^{u(x)} \ln t dt}.</m> Thus, by the Fundamental Theorem of Calculus and the chain rule,</p>
+<md><mrow>F'(x) \amp =\ln(u(x))\frac{du}{dx} </mrow><mrow> \amp =\ln(u(x))\cdot \left(\frac{1}{2}x^{-1/2}\right)</mrow>
+<mrow> \amp =\frac{\ln\sqrt{x}}{2\sqrt{x}}.</mrow>
+<mrow> \amp =\frac{\ln x}{4\sqrt{x}}.</mrow></md>
+</solution>
+</example>
+<exercise>  <statement>
+<p>Let <m>F(x)=\displaystyle{ \int_{1}^{x^3}  e^t dt}.</m> Find <m>F'(x) .</m></p>
+</statement>
+<solution>
+<p><m>F'(x) =3x^2e^{x^3}</m></p>
+</solution>
+<hint>
+<p>Use the chain rule to solve the problem.</p>
+</hint></exercise>
+<example xml:id="fs-id1170572228878">
+<title>Using the Fundamental Theorem of Calculus with Two Variable Limits of Integration</title>
+<statement id="fs-id1170572368858">
+<p id="fs-id1170572368864">Let <m>F(x)=\displaystyle{ \int_{x}^{2x} t^3dt}.</m> Find <m>F'(x) .</m></p>
+</statement>
+<solution id="fs-id1170572351970">
+<p id="fs-id1170572142330">We have <m>F(x)=\displaystyle{ \int_{x}^{2x} t^3dt}.</m> Both limits of integration are variable, so we need to split this into two integrals. We get</p>
+<md><mrow>F(x)\amp =\displaystyle{ \int_{x}^{2x} t^3dt}</mrow><mrow> \amp =\displaystyle{ \int_{x}^{0} t^3dt}+\displaystyle{ \int_{0}^{2x} t^3dt}</mrow><mrow> \amp =- \displaystyle{ \int_{0}^{x} t^3dt}+\displaystyle{ \int_{0}^{2x} t^3dt}.</mrow></md>
+<p id="fs-id1170571610445">Differentiating the first term, we obtain</p>
+<me>\frac{d}{dx}\left[- \displaystyle{ \int_{0}^{x} t^3dt}\right]=- x^3.</me>
+<p id="fs-id1170572305916">Differentiating the second term, we first let <m>u(x)=2x.</m> Then,</p>
+<md><mrow>\frac{d}{dx}\left[\displaystyle{ \int_{0}^{2x} t^3dt}\right]\amp =\frac{d}{dx}\left[\displaystyle{ \int_{0}^{u(x)} t^3dt}\right]</mrow><mrow> \amp =(u(x))^3\frac{du}{dx} </mrow><mrow> \amp =(2x)^3\cdot 2</mrow><mrow> \amp =16x^3.</mrow></md>
+<p id="fs-id1170572207052">Thus,</p>
+<md><mrow>F'(x) \amp =\frac{d}{dx}\left[- \displaystyle{ \int_{0}^{x} t^3dt}\right]+\frac{d}{dx}\left[\displaystyle{ \int_{0}^{2x} t^3dt}\right]</mrow><mrow> \amp =- x^3+16x^3</mrow><mrow> \amp =15x^3.</mrow></md>
+</solution>
+</example>
+<exercise><statement>
+<p>Let <m>F(x)=\displaystyle{ \int_{x}^{x^2}  e^tdt}.</m> Find <m>F'(x) .</m></p>
+</statement>
+<solution>
+<p><m>F'(x) =2x e^{x^2}-e^x</m></p>
+</solution>
+<hint>
+<p>Use the procedures from <xref ref="fs-id1170572228878"/> to solve the problem.</p>
+</hint></exercise></subsection>
+<!--Commenting out trig
+<exercise>  <statement id="fs-id1170572168836">
+<p id="fs-id1170572168838">Let <m>F(x)=\displaystyle{ \int_{x}^{x^2}  \cos  tdt}.</m> Find <m>F'(x) .</m></p>
+</statement>
+<solution id="fs-id1170572244754">
+<p id="fs-id1170572508003"><m>F'(x) =2x \cos x^2-\cos  x</m></p>
+</solution>
+<hint>
+<p id="fs-id1170572168653">Use the procedures from <xref ref="fs-id1170572228878"/> to solve the problem.</p>
+</hint></exercise>-->
+<subsection id="fs-id1170572331198">
+<title>Fundamental Theorem of Calculus, Part 2: The Evaluation Theorem</title>
+<p id="fs-id1170571697314">The Fundamental Theorem of Calculus, Part 2, is perhaps the most important theorem in calculus. After tireless efforts by mathematicians for approximately 500 years, new techniques emerged that provided scientists with the necessary tools to explain many phenomena. Using calculus, astronomers could finally determine distances in space and map planetary orbits. Everyday financial problems such as calculating marginal costs or predicting total profit could now be handled with simplicity and accuracy. Engineers could calculate the bending strength of materials or the three-dimensional motion of objects. Our view of the world was forever changed with calculus.</p>
+<p id="fs-id1170571697316">After finding approximate areas by adding the areas of <m>n</m> rectangles, the application of this theorem is straightforward by comparison. It almost seems too simple that the area of an entire curved region can be calculated by just evaluating an antiderivative at the first and last endpoints of an interval.</p>
+<theorem xml:id="fs-id1170571660076">
+<title>The Fundamental Theorem of Calculus, Part 2</title>
+<p id="fs-id1170572448137">If <m>f</m> is continuous over the interval <m>[a,b]</m> and <m>F(x)</m> is any antiderivative of <m>f(x),</m> then</p>
+<me>\displaystyle{ \int_{a}^{b} f(x)dx}=F(b)-F(a).</me>
+<p id="fs-id1170572416003">We often see the notation <m>F(x)|_a^b</m> to denote the expression <m>F(b)-F(a).</m> We use this vertical bar and associated limits <m>a</m> and <m>b</m> to indicate that we should evaluate the function <m>F(x)</m> at the upper limit (in this case, <m>b</m>), and subtract the value of the function <m>F(x)</m> evaluated at the lower limit (in this case, <m>a</m>).</p>
+<p id="fs-id1170572622222">The <term>Fundamental Theorem of Calculus, Part 2</term> (also known as the <term>evaluation theorem</term>) states that if we can find an antiderivative for the integrand, then we can evaluate the definite integral by evaluating the antiderivative at the endpoints of the interval and subtracting.</p>
+<!--Commenting out proof
+<proof>
+<p id="fs-id1170572430381">Let <m>P={x_i},i=0,1,\dots, n</m> be a regular partition of <m>[a,b].</m> Then, we can write</p>
+<md>
+  <mrow>F(b)-F(a)\amp =F(x_n)-F(x_0)</mrow>
+  <mrow> \amp =[F(x_n)-F(x_{n-1})]+[F(x_{n-1})-F(x_{n-2})]+\dots +[F(x_1)-F(x_0)]</mrow>
+  <mrow> \amp =\displaystyle{ \sum_{i=1}^n }[F(x_i)-F(x_{i-1})].</mrow></md>
+<p id="fs-id1170572370648">Now, we know <m>F</m> is an antiderivative of <m>f</m> over <m>[a,b],</m> so by the Mean Value Theorem (see <xref ref="sec_Ch4Sec4">The Mean Value Theorem</xref>) for <m>i=0,1,\dots, n</m> we can find <m>c_i</m> in <m>[x_{i-1},x_i]</m> such that</p>
+<me>F(x_i)-F(x_{i-1})=F'(c_i)(x_i-x_{i-1})=f(c_i)\Delta x.</me>
+<p id="fs-id1170571699032">Then, substituting into the previous equation, we have</p>
+<me>F(b)-F(a)=\displaystyle{ \sum_{i=1}^nf(c_i)\Delta x}.</me>
+<p id="fs-id1170572554028">Taking the limit of both sides as <m>n\to \infty ,</m> we obtain</p>
+<md><mrow>F(b)-F(a)\amp =\lim_{n\to \infty }\displaystyle{ \sum_{i=1}^nf(c_i)\Delta x}</mrow><mrow> \amp =\displaystyle{ \int_{a}^{b} f(x)dx}.</mrow></md>
+</proof>-->
+</theorem>
+<example xml:id="fs-id1170571678911">
+<title>Evaluating an Integral with the Fundamental Theorem of Calculus</title>
+<statement id="fs-id1170571678915">
+<p id="fs-id1170571678920">Use <xref ref="fs-id1170571660076"/> to evaluate</p>
+<me>\displaystyle{ \int_{-2}^{2} (t^2-4)dt}.</me>
+</statement>
+<solution id="fs-id1170572173699">
+<p id="fs-id1170572173704">Recall the power rule for <xref ref="sec_Ch4Sec10">Antiderivatives</xref>:</p>
+<me>\text{ If } y=x^n,\displaystyle{ \int x^ndx}=\frac{x^{n+1}}{n+1}+C.</me>
+<p id="fs-id1170571697070">Use this rule to find the antiderivative of the function and then apply the theorem. We have</p>
+<md><mrow>\displaystyle{ \int_{-2}^{2} (t^2-4)dt}\amp =\frac{t^3}{3}-4t\Big|_{-2}^2</mrow>
+<mrow> \amp =[\frac{(2)^3}{3}-4(2)]-[\frac{(-2)^3}{3}-4(-2)]</mrow>
+<mrow> \amp =\left(\frac{8}{3}-8\right)-\left(-\frac{8}{3}+8\left)</mrow><mrow> \amp =\frac{8}{3}-8+\frac{8}{3}-8</mrow>
+<mrow> \amp =\frac{16}{3}-16</mrow>
+<mrow> \amp =-\frac{32}{3}.</mrow></md>
+<p id="fs-id1170572135831"><em>Analysis</em></p>
+<p id="fs-id1170572135837">Notice that we did not include the “+ <m>C</m>” term when we wrote the antiderivative. The reason is that, according to the Fundamental Theorem of Calculus, Part 2, <emphasis effect="italics">any</emphasis> antiderivative works. So, for convenience, we chose the antiderivative with <m>C=0.</m> If we had chosen another antiderivative, the constant term would have canceled out. This always happens when evaluating a definite integral.</p>
+<p id="fs-id1170571660070">The region of the area we just calculated is depicted in <xref ref="CNX_Calc_Figure_05_03_003"/>. Note that the region between the curve and the <m>x</m>-axis is all below the <m>x</m>-axis. Area is always positive, but a definite integral can still produce a negative number (a net signed area). For example, if this were a profit function, a negative number indicates the company is operating at a loss over the given interval.</p>
+<figure xml:id="CNX_Calc_Figure_05_03_003">
+  <image source="CNX_Calc_Figure_05_03_004.jpg" width="50%">
+<description>"The graph of the parabola f(t) = t^2 &#x2013; 4 over [-4, 4]. The area above the curve and below the x axis over [-2, 2] is shaded." </description></image> <caption>The evaluation of a definite integral can produce a negative value, even though area is always positive.</caption>
+</figure>
+</solution>
+</example>
+<example xml:id="fs-id1170571561288">
+<title>Evaluating a Definite Integral Using the Fundamental Theorem of Calculus, Part 2</title>
+<statement id="fs-id1170572607946">
+<p id="fs-id1170572607951">Evaluate the following integral using the Fundamental Theorem of Calculus, Part 2:</p>
+<me>\displaystyle{ \int_{1}^{9} \frac{x-1}{\sqrt{x}}}dx.</me>
+</statement>
+<solution id="fs-id1170572130384">
+<p id="fs-id1170572130389">First, eliminate the radical by rewriting the integral using rational exponents. Then, separate the numerator terms by writing each one over the denominator:</p>
+<me>\displaystyle{ \int_{1}^{9} \frac{x-1}{x^{1/2} }dx}=\displaystyle{ \int_{1}^{9} (\frac{x}{x^{1/2} }-\frac{1}{x^{1/2} })dx}\text{ . }</me>
+<p id="fs-id1170572624682">Use the properties of exponents to simplify:</p>
+<me>\displaystyle{ \int_{1}^{9} (\frac{x}{x^{1/2}}-\frac{1}{x^{1/2} })dx}=\displaystyle{ \int_{1}^{9} (x^{1/2} -x^{-1/2} )dx}\text{ . }</me>
+<p id="fs-id1170572563042">Now, integrate using the power rule:</p>
+<md>
+  <mrow>\displaystyle{ \int_{1}^{9} (x^{1/2} -x^{-1/2} )dx}\amp =\left(\frac{x^{3/2} }{\frac{3}{2}}-\frac{x^{1/2} }{\frac{1}{2}}\right)\Big|_1^9</mrow>
+  <mrow> \amp =\left[\frac{(9)^{3/2}}{\frac{3}{2}}-\frac{(9)^{1/2}}{\frac{1}{2}}\right]-\left[\frac{(1)^{3/2}}{\frac{3}{2}}-\frac{(1)^{1/2}}{\frac{1}{2}}\right]</mrow><mrow> \amp =[\frac{2}{3}(27)-2(3)]-[\frac{2}{3}(1)-2(1)]</mrow><mrow> \amp =18-6-\frac{2}{3}+2</mrow><mrow> \amp =\frac{40}{3}.</mrow></md>
+<p id="fs-id1170572522399">See <xref ref="CNX_Calc_Figure_05_03_004"/>.</p>
+<figure xml:id="CNX_Calc_Figure_05_03_004">
+  <image source="CNX_Calc_Figure_05_03_005.jpg" width="50%">
+<description>"The graph of the function f(x) = (x-1) / sqrt(x) over [0,9]. The area under the graph over [1,9] is shaded." </description></image> <caption>The area under the curve from <m>x=1</m> to <m>x=9</m> can be calculated by evaluating a definite integral.</caption>
+</figure>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1170571609447">
+<p id="fs-id1170571609449">Use <xref ref="fs-id1170571660076"/> to evaluate <m>\displaystyle{ \int_{1}^{2} x^{-4} dx}.</m></p>
+</statement>
+<solution id="fs-id1170571639101">
+<p id="fs-id1170571639103"><m>\frac{7}{24}</m></p>
+</solution>
+<hint>
+<p id="fs-id1170571639097">Use the power rule.</p>
+</hint></exercise>
+<!--Comenting out trig
+<example xml:id="fs-id1170571597325">
+<title>A Roller-Skating Race</title>
+ <statement id="fs-id1170571597329">
+<p id="fs-id1170571597335">James and Kathy are racing on roller skates. They race along a long, straight track, and whoever has gone the farthest after 5 sec wins a prize. If James can skate at a velocity of <m>f(t)=5+2t</m> ft/sec and Kathy can skate at a velocity of <m>g(t)=10+\cos (\frac{\pi}{2}t)</m> ft/sec, who is going to win the race?</p>
+</statement>
+<solution id="fs-id1170572332608">
+<p id="fs-id1170572332613">We need to integrate both functions over the interval <m>[0,5]</m> and see which value is bigger. For James, we want to calculate</p>
+<me>\displaystyle{ \int_{0}^{5} (5+2t)dt}.</me>
+<p id="fs-id1170571758991">Using the power rule, we have</p>
+<md><mrow>\displaystyle{ \int_{0}^{5} (5+2t)dt}\amp =(5t+t^2)|_0^5</mrow><mrow> \amp =(25+25)=50.</mrow></md>
+<p id="fs-id1170571772586">Thus, James has skated 50 ft after 5 sec. Turning now to Kathy, we want to calculate</p>
+<me>\displaystyle{ \int_{0}^{5} 10}+\cos (\frac{\pi}{2}t)dt.</me>
+<p id="fs-id1170572292292">We know <m>\sin t</m> is an antiderivative of <m>\cos  t,</m> so it is reasonable to expect that an antiderivative of <m>\cos (\frac{\pi}{2}t)</m> would involve <m>\sin(\frac{\pi}{2}t).</m> However, when we differentiate <m>\sin(\frac{\pi}{2}t),</m> we get <m>\frac{\pi}{2}\cos (\frac{\pi}{2}t)</m> as a result of the chain rule, so we have to account for this additional coefficient when we integrate. We obtain</p>
+<md><mrow>\displaystyle{ \int_{0}^{5} 10}+\cos (\frac{\pi}{2}t)dt\amp =(10t+\frac{2}{\pi}\sin(\frac{\pi}{2}t))|_0^5</mrow><mrow> \amp =(50+\frac{2}{\pi})-(0-\frac{2}{\pi}\sin 0)</mrow><mrow>\amp \approx 50.6.</mrow></md>
+<p id="fs-id1170572368405">Kathy has skated approximately 50.6 ft after 5 sec. Kathy wins, but not by much!</p>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1170572368417">
+<p id="fs-id1170572368419">Suppose James and Kathy have a rematch, but this time the official stops the contest after only 3 sec. Does this change the outcome?</p>
+</statement>
+<solution id="fs-id1170571773425">
+<p id="fs-id1170571773427">Kathy still wins, but by a much larger margin: James skates 24 ft in 3 sec, but Kathy skates 29.3634 ft in 3 sec.</p>
+</solution>
+<hint>
+<p id="fs-id1170572368423">Change the limits of integration from those in <xref ref="fs-id1170571597325"/>.</p>
+</hint></exercise>
+-->
+<example xml:id="Marginal_Revenue_53">
+<title>Marginal Revenue</title>
+ <statement>
+<p>Suppose the marginal revenue for an item is <m>R'(t)=-3t^2+36t</m>, where <m>t</m> is the number of weeks after an advertising campaign has begun. What is the revenue collected over the first 4 weeks? Assume the marginal revenue is in hundreds of dollars per week.</p>
+</statement>
+<solution>
+<p>We need to integrate the marginal revenue function over the interval <m>[0,4]</m>.</p>
+<me>\displaystyle{ \int_{0}^{4} (-3t^2+36t)dt}.</me>
+<p>Using the power rule, we have</p>
+<md><mrow>\displaystyle{ \int_{0}^{4} (-3t^2+36t)dt}\amp =(-t^3+18t^2)|_0^4</mrow><mrow> \amp =224.</mrow></md>
+<p>Thus, the revenue collected over the first 4 weeks is <m>224($ 100)=$22400</m>.</p>
+</solution>
+</example>
+<exercise> <title>Marginal Cost</title>
+<statement>
+<p>The marginal cost for a bagel shop is <m>C'(t)=10\sqrt{t}</m> dollars per day where <m>t</m> is the number days since the shop has opened for business. What are the total costs the shop must pay over the first 9 days of opening?</p>
+</statement>
+<solution>$180
+</solution>
+<hint>
+<p>Follow the steps in <xref ref="Marginal_Revenue_53"/>.</p>
+</hint></exercise>
+<note id="fs-id1170571773434" class="project">
+<title>Project: A Parachutist in Free Fall</title>
+<figure xml:id="CNX_Calc_Figure_05_03_005">
+  <image source="CNX_Calc_Figure_05_03_006.jpg" width="50%">
+<description>"Two skydivers free falling in the sky."  </description></image> <caption>Skydivers can adjust the velocity of their dive by changing the position of their body during the free fall. (credit: Jeremy T. Lock)</caption>
+</figure>
+<p id="fs-id1170572218426">Julie is an avid <term class="no-emphasis">skydiver</term>. She has more than 300 jumps under her belt and has mastered the art of making adjustments to her body position in the air to control how fast she falls. If she arches her back and points her belly toward the ground, she reaches a terminal velocity of approximately 120 mph (176 ft/sec). If, instead, she orients her body with her head straight down, she falls faster, reaching a terminal velocity of 150 mph (220 ft/sec).</p>
+<p id="fs-id1170572218437">Since Julie will be moving (falling) in a downward direction, we assume the downward direction is positive to simplify our calculations. Julie executes her jumps from an altitude of 12,500 ft. After she exits the aircraft, she immediately starts falling at a velocity given by <m>v(t)=32t.</m> She continues to accelerate according to this velocity function until she reaches terminal velocity. After she reaches terminal velocity, her speed remains constant until she pulls her ripcord and slows down to land.</p>
+<p id="fs-id1170572419103">On her first jump of the day, Julie orients herself in the slower “belly down” position (terminal velocity is 176 ft/sec). Using this information, answer the following questions.</p>
+<ol>
+<li>How long after she exits the aircraft does Julie reach terminal velocity?</li>
+<li>Based on your answer to question 1, set up an expression involving one or more integrals that represents the distance Julie falls after 30 sec.</li>
+<li>If Julie pulls her ripcord at an altitude of 3000 ft, how long does she spend in a free fall?</li>
+<li>Julie pulls her ripcord at 3000 ft. It takes 5 sec for her parachute to open completely and for her to slow down, during which time she falls another 400 ft. After her canopy is fully open, her speed is reduced to 16 ft/sec. Find the total time Julie spends in the air, from the time she leaves the airplane until the time her feet touch the ground.
+On Julie’s second jump of the day, she decides she wants to fall a little faster and orients herself in the “head down” position. Her terminal velocity in this position is 220 ft/sec. Answer these questions based on this velocity:</li>
+<li>How long does it take Julie to reach terminal velocity in this case?</li>
+<li>Before pulling her ripcord, Julie reorients her body in the “belly down” position so she is not moving quite as fast when her parachute opens. If she begins this maneuver at an altitude of 4000 ft, how long does she spend in a free fall before beginning the reorientation?
+Some jumpers wear “<term class="no-emphasis">wingsuits</term>” (see <xref ref="CNX_Calc_Figure_05_03_006"/>). These suits have fabric panels between the arms and legs and allow the wearer to glide around in a free fall, much like a flying squirrel. (Indeed, the suits are sometimes called “flying squirrel suits.”) When wearing these suits, terminal velocity can be reduced to about 30 mph (44 ft/sec), allowing the wearers a much longer time in the air. Wingsuit flyers still use parachutes to land; although the vertical velocities are within the margin of safety, horizontal velocities can exceed 70 mph, much too fast to land safely.</li>
+</ol>
+<figure xml:id="CNX_Calc_Figure_05_03_006">
+<image source="CNX_Calc_Figure_05_03_007.jpg" width="50%">
+<description>"A person falling in a wingsuit, which works to reduce the vertical velocity of a skydiver&#x2019;s fall."</description></image> <caption>The fabric panels on the arms and legs of a wingsuit work to reduce the vertical velocity of a skydiver’s fall. (credit: Richard Schneider)</caption>
+</figure>
+<p id="fs-id1163722683509">Answer the following question based on the velocity in a wingsuit.</p>
+<ol>
+<li>If Julie dons a wingsuit before her third jump of the day, and she pulls her ripcord at an altitude of 3000 ft, how long does she get to spend gliding around in the air?</li>
+</ol>
+</note>
+</subsection>
+<subsection id="fs-id1170571699029" class="key-concepts">
+<title>Key Concepts</title>
+<ul>
+<li>The Mean Value Theorem for Integrals states that for a continuous function over a closed interval, there is a value <m>c</m> such that <m>f(c)</m> equals the average value of the function. See <xref ref="fs-id1170572224851"/>.</li>
+<li>The Fundamental Theorem of Calculus, Part 1 shows the relationship between the derivative and the integral. See <xref ref="fs-id1170571704350"/>.</li>
+<li>The Fundamental Theorem of Calculus, Part 2 is a formula for evaluating a definite integral in terms of an antiderivative of its integrand. The total area under a curve can be found using this formula. See <xref ref="fs-id1170571660076"/>.</li>
+</ul>
+</subsection>
+<subsection id="fs-id1170572183839" class="key-equations">
+<title>Key Equations</title>
+<ul>
+<li><emphasis effect="bold">Mean Value Theorem for Integrals</emphasis>
+If <m>f(x)</m> is continuous over an interval <m>[a,b],</m> then there is at least one point <m>c\in [a,b]</m> such that <m>f(c)=\frac{1}{b-a} \displaystyle{ \int_{a}^{b} f(x)dx}.</m></li>
+<li><emphasis effect="bold">Fundamental Theorem of Calculus Part 1</emphasis>
+If <m>f(x)</m> is continuous over an interval <m>[a,b],</m> and the function <m>F(x)</m> is defined by <m>F(x)=\displaystyle{ \int_{a}^{x} f(t)dt},</m> then <m>F'(x) =f(x).</m></li>
+<li><emphasis effect="bold">Fundamental Theorem of Calculus Part 2</emphasis>
+If <m>f</m> is continuous over the interval <m>[a,b]</m> and <m>F(x)</m> is any antiderivative of <m>f(x),</m> then <m>\displaystyle{ \int_{a}^{b} f(x)dx=F(b)-F(a)}.</m></li>
+</ul>
+</subsection>
+</section>
+<?ignore
+<section id="fs-id1170572338453" class="section-exercises">
+
+<!-- Move title outside statement--> <statement id="fs-id1170572338458">
+<p id="fs-id1170572338460">Consider two athletes running at variable speeds <m>v_1(t)</m> and <m>v_2(t).</m> The runners start and finish a race at exactly the same time. Explain why the two runners must be going the same speed at some point.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572420070">
+<p id="fs-id1170572420072">Two mountain climbers start their climb at base camp, taking two different routes, one steeper than the other, and arrive at the peak at exactly the same time. Is it necessarily true that, at some point, both climbers increased in altitude at the same rate?</p>
+</statement>
+<solution id="fs-id1170572420079">
+<p id="fs-id1170572420081">Yes. It is implied by the Mean Value Theorem for Integrals.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572420088">
+<p id="fs-id1170572420090">To get on a certain toll road a driver has to take a card that lists the mile entrance point. The card also has a timestamp. When going to pay the toll at the exit, the driver is surprised to receive a speeding ticket along with the toll. Explain how this can happen.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572420108">
+<p id="fs-id1170572420110">Set <m>F(x)=\displaystyle{ \int_{1}^{x} (1-t)dt}.</m> Find <m>F'\(2)</m> and the average value of <m><m:msup>F\text{ ' }</m:msup></m> over <m>[1,2].</m></p>
+</statement>
+<solution id="fs-id1170571609294">
+<p id="fs-id1170571609296"><m>F'\(2)=-1;</m> average value of <m><m:msup>F\text{ ' }</m:msup></m> over <m>[1,2]</m> is <m>-1/2.</m></p>
+</solution>
+
+<p id="fs-id1170572379503">In the following exercises, use the Fundamental Theorem of Calculus, Part 1, to find each derivative.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572379509">
+<p id="fs-id1170572379511"><m>\frac{d}{dx}\displaystyle{ \int_{1}^{x} <m:msup>e- t^2</m:msup>dt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572368655">
+<p id="fs-id1170572368658"><m>\frac{d}{dx}\displaystyle{ \int_{1}^{x} <m:msup>e\cos  t</m:msup>dt}</m></p>
+</statement>
+<solution id="fs-id1170572368698">
+<p id="fs-id1170572368700"><m><m:msup>e\cos  t</m:msup></m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571599639">
+<p id="fs-id1170571599641"><m>\frac{d}{dx}\displaystyle{ \int_{3}^{x} \sqrt{9-y^2}dy}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572551783">
+<p id="fs-id1170572551785"><m>\frac{d}{dx}\displaystyle{ \int_{4}^{x} \frac{d}{s}{\sqrt{16-s^2}}}</m></p>
+</statement>
+<solution id="fs-id1170572551831">
+<p id="fs-id1170572551833"><m>\frac{1\sqrt{16-x^2}}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572376461">
+<p id="fs-id1170572376463"><m>\frac{d}{dx}\displaystyle{ \int_{x}^{2x} tdt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572163824">
+<p id="fs-id1170572163826"><m>\frac{d}{dx}\displaystyle{ <m:msubsup>∫0\sqrt{x}</m:msubsup>tdt}</m></p>
+</statement>
+<solution id="fs-id1170572163860">
+<p id="fs-id1170572163862"><m>\sqrt{x}\frac{d}{dx}\sqrt{x}=\frac{1}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572163893">
+<p id="fs-id1170572444220"><m>\frac{d}{dx}\displaystyle{ <m:msubsup>∫0\sin x</m:msubsup>\sqrt{1-t^2}dt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571599729">
+<p id="fs-id1170571599731"><m>\frac{d}{dx}\displaystyle{ <m:msubsup>∫\cos  x1</m:msubsup>\sqrt{1-t^2}dt}</m></p>
+</statement>
+<solution id="fs-id1170572229796">
+<p id="fs-id1170572229798"><m>- \sqrt{1-<m:msup>\cos 2</m:msup>x}\frac{d}{dx}\cos  x=|\sin x|\sin x</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572217462">
+<p id="fs-id1170572217464"><m>\frac{d}{dx}\displaystyle{ <m:msubsup>\int 1\sqrt{x}</m:msubsup>\frac{t^2}{1+t^4}dt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572621647">
+<p id="fs-id1170572621650"><m>\frac{d}{dx}\displaystyle{ <m:msubsup>\int 1x^2</m:msubsup>\frac{\sqrt{t}}{1+t}dt}</m></p>
+</statement>
+<solution id="fs-id1170571812201">
+<p id="fs-id1170571812203"><m>2x\frac{|x|}{1+x^2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571812236">
+<p id="fs-id1170571812238"><m>\frac{d}{dx}\displaystyle{ <m:msubsup>∫0\text{ ln } x</m:msubsup>e^tdt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571547593">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170571547596"><m>\frac{d}{dx}\displaystyle{ <m:msubsup>∫1e^x</m:msubsup>\text{ ln }u^2du}</m></p></statement>
+<solution id="fs-id1170571711324">
+<p id="fs-id1170571711326"><m>\text{ ln }(<m:msup>e2x</m:msup>)\frac{d}{dx}e^x=2xe^x</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571711377">
+<p id="fs-id1170571711379">The graph of <m>y=\displaystyle{ \int_{0}^{x} f(t)dt,}</m> where <m>f</m> is a piecewise constant function, is shown here.</p>
+<description>"A function with linear segments which goes through the points (0, 0), (1, 3), (2, 2), (3, 0), (4, 3), (5, 3), and (6, 2). The area under the function and above the x axis is shaded.">
+<image source="CNX_Calc_Figure_05_03_202.jpg" width="50%">
+
+<ol marker="(a)">
+<li>Over which intervals is <m>f</m> positive? Over which intervals is it negative? Over which intervals, if any, is it equal to zero?</li>
+<li>What are the maximum and minimum values of <m>f</m>?</li>
+<li>What is the average value of <m>f</m>?</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572622512">
+<p id="fs-id1170572622514">The graph of <m>y=\displaystyle{ \int_{0}^{x} f(t)dt,}</m> where <m>f</m> is a piecewise constant function, is shown here.</p>
+<description>"A graph of a function with linear segments that goes through the points (0, 0), (1, -1), (2, 1), (3, 1), (4, -2), (5, -2), and (6, 0). The area over the function but under the x axis over the interval [0, 1.5] and [3.25, 6] is shaded. The area under the function but over the x axis over the interval [1.5, 3.25] is shaded.">
+<image source="CNX_Calc_Figure_05_03_203.jpg" width="50%">
+
+<ol marker="(a)">
+<li>Over which intervals is <m>f</m> positive? Over which intervals is it negative? Over which intervals, if any, is it equal to zero?</li>
+<li>What are the maximum and minimum values of <m>f</m>?</li>
+<li>What is the average value of <m>f</m>?</li>
+</ol>
+</statement>
+<solution id="fs-id1170572337865">
+<p id="fs-id1170572337868">a. <m>f</m> is positive over <m>[1,2]</m> and <m>[5,6],</m> negative over <m>[0,1]</m> and <m>[3,4],</m> and zero over <m>[2,3]</m> and <m>[4,5].</m> b. The maximum value is 2 and the minimum is -3. c. The average value is 0.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572274792">
+<p id="fs-id1170572274794">The graph of <m>y=\displaystyle{ \int_{0}^{x} ℓ(t)dt,}</m> where <m>ℓ</m> is a piecewise linear function, is shown here.</p>
+<description>"A graph of a function which goes through the points (0, 0), (1, -1), (2, 1), (3, 3), (4, 3.5), (5, 4), and (6, 2). The area over the function and under the x axis over [0, 1.8] is shaded, and the area under the function and over the x axis is shaded.">
+<image source="CNX_Calc_Figure_05_03_204.jpg" width="50%">
+
+<ol marker="(a)">
+<li>Over which intervals is <m>ℓ</m> positive? Over which intervals is it negative? Over which, if any, is it zero?</li>
+<li>Over which intervals is <m>ℓ</m> increasing? Over which is it decreasing? Over which, if any, is it constant?</li>
+<li>What is the average value of <m>ℓ</m>?</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572233937">
+<p id="fs-id1170572233939">The graph of <m>y=\displaystyle{ \int_{0}^{x} ℓ(t)dt,}</m> where <m>ℓ</m> is a piecewise linear function, is shown here.</p>
+<description>"A graph of a function that goes through the points (0, 0), (1, 1), (2, 0), (3, -1), (4.5, 0), (5, 1), and (6, 2). The area under the function and over the x axis over the intervals [0, 2] and [4.5, 6] is shaded. The area over the function and under the x axis over the interval [2, 2.5] is shaded.">
+<image source="CNX_Calc_Figure_05_03_205.jpg" width="50%">
+
+<ol marker="(a)">
+<li>Over which intervals is <m>ℓ</m> positive? Over which intervals is it negative? Over which, if any, is it zero?</li>
+<li>Over which intervals is <m>ℓ</m> increasing? Over which is it decreasing? Over which intervals, if any, is it constant?</li>
+<li>What is the average value of <m>ℓ</m>?</li>
+</ol>
+</statement>
+<solution id="fs-id1170571653920">
+<p id="fs-id1170571653922">a. <m>ℓ</m> is positive over <m>[0,1]</m> and <m>[3,6],</m> and negative over <m>[1,3].</m> b. It is increasing over <m>[0,1]</m> and <m>[3,5],</m> and it is constant over <m>[1,3]</m> and <m>[5,6].</m> c. Its average value is <m>\frac{1}{3}.</m></p>
+</solution>
+
+<p id="fs-id1170572098832">In the following exercises, use a calculator to estimate the area under the curve by computing <m>T</m><sub>10</sub>, the average of the left- and right-endpoint Riemann sums using <m>N=10</m> rectangles. Then, using the Fundamental Theorem of Calculus, Part 2, determine the exact area.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572098856">
+<p id="fs-id1170572098858"><emphasis effect="bold">[T]</emphasis> <m>y=x^2</m> over <m>[0,4]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572344233">
+<p id="fs-id1170572344236"><emphasis effect="bold">[T]</emphasis> <m>y=x^3+6x^2+x-5</m> over <m>[-4,2]</m></p>
+</statement>
+<solution id="fs-id1170572551917">
+<p id="fs-id1170572551919"><m><m:msub>T10</m:msub>=49.08,\displaystyle{ \int_{-2}^{3} x^3+6x^2+x-5dx=48}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572626558">
+<p id="fs-id1170572626560"><emphasis effect="bold">[T]</emphasis> <m>y=\sqrt{x^3}</m> over <m>[0,6]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571699112">
+<p id="fs-id1170571699115"><emphasis effect="bold">[T]</emphasis> <m>y=\sqrt{x}+x^2</m> over <m>[1,9]</m></p>
+</statement>
+<solution id="fs-id1170572444334">
+<p id="fs-id1170572444337"><m><m:msub>T10</m:msub>=260.836,\displaystyle{ \int_{1}^{9} (\sqrt{x}+x^2)dx=260}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572444396">
+<p id="fs-id1170572444398"><emphasis effect="bold">[T]</emphasis> <m>\displaystyle{ ∫(\cos  x-\sin x)dx}</m> over <m>[0,\pi]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572293461">
+<p id="fs-id1170572293463"><emphasis effect="bold">[T]</emphasis> <m>\displaystyle{ \int \frac{4x^2}dx}</m> over <m>[1,4]</m></p>
+</statement>
+<solution id="fs-id1170571613521">
+<p id="fs-id1170571613523"><m><m:msub>T10</m:msub>=3.058,\displaystyle{ \int_{1}^{4} \frac{4x^2}dx=3}</m></p>
+</solution>
+
+<p id="fs-id1170571613575">In the following exercises, evaluate each definite integral using the Fundamental Theorem of Calculus, Part 2.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571613581">
+<p id="fs-id1170571613583"><m>\displaystyle{ \int_{-1}^{2} (x^2-3x)dx}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571769556">
+<p id="fs-id1170571769559"><m>\displaystyle{ <m:msubsup>\int -23</m:msubsup>(x^2+3x-5)dx}</m></p>
+</statement>
+<solution id="fs-id1170571769606">
+<p id="fs-id1170571769608"><m>F(x)=\frac{x^33}+\frac{3x^22}-5x,F(3)-F(-2)=-\frac{356}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572628483">
+<p id="fs-id1170572628485"><m>\displaystyle{ \int_{-2}^{3} (t+2)}{(t-3)dt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572543707">
+<p id="fs-id1170572543709"><m>\displaystyle{ \int_{2}^{3} (t^2-9)}{(4-t^2)dt}</m></p>
+</statement>
+<solution id="fs-id1170572331859">
+<p id="fs-id1170572331861"><m>F(x)=-\frac{t^55}+\frac{13t^33}-36t,F(3)-F(2)=\frac{6}{2}{15}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572184320">
+<p id="fs-id1170572184322"><m>\displaystyle{ \int_{1}^{2} x^9dx}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571653423">
+<p id="fs-id1170571653425"><m>\displaystyle{ \int_{0}^{1} <m:msup>x99</m:msup>dx}</m></p>
+</statement>
+<solution id="fs-id1170571653454">
+<p id="fs-id1170571653456"><m>F(x)=\frac{<m:msup>x100</m:msup>}{100},F(1)-F(0)=\frac{1100}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572480546">
+<p id="fs-id1170572480548"><m>\displaystyle{ \int_{4}^{8} (4t^{5/2} -3t^{3/2} )dt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571597449">
+<p id="fs-id1170571597451"><m>\displaystyle{ <m:msubsup>\int 1/44</m:msubsup>(x^2-\frac{1x^2})dx}</m></p>
+</statement>
+<solution id="fs-id1170572369351">
+<p id="fs-id1170572369353"><m>F(x)=\frac{x^33}+\frac{1}{x},F(4)-F(\frac{1}{4})=\frac{1125}{64}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572373393">
+<p id="fs-id1170572373396"><m>\displaystyle{ \int_{1}^{2} \frac{2x^3}dx}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571733978">
+<p id="fs-id1170571733980"><m>\displaystyle{ \int_{1}^{4} \frac{12\sqrt{x}}dx}</m></p>
+</statement>
+<solution id="fs-id1170571734014">
+<p id="fs-id1170571734016"><m>F(x)=\sqrt{x},F(4)-F(1)=1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571649926">
+<p id="fs-id1170571649929"><m>\displaystyle{ \int_{1}^{4} \frac{2-\sqrt{t}}{t^2}dt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571660201">
+<p id="fs-id1170571660203"><m>\displaystyle{ <m:msubsup>\int 116</m:msubsup>\frac{d}{t}{<m:msup>t1/4</m:msup>}}</m></p>
+</statement>
+<solution id="fs-id1170572274889">
+<p id="fs-id1170572274891"><m>F(x)=\frac{4}{3}<m:msup>t3/4</m:msup>,F(16)-F(1)=\frac{283}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572274961">
+<p id="fs-id1170572274963"><m>\displaystyle{ <m:msubsup>\int 02\pi</m:msubsup>\cos  \theta d\theta }</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572510074">
+<p id="fs-id1170572510076"><m>\displaystyle{ <m:msubsup>∫0\pi/2</m:msubsup>\sin \theta d\theta }</m></p>
+</statement>
+<solution id="fs-id1170572510111">
+<p id="fs-id1170572510113"><m>F(x)=- \cos  x,F(\frac{\pi}{2})-F(0)=1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571712548">
+<p id="fs-id1170571712550"><m>\displaystyle{ <m:msubsup>∫0\pi/4</m:msubsup><m:msup>\text{ sec }2</m:msup>\theta d\theta }</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572419251">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572419253"><m>\displaystyle{ <m:msubsup>∫0\pi/4</m:msubsup>\text{ sec } \theta  \text{ tand } \theta }</m></p></statement>
+<solution id="fs-id1170572419294">
+<p id="fs-id1170572419296"><m>F(x)=\text{ sec } x,F(\frac{\pi}{4})-F(0)=\sqrt{2}-1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572443630">
+<p id="fs-id1170572443632"><m>\displaystyle{ <m:msubsup>∫\pi/3}{\pi/4</m:msubsup>\text{ csc } \theta  \text{ cot } \theta d\theta }</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571678803">
+<p id="fs-id1170571678805"><m>\displaystyle{ <m:msubsup>∫\pi/4}{\pi/2</m:msubsup><m:msup>\text{ csc }2</m:msup>\theta d\theta }</m></p>
+</statement>
+<solution id="fs-id1170571678845">
+<p id="fs-id1170571678848"><m>F(x)=- \text{ cot }(x),F(\frac{\pi}{2})-F(\frac{\pi}{4})=1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572601261">
+<p id="fs-id1170572601263"><m>\displaystyle{ \int_{1}^{2} (\frac{1t^2}-\frac{1t^3})dt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571679846">
+<p id="fs-id1170571679848"><m>\displaystyle{ <m:msubsup>\int -2}{-1</m:msubsup>(\frac{1t^2}-\frac{1t^3})dt}</m></p>
+</statement>
+<solution id="fs-id1170572333080">
+<p id="fs-id1170572333082"><m>F(x)=-\frac{1}{x}+\frac{12x^2},F(-1)-F(-2)=\frac{7}{8}</m></p>
+</solution>
+
+<p id="fs-id1170572415132">In the following exercises, use the evaluation theorem to express the integral as a function <m>F(x).</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572415155">
+<p id="fs-id1170572415157"><m>\displaystyle{ \int_{a}^{x} t^2dt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571638195">
+<p id="fs-id1170571638198"><m>\displaystyle{ \int_{1}^{x} e^tdt}</m></p>
+</statement>
+<solution id="fs-id1170571638224">
+<p id="fs-id1170571638226"><m>F(x)=e^x-e</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571638256">
+<p id="fs-id1170571638258"><m>\displaystyle{ \int_{0}^{x} \cos  tdt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571810893">
+<p id="fs-id1170571810895"><m>\displaystyle{ <m:msubsup>∫- xx</m:msubsup>\sin tdt}</m></p>
+</statement>
+<solution id="fs-id1170571810928">
+<p id="fs-id1170571810930"><m>F(x)=0</m></p>
+</solution>
+
+<p id="fs-id1170571697153">In the following exercises, identify the roots of the integrand to remove absolute values, then evaluate using the Fundamental Theorem of Calculus, Part 2.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571697160">
+<p id="fs-id1170571697162"><m>\displaystyle{ \int_{-2}^{3} |x|dx}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571539148">
+<p id="fs-id1170571539150"><m>\displaystyle{ \int_{-2}^{4} |t^2-2t-3|dt}</m></p>
+</statement>
+<solution id="fs-id1170571539196">
+<p id="fs-id1170571539198"><m>\displaystyle{ <m:msubsup>∫-2}{-1</m:msubsup>(t^2-2t-3)dt}-\displaystyle{ \int_{-1}^{3} (t^2-2t-3)dt}+\displaystyle{ \int_{3}^{4} (t^2-2t-3)dt}=\frac{463}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572456360">
+<p id="fs-id1170572456362"><m>\displaystyle{ <m:msubsup>∫0\pi</m:msubsup>|\cos  t|dt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571580978">
+<p id="fs-id1170571580980"><m>\displaystyle{ <m:msubsup>∫- \pi/2}{\pi/2</m:msubsup>|\sin t|dt}</m></p>
+</statement>
+<solution id="fs-id1170572396487">
+<p id="fs-id1170572396489"><m>- \displaystyle{ <m:msubsup>∫- \pi/20</m:msubsup>\sin tdt+\displaystyle{ <m:msubsup>∫0\pi/2</m:msubsup>\sin tdt=2}}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572396568">
+<p id="fs-id1170572396570">Suppose that the number of hours of daylight on a given day in Seattle is modeled by the function <m>-3.75 \cos (\frac{\pit6})+12.25,</m> with <m>t</m> given in months and <m>t=0</m> corresponding to the winter solstice.</p>
+<ol marker="(a)">
+<li>What is the average number of daylight hours in a year?</li>
+<li>At which times <m>t</m><sub>1</sub> and <m>t</m><sub>2</sub>, where <m>0\leq t_1\lt t_2\lt 12,</m> do the number of daylight hours equal the average number?</li>
+<li>Write an integral that expresses the total number of daylight hours in Seattle between <m>t_1</m> and <m>t_2.</m></li>
+<li>Compute the mean hours of daylight in Seattle between <m>t_1</m> and <m>t_2,</m> where <m>0\leq t_1\lt t_2\lt 12,</m> and then between <m>t_2</m> and <m>t_1,</m> and show that the average of the two is equal to the average day length.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572373688">
+<p id="fs-id1170572373690">Suppose the rate of gasoline consumption in the United States can be modeled by a sinusoidal function of the form <m>(11.21-\cos (\frac{\pit6})) × <m:msup>109</m:msup></m> gal/mo.</p>
+<ol marker="(a)">
+<li>What is the average monthly consumption, and for which values of <m>t</m> is the rate at time <m>t</m> equal to the average rate?</li>
+<li>What is the number of gallons of gasoline consumed in the United States in a year?</li>
+<li>Write an integral that expresses the average monthly U.S. gas consumption during the part of the year between the beginning of April <m>(t=3)</m> and the end of September <m>(t=9\text{ ). }</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170571710671">
+<p id="fs-id1170571710673">a. The average is <m>11.21 × <m:msup>109</m:msup></m> since <m>\cos (\frac{\pit6})</m> has period 12 and integral 0 over any period. Consumption is equal to the average when <m>\cos (\frac{\pit6})=0,</m> when <m>t=3,</m> and when <m>t=9.</m> b. Total consumption is the average rate times duration: <m>11.21 × 12 × <m:msup>109</m:msup>=1.35 × <m:msup>10}{11</m:msup></m> c. <m><m:msup>109</m:msup>(11.21-\frac{1}{6}\displaystyle{ \int_{3}^{9} \cos (\frac{\pit6})dt})=<m:msup>109</m:msup>(11.21+\frac{2}{\pi})=11.84x<m:msup>109</m:msup></m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572168744">
+<p id="fs-id1170572168746">Explain why, if <m>f</m> is continuous over <m>[a,b],</m> there is at least one point <m>c\in [a,b]</m> such that <m>f(c)=\frac{1}{b-a} \displaystyle{ \int_{a}^{b} f(t)dt}.</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572629226">
+<p id="fs-id1170572629228">Explain why, if <m>f</m> is continuous over <m>[a,b]</m> and is not equal to a constant, there is at least one point <m>M\in [a,b]</m> such that <m>f(M)=\frac{1}{b-a} \displaystyle{ \int_{a}^{b} f(t)dt}</m> and at least one point <m>m\in [a,b]</m> such that <m>f(m)\lt \frac{1}{b-a} \displaystyle{ \int_{a}^{b} f(t)dt}.</m></p>
+</statement>
+<solution id="fs-id1170572379019">
+<p id="fs-id1170572379021">If <m>f</m> is not constant, then its average is strictly smaller than the maximum and larger than the minimum, which are attained over <m>[a,b]</m> by the extreme value theorem.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572379051">
+<p id="fs-id1170572379053">Kepler’s first law states that the planets move in elliptical orbits with the Sun at one focus. The closest point of a planetary orbit to the Sun is called the <term class="no-emphasis"><emphasis effect="italics">perihelion</emphasis></term> (for Earth, it currently occurs around January 3) and the farthest point is called the <term class="no-emphasis"><emphasis effect="italics">aphelion</emphasis></term> (for Earth, it currently occurs around July 4). Kepler’s second law states that planets sweep out equal areas of their elliptical orbits in equal times. Thus, the two arcs indicated in the following figure are swept out in equal times. At what time of year is Earth moving fastest in its orbit? When is it moving slowest?</p>
+<description>"A horizontal ellipse with one focus marked. Two equal arcs are marked to the direct left of the focus and on the other side of the ellipse. The wedges formed by the focus and the endpoints of both arcs are shaded in blue.">
+<image source="CNX_Calc_Figure_05_03_201.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571571956">
+<p id="fs-id1170571571958">A point on an ellipse with major axis length 2<m>a</m> and minor axis length 2<m>b</m> has the coordinates <m>(a \cos  \theta ,b \sin \theta ),0\leq \theta \leq 2\pi.</m></p>
+<ol marker="(a)">
+<li>Show that the distance from this point to the focus at <m>(- c,0)</m> is <m>d(\theta )=a+c \cos  \theta ,</m> where <m>c=\sqrt{a^2-b^2}.</m></li>
+<li>Use these coordinates to show that the average distance <m><m:mover accent="true">d–</m:mover></m> from a point on the ellipse to the focus at <m>(- c,0),</m> with respect to angle <emphasis effect="italics">\theta </emphasis>, is <m>a</m>.</li>
+</ol>
+</statement>
+<solution id="fs-id1170572569961">
+<p id="fs-id1170572569963">a. <m>d^2\theta =<m:msup>(a \cos  \theta +c)2</m:msup>+b^2<m:msup>\sin2</m:msup>\theta =a^2+c^2<m:msup>\cos 2</m:msup>\theta +2ac \cos  \theta =<m:msup>(a+c \cos  \theta )2</m:msup>;</m> b. <m><m:mover accent="true">d–</m:mover>=\frac{12\pi}\displaystyle{ <m:msubsup>\int 02\pi</m:msubsup>(a+2c \cos  \theta )d\theta =a}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571613751">
+<p id="fs-id1170571613753">As implied earlier, according to Kepler’s laws, Earth’s orbit is an ellipse with the Sun at one focus. The perihelion for Earth’s orbit around the Sun is 147,098,290 km and the aphelion is 152,098,232 km.</p>
+<ol marker="(a)">
+<li>By placing the major axis along the <m>x</m>-axis, find the average distance from Earth to the Sun.</li>
+<li>The classic definition of an astronomical unit (AU) is the distance from Earth to the Sun, and its value was computed as the average of the perihelion and aphelion distances. Is this definition justified?</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572346994">
+<p id="fs-id1170572346996">The force of gravitational attraction between the Sun and a planet is <m>F(\theta )=\frac{GmM}{r^2(\theta )},</m> where <m>m</m> is the mass of the planet, <m>M</m> is the mass of the Sun, <m>G</m> is a universal constant, and <m>r(\theta )</m> is the distance between the Sun and the planet when the planet is at an angle <emphasis effect="italics">\theta </emphasis> with the major axis of its orbit. Assuming that <m>M</m>, <m>m</m>, and the ellipse parameters <m>a</m> and <m>b</m> (half-lengths of the major and minor axes) are given, set up—but do not evaluate—an integral that expresses in terms of <m>G,m,M,a,b</m> the average gravitational force between the Sun and the planet.</p>
+</statement>
+<solution id="fs-id1170571661780">
+<p id="fs-id1170571661782">Mean gravitational force = <m>\frac{GmM2}\displaystyle{ <m:msubsup>\int 02\pi</m:msubsup>\frac{1<m:msup>(a+2\sqrt{a^2-b^2}\cos  \theta )2</m:msup>}d\theta }.</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572329952">
+<p id="fs-id1170572329955">The displacement from rest of a mass attached to a spring satisfies the simple harmonic motion equation <m>x(t)=A \cos (ωt-ϕ),</m> where <m>ϕ</m> is a phase constant, <m>ω</m> is the angular frequency, and <m>A</m> is the amplitude. Find the average velocity, the average speed (magnitude of velocity), the average displacement, and the average distance from rest (magnitude of displacement) of the mass.</p>
+</statement>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1170572379108">
+<term>fundamental theorem of calculus</term>
+<meaning id="fs-id1170572379113">the theorem, central to the entire development of calculus, that establishes the relationship between differentiation and integration</meaning>
+</definition>
+<definition id="fs-id1170572379119">
+<term>fundamental theorem of calculus, part 1</term>
+<meaning id="fs-id1170572379124">uses a definite integral to define an antiderivative of a function</meaning>
+</definition>
+<definition id="fs-id1170572379128">
+<term>fundamental theorem of calculus, part 2</term>
+<meaning id="fs-id1170572379134">(also, <emphasis effect="bold">evaluation theorem</emphasis>) we can evaluate a definite integral by evaluating the antiderivative of the integrand at the endpoints of the interval and subtracting</meaning>
+</definition>
+<definition id="fs-id1170572379144">
+<term>mean value theorem for integrals</term>
+<meaning id="fs-id1170572379150">guarantees that a point <m>c</m> exists such that <m>f(c)</m> is equal to the average value of the function</meaning>
+</definition>
+</glossary>
+</document>
+?>

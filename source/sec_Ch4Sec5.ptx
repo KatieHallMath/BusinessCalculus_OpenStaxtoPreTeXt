@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch4Sec5" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Derivatives and the Shape of a Graph</title>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ul>
+
+<li>Explain how the sign of the first derivative affects the shape of a function&#8217;s graph.</li>
+<li>State the first derivative test for critical points.</li>
+<li>Use concavity and inflection points to explain how the sign of the second derivative affects the shape of a function&#8217;s graph.</li>
+<li>Explain the concavity test for a function over an open interval.</li>
+<li>Explain the relationship between a function and its first and second derivatives.</li>
+<li>State the second derivative test for local extrema.</li>
+</ul>
+
+<p id="fs-id1165043276297">Earlier in this chapter we stated that if a function <m>f</m> has a local extremum at a point <m>c,</m> then <m>c</m> must be a critical point of <m>f.</m> However, a function is not guaranteed to have a local extremum at a critical point. For example, <m>f(x)=x^3</m> has a critical point at <m>x=0</m> since <m>f(x)=3x^2</m> is zero at <m>x=0,</m> but <m>f</m> does not have a local extremum at <m>x=0.</m> Using the results from the previous section, we are now able to determine whether a critical point of a function actually corresponds to a local extreme value. In this section, we also see how the second derivative provides information about the shape of a graph by describing whether the graph of a function curves upward or curves downward.</p>
+</introduction>
+
+<subsection id="fs-id1165043199295">
+<title>The First Derivative Test</title>
+<p id="fs-id1165043093996">Corollary <m>3</m> of the Mean Value Theorem showed that if the derivative of a function is positive over an interval <m>I</m> then the function is increasing over <m>I.</m> On the other hand, if the derivative of the function is negative over an interval <m>I,</m> then the function is decreasing over <m>I</m> as shown in the following figure.</p>
+<figure xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="CNX_Calc_Figure_04_05_001">
+<image source="CNX_Calc_Figure_04_05_001.jpg" width="80%">
+<description>"This figure is broken into four figures labeled a, b, c, and d. Figure a shows a function increasing convexly from (a, f(a)) to (b, f(b)). At two points the derivative is taken and it is noted that at both f' \gt  0. In other words, f is increasing. Figure b shows a function increasing concavely from (a, f(a)) to (b, f(b)). At two points the derivative is taken and it is noted that at both f' \gt  0. In other words, f is increasing. Figure c shows a function decreasing concavely from (a, f(a)) to (b, f(b)). At two points the derivative is taken and it is noted that at both f' \lt  0. In other words, f is decreasing. Figure d shows a function decreasing convexly from (a, f(a)) to (b, f(b)). At two points the derivative is taken and it is noted that at both f' \lt  0. In other words, f is decreasing." </description></image> <caption>Both functions are increasing over the interval <m>(a,b).</m> At each point <m>x,</m> the derivative <m>f(x)\gt 0.</m> Both functions are decreasing over the interval <m>(a,b).</m> At each point <m>x,</m> the derivative <m>f(x)\lt 0.</m></caption></figure>
+
+<p id="fs-id1165042319627">A continuous function <m>f</m> has a local maximum at point <m>c</m> if and only if <m>f</m> switches from increasing to decreasing at point <m>c.</m> Similarly, <m>f</m> has a local minimum at <m>c</m> if and only if <m>f</m> switches from decreasing to increasing at <m>c.</m> If <m>f</m> is a continuous function over an interval <m>I</m> containing <m>c</m> and differentiable over <m>I,</m> except possibly at <m>c,</m> the only way <m>f</m> can switch from increasing to decreasing (or vice versa) at point <m>c</m> is if <m>f'</m> changes sign as <m>x</m> increases through <m>c.</m> If <m>f</m> is differentiable at <m>c,</m> the only way that <m>f'.</m> can change sign as <m>x</m> increases through <m>c</m> is if <m>f'(c)=0.</m> Therefore, for a function <m>f</m> that is continuous over an interval <m>I</m> containing <m>c</m> and differentiable over <m>I,</m> except possibly at <m>c,</m> the only way <m>f</m> can switch from increasing to decreasing (or vice versa) is if <m>f(c)=0</m> or <m>f'(c)</m> is undefined. Consequently, to locate local extrema for a function <m>f,</m> we look for points <m>c</m> in the domain of <m>f</m> such that <m>f(c)=0</m> or <m>f'(c)</m> is undefined. Recall that such points are called critical points of <m>f.</m></p>
+<p id="fs-id1165043051419">Note that <m>f</m> need not have a local extrema at a critical point. The critical points are candidates for local extrema only. In <xref ref="CNX_Calc_Figure_04_05_002"/>, we show that if a continuous function <m>f</m> has a local extremum, it must occur at a critical point, but a function may not have a local extremum at a critical point. We show that if <m>f</m> has a local extremum at a critical point, then the sign of <m>f'</m> switches as <m>x</m> increases through that point.</p>
+<figure xml:id="CNX_Calc_Figure_04_05_002">
+<image source="CNX_Calc_Figure_04_05_002.jpg" width="80%">
+<description>"A function f(x) is graphed. It starts in the second quadrant and increases to x = a, which is too sharp and hence f'(a) is undefined. In this section f' \gt  0. Then, f decreases from x = a to x = b (so f' \lt  0 here), before increasing at x = b. It is noted that f'(b) = 0. While increasing from x = b to x = c, f' \gt  0. The function has an inversion point at c, and it is marked f'(c) = 0. The function increases some more to d (so f' \gt  0), which is the global maximum. It is marked that f'(d) = 0. Then the function decreases and it is marked that f' \gt  0." </description></image> <caption>The function <m>f</m> has four critical points: <m>a,b,c, \text{ and } d.</m> The function <m>f</m> has local maxima at <m>a</m> and <m>d,</m> and a local minimum at <m>b.</m> The function <m>f</m> does not have a local extremum at <m>c.</m> The sign of <m>f</m> changes at all local extrema.</caption>
+</figure>
+<p id="fs-id1165043095850">Using <xref ref="CNX_Calc_Figure_04_05_002"/>, we summarize the main results regarding local extrema.</p>
+<ul id="fs-id1165043257290" list-type="bulleted" bullet-style="bullet">
+<li>If a continuous function <m>f</m> has a local extremum, it must occur at a critical point <m>c.</m></li>
+<li>The function has a local extremum at the critical point <m>c</m> if and only if the derivative <m>f'</m> switches sign as <m>x</m> increases through <m>c.</m></li>
+<li>Therefore, to test whether a function has a local extremum at a critical point <m>c,</m> we must determine the sign of <m>f'(x)</m> to the left and right of <m>c.</m></li>
+</ul>
+<p id="fs-id1165043262520">This result is known as the <term>first derivative test</term>.</p>
+<theorem xml:id="fs-id1165042327970"> 
+<title>First Derivative Test</title>
+<p id="fs-id1165043067802">Suppose that <m>f</m> is a continuous function over an interval <m>I</m> containing a critical point <m>c.</m> If <m>f</m> is differentiable over <m>I,</m> except possibly at point <m>c,</m> then <m>f(c)</m> satisfies one of the following descriptions:</p>
+<ol id="fs-id1165043068012" list-type="enumerated" number-style="lower-roman">
+<li>If <m>f'</m> changes sign from positive when <m>x\lt c</m> to negative when <m>x\gt c,</m> then <m>f(c)</m> is a local maximum of <m>f.</m></li>
+<li>If <m>f'</m> changes sign from negative when <m>x\lt c</m> to positive when <m>x\gt c,</m> then <m>f(c)</m> is a local minimum of <m>f.</m></li>
+<li>If <m>f</m> has the same sign for <m>x\lt c</m> and <m>x\gt c,</m> then <m>f(c)</m> is neither a local maximum nor a local minimum of <m>f.</m></li>
+</ol>
+</theorem>
+<p id="fs-id1165043354060">We can summarize the first derivative test as a strategy for locating local extrema.</p>
+<note id="fs-id1165043183681" class="problem-solving">
+<title>Problem-Solving Strategy: Using the First Derivative Test</title>
+<p id="fs-id1165042349982">Consider a function <m>f</m> that is continuous over an interval <m>I.</m></p>
+<ol id="fs-id1165042905754" list-type="enumerated" number-style="arabic">
+<li>Find all critical points of <m>f</m> and divide the interval <m>I</m> into smaller intervals using the critical points as endpoints.</li>
+<li>Analyze the sign of <m>f</m> in each of the subintervals. If <m>f</m> is continuous over a given subinterval (which is typically the case), then the sign of <m>f</m> in that subinterval does not change and, therefore, can be determined by choosing an arbitrary test point <m>x</m> in that subinterval and by evaluating the sign of <m>f</m> at that test point. Use the sign analysis to determine whether <m>f</m> is increasing or decreasing over that interval.</li>
+<li>Use <xref ref="fs-id1165042327970"/> and the results of step <m>2</m> to determine whether <m>f</m> has a local maximum, a local minimum, or neither at each of the critical points.</li>
+</ol>
+</note>
+<p id="fs-id1165043066683">Now let’s look at how to use this strategy to locate all local extrema for particular functions.</p>
+<example xml:id="fs-id1165043423022">
+<title>Using the First Derivative Test to Find Local Extrema</title>
+<statement id="fs-id1165043273079">
+<p id="fs-id1165042946304">Use the first derivative test to find the location of all local extrema for <m>f(x)=x^3-3x^2-9x-1.</m> Use a graphing utility to confirm your results.</p>
+</statement>
+<solution id="fs-id1165042375856">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1165043253635">Step 1. The derivative is <m>f'(x)=3x^2-6x-9.</m> To find the critical points, we need to find where <m>f'(x)=0.</m> Factoring the polynomial, we conclude that the critical points must satisfy</p><me>3(x^2-2x-3)=3(x-3)(x+1)=0.</me>
+<p id="fs-id1165043041063">Therefore, the critical points are <m>x=3,-1.</m> Now divide the interval <m>(-\infty,\infty)</m> into the smaller intervals <m>(-\infty,-1),(-1,3) \text{ and } (3,\infty).</m></p>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1165043097583">Step 2. Since <m>f</m> is a continuous function, to determine the sign of <m>f'(x)</m> over each subinterval, it suffices to choose a point over each of the intervals <m>(-\infty,-1),(-1,3) \text{ and } (3,\infty)</m> and determine the sign of <m>f'</m> at each of these points. For example, let’s choose <m>x=-2,x=0, \text{ and } x=4</m> as test points.</p>
+
+<table xml:id="fs-id1165042978447" class="unnumbered" summary="This table has four rows and four columns. The first row is a header row, and it reads from left to right Interval, Test Point, Sign of f'(x) = 3(x &#x2212;3)(x + 1) at Test Point, and Conclusion. Below the header, the first column reads (&#x2212;&#x221E;, &#x2212;1), (&#x2212;1, 3), and (3, &#x221E;). The second column reads x = &#x2212;2, x = 0, and x = 4. The third column reads (+)(&#x2212;)(&#x2212;) = +, (+)(&#x2212;)(+) = &#x2212;, and (+)(+)(+) = +. The fourth column reads f is increasing, f is decreasing, and f is increasing.">
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Interval</cell>
+<cell valign="top" halign ="left">Test Point</cell>
+<cell valign="top" halign ="left">Sign of <m>f'(x)=3(x-3)(x+1)</m> at Test Point</cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-\infty,-1)</m></cell>
+<cell valign="top" halign ="left"><m>x=-2</m></cell>
+<cell valign="top" halign ="left"><m>(\text{ + })(-)(-)=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is increasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-1,3)</m></cell>
+<cell valign="top" halign ="left"><m>x=0</m></cell>
+<cell valign="top" halign ="left"><m>(\text{ + })(-)(\text{ + })=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is decreasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(3,\infty)</m></cell>
+<cell valign="top" halign ="left"><m>x=4</m></cell>
+<cell valign="top" halign ="left"><m>(\text{ + })(\text{ + })(\text{ + })=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is increasing.</cell>
+</row>
+</tabular>
+</table>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1165042931764">Step 3. Since <m>f'</m> switches sign from positive to negative as <m>x</m> increases through <m>1,f</m> has a local maximum at <m>x=-1.</m> Since <m>f'</m> switches sign from negative to positive as <m>x</m> increases through <m>3,f</m> has a local minimum at <m>x=3.</m> These analytical results agree with the following graph.</p><figure xml:id="CNX_Calc_Figure_04_05_003">
+<image source="CNX_Calc_Figure_04_05_008.jpg" width="50%">
+<description>"The function f(x) = x3 &#x2013; 3x2 &#x2013; 9x &#x2013; 1 is graphed. It has a maximum at x = &#x2212;1 and a minimum at x = 3. The function is increasing before x = &#x2212;1, decreasing until x = 3, and then increasing after that." </description></image> <caption>The function <m>f</m> has a maximum at <m>x=-1</m> and a minimum at <m>x=3</m></caption>
+</figure>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1165043074826">
+<p id="fs-id1165043392317">Use the first derivative test to locate all local extrema for <m>f(x)=-x^3+\frac{3}{2}x^2+18x.</m></p>
+</statement>
+<solution id="fs-id1165043385478">
+<p id="fs-id1165043281485"><m>f</m> has a local minimum at <m>-2</m> and a local maximum at <m>3.</m></p>
+</solution>
+<hint>
+
+<p id="fs-id1165043429519">Find all critical points of <m>f</m> and determine the signs of <m>f'(x)</m> over particular intervals determined by the critical points.</p>
+</hint></exercise>
+<example xml:id="fs-id1165043312782">
+<title>Using the First Derivative Test</title>-> <statement id="fs-id1165042479991">
+<p id="fs-id1165042319589">Use the first derivative test to find the location of all local extrema for <m>f(x)=5x^{1/3}-x^{5/3}.</m> Use a graphing utility to confirm your results.</p>
+</statement>
+<solution id="fs-id1165042369651">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1165043109175">Step 1. The derivative is</p><me>f'(x)=\frac{5}{3}x^{-2/3}-\frac{5}{3}x^{2/3}=\frac{5}{3x^{2/3}}-\frac{5x^{2/3}}{3}=\frac{5-5x^{4/3}}{3x^{2/3}}=\frac{5(1-x^{4/3})}{3x^{2/3}}.</me>
+<p id="fs-id1165042514176">The derivative <m>f'(x)=0</m> when <m>1-x^{4/3}=0.</m> Therefore, <m>f'(x)=0</m> at <m>x=\pm1.</m> The derivative <m>f'(x)</m> is undefined at <m>x=0.</m> Therefore, we have three critical points: <m>x=0,</m> <m>x=1,</m> and <m>x=-1.</m> Consequently, divide the interval <m>(-\infty,\infty)</m> into the smaller intervals <m>(-\infty,-1),(-1,0),(0,1),</m> and <m>(1,\infty).</m></p>
+<p id="fs-id1165042354821">Step 2: Since <m>f'</m> is continuous over each subinterval, it suffices to choose a test point <m>x</m> in each of the intervals from step <m>1</m> and determine the sign of <m>f'</m> at each of these points. The points <m>x=-2,x=-\frac{1}{2},x=\frac{1}{2}, \text{ and } x=2</m> are test points for these intervals.</p>
+<table xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1165043032734" class="unnumbered" summary="This table has five rows and four columns. The first row is a header row, and it reads from left to right Interval, Test Point, Sign of f'(x) = 5(1 &#x2013; x4/3)/(3x2/3) at Test Point, and Conclusion. Below the header, the first column reads (&#x2212;&#x221E;, &#x2212;1), (&#x2212;1, 0), (0, 1), and (1, &#x221E;). The second column reads x = &#x2212;2, x = &#x2212;1/2, x = 1/2, and x = 2. The third column reads (+)(&#x2212;)/(+) = &#x2212;, (+)(+)/(+) = +, (+)(+)/(+) = +, and (+)(&#x2212;)/(+) = &#x2212;. The fourth column reads f is decreasing, f is increasing, f is increasing, and f is decreasing."><label/>
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Interval</cell>
+<cell valign="top" halign ="left">Test Point</cell>
+<cell valign="top" halign ="left">Sign of <m>f'(x)=\frac{5(1-x^{4/3})}{3x^{2/3}}</m> at Test Point</cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+
+
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-\infty,-1)</m></cell>
+<cell valign="top" halign ="left"><m>x=-2</m></cell>
+<cell valign="top" halign ="center"><m>\frac{(\text{ + })}{(-)+}=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is decreasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-1,0)</m></cell>
+<cell valign="top" halign ="left"><m>x=-\frac{1}{2}</m></cell>
+<cell valign="top" halign ="center"><m>\frac{(\text{ + })}{(\text{ + })+}=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is increasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(0,1)</m></cell>
+<cell valign="top" halign ="left"><m>x=\frac{1}{2}</m></cell>
+<cell valign="top" halign ="center"><m>\frac{(\text{ + })}{(\text{ + })+}=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is increasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(1,\infty)</m></cell>
+<cell valign="top" halign ="left"><m>x=2</m></cell>
+<cell valign="top" halign ="center"><m>\frac{(\text{ + })}{(-)+}=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is decreasing.</cell>
+</row>
+</tabular>
+</table><p id="fs-id1165043062405">Step 3: Since <m>f</m> is decreasing over the interval <m>(-\infty,-1)</m> and increasing over the interval <m>(-1,0),</m> <m>f</m> has a local minimum at <m>x=-1.</m> Since <m>f</m> is increasing over the interval <m>(-1,0)</m> and the interval <m>(0,1),</m> <m>f</m> does not have a local extremum at <m>x=0.</m> Since <m>f</m> is increasing over the interval <m>(0,1)</m> and decreasing over the interval <m>(1,\infty),f</m> has a local maximum at <m>x=1.</m> The analytical results agree with the following graph.</p>
+<figure xml:id="CNX_Calc_Figure_04_05_004">
+<image source="CNX_Calc_Figure_04_05_009.jpg" width="50%">
+<description>"The function f(x) = 5x1/3 &#x2013; x5/3 is graphed. It decreases to its local minimum at x = &#x2212;1, increases to x = 1, and then decreases after that."> </description></image> <caption>The function <m>f</m> has a local minimum at <m>x=-1</m> and a local maximum at <m>x=1.</m></caption>
+</figure>
+</solution>
+</example>
+<exercise> <statement id="fs-id1165043119394">
+<p id="fs-id1165043119396">Use the first derivative test to find all local extrema for <m>f(x)=\sqrt[3]{x-1}.</m></p>
+</statement>
+<solution id="fs-id1165043305742">
+<p id="fs-id1165042982077"><m>f</m> has no local extrema because <m>f'</m> does not change sign at <m>x=1.</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042608705">The only critical point of <m>f</m> is <m>x=1.</m></p>
+</hint></exercise>
+</subsection>
+<subsection id="fs-id1165043423622">
+<title>Concavity and Points of Inflection</title>
+<p id="fs-id1165042517819">We now know how to determine where a function is increasing or decreasing. However, there is another issue to consider regarding the shape of the graph of a function. If the graph curves, does it curve upward or curve downward? This notion is called the <term>concavity</term> of the function.</p>
+<p id="fs-id1165043256949"><xref ref="CNX_Calc_Figure_04_05_005"/>(a) shows a function <m>f</m> with a graph that curves upward. As <m>x</m> increases, the slope of the tangent line increases. Thus, since the derivative increases as <m>x</m> increases, <m>f'</m> is an increasing function. We say this function <m>f</m> is concave up. <xref ref="CNX_Calc_Figure_04_05_005"/>(b) shows a function <m>f</m> that curves downward. As <m>x</m> increases, the slope of the tangent line decreases. Since the derivative decreases as <m>x</m> increases, <m>f'</m> is a decreasing function. We say this function <m>f</m> is concave down.</p>
+<definition> 
+<p id="fs-id1165042559135">Let <m>f</m> be a function that is differentiable over an open interval <m>I.</m> If <m>f'</m> is increasing over <m>I,</m> we say <m>f</m> is <term>concave up</term> over <m>I.</m> If <m>f'</m> is decreasing over <m>I,</m> we say <m>f</m> is <term>concave down</term> over <m>I.</m></p>
+</definition>
+<figure xml:id="CNX_Calc_Figure_04_05_005">
+<image source="CNX_Calc_Figure_04_05_010.jpg" width="50%">
+<description>"This figure is broken into four figures labeled a, b, c, and d. Figure a shows a function increasing convexly from (a, f(a)) to (b, f(b)). At two points the derivative is taken and both are increasing, but the one taken further to the right is increasing more. It is noted that f' is increasing and f is concave up. Figure b shows a function increasing concavely from (a, f(a)) to (b, f(b)). At two points the derivative is taken and both are increasing, but the one taken further to the right is increasing less. It is noted that f' is decreasing and f is concave down. Figure c shows a function decreasing concavely from (a, f(a)) to (b, f(b)). At two points the derivative is taken and both are decreasing, but the one taken further to the right is decreasing less. It is noted that f' is increasing and f is concave up. Figure d shows a function decreasing convexly from (a, f(a)) to (b, f(b)). At two points the derivative is taken and both are decreasing, but the one taken further to the right is decreasing more. It is noted that f' is decreasing and f is concave down."</description></image> <caption>(a), (c) Since <m>f</m> is increasing over the interval <m>(a,b),</m> we say <m>f</m> is concave up over <m>(a,b).</m> (b), (d) Since <m>f</m> is decreasing over the interval <m>(a,b),</m> we say <m>f</m> is concave down over <m>(a,b).</m></caption>
+</figure>
+<p id="fs-id1165042343198">In general, without having the graph of a function <m>f,</m> how can we determine its concavity? By definition, a function <m>f</m> is concave up if <m>f'</m> is increasing. From Corollary <m>3,</m> we know that if <m>f'</m> is a differentiable function, then <m>f'</m> is increasing if its derivative <m>f''(x)\gt 0.</m> Therefore, a function <m>f</m> that is twice differentiable is concave up when <m>f''(x)\gt 0.</m> Similarly, a function <m>f</m> is concave down if <m>f'</m> is decreasing. We know that a differentiable function <m>f'</m> is decreasing if its derivative <m>f''(x)\lt 0.</m> Therefore, a twice-differentiable function <m>f</m> is concave down when <m>f''(x)\lt 0.</m> Applying this logic is known as the <term>concavity test</term>.</p>
+<theorem> <!-- Change next end note to end theorem -->
+<title>Test for Concavity</title>
+<p id="fs-id1165043088519">Let <m>f</m> be a function that is twice differentiable over an interval <m>I.</m></p>
+<ol id="fs-id1165042925616" list-type="enumerated" number-style="lower-roman">
+<li>If <m>f''(x)\gt 0</m> for all <m>x∈I,</m> then <m>f</m> is concave up over <m>I.</m></li>
+<li>If <m>f''(x)\lt 0</m> for all <m>x∈I,</m> then <m>f</m> is concave down over <m>I.</m></li>
+</ol>
+</theorem>
+<p id="fs-id1165043195362">We conclude that we can determine the concavity of a function <m>f</m> by looking at the second derivative of <m>f.</m> In addition, we observe that a function <m>f</m> can switch concavity (<xref ref="CNX_Calc_Figure_04_05_006"/>). However, a continuous function can switch concavity only at a point <m>x</m> if <m>f''(x)=0</m> or <m>f''(x)</m> is undefined. Consequently, to determine the intervals where a function <m>f</m> is concave up and concave down, we look for those values of <m>x</m> where <m>f''(x)=0</m> or <m>f''(x)</m> is undefined. When we have determined these points, we divide the domain of <m>f</m> into smaller intervals and determine the sign of <m>f''</m> over each of these smaller intervals. If <m>f''</m> changes sign as we pass through a point <m>x,</m> then <m>f</m> changes concavity. It is important to remember that a function <m>f</m> may not change concavity at a point <m>x</m> even if <m>f''(x)=0</m> or <m>f''(x)</m> is undefined. If, however, <m>f</m> does change concavity at a point <m>a</m> and <m>f</m> is continuous at <m>a,</m> we say the point <m>(a,f(a))</m> is an inflection point of <m>f.</m></p>
+<definition>
+<p id="fs-id1165043120992">If <m>f</m> is continuous at <m>a</m> and <m>f</m> changes concavity at <m>a,</m> the point <m>(a,f(a))</m> is an <term>inflection point</term> of <m>f.</m></p>
+</definition>
+<figure xml:id="CNX_Calc_Figure_04_05_006">
+<image source="CNX_Calc_Figure_04_05_004.jpg" width="50%">
+<description>"A sinusoidal function is shown that has been shifted into the first quadrant. The function starts decreasing, so f' \lt  0 and f'' \gt  0. The function reaches the local minimum and starts increasing, so f' \gt  0 and f'' \gt  0. It is noted that the slope is increasing for these two intervals. The function then reaches an inflection point (a, f(a)) and from here the slop is decreasing even though the function continues to increase, so f' \gt  0 and f'' \lt  0. The function reaches the maximum and then starts decreasing, so f' \lt  0 and f'' \lt  0." </description></image> <caption>Since <m>f''(x)\gt 0</m> for <m>x\lt a,</m> the function <m>f</m> is concave up over the interval <m>(-\infty,a).</m> Since <m>f''(x)\lt 0</m> for <m>x\gt a,</m> the function <m>f</m> is concave down over the interval <m>(a,\infty).</m> The point <m>(a,f(a))</m> is an inflection point of <m>f.</m></caption>
+</figure>
+<example xml:id="fs-id1165042558993">
+<title>Testing for Concavity</title>
+ <statement id="fs-id1165042558998">
+<p id="fs-id1165043197105">For the function <m>f(x)=x^3-6x^2+9x+30,</m> determine all intervals where <m>f</m> is concave up and all intervals where <m>f</m> is concave down. List all inflection points for <m>f.</m> Use a graphing utility to confirm your results.</p>
+</statement>
+<solution id="fs-id1165043306697">
+<p id="fs-id1165043306699">To determine concavity, we need to find the second derivative <m>f''(x).</m> The first derivative is <m>f(x)=3x^2-12x+9,</m> so the second derivative is <m>f''(x)=6x-12.</m> If the function changes concavity, it occurs either when <m>f''(x)=0</m> or <m>f''(x)</m> is undefined. Since <m>f''</m> is defined for all real numbers <m>x,</m> we need only find where <m>f''(x)=0.</m> Solving the equation <m>6x-12=0,</m> we see that <m>x=2</m> is the only place where <m>f</m> could change concavity. We now test points over the intervals <m>(-\infty,2)</m> and <m>(2,\infty)</m> to determine the concavity of <m>f.</m> The points <m>x=0</m> and <m>x=3</m> are test points for these intervals.</p>
+<table xml:id="fs-id1165042960171" class="unnumbered" summary="This table has three rows and four columns. The first row is a header row, and it reads from left to right Interval, Test Point, Sign of f''(x) = 6x &#x2013; 12 at Test Point, and Conclusion. Below the header, the first column reads (&#x2212;&#x221E;, 2) and (2, &#x221E;). The second column reads x = 0 and x = 3. The third column reads &#x2212; and +. The fourth column reads f is concave down and f is concave up.">
+
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Interval</cell>
+<cell valign="top" halign ="left">Test Point</cell>
+<cell valign="top" halign ="left">Sign of <m>f''(x)=6x-12</m> at Test Point</cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-\infty,2)</m></cell>
+<cell valign="top" halign ="left"><m>x=0</m></cell>
+<cell valign="top" halign ="left"><m>-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is concave down</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(2,\infty)</m></cell>
+<cell valign="top" halign ="left"><m>x=3</m></cell>
+<cell valign="top" halign ="left"><m>+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is concave up.</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1165042329993">We conclude that <m>f</m> is concave down over the interval <m>(-\infty,2)</m> and concave up over the interval <m>(2,\infty).</m> Since <m>f</m> changes concavity at <m>x=2,</m> the point <m>(2,f(2))=(2,32)</m> is an inflection point. <xref ref="CNX_Calc_Figure_04_05_007"/> confirms the analytical results.</p>
+<figure xml:id="CNX_Calc_Figure_04_05_007">
+<image source="CNX_Calc_Figure_04_05_011.jpg" width="50%">
+<description>"The function f(x) = x3 &#x2013; 6x2 + 9x + 30 is graphed. The inflection point (2, 32) is marked, and it is roughly equidistant from the two local extrema." </description></image> <caption>The given function has a point of inflection at <m>(2,32)</m> where the graph changes concavity.</caption>
+</figure>
+</solution>
+</example>
+<exercise> <statement id="fs-id1165042946144">
+<p id="fs-id1165042946146">For <m>f(x)=-x^3+\frac{3}{2}x^2+18x,</m> find all intervals where <m>f</m> is concave up and all intervals where <m>f</m> is concave down.</p>
+</statement>
+<solution id="fs-id1165042369707">
+<p id="fs-id1165042369709"><m>f</m> is concave up over the interval <m>(-\infty,\frac{1}{2})</m> and concave down over the interval <m>(\frac{1}{2},\infty)</m></p>
+</solution>
+<hint>
+<p id="fs-id1165043199180">Find where <m>f''(x)=0.</m></p>
+</hint></exercise>
+<p id="fs-id1165043163933">We now summarize, in <xref ref="fs-id1165043353366"/>, the information that the first and second derivatives of a function <m>f</m> provide about the graph of <m>f,</m> and illustrate this information in <xref ref="CNX_Calc_Figure_04_05_008"/>.</p>
+<table xml:id="fs-id1165043353366" summary="This table has five rows and four columns. The first row is a header row, and it reads from left to right Sign of f', Sign of f'', Is f increasing or decreasing?, and Concavity. Below the header, the first column reads Positive, Positive, Negative, and Negative. The second column reads Positive, Negative, Positive, and Negative. The third column reads Increasing, Increasing, Decreasing, and Decreasing. The fourth column reads Concave up, Concave down, Concave up, and Concave down.">
+<title>What Derivatives Tell Us about Graphs</title>
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Sign of <m>f</m></cell>
+<cell valign="top" halign ="left">Sign of <m>f''</m></cell>
+<cell valign="top" halign ="left">Is <m>f</m> increasing or decreasing?</cell>
+<cell valign="top" halign ="left">Concavity</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">Positive</cell>
+<cell valign="top" halign ="left">Positive</cell>
+<cell valign="top" halign ="left">Increasing</cell>
+<cell valign="top" halign ="left">Concave up</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">Positive</cell>
+<cell valign="top" halign ="left">Negative</cell>
+<cell valign="top" halign ="left">Increasing</cell>
+<cell valign="top" halign ="left">Concave down</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">Negative</cell>
+<cell valign="top" halign ="left">Positive</cell>
+<cell valign="top" halign ="left">Decreasing</cell>
+<cell valign="top" halign ="left">Concave up</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">Negative</cell>
+<cell valign="top" halign ="left">Negative</cell>
+<cell valign="top" halign ="left">Decreasing</cell>
+<cell valign="top" halign ="left">Concave down</cell>
+</row>
+</tabular>
+</table>
+<figure xml:id="CNX_Calc_Figure_04_05_008">
+<image source="CNX_Calc_Figure_04_05_005.jpg" width="50%">
+<description>"A function is graphed in the first quadrant. It is broken up into four sections, with the breaks coming at the local minimum, inflection point, and local maximum, respectively. The first section is decreasing and concave up; here, f' \lt  0 and f'' \gt  0. The second section is increasing and concave up; here, f' \gt  0 and f'' \gt  0. The third section is increasing and concave down; here, f' \gt  0 and f'' \lt  0. The fourth section is increasing and concave down; here, f' \lt  0 and f'' \lt  0."  </description></image> <caption>Consider a twice-differentiable function <m>f</m> over an open interval <m>I.</m> If <m>f(x)\gt 0</m> for all <m>x∈I,</m> the function is increasing over <m>I.</m> If <m>f(x)\lt 0</m> for all <m>x∈I,</m> the function is decreasing over <m>I.</m> If <m>f''(x)\gt 0</m> for all <m>x∈I,</m> the function is concave up. If <m>f''(x)\lt 0</m> for all <m>x∈I,</m> the function is concave down on <m>I.</m></caption>
+</figure>
+</subsection>
+<subsection id="fs-id1165042355740">
+<title>The Second Derivative Test</title>
+<p id="fs-id1165042621320">The first derivative test provides an analytical tool for finding local extrema, but the second derivative can also be used to locate extreme values. Using the second derivative can sometimes be a simpler method than using the first derivative.</p>
+<p id="fs-id1165042621325">We know that if a continuous function has a local extrema, it must occur at a critical point. However, a function need not have a local extrema at a critical point. Here we examine how the <term>second derivative test</term> can be used to determine whether a function has a local extremum at a critical point. Let <m>f</m> be a twice-differentiable function such that <m>f'(a)=0</m> and <m>f''</m> is continuous over an open interval <m>I</m> containing <m>a.</m> Suppose <m>f''(a)\lt 0.</m> Since <m>f''</m> is continuous over <m>I,</m> <m>f''(x)\lt 0</m> for all <m>x∈I</m> (<xref ref="CNX_Calc_Figure_04_05_009"/>). Then, by Corollary <m>3,</m> <m>f'</m> is a decreasing function over <m>I.</m> Since <m>f'(a)=0,</m> we conclude that for all <m>x∈I,f'(x)\gt 0</m> if <m>x\lt a</m> and <m>f'(x)\lt 0</m> if <m>x\gt a.</m> Therefore, by the first derivative test, <m>f</m> has a local maximum at <m>x=a.</m> On the other hand, suppose there exists a point <m>b</m> such that <m>f'(b)=0</m> but <m>f''(b)\gt 0.</m> Since <m>f''</m> is continuous over an open interval <m>I</m> containing <m>b,</m> then <m>f''(x)\gt 0</m> for all <m>x∈I</m> (<xref ref="CNX_Calc_Figure_04_05_009"/>). Then, by Corollary <m>3,f'</m> is an increasing function over <m>I.</m> Since <m>f'(b)=0,</m> we conclude that for all <m>x∈I,</m> <m>f'(x)\lt 0</m> if <m>x\lt b</m> and <m>f'(x)\gt 0</m> if <m>x\gt b.</m> Therefore, by the first derivative test, <m>f</m> has a local minimum at <m>x=b.</m></p>
+<figure xml:id="CNX_Calc_Figure_04_05_009">
+<image source="CNX_Calc_Figure_04_05_006.jpg" width="50%">
+<description>"A function f(x) is graphed in the first quadrant with a and b marked on the x-axis. The function is vaguely sinusoidal, increasing first to x = a, then decreasing to x = b, and increasing again. At (a, f(a)), the tangent is marked, and it is noted that f'(a) = 0 and f''(a) \lt  0. At (b, f(b)), the tangent is marked, and it is noted f'(b) = 0 and f''(b) \gt  0." </description></image> <caption>Consider a twice-differentiable function <m>f</m> such that <m>f''</m> is continuous. Since <m>f(a)=0</m> and <m>f''(a)\lt 0,</m> there is an interval <m>I</m> containing <m>a</m> such that for all <m>x</m> in <m>I,</m> <m>f</m> is increasing if <m>x\lt a</m> and <m>f</m> is decreasing if <m>x\gt a.</m> As a result, <m>f</m> has a local maximum at <m>x=a.</m> Since <m>f(b)=0</m> and <m>f''(b)\gt 0,</m> there is an interval <m>I</m> containing <m>b</m> such that for all <m>x</m> in <m>I,</m> <m>f</m> is decreasing if <m>x\lt b</m> and <m>f</m> is increasing if <m>x\gt b.</m> As a result, <m>f</m> has a local minimum at <m>x=b.</m></caption>
+</figure>
+<theorem> 
+<title>Second Derivative Test</title>
+<p id="fs-id1165043254229">Suppose <m>f'(c)=0,f''</m> is continuous over an interval containing <m>c.</m></p>
+<ol id="fs-id1165042319133" list-type="enumerated" number-style="lower-roman">
+<li>If <m>f''(c)\gt 0,</m> then <m>f</m> has a local minimum at <m>c.</m></li>
+<li>If <m>f''(c)\lt 0,</m> then <m>f</m> has a local maximum at <m>c.</m></li>
+<li>If <m>f''(c)=0,</m> then the test is inconclusive.</li>
+</ol>
+</theorem>
+<p id="fs-id1165043180196">Note that for case iii. when <m>f''(c)=0,</m> then <m>f</m> may have a local maximum, local minimum, or neither at <m>c.</m> For example, the functions <m>f(x)=x^3,</m> <m>f(x)=x^4,</m> and <m>f(x)=-x^4</m> all have critical points at <m>x=0.</m> In each case, the second derivative is zero at <m>x=0.</m> However, the function <m>f(x)=x^4</m> has a local minimum at <m>x=0</m> whereas the function <m>f(x)=-x^4</m> has a local maximum at <m>x,</m> and the function <m>f(x)=x^3</m> does not have a local extremum at <m>x=0.</m></p>
+<p id="fs-id1165043425387">Let’s now look at how to use the second derivative test to determine whether <m>f</m> has a local maximum or local minimum at a critical point <m>c</m> where <m>f'(c)=0.</m></p>
+<example xml:id="fs-id1165042710827">
+<title>Using the Second Derivative Test</title>
+<statement id="fs-id1165042710831">
+<p id="fs-id1165042631706">Use the second derivative to find the location of all local extrema for <m>f(x)=x^5-5x^3.</m></p>
+</statement>
+<solution id="fs-id1165042320873">
+<p id="fs-id1165042320876">To apply the second derivative test, we first need to find critical points <m>c</m> where <m>f'(c)=0.</m> The derivative is <m>f'(x)=5x^4-15x^2.</m> Therefore, <m>f'(x)=5x^4-15x^2=5x^2(x^2-3)=0</m> when <m>x=0,\pm\sqrt{3}.</m></p>
+<p id="fs-id1165043431475">To determine whether <m>f</m> has a local extrema at any of these points, we need to evaluate the sign of <m>f''</m> at these points. The second derivative is</p>
+<me>f''(x)=20x^3-30x=10x(2x^2-3).</me>
+<p id="fs-id1165042373916">In the following table, we evaluate the second derivative at each of the critical points and use the second derivative test to determine whether <m>f</m> has a local maximum or local minimum at any of these points.</p>
+<table xml:id="fs-id1165042705774" class="unnumbered" summary="This table has four rows and three columns. The first row is a header row, and it reads x, f''(x), and Conclusion. After the header, the first column reads negative square root of 3, 0, and square root of 3. The second column reads negative 30 times the square root of 3, 0, and 30 times the square root of 3. The third column reads Local maxiumum, Second derivative test is inconclusive, and Local minimum.">
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left"><m>x</m></cell>
+<cell valign="top" halign ="left"><m>f''(x)</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>-\sqrt{3}</m></cell>
+<cell valign="top" halign ="left"><m>-30\sqrt{3}</m></cell>
+<cell valign="top" halign ="left">Local maximum</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>0</m></cell>
+<cell valign="top" halign ="left"><m>0</m></cell>
+<cell valign="top" halign ="left">Second derivative test is inconclusive</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\sqrt{3}</m></cell>
+<cell valign="top" halign ="left"><m>30\sqrt{3}</m></cell>
+<cell valign="top" halign ="left">Local minimum</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1165042476082">By the second derivative test, we conclude that <m>f</m> has a local maximum at <m>x=-\sqrt{3}</m> and <m>f</m> has a local minimum at <m>x=\sqrt{3}.</m> The second derivative test is inconclusive at <m>x=0.</m> To determine whether <m>f</m> has a local extrema at <m>x=0,</m> we apply the first derivative test. To evaluate the sign of <m>f'(x)=5x^2(x^2-3)</m> for <m>x∈(-\sqrt{3},0)</m> and <m>x∈(0,\sqrt{3}),</m> let <m>x=-1</m> and <m>x=1</m> be the two test points. Since <m>f'(-1)\lt 0</m> and <m>f'(1)\lt 0,</m> we conclude that <m>f</m> is decreasing on both intervals and, therefore, <m>f</m> does not have a local extrema at <m>x=0</m> as shown in the following graph.</p>
+<figure xml:id="CNX_Calc_Figure_04_05_010">
+<image source="CNX_Calc_Figure_04_05_007.jpg" width="50%">
+<description>"The function f(x) = x5 &#x2013; 5x3 is graphed. The function increases to (negative square root of 3, 10), then decreases to an inflection point at 0, continues decreasing to (square root of 3, &#x2212;10), and then increases." </description></image> <caption>The function <m>f</m> has a local maximum at <m>x=-\sqrt{3}</m> and a local minimum at <m>x=\sqrt{3}</m></caption>
+</figure>
+</solution>
+</example>
+<exercise> <statement id="fs-id1165042373298">
+<p id="fs-id1165042373300">Consider the function <m>f(x)=x^3-(\frac{3}{2})x^2-18x.</m> The points <m>c=3,-2</m> satisfy <m>f'(c)=0.</m> Use the second derivative test to determine whether <m>f</m> has a local maximum or local minimum at those points.</p>
+</statement>
+<solution id="fs-id1165043173988">
+<p id="fs-id1165043173990"><m>f</m> has a local maximum at <m>-2</m> and a local minimum at <m>3.</m></p>
+</solution>
+<hint>
+<p id="fs-id1165043395285"><m>f''(x)=6x-3</m></p>
+</hint></exercise>
+<p id="fs-id1165042318777">We have now developed the tools we need to determine where a function is increasing and decreasing, as well as acquired an understanding of the basic shape of the graph. In the next section we discuss what happens to a function as <m>x\to\pm\infty.</m> At that point, we have enough tools to provide accurate graphs of a large variety of functions.</p>
+</subsection>
+<subsection id="fs-id1165042606819" class="key-concepts">
+<title>Key Concepts</title>
+<ul id="fs-id1165043163899" list-type="bulleted" bullet-style="bullet">
+<li>If <m>c</m> is a critical point of <m>f</m> and <m>f'(x)\gt 0</m> for <m>x\lt c</m> and <m>f'(x)\lt 0</m> for <m>x\gt c,</m> then <m>f</m> has a local maximum at <m>c.</m></li>
+<li>If <m>c</m> is a critical point of <m>f</m> and <m>f'(x)\lt 0</m> for <m>x\lt c</m> and <m>f'(x)\gt 0</m> for <m>x\gt c,</m> then <m>f</m> has a local minimum at <m>c.</m></li>
+<li>If <m>f''(x)\gt 0</m> over an interval <m>I,</m> then <m>f</m> is concave up over <m>I.</m></li>
+<li>If <m>f''(x)\lt 0</m> over an interval <m>I,</m> then <m>f</m> is concave down over <m>I.</m></li>
+<li>If <m>f'(c)=0</m> and <m>f''(c)\gt 0,</m> then <m>f</m> has a local minimum at <m>c.</m></li>
+<li>If <m>f'(c)=0</m> and <m>f''(c)\lt 0,</m> then <m>f</m> has a local maximum at <m>c.</m></li>
+<li>If <m>f'(c)=0</m> and <m>f''(c)=0,</m> then evaluate <m>f'(x)</m> at a test point <m>x</m> to the left of <m>c</m> and a test point <m>x</m> to the right of <m>c,</m> to determine whether <m>f</m> has a local extremum at <m>c.</m></li>
+</ul>
+</subsection>
+</section>
+<?ignore
+<subsection id="fs-id1165043390972" class="section-exercises">
+
+<!-- Move title outside statement--> <statement id="fs-id1165043390978">
+<p id="fs-id1165043390980">If <m>c</m> is a critical point of <m>f(x),</m> when is there no local maximum or minimum at <m>c?</m> Explain.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042474279">
+<p id="fs-id1165042474281">For the function <m>y=x^3,</m> is <m>x=0</m> both an inflection point and a local maximum/minimum?</p>
+</statement>
+<solution id="fs-id1165043308452">
+<p id="fs-id1165043308454">It is not a local maximum/minimum because <m>f'</m> does not change sign</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043251846">
+<p id="fs-id1165043251848">For the function <m>y=x^3,</m> is <m>x=0</m> an inflection point?</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043286679">
+<p id="fs-id1165043286681">Is it possible for a point <m>c</m> to be both an inflection point and a local extrema of a twice differentiable function?</p>
+</statement>
+<solution id="fs-id1165043286690">
+<p id="fs-id1165043348566">No</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043348573">
+<p id="fs-id1165043348576">Why do you need continuity for the first derivative test? Come up with an example.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042376751">
+<p id="fs-id1165042376754">Explain whether a concave-down function has to cross <m>y=0</m> for some value of <m>x.</m></p>
+</statement>
+<solution id="fs-id1165043327493">
+<p id="fs-id1165043327495">False; for example, <m>y=\sqrt{x}.</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042331752">
+<p id="fs-id1165042331754">Explain whether a polynomial of degree <m>2</m> can have an inflection point.</p>
+</statement>
+
+<p id="fs-id1165042331770">For the following exercises, analyze the graphs of <m>f',</m> then list all intervals where <m>f</m> is increasing or decreasing.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042970467">
+<description>"The function f'(x) is graphed. The function starts negative and crosses the x axis at (&#x2212;2, 0). Then it continues increasing a little before decreasing and crossing the x axis at (&#x2212;1, 0). It achieves a local minimum at (1, &#x2212;6) before increasing and crossing the x axis at (2, 0).">
+<image source="CNX_Calc_Figure_04_05_201.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165042476013">
+<p id="fs-id1165042476015">Increasing for <m>-2\lt x\lt -1</m> and <m>x\gt 2;</m> decreasing for <m>x\lt -2</m> and <m>-1\lt x\lt 2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043428275">
+<description>"The function f'(x) is graphed. The function starts negative and crosses the x axis at (&#x2212;2, 0). Then it continues increasing a little before decreasing and touching the x axis at (&#x2212;1, 0). It then increases a little before decreasing and crossing the x axis at the origin. The function then decreases to a local minimum before increasing, crossing the x-axis at (1, 0), and continuing to increase.">
+<image source="CNX_Calc_Figure_04_05_202.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043395898">
+<description>"The function f'(x) is graphed. The function starts negative and touches the x axis at the origin. Then it decreases a little before increasing to cross the x axis at (1, 0) and continuing to increase.">
+<image source="CNX_Calc_Figure_04_05_203.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165043331178">
+<p id="fs-id1165043331180">Decreasing for <m>x\lt 1,</m> increasing for <m>x\gt 1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043281859">
+<description>"The function f'(x) is graphed. The function starts positive and decreases to touch the x axis at (&#x2212;1, 0). Then it increases to (0, 4.5) before decreasing to touch the x axis at (1, 0). Then the function increases.">
+<image source="CNX_Calc_Figure_04_05_204.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043183807">
+<description>"The function f'(x) is graphed. The function starts at (&#x2212;2, 0), decreases to (&#x2212;1.5, &#x2212;1.5), increases to (&#x2212;1, 0), and continues increasing before decreasing to the origin. Then the other side is symmetric: that is, the function increases and then decreases to pass through (1, 0). It continues decreasing to (1.5, &#x2212;1.5), and then increase to (2, 0).">
+<image source="CNX_Calc_Figure_04_05_205.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165043424812">
+<p id="fs-id1165043424814">Decreasing for <m>-2\lt x\lt -1</m> and <m>1\lt x\lt 2;</m> increasing for <m>-1\lt x\lt 1</m> and <m>x\lt -2</m> and <m>x\gt 2</m></p>
+</solution>
+
+<p id="fs-id1165043319017">For the following exercises, analyze the graphs of <m>f',</m> then list all intervals where</p>
+<ol marker="(a)">
+<li><m>f</m> is increasing and decreasing and</li>
+<li>the minima and maxima are located.</li>
+</ol>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042373733">
+<description>"The function f'(x) is graphed. The function starts at (&#x2212;2, 0), decreases for a little and then increases to (&#x2212;1, 0), continues increasing before decreasing to the origin, at which point it increases.">
+<image source="CNX_Calc_Figure_04_05_206.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042373657">
+<description>"The function f'(x) is graphed. The function starts at (&#x2212;2, 0), increases and then decreases to (&#x2212;1, 0), decreases and then increases to an inflection point at the origin. Then the function increases and decreases to cross (1, 0). It continues decreasing and then increases to (2, 0).">
+<image source="CNX_Calc_Figure_04_05_207.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165042367880">
+<p id="fs-id1165042367883">a. Increasing over <m>-2\lt x\lt -1,0\lt x\lt 1,x\gt 2,</m> decreasing over <m>x\lt -2,</m> <m>-1\lt x\lt 0,1\lt x\lt 2;</m> b. maxima at <m>x=-1</m> and <m>x=1,</m> minima at <m>x=-2</m> and <m>x=0</m> and <m>x=2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043323825">
+<description>"The function f'(x) is graphed from x = &#x2212;2 to x = 2. It starts near zero at x = &#x2212;2, but then increases rapidly and remains positive for the entire length of the graph.">
+<image source="CNX_Calc_Figure_04_05_208.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042331806">
+<description>"The function f'(x) is graphed. The function starts negative and crosses the x axis at the origin, which is an inflection point. Then it continues increasing.">
+<image source="CNX_Calc_Figure_04_05_209.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165042371993">
+<p id="fs-id1165042371995">a. Increasing over <m>x\gt 0,</m> decreasing over <m>x\lt 0;</m> b. Minimum at <m>x=0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043108778">
+<description>"The function f'(x) is graphed. The function starts negative and crosses the x axis at (&#x2212;1, 0). Then it continues increasing a little before decreasing and touching the x axis at the origin. It increases again and then decreases to (1, 0). Then it increases.">
+<image source="CNX_Calc_Figure_04_05_210.jpg" width="50%">
+
+</statement>
+
+<p id="fs-id1165042318715">For the following exercises, analyze the graphs of <m>f',</m> then list all inflection points and intervals <m>f</m> that are concave up and concave down.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165043395338">
+<description>"The function f'(x) is graphed. The function is linear and starts negative. It crosses the x axis at the origin.">
+<image source="CNX_Calc_Figure_04_05_211.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165043312612">
+<p id="fs-id1165043312615">Concave up on all <m>x,</m> no inflection points</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043312630">
+<description>"The function f'(x) is graphed. It is an upward-facing parabola with 0 as its local minimum.">
+<image source="CNX_Calc_Figure_04_05_212.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043431032">
+<description>"The function f'(x) is graphed. The function resembles the graph of x3: that is, it starts negative and crosses the x axis at the origin. Then it continues increasing.">
+<image source="CNX_Calc_Figure_04_05_213.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165043348466">
+<p id="fs-id1165043348468">Concave up on all <m>x,</m> no inflection points</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043348483">
+<description>"The function f'(x) is graphed. The function starts negative and crosses the x axis at (&#x2212;0.5, 0). Then it continues increasing to (0, 1.5) before decreasing and touching the x axis at (1, 0). It then increases.">
+<image source="CNX_Calc_Figure_04_05_214.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042364603">
+<description>"The function f'(x) is graphed. The function starts negative and crosses the x axis at (&#x2212;1, 0). Then it continues increasing to a local maximum at (0, 1), at which point it decreases and touches the x axis at (1, 0). It then increases.">
+<image source="CNX_Calc_Figure_04_05_215.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165042364617">
+<p id="fs-id1165042364619">Concave up for <m>x\lt 0</m> and <m>x\gt 1,</m> concave down for <m>0\lt x\lt 1,</m> inflection points at <m>x=0</m> and <m>x=1</m></p>
+</solution>
+
+<p id="fs-id1165043323993">For the following exercises, draw a graph that satisfies the given specifications for the domain <m>x=[-3,3].</m> The function does not have to be continuous or differentiable.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042708288">
+<p id="fs-id1165042708290"><m>f(x)\gt 0,f'(x)\gt 0</m> over <m>x\gt 1,-3\lt x\lt 0,f'(x)=0</m> over <m>0\lt x\lt 1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042364312">
+<p id="fs-id1165042364314"><m>f'(x)\gt 0</m> over <m>x\gt 2,-3\lt x\lt -1,f'(x)\lt 0</m> over <m>-1\lt x\lt 2,f''(x)\lt 0</m> for all <m>x</m></p>
+</statement>
+<solution id="fs-id1165042705925">
+<p id="fs-id1165042705927">Answers will vary</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042705934">
+<p id="fs-id1165042705936"><m>f''(x)\lt 0</m> over <m>-1\lt x\lt 1,f''(x)\gt 0,-3\lt x\lt -1,1\lt x\lt 3,</m> local maximum at <m>x=0,</m> local minima at <m>x=\pm2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042333451">
+<p id="fs-id1165042333453">There is a local maximum at <m>x=2,</m> local minimum at <m>x=1,</m> and the graph is neither concave up nor concave down.</p>
+</statement>
+<solution id="fs-id1165042418824">
+<p id="fs-id1165042418826">Answers will vary</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042418834">
+<p id="fs-id1165042418836">There are local maxima at <m>x=\pm1,</m> the function is concave up for all <m>x,</m> and the function remains positive for all <m>x.</m></p>
+</statement>
+
+<p id="fs-id1165043430918">For the following exercises, determine</p>
+<ol marker="(a)">
+<li>intervals where <m>f</m> is increasing or decreasing and</li>
+<li>local minima and maxima of <m>f.</m></li>
+</ol>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042709554">
+<p id="fs-id1165042709556"><m>f(x)=\sin x+<m:msup>\sin3</m:msup>x</m> over <m>-\pi\lt x\lt \pi</m></p>
+</statement>
+<solution id="fs-id1165042705526">
+<p id="fs-id1165042705528">a. Increasing over <m>-\frac{\pi}{2}\lt x\lt \frac{\pi}{2},</m> decreasing over <m>x\lt -\frac{\pi}{2},x\gt \frac{\pi}{2}</m> b. Local maximum at <m>x=\frac{\pi}{2};</m> local minimum at <m>x=-\frac{\pi}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043327554">
+<p id="fs-id1165043327556"><m>f(x)=x^2+\text{ cos } x</m></p>
+</statement>
+
+<p id="fs-id1165043430997">For the following exercises, determine a. intervals where <m>f</m> is concave up or concave down, and b. the inflection points of <m>f.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042705950">
+<p id="fs-id1165042705952"><m>f(x)=x^3-4x^2+x+2</m></p>
+</statement>
+<solution id="fs-id1165042708482">
+<p id="fs-id1165042708484">a. Concave up for <m>x\gt \frac{4}{3},</m> concave down for <m>x\lt \frac{4}{3}</m> b. Inflection point at <m>x=\frac{4}{3}</m></p>
+</solution>
+
+<p id="fs-id1165042708716">For the following exercises, determine</p>
+<ol marker="(a)">
+<li>intervals where <m>f</m> is increasing or decreasing,</li>
+<li>local minima and maxima of <m>f,</m></li>
+<li>intervals where <m>f</m> is concave up and concave down, and</li>
+<li>the inflection points of <m>f.</m></li>
+</ol>
+
+<!-- Move title outside statement--> <statement id="fs-id1165043253479">
+<p id="fs-id1165043253481"><m>f(x)=x^2-6x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043430812">
+<p id="fs-id1165043430814"><m>f(x)=x^3-6x^2</m></p>
+</statement>
+<solution id="fs-id1165042333206">
+<p id="fs-id1165042333208">a. Increasing over <m>x\lt 0</m> and <m>x\gt 4,</m> decreasing over <m>0\lt x\lt 4</m> b. Maximum at <m>x=0,</m> minimum at <m>x=4</m> c. Concave up for <m>x\gt 2,</m> concave down for <m>x\lt 2</m> d. Infection point at <m>x=2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042369585">
+<p id="fs-id1165042369587"><m>f(x)=x^4-6x^3</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042710976">
+<p id="fs-id1165042710978"><m>f(x)=<m:msup>x11</m:msup>-6<m:msup>x10</m:msup></m></p>
+</statement>
+<solution id="fs-id1165042711012">
+<p id="fs-id1165042711014">a. Increasing over <m>x\lt 0</m> and <m>x\gt \frac{6}{0}{11},</m> decreasing over <m>0\lt x\lt \frac{6}{0}{11}</m> b. Minimum at <m>x=\frac{6}{0}{11}</m> c. Concave down for <m>x\lt \frac{5}{4}{11},</m> concave up for <m>x\gt \frac{5}{4}{11}</m> d. Inflection point at <m>x=\frac{5}{4}{11}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042327373">
+<p id="fs-id1165042327376"><m>f(x)=x+x^2-x^3</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043424020">
+<p id="fs-id1165043424023"><m>f(x)=x^2+x+1</m></p>
+</statement>
+<solution id="fs-id1165042364259">
+<p id="fs-id1165042364262">a. Increasing over <m>x\gt -\frac{1}{2},</m> decreasing over <m>x\lt -\frac{1}{2}</m> b. Minimum at <m>x=-\frac{1}{2}</m> c. Concave up for all <m>x</m> d. No inflection points</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042710945">
+<p id="fs-id1165042710947"><m>f(x)=x^3+x^4</m></p>
+</statement>
+
+<p id="fs-id1165043380485">For the following exercises, determine</p>
+<ol marker="(a)">
+<li>intervals where <m>f</m> is increasing or decreasing,</li>
+<li>local minima and maxima of <m>f,</m></li>
+<li>intervals where <m>f</m> is concave up and concave down, and</li>
+<li>the inflection points of <m>f.</m> Sketch the curve, then use a calculator to compare your answer. If you cannot determine the exact answer analytically, use a calculator.</li>
+</ol>
+
+<!-- Move title outside statement--> <statement id="fs-id1165043430753">
+<p id="fs-id1165043430756"><emphasis effect="bold">[T]</emphasis> <m>f(x)=\sin(\pix)-\text{ cos }(\pix)</m> over <m>x=[-1,1]</m></p>
+</statement>
+<solution id="fs-id1165043327634">
+<p id="fs-id1165043327636">a. Increases over <m>-\frac{1}{4}\lt x\lt \frac{3}{4},</m> decreases over <m>x\gt \frac{3}{4}</m> and <m>x\lt -\frac{1}{4}</m> b. Minimum at <m>x=-\frac{1}{4},</m> maximum at <m>x=\frac{3}{4}</m> c. Concave up for <m>-\frac{3}{4}\lt x\lt \frac{1}{4},</m> concave down for <m>x\lt -\frac{3}{4}</m> and <m>x\gt \frac{1}{4}</m> d. Inflection points at <m>x=-\frac{3}{4},x=\frac{1}{4}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043281280">
+<p id="fs-id1165043281282"><emphasis effect="bold">[T]</emphasis> <m>f(x)=x+\sin(2x)</m> over <m>x=[-\frac{\pi}{2},\frac{\pi}{2}]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042315745">
+<p id="fs-id1165042315748"><emphasis effect="bold">[T]</emphasis> <m>f(x)=\sin x+\text{ tan } x</m> over <m>(-\frac{\pi}{2},\frac{\pi}{2})</m></p>
+</statement>
+<solution id="fs-id1165042375680">
+<p id="fs-id1165042375682">a. Increasing for all <m>x</m> b. No local minimum or maximum c. Concave up for <m>x\gt 0,</m> concave down for <m>x\lt 0</m> d. Inflection point at <m>x=0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042323658">
+<p id="fs-id1165042323660"><emphasis effect="bold">[T]</emphasis> <m>f(x)=<m:msup>(x-2)2</m:msup><m:msup>(x-4)2</m:msup></m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042327444">
+<p id="fs-id1165042327446"><emphasis effect="bold">[T]</emphasis> <m>f(x)=\frac{11-x},x\neq 1</m></p>
+</statement>
+<solution id="fs-id1165042708181">
+<p id="fs-id1165042708183">a. Increasing for all <m>x</m> where defined b. No local minima or maxima c. Concave up for <m>x\lt 1;</m> concave down for <m>x\gt 1</m> d. No inflection points in domain</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042708216">
+<p id="fs-id1165042708218"><emphasis effect="bold">[T]</emphasis> <m>f(x)=\frac{\sin xx}</m> over <m>x=[-2\pi,2\pi]</m> <m>[2\pi,0)∪(0,2\pi]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043395210">
+<p id="fs-id1165043395212"><m>f(x)=\sin(x)e^x</m> over <m>x=[-\pi,\pi]</m></p>
+</statement>
+<solution id="fs-id1165043250993">
+<p id="fs-id1165043250995">a. Increasing over <m>-\frac{\pi4}\lt x\lt \frac{3\pi4},</m> decreasing over <m>x\gt \frac{3\pi4},x\lt -\frac{\pi4}</m> b. Minimum at <m>x=-\frac{\pi4},</m> maximum at <m>x=\frac{3\pi4}</m> c. Concave up for <m>-\frac{\pi}{2}\lt x\lt \frac{\pi}{2},</m> concave down for <m>x\lt -\frac{\pi}{2},x\gt \frac{\pi}{2}</m> d. Infection points at <m>x=\pm\frac{\pi}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042374786">
+<p id="fs-id1165042374789"><m>f(x)=\text{ ln } x\sqrt{x},x\gt 0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042320287">
+<p id="fs-id1165042320290"><m>f(x)=\frac{1}{4}\sqrt{x}+\frac{1}{x},x\gt 0</m></p>
+</statement>
+<solution id="fs-id1165042320331">
+<p id="fs-id1165042323564">a. Increasing over <m>x\gt 4,</m> decreasing over <m>0\lt x\lt 4</m> b. Minimum at <m>x=4</m> c. Concave up for <m>0\lt x\lt 8<m:mroot>23</m:mroot>,</m> concave down for <m>x\gt 8<m:mroot>23</m:mroot></m> d. Inflection point at <m>x=8<m:mroot>23</m:mroot></m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042364149">
+<p id="fs-id1165042364151"><m>f(x)=\frac{e^xx},x\neq 0</m></p>
+</statement>
+
+<p id="fs-id1165043248682">For the following exercises, interpret the sentences in terms of <m>f,f', \text{ and } f''.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165043248715">
+<p id="fs-id1165043248718">The population is growing more slowly. Here <m>f</m> is the population.</p>
+</statement>
+<solution id="fs-id1165042638488">
+<p id="fs-id1165042638490"><m>f\gt 0,f'\gt 0,f''\lt 0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042638528">
+<p id="fs-id1165042638531">A bike accelerates faster, but a car goes faster. Here <m>f=</m> Bike’s position minus Car’s position.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042708315">
+<p id="fs-id1165042708317">The airplane lands smoothly. Here <m>f</m> is the plane’s altitude.</p>
+</statement>
+<solution id="fs-id1165042708326">
+<p id="fs-id1165042708328"><m>f\gt 0,f'\lt 0,f''\lt 0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042708366">
+<p id="fs-id1165042708369">Stock prices are at their peak. Here <m>f</m> is the stock price.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043390838">
+<p id="fs-id1165043390840">The economy is picking up speed. Here <m>f</m> is a measure of the economy, such as GDP.</p>
+</statement>
+<solution id="fs-id1165043390849">
+<p id="fs-id1165043390851"><m>f\gt 0,f'\gt 0,f''\gt 0</m></p>
+</solution>
+
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1165043219075">For the following exercises, consider a third-degree polynomial <m>f(x),</m> which has the properties <m>f'(1)=0,f'(3)=0.</m> Determine whether the following statements are <emphasis effect="italics">true or false</emphasis>. Justify your answer.</p>
+<!-- Move title outside statement--> <statement id="fs-id1165043219137">
+<p id="fs-id1165043219139"><m>f(x)=0</m> for some <m>1\leq x\leq 3</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043173870">
+<p id="fs-id1165043173872"><m>f''(x)=0</m> for some <m>1\leq x\leq 3</m></p>
+</statement>
+<solution id="fs-id1165042707183">
+<p id="fs-id1165042707185">True, by the Mean Value Theorem</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042707192">
+<p id="fs-id1165042707194">There is no absolute maximum at <m>x=3</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042707230">
+<p id="fs-id1165042707232">If <m>f(x)</m> has three roots, then it has <m>1</m> inflection point.</p>
+</statement>
+<solution id="fs-id1165043427339">
+<p id="fs-id1165043427341">True, examine derivative</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043427348">
+<p id="fs-id1165043427351">If <m>f(x)</m> has one inflection point, then it has three real roots.</p>
+</statement>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1165043427379">
+<term>concave down</term>
+<meaning id="fs-id1165043427385">if <m>f</m> is differentiable over an interval <m>I</m> and <m>f'</m> is decreasing over <m>I,</m> then <m>f</m> is concave down over <m>I</m></meaning>
+</definition>
+<definition id="fs-id1165043396223">
+<term>concave up</term>
+<meaning id="fs-id1165043396229">if <m>f</m> is differentiable over an interval <m>I</m> and <m>f'</m> is increasing over <m>I,</m> then <m>f</m> is concave up over <m>I</m></meaning>
+</definition>
+<definition id="fs-id1165043396264">
+<term>concavity</term>
+<meaning id="fs-id1165043396269">the upward or downward curve of the graph of a function</meaning>
+</definition>
+<definition id="fs-id1165043396274">
+<term>concavity test</term>
+<meaning id="fs-id1165043396279">suppose <m>f</m> is twice differentiable over an interval <m>I;</m> if <m>f''\gt 0</m> over <m>I,</m> then <m>f</m> is concave up over <m>I;</m> if <m>f''\lt 0</m> over <m>I,</m> then <m>f</m> is concave down over <m>I</m></meaning>
+</definition>
+<definition id="fs-id1165043281605">
+<term>first derivative test</term>
+<meaning id="fs-id1165043281610">let <m>f</m> be a continuous function over an interval <m>I</m> containing a critical point <m>c</m> such that <m>f</m> is differentiable over <m>I</m> except possibly at <m>c;</m> if <m>f'</m> changes sign from positive to negative as <m>x</m> increases through <m>c,</m> then <m>f</m> has a local maximum at <m>c;</m> if <m>f'</m> changes sign from negative to positive as <m>x</m> increases through <m>c,</m> then <m>f</m> has a local minimum at <m>c;</m> if <m>f'</m> does not change sign as <m>x</m> increases through <m>c,</m> then <m>f</m> does not have a local extremum at <m>c</m></meaning>
+</definition>
+<definition id="fs-id1165042364543">
+<term>inflection point</term>
+<meaning id="fs-id1165042364548">if <m>f</m> is continuous at <m>c</m> and <m>f</m> changes concavity at <m>c,</m> the point <m>(c,f(c))</m> is an inflection point of <m>f</m></meaning>
+</definition>
+<definition id="fs-id1165043131579">
+<term>second derivative test</term>
+<meaning id="fs-id1165043131584">suppose <m>f'(c)=0</m> and <m>f''</m> is continuous over an interval containing <m>c;</m> if <m>f''(c)\gt 0,</m> then <m>f</m> has a local minimum at <m>c;</m> if <m>f''(c)\lt 0,</m> then <m>f</m> has a local maximum at <m>c;</m> if <m>f''(c)=0,</m> then the test is inconclusive</meaning>
+</definition>
+</glossary>
+</document>
+?>

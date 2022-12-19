@@ -1,0 +1,1477 @@
+<?xml version="1.0"?>
+<section xml:id="sec_Ch1Sec5" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exponential and Logarithmic Functions</title>
+<introduction>
+<title> Learning Objectives</title>
+<ol>
+<li>Identify the form of an exponential function.</li>
+<li>Explain the difference between the graphs of <m>x^b</m> and <m>b^x.</m></li>
+<li>Recognize the significance of the number <m>e.</m></li>
+<li>Identify the form of a logarithmic function.</li>
+<li>Explain the relationship between exponential and logarithmic functions.</li>
+<li>Describe how to calculate a logarithm to a different base.</li>
+<!--Commenting out hyperbolic functions objective
+<li>Identify the hyperbolic functions, their graphs, and basic identities.</li>-->
+</ol>
+<p id="fs-id1170572094366">In this section we examine exponential and logarithmic functions. We use the properties of these functions to solve equations involving exponential or logarithmic terms, and we study the meaning and importance of the number <m>e.</m> We also define hyperbolic and inverse hyperbolic functions, which involve combinations of exponential and logarithmic functions. (Note that we present alternative definitions of exponential and logarithmic functions in the chapter <!--<href ref=ch_sixth>--> Applications of Integrations <!--</href>-->, and prove that the functions have the same properties with either definition.)</p>
+</introduction>
+<subsection id="fs-id1170572108759">
+<title>Exponential Functions</title>
+<introduction>
+<p id="fs-id1170572246259">Exponential functions arise in many applications. One common example is <term >population growth</term>.</p>
+<p id="fs-id1170572449480">For example, if a population starts with <m>P_0</m> individuals and then grows at an annual rate of <m>2\%,</m> its population after 1 year is</p>
+<me>P(1)=P_0+0.02P_0=P_0(1+0.02)=P_0(1.02).</me>
+<p id="fs-id1170572092410">Its population after 2 years is</p>
+<me>P(2)=P(1)+0.02P(1)=P(1)(1.02)=P_0(1.02)^2.</me>
+<p id="fs-id1170572130048">In general, its population after <m>t</m> years is</p>
+<me>P(t)=P_0(1.02)^t,</me>
+<p id="fs-id1170572203905">which is an exponential function. More generally, any function of the form <m>f(x)=b^x,</m> where <m>b\gt 0,b\neq 1,</m> is an exponential function with <term>base</term> <m>b</m> and <term>exponent</term> <m>x</m>. Exponential functions have constant bases and variable exponents. Note that a function of the form <m>f(x)=x^b</m> for some constant <m>b</m> is not an exponential function but a power function.</p>
+<p id="fs-id1170572248051">To see the difference between an exponential function and a power function, we compare the functions <m>y=x^2</m> and <m>y=2^x.</m> In <xref ref="fs-id1170572205233"/>, we see that both <m>2^x</m> and <m>x^2</m> approach infinity as <m>x\to \infty.</m> Eventually, however, <m>2^x</m> becomes larger than <m>x^2</m> and grows more rapidly as <m>x\to \infty.</m> In the opposite direction, as <m>x\to -\infty,x^2\to \infty,</m> whereas <m>2^x\to 0.</m> The line <m>y=0</m> is a horizontal asymptote for <m>y=2^x.</m></p>
+<table xml:id="fs-id1170572205233" class="column-header" summary="A table with 3 rows and 10 columns. The first row is labeled &#x201C;x&#x201D; and has the values &#x201C;-3; -2; -1; 0; 1; 2; 3; 4; 5; 6&#x201D;. The second row is labeled &#x201C;x squared&#x201D; and has the values &#x201C;9; 4; 1; 0; 1; 4; 9; 16; 25; 36&#x201D;. The third row is labeled &#x201C;2 to the power of x&#x201D; and has the values &#x201C;(1/8); (1/4); (1/2); 1; 2; 4; 8; 16; 32; 64&#x201D;.">
+<title>Values of <m>x^2</m> and <m>2^x</m></title>
+<tabular>
+<row valign="top">
+<cell halign ="center"><m>x</m></cell>
+<cell halign ="center"><m>−3</m></cell>
+<cell halign ="center"><m>−2</m></cell>
+<cell halign ="center"><m>−1</m></cell>
+<cell halign ="center"><m>0</m></cell>
+<cell halign ="center"><m>1</m></cell>
+<cell halign ="center"><m>2</m></cell>
+<cell halign ="center"><m>3</m></cell>
+<cell halign ="center"><m>4</m></cell>
+<cell halign ="center"><m>5</m></cell>
+<cell halign ="center"><m>6</m></cell>
+</row>
+<row valign="top">
+<cell halign ="center"><m>x^2</m></cell>
+<cell halign ="center"><m>9</m></cell>
+<cell halign ="center"><m>4</m></cell>
+<cell halign ="center"><m>1</m></cell>
+<cell halign ="center"><m>0</m></cell>
+<cell halign ="center"><m>1</m></cell>
+<cell halign ="center"><m>4</m></cell>
+<cell halign ="center"><m>9</m></cell>
+<cell halign ="center"><m>16</m></cell>
+<cell halign ="center"><m>25</m></cell>
+<cell halign ="center"><m>36</m></cell>
+</row>
+<row valign="top">
+<cell halign ="center"><m>2^x</m></cell>
+<cell halign ="center"><m>1/8</m></cell>
+<cell halign ="center"><m>1/4</m></cell>
+<cell halign ="center"><m>1/2</m></cell>
+<cell halign ="center"><m>1</m></cell>
+<cell halign ="center"><m>2</m></cell>
+<cell halign ="center"><m>4</m></cell>
+<cell halign ="center"><m>8</m></cell>
+<cell halign ="center"><m>16</m></cell>
+<cell halign ="center"><m>32</m></cell>
+<cell halign ="center"><m>64</m></cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1170572247756">In <xref ref="CNX_Calc_Figure_01_05_001"/>, we graph both <m>y=x^2</m> and <m>y=2^x</m> to show how the graphs differ.</p>
+<figure xml:id="CNX_Calc_Figure_01_05_001">
+<image source="CNX_Calc_Figure_01_05_001.jpg" width="50%">
+<description>"An image of a graph. The x axis runs from -10 to 10 and the y axis runs from 0 to 50. The graph is of two functions. The first function is &#x201C;y = x squared&#x201D;, which is a parabola. The function decreases until it hits the origin and then begins increasing. The second function is &#x201C;y = 2 to the power of x&#x201D;, which starts slightly above the x axis, and begins increasing very rapidly, more rapidly than the first function."
+  </description></image> <caption>Both <m>2^x</m> and <m>x^2</m> approach infinity as <m>x\to \infty,</m> but <m>2^x</m> grows more rapidly than <m>x^2.</m> As <m>x\to -\infty,x^2\to \infty,</m> whereas <m>2^x\to 0.</m></caption>
+</figure>
+</introduction>prei
+<subsubsection id="fs-id1170572135350">
+<title>Evaluating Exponential Functions</title>
+<p id="fs-id1170572134608">Recall the properties of exponents: If <m>x</m> is a positive integer, then we define <m>b^x=b\cdot b\cdots b</m> (with <m>x</m> factors of <m>b).</m> If <m>x</m> is a negative integer, then <m>x=.y</m> for some positive integer <m>y,</m> and we define <m>b^x=b^{-y}=1/b^y.</m> Also, <m>b^0</m> is defined to be <m>1.</m> If <m>x</m> is a rational number, then <m>x=p/q,</m> where <m>p</m> and <m>q</m> are integers and <m>b^x=b^{p/q}=\sqrt[q]{b^p}.</m> For example, <m>9^{3/2}=\sqrt{9^3}=27.</m> However, how is <m>b^x</m> defined if <m>x</m> is an irrational number? For example, what do we mean by <m>2^\sqrt{2}</m> This is too complex a question for us to answer fully right now; however, we can make an approximation. In <xref ref="fs-id1170572480690"/>, we list some rational numbers approaching <m>\sqrt{2},</m> and the values of <m>2^x</m> for each rational number <m>x</m> are presented as well. We claim that if we choose rational numbers <m>x</m> getting closer and closer to <m>\sqrt{2},</m> the values of <m>2^x</m> get closer and closer to some number <m>L.</m> We define that number <m>L</m> to be <m>2^\sqrt{2}.</m></p>
+<table xml:id="fs-id1170572480690" class="column-header" summary="A table with 2 rows and 6 columns. The first row is labeled &#x201C;x&#x201D; and has the values &#x201C;1.4; 1.41; 1.414; 1.4142; 1.41421; 1.414213&#x201D;. The second row is labeled &#x201C;2 to the power of x&#x201D; and has the values &#x201C;2.639; 2.65737; 2.66475; 2.665119; 2.665138; 2.665143&#x201D;.">
+<title>Values of <m>2^x</m> for a List of Rational Numbers Approximating <m>\sqrt{2}</m></title>
+<tabular>
+<row valign="top">
+<cell halign ="left"><m>x</m></cell>
+<cell halign ="left"><m>1.4</m></cell>
+<cell halign ="left"><m>1.41</m></cell>
+<cell halign ="left"><m>1.414</m></cell>
+<cell halign ="left"><m>1.4142</m></cell>
+<cell halign ="left"><m>1.41421</m></cell>
+<cell halign ="left"><m>1.414213</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left"><m>2^x</m></cell>
+<cell halign ="left"><m>2.639</m></cell>
+<cell halign ="left"><m>2.65737</m></cell>
+<cell halign ="left"><m>2.66475</m></cell>
+<cell halign ="left"><m>2.665119</m></cell>
+<cell halign ="left"><m>2.665138</m></cell>
+<cell halign ="left"><m>2.665143</m></cell>
+</row>
+</tabular>
+</table>
+<example id="fs-id1170572169644">
+<title>Bacterial Growth</title>
+ <statement id="fs-id1170572169651">
+<p id="fs-id1170572169653">Suppose a particular population of bacteria is known to double in size every <m>4</m> hours. If a culture starts with <m>1000</m> bacteria, the number of bacteria after <m>4</m> hours is <m>n(4)=1000\cdot 2.</m> The number of bacteria after <m>8</m> hours is <m>n(8)=n(4)\cdot 2=1000\cdot 2^2.</m> In general, the number of bacteria after <m>4m</m> hours is <m>n(4m)=1000\cdot 2^m.</m> Letting <m>t=4m,</m> we see that the number of bacteria after <m>t</m> hours is <m>n(t)=1000\cdot 2^{t/4}.</m> Find the number of bacteria after <m>6</m> hours, <m>10</m> hours, and <m>24</m> hours.</p>
+</statement>
+<solution id="fs-id1170572548809">
+<p id="fs-id1170572550969">The number of bacteria after 6 hours is given by <m>n(6)=1000\cdot 2^{6/4} \approx 2828</m> bacteria. The number of bacteria after <m>10</m> hours is given by <m>n(10)=1000\cdot 2^{10/4}≈5657</m> bacteria. The number of bacteria after <m>24</m> hours is given by <m>n(24)=1000\cdot 2^6=64,000</m> bacteria.</p>
+</solution>
+</example>
+
+<exercise>
+<statement id="fs-id1170572173713">
+<p id="fs-id1170572173715">Given the exponential function <m>f(x)=100\cdot 3^{x/2},</m> evaluate <m>f(4)</m> and <m>f(10).</m></p>
+</statement>
+<solution id="fs-id1170572173779">
+<p id="fs-id1170572173781"><m>f(4)=900;f(10)=24,300.</m></p>
+</solution>
+</exercise>
+
+<note id="fs-id1170572173826" class="media-2">
+<title> Media </title>
+<p id="fs-id1170572173829">Go to <url href="http://www.openstax.org/l/20_exponengrow" visual="openstax.org/l/20_exponengrow" >World Population Balance</url> for another example of exponential population growth.</p>
+</note>
+</subsubsection>
+<subsubsection id="fs-id1170572554025">
+<title>Graphing Exponential Functions</title>
+<p id="fs-id1170572554031">For any base <m>b\gt 0,b\neq 1,</m> the exponential function <m>f(x)=b^x</m> is defined for all real numbers <m>x</m> and <m>b^x\gt 0.</m> Therefore, the domain of <m>f(x)=b^x</m> is <m>(-\infty,\infty)</m> and the range is <m>(0,\infty).</m> To graph <m>b^x,</m> we note that for <m>b\gt 1,b^x</m> is increasing on <m>(-\infty,\infty)</m> and <m>b^x\to \infty</m> as <m>x\to \infty,</m> whereas <m>b^x\to 0</m> as <m>x\to -\infty.</m> On the other hand, if <m>0\lt b\lt 1,f(x)=b^x</m> is decreasing on <m>(-\infty,\infty)</m> and <m>b^x\to 0</m> as <m>x\to \infty</m> whereas <m>b^x\to \infty</m> as <m>x\to -\infty</m> (<xref ref="CNX_Calc_Figure_01_05_002"/>).</p>
+<figure xml:id="CNX_Calc_Figure_01_05_002">
+<image source="CNX_Calc_Figure_01_05_002.jpg" width="50%">
+  <description>"An image of a graph. The x axis runs from -3 to 3 and the y axis runs from 0 to 4. The graph is of four functions. The first function is &#x201C;f(x) = 2 to the power of x&#x201D;, an increasing curved function, which starts slightly above the x axis and begins increasing. The second function is &#x201C;f(x) = 4 to the power of x&#x201D;, an increasing curved function, which starts slightly above the x axis and begins increasing rapidly, more rapidly than the first function. The third function is &#x201C;f(x) = (1/2) to the power of x&#x201D;, a decreasing curved function with decreases until it gets close to the x axis without touching it. The third function is &#x201C;f(x) = (1/4) to the power of x&#x201D;, a decreasing curved function with decreases until it gets close to the x axis without touching it. It decreases at a faster rate than the third function."
+ </description></image> <caption>If <m>b\gt 1,</m> then <m>b^x</m> is increasing on <m>(-\infty,\infty).</m> If <m>0\lt b\lt 1,</m> then <m>b^x</m> is decreasing on <m>(-\infty,\infty).</m></caption></figure>
+ <note id="fs-id1170572481215" class="media-2">
+<title> Media </title>
+<p id="fs-id1170572481218">Visit this <url href="http://www.openstax.org/l/20_inverse" visual="openstax.org/1/20_inverse">site</url> for more exploration of the graphs of exponential functions.</p>
+</note>
+
+
+<p id="fs-id1170572481226">Note that exponential functions satisfy the general laws of exponents. To remind you of these laws, we state them as rules.</p>
+
+<note>
+<title>Rule: Laws of Exponents</title>
+<p id="fs-id1170572481236">For any constants <m>a\gt 0,b\gt 0,</m> and for all <m>x</m> and <emphasis effect="italics">y</emphasis>,</p>
+<ol id="fs-id1170572481268" list-type="enumerated" number-style="arabic">
+<li><m>b^x\cdot b^y=b^{x+y}</m></li>
+<li><m>\frac{b^x}{b^y}=b^{x−y}</m></li>
+<li><m>(b^x)^y=b^{xy}</m></li>
+<li><m>(ab)^x=a^xb^x</m></li>
+<li><m> \frac{a^x}{b^x}=\left(\frac{a}{b}\right)^x</m></li>
+</ol>
+</note>
+<example id="fs-id1170572440093">
+<title>Using the Laws of Exponents</title>
+<statement id="fs-id1170572440100">
+<p id="fs-id1170572440102">Use the laws of exponents to simplify each of the following expressions.</p>
+<ol>
+<li><m> \frac{(2x^{2/3})^3}{(4x^{−1/3})^2}</m></li>
+<li><m> \frac{(x^3y^{−1})^2}{(xy^2)^{−2}}</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170572453122">
+<ol>
+<li>We can simplify as follows:
+<me> \frac{(2x^{2/3})^3}{(4x^{−1/3})^2}= \frac{2^3(x^{2/3})^3}{4^2(x^{−1/3})^2}= \frac{8x^2}{16x^{−2/3}}= \frac{x^2x^{2/3}}{2}= \frac{x^{8/3}}{2}.</me></li>
+<li>We can simplify as follows:
+<me> \frac{(x^3y^{−1})^2}{(xy^2)^{−2}}=\frac{(x^3)^2(y^{−1})^2}{x^{−2}(y^2)^{−2}}= \frac{x^6y^{−2}}{x^{−2}y^{−4}}=x^6x^2y^{−2}y^4=x^8y^2.</me></li>
+</ol>
+</solution>
+
+</example>
+
+<exercise>
+<statement id="fs-id1170572452231">
+<p id="fs-id1170572452234">Use the laws of exponents to simplify <m>(6x^{−3}y^2)/(12x^{−4}y^5).</m></p>
+</statement>
+<solution id="fs-id1170572452533">
+<p id="fs-id1170572452536"><m>x/(2y^3)</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042707513"><m>x^a/x^b=x^{a−b}</m></p>
+</hint>
+</exercise>
+</subsubsection>
+</subsection>
+<subsection id="fs-id1170572452563">
+<title>The Number <m> e </m></title>
+<p id="fs-id1170572452572">A special type of exponential function appears frequently in real-world applications. To describe it, consider the following example of exponential growth, which arises from <term class="no-emphasis">compounding interest</term> in a savings account. Suppose a person invests <m>P</m> dollars in a savings account with an annual interest rate <m>r,</m> compounded annually. The amount of money after 1 year is</p>
+<me>A(1)=P+rP=P(1+r).</me>
+<p id="fs-id1170572449156">The amount of money after <m>2</m> years is</p>
+<me>A(2)=A(1)+rA(1)=P(1+r)+rP(1+r)=P(1+r)^2.</me>
+<p id="fs-id1170572449268">More generally, the amount after <m>t</m> years is</p>
+<me>A(t)=P(1+r)^t.</me>
+<p id="fs-id1170572449316">If the money is compounded 2 times per year, the amount of money after half a year is</p>
+<me>A\left(\frac{1}{2}\right)=P+\left(\frac{r}{2}\right)P=P\left(1+\left(\frac{r}{2}\right)\right).</me>
+<p id="fs-id1170572548410">The amount of money after <m>1</m> year is</p>
+<me>A\left(1\right)=A\left(\frac{1}{2}\right)+\left(\frac{r}{2}\right)A\left(\frac{1}{2}\right)=P\left(1+\frac{r}{2}\right)+\frac{r}{2}\left(P\left(1+\frac{r}{2}\right)\right)=P\left(1+\frac{r}{2}\right)^2.</me>
+<p id="fs-id1170572229281">After <m>t</m> years, the amount of money in the account is</p>
+<me>A\left(t\right)=P\left(1+\frac{r}{2}\right)^{2t}.</me>
+<p id="fs-id1170572229335">More generally, if the money is compounded <m>n</m> times per year, the amount of money in the account after <m>t</m> years is given by the function</p>
+<me>A\left(t\right)=P\left(1+\frac{r}{n}\right)^{nt}.</me>
+<p id="fs-id1170572229394">What happens as <m>n\to \infty?</m> To answer this question, we let <m>m=n/r</m> and write</p>
+<me>\left(1+ \frac{r}{n}\right)^{nt}=\left(1+ \frac{1}{m}\right)^{mrt},</me>
+<p id="fs-id1170572451344">and examine the behavior of <m>\left(1+1/m\right)^m</m> as <m>m\to \infty,</m> using a table of values (<xref ref="fs-id1170572451390"/>).</p>
+<table xml:id="fs-id1170572451390" class="column-header" summary="A table with 2 rows and 6 columns. The first row is labeled &#x201C;m&#x201D; and has the values &#x201C;10; 100; 1000; 10,000; 100,000; 1,000,000&#x201D;. The second row is labeled &#x201C;\left(1 + \left(1/m\right)\right) to the power of m&#x201D; and has the values &#x201C;2.5937; 2.7048; 2.71692; 2.71815; 2.718268; 2.718280&#x201D;.">
+<title>Values of <m>\left(1+ \frac{1}{m}\right)^m</m> as <m>m\to \infty</m></title>
+<tabular>
+<row valign="top">
+<cell halign ="left"><m>m</m></cell>
+<cell halign ="left"><m>10</m></cell>
+<cell halign ="left"><m>100</m></cell>
+<cell halign ="left"><m>1000</m></cell>
+<cell halign ="left"><m>10,000</m></cell>
+<cell halign ="left"><m>100,000</m></cell>
+<cell halign ="left"><m>1,000,000</m></cell>
+</row>
+<row valign="top">
+<cell halign ="left"><m>\left(1+ \frac{1}{m}\right)^m</m></cell>
+<cell halign ="left"><m>2.5937</m></cell>
+<cell halign ="left"><m>2.7048</m></cell>
+<cell halign ="left"><m>2.71692</m></cell>
+<cell halign ="left"><m>2.71815</m></cell>
+<cell halign ="left"><m>2.718268</m></cell>
+<cell halign ="left"><m>2.718280</m></cell>
+</row>
+</tabular>
+</table>
+
+<p id="fs-id1170572142296">Looking at this table, it appears that <m>(1+1/m)^m</m> is approaching a number between <m>2.7</m> and <m>2.8</m> as <m>m\to \infty.</m> In fact, <m>(1+1/m)^m</m> does approach some number as <m>m\to \infty.</m> We call this <term>number <m>e</m></term>. To six decimal places of accuracy,</p>
+<me>e≈2.718282.</me>
+<p id="fs-id1170572549064">The letter <m>e</m> was first used to represent this number by the Swiss mathematician Leonhard Euler during the 1720s. Although Euler did not discover the number, he showed many important connections between <m>e</m> and logarithmic functions. We still use the notation <m>e</m> today to honor Euler’s work because it appears in many areas of mathematics and because we can use it in many practical applications.</p>
+<p id="fs-id1170572549084">Returning to our savings account example, we can conclude that if a person puts <m>P</m> dollars in an account at an annual interest rate <m>r,</m> compounded continuously, then <m xml:id="Compounded-Continuously_15">A(t)=Pe^{rt}.</m> This function may be familiar. Since functions involving base <m>e</m> arise often in applications, we call the function <m>f(x)=e^x</m> the <term>natural exponential function</term>. Not only is this function interesting because of the definition of the number <m>e,</m> but also, as discussed next, its graph has an important property.</p>
+<p id="fs-id1170572451705">Since <m>e\gt 1,</m> we know <m>e^x</m> is increasing on <m>(-\infty,\infty).</m> In <xref ref="CNX_Calc_Figure_01_05_003"/>, we show a graph of <m>f(x)=e^x</m> along with a <emphasis effect="italics">tangent line</emphasis> to the graph of at <m>x=0.</m> We give a precise definition of tangent line in the next chapter; but, informally, we say a tangent line to a graph of <m>f</m> at <m>x=a</m> is a line that passes through the point <m>(a,f(a))</m> and has the same "slope" as <m>f</m> at that point <m>.</m> The function <m>f(x)=e^x</m> is the only exponential function <m>b^x</m> with tangent line at <m>x=0</m> that has a slope of 1. As we see later in the text, having this property makes the natural exponential function the most simple exponential function to use in many instances.</p>
+<figure xml:id="CNX_Calc_Figure_01_05_003">
+<image source="CNX_Calc_Figure_01_05_003.jpg" width="50%">
+<description>"An image of a graph. The x axis runs from -3 to 3 and the y axis runs from 0 to 4. The graph is of the function &#x201C;f(x) = e to power of x&#x201D;, an increasing curved function that starts slightly above the x axis. The y intercept is at the point (0, 1). At this point, a line is drawn tangent to the function. This line has the label &#x201C;slope = 1&#x201D;."
+ </description></image> <caption>The graph of <m>f(x)=e^x</m> has a tangent line with slope <m>1</m> at <m>x=0.</m></caption>
+</figure>
+<example id="fs-id1170572547818">
+<title>Compounding Interest</title>
+ <statement id="fs-id1170572547825">
+<p id="fs-id1170572547827">Suppose <m>.500</m> is invested in an account at an annual interest rate of <m>r=5.5%,</m> compounded continuously.</p>
+<ol>
+<li>Let <m>t</m> denote the number of years after the initial investment and <m>A(t)</m> denote the amount of money in the account at time <m>t.</m> Find a formula for <m>A(t).</m></li>
+<li>Find the amount of money in the account after <m>10</m> years and after <m>20</m> years.</li>
+</ol>
+</statement>
+<solution id="fs-id1170572547921">
+<ol>
+<li>If <m>P</m> dollars are invested in an account at an annual interest rate <m>r,</m> compounded continuously, then <m>A(t)=Pe^{rt}.</m> Here <m>P=.500</m> and <m>r=0.055.</m> Therefore, <m>A(t)=500e^{0.055t}.</m></li>
+<li>After <m>10</m> years, the amount of money in the account is
+<me>A(10)=500e^{0.055\cdot 10}=500e^{0.55}≈.866.63.</me>
+After <m>20</m> years, the amount of money in the account is
+<me>A(20)=500e^{0.055\cdot 20}=500e^{1.1}≈.1,502.08.</me></li>
+</ol>
+</solution>
+</example>
+
+<exercise>
+<statement id="fs-id1170572455124">
+<p id="fs-id1170572455126">If <m>.750</m> is invested in an account at an annual interest rate of <m>4%,</m> compounded continuously, find a formula for the amount of money in the account after <m>t</m> years. Find the amount of money after <m>30</m> years.</p>
+</statement>
+<solution id="fs-id1170572455188">
+<p id="fs-id1170572455190"><m>A(t)=750e^{0.04t}.</m> After <m>30</m> years, there will be approximately <m>.2,490.09.</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042707350"><m>A(t)=Pe^{rt}.</m></p>
+</hint>
+</exercise>
+</subsection>
+
+<subsection id="fs-id1170572455243">
+<title>Logarithmic Functions</title>
+<p id="fs-id1170572455248">Using our understanding of exponential functions, we can discuss their inverses, which are the logarithmic functions. These come in handy when we need to consider any phenomenon that varies over a wide range of values, such as pH in chemistry or decibels in sound levels.</p>
+<p id="fs-id1170572455254">The exponential function <m>f(x)=b^x</m> is one-to-one, with domain <m>(-\infty,\infty)</m> and range <m>(0,\infty).</m> Therefore, it has an inverse function, called the <emphasis effect="italics">logarithmic function with base</emphasis> <m>b.</m> For any <m>b\gt 0,b\neq 1,</m> the logarithmic function with base <emphasis effect="italics">b</emphasis>, denoted <m>\log_b ,</m> has domain <m>(0,\infty)</m> and range <m>(-\infty,\infty),</m> and satisfies</p>
+<me>\log_b (x)=y \text{ if and only if } b^y=x.</me>
+<p id="fs-id1170572545100">For example,</p>
+<md><mrow> \log_2 (8)=3 \amp \text{ since } 2^3=8,</mrow>
+<mrow>\log_{10}\left( \frac{1}{100}\right)=−2 \amp \text{ since } 10^{−2}= \frac{1}{10^2}= \frac{1}{100},</mrow>
+<mrow>\log_b (1)=0 \amp \text{ since } b^0=1 \text{ for any base } b\gt 0.</mrow></md>
+<p id="fs-id1170572169081">Furthermore, since <m>y=\log_b (x)</m> and <m>y=b^x</m> are inverse functions,</p>
+<me>\log_b (b^x)=x \text{ and } b^{\log_b (x)}=x.</me>
+<p id="fs-id1170572169184">The most commonly used logarithmic function is the function <m>\log_e .</m> Since this function uses natural <m>e</m> as its base, it is called the <term>natural logarithm</term>. Here we use the notation <m>\ln(x)</m> or <m>\ln x</m> to mean <m>\log_e (x).</m> For example,</p>
+<me>\ln(e)=\log_e (e)=1,\ln(e^3)=\log_e (e^3)=3,\ln(1)=\log_e (1)=0.</me>
+<p id="fs-id1170572243836">Since the functions <m>f(x)=e^x</m> and <m>g(x)=\ln(x)</m> are inverses of each other,</p>
+<me>\ln(e^x)=x \text{ and } e^{\ln x}=x,</me>
+<p id="fs-id1170572229068">and their graphs are symmetric about the line <m>y=x</m> (<xref ref="CNX_Calc_Figure_01_05_004"/>).</p>
+<figure xml:id="CNX_Calc_Figure_01_05_004">
+  <image source="CNX_Calc_Figure_01_05_004.jpg" width="50%">
+<description>"An image of a graph. The x axis runs from -3 to 3 and the y axis runs from -3 to 4. The graph is of two functions. The first function is &#x201C;f(x) = e to power of x&#x201D;, an increasing curved function that starts slightly above the x axis. The y intercept is at the point (0, 1) and there is no x intercept. The second function is &#x201C;f(x) = ln(x)&#x201D;, an increasing curved function. The x intercept is at the point (1, 0) and there is no y intercept. A dotted line with label &#x201C;y = x&#x201D; is also plotted on the graph, to show that the functions are mirror images over this line."  </description></image> <caption>The functions <m>y=e^x</m> and <m>y=\ln(x)</m> are inverses of each other, so their graphs are symmetric about the line <m>y=x.</m></caption>
+</figure>
+<p>Another frequently used logarithmic function is the function <m>\log_{10} .</m> It is called the <term>common logarithm</term>. Here we use the notation <m>\log(x)</m> or <m>\log x</m> to mean <m>\log_{10} (x).</m> For example,</p>
+<me>\log(10)=\log_{10} (10)=1,\log(1000)=\log_{10}(10^3)=3,\log(1)=\log_{10} (1)=0.</me>
+<note id="fs-id1170572229152" class="media-2">
+<title> Media </title>
+<p id="fs-id1170572229156">At this <url href="http://www.openstax.org/l/20_logscale" visual="openstax.org/l/20_logscale">site</url> you can see an example of a base-10 logarithmic scale.</p>
+</note>
+
+<p id="fs-id1170572229166">In general, for any base <m>b\gt 0,b\neq 1,</m> the function <m>g(x)=\log_b (x)</m> is symmetric about the line <m>y=x</m> with the function <m>f(x)=b^x.</m> Using this fact and the graphs of the exponential functions, we graph functions <m>\log_b </m> for several values of <m>b\gt 1</m> (<xref ref="CNX_Calc_Figure_01_05_005"/>).</p>
+<figure xml:id="CNX_Calc_Figure_01_05_005">
+<image source="CNX_Calc_Figure_01_05_005.jpg" width="50%">
+<description>"An image of a graph. The x axis runs from -3 to 3 and the y axis runs from 0 to 4. The graph is of three functions. All three functions a log functions that are increasing curved functions that start slightly to the right of the y axis and have an x intercept at (1, 0). The first function is &#x201C;y = log base 10 (x)&#x201D;, the second function is &#x201C;f(x) = ln(x)&#x201D;, and the third function is &#x201C;y = log base 2 (x)&#x201D;. The third function increases the most rapidly, the second function increases next most rapidly, and the third function increases the slowest."
+ </description></image> <caption>Graphs of <m>y=\log_b (x)</m> are depicted for <m>b=2,e,10.</m></caption>
+</figure>
+<p id="fs-id1170572482697">Before solving some equations involving exponential and logarithmic functions, let’s review the basic properties of logarithms.</p>
+
+<note>
+<title>Rule: Properties of Logarithms</title>
+<p id="fs-id1170572482707">If <m>a,b,c\gt 0,b\neq 1,</m> and <m>r</m> is any real number, then</p>
+<md><mrow>1. \log_b (ac)=\log_b (a)+\log_b (c) \amp \text{ (Product property) }</mrow>
+<mrow>2. \log_b \left( \frac{a}{c}\right)=\log_b (a)−\log_b (c) \amp \text{ (Quotient property) }</mrow>
+<mrow>3. \log_b (a^r)=r\log_b (a) \amp \text{ (Power property) }</mrow></md>
+</note>
+<example id="fs-id1170572551970">
+<title>Solving Equations Involving Exponential Functions</title>
+ <statement id="fs-id1170572551978">
+<p id="fs-id1170572551980">Solve each of the following equations for <m>x.</m></p>
+<ol>
+<li><m>5^x=2</m></li>
+<li><m>e^x+6e^{-x}=5</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170572550550">
+<ol>
+<li>Applying the natural logarithm function to both sides of the equation, we have
+<me>\ln5^x=\ln 2.</me>
+Using the power property of logarithms,
+<me>x\ln 5=\ln 2.</me>
+Therefore, <m>x=\ln 2/\ln 5.</m></li>
+<li>Multiplying both sides of the equation by <m>e^x,</m> we arrive at the equation
+<me>e^{2x}+6=5e^x.</me>
+Rewriting this equation as
+<me>e^{2x}−5e^x+6=0,</me>
+we can then rewrite it as a quadratic equation in <m>e^x.</m>
+<me>(e^x)^2−5(e^x)+6=0.</me>
+Now we can solve the quadratic equation. Factoring this equation, we obtain
+<me>(e^x−3)(e^x−2)=0.</me>
+Therefore, the solutions satisfy <m>e^x=3</m> and <m>e^x=2.</m> Taking the natural logarithm of both sides gives us the solutions <m>x=\ln 3,\ln 2.</m></li>
+</ol>
+</solution>
+
+</example>
+
+<exercise>
+<statement id="fs-id1170572232051">
+<p id="fs-id1170572232053">Solve <m>e^{-x}/(3+e^{-x})=1/2.</m></p>
+</statement>
+<solution id="fs-id1170572174652">
+<p id="fs-id1170572174654"><m>x=\frac{\ln 3}{2}</m></p>
+</solution>
+<hint>
+
+<p id="fs-id1165042579095">First solve the equation for <m>e^{-x}.</m></p>
+</hint>
+
+</exercise>
+<example id="fs-id1170572174674">
+  <title>Solving Equations Involving Logarithmic Functions</title>
+ <statement id="fs-id1170572174682">
+<p id="fs-id1170572174684">Solve each of the following equations for <m>x.</m></p>
+<ol>
+<li><m>\ln\left(\frac{1}{x}\right)=4</m></li>
+<li><m>\log_{10}\sqrt{x}+\log_{10}x=2</m></li>
+<li><m>\ln(2x)−3\ln(x^2)=0</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170572174793">
+<ol>
+<li>By the definition of the natural logarithm function,
+<me>\ln\left(\frac{1}{x}\right)=4 \text{ if and only if } e^4=\frac{1}{2}.</me>
+Therefore, the solution is <m>x=1/e^4.</m></li>
+<li>Using the product and power properties of logarithmic functions, rewrite the left-hand side of the equation as
+<me>\log_{10}\sqrt{x?+\log_{10}x=\log_{10}x\sqrt{x?=\log_{10}x^{3/2}=\frac{3}{2}\log_{10}x.</me>
+Therefore, the equation can be rewritten as
+<me>\frac{3}{2}\log_{10}x=2 \text{ or } \log_{10}x=\frac{4}{3}.</me>
+The solution is <m>x=10^{4/3}=10\sqrt[3]{10}.</m></li>
+<li>Using the power property of logarithmic functions, we can rewrite the equation as <m>\ln(2x)−\ln(x^6)=0.</m>
+Using the quotient property, this becomes
+<me>\ln\left(\frac{2}{x^5}\right)=0.</me>
+Therefore, <m>2/x^5=1,</m> which implies <m>x=\sqrt[5]{2}.</m> We should then check for any extraneous solutions.</li>
+</ol>
+</solution>
+</example>
+
+<exercise>
+<statement id="fs-id1170572552652">
+<p id="fs-id1170572552654">Solve <m>\ln(x^3)−4>\ln(x)=1.</m></p>
+</statement>
+<solution id="fs-id1170572552696">
+<p id="fs-id1170572552698"><m>x=\frac{1}{e}</m></p>
+</solution>
+<hint>
+<p id="fs-id1165043161250">First use the power property, then use the product property of logarithms.</p>
+</hint>
+</exercise>
+<p id="fs-id1170572552715">When evaluating a logarithmic function with a calculator, you may have noticed that the only options are <m>\log_{10}</m> or log, called the <term class="no-emphasis"><emphasis effect="italics">common logarithm</emphasis></term>, or <emphasis effect="italics">ln</emphasis>, which is the natural logarithm. However, exponential functions and logarithm functions can be expressed in terms of any desired base <m>b.</m> If you need to use a calculator to evaluate an expression with a different base, you can apply the change-of-base formulas first. Using this change of base, we typically write a given exponential or logarithmic function in terms of the natural exponential and natural logarithmic functions.</p>
+
+<note>
+<title>Rule: Change-of-Base Formulas</title>
+<p id="fs-id1170572267920">Let <m>a\gt 0,b\gt 0,</m> and <m>a\neq 1,b\neq 1.</m></p>
+<ol id="fs-id1170572267962" list-type="enumerated" number-style="arabic">
+<li><m>a^x=b^{\log_b a^x}</m> for any real number <m>x.</m>
+If <m>b=e,</m> this equation reduces to <m>a^x=e^{\log_e a^x}=e^{x\ln a}.</m></li>
+<li><m> \log_a x=\frac{\log_b x}{\log_b a}</m> for any real number <m>x\gt 0.</m>
+If <m>b=e,</m> this equation reduces to <m> \log_a x=\frac{\ln x}{\ln a}.</m></li>
+</ol>
+</note>
+
+<!-- Commenting out proof...
+<note id="fs-id1170572219407">
+<title>Proof</title>
+<p id="fs-id1170572219413">For the first change-of-base formula, we begin by making use of the power property of logarithmic functions. We know that for any base <m>b\gt 0,b\neq 1,\log_b (a^x)=x\log_b a.</m> Therefore,</p>
+<me>b^{\log_b (a^x)}=b^{x\log_b a}.</me>
+<p id="fs-id1170572219523">In addition, we know that <m>b^x</m> and <m>\log_b (x)</m> are inverse functions. Therefore,</p>
+<me>b^{\log_b (a^x)}=a^x.</me>
+<p id="fs-id1170572309868">Combining these last two equalities, we conclude that <m>a^x=b^{x\log_b a}.</m></p>
+<p id="fs-id1170572309898">To prove the second property, we show that</p>
+<me>(\log_b a)\cdot ( \log_a x)=\log_b x.</me>
+<p id="fs-id1170572309957">Let <m>u=\log_b a,v= \log_a x,</m> and <m>w=\log_b x.</m> We will show that <m>u\cdot v=w.</m> By the definition of logarithmic functions, we know that <m>b^u=a,a^v=x,</m> and <m>b^w=x.</m> From the previous equations, we see that</p>
+<me>b^{uv}=(b^u)^v=a^v=x=b^w.</me>
+<p id="fs-id1170572434927">Therefore, <m>b^{uv}=b^w.</m> Since exponential functions are one-to-one, we can conclude that <m>u\cdot v=w.</m></p>
+<p id="fs-id1170572434967">□</p>
+</note>-->
+<example id="fs-id1170572434970">
+<title>Changing Bases</title>
+<statement id="fs-id1170572434977">
+<p id="fs-id1170572434979">Use a calculating utility to evaluate <m>\log_{3}7</m> with the change-of-base formula presented earlier.</p>
+</statement>
+<solution id="fs-id1170572434996">
+<p id="fs-id1170572435001">Use the second equation with <m>a=3</m> and <m>e=3.</m></p>
+<p id="fs-id1170572435025"><m>\log_{3}7=\frac{\ln 7}{\ln 3}≈1.77124.</m></p>
+</solution>
+</example>
+
+<exercise>
+<statement id="fs-id1170572435065">
+<p id="fs-id1170572435068">Use the change-of-base formula and a calculating utility to evaluate <m>\log_{4}6.</m></p>
+</statement>
+<solution id="fs-id1170572128660">
+<p id="fs-id1170572128662"><m>1.29248</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042853660">Use the change of base to rewrite this expression in terms of expressions involving the natural logarithm function.</p>
+</hint>
+</exercise>
+<example id="fs-id1170572128672">
+<title>Chapter Opener: The Richter Scale for Earthquakes</title>
+ <statement id="fs-id1170572128679">
+<figure xml:id="CNX_Calc_Figure_01_05_010">
+  <image source="CNX_Calc_Figure_01_05_013.jpg" width="50%">
+<description>"A photograph of an earthquake fault."
+</description></image> <caption>(credit: modification of work by Robb Hannawacker, NPS)</caption>
+</figure>
+<p id="fs-id1170572128701">In 1935, Charles Richter developed a scale (now known as the <term class="no-emphasis"><emphasis effect="italics">Richter scale</emphasis></term>) to measure the magnitude of an <term class="no-emphasis">earthquake</term>. The scale is a base-10 logarithmic scale, and it can be described as follows: Consider one earthquake with magnitude <m>R_1</m> on the Richter scale and a second earthquake with magnitude <m>R_2</m> on the Richter scale. Suppose <m>R_1\gt R_2,</m> which means the earthquake of magnitude <m>R_1</m> is stronger, but how much stronger is it than the other earthquake? A way of measuring the intensity of an earthquake is by using a seismograph to measure the amplitude of the earthquake waves. If <m>A_1</m> is the amplitude measured for the first earthquake and <m>A_2</m> is the amplitude measured for the second earthquake, then the amplitudes and magnitudes of the two earthquakes satisfy the following equation:</p>
+<me>R_1−R_2=\log_{10}\left(\frac{A_1}{A_2}\right).</me>
+<p id="fs-id1170572128836">Consider an earthquake that measures 8 on the Richter scale and an earthquake that measures 7 on the Richter scale. Then,</p>
+<me>8−7=\log_{10}\left(\frac{A_1}{A_2}\right).</me>
+<p id="fs-id1170572233764">Therefore,</p>
+<me>\log_{10}\left(\frac{A_1}{A_2}\right)=1,</me>
+<p id="fs-id1170572233809">which implies <m>A_1/A_2=10</m> or <m>A_1=10A_2.</m> Since <m>A_1</m> is 10 times the size of <m>A_2,</m> we say that the first earthquake is 10 times as intense as the second earthquake. On the other hand, if one earthquake measures 8 on the Richter scale and another measures 6, then the relative intensity of the two earthquakes satisfies the equation</p>
+<me>\log_{10}\left(\frac{A_1}{A_2}\right)=8−6=2.</me>
+<p id="fs-id1170572233924">Therefore, <m>A_1=100A_2.</m> That is, the first earthquake is 100 times more intense than the second earthquake.</p>
+<p id="fs-id1170572477962">How can we use logarithmic functions to compare the relative severity of the magnitude 9 earthquake in Japan in 2011 with the magnitude 7.3 earthquake in Haiti in 2010?</p>
+</statement>
+<solution id="fs-id1170572477968">
+<p id="fs-id1170572477974">To compare the Japan and Haiti earthquakes, we can use an equation presented earlier:</p>
+<p id="fs-id1170572477977"><m>9−7.3=\log_{10}\left(\frac{A_1}{A_2}\right).</m></p>
+<p id="fs-id1170572478019">Therefore, <m>A_1/A_2=10^1.7,</m> and we conclude that the earthquake in Japan was approximately <m>50</m> times more intense than the earthquake in Haiti.</p>
+</solution>
+</example>
+
+<exercise>
+<statement id="fs-id1170572478065">
+<p id="fs-id1170572478067">Compare the relative severity of a magnitude <m>8.4</m> earthquake with a magnitude <m>7.4</m> earthquake.</p>
+</statement>
+<solution id="fs-id1170572478133">
+<p id="fs-id1170572478135">The magnitude <m>8.4</m> earthquake is roughly <m>10</m> times as severe as the magnitude <m>7.4</m> earthquake.</p>
+</solution>
+<hint>
+<p id="fs-id1165039564597"><m>R_1−R_2=\log_{10}\left(A_1/A_2\right).</m></p>
+</hint>
+</exercise>
+
+</subsection>
+<!--Commenting out Hyperbolic Functions
+<subsection id="fs-id1170572478160">
+<title>Hyperbolic Functions</title>
+<p id="fs-id1170572467918">The hyperbolic functions are defined in terms of certain combinations of <m>e^x</m> and <m>e^{-x}.</m> These functions arise naturally in various engineering and physics applications, including the study of water waves and vibrations of elastic membranes. Another common use for a hyperbolic function is the representation of a hanging chain or cable, also known as a catenary (<xref ref="CNX_Calc_Figure_01_05_006"/>). If we introduce a coordinate system so that the low point of the chain lies along the <m>y</m>-axis, we can describe the height of the chain in terms of a hyperbolic function. First, we define the <term>hyperbolic functions</term>.</p>
+<figure xml:id="CNX_Calc_Figure_01_05_006">
+<image source="CNX_Calc_Figure_01_05_009.jpg" width="50%">
+<description>"A photograph of a spider web collecting dew drops." </description></image> <caption>The shape of a strand of silk in a spider’s web can be described in terms of a hyperbolic function. The same shape applies to a chain or cable hanging from two supports with only its own weight. (credit: “Mtpaley”, Wikimedia Commons)</caption>
+</figure>
+
+<definition>
+<p id="fs-id1170572467989"><emphasis effect="bold">Hyperbolic cosine</emphasis></p>
+<me>\cosh x=\frac{e^x+e^{-x}}{2}</me>
+<p id="fs-id1170572468030"><emphasis effect="bold">Hyperbolic sine</emphasis></p>
+<me>\sinh x=\frac{e^x−e^{-x}}{2}</me>
+<p id="fs-id1170572468070"><emphasis effect="bold">Hyperbolic tangent</emphasis></p>
+<me>\tanh x=\frac{\sinh x}{\cosh x}=\frac{e^x−e^{-x}}{e^x+e^{-x}}</me>
+<p id="fs-id1170572431436"><emphasis effect="bold">Hyperbolic cosecant</emphasis></p>
+<me>\text{ csch } x=\frac{1}{\sinh x}=\frac{2}{e^x−e^{-x}}</me>
+<p id="fs-id1170572431488"><emphasis effect="bold">Hyperbolic secant</emphasis></p>
+<me>\text{ sech } x=\frac{1}{\cosh x}=\frac{2}{e^x+e^{-x}}</me>
+<p id="fs-id1170572431539"><emphasis effect="bold">Hyperbolic cotangent</emphasis></p>
+<me>\text{ coth } x=\frac{\cosh x}{\sinh x}=\frac{e^x+e^{-x}}{e^x−e^{-x}}</me>
+</definition>
+<p id="fs-id1170572431609">The name <m> \cosh </m> rhymes with “gosh,” whereas the name <m> \sinh </m> is pronounced “cinch.” The functions <m> \tanh </m>, <m> \text{ sech } </m>, <m> \text{ csch } </m>, and <m> \coth </m> are pronounced “tanch,” “seech,” “coseech,” and “cotanch,” respectively.</p>
+<p id="fs-id1170572234293">Using the definition of <m>\cosh(x)</m> and principles of physics, it can be shown that the height of a hanging chain, such as the one in <xref ref="CNX_Calc_Figure_01_05_006"/>, can be described by the function <m>h(x)=a \cosh(x/a)+c</m> for certain constants <m>a</m> and <m>c.</m></p>
+<p id="fs-id1170572234364">But why are these functions called <emphasis effect="italics">hyperbolic functions</emphasis>? To answer this question, consider the quantity <m>\cosh^2t−\sinh^2t.</m> Using the definition of <m>\cosh</m> and <m>\sinh,</m> we see that</p>
+<me>\cosh^2t−\sinh^2t=\frac{e^{2t}+2+e^{−2t}}{ 4}−\frac{e^{2t}−2+e^{−2t}}{4}=1.</me>
+<p id="fs-id1170572171610">This identity is the analog of the trigonometric identity <m>\text{ cos }^2t+\sin^2t=1.</m> Here, given a value <m>t,</m> the point <m>(x,y)=(\cosh t,\sinh t)</m> lies on the unit hyperbola <m>x^2−y^2=1</m> (<xref ref="CNX_Calc_Figure_01_05_007"/>).</p>
+<figure xml:id="CNX_Calc_Figure_01_05_007">
+<image source="CNX_Calc_Figure_01_05_007.jpg" width="50%">
+<description>"An image of a graph. The x axis runs from -1 to 3 and the y axis runs from -3 to 3. The graph is of the relation &#x201C;(x squared) - (y squared) -1&#x201D;. The left most point of the relation is at the x intercept, which is at the point (1, 0). From this point the relation both increases and decreases in curves as x increases. This relation is known as a hyperbola and it resembles a sideways &#x201C;U&#x201D; shape. There is a point plotted on the graph of the relation labeled &#x201C;(cosh(1), sinh(1))&#x201D;, which is at the approximate point (1.5, 1.2)."
+</description></image> <caption>The unit hyperbola <m>\cosh^2t−\sinh^2t=1.</m></caption>
+</figure>
+<subsubsection id="fs-id1170572171758">
+<title>Graphs of Hyperbolic Functions</title>
+<p id="fs-id1170572171763">To graph <m>\cosh x</m> and <m>\sinh x,</m> we make use of the fact that both functions approach <m>(1/2)e^x</m> as <m>x\to \infty,</m> since <m>e^{-x}\to 0</m> as <m>x\to \infty.</m> As <m>x\to -\infty,\cosh x</m> approaches <m>1/2e^{-x},</m> whereas <m>\sinh x</m> approaches <m>−1/2e^{-x}.</m> Therefore, using the graphs of <m>1/2e^x,1/2e^{-x},</m> and <m>.1/2e^{-x}</m> as guides, we graph <m>\cosh x</m> and <m>\sinh x.</m> To graph <m>\tanh x,</m> we use the fact that <m>\tanh(0)=0,−1\lt \tanh(x)\lt 1</m> for all <m>x,\tanh x\to 1</m> as <m>x\to \infty,</m> and <m>\tanh x\to .1</m> as <m>x\to -\infty.</m> The graphs of the other three hyperbolic functions can be sketched using the graphs of <m>\cosh x,\sinh x,</m> and <m>\tanh x</m> (<xref ref="CNX_Calc_Figure_01_05_008"/>).</p>
+<figure xml:id="CNX_Calc_Figure_01_05_008">
+<image source="CNX_Calc_Figure_01_05_011.jpg" width="50%">
+<description>"An image of six graphs. Each graph has an x axis that runs from -3 to 3 and a y axis that runs from -4 to 4. The first graph is of the function &#x201C;y = cosh(x)&#x201D;, which is a hyperbola. The function decreases until it hits the point (0, 1), where it begins to increase. There are also two functions that serve as a boundary for this function. The first of these functions is &#x201C;y = (1/2)(e to power of -x)&#x201D;, a decreasing curved function and the second of these functions is &#x201C;y = (1/2)(e to power of x)&#x201D;, an increasing curved function. The function &#x201C;y = cosh(x)&#x201D; is always above these two functions without ever touching them. The second graph is of the function &#x201C;y = sinh(x)&#x201D;, which is an increasing curved function. There are also two functions that serve as a boundary for this function. The first of these functions is &#x201C;y = (1/2)(e to power of x)&#x201D;, an increasing curved function and the second of these functions is &#x201C;y = -(1/2)(e to power of -x)&#x201D;, an increasing curved function that approaches the x axis without touching it. The function &#x201C;y = sinh(x)&#x201D; is always between these two functions without ever touching them. The third graph is of the function &#x201C;y = sech(x)&#x201D;, which increases until the point (0, 1), where it begins to decrease. The graph of the function has a hump. The fourth graph is of the function &#x201C;y = csch(x)&#x201D;. On the left side of the y axis, the function starts slightly below the x axis and decreases until it approaches the y axis, which it never touches. On the right side of the y axis, the function starts slightly to the right of the y axis and decreases until it approaches the x axis, which it never touches. The fifth graph is of the function &#x201C;y = tanh(x)&#x201D;, an increasing curved function. There are also two functions that serve as a boundary for this function. The first of these functions is &#x201C;y = 1&#x201D;, a horizontal line function and the second of these functions is &#x201C;y = -1&#x201D;, another horizontal line function. The function &#x201C;y = tanh(x)&#x201D; is always between these two functions without ever touching them. The sixth graph is of the function &#x201C;y = coth(x)&#x201D;. On the left side of the y axis, the function starts slightly below the boundary line &#x201C;y = 1&#x201D; and decreases until it approaches the y axis, which it never touches. On the right side of the y axis, the function starts slightly to the right of the y axis and decreases until it approaches the boundary line &#x201C;y = -1&#x201D;, which it never touches."
+ </description></image> <caption>The hyperbolic functions involve combinations of <m>e^x</m> and <m>e^{-x}.</m></caption>
+</figure>
+</subsubsection>
+<subsubsection id="fs-id1170572433248">
+<title>Identities Involving Hyperbolic Functions</title>
+<p id="fs-id1170572433254">The identity <m>\cosh2^t−\sinh^2t,</m> shown in <xref ref="CNX_Calc_Figure_01_05_007"/>, is one of several identities involving the hyperbolic functions, some of which are listed next. The first four properties follow easily from the definitions of hyperbolic sine and hyperbolic cosine. Except for some differences in signs, most of these properties are analogous to identities for trigonometric functions.</p>
+
+<note>
+<title>Rule: Identities Involving Hyperbolic Functions</title>
+<ol id="fs-id1170572433294" list-type="enumerated" number-style="arabic">
+<li><m>\cosh(.x)=\cosh x</m></li>
+<li><m>\sinh(.x)=.\sinh x</m></li>
+<li><m>\cosh x+\sinh x=e^x</m></li>
+<li><m>\cosh x−\sinh x=e^{-x}</m></li>
+<li><m>\cosh^2x−\sinh^2x=1</m></li>
+<li><m>1−\tanh^2x=\text{ sech }^2x</m></li>
+<li><m>\text{ coth }^2x−1=\text{ csch }^2x</m></li>
+<li><m>\sinh(x±y)=\sinh x \cosh y±\cosh x \sinh y</m></li>
+<li><m>\cosh(x±y)=\cosh x \cosh y±\sinh x \sinh y</m></li>
+</ol>
+</note>
+<example id="fs-id1170572443393">
+<title>Evaluating Hyperbolic Functions</title>
+<statement id="fs-id1170572443401">
+<ol>
+<li>Simplify <m>\sinh(5 \ln x).</m></li>
+<li>If <m>\sinh x=3/4,</m> find the values of the remaining five hyperbolic functions.</li>
+</ol>
+</statement>
+<solution id="fs-id1170572443457">
+<ol>
+<li>Using the definition of the <m>\sinh</m> function, we write
+<me>\sinh(5 \ln x)=\frac{e^{5 \ln x}−e^{−5 \ln x}}{2}=\frac{e^{\ln(x^5)}−e^{\ln(x^{−5})}}{2}=\frac{x^5−x^{−5}}{2}.</me></li>
+<li>Using the identity <m>\cosh^2x−\sinh^2x=1,</m> we see that
+<me>\cosh^2x=1+(\frac{3}{4})^2=\frac{25}{16}.</me>
+Since <m>\cosh x≥1</m> for all <m>x,</m> we must have <m>\cosh x=5/4.</m> Then, using the definitions for the other hyperbolic functions, we conclude that <m>\tanh x=3/5,\text{ csch } x=4/3,\text{ sech } x=4/5,</m> and <m>\text{ coth } x=5/3.</m></li>
+</ol>
+</solution>
+</example>
+
+
+<exercise>
+<statement id="fs-id1170572548320">
+<p id="fs-id1170572549916">Simplify <m>\cosh(2 \ln x).</m></p>
+</statement>
+<solution id="fs-id1170572549944">
+<p id="fs-id1170572549946"><m>(x^2+x^{−2})/2</m></p>
+</solution>
+<hint>
+<p id="fs-id1165039563336">Use the definition of the cosh function and the power property of logarithm functions.</p>
+</hint>
+</exercise>
+</subsubsection>
+<subsubsection id="fs-id1170572549981">
+<title>Inverse Hyperbolic Functions</title>
+<p id="fs-id1170572549987">From the graphs of the hyperbolic functions, we see that all of them are one-to-one except <m>\cosh x</m> and <m>\text{ sech } x.</m> If we restrict the domains of these two functions to the interval <m>[0,\infty),</m> then all the hyperbolic functions are one-to-one, and we can define the <term>inverse hyperbolic functions</term>. Since the hyperbolic functions themselves involve exponential functions, the inverse hyperbolic functions involve logarithmic functions.</p>
+
+<definition>
+<p id="fs-id1170572550036"><emphasis effect="bold">Inverse Hyperbolic Functions</emphasis></p>
+<md><mrow>\sinh^{−1}x=\text{ arcsinh } x=\ln(x+\sqrt{x^2+1}) \amp \amp \cosh^{−1}x=\text{ arccosh } x=\ln(x+\sqrt{x^2−1})</mrow>
+<mrow>\tanh^{−1}x=\text{ arctanh } x=\frac{1}{2}\ln\left(\frac{1+x}{1−x}\right) \amp \amp \text{ coth }^{−1}x=\text{ arccot } x=\frac{1}{2}\ln\left(\frac{x+1}{x−1}\right)</mrow>
+<mrow>\text{ sech }^{−1}x=\text{ arcsech } x=\ln\left(\frac{1+\sqrt{1−x^2}}{x}\right)\amp \amp \text{ csch }^{−1}x=\text{ arccsch } x=\ln\left(\frac{1}{x}+\frac{\sqrt{1+x^2}}{|x|}\right)</mrow></md>
+</definition>
+<p id="fs-id1170572235136">Let’s look at how to derive the first equation. The others follow similarly. Suppose <m>y=\sinh^{−1}x.</m> Then, <m>x=\sinh y</m> and, by the definition of the hyperbolic sine function, <m>x=\frac{e^y−e^{-y}}{2}.</m> Therefore,</p>
+<me>e^y−2x−e^{-y}=0.</me>
+<p id="fs-id1170572235236">Multiplying this equation by <m>e^y,</m> we obtain</p>
+<me>e^{2y}−2xe^y−1=0.</me>
+<p id="fs-id1170572235286">This can be solved like a quadratic equation, with the solution</p>
+<me>e^y=\frac{2x±\sqrt{4x^2+4}}{2}=x±\sqrt{x^2+1}.</me>
+<p id="fs-id1170572482176">Since <m>e^y\gt 0,</m> the only solution is the one with the positive sign. Applying the natural logarithm to both sides of the equation, we conclude that</p>
+<me>y=\ln(x+\sqrt{x^2+1}).</me>
+<example id="fs-id1170572482234">
+<title>Evaluating Inverse Hyperbolic Functions</title>
+ <statement id="fs-id1170572482242">
+<p id="fs-id1170572482244">Evaluate each of the following expressions.</p>
+<me>\sinh^{−1}(2)</me>
+<me>\tanh^{−1}(1/4)</me>
+</statement>
+<solution id="fs-id1170572482300">
+<p id="fs-id1170572482306"><m>\sinh^{−1}(2)=\ln(2+\sqrt{2^2+1})=\ln(2+\sqrt{5})≈1.4436</m></p>
+<p id="fs-id1170572176029"><m>\tanh^{−1}(1/4)=\frac{1}{2}\ln(\frac{1+1/4}{1−1/4})=\frac{1}{2}\ln(\frac{5/4}{3/4})=\frac{1}{2}\ln(\frac{5}{3})≈0.2554</m></p>
+</solution>
+</example>
+
+<exercise>
+<statement id="fs-id1170572176163">
+<p id="fs-id1170572176165">Evaluate <m>\tanh^{−1}(1/2).</m></p>
+</statement>
+<solution id="fs-id1170572176213">
+<p id="fs-id1170572176215"><m>\frac{1}{2}\ln(3)≈0.5493.</m></p>
+</solution>
+<hint>
+<p id="fs-id1165039559595">Use the definition of <m>\tanh^{−1}x</m> and simplify.</p>
+</hint>
+</exercise>
+</subsubsection>
+</subsection>
+<subsection id="fs-id1170572176246" class="key-concepts">
+<title>Key Concepts</title>
+<ul id="fs-id1170572216270" list-type="bulleted" bullet-style="bullet">
+<li>The exponential function <m>y=b^x</m> is increasing if <m>b\gt 1</m> and decreasing if <m>0\lt b\lt 1.</m> Its domain is <m>(-\infty,\infty)</m> and its range is <m>(0,\infty).</m></li>
+<li>The logarithmic function <m>y=\log_b (x)</m> is the inverse of <m>y=b^x.</m> Its domain is <m>(0,\infty)</m> and its range is <m>(-\infty,\infty).</m></li>
+<li>The natural exponential function is <m>y=e^x</m> and the natural logarithmic function is <m>y=\ln x=\log_e x.</m></li>
+<li>Given an exponential function or logarithmic function in base <m>a,</m> we can make a change of base to convert this function to any base <m>b\gt 0,b\neq 1.</m> We typically convert to base <m>e.</m></li>
+<li>The hyperbolic functions involve combinations of the exponential functions <m>e^x</m> and <m>e^{-x}.</m> As a result, the inverse hyperbolic functions involve the natural logarithm.</li>
+</ul>
+</subsection>
+-->
+<conclusion>
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at <url href="https://openstax.org/details/books/calculus-volume-1">https://openstax.org/details/books/calculus-volume-1.</url> </p>
+
+<p> Additional practice exercises are available in at the bottom on this section in OpenStax Calculus Volume 1: <url href="https://openstax.org/books/calculus-volume-1/pages/1-5-exponential-and-logarithmic-functions" visual="https://openstax.org/books/calculus-volume-1/pages/1-1-review-of-functions"/></p>
+</conclusion>
+</section>
+<?ignore
+<subsection id="fs-id1170572545884" class="section-exercises">
+<p id="fs-id1170572545888">For the following exercises, evaluate the given exponential functions as indicated, accurate to two significant digits after the decimal.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572545895">
+<p id="fs-id1170572545897"><m>f(x)=5^x</m> a. <m>x=3</m> b. <m>x=\frac{1}{2}</m> c. <m>x=\sqrt{2?</m></p>
+</statement>
+<solution id="fs-id1170572545953">
+<p id="fs-id1170572545955">a. 125 b. 2.24 c. 9.74</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572545962">
+<p id="fs-id1170572545965"><m>f(x)=<m:msup>(0.3)x</m:msup></m> a. <m>x=−1</m> b. <m>x=4</m> c. <m>x=−1.5</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572546034">
+<p id="fs-id1170572546036"><m>f(x)=<m:msup>10x</m:msup></m> a. <m>x=−2</m> b. <m>x=4</m> c. <m>x=\frac{5}{3}</m></p>
+</statement>
+<solution id="fs-id1170572358148">
+<p id="fs-id1170572358150">a. 0.01 b. 10,000 c. 46.42</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572358158">
+<p id="fs-id1170572358160"><m>f(x)=e^x</m> a. <m>x=2</m> b. <m>x=−3.2</m> c. <m>x=π</m></p>
+</statement>
+
+<p id="fs-id1170572358219">For the following exercises, match the exponential equation to the correct graph.</p>
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572358222" list-type="enumerated" number-style="lower-alpha"><li><m>y=<m:msup>4.x</m:msup></m></li>
+<li><m>y=<m:msup>3x−1</m:msup></m></li>
+<li><m>y=<m:msup>2x+1</m:msup></m></li>
+<li><m>y=<m:msup>(\frac{1}{2})x</m:msup>+2</m></li>
+<li><m>y=.<m:msup>3.x</m:msup></m></li>
+<li><m>y=1−5^x</m></li>
+</ol>
+<!-- Move title outside statement--> <statement id="fs-id1170572358353">
+<description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -2 to 8. The graph is of a decreasing curved function. The function decreases until it approaches the line &#x201C;y = 2&#x201D;, but never touches this line. The y intercept is at the point (0, 3) and there is no x intercept.">
+<image source="CNX_Calc_Figure_01_05_201.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1170572553697">
+<p id="fs-id1170572553700">d</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572553707">
+<description>"An image of a graph. The x axis runs from -4 to 4 and the y axis runs from -9 to 2. The graph is of a function that starts slightly below the line &#x201C;y = 1&#x201D; and begins decreasing rapidly in a curve. The x intercept and y intercept are both at the origin.">
+<image source="CNX_Calc_Figure_01_05_202.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572553734">
+<description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph is of a curved increasing function that starts slightly above the x axis and begins increasing rapidly. There is no x intercept and the y intercept is at the point (0, (1/3)). Another point of the graph is at (1, 1).">
+<image source="CNX_Calc_Figure_01_05_203.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1170572553752">
+<p id="fs-id1170572553754">b</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572553762">
+<description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph is of a curved decreasing function that decreases until it comes close the x axis without touching it. There is no x intercept and the y intercept is at the point (0, 1). Another point of the graph is at (-1, 4).">
+<image source="CNX_Calc_Figure_01_05_204.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572553789">
+<description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph is of a curved increasing function that increases until it comes close the x axis without touching it. There is no x intercept and the y intercept is at the point (0, -1). Another point of the graph is at (-1, -3).">
+<image source="CNX_Calc_Figure_01_05_205.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1170572553806">
+<p id="fs-id1170572553809">e</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572553816">
+<description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph is of a curved increasing function that starts slightly above the x axis and begins increasing rapidly. There is no x intercept and the y intercept is at the point (0, 2). Another point of the graph is at (-1, 1).">
+<image source="CNX_Calc_Figure_01_05_206.jpg" width="50%">
+
+</statement>
+
+<p id="fs-id1170572553841">For the following exercises, sketch the graph of the exponential function. Determine the domain, range, and horizontal asymptote.</p>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572553846"><!-- Move title outside statement--> <statement id="fs-id1170572553848">
+<p id="fs-id1170572553850"><m>f(x)=e^x+2</m></p>
+</statement>
+<solution id="fs-id1170572553891">
+<p id="fs-id1170572553893">Domain: all real numbers, range: <m>(2,\infty),y=2</m></p> <description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph is of a curved increasing function that starts slightly above the line &#x201C;y = 2&#x201D; and begins increasing rapidly. There is no x intercept and the y intercept is at the point (0, 3).">
+<image source="CNX_Calc_Figure_01_05_207.jpg" width="50%">
+
+</solution>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572553923"><!-- Move title outside statement--> <statement id="fs-id1170572553925">
+<p id="fs-id1170572553927"><m>f(x)=.2^x</m></p>
+</statement>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572242973"><!-- Move title outside statement--> <statement id="fs-id1170572242975">
+<p id="fs-id1170572242977"><m>f(x)=<m:msup>3x+1</m:msup></m></p>
+
+</statement>
+<solution id="fs-id1170572243020">
+<p id="fs-id1170572243022">Domain: all real numbers, range: <m>(0,\infty),y=0</m></p>
+<description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph is of a curved increasing function that starts slightly above the x axis and begins increasing rapidly. There is no x intercept and the y intercept is at the point (0, 3). Another point of the graph is at (-1, 1).">
+<image source="CNX_Calc_Figure_01_05_209.jpg" width="50%">
+
+</solution>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572243051"><!-- Move title outside statement--> <statement id="fs-id1170572243053">
+<p id="fs-id1170572243055"><m>f(x)=4^x−1</m></p>
+
+</statement>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572243129"><!-- Move title outside statement--> <statement id="fs-id1170572243131">
+<p id="fs-id1170572243133"><m>f(x)=1−<m:msup>2.x</m:msup></m></p>
+
+</statement>
+<solution id="fs-id1170572163726">
+<p id="fs-id1170572163728">Domain: all real numbers, range: <m>(-\infty,1),y=1</m></p>
+<description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph is of a curved increasing function that increases until it comes close the line &#x201C;y = 1&#x201D; without touching it. There x intercept and the y intercept are both at the origin. Another point of the graph is at (-1, -1).">
+<image source="CNX_Calc_Figure_01_05_211.jpg" width="50%">
+
+</solution>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572163759"><!-- Move title outside statement--> <statement id="fs-id1170572163761">
+<p id="fs-id1170572163763"><m>f(x)=<m:msup>5x+1</m:msup>+2</m></p>
+
+</statement>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572163842"><!-- Move title outside statement--> <statement id="fs-id1170572163844">
+<p id="fs-id1170572163846"><m>f(x)=e^{-x}−1</m></p>
+
+</statement>
+<solution id="fs-id1170572163891">
+<p id="fs-id1170572163893">Domain: all real numbers, range: <m>(−1,\infty),y=−1</m></p>
+<description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph is of a curved decreasing function that decreases until it comes close the line &#x201C;y = -1&#x201D; without touching it. There x intercept and the y intercept are both at the origin. There is an approximate point on the graph at (-1, 1.7).">
+<image source="CNX_Calc_Figure_01_05_213.jpg" width="50%">
+
+</solution>
+<p id="fs-id1170572163923">For the following exercises, write the equation in equivalent exponential form.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572163928">
+<p id="fs-id1170572163930"><m>\log_{3}81=4</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218455">
+<p id="fs-id1170572218457"><m>\log_{8}2=\frac{1}{3}</m></p>
+</statement>
+<solution id="fs-id1170572218478">
+<p id="fs-id1170572218480"><m><m:msup>81/3</m:msup>=2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218504">
+<p id="fs-id1170572218506"><m>\log_{5}1=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218544">
+<p id="fs-id1170572218546"><m>\log_{5}25=2</m></p>
+</statement>
+<solution id="fs-id1170572218564">
+<p id="fs-id1170572218567"><m>5^2=25</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218585">
+<p id="fs-id1170572218587"><m>\text{ log } 0.1=−1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218623">
+<p id="fs-id1170572218626"><m>\ln(\frac{1}{e^3})=−3</m></p>
+</statement>
+<solution id="fs-id1170572218654">
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>id1170572218656"><m><m:msup>e−3</m:msup>=<!-- Edit FRAC!--> \frac{1e^3}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572168646">
+<p id="fs-id1170572168649"><m>\log_{9}3=0.5</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572168688">
+<p id="fs-id1170572168690"><m>\ln 1=0</m></p>
+</statement>
+<solution id="fs-id1170572168704">
+<p id="fs-id1170572168706"><m>e^0=1</m></p>
+</solution>
+
+<p id="fs-id1170572168722">For the following exercises, write the equation in equivalent logarithmic form.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572168728">
+<p id="fs-id1170572168730"><m>2^3=8</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572168768">
+<p id="fs-id1170572168770"><m><m:msup>4−2</m:msup>=<!-- Edit FRAC!--> \frac{116}</m></p>
+</statement>
+<solution id="fs-id1170572168791">
+<p id="fs-id1170572168793"><m>\log_{4}(<!-- Edit FRAC!--> \frac{116})=−2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572168825">
+<p id="fs-id1170572168827"><m>10^2=100</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572168862">
+<p id="fs-id1170572168865"><m>9^0=1</m></p>
+</statement>
+<solution id="fs-id1170572168880">
+<p id="fs-id1170572168882"><m>\log_{9}1=0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218181">
+<p id="fs-id1170572218184"><m><m:msup>(\frac{1}{3})3</m:msup>=<!-- Edit FRAC!--> \frac{127}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218253">
+<p id="fs-id1170572218255"><m><m:mroot>643</m:mroot>=4</m></p>
+</statement>
+<solution id="fs-id1170572218271">
+<p id="fs-id1170572218273"><m>\log_{64}4=\frac{1}{3}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218299">
+<p id="fs-id1170572218301"><m>e^x=y</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218335">
+<p id="fs-id1170572218337"><m>9^y=150</m></p>
+</statement>
+<solution id="fs-id1170572218352">
+<p id="fs-id1170572218354"><m>\log_{9}150=y</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218376">
+<p id="fs-id1170572218378"><m>b^3=45</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218416">
+<p id="fs-id1170572218418"><m><m:msup>4−3/2</m:msup>=0.125</m></p>
+</statement>
+<solution id="fs-id1170572217081">
+<p id="fs-id1170572217083"><m>\log_{4}0.125=−\frac{3}{2}</m></p>
+</solution>
+
+<p id="fs-id1170572217107">For the following exercises, sketch the graph of the logarithmic function. Determine the domain, range, and vertical asymptote.</p>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572217112"><!-- Move title outside statement--> <statement id="fs-id1170572217114">
+<p id="fs-id1170572217116"><m>f(x)=3+\ln x</m></p>
+
+</statement>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572217209"><!-- Move title outside statement--> <statement id="fs-id1170572217211">
+<p id="fs-id1170572217213"><m>f(x)=\ln(x−1)</m></p>
+
+</statement>
+<solution id="fs-id1170572217262">
+<p id="fs-id1170572217264">Domain: <m>(1,\infty),</m> range: <m>(-\infty,\infty),x=1</m></p>
+<description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph is of an increasing curved function which starts slightly to the right of the vertical line &#x201C;x = 1&#x201D;. There is no y intercept and the x intercept is at the approximate point (2, 0).">
+<image source="CNX_Calc_Figure_01_05_215.jpg" width="50%">
+
+</solution>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572217315"><!-- Move title outside statement--> <statement id="fs-id1170572217317">
+<p id="fs-id1170572286631"><m>f(x)=\ln(.x)</m></p>
+
+</statement>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572286731"><!-- Move title outside statement--> <statement id="fs-id1170572286734">
+<p id="fs-id1170572286736"><m>f(x)=1−\ln x</m></p>
+
+</statement>
+<solution id="fs-id1170572286775">
+<p id="fs-id1170572286777">Domain: <m>(0,\infty),</m> range: <m>(-\infty,\infty),x=0</m></p>
+<description>"An image of a graph. The x axis runs from -1 to 9 and the y axis runs from -5 to 5. The graph is of a decreasing curved function which starts slightly to the right of the y axis. There is no y intercept and the x intercept is at the point (e, 0).">
+<image source="CNX_Calc_Figure_01_05_217.jpg" width="50%">
+
+</solution>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572286826"><!-- Move title outside statement--> <statement id="fs-id1170572286828">
+<p id="fs-id1170572286831"><m>f(x)=\text{ log } x−1</m></p>
+
+</statement>
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572452755"><!-- Move title outside statement--> <statement id="fs-id1170572452757">
+<p id="fs-id1170572452759"><m>f(x)=\ln(x+1)</m></p>
+
+</statement>
+<solution id="fs-id1170572452808">
+<p id="fs-id1170572452810">Domain: <m>(−1,\infty),</m> range: <m>(-\infty,\infty),x=−1</m></p>
+<description>"An image of a graph. The x axis runs from -5 to 5 and the y axis runs from -5 to 5. The graph is of an increasing curved function which starts slightly to the right of the vertical line &#x201C;x = -1&#x201D;. There y intercept and the x intercept are both at the origin.">
+<image source="CNX_Calc_Figure_01_05_219.jpg" width="50%">
+
+</solution>
+<p id="fs-id1170572452859">For the following exercises, use properties of logarithms to write the expressions as a sum, difference, and/or product of logarithms.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572452866">
+<p id="fs-id1170572452868"><m>\text{ log }x^4y</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572452906">
+<p id="fs-id1170572452909"><m>\log_{3}<!-- Edit FRAC!--> \frac{9a^3b}</m></p>
+</statement>
+<solution id="fs-id1170572452932">
+<p id="fs-id1170572452934"><m>2+3\log_{3}a−\log_{3}b</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572452968">
+<p id="fs-id1170572452970"><m>\ln a<m:mroot>b3</m:mroot></m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572546159">
+<p id="fs-id1170572546161"><m>\log_{5}\sqrt{125xy^3?</m></p>
+</statement>
+<solution id="fs-id1170572546185">
+<p id="fs-id1170572546187"><m>\frac{3}{2}+\frac{1}{2}\log_{5}x+\frac{3}{2}\log_{5}y</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572546233">
+<p id="fs-id1170572546235"><m>\log_{4}<!-- Edit FRAC!--> \frac{<m:mroot>xy3</m:mroot>64}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572546306">
+<p id="fs-id1170572546308"><m>\ln(<!-- Edit FRAC!--> \frac{6\sqrt{e^3?})</m></p>
+</statement>
+<solution id="fs-id1170572546333">
+<p id="fs-id1170572546336"><m>−\frac{3}{2}+\ln 6</m></p>
+</solution>
+
+<p id="fs-id1170572546356">For the following exercises, solve the exponential equation exactly.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572546361">
+<p id="fs-id1170572546363"><m>5^x=125</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572479929">
+<p id="fs-id1170572479931"><m>e^{-x}−15=0</m></p>
+</statement>
+<solution id="fs-id1170572479954">
+<p id="fs-id1170572479956"><m><!-- Edit FRAC!--> \frac{\ln 153}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572479973">
+<p id="fs-id1170572479975"><m>8^x=4</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572480006">
+<p id="fs-id1170572480008"><m><m:msup>4x+1</m:msup>−32=0</m></p>
+</statement>
+<solution id="fs-id1170572480033">
+<p id="fs-id1170572480035"><m>\frac{3}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572480049">
+<p id="fs-id1170572480051"><m><m:msup>3x/14</m:msup>=<!-- Edit FRAC!--> \frac{110}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572480102">
+<p id="fs-id1170572480104"><m><m:msup>10x</m:msup>=7.21</m></p>
+</statement>
+<solution id="fs-id1170572480120">
+<p id="fs-id1170572480122"><m>\text{ log } 7.21</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572480135">
+<p id="fs-id1170572480137"><m>4\cdot <m:msup>23x</m:msup>−20=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572543576">
+<p id="fs-id1170572543578"><m><m:msup>73x−2</m:msup>=11</m></p>
+</statement>
+<solution id="fs-id1170572543600">
+<p id="fs-id1170572543602"><m>\frac{2}{3}+<!-- Edit FRAC!--> \frac{\text{ log } 113 \text{ log } 7}</m></p>
+</solution>
+
+<p id="fs-id1170572543630">For the following exercises, solve the logarithmic equation exactly, if possible.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572543636">
+<p id="fs-id1170572543638"><m>\log_{3}x=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572543673">
+<p id="fs-id1170572543675"><m>\log_{5}x=−2</m></p>
+</statement>
+<solution id="fs-id1170572543693">
+<p id="fs-id1170572543696"><m>x=<!-- Edit FRAC!--> \frac{125}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572543715">
+<p id="fs-id1170572543717"><m>\log_{4}(x+5)=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572543763">
+<p id="fs-id1170572543765"><m>\text{ log }(2x−7)=0</m></p>
+</statement>
+<solution id="fs-id1170572543792">
+<p id="fs-id1170572543794"><m>x=4</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572543809">
+<p id="fs-id1170572543811"><m>\ln\sqrt{x+3?=2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572088348">
+<p id="fs-id1170572088350"><m>\log_{6}(x+9)+\log_{6}x=2</m></p>
+</statement>
+<solution id="fs-id1170572088389">
+<p id="fs-id1170572088391"><m>x=3</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572088406">
+<p id="fs-id1170572088408"><m>\log_{4}(x+2)−\log_{4}(x−1)=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572088468">
+<p id="fs-id1170572088470"><m>\ln x+\ln(x−2)=\ln 4</m></p>
+</statement>
+<solution id="fs-id1170571120345">
+<p id="fs-id1170571120347"><m>1+\sqrt{5?</m></p>
+</solution>
+
+<p id="fs-id1170572088504">For the following exercises, use the change-of-base formula and either base 10 or base <m> e </m> to evaluate the given expressions. Answer in exact form and in approximate form, rounding to four decimal places.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572088515">
+<p id="fs-id1170572088517"><m>\log_{5}47</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572088564">
+<p id="fs-id1170572088566"><m>\log_{7}82</m></p>
+</statement>
+<solution id="fs-id1170572088580">
+<p id="fs-id1170572088582"><m>(<!-- Edit FRAC!--> \frac{\text{ log } 82\text{ log } 7}≈2.2646)</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572227259">
+<p id="fs-id1170572227261"><m>\log_{6}103</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572227308">
+<p id="fs-id1170572227310"><m><m:msub>\text{ log }0.5</m:msub>211</m></p>
+</statement>
+<solution id="fs-id1170572227325">
+<p id="fs-id1170572227327"><m>(<!-- Edit FRAC!--> \frac{\text{ log } 211\text{ log } 0.5}≈−7.7211)</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572227360">
+<p id="fs-id1170572227362"><m>\log_2 π</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572227409">
+<p id="fs-id1170572227411"><m><m:msub>\text{ log }0.2</m:msub>0.452</m></p>
+</statement>
+<solution id="fs-id1170572227426">
+<p id="fs-id1170572227428"><m>(<!-- Edit FRAC!--> \frac{\text{ log } 0.452\text{ log } 0.2}≈0.4934)</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572227459">
+<p id="fs-id1170572227461">Rewrite the following expressions in terms of exponentials and simplify.</p>
+<p id="fs-id1170572227465">a. <m>2 \cosh(\ln x)</m> b. <m>\cosh 4x+\sinh 4x</m> c. <m>\cosh 2x−\sinh 2x</m> d. <m>\ln(\cosh x+\sinh x)+\ln(\cosh x−\sinh x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572230543">
+<p id="fs-id1170572230545"><emphasis effect="bold">[T]</emphasis> The number of bacteria <emphasis effect="italics">N</emphasis> in a culture after <emphasis effect="italics">t</emphasis> days can be modeled by the function <m>N(t)=1300\cdot <m:msup>(2)t/4</m:msup>.</m> Find the number of bacteria present after 15 days.</p>
+</statement>
+<solution id="fs-id1170572230603">
+<p id="fs-id1170572230605"><m>~17,491</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572230622">
+<p id="fs-id1170572230624"><emphasis effect="bold">[T]</emphasis> The demand <emphasis effect="italics">D</emphasis> (in millions of barrels) for oil in an oil-rich country is given by the function <m>D(p)=150\cdot <m:msup>(2.7)−0.25p</m:msup>,</m> where <emphasis effect="italics">p</emphasis> is the price (in dollars) of a barrel of oil. Find the amount of oil demanded (to the nearest million barrels) when the price is between $15 and $20.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572230692">
+<p id="fs-id1170572230695"><emphasis effect="bold">[T]</emphasis> The amount <emphasis effect="italics">A</emphasis> of a $100,000 investment paying continuously and compounded for <emphasis effect="italics">t</emphasis> years is given by <m>A(t)=100,000\cdot <m:msup>e0.055t</m:msup>.</m> Find the amount <emphasis effect="italics">A</emphasis> accumulated in 5 years.</p>
+</statement>
+<solution id="fs-id1170572472843">
+<p id="fs-id1170572472846">Approximately $131,653 is accumulated in 5 years.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572472853">
+<p id="fs-id1170572472855"><emphasis effect="bold">[T]</emphasis> An investment is compounded monthly, quarterly, or yearly and is given by the function <m>A=P<m:msup>(1+\frac{j}{n})nt</m:msup>,</m> where <m>A</m> is the value of the investment at time <m>t,P</m> is the initial principle that was invested, <m>j</m> is the annual interest rate, and <m>n</m> is the number of time the interest is compounded per year. Given a yearly interest rate of 3.5% and an initial principle of $100,000, find the amount <m>A</m> accumulated in 5 years for interest that is compounded a. daily, b., monthly, c. quarterly, and d. yearly.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572472940">
+<p id="fs-id1170572472942"><emphasis effect="bold">[T]</emphasis> The concentration of hydrogen ions in a substance is denoted by <m>[<m:msup>.+</m:msup>],</m> measured in moles per liter. The pH of a substance is defined by the logarithmic function <m>\text{ pH }=.\text{ log }[<m:msup>.+</m:msup>].</m> This function is used to measure the acidity of a substance. The pH of water is 7. A substance with a pH less than 7 is an acid, whereas one that has a pH of more than 7 is a base.</p>
+<ol>
+<li>Find the pH of the following substances. Round answers to one digit.</li>
+<li>Determine whether the substance is an acid or a base.
+<list id="fs-id1170572473006" list-type="enumerated" number-style="lower-roman">
+<li>Eggs: <m>[<m:msup>.+</m:msup>]=1.6 × <m:msup>10−8</m:msup></m> mol/L</li>
+<li>Beer: <m>[<m:msup>.+</m:msup>]=3.16 × <m:msup>10−3</m:msup></m> mol/L</li>
+<li>Tomato Juice: <m>[<m:msup>.+</m:msup>]=7.94 × <m:msup>10−5</m:msup></m> mol/L</li>
+</ol></li>
+</ol>
+</statement>
+<solution id="fs-id1170572296434">
+<p id="fs-id1170572296436">i. a. pH = 8 b. Base ii. a. pH = 3 b. Acid iii. a. pH = 4 b. Acid</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572296443">
+<p id="fs-id1170572296445"><emphasis effect="bold">[T]</emphasis> Iodine-131 is a radioactive substance that decays according to the function <m>Q(t)=Q_0\cdot <m:msup>e−0.08664t</m:msup>,</m> where <m>Q_0</m> is the initial quantity of a sample of the substance and <emphasis effect="italics">t</emphasis> is in days. Determine how long it takes (to the nearest day) for 95% of a quantity to decay.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572296511">
+<p id="fs-id1170572296513"><emphasis effect="bold">[T]</emphasis> According to the World Bank, at the end of 2013 (<m>t=0</m>
+) the U.S. population was 316 million and was increasing according to the following model:</p>
+<p id="fs-id1170572296531"><m>P(t)=316<m:msup>e0.0074t</m:msup>,</m>
+where <emphasis effect="italics">P</emphasis> is measured in millions of people and <emphasis effect="italics">t</emphasis> is measured in years after 2013.</p>
+<ol>
+<li>Based on this model, what will be the population of the United States in 2020?</li>
+<li>Determine when the U.S. population will be twice what it is in 2013.</li>
+</ol>
+</statement>
+<solution id="fs-id1170572296589">
+<p id="fs-id1170572296591">a. <m>~333</m> million b. 94 years from 2013, or in 2107</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572296606">
+<p id="fs-id1170572296608"><emphasis effect="bold">[T]</emphasis> The amount <emphasis effect="italics">A</emphasis> accumulated after 1000 dollars is invested for <emphasis effect="italics">t</emphasis> years at an interest rate of 4% is modeled by the function <m>A(t)=1000<m:msup>(1.04)t</m:msup>.</m></p>
+<ol>
+<li>Find the amount accumulated after 5 years and 10 years.</li>
+<li>Determine how long it takes for the original investment to triple.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572296691">
+<p id="fs-id1170572296693"><emphasis effect="bold">[T]</emphasis> A bacterial colony grown in a lab is known to double in number in 12 hours. Suppose, initially, there are 1000 bacteria present.</p>
+<ol>
+<li>Use the exponential function <m>Q=<m:msub>Q0</m:msub><m:msup>ekt</m:msup></m> to determine the value <m>k,</m> which is the growth rate of the bacteria. Round to four decimal places.</li>
+<li>Determine approximately how long it takes for 200,000 bacteria to grow.</li>
+</ol>
+</statement>
+<solution id="fs-id1170572212920">
+<p id="fs-id1170572212922">a. <m>k≈0.0578</m> b. <m>≈92</m> hours</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572212946">
+<p id="fs-id1170572212949"><emphasis effect="bold">[T]</emphasis> The rabbit population on a game reserve doubles every 6 months. Suppose there were 120 rabbits initially.</p>
+<ol>
+<li>Use the exponential function <m>P=P_0a^t</m> to determine the growth rate constant <m>a.</m> Round to four decimal places.</li>
+<li>Use the function in part a. to determine approximately how long it takes for the rabbit population to reach 3500.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572213023">
+<p id="fs-id1170572213025"><emphasis effect="bold">[T]</emphasis> The 1906 earthquake in San Francisco had a magnitude of 8.3 on the Richter scale. At the same time, in Japan, an earthquake with magnitude 4.9 caused only minor damage. Approximately how much more energy was released by the San Francisco earthquake than by the Japanese earthquake?</p>
+</statement>
+<solution id="fs-id1170572213036">
+<p id="fs-id1170572213038">The San Francisco earthquake had <m><m:msup>103.4</m:msup>\text{ or } ~2512</m> times more energy than the Japan earthquake.</p>
+</solution>
+
+</section>
+<subsection id="fs-id1170572213065" class="review-exercises">
+<title>Chapter Review Exercises</title>
+<p id="fs-id1170572213073"><emphasis effect="italics">True or False</emphasis>? Justify your answer with a proof or a counterexample.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572213083">
+<p id="fs-id1170572213085">A function is always one-to-one.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572213099">
+<p id="fs-id1170572213101"><m>f∘g=g∘f,</m> assuming <emphasis effect="italics">f</emphasis> and <emphasis effect="italics">g</emphasis> are functions.</p>
+</statement>
+<solution id="fs-id1170572213135">
+<p id="fs-id1170572213137">False</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572213145">
+<p id="fs-id1170572213147">A relation that passes the horizontal and vertical line tests is a one-to-one function.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572237257">
+<p id="fs-id1170572237260">A relation passing the horizontal line test is a function.</p>
+</statement>
+<solution id="fs-id1170572237264">
+<p id="fs-id1170572237266">False</p>
+</solution>
+
+<p id="fs-id1170572237271">For the following problems, state the domain and range of the given functions:</p>
+<p id="fs-id1170572237274"><m>f=x^2+2x−3, g=\ln(x−5), h=<!-- Edit FRAC!--> \frac{1x+4}</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572237346">
+<p id="fs-id1170572237348"><emphasis effect="italics">h</emphasis></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572237386">
+<p id="fs-id1170572237388"><emphasis effect="italics">g</emphasis></p>
+</statement>
+<solution id="fs-id1170572237395">
+<p id="fs-id1170572237397">Domain: <m>x\gt 5,</m> range: all real numbers</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572237417">
+<p id="fs-id1170572237419"><m>h∘f</m>
+</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572237462">
+<p id="fs-id1170572237464"><m>g∘f</m>
+</p>
+</statement>
+<solution id="fs-id1170572237477">
+<p id="fs-id1170572237479">Domain: <m>x\gt 2</m> and <m>x\lt −4,</m> range: all real numbers</p>
+</solution>
+
+<p id="fs-id1170572237509">Find the degree, <emphasis effect="italics">y</emphasis>-intercept, and zeros for the following polynomial functions.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572237519">
+<p id="fs-id1170572237522"><m>f(x)=2x^2+9x−5</m>
+</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572212644">
+<p id="fs-id1170572212646"><m>f(x)=x^3+2x^2−2x</m>
+</p>
+</statement>
+<solution id="fs-id1170572212688">
+<p id="fs-id1170572212690">Degree of 3, <m>y</m>-intercept: 0, zeros: 0, <m>\sqrt{3?−1,−1−\sqrt{3?</m></p>
+</solution>
+
+<p id="fs-id1170572212720">Simplify the following trigonometric expressions.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572212725">
+<p id="fs-id1170572212727"><m><!-- Edit FRAC!--> \frac{<m:msup>\text{ tan }2</m:msup>x<m:msup>\text{ sec }2</m:msup>x}+<m:msup>\text{ cos }2</m:msup>x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572212775">
+<p id="fs-id1170572212777"><m>\text{ cos }(2x)=<m:msup>\sin2</m:msup>x</m></p>
+</statement>
+<solution id="fs-id1170572212806">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572212808"><m>cos^2x–sin^2x=cos2x</m>
+ or
+<m>=
+<!-- Edit FRAC!--> \frac{
+	1–2sin^2x
+	2
+}
+</m>
+ or
+<m>=
+<!-- Edit FRAC!--> \frac{
+	2cos^2x–1
+	2
+}
+</m></p></solution>
+
+<p id="fs-id1170572212865">Solve the following trigonometric equations on the interval <m>θ=[−2π,2π]</m> exactly.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572243173">
+<p id="fs-id1170572243175"><m>6<m:msup>\text{ cos }2</m:msup>x−3=0</m>
+</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572243258">
+<p id="fs-id1170572243260"><m><m:msup>\text{ sec }2</m:msup>x−2 \text{ sec } x+1=0</m></p>
+</statement>
+<solution id="fs-id1170572243291">
+<p id="fs-id1170572243293"><m>0,±2π</m></p>
+</solution>
+
+<p id="fs-id1170572243310">Solve the following logarithmic equations.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572243315">
+<p id="fs-id1170572243317"><m>5^x=16</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572243373">
+<p id="fs-id1170572243375"><m>\log_2 (x+4)=3</m></p>
+</statement>
+<solution id="fs-id1170572243406">
+<p id="fs-id1170572243408">4</p>
+</solution>
+
+<p id="fs-id1170572243414">Are the following functions one-to-one over their domain of existence? Does the function have an inverse? If so, find the inverse <m><m:msup>f−1</m:msup>(x)</m> of the function. Justify your answer.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572139070">
+<p id="fs-id1170572139072"><m>f(x)=x^2+2x+1</m>
+</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572139118">
+<p id="fs-id1170572139120"><m>f(x)=\frac{1}{x}</m></p>
+</statement>
+<solution id="fs-id1170572139146">
+<p id="fs-id1170572139148">One-to-one; yes, the function has an inverse; inverse: <m><m:msup>f−1</m:msup>(x)=\frac{1}{y}</m></p>
+</solution>
+
+<p id="fs-id1170572139180">For the following problems, determine the largest domain on which the function is one-to-one and find the inverse on that domain.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572139186">
+<p id="fs-id1170572139189"><m>f(x)=\sqrt{9−x?</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572139265">
+<p id="fs-id1170572139267"><m>f(x)=x^2+3x+4</m></p>
+</statement>
+<solution id="fs-id1170572139303">
+<p id="fs-id1170572139305"><m>x≥−\frac{3}{2},<m:msup>f−1</m:msup>(x)=−\frac{3}{2}+\frac{1}{2}\sqrt{4y−7?</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572211030">
+<p id="fs-id1170572211032">A car is racing along a circular track with diameter of 1 mi. A trainer standing in the center of the circle marks his progress every 5 sec. After 5 sec, the trainer has to turn 55° to keep up with the car. How fast is the car traveling?</p>
+</statement>
+
+<p id="fs-id1170572211047">For the following problems, consider a restaurant owner who wants to sell T-shirts advertising his brand. He recalls that there is a fixed cost and variable cost, although he does not remember the values. He does know that the T-shirt printing company charges $440 for 20 shirts and $1000 for 100 shirts.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572211055">
+<p id="fs-id1170572211057">a. Find the equation <m>C=f(x)</m> that describes the total cost as a function of number of shirts and b. determine how many shirts he must sell to break even if he sells the shirts for $10 each.</p>
+</statement>
+<solution id="fs-id1170572211082">
+<p id="fs-id1170572211085">a. <m>C(x)=300+7x</m> b. 100 shirts</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572211118">
+<p id="fs-id1170572211121">a. Find the inverse function <m>x=<m:msup>f−1</m:msup>(C)</m> and describe the meaning of this function. b. Determine how many shirts the owner can buy if he has $8000 to spend.</p>
+</statement>
+
+<p id="fs-id1170572211179">For the following problems, consider the population of Ocean City, New Jersey, which is cyclical by season.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572211185">
+<p id="fs-id1170572211187">The population can be modeled by <m>P(t)=82.5−67.5 \text{ cos }[(π/6)t],</m> where <m>t</m> is time in months <m>(t=0</m> represents January 1) and <m>P</m> is population (in thousands). During a year, in what intervals is the population less than 20,000? During what intervals is the population more than 140,000?</p>
+</statement>
+<solution id="fs-id1170572211268">
+<p id="fs-id1170572211270">The population is less than 20,000 from December 8 through January 23 and more than 140,000 from May 29 through August 2</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572211279">
+<p id="fs-id1170572544391">In reality, the overall population is most likely increasing or decreasing throughout each year. Let’s reformulate the model as <m>P(t)=82.5−67.5 \text{ cos }[(π/6)t]+t,</m> where <m>t</m> is time in months (<m>t=0</m> represents January 1) and <m>P</m> is population (in thousands). When is the first time the population reaches 200,000?</p>
+</statement>
+
+<p id="fs-id1170572544480">For the following problems, consider radioactive dating. A human skeleton is found in an archeological dig. Carbon dating is implemented to determine how old the skeleton is by using the equation <m>y=e^{rt},</m> where <m>y</m> is the percentage of radiocarbon still present in the material, <m>t</m> is the number of years passed, and <m>r=−0.0001210</m> is the decay rate of radiocarbon.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572544524">
+<p id="fs-id1170572544527">If the skeleton is expected to be 2000 years old, what percentage of radiocarbon should be present?</p>
+</statement>
+<solution id="fs-id1170572544532">
+<p id="fs-id1170572544534">78.51%</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572544541">
+<p id="fs-id1170572544544">Find the inverse of the carbon-dating equation. What does it mean? If there is 25% radiocarbon, how old is the skeleton?</p>
+</statement>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1170572544592">
+<term>base</term>
+<meaning id="fs-id1170572544597">the number <m>b</m> in the exponential function <m>f(x)=b^x</m> and the logarithmic function <m>f(x)=\log_b x</m></meaning>
+</definition>
+<definition id="fs-id1170572544649">
+<term>exponent</term>
+<meaning id="fs-id1170572544654">the value <m>x</m> in the expression <m>b^x</m></meaning>
+</definition>
+<definition id="fs-id1170572544670">
+<term>hyperbolic functions</term>
+<meaning id="fs-id1170572544676">the functions denoted <m>\sinh,\cosh,\tanh,\text{ csch },\text{ sech },</m> and <m>\text{ coth },</m> which involve certain combinations of <m>e^x</m> and <m>e^{-x}</m></meaning>
+</definition>
+<definition id="fs-id1170572294452">
+<term>inverse hyperbolic functions</term>
+<meaning id="fs-id1170572294458">the inverses of the hyperbolic functions where <m>\cosh</m> and <m>\text{ sech }</m> are restricted to the domain <m>[0,\infty);</m> each of these functions can be expressed in terms of a composition of the natural logarithm function and an algebraic function</meaning>
+</definition>
+<definition id="fs-id1170572294493">
+<term>natural exponential function</term>
+<meaning id="fs-id1170572294499">the function <m>f(x)=e^x</m></meaning>
+</definition>
+<definition id="fs-id1170572294522">
+<term>natural logarithm</term>
+<meaning id="fs-id1170572294527">the function <m>\ln x=\log_e x</m></meaning>
+</definition>
+<definition id="fs-id1170572294549">
+<term>number e</term>
+<meaning id="fs-id1170572294554">as <m>m</m> gets larger, the quantity <m>(1+<m:msup>(1/m)m</m:msup></m> gets closer to some real number; we define that real number to be <m>e;</m> the value of <m>e</m> is approximately <m>2.718282</m></meaning>
+</definition>
+</glossary>
+</document>
+?>

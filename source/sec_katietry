@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_first-intro" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to First Chapter</title>
+  <introduction>
+    <p>
+      <!--%![A photograph of an earthquake fault.](../resources/CNX_Calc_Figure_01_00_003.jpg "
+      A portion of the San Andreas Fault in California. Major faults like this are the sites of most of the strongest earthquakes ever recorded. (credit: modification of work by Robb Hannawacker, NPS)"){: #CNX_BMath_Figure_01_00_002} -->
+
+     In the past few years, major earthquakes have occurred in several countries around the world. In January 2010, an earthquake of magnitude 7.3 hit Haiti. A magnitude 9 earthquake shook northeastern Japan in March 2011. In April 2014, an 8.2-magnitude earthquake struck off the coast of northern Chile. What do these numbers mean? In particular, how does a magnitude 9 earthquake compare with an earthquake of magnitude 8.2? Or 7.3? Later in this chapter, we show how logarithmic functions are used to compare the relative intensity of two earthquakes based on the magnitude of each earthquake <!-- (see [\[link\]](/m53481#fs-id1170572128672)).
+
+     Calculus is the mathematics that describes changes in functions. In this chapter, we review all the functions necessary to study calculus. We define polynomial, rational, trigonometric, exponential, and logarithmic functions. We review how to evaluate these functions, and we show the properties of their graphs. We provide examples of equations with terms involving these functions and illustrate the algebraic techniques necessary to solve them. In short, this chapter provides the foundation for the material to come. It is essential to be familiar and comfortable with these ideas before proceeding to the formal introduction of calculus in the next chapter. -->
+    </p>
+    <p>
+      Another paragraph of the introduction.
+    </p>
+  </introduction>
+  <subsection xml:id="subsec_a-subsection">
+    <title>A subsection</title>
+    <p>
+
+    </p>
+    <p>
+      More content.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec_another-subsection">
+    <title>Another Subsection</title>
+    <p>
+      Text with some math: <m>\sin(x) = \cos(x)</m> only for some values of <m>x</m>.
+    </p>
+  </subsection>
+
+  <conclusion>
+    <p>
+      After the last subsection, you might have a conclusion.
+    </p>
+  </conclusion>
+</section>

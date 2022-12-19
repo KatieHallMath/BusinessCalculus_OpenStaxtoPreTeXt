@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch4Sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Maxima and Minima</title>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ul>
+<li>Define absolute extrema.</li>
+<li>Define local extrema.</li>
+<li>Explain how to find the critical points of a function over an interval.</li>
+<li>Describe how to use critical points to locate absolute extrema over an interval.</li>
+</ul>
+<p id="fs-id1165042066715">Given a particular function, we are often interested in determining the largest and smallest values of the function. This information is important in creating accurate graphs. Finding the maximum and minimum values of a function also has practical significance because we can use this method to solve optimization problems, such as maximizing profit, minimizing the amount of material used in manufacturing an aluminum can, or finding the maximum height a rocket can reach. In this section, we look at how to use derivatives to find the largest and smallest values for a function.</p>
+</introduction>
+<subsection id="fs-id1165041932730">
+<title>Absolute Extrema</title>
+<p id="fs-id1165040644979">Consider the function <m>f(x)=x^2+1</m> over the interval <m>(-\infty ,\infty ).</m> As <m>x\to \pm \infty ,</m> <m>f(x)\to \infty .</m> Therefore, the function does not have a largest value. However, since <m>x^2+1\geq 1</m> for all real numbers <m>x</m> and <m>x^2+1=1</m> when <m>x=0,</m> the function has a smallest value, 1, when <m>x=0.</m> We say that 1 is the absolute minimum of <m>f(x)=x^2+1</m> and it occurs at <m>x=0.</m> We say that <m>f(x)=x^2+1</m> does not have an absolute maximum (see the following figure).</p>
+<figure xml:id="CNX_Calc_Figure_04_03_001">
+  <image source="CNX_Calc_Figure_04_03_001.jpg" width="80%">
+<description>"The function f(x) = x2 + 1 is graphed, and its minimum of 1 is seen to be at x = 0." </description></image> <caption>The given function has an absolute minimum of 1 at <m>x=0.</m> The function does not have an absolute maximum.</caption>
+</figure>
+<definition>
+<p id="fs-id1165041930563">Let <m>f</m> be a function defined over an interval <m>I</m> and let <m>c∈I.</m> We say <m>f</m> has an <term>absolute maximum</term> on <m>I</m> at <m>c</m> if <m>f(c)\geq f(x)</m> for all <m>x∈I.</m> We say <m>f</m> has an <term>absolute minimum</term> on <m>I</m> at <m>c</m> if <m>f(c)\leq f(x)</m> for all <m>x∈I.</m> If <m>f</m> has an absolute maximum on <m>I</m> at <m>c</m> or an absolute minimum on <m>I</m> at <m>c,</m> we say <m>f</m> has an <term>absolute extremum</term> on <m>I</m> at <m>c.</m></p>
+</definition>
+<p id="fs-id1165041811976">Before proceeding, let’s note two important issues regarding this definition. First, the term <em>absolute</em> here does not refer to absolute value. An absolute extremum may be positive, negative, or zero. Second, if a function <m>f</m> has an absolute extremum over an interval <m>I</m> at <m>c,</m> the absolute extremum is <m>f(c).</m> The real number <m>c</m> is a point in the domain at which the absolute extremum occurs. For example, consider the function <m>f(x)=1/(x^2+1)</m> over the interval <m>(-\infty ,\infty ).</m> Since</p>
+<me>f(0)=1\geq \frac{1}{x^2+1}=f(x)</me>
+<p id="fs-id1165041952862">for all real numbers <m>x,</m> we say <m>f</m> has an absolute maximum over <m>(-\infty ,\infty )</m> at <m>x=0.</m> The absolute maximum is <m>f(0)=1.</m> It occurs at <m>x=0,</m> as shown in <xref ref="CNX_Calc_Figure_04_03_002"/>(b).</p>
+<p id="fs-id1165041795038">A function may have both an absolute maximum and an absolute minimum, just one extremum, or neither. <xref ref="CNX_Calc_Figure_04_03_002"/> shows several functions and some of the different possibilities regarding absolute extrema. However, the following theorem, called the <term>Extreme Value Theorem</term>, guarantees that a continuous function <m>f</m> over a closed, bounded interval <m>[a,b]</m> has both an absolute maximum and an absolute minimum.</p>
+<figure xml:id="CNX_Calc_Figure_04_03_002">
+  <image source="CNX_Calc_Figure_04_03_010.jpg" width="90%">
+<description>"This figure has six parts a, b, c, d, e, and f. In figure a, the line f(x) = x3 is shown, and it is noted that it has no absolute minimum and no absolute maximum. In figure b, the line f(x) = 1/(x2 + 1) is shown, which is near 0 for most of its length and rises to a bump at (0, 1); it has no absolute minimum, but does have an absolute maximum of 1 at x = 0. In figure c, the line f(x) = cos x is shown, which has absolute minimums of &#x2212;1 at &#xB1;&#x3C0;, &#xB1;3&#x3C0;, &#x2026; and absolute maximums of 1 at 0, &#xB1;2&#x3C0;, &#xB1;4&#x3C0;, &#x2026;. In figure d, the piecewise function f(x) = 2 &#x2013; x2 for 0 &#x2264; x \lt  2 and x &#x2013; 3 for 2 &#x2264; x &#x2264; 4 is shown, with absolute maximum of 2 at x = 0 and no absolute minimum. In figure e, the function f(x) = (x &#x2013; 2)2 is shown on [1, 4], which has absolute maximum of 4 at x = 4 and absolute minimum of 0 at x = 2. In figure f, the function f(x) = x/(2 &#x2212; x) is shown on [0, 2), with absolute minimum of 0 at x = 0 and no absolute maximum."
+</description></image> <caption>Graphs (a), (b), and (c) show several possibilities for absolute extrema for functions with a domain of <m>(-\infty ,\infty ).</m> Graphs (d), (e), and (f) show several possibilities for absolute extrema for functions with a domain that is a bounded interval.</caption>
+</figure>
+<theorem> <!-- Change next end note to end theorem -->
+<title>Extreme Value Theorem</title>
+<p id="fs-id1165042274290">If <m>f</m> is a continuous function over the closed, bounded interval <m>[a,b],</m> then there is a point in <m>[a,b]</m> at which <m>f</m> has an absolute maximum over <m>[a,b]</m> and there is a point in <m>[a,b]</m> at which <m>f</m> has an absolute minimum over <m>[a,b].</m></p>
+</theorem>
+<p id="fs-id1165040759275">The proof of the extreme value theorem is beyond the scope of this text. Typically, it is proved in a course on real analysis. There are a couple of key points to note about the statement of this theorem. For the extreme value theorem to apply, the function must be continuous over a closed, bounded interval. If the interval <m>I</m> is open or the function has even one point of discontinuity, the function may not have an absolute maximum or absolute minimum over <m>I.</m> For example, consider the functions shown in <xref ref="CNX_Calc_Figure_04_03_002"/>(d), (e), and (f). All three of these functions are defined over bounded intervals. However, the function in graph (e) is the only one that has both an absolute maximum and an absolute minimum over its domain. The extreme value theorem cannot be applied to the functions in graphs (d) and (f) because neither of these functions is continuous over a closed, bounded interval. Although the function in graph (d) is defined over the closed interval <m>[0,4],</m> the function is discontinuous at <m>x=2.</m> The function has an absolute maximum over <m>[0,4]</m> but does not have an absolute minimum. The function in graph (f) is continuous over the half-open interval <m>[0,2),</m> but is not defined at <m>x=2,</m> and therefore is not continuous over a closed, bounded interval. The function has an absolute minimum over <m>[0,2),</m> but does not have an absolute maximum over <m>[0,2).</m> These two graphs illustrate why a function over a bounded interval may fail to have an absolute maximum and/or absolute minimum.</p>
+<p id="fs-id1165041805532">Before looking at how to find absolute extrema, let’s examine the related concept of local extrema. This idea is useful in determining where absolute extrema occur.</p>
+</subsection>
+<subsection id="fs-id1165042086430">
+<title>Local Extrema and Critical Points</title>
+<p id="fs-id1165042120195">Consider the function <m>f</m> shown in <xref ref="CNX_Calc_Figure_04_03_003"/>. The graph can be described as two mountains with a valley in the middle. The absolute maximum value of the function occurs at the higher peak, at <m>x=2.</m> However, <m>x=0</m> is also a point of interest. Although <m>f(0)</m> is not the largest value of <m>f,</m> the value <m>f(0)</m> is larger than <m>f(x)</m> for all <m>x</m> near 0. We say <m>f</m> has a local maximum at <m>x=0.</m> Similarly, the function <m>f</m> does not have an absolute minimum, but it does have a local minimum at <m>x=1</m> because <m>f(1)</m> is less than <m>f(x)</m> for <m>x</m> near 1.</p>
+<figure xml:id="CNX_Calc_Figure_04_03_003">
+  <image source="CNX_Calc_Figure_04_03_003.jpg" width="80%">
+<description>"The function f(x) is shown, which curves upward from quadrant III, slows down in quadrant II, achieves a local maximum on the y-axis, decreases to achieve a local minimum in quadrant I at x = 1, increases to a local maximum at x = 2 that is greater than the other local maximum, and then decreases rapidly through quadrant IV."
+</description></image> <caption>This function <m>f</m> has two local maxima and one local minimum. The local maximum at <m>x=2</m> is also the absolute maximum.</caption>
+</figure>
+<definition> <!-- Change next /note to /definition and remove above note-->
+<p id="fs-id1165041836623">A function <m>f</m> has a <term>local maximum</term> at <m>c</m> if there exists an open interval <m>I</m> containing <m>c</m> such that <m>I</m> is contained in the domain of <m>f</m> and <m>f(c)\geq f(x)</m> for all <m>x∈I.</m> A function <m>f</m> has a <term>local minimum</term> at <m>c</m> if there exists an open interval <m>I</m> containing <m>c</m> such that <m>I</m> is contained in the domain of <m>f</m> and <m>f(c)\leq f(x)</m> for all <m>x∈I.</m> A function <m>f</m> has a <term>local extremum</term> at <m>c</m> if <m>f</m> has a local maximum at <m>c</m> or <m>f</m> has a local minimum at <m>c.</m></p>
+</definition>
+<p id="fs-id1165042007321">Note that if <m>f</m> has an absolute extremum at <m>c</m> and <m>f</m> is defined over an interval containing <m>c,</m> then <m>f(c)</m> is also considered a local extremum. If an absolute extremum for a function <m>f</m> occurs at an endpoint, we do not consider that to be a local extremum, but instead refer to that as an endpoint extremum.</p>
+<p id="fs-id1165041841707">Given the graph of a function <m>f,</m> it is sometimes easy to see where a local maximum or local minimum occurs. However, it is not always easy to see, since the interesting features on the graph of a function may not be visible because they occur at a very small scale. Also, we may not have a graph of the function. In these cases, how can we use a formula for a function to determine where these extrema occur?</p>
+<p id="fs-id1165042305291">To answer this question, let’s look at <xref ref="CNX_Calc_Figure_04_03_003"/> again. The local extrema occur at <m>x=0,</m> <m>x=1,</m> and <m>x=2.</m> Notice that at <m>x=0</m> and <m>x=1,</m> the derivative <m>f'(x)=0.</m> At <m>x=2,</m> the derivative <m>f'(x)</m> does not exist, since the function <m>f</m> has a corner there. In fact, if <m>f</m> has a local extremum at a point <m>x=c,</m> the derivative <m>f'(c)</m> must satisfy one of the following conditions: either <m>f'(c)=0</m> or <m>f'(c)</m> is undefined. Such a value <m>c</m> is known as a critical point and it is important in finding extreme values for functions.</p>
+
+<definition>
+<p id="fs-id1165041779119">Let <m>c</m> be an interior point in the domain of <m>f.</m> We say that <m>c</m> is a <term>critical point</term> of <m>f</m> if <m>f'(c)=0</m> or <m>f'(c)</m> is undefined.</p>
+</definition>
+<p id="fs-id1165042038752">As mentioned earlier, if <m>f</m> has a local extremum at a point <m>x=c,</m> then <m>c</m> must be a critical point of <m>f.</m> This fact is known as <term>Fermat’s theorem</term>.</p>
+<theorem xml:id="fs-id1165041796868"> <!-- Change next end note to end theorem -->
+<title>Fermat’s Theorem</title>
+<p id="fs-id1165041766544">If <m>f</m> has a local extremum at <m>c</m> and <m>f</m> is differentiable at <m>c,</m> then <m>f'(c)=0.</m></p>
+<!--Commenting out proof
+<proof id="fs-id1165041842239">
+<p id="fs-id1165041778659">Suppose <m>f</m> has a local extremum at <m>c</m> and <m>f</m> is differentiable at <m>c.</m> We need to show that <m>f'(c)=0.</m> To do this, we will show that <m>f'(c)\geq 0</m> and <m>f'(c)\leq 0,</m> and therefore <m>f'(c)=0.</m> Since <m>f</m> has a local extremum at <m>c,</m> <m>f</m> has a local maximum or local minimum at <m>c.</m> Suppose <m>f</m> has a local maximum at <m>c.</m> The case in which <m>f</m> has a local minimum at <m>c</m> can be handled similarly. There then exists an open interval <m>I</m> such that <m>f(c)\geq f(x)</m> for all <m>x∈I.</m> Since <m>f</m> is differentiable at <m>c,</m> from the definition of the derivative, we know that</p>
+<me>f'(c)=\lim_{x\to c}\frac{f(x)-f(c)}{x-c}.</me>
+<p id="fs-id1165041888370">Since this limit exists, both one-sided limits also exist and equal <m>f'(c).</m> Therefore,</p>
+<men xml:id="fs-id1165040744293">f'(c)=\lim_{x\to c^+}\frac{f(x)-f(c)}{x-c},</men>
+<p id="fs-id1165042015555">and</p>
+<men>f'(c)=\lim_{x\to c^-}\frac{f(x)-f(c)}{x-c}.</men>
+<p id="fs-id1165042015667">Since <m>f(c)</m> is a local maximum, we see that <m>f(x)-f(c)\leq 0</m> for <m>x</m> near <m>c.</m> Therefore, for <m>x</m> near <m>c,</m> but <m>x\gt c,</m> we have <m>\frac{f(x)-f(c)}{x-c}\leq 0.</m> From <xref ref="fs-id1165040744293"/> we conclude that <m>f'(c)\leq 0.</m> Similarly, it can be shown that <m>f'(c)\geq 0.</m> Therefore, <m>f'(c)=0.</m></p>
+</proof>
+-->
+</theorem>
+<p id="fs-id1165041832065">From Fermat’s theorem, we conclude that if <m>f</m> has a local extremum at <m>c,</m> then either <m>f'(c)=0</m> or <m>f'(c)</m> is undefined. In other words, local extrema can only occur at critical points.</p>
+<p id="fs-id1165041832115">Note this theorem does not claim that a function <m>f</m> must have a local extremum at a critical point. Rather, it states that critical points are candidates for local extrema. For example, consider the function <m>f(x)=x^3.</m> We have <m>f'(x)=3x^2=0</m> when <m>x=0.</m> Therefore, <m>x=0</m> is a critical point. However, <m>f(x)=x^3</m> is increasing over <m>(-\infty ,\infty ),</m> and thus <m>f</m> does not have a local extremum at <m>x=0.</m> In <xref ref="CNX_Calc_Figure_04_03_004"/>, we see several different possibilities for critical points. In some of these cases, the functions have local extrema at critical points, whereas in other cases the functions do not. Note that these graphs do not show all possibilities for the behavior of a function at a critical point.</p>
+<figure xml:id="CNX_Calc_Figure_04_03_004">
+
+<image source="CNX_Calc_Figure_04_03_004.jpg" width="80%">
+  <description>"This figure has five parts a, b, c, d, and e. In figure a, a parabola is shown facing down in quadrant I; there is a horizontal tangent line at the local maximum marked f&#x2019;(c) = 0. In figure b, there is a function drawn with an asymptote at c, meaning that the function increases toward infinity on both sides of c; it is noted that f&#x2019;(c) is undefined. In figure c, a version of the absolute value graph is shown that has been shifted so that its minimum is in quadrant I with x = c. It is noted that f&#x2019;(c) is undefined. In figure d, a version of the function f(x) = x3 is shown that has been shifted so that its inflection point is in quadrant I with x = c. Its inflection point at (c, f(c)) has a horizontal line through it, and it is noted that f&#x2019;(c) = 0. In figure e, a version of the function f(x) = x1/3 is shown that has been shifted so that its inflection point is in quadrant I with x = c. Its inflection point at (c, f(c)) has a vertical line through it, and it is noted that f&#x2019;(c) is undefined."
+    </description></image> <caption>(a–e) A function <m>f</m> has a critical point at <m>c</m> if <m>f'(c)=0</m> or <m>f'(c)</m> is undefined. A function may or may not have a local extremum at a critical point.</caption>
+</figure>
+<p id="fs-id1165041979108">Later in this chapter we look at analytical methods for determining whether a function actually has a local extremum at a critical point. For now, let’s turn our attention to finding critical points. We will use graphical observations to determine whether a critical point is associated with a local extremum.</p>
+<example xml:id="fs-id1165041979119">
+<title>Locating Critical Points</title>
+ <statement id="fs-id1165041979123">
+<p id="fs-id1165041979129">For each of the following functions, find all critical points. Use a graphing utility to determine whether the function has a local extremum at each of the critical points.</p>
+<ol marker="(a)">
+<li><m>f(x)=\frac{1}{3}x^3-\frac{5}{2}x^2+4x</m></li>
+<li><m>f(x)=(x^2-1)^3</m></li>
+<li><m>f(x)=\frac{4x}{1+x^2}</m></li>
+</ol>
+</statement>
+<solution id="fs-id1165041837081">
+<ol marker="(a)">
+<li>The derivative <m>f'(x)=x^2-5x+4</m> is defined for all real numbers <m>x.</m> Therefore, we only need to find the values for <m>x</m> where <m>f'(x)=0.</m> Since <m>f'(x)=x^2-5x+4=(x-4)}{(x-1),</m> the critical points are <m>x=1</m> and <m>x=4.</m> From the graph of <m>f</m> in <xref ref="CNX_Calc_Figure_04_03_005"/>, we see that <m>f</m> has a local maximum at <m>x=1</m> and a local minimum at <m>x=4.</m>
+<figure xml:id="CNX_Calc_Figure_04_03_005">
+  <image source="CNX_Calc_Figure_04_03_005.jpg" width="80%">
+<description>"The function f(x) = (1/3) x3 &#x2013; (5/2) x2 + 4x is graphed. The function has local maximum at x = 1 and local minimum at x = 4."
+ </description></image> <caption>This function has a local maximum and a local minimum.</caption>
+</figure></li>
+<li>Using the chain rule, we see the derivative is
+<me>f'(x)=3(x^2-1)^2(2x)=6x(x^2-1)^2.</me>
+Therefore, <m>f</m> has critical points when <m>x=0</m> and when <m>x^2-1=0.</m> We conclude that the critical points are <m>x=0,\pm 1.</m> From the graph of <m>f</m> in <xref ref="CNX_Calc_Figure_04_03_006"/>, we see that <m>f</m> has a local (and absolute) minimum at <m>x=0,</m> but does not have a local extremum at <m>x=1</m> or <m>x=-1.</m>
+<figure xml:id="CNX_Calc_Figure_04_03_006">
+  <image source="CNX_Calc_Figure_04_03_006.jpg" width="80%">
+<description>"The function f(x) = (x2 &#x2212; 1)3 is graphed. The function has local minimum at x = 0, and inflection points at x = &#xB1;1.">
+ </description></image> <caption>This function has three critical points: <m>x=0,</m> <m>x=1,</m> and <m>x=-1.</m> The function has a local (and absolute) minimum at <m>x=0,</m> but does not have extrema at the other two critical points.</caption>
+</figure></li>
+<li>By the chain rule, we see that the derivative is
+<me>f'(x)=\frac{(1+x^2)(4)-4x(2x)}{(1+x^2)^2}=\frac{4-4x^2}{(1+x^2)^2}.</me>
+The derivative is defined everywhere. Therefore, we only need to find values for <m>x</m> where <m>f'(x)=0.</m> Solving <m>f'(x)=0,</m> we see that <m>4-4x^2=0,</m> which implies <m>x=\pm 1.</m> Therefore, the critical points are <m>x=\pm 1.</m> From the graph of <m>f</m> in <xref ref="CNX_Calc_Figure_04_03_007"/>, we see that <m>f</m> has an absolute maximum at <m>x=1</m> and an absolute minimum at <m>x=-1.</m> Hence, <m>f</m> has a local maximum at <m>x=1</m> and a local minimum at <m>x=-1.</m> (Note that if <m>f</m> has an absolute extremum over an interval <m>I</m> at a point <m>c</m> that is not an endpoint of <m>I,</m> then <m>f</m> has a local extremum at <m>c.)</m>
+<figure xml:id="CNX_Calc_Figure_04_03_007">
+  <image source="CNX_Calc_Figure_04_03_007.jpg" width="80%">
+<description>"The function f(x) = 4x/(1 + x2) is graphed. The function has local/absolute maximum at x = 1 and local/absolute minimum at x = &#x2212;1." </description></image> <caption>This function has an absolute maximum and an absolute minimum.</caption>
+</figure></li>
+</ol>
+</solution>
+</example>
+<exercise> <statement id="fs-id1165040757546">
+<p id="fs-id1165040757549">Find all critical points for <m>f(x)=x^3-\frac{1}{2}x^2-2x+1.</m></p>
+</statement>
+<solution id="fs-id1165040757598">
+<p id="fs-id1165040757600"><m>x=-\frac{2}{3},</m> <m>x=1</m></p>
+</solution>
+<hint>
+<p id="fs-id1165040757635">Calculate <m>f'(x).</m></p>
+</hint></exercise>
+</subsection>
+<subsection id="fs-id1165040757660">
+<title>Locating Absolute Extrema</title>
+<p id="fs-id1165040757666">The extreme value theorem states that a continuous function over a closed, bounded interval has an absolute maximum and an absolute minimum. As shown in <xref ref="CNX_Calc_Figure_04_03_002"/>, one or both of these absolute extrema could occur at an endpoint. If an absolute extremum does not occur at an endpoint, however, it must occur at an interior point, in which case the absolute extremum is a local extremum. Therefore, by <xref ref="fs-id1165041796868"/>, the point <m>c</m> at which the local extremum occurs must be a critical point. We summarize this result in the following theorem.</p>
+<theorem xml:id="fs-id1165040757685">
+<title>Location of Absolute Extrema</title>
+<p id="fs-id1165040757692">Let <m>f</m> be a continuous function over a closed, bounded interval <m>I.</m> The absolute maximum of <m>f</m> over <m>I</m> and the absolute minimum of <m>f</m> over <m>I</m> must occur at endpoints of <m>I</m> or at critical points of <m>f</m> in <m>I.</m></p>
+</theorem>
+<p id="fs-id1165042035392">With this idea in mind, let’s examine a procedure for locating absolute extrema.</p>
+<note id="fs-id1165042035397" class="problem-solving">
+<title>Problem-Solving Strategy: Locating Absolute Extrema over a Closed Interval</title>
+<p id="fs-id1165042035403">Consider a continuous function <m>f</m> defined over the closed interval <m>[a,b].</m></p>
+<ol id="fs-id1165042035429" list-type="enumerated" number-style="arabic">
+<li>Evaluate <m>f</m> at the endpoints <m>x=a</m> and <m>x=b.</m></li>
+<li>Find all critical points of <m>f</m> that lie over the interval <m>(a,b)</m> and evaluate <m>f</m> at those critical points.</li>
+<li>Compare all values found in (1) and (2). From <xref ref="fs-id1165040757685"/>, the absolute extrema must occur at endpoints or critical points. Therefore, the largest of these values is the absolute maximum of <m>f.</m> The smallest of these values is the absolute minimum of <m>f.</m></li>
+</ol>
+</note>
+<p id="fs-id1165042035511">Now let’s look at how to use this strategy to find the absolute maximum and absolute minimum values for continuous functions.</p>
+<example xml:id="fs-id1165042035517">
+<title>Locating Absolute Extrema</title>
+ <statement id="fs-id1165042035521">
+<p id="fs-id1165042035527">For each of the following functions, find the absolute maximum and absolute minimum over the specified interval and state where those values occur.</p>
+<ol marker="(a)">
+<li><m>f(x)=-x^2+3x-2</m> over <m>[1,3].</m></li>
+<li><m>f(x)=x^2-3x^{2/3}</m> over <m>[0,2].</m></li>
+</ol>
+</statement>
+<solution id="fs-id1165042068483">
+<ol marker="(a)">
+  <li>Step 1. Evaluate <m>f</m> at the endpoints <m>x=1</m> and <m>x=3.</m>
+<me>f(1)=0 \text{ and } f(3)=-2</me>
+Step 2. Since <m>f'(x)=-2x+3,</m> <m>f'</m> is defined for all real numbers <m>x.</m> Therefore, there are no critical points where the derivative is undefined. It remains to check where <m>f'(x)=0.</m> Since <m>f'(x)=-2x+3=0</m> at <m>x=\frac{3}{2}</m> and <m>\frac{3}{2}</m> is in the interval <m>[1,3],</m> <m>f(\frac{3}{2})</m> is a candidate for an absolute extremum of <m>f</m> over <m>[1,3].</m> We evaluate <m>f(\frac{3}{2})</m> and find
+<me>f(\frac{3}{2})=\frac{1}{4}.</me>
+Step 3. We set up the following table to compare the values found in steps 1 and 2.
+<table xml:id="fs-id1165042088411" class="unnumbered" summary="This table has three columns and four rows. The first row is a header row, and it reads x, f(x), and Conclusion. Below the header row, the first column reads 0, 0, and blank. The second column reads 3/2, 1/4, and Absolute maximum. The third column reads 3, &#x2212;2, and Absolute minimum.">
+
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="center"><m>x</m></cell>
+<cell valign="top" halign ="center"><m>f(x)</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>0</m></cell>
+<cell valign="top" halign ="center"><m>0</m></cell>
+<cell valign="top" halign ="left"/>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>\frac{3}{2}</m></cell>
+<cell valign="top" halign ="center"><m>\frac{1}{4}</m></cell>
+<cell valign="top" halign ="left">Absolute maximum</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>3</m></cell>
+<cell valign="top" halign ="center"><m>-2</m></cell>
+<cell valign="top" halign ="left">Absolute minimum</cell>
+</row>
+</tabular>
+</table>
+From the table, we find that the absolute maximum of <m>f</m> over the interval [1, 3] is <m>\frac{1}{4},</m> and it occurs at <m>x=\frac{3}{2}.</m> The absolute minimum of <m>f</m> over the interval [1, 3] is <m>-2,</m> and it occurs at <m>x=3</m> as shown in the following graph.
+<figure xml:id="CNX_Calc_Figure_04_03_008">
+  <image source="CNX_Calc_Figure_04_03_008.jpg" width="80%">
+<description>"The function f(x) = &#x2013; x2 + 3x &#x2013; 2 is graphed from (1, 0) to (3, &#x2212;2), with its maximum marked at (3/2, 1/4)." </description></image> <caption>This function has both an absolute maximum and an absolute minimum.</caption>
+</figure></li>
+<li>Step 1. Evaluate <m>f</m> at the endpoints <m>x=0</m> and <m>x=2.</m>
+<me>f(0)=0 \text{ and } f(2)=4-3\sqrt[3]{4} \approx -0.762</me>
+Step 2. The derivative of <m>f</m> is given by
+<me>f'(x)=2x-\frac{2}{x^{1/3}}=\frac{2x^{4/3}-2}{x^{1/3}}</me>
+for <m>x\neq 0.</m> The derivative is zero when <m>2x^{4/3}-2=0,</m> which implies <m>x=\pm 1.</m> The derivative is undefined at <m>x=0.</m> Therefore, the critical points of <m>f</m> are <m>x=0,1,-1.</m> The point <m>x=0</m> is an endpoint, so we already evaluated <m>f(0)</m> in step 1. The point <m>x=-1</m> is not in the interval of interest, so we need only evaluate <m>f(1).</m> We find that
+<me>f(1)=-2.</me>
+Step 3. We compare the values found in steps 1 and 2, in the following table.
+<table xml:id="fs-id1165041848355" class="unnumbered" summary="This table has three columns and four rows. The first row is a header row, and it reads x, f(x), and Conclusion. Below the header row, the first column reads 0, 0, and Absolute maximum. The second column reads 1, &#x2212;2, and Absolute minimum. The third column reads 2, &#x2212;0.762, and blank.">
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="center"><m>x</m></cell>
+<cell valign="top" halign ="center"><m>f(x)</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>0</m></cell>
+<cell valign="top" halign ="center"><m>0</m></cell>
+<cell valign="top" halign ="left">Absolute maximum</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>1</m></cell>
+<cell valign="top" halign ="center"><m>-2</m></cell>
+<cell valign="top" halign ="left">Absolute minimum</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>2</m></cell>
+<cell valign="top" halign ="center"><m>-0.762</m></cell>
+<cell valign="top" halign ="left"/>
+</row>
+</tabular>
+</table>
+We conclude that the absolute maximum of <m>f</m> over the interval [0, 2] is zero, and it occurs at <m>x=0.</m> The absolute minimum is -2, and it occurs at <m>x=1</m> as shown in the following graph.
+<figure xml:id="CNX_Calc_Figure_04_03_009">
+  <image source="CNX_Calc_Figure_04_03_009.jpg" width="80%">
+<description>"The function f(x) = x2 &#x2013; 3x2/3 is graphed from (0, 0) to (2, &#x2212;0.762), with its minimum marked at (1, &#x2212;2)."  </description></image> <caption>This function has an absolute maximum at an endpoint of the interval.</caption>
+</figure></li>
+</ol></solution>
+</example>
+<exercise>  <statement id="fs-id1165042108873">
+<p id="fs-id1165042108875">Find the absolute maximum and absolute minimum of <m>f(x)=x^2-4x+3</m> over the interval <m>[1,4].</m></p>
+</statement>
+<solution id="fs-id1165042108932">
+<p id="fs-id1165042108934">The absolute maximum is <m>3</m> and it occurs at <m>x=4.</m> The absolute minimum is <m>-1</m> and it occurs at <m>x=2.</m></p>
+</solution>
+<hint>
+<p id="fs-id1165040729356">Look for critical points. Evaluate <m>f</m> at all critical points and at the endpoints.</p>
+</hint>
+</exercise>
+<p id="fs-id1165040729367">At this point, we know how to locate absolute extrema for continuous functions over closed intervals.</p>
+<p>We will next determine the location and existence of absolute extrema on intervals that are not closed. Let us consider the existence of absolute extrema by analyzing the graph of <m>f(x)=x^2-4x</m> on the interval (1,5) as shown in <xref ref="Busi_Calc_Figure_04_03_001"/>. Note that here the interval (1,5) is not closed. We can see that the absolute minimum exists and is <m>f(2)=-4</m>. If an absolute maximum existed, it would be at <m>x=5</m>, but <m>f</m> is not defined at <m>x=5</m> since it is not included in our given interval. Here, we would say that the absolute maximum of <m>f</m> over the inteval (1,5) DNE.</p>
+<figure xml:id="Busi_Calc_Figure_04_03_001">
+  <image source="Busi_Calc_Figure_04_03_001.png" width="50%">
+<description>"The figure shows the graph of <m>f(x)=x^2-4x</m> on the interval from <m>x=1</m> to <m>x=5</m>. There are open circles at the endpoints." </description></image> <caption>The given function has an absolute minimum of -4 at <m>x=1.</m> The function does not have an absolute maximum.</caption>
+</figure>
+<p>A problem-solving strategy has been outlined below for intervals that are not closed.</p>
+<note id="fs-id1165042035397" class="problem-solving">
+<title>Problem-Solving Strategy: Locating and Determining the Existence of Absolute Extrema over an Interval that is not Closed</title>
+<p id="fs-id1165042035403">Consider a continuous function <m>f</m> defined over an interval that is not closed i.e.<m>(a,b],\;[a,b),\text{ or }(a,b).</m></p>
+<ol id="fs-id1165042035429" list-type="enumerated" number-style="arabic">
+<li<p>>We would like to evaluate <m>f</m> at the endpoints <m>x=a</m> and <m>x=b</m> but they may not be included in the interval. As a result, we may need to take a one sided limit. The proceedure is outlined below:</p>
+  <ul>
+  <li>If the left endpoint <m>a</m> is not included in the interval (i.e. the given interval is (a,b]), then evaluate <m>\displaystyle{\lim_{x\to a^+}f(x)}</m> and <m>f(b).</m></li>
+  <li>If the right endpoint <m>b</m> is not included in the interval (i.e. the given interval is [a,b)), then evaluate <m>\displaystyle{\lim_{x\to b^-}f(x)}</m> and <m>f(a).</m></li>
+  <li>If both the left and right endpoints <m>a</m> and <m>b</m> are not included in the interval (i.e. the given interval is (a,b)), then evaluate <m>\displaystyle{\lim_{x\to a^+}f(x)}</m> and <m>\displaystyle{\lim_{x\to b^-}f(x)}.</m></li>
+  </ul>
+</li>
+<li>Find all critical points of <m>f</m> that lie over the interval <m>(a,b)</m> and evaluate <m>f</m> at those critical points.</li>
+<li>Compare all values found in (1) and (2). We know that the absolute extrema must occur at endpoints or critical points. However, if absolute extrema occurs at an endpoint not included in the interval, we say the absolute maximum or absolute minimum DNE. Therefore, the largest of these values is the absolute maximum of <m>f</m> if it occurred at a point included in the interval. The smallest of these values is the absolute minimum of <m>f</m> if it occurred at a point included in the interval. Otherwise, the absolute maximum or absolute minimum DNE.</li>
+</ol>
+</note>
+
+<example>
+<statement><p>Find the absolute maximum and absolute minimum of <m>f(x)=2+(x+5)e^x</m> over the following intervals.</p>
+<ol marker="(a)">
+<li>[-7,1]</li>
+<li>(-7,1]</li>
+<li>[-7,1)</li>
+</ol>
+</statement>
+<solution>
+Step 1. Evaluate <m>f</m> at the endpoints <m>x=-7</m> and <m>x=1.</m>
+<me>f(-7)\approx 1.9982 \text{ and } f(1)\approx 18.3097</me>
+Step 2. Using the product rule, <m>f'(x)=e^x+(x+5)e^x=e^x(x+6).</m> Note that <m>f'</m> is defined for all real numbers <m>x.</m> Therefore, there are no critical points where the derivative is undefined. It remains to check where <m>f'(x)=0.</m> We know that <m>e^x\neq 0</m> for all real numbers <m>x</m>. Thus, <m>f'(x)=e^x(x+6)=0</m> at <m>x=-6</m> and note that it is in the intervals <m>[-7,1],\;[-7,1)\text{ and }(-7,1].</m> <m>f(-6)</m> is a candidate for an absolute extremum of <m>f</m> over the intervals <m>[-7,1],\;[-7,1)\text{ and }(-7,1].</m> We evaluate <m>f(-6)</m> and find
+<me>f(-6)\approx 1.9975.</me>
+Step 3. We set up the following tables to compare the values found in steps 1 and 2.
+
+<ol marker="(a)">
+<li> For the interval <m>[-7,1]</m>
+<table class="unnumbered" summary="This table has three columns and four rows. The first row is a header row, and it reads x, f(x), and Conclusion. Below the header row, the first column reads x, -7, -6, and 1. The second column reads f(x), 1.9982, 1.9975, and 18.3097. The third column reads Conclusion, blank, Absolute minimum, Absolute maximum.">
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="center"><m>x</m></cell>
+<cell valign="top" halign ="center"><m>f(x)</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>-7</m></cell>
+<cell valign="top" halign ="center"><m>1.9982</m></cell>
+<cell valign="top" halign ="left"/>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>-6</m></cell>
+<cell valign="top" halign ="center"><m>1.9975</m></cell>
+<cell valign="top" halign ="left">Absolute minimum</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>1</m></cell>
+<cell valign="top" halign ="center"><m>18.3097</m></cell>
+<cell valign="top" halign ="left">Absolute maximum</cell>
+</row>
+</tabular>
+</table>
+From the table, we find that the absolute maximum of <m>f</m> over the interval [-7,1] is <m>2+6e\approx 18.3097,</m> and it occurs at <m>x=1.</m> The absolute minimum of <m>f</m> over the interval [-7, 1] is <m>2-e^{-6}\approx 1.9975,</m> and it occurs at <m>x=-6</m> as shown in the following graph.
+<figure xml:id="Busi_Calc_Figure_04_03_002 ">
+  <image source="Busi_Calc_Figure_04_03_002.png" width="80%">
+<description>"The function <m>f(x) = 2+(x+5)e^x</m> is graphed on the interval [-7,1] with both closed endpoints at x=-7 and x=1." </description></image> <caption> <m>f(x) = 2+(x+5)e^x</m> on the interval [-7,1].</caption>
+</figure>
+</li>
+<li>
+For the interval <m>(-7,1]</m>
+<table class="unnumbered" summary="This table has three columns and four rows. The first row is a header row, and it reads x, f(x), and Conclusion. Below the header row, the first column reads x, -7, -6, and 1. The second column reads f(x), 1.9982, 1.9975, and 18.3097. The third column reads Conclusion, blank, Absolute minimum, Absolute maximum.">
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="center"><m>x</m></cell>
+<cell valign="top" halign ="center"><m>f(x)</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>-7</m></cell>
+<cell valign="top" halign ="center"><m>1.9982</m></cell>
+<cell valign="top" halign ="left"/>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>-6</m></cell>
+<cell valign="top" halign ="center"><m>1.9975</m></cell>
+<cell valign="top" halign ="left">Absolute minimum</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>1</m></cell>
+<cell valign="top" halign ="center"><m>18.3097</m></cell>
+<cell valign="top" halign ="left">Absolute maximum</cell>
+</row>
+</tabular>
+</table>
+From the table, we find that the absolute maximum of <m>f</m> over the interval (-7,1] is <m>2+6e\approx 18.3097,</m> and it occurs at <m>x=1.</m> The absolute minimum of <m>f</m> over the interval (-7, 1] is <m>2-e^{-6}\approx 1.9975,</m> and it occurs at <m>x=-6</m> as shown in the following graph.
+<figure xml:id="Busi_Calc_Figure_04_03_003 ">
+  <image source="Busi_Calc_Figure_04_03_003.png" width="80%">
+<description>"The function <m>f(x) = 2+(x+5)e^x</m> is graphed on the interval (-7,1] with an open left endpoint at x=-7 and closed right endpoint at x=1." </description></image> <caption> <m>f(x) = 2+(x+5)e^x</m> on the interval (-7,1].</caption>
+</figure>
+</li>
+<li>
+For the interval <m>[-7,1)</m>
+<table class="unnumbered" summary="This table has three columns and four rows. The first row is a header row, and it reads x, f(x), and Conclusion. Below the header row, the first column reads x, -7, -6, and 1. The second column reads f(x), 1.9982, 1.9975, and 18.3097. The third column reads Conclusion, blank, Absolute minimum, Absolute maximum DNE.">
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="center"><m>x</m></cell>
+<cell valign="top" halign ="center"><m>f(x)</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>-7</m></cell>
+<cell valign="top" halign ="center"><m>1.9982</m></cell>
+<cell valign="top" halign ="left"/>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>-6</m></cell>
+<cell valign="top" halign ="center"><m>1.9975</m></cell>
+<cell valign="top" halign ="left">Absolute minimum</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>1</m></cell>
+<cell valign="top" halign ="center"><m>18.3097</m></cell>
+<cell valign="top" halign ="left">Absolute maximum DNE</cell>
+</row>
+</tabular>
+</table>
+From the table, we find that the absolute maximum of <m>f</m> over the interval [-7,1) DNE since <m>x=1</m> is not included in the interval. The absolute minimum of <m>f</m> over the interval [-7, 1) is <m>2-e^{-6}\approx 1.9975,</m> and it occurs at <m>x=-6</m> as shown in the following graph.
+<figure xml:id="Busi_Calc_Figure_04_03_004 ">
+  <image source="Busi_Calc_Figure_04_03_004.png" width="80%">
+<description>"The function <m>f(x) = 2+(x+5)e^x</m> is graphed on the interval [-7,1) with a closed left endpoint at x=-7 and open right endpoint at x=1." </description></image> <caption> <m>f(x) = 2+(x+5)e^x</m> on the interval [-7,1).</caption>
+</figure>
+</li>
+</ol>
+</solution>
+</example>
+
+<exercise>
+<statement><p>Find the absolute maximum and absolute minimum of <m>g(x)=12x^2-32x</m> over the interval <m>[-2,3)</m></p>
+</statement>
+<solution>From <m>g'(x)=-32x-32</m>, we obtain a critical value at <m>x=-1</m> which is included in the interval <m>[-2,3)</m>. The results are summarized in the following table.
+<table class="unnumbered" summary="This table has three columns and four rows. The first row is a header row, and it reads x, g(x), and Conclusion. Below the header row, the first column reads x, -2, -1, and 3. The second column reads f(x), 0, 16, -240. The third column reads Conclusion, blank, Absolute minimum, Absolute maximum DNE.">
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="center"><m>x</m></cell>
+<cell valign="top" halign ="center"><m>g(x)</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>-2</m></cell>
+<cell valign="top" halign ="center"><m>0</m></cell>
+<cell valign="top" halign ="left"/>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>-1</m></cell>
+<cell valign="top" halign ="center"><m>16</m></cell>
+<cell valign="top" halign ="left">Absolute maximum</cell>
+</row>
+<row>
+<cell valign="top" halign ="center"><m>3</m></cell>
+<cell valign="top" halign ="center"><m>-240</m></cell>
+<cell valign="top" halign ="left">Absolute minimum DNE</cell>
+</row>
+</tabular>
+</table>
+</solution>
+<hint>
+Look for critical points. Evaluate <m>g</m> at all critical points and at the endpoints.
+</hint>
+</exercise>
+
+<p>In this section, we determined the value and existence of absolute extrema over any given interval. We also defined local extrema and determined that if a function <m>f</m> has a local extremum at a point <m>c,</m> then <m>c</m> must be a critical point of <m>f.</m> However, <m>c</m> being a critical point is not a sufficient condition for <m>f</m> to have a local extremum at <m>c.</m> Later in this chapter, we show how to determine whether a function actually has a local extremum at a critical point. <!-- Commenting out Mean Value Theorem
+First, however, we need to introduce the Mean Value Theorem, which will help as we analyze the behavior of the graph of a function.
+-->
+</p>
+</subsection>
+<subsection id="fs-id1165040729416" class="key-concepts">
+<title>Key Concepts</title>
+<ul id="fs-id1165040729423" list-type="bulleted" bullet-style="bullet">
+<li>A function may have both an absolute maximum and an absolute minimum, have just one absolute extremum, or have no absolute maximum or absolute minimum.</li>
+<li>If a function has a local extremum, the point at which it occurs must be a critical point. However, a function need not have a local extremum at a critical point.</li>
+<li>A continuous function over a closed, bounded interval has an absolute maximum and an absolute minimum. Each extremum occurs at a critical point or an endpoint. If the interval is not closed, then there may not exist an absolute maximum or minimum.</li>
+</ul>
+</subsection>
+</section>
+<?ignore
+<subsection id="fs-id1165042199377" class="section-exercises">
+
+<!-- Move title outside statement--> <statement id="fs-id1165042199383">
+<p id="fs-id1165042199385">In precalculus, you learned a formula for the position of the maximum or minimum of a quadratic equation <m>y=ax^2+bx+c,</m> which was <m>m=-\frac{b(2a)}.</m> Prove this formula using calculus.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042199449">
+<p id="fs-id1165042199451">If you are finding an absolute minimum over an interval <m>[a,b],</m> why do you need to check the endpoints? Draw a graph that supports your hypothesis.</p>
+</statement>
+<solution id="fs-id1165042199475">
+<p id="fs-id1165042199477">Answers may vary</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042199485">
+<p id="fs-id1165042199487">If you are examining a function over an interval <m>(a,b),</m> for <m>a</m> and <m>b</m> finite, is it possible not to have an absolute maximum or absolute minimum?</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042278262">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1165042278265">When you are checking for critical points, explain why you also need to determine points where <m>f'(x)</m> is undefined. Draw a graph to support your explanation.</p></statement>
+<solution id="fs-id1165042278283">
+<p id="fs-id1165042278285">Answers will vary</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042278292">
+<p id="fs-id1165042278294">Can you have a finite absolute maximum for <m>y=ax^2+bx+c</m> over <m>(-\infty ,\infty )?</m> Explain why or why not using graphical arguments.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042278368">
+<p id="fs-id1165042278370">Can you have a finite absolute maximum for <m>y=ax^3+bx^2+cx+d</m> over <m>(-\infty ,\infty )</m> assuming <m>a</m> is non-zero? Explain why or why not using graphical arguments.</p>
+</statement>
+<solution id="fs-id1165042278434">
+<p id="fs-id1165042278437">No; answers will vary</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042278444">
+<p id="fs-id1165042278446">Let <m>m</m> be the number of local minima and <m>M</m> be the number of local maxima. Can you create a function where <m>M\gt m+2?</m> Draw a graph to support your explanation.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042065908">
+<p id="fs-id1165042065910">Is it possible to have more than one absolute maximum? Use a graphical argument to prove your hypothesis.</p>
+</statement>
+<solution id="fs-id1165042065915">
+<p id="fs-id1165042065918">Since the absolute maximum is the function (output) value rather than the <m>x</m> value, the answer is no; answers will vary</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042065930">
+<p id="fs-id1165042065932">Is it possible to have no absolute minimum or maximum for a function? If so, construct such a function. If not, explain why this is not possible.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042065948">
+<p id="fs-id1165042065950"><emphasis effect="bold">[T]</emphasis> Graph the function <m>y=<m:msup>eax</m:msup>.</m> For which values of <m>a,</m> on any infinite domain, will you have an absolute minimum and absolute maximum?</p>
+</statement>
+<solution id="fs-id1165042065983">
+<p id="fs-id1165042065985">When <m>a=0</m></p>
+</solution>
+
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1165042065999">For the following exercises, determine where the local and absolute maxima and minima occur on the graph given. Assume the graph represents the entirety of each function.</p>
+<!-- Move title outside statement--> <statement id="fs-id1165042066006">
+<description>"The function graphed starts at (&#x2212;4, 60), decreases rapidly to (&#x2212;3, &#x2212;40), increases to (&#x2212;1, 10) before decreasing slowly to (2, 0), at which point it increases rapidly to (3, 30).">
+<image source="CNX_Calc_Figure_04_03_201.jpg" width="80%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042066034">
+<description>"The function graphed starts at (&#x2212;2.2, 10), decreases rapidly to (&#x2212;2, &#x2212;11), increases to (&#x2212;1, 5) before decreasing slowly to (1, 3), at which point it increases to (2, 7), and then decreases to (3, &#x2212;20).">
+<image source="CNX_Calc_Figure_04_03_202.jpg" width="80%">
+
+</statement>
+<solution id="fs-id1165042066051">
+<p id="fs-id1165042066053">Absolute minimum at 3; Absolute maximum at -2.2; local minima at -2, 1; local maxima at -1, 2</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042066062">
+<description>"The function graphed starts at (&#x2212;3, &#x2212;1), increases rapidly to (&#x2212;2, 0.7), decreases to (&#x2212;1, &#x2212;0.25) before decreasing slowly to (1, 0.25), at which point it decreases to (2, 0.7), and then increases to (3, 1).">
+<image source="CNX_Calc_Figure_04_03_203.jpg" width="80%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042066091">
+<description>"The function graphed starts at (&#x2212;2.5, 1), decreases rapidly to (&#x2212;2, &#x2212;1.25), increases to (&#x2212;1, 0.25) before decreasing slowly to (0, 0.2), at which point it increases slowly to (1, 0.25), then decreases rapidly to (2, &#x2212;1.25), and finally increases to (2.5, 1).">
+<image source="CNX_Calc_Figure_04_03_204.jpg" width="80%">
+
+</statement>
+<solution id="fs-id1165040665495">
+<p id="fs-id1165040665497">Absolute minima at -2, 2; absolute maxima at -2.5, 2.5; local minimum at 0; local maxima at -1, 1</p>
+</solution>
+
+<p id="fs-id1165040665504">For the following problems, draw graphs of <m>f(x),</m> which is continuous, over the interval <m>[-4,4]</m> with the following properties:</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165040665542">
+<p id="fs-id1165040665544">Absolute maximum at <m>x=2</m> and absolute minima at <m>x=\pm 3</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165040665579">
+<p id="fs-id1165040665581">Absolute minimum at <m>x=1</m> and absolute maximum at <m>x=2</m></p>
+</statement>
+<solution id="fs-id1165040665604">
+<p id="fs-id1165040665606">Answers may vary.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165040665613">
+<p id="fs-id1165040665616">Absolute maximum at <m>x=4,</m> absolute minimum at <m>x=-1,</m> local maximum at <m>x=-2,</m> and a critical point that is not a maximum or minimum at <m>x=2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165040665673">
+<p id="fs-id1165040665675">Absolute maxima at <m>x=2</m> and <m>x=-3,</m> local minimum at <m>x=1,</m> and absolute minimum at <m>x=4</m></p>
+</statement>
+<solution id="fs-id1165042110001">
+<p id="fs-id1165042110003">Answers may vary.</p>
+</solution>
+
+<p id="fs-id1165042110008">For the following exercises, find the critical points in the domains of the following functions.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042110015">
+<p id="fs-id1165042110017"><m>y=4x^3-3x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042110063">
+<p id="fs-id1165042110065"><m>y=4\sqrt{x}-x^2</m></p>
+</statement>
+<solution id="fs-id1165042110087">
+<p id="fs-id1165042110089"><m>x=1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042110104">
+<p id="fs-id1165042110106"><m>y=\frac{1x-1}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042110136">
+<p id="fs-id1165042110138"><m>y=\text{ ln }(x-2)</m></p>
+</statement>
+<solution id="fs-id1165042110165">
+<p id="fs-id1165042110167">None</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042110174">
+<p id="fs-id1165042110176"><m>y=\text{ tan }(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042110208">
+<p id="fs-id1165042110210"><m>y=\sqrt{4-x^2}</m></p>
+</statement>
+<solution id="fs-id1165040750574">
+<p id="fs-id1165040750576"><m>x=0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165040750591">
+<p id="fs-id1165040750593"><m>y=<m:msup>x3/2</m:msup>-3<m:msup>x5/2</m:msup></m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165040750658">
+<p id="fs-id1165040750660"><m>y=\frac{x^2-1}{x^2+2x-3}</m></p>
+</statement>
+<solution id="fs-id1165040750699">
+<p id="fs-id1165040750701">None</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165040750708">
+<p id="fs-id1165040750711"><m>y=<m:msup>\sin2</m:msup>(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165040750769">
+<p id="fs-id1165040750771"><m>y=x+\frac{1}{x}</m></p>
+</statement>
+<solution id="fs-id1165041864896">
+<p id="fs-id1165041864898"><m>x=-1,1</m></p>
+</solution>
+
+<p id="fs-id1165041864916">For the following exercises, find the local and/or absolute maxima for the functions over the specified domain.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165041864922">
+<p id="fs-id1165041864924"><m>f(x)=x^2+3</m> over <m>[-1,4]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165041865043">
+<p id="fs-id1165041865045"><m>y=x^2+\frac{2}{x}</m> over <m>[1,4]</m></p>
+</statement>
+<solution id="fs-id1165041865085">
+<p id="fs-id1165041865087">Absolute maximum: <m>x=4,</m> <m>y=\frac{332};</m> absolute minimum: <m>x=1,</m> <m>y=3</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042132536">
+<p id="fs-id1165042132538"><m>y=<m:msup>(x-x^2)2</m:msup></m> over <m>[-1,1]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042132674">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1165042132676"><m>y=\frac{1(x-x^2)}</m> over <m>(0,1)</m></p></statement>
+<solution id="fs-id1165042051182">
+<p id="fs-id1165042051184">Absolute minimum: <m>x=\frac{1}{2},</m> <m>y=4</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042051215">
+<p id="fs-id1165042051217"><m>y=\sqrt{9-x}</m> over <m>[1,9]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042051308">
+<p id="fs-id1165042051310"><m>y=x+\sin(x)</m> over <m>[0,2\pi]</m></p>
+</statement>
+<solution id="fs-id1165042051356">
+<p id="fs-id1165042051358">Absolute maximum: <m>x=2\pi,</m> <m>y=2\pi;</m> absolute minimum: <m>x=0,</m> <m>y=0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042061973">
+<p id="fs-id1165042061975"><m>y=\frac{x1+x}</m> over <m>[0,100]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042062072">
+<p id="fs-id1165042062074"><m>y=|x+1|+|x-1|</m> over <m>[-3,2]</m></p>
+</statement>
+<solution id="fs-id1165042062129">
+<p id="fs-id1165042062131">Absolute maximum: <m>x=-3;</m> absolute minimum: <m>-1\leq x\leq 1,</m> <m>y=2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042062175">
+<p id="fs-id1165042062177"><m>y=\sqrt{x}-\sqrt{x^3}</m> over <m>[0,4]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042288669">
+<p id="fs-id1165042288671"><m>y=\sin x+\text{ cos } x</m> over <m>[0,2\pi]</m></p>
+</statement>
+<solution id="fs-id1165042288711">
+<p id="fs-id1165042288713">Absolute maximum: <m>x=\frac{\pi}{4},</m> <m>y=\sqrt{2};</m> absolute minimum: <m>x=\frac{5\pi4},</m> <m>y=-\sqrt{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042288778">
+<p id="fs-id1165042288781"><m>y=4 \sin \theta -3 \text{ cos } \theta </m> over <m>[0,2\pi]</m></p>
+</statement>
+
+<p id="fs-id1165040756157">For the following exercises, find the local and absolute minima and maxima for the functions over <m>(-\infty ,\infty ).</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165040756183">
+<p id="fs-id1165040756185"><m>y=x^2+4x+5</m></p>
+</statement>
+<solution id="fs-id1165040756210">
+<p id="fs-id1165040756213">Absolute minimum: <m>x=-2,</m> <m>y=1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165040756240">
+<p id="fs-id1165040756242"><m>y=x^3-12x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042266578">
+<p id="fs-id1165042266581"><m>y=3x^4+8x^3-18x^2</m></p>
+</statement>
+<solution id="fs-id1165042266617">
+<p id="fs-id1165042266619">Absolute minimum: <m>x=-3,</m> <m>y=-135;</m> local maximum: <m>x=0,</m> <m>y=0;</m> local minimum: <m>x=1,</m> <m>y=-7</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042266694">
+<p id="fs-id1165042266696"><m>y=x^3<m:msup>(1-x)6</m:msup></m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165040675918">
+<p id="fs-id1165040675920"><m>y=\frac{x^2+x+6}{x-1}</m></p>
+</statement>
+<solution id="fs-id1165040675953">
+<p id="fs-id1165040675956">Local maximum: <m>x=1-2\sqrt{2},</m> <m>y=3-4\sqrt{2};</m> local minimum: <m>x=1+2\sqrt{2},</m> <m>y=3+4\sqrt{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165040676037">
+<p id="fs-id1165040676039"><m>y=\frac{x^2-1}{x-1}</m></p>
+</statement>
+
+<p id="fs-id1165040676075">For the following functions, use a calculator to graph the function and to estimate the absolute and local maxima and minima. Then, solve for them explicitly.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165040676082">
+<p id="fs-id1165040676084"><emphasis effect="bold">[T]</emphasis> <m>y=3x\sqrt{1-x^2}</m></p>
+</statement>
+<solution id="fs-id1165042295762">
+<p id="fs-id1165042295764">Absolute maximum: <m>x=\frac{\sqrt{2}2},</m> <m>y=\frac{3}{2};</m> absolute minimum: <m>x=-\frac{\sqrt{2}2},</m> <m>y=-\frac{3}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042295837">
+<p id="fs-id1165042295839"><emphasis effect="bold">[T]</emphasis> <m>y=x+\sin(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042295879">
+<p id="fs-id1165042295881"><emphasis effect="bold">[T]</emphasis> <m>y=12x^5+45x^4+20x^3-90x^2-120x+3</m></p>
+</statement>
+<solution id="fs-id1165042295943">
+<p id="fs-id1165042295945">Local maximum: <m>x=-2,</m> <m>y=59;</m> local minimum: <m>x=1,</m> <m>y=-130</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042230971">
+<p id="fs-id1165042230973"><emphasis effect="bold">[T]</emphasis> <m>y=\frac{x^3+6x^2-x-30}{x-2}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042231050">
+<p id="fs-id1165042231052"><emphasis effect="bold">[T]</emphasis> <m>y=\frac{\sqrt{4-x^2}}{\sqrt{4+x^2}}</m></p>
+</statement>
+<solution id="fs-id1165042231093">
+<p id="fs-id1165042231095">Absolute maximum: <m>x=0,</m> <m>y=1;</m> absolute minimum: <m>x=-2,2,</m> <m>y=0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042231151">
+<p id="fs-id1165042231154">A company that produces cell phones has a cost function of <m>C=x^2-1200x+36,400,</m> where <m>C</m> is cost in dollars and <m>x</m> is number of cell phones produced (in thousands). How many units of cell phone (in thousands) minimizes this cost function?</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042237866">
+<p id="fs-id1165042237868">A ball is thrown into the air and its position is given by <m>h(t)=-4.9t^2+60t+5 \text{ m }.</m> Find the height at which the ball stops ascending. How long after it is thrown does this happen?</p>
+</statement>
+<solution id="fs-id1165042237914">
+<p id="fs-id1165042237916"><m>h=\frac{9245}{49} \text{ m, }</m> <m>t=\frac{300}{49} \text{ s }</m></p>
+</solution>
+
+<p id="fs-id1165042237959">For the following exercises, consider the production of gold during the California gold rush (1848–1888). The production of gold can be modeled by <m>G(t)=\frac{(25t)}{(t^2+16)},</m> where <m>t</m> is the number of years since the rush began <m>(0\leq t\leq 40)</m> and <m>G</m> is ounces of gold produced (in millions). A summary of the data is shown in the following figure.</p>
+<description>"The bar graph shows gold (in millions of troy ounces) per year, starting in 1848 and ending in 1888. In 1848, the bar graph shows 0.05; in 1849, 0.5; in 1850, 2; in 1851, 3.6; in 1852, 3.9; in 1853, 3.3; in 1854, 3.4; in 1855, 2.6; in 1856, 2.75; in 1857, 2.1; in 1858, 2.2; in 1859, 2.15; in 1860, 2.1; in 1861, 2; in 1862, 1.8; in 1863, 1.1; in 1864, 1.15; in 1865, 0.9; in 1866, 0.85; in 1867, 0.9; in 1868, 0.85; in 1869, 0.9; in 1870, 0.85; in 1871, 0.85; in 1872, 0.75; in 1873, 0.7; in 1874, 0.8; in 1875, 0.75; in 1876, 0.7; in 1877, 0.73; in 1878, 0.9; in 1879, 0.95; in 1880, 1; in 1881, 0.95; in 1882, 0.85; in 1883, 1.1; in 1884, 0.6; in 1885, 0.55; in 1886, 0.65; in 1887, 0.6; and in 1888, 0.55.">
+<image source="CNX_Calc_Figure_04_03_205.jpg" width="80%">
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042238058">
+<p id="fs-id1165042238060">Find when the maximum (local and global) gold production occurred, and the amount of gold produced during that maximum.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042238076">
+<p id="fs-id1165042304251">Find when the minimum (local and global) gold production occurred. What was the amount of gold produced during this minimum?</p>
+</statement>
+<solution id="fs-id1165042304257">
+<p id="fs-id1165042304259">The global minimum was in 1848, when no gold was produced.</p>
+</solution>
+
+<p id="fs-id1165042304264">Find the critical points, maxima, and minima for the following piecewise functions.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042304270">
+<p id="fs-id1165042304272"><m>y={<m:mtable><mrow><m:mtd>x^2-4x<m:mtd>0\leq x\leq 1</mrow><mrow><m:mtd>x^2-4<m:mtd>1\lt x\leq 2</mrow></m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042304406">
+<p id="fs-id1165042304408"><m>y={<m:mtable><mrow><m:mtd>x^2+1<m:mtd>x\leq 1</mrow><mrow><m:mtd>x^2-4x+5<m:mtd>x\gt 1</mrow></m></p>
+</statement>
+<solution id="fs-id1165042304472">
+<p id="fs-id1165042304474">Absolute minima: <m>x=0,</m> <m>x=2,</m> <m>y=1;</m> local maximum at <m>x=1,</m> <m>y=2</m></p>
+</solution>
+
+<p id="fs-id1165042058902">For the following exercises, find the critical points of the following generic functions. Are they maxima, minima, or neither? State the necessary conditions.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042058909">
+<p id="fs-id1165042058911"><m>y=ax^2+bx+c,</m> given that <m>a\gt 0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042058979">
+<p id="fs-id1165042058982"><m>y=<m:msup>(x-1)a</m:msup>,</m> given that <m>a\gt 1</m></p>
+</statement>
+<solution id="fs-id1165042059020">
+<p id="fs-id1165042059022">No maxima/minima if <m>a</m> is odd, minimum at <m>x=1</m> if <m>a</m> is even</p>
+</solution>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1165042059050">
+<term>absolute extremum</term>
+<meaning id="fs-id1165042059056">if <m>f</m> has an absolute maximum or absolute minimum at <m>c,</m> we say <m>f</m> has an absolute extremum at <m>c</m></meaning>
+</definition>
+<definition id="fs-id1165042281356">
+<term>absolute maximum</term>
+<meaning id="fs-id1165042281361">if <m>f(c)\geq f(x)</m> for all <m>x</m> in the domain of <m>f,</m> we say <m>f</m> has an absolute maximum at <m>c</m></meaning>
+</definition>
+<definition id="fs-id1165042281408">
+<term>absolute minimum</term>
+<meaning id="fs-id1165042281414">if <m>f(c)\leq f(x)</m> for all <m>x</m> in the domain of <m>f,</m> we say <m>f</m> has an absolute minimum at <m>c</m></meaning>
+</definition>
+<definition id="fs-id1165042281462">
+<term>critical point</term>
+<meaning id="fs-id1165042281467">if <m>f'(c)=0</m> or <m>f'(c)</m> is undefined, we say that <m>c</m> is a critical point of <m>f</m></meaning>
+</definition>
+<definition id="fs-id1165042281514">
+<term>extreme value theorem</term>
+<meaning id="fs-id1165042281519">if <m>f</m> is a continuous function over a finite, closed interval, then <m>f</m> has an absolute maximum and an absolute minimum</meaning>
+</definition>
+<definition id="fs-id1165042281532">
+<term>Fermat’s theorem</term>
+<meaning id="fs-id1165042281538">if <m>f</m> has a local extremum at <m>c,</m> then <m>c</m> is a critical point of <m>f</m></meaning>
+</definition>
+<definition id="fs-id1165042281561">
+<term>local extremum</term>
+<meaning id="fs-id1165042281566">if <m>f</m> has a local maximum or local minimum at <m>c,</m> we say <m>f</m> has a local extremum at <m>c</m></meaning>
+</definition>
+<definition id="fs-id1165042071370">
+<term>local maximum</term>
+<meaning id="fs-id1165042071375">if there exists an interval <m>I</m> such that <m>f(c)\geq f(x)</m> for all <m>x∈I,</m> we say <m>f</m> has a local maximum at <m>c</m></meaning>
+</definition>
+<definition id="fs-id1165042071428">
+<term>local minimum</term>
+<meaning id="fs-id1165042071434">if there exists an interval <m>I</m> such that <m>f(c)\leq f(x)</m> for all <m>x∈I,</m> we say <m>f</m> has a local minimum at <m>c</m></meaning>
+</definition>
+</glossary>
+</document>
+?>

@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch3Sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Differentiation Rules</title>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ul>
+<li>State the constant, constant multiple, and power rules.</li>
+<li>Apply the sum and difference rules to combine derivatives.</li>
+<li>Use the product rule for finding the derivative of a product of functions.</li>
+<li>Use the quotient rule for finding the derivative of a quotient of functions.</li>
+<li>Extend the power rule to functions with negative exponents.</li>
+<li>Combine the differentiation rules to find the derivative of a polynomial or rational function.</li>
+</ul>
+<p id="fs-id1169738948964">Finding derivatives of functions by using the definition of the derivative can be a lengthy and, for certain functions, a rather challenging process. For example, previously we found that <m>\frac{d}{dx}(\sqrt{x})=\frac{1}{2\sqrt{x}}</m> by using a process that involved multiplying an expression by a conjugate prior to evaluating a limit. The process that we could use to evaluate <m>\frac{d}{dx}(\sqrt[3]{x})</m> using the definition, while similar, is more complicated. In this section, we develop rules for finding derivatives that allow us to bypass this process. We begin with the basics.</p>
+</introduction>
+<subsection id="fs-id1169738828810">
+<title>The Basic Rules</title>
+<introduction>
+<p id="fs-id1169738948592">The functions <m>f(x)=c</m> and <m>g(x)=x^n</m> where <m>n</m> is a positive integer are the building blocks from which all polynomials and rational functions are constructed. To find derivatives of polynomials and rational functions efficiently without resorting to the limit definition of the derivative, we must first develop formulas for differentiating these basic functions.</p>
+</introduction>
+<subsubsection id="fs-id1169739030384">
+<title>The Constant Rule</title>
+<p id="fs-id1169738835554">We first apply the limit definition of the derivative to find the derivative of the constant function, <m>f(x)=c.</m> For this function, both <m>f(x)=c</m> and <m>f(x+h)=c,</m> so we obtain the following result:</p>
+<md><mrow>f'(x)\amp=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}</mrow><mrow>\amp=\lim_{h\to 0}\frac{c-c}{h}</mrow><mrow>\amp=\lim_{h\to 0}\frac{0}{h}</mrow><mrow>\amp=\lim_{h\to 0}0=0.</mrow></md>
+<p id="fs-id1169738850205">The rule for differentiating constant functions is called the <term>constant rule</term>. It states that the derivative of a constant function is zero; that is, since a constant function is a horizontal line, the slope, or the rate of change, of a constant function is <m>0.</m> We restate this rule in the following theorem.</p>
+<theorem>
+<title>The Constant Rule</title>
+<p id="fs-id1169738878658">Let <m>c</m> be a constant.</p>
+<p id="fs-id1169738853363">If <m>f(x)=c,</m> then <m>f'(c)=0.</m></p>
+<p id="fs-id1169739024163">Alternatively, we may express this rule as</p>
+<me>\frac{d}{dx}(c)=0.</me>
+</theorem>
+<example xml:id="fs-id1169739274547">
+<title>Applying the Constant Rule</title>
+<statement id="fs-id1169739000037">
+<p id="fs-id1169738824417">Find the derivative of <m>f(x)=8.</m></p>
+</statement>
+<solution id="fs-id1169738878684">
+<p id="fs-id1169738865666">This is just a one-step application of the rule:</p>
+<me>f'(8)=0.</me>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1169738888410">
+<p id="fs-id1169736614166">Find the derivative of <m>g(x)=-3.</m></p>
+</statement>
+<solution id="fs-id1169739007956">
+<p id="fs-id1169738853102">0</p>
+</solution>
+<hint>
+
+<p id="fs-id1169738907507">Use the preceding example as a guide.</p>
+</hint>
+</exercise>
+</subsubsection>
+<subsubsection id="fs-id1169738949189">
+<title>The Power Rule</title>
+<p id="fs-id1169739006200">We have shown that</p>
+<me>\frac{d}{dx}(x^2)=2x \text{ and } \frac{d}{dx}(x^{1/2})=\frac{1}{2}x^{-1/2}.</me>
+<p id="fs-id1169738969429">At this point, you might see a pattern beginning to develop for derivatives of the form <m>\frac{d}{dx}(x^n).</m> We continue our examination of derivative formulas by differentiating power functions of the form <m>f(x)=x^n</m> where <m>n</m> is a positive integer. We develop formulas for derivatives of this type of function in stages, beginning with positive integer powers. Before stating and proving the general rule for derivatives of functions of this form, we take a look at a specific case, <m>\frac{d}{dx}(x^3).</m> As we go through this derivation, pay special attention to the portion of the expression in boldface, as the technique used in this case is essentially the same as the technique used to prove the general case.</p>
+<example xml:id="fs-id1169738993994">
+<title>Differentiating <m>x^3</m></title>
+ <statement id="fs-id1169739045532">
+<p id="fs-id1169739020915">Find <m>\frac{d}{dx}(x^3).</m></p>
+</statement>
+<solution id="fs-id1169738891154">
+<md><mrow>\frac{d}{dx}(x^3)\amp=\lim_{h\to 0}\frac{(x+h)^3-x^3}{h}</mrow>
+<mrow>\amp=\lim_{h\to 0}\frac{x^3+3x^2h+3xh^2+h^3-x^3}{h}\amp \amp \text{ Notice that the first term in the expansion of }</mrow>
+<mrow> \amp \amp \amp (x+h)^3 \text{ is } x^3 \text{ and the second term is } 3x^2h. \text{ All }</mrow>
+<mrow>\amp \amp \amp \text{ other terms contain powers of } h \text{ that are two or }</mrow>
+<mrow>\amp \amp \amp \text{ greater. }</mrow>
+<mrow>\amp =\lim_{h\to 0}\frac{3x^2h+3xh^2+h^3}{h}\amp \amp\text{ In this step the } x^3 \text{ terms have been cancelled, }</mrow>
+<mrow>\amp \amp \amp \text{ leaving only terms containing } h.</mrow>
+<mrow>\amp=\lim_{h\to 0}\frac{h(3x^2+3xh+h^2)}{h}\amp \amp \text{ Factor out the common factor of } h.</mrow>
+<mrow>\amp =\lim_{h\to 0}(3x^2+3xh+h^2)\amp \amp \text{ After cancelling the common factor of } h,\text{ the }</mrow>
+<mrow>\amp \amp \amp \text{ only term not containing } h \text{ is } 3x^2.</mrow>
+<mrow> \amp=3x^2\amp \amp \text{ Let } h \text{ go to 0. }</mrow></md>
+</solution>
+</example>
+<exercise>> <statement id="fs-id1169739001164">
+<p id="fs-id1169738916812">Find <m>\frac{d}{dx}(x^4).</m></p>
+</statement>
+<solution id="fs-id1169739222211">
+<p id="fs-id1169739000891"><m>4x^3</m></p>
+</solution>
+<hint>
+<p id="fs-id1169739270315">Use <m>(x+h)^4=x^4+4x^3h+6x^2h^2+4xh^3+h^4</m> and follow the procedure outlined in the preceding example.</p>
+</hint>
+</exercise>
+<p id="fs-id1169736619689">As we shall see, the procedure for finding the derivative of the general form <m>f(x)=x^n</m> is very similar. Although it is often unwise to draw general conclusions from specific examples, we note that when we differentiate <m>f(x)=x^3,</m> the power on <m>x</m> becomes the coefficient of <m>x^2</m> in the derivative and the power on <m>x</m> in the derivative decreases by 1. The following theorem states that the <term>power rule</term> holds for all positive integer powers of <m>x.</m> We will eventually extend this result to negative integer powers. Later, we will see that this rule may also be extended first to rational powers of <m>x</m> and then to arbitrary powers of <m>x.</m> Be aware, however, that this rule does not apply to functions in which a constant is raised to a variable power, such as <m>f(x)=3^x.</m></p>
+<theorem>
+<title>The Power Rule</title>
+<p id="fs-id1169738850005">
+<!--Let <m>n</m> be a positive integer.-->
+Let <m>n</m> be any real number. If <m>f(x)=x^n,</m> then</p>
+<me>f'(x)=nx^{n-1}.</me>
+<p id="fs-id1169739031758">Alternatively, we may express this rule as</p>
+<me>\frac{d}{dx}x^n=nx^{n-1}.</me>
+
+<!-- Commenting out proof
+<proof>
+<p id="fs-id1169738858013">For <m>f(x)=x^n</m> where <m>n</m> is a positive integer, we have</p>
+<me>f'(x)=\lim_{h\to 0}\frac{(x+h)^n-x^n}{h}.</me>
+<me>\text{ Since } (x+h)^n=x^n+nx^{n-1}h+{n \choose 2} x^{n-2}h^2+{n \choose 3} x^{n-3}h^3+\text{ … }+nxh^{n-1}+h^n,</me>
+<p id="fs-id1169738994258">we see that</p>
+<me>(x+h)^n-x^n=nx^{n-1}h+{n \choose 2} x^{n-2}h^2+{n \choose 3} x^{n-3}h^3+\text{ … }+nxh^{n-1}+h^n.</me>
+<p id="fs-id1169739030934">Next, divide both sides by <m>h</m>:</p>
+<me>\frac{(x+h)^n-x^n}{h}=\frac{nx^{n-1}h+{n \choose 2} x^{n-2}h^2+{n \choose 3} x^{n-3}h^3+\text{ … }+nxh^{n-1}+h^n}{h}.</me>
+<p id="fs-id1169738960216">Thus,</p>
+<me>\frac{(x+h)^n-x^n}{h}=nx^{n-1}+{n \choose 2} x^{n-2}h+{n \choose 3} x^{n-3}h^2+\text{ … }+nxh^{n-2}+h^{n-1}.</me>
+<p id="fs-id1169739302943">Finally,</p>
+<md><mrow>f'(x)\amp=\lim_{h\to 0}(nx^{n-1}+{n \choose 2} x^{n-2}h+{n \choose 3} x^{n-3}h^2+\text{ … }+nxh^{n-1}+h^n)</mrow><mrow>\amp=nx^{n-1}.</mrow></md>
+</proof>
+-->
+</theorem>
+<example xml:id="fs-id1169739190555">
+<title>Applying the Power Rule</title>
+<statement id="fs-id1169736616198">
+<p id="fs-id1169736613648">Find the derivative of the function <m>f(x)=x^{10}</m> by applying the power rule.</p>
+</statement>
+<solution id="fs-id1169736656144">
+<p id="fs-id1169736656146">Using the power rule with <m>n=10,</m> we obtain</p>
+<me>f'(x)=10x^{10-1}=10x^9.</me>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1169739199745">
+<p id="fs-id1169739199747">Find the derivative of <m>f(x)=x^7.</m></p>
+</statement>
+<solution id="fs-id1169736611331">
+<p id="fs-id1169738962015"><m>f'(x)=7x^6</m></p>
+</solution>
+<hint>
+<p id="fs-id1169736613524">Use the power rule with <m>n=7.</m></p>
+</hint>
+</exercise>
+</subsubsection>
+</subsection>
+<subsection id="fs-id1169738960033">
+<title>The Sum, Difference, and Constant Multiple Rules</title>
+<p id="fs-id1169739270017">We find our next differentiation rules by looking at derivatives of sums, differences, and constant multiples of functions. Just as when we work with functions, there are rules that make it easier to find derivatives of functions that we add, subtract, or multiply by a constant. These rules are summarized in the following theorem.</p>
+<theorem>
+<title>Sum, Difference, and Constant Multiple Rules</title>
+<p id="fs-id1169736611426">Let <m>f(x)</m> and <m>g(x)</m> be differentiable functions and <m>k</m> be a constant. Then each of the following equations holds.</p>
+<p id="fs-id1169739039653"><term>Sum Rule</term>. The derivative of the sum of a function <m>f</m> and a function <m>g</m> is the same as the sum of the derivative of <m>f</m> and the derivative of <m>g.</m></p>
+<me>\frac{d}{dx}(f(x)+g(x))=\frac{d}{dx}(f(x))+\frac{d}{dx}(g(x));</me>
+<p id="fs-id1169739351562">that is,</p>
+<me>\text{ for } j(x)=f(x)+g(x),j'(x)=f'(x)+g'(x).</me>
+<p id="fs-id1169739000178"><term>Difference Rule</term>. The derivative of the difference of a function <m>f</m> and a function <m>g</m> is the same as the difference of the derivative of <m>f</m> and the derivative of <m>g\text{ : }</m></p>
+<me>\frac{d}{dx}(f(x)-g(x))=\frac{d}{dx}(f(x))-\frac{d}{dx}(g(x));</me>
+<p id="fs-id1169739005930">that is,</p>
+<me>\text{ for } j(x)=f(x)-g(x),j'(x)=f'(x)-g'(x).</me>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1169739195371"><term>Constant Multiple Rule</term>. The derivative of a constant <m>k</m> multiplied by a function <m>f</m> is the same as the constant multiplied by the derivative:</p>
+<me>\frac{d}{dx}(kf(x))=k\frac{d}{dx}(f(x));</me>
+<p id="fs-id1169739179540">that is,</p>
+<me>\text{ for } j(x)=kf(x),j'(x)=kf'(x).</me>
+<proof>
+<p id="fs-id1169736594897">We provide only the proof of the sum rule here. The rest follow in a similar manner.</p>
+<p id="fs-id1169736659244">For differentiable functions <m>f(x)</m> and <m>g(x),</m> we set <m>j(x)=f(x)+g(x).</m> Using the limit definition of the derivative we have</p>
+<me>j'(x)=\lim_{h\to 0}\frac{j(x+h)-j(x)}{h}.</me>
+<p id="fs-id1169739343658">By substituting <m>j(x+h)=f(x+h)+g(x+h)</m> and <m>j(x)=f(x)+g(x),</m> we obtain</p>
+<me>j'(x)=\lim_{h\to 0}\frac{(f(x+h)+g(x+h))-(f(x)+g(x))}{h}.</me>
+<p id="fs-id1169736613826">Rearranging and regrouping the terms, we have</p>
+<me>j'(x)=\lim_{h\to 0}(\frac{f(x+h)-f(x)h}+\frac{g(x+h)-g(x)}{h}).</me>
+<p id="fs-id1169739274627">We now apply the sum law for limits and the definition of the derivative to obtain</p>
+<me>j'(x)=\lim_{h\to 0}(\frac{f(x+h)-f(x)}{h})+\lim_{h\to 0}(\frac{g(x+h)-g(x)}{h})=f'(x)+g'(x).</me>
+</proof></theorem>
+<example xml:id="fs-id1169739269764">
+<title>Applying the Constant Multiple Rule</title>
+ <statement id="fs-id1169739269768">
+<p id="fs-id1169739305154">Find the derivative of <m>g(x)=3x^2</m> and compare it to the derivative of <m>f(x)=x^2.</m></p>
+</statement>
+<solution id="fs-id1169739286419">
+<p id="fs-id1169739286421">We use the power rule directly:</p>
+<me>g'(x)=\frac{d}{dx}(3x^2)=3\frac{d}{dx}(x^2)=3(2x)=6x.</me>
+<p id="fs-id1169736660712">Since <m>f(x)=x^2</m> has derivative <m>f'(x)=2x,</m> we see that the derivative of <m>g(x)</m> is 3 times the derivative of <m>f(x).</m> This relationship is illustrated in <xref ref="CNX_Calc_Figure_03_03_001"/>.</p>
+<figure xml:id="CNX_Calc_Figure_03_03_001">
+  <image source="CNX_Calc_Figure_03_03_001.jpg" width="50%">
+<description>"Two graphs are shown. The first graph shows g(x) = 3x2 and f(x) = x squared. The second graph shows g’(x) = 6x and f’(x) = 2x. In the first graph, g(x) increases three times more quickly than f(x). In the second graph, g’(x) increases three times more quickly than f’(x)."
+  </description></image> <caption>The derivative of <m>g(x)</m> is 3 times the derivative of <m>f(x).</m></caption>
+</figure>
+</solution>
+</example>
+<example xml:id="fs-id1169739300387">
+<title>Applying Basic Derivative Rules</title>
+ <statement id="fs-id1169739300392">
+<p id="fs-id1169739300397">Find the derivative of <m>f(x)=2x^5+7.</m></p>
+</statement>
+<solution id="fs-id1169739064772">
+<p id="fs-id1169739064774">We begin by applying the rule for differentiating the sum of two functions, followed by the rules for differentiating constant multiples of functions and the rule for differentiating powers. To better understand the sequence in which the differentiation rules are applied, we use Leibniz notation throughout the solution:</p>
+<md><mrow>f'(x)\amp=\frac{d}{dx}(2x^5+7)</mrow>
+<mrow>\amp=\frac{d}{dx}(2x^5)+\frac{d}{dx}(7)\amp\amp\text{ Apply the sum rule. }</mrow>
+<mrow> \amp=2\frac{d}{dx}(x^5)+\frac{d}{dx}(7)\amp\amp\text{ Apply the constant multiple rule. }</mrow>
+<mrow> \amp=2(5x^4)+0\amp\amp\text{ Apply the power rule and the constant rule. }</mrow>
+<mrow> \amp=10x^4.\amp\amp\text{ Simplify. }</mrow></md>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1169739299467">
+<p id="fs-id1169739299469">Find the derivative of <m>f(x)=2x^3-6x^2+3.</m></p>
+</statement>
+<solution id="fs-id1169736658724">
+<p id="fs-id1169736658726"><m>f'(x)=6x^2-12x.</m></p>
+</solution>
+<hint>
+<p id="fs-id1169739301883">Use the preceding example as a guide.</p>
+</hint>
+</exercise>
+<example xml:id="fs-id1169739301889">
+<title>Finding the Equation of a Tangent Line</title>
+ <statement id="fs-id1169739301893">
+<p id="fs-id1169739242299">Find the equation of the line tangent to the graph of <m>f(x)=x^2-4x+6</m> at <m>x=1.</m></p>
+</statement>
+<solution id="fs-id1169736663034">
+<p id="fs-id1169736663036">To find the equation of the tangent line, we need a point and a slope. To find the point, compute</p>
+<me>f(1)=1^2-4(1)+6=3.</me>
+<p id="fs-id1169736587931">This gives us the point <m>(1,3).</m> Since the slope of the tangent line at 1 is <m>f'(1),</m> we must first find <m>f'(x).</m> Using the definition of a derivative, we have</p>
+<me>f'(x)=2x-4</me>
+<p id="fs-id1169739273132">so the slope of the tangent line is <m>f'(1)=-2.</m> Using the point-slope formula, we see that the equation of the tangent line is</p>
+<me>y-3=-2(x-1).</me>
+<p id="fs-id1169739269639">Putting the equation of the line in slope-intercept form, we obtain</p>
+<me>y=-2x+5.</me>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1169736654289">
+<p id="fs-id1169736654291">Find the equation of the line tangent to the graph of <m>f(x)=3x^2-11</m> at <m>x=2.</m> Use the point-slope form.</p>
+</statement>
+<solution id="fs-id1169739353704">
+<p id="fs-id1169739353706"><m>y=12x-23</m></p>
+</solution>
+<hint>
+<p id="fs-id1169739353731">Use the preceding example as a guide.</p>
+</hint>
+</exercise>
+</subsection>
+<subsection id="fs-id1169739194711">
+<title>The Product Rule</title>
+<p id="fs-id1169739194716">Now that we have examined the basic rules, we can begin looking at some of the more advanced rules. The first one examines the derivative of the product of two functions. Although it might be tempting to assume that the derivative of the product is the product of the derivatives, similar to the sum and difference rules, the <term>product rule</term> does not follow this pattern. To see why we cannot use this pattern, consider the function <m>f(x)=x^2,</m> whose derivative is <m>f'(x)=2x</m> and not <m>\frac{d}{dx}(x)\cdot \frac{d}{dx}(x)=1\cdot 1=1.</m></p>
+<theorem>
+<title>Product Rule</title>
+<p id="fs-id1169739298182">Let <m>f(x)</m> and <m>g(x)</m> be differentiable functions. Then</p>
+<me>\frac{d}{dx}(f(x)g(x))=\frac{d}{dx}(f(x))\cdot g(x)+\frac{d}{dx}(g(x))\cdot f(x).</me>
+<p id="fs-id1169739187834">That is,</p>
+<me>\text{ if } j(x)=f(x)g(x),\text{ then } j'(x)=f'(x)g(x)+g'(x)f(x).</me>
+<p id="fs-id1169739269717">This means that the derivative of a product of two functions is the derivative of the first function times the second function plus the derivative of the second function times the first function.</p>
+<!-- Commenting out proof
+<proof>
+<p id="fs-id1169736654327">We begin by assuming that <m>f(x)</m> and <m>g(x)</m> are differentiable functions. At a key point in this proof we need to use the fact that, since <m>g(x)</m> is differentiable, it is also continuous. In particular, we use the fact that since <m>g(x)</m> is continuous, <m>\lim_{h\to 0}g(x+h)=g(x).</m></p>
+<p id="fs-id1169736656513">By applying the limit definition of the derivative to <m>j(x)=f(x)g(x),</m> we obtain</p>
+<me>j'(x)=\lim_{h\to 0}\frac{f(x+h)g(x+h)-f(x)g(x)}{h}.</me>
+<p id="fs-id1169739301642">By adding and subtracting <m>f(x)g(x+h)</m> in the numerator, we have</p>
+<me>j'(x)=\lim_{h\to 0}\frac{f(x+h)g(x+h)-f(x)g(x+h)+f(x)g(x+h)-f(x)g(x)}{h}.</me>
+<p id="fs-id1169739304787">After breaking apart this quotient and applying the sum law for limits, the derivative becomes</p>
+<me>j'(x)=\lim_{h\to 0}(\frac{f(x+h)g(x+h)-f(x)g(x+h)}{h})+\lim_{h\to 0}(\frac{f(x)g(x+h)-f(x)g(x)}{h}).</me>
+<p id="fs-id1169736662807">Rearranging, we obtain</p>
+<me>j'(x)=\lim_{h\to 0}(\frac{f(x+h)-f(x)}{h}\cdot g(x+h))+\lim_{h\to 0}(\frac{g(x+h)-g(x)}{h}\cdot f(x)).</me>
+<p id="fs-id1169738916876">By using the continuity of <m>g(x),</m> the definition of the derivatives of <m>f(x)</m> and <m>g(x),</m> and applying the limit laws, we arrive at the product rule,</p>
+<me>j'(x)=f'(x)g(x)+g'(x)f(x).</me>
+</proof>
+-->
+</theorem>
+<example xml:id="fs-id1169736659557">
+<title>Applying the Product Rule to Functions at a Point</title>
+<statement id="fs-id1169736659562">
+<p id="fs-id1169736659567">For <m>j(x)=f(x)g(x),</m> use the product rule to find <m>j'(2)</m> if <m>f(2)=3,f'(2)=-4,g(2)=1,</m> and <m>g'(2)=6.</m></p>
+</statement>
+<solution id="fs-id1169736658800">
+<p id="fs-id1169736658802">Since <m>j(x)=f(x)g(x),j'(x)=f'(x)g(x)+g'(x)f(x),</m> and hence</p>
+<me>j'(2)=f'(2)g(2)+g'(2)f(2)=(-4)(1)+(6)(3)=14.</me>
+</solution>
+</example>
+<example xml:id="fs-id1169739273812">
+<title>Applying the Product Rule to Binomials</title>
+ <statement id="fs-id1169739273816">
+<p id="fs-id1169739273822">For <m>j(x)=(x^2+2)(3x^3-5x),</m> find <m>j'(x)</m> by applying the product rule. Check the result by first finding the product and then differentiating.</p>
+</statement>
+<solution id="fs-id1169739301172">
+<p id="fs-id1169739301174">If we set <m>f(x)=x^2+2</m> and <m>g(x)=3x^3-5x,</m> then <m>f'(x)=2x</m> and <m>g'(x)=9x^2-5.</m> Thus,</p>
+<me>j'(x)=f'(x)g(x)+g'(x)f(x)=(2x)(3x^3-5x)+(9x^2-5)(x^2+2).</me>
+<p id="fs-id1169736612557">Simplifying, we have</p>
+<me>j'(x)=15x^4+3x^2-10.</me>
+<p id="fs-id1169739274892">To check, we see that <m>j(x)=3x^5+x^3-10x</m> and, consequently, <m>j'(x)=15x^4+3x^2-10.</m></p>
+</solution>
+</example>
+<exercise>
+<statement id="fs-id1169736654826">
+<p id="fs-id1169736654828">Use the product rule to obtain the derivative of <m>j(x)=2x^5(4x^2+x).</m></p>
+</statement>
+<solution id="fs-id1169736654874">
+<p id="fs-id1169736654876"><m>j'(x)=10x^4(4x^2+x)+(8x+1)(2x^5)=56x^6+12x^5.</m></p>
+</solution>
+<hint>
+<p id="fs-id1169736609959">Set <m>f(x)=2x^5</m> and <m>g(x)=4x^2+x</m> and use the preceding example as a guide.</p>
+</hint>
+</exercise>
+</subsection>
+
+<subsection id="fs-id1169739269456">
+<title>The Quotient Rule</title>
+
+<p id="fs-id1169739269461"> Having developed and practiced the product rule, we now consider differentiating quotients of functions. As we see in the following theorem, the derivative of the quotient is not the quotient of the derivatives; rather, it is the derivative of the function in the numerator times the function in the denominator minus the derivative of the function in the denominator times the function in the numerator, all divided by the square of the function in the denominator. In order to better grasp why we cannot simply take the quotient of the derivatives, keep in mind that</p>
+
+<me>\frac{d}{dx}(x^2)=2x,\text{ not } \frac{\frac{d}{dx}(x^3)}{\frac{d}{dx}(x)}=\frac{3x^2}{1}=3x^2.</me>
+<theorem>
+<title>The Quotient Rule</title>
+<p id="fs-id1169736662921">Let <m>f(x)</m> and <m>g(x)</m> be differentiable functions. Then</p>
+<me>\frac{d}{dx}(\frac{f(x)}{g(x)})=\frac{\frac{d}{dx}(f(x))\cdot g(x)-\frac{d}{dx}(g(x))\cdot f(x)}{(g(x))^2}.</me>
+<p id="fs-id1169739190663">That is,</p>
+<me>\text{ if } j(x)=\frac{f(x)}{g(x)},\text{ then } j'(x)=\frac{f'(x)g(x)-g'(x)f(x)}{(g(x))^2}.</me>
+</theorem>
+<p id="fs-id1169739242563">The proof of the <term>quotient rule</term> is very similar to the proof of the product rule, so it is omitted here. Instead, we apply this new rule for finding derivatives in the next example.</p>
+<example xml:id="fs-id1169739305225">
+<title>Applying the Quotient Rule</title>
+ <statement id="fs-id1169739305230">
+<p id="fs-id1169739305235">Use the quotient rule to find the derivative of <m>k(x)=\frac{5x^2}{4x+3}.</m></p>
+</statement>
+<solution id="fs-id1169739305274">
+<p id="fs-id1169739305276">Let <m>f(x)=5x^2</m> and <m>g(x)=4x+3.</m> Thus, <m>f'(x)=10x</m> and <m>g'(x)=4.</m> Substituting into the quotient rule, we have</p>
+<me>k'(x)=\frac{f'(x)g(x)-g'(x)f(x)}{(g(x))^2}=\frac{10x(4x+3)-4(5x^2)}{(4x+3)^2}.</me>
+<p id="fs-id1169739299784">Simplifying, we obtain</p>
+<me>k'(x)=\frac{20x^2+30x}{(4x+3)^2}.</me>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1169739299856">
+<p id="fs-id1169739299858">Find the derivative of <m>h(x)=\frac{3x+1}{4x-3}.</m></p>
+</statement>
+<solution id="fs-id1169739348392">
+<p id="fs-id1169739348394"><m>k'(x)=-\frac{1}{3}{(4x-3)^2}.</m></p>
+</solution>
+<hint>
+<p id="fs-id1169739348450">Apply the quotient rule with <m>f(x)=3x+1</m> and <m>g(x)=4x-3.</m></p>
+</hint>
+</exercise>
+<!-- Commenting out the extension of the power rule and its proof
+<p id="fs-id1169739348504">It is now possible to use the quotient rule to extend the power rule to find derivatives of functions of the form <m>x^k</m> where <m>k</m> is a negative integer.</p>
+<theorem>
+<title>Extended Power Rule</title>
+<p id="fs-id1169736617603">If <m>k</m> is a negative integer, then</p>
+<me>\frac{d}{dx}(x^k)=kx^{k-1} .</me>
+<proof>
+<p id="fs-id1169736617661">If <m>k</m> is a negative integer, we may set <m>n=-k,</m> so that <m>n</m> is a positive integer with <m>k=-n.</m> Since for each positive integer <m>n,x^{-n}=\frac{1}{x^n},</m> we may now apply the quotient rule by setting <m>f(x)=1</m> and <m>g(x)=x^n.</m> In this case, <m>f'(x)=0</m> and <m>g'(x)=nx^{n-1}.</m> Thus,</p>
+<me>\frac{d}{dx}(x^{-n})=\frac{0(x^n)-1(nx^{n-1})}{(x^n)^2}.</me>
+<p id="fs-id1169739190073">Simplifying, we see that</p>
+<me>\frac{d}{dx}(x^{-n})=\frac{-nx^{n-1}}{x^{2n}}=-nx^{(n-1)-2n}=-nx^{-n-1}.</me><p id="fs-id1169736614244">Finally, observe that since <m>k=-n,</m> by substituting we have</p>
+<me>\frac{d}{dx}(x^k)=kx^{k-1} .</me>
+</proof></theorem>
+-->
+<example xml:id="fs-id1169736614308">
+<title>Using the <!--Extended--> Power Rule</title>
+ <statement id="fs-id1169736614312">
+<p id="fs-id1169736614318">Find <m>\frac{d}{dx}(x^{-4}).</m></p>
+</statement>
+<solution id="fs-id1169739300026">
+<p id="fs-id1169739300028">By applying the <!--extended--> power rule with <m>k=-4,</m> we obtain</p>
+<me>\frac{d}{dx}(x^{-4})=-4x^{-4-1}=-4x^{-5}.</me>
+</solution>
+</example>
+<example xml:id="fs-id1169739300101">
+<title>Using the <!--Extended--> Power Rule and the Constant Multiple Rule</title>
+ <statement id="fs-id1169739300106">
+<p id="fs-id1169739300111">Use the <!--extended--> power rule and the constant multiple rule to find <m>f(x)=\frac{6}{x^2}.</m></p>
+</statement>
+<solution id="fs-id1169736656726">
+<p id="fs-id1169736656728">It may seem tempting to use the quotient rule to find this derivative, and it would certainly not be incorrect to do so. However, it is far easier to differentiate this function by first rewriting it as <m>f(x)=6x^{-2}.</m></p>
+<md>
+  <mrow>f'(x)\amp=\frac{d}{dx}(\frac{6}{x^2})=\frac{d}{dx}(6x^{-2})\amp\amp \text{ Rewrite } \frac{6}{x^2} \text{ as } 6x^{-2}.</mrow>
+  <mrow> \amp=6\frac{d}{dx}(x^{-2})\amp \amp \text{ Apply the constant multiple rule. }</mrow
+    ><mrow> \amp=6(-2x^{-3})\amp \amp \text{ Use the extended power rule to differentiate } x^{-2}.</mrow>
+    <mrow> \amp=-12x^{-3}\amp \amp \text{ Simplify. }</mrow></md>
+</solution>
+</example>
+<exercise> <statement id="fs-id1169736657092">
+<p id="fs-id1169739251962">Find the derivative of <m>g(x)=\frac{1}{x^7}</m> using the <!--extended--> power rule.</p>
+</statement>
+<solution id="fs-id1169739251991">
+<p id="fs-id1169739251993"><m>g'(x)=-7x^{-8}.</m></p>
+</solution>
+<hint>
+<p id="fs-id1169739252030">Rewrite <m>g(x)=\frac{1}{x^7}=x^{-7}.</m> Use the <!--extended--> power rule with <m>k=-7.</m></p>
+</hint>
+</exercise>
+</subsection>
+<subsection id="fs-id1169739252085">
+<title>Combining Differentiation Rules</title>
+<p id="fs-id1169739252090">As we have seen throughout the examples in this section, it seldom happens that we are called on to apply just one differentiation rule to find the derivative of a given function. At this point, by combining the differentiation rules, we may find the derivatives of any polynomial or rational function. Later on we will encounter more complex combinations of differentiation rules. A good rule of thumb to use when applying several rules is to apply the rules in reverse of the order in which we would evaluate the function.</p>
+<example xml:id="fs-id1169739347062">
+<title>Combining Differentiation Rules</title>
+ <statement id="fs-id1169739347067">
+<p id="fs-id1169739347072">For <m>k(x)=3h(x)+x^2g(x),</m> find <m>k'(x).</m></p>
+</statement>
+<solution id="fs-id1169739347141">
+<p id="fs-id1169739347144">Finding this derivative requires the sum rule, the constant multiple rule, and the product rule.</p>
+<md>
+  <mrow>k'(x)\amp=\frac{d}{dx}(3h(x)+x^2g(x))=\frac{d}{dx}(3h(x))+\frac{d}{dx}(x^2g(x))\amp\amp \text{ Apply the sum rule. }</mrow>
+  <mrow>\amp=3\frac{d}{dx}(h(x))+(\frac{d}{dx}(x^2)g(x)+\frac{d}{dx}(g(x))x^2)\amp\amp\text{ Apply the constant multiple rule to }</mrow>
+  <mrow>\amp \amp \amp \text{ differentiate } 3h(x) \text{ and the product }</mrow>
+  <mrow>\amp \amp \amp \text{ rule to differentiate } x^2g(x).</mrow>
+  <mrow> \amp=3h'(x)+2xg(x)+g'(x)x^2</mrow></md>
+</solution>
+</example>
+<example xml:id="fs-id1169739325719">
+<title>Extending the Product Rule</title>
+ <statement id="fs-id1169739325723">
+<p id="fs-id1169739325728">For <m>k(x)=f(x)g(x)h(x),</m> express <m>k'(x)</m> in terms of <m>f(x),g(x),h(x),</m> and their derivatives.</p>
+</statement>
+<solution id="fs-id1169739270348">
+<p id="fs-id1169739270350">We can think of the function <m>k(x)</m> as the product of the function <m>f(x)g(x)</m> and the function <m>h(x).</m> That is, <m>k(x)=(f(x)g(x))\cdot h(x).</m> Thus,</p>
+<md>
+  <mrow>k'(x)\amp=\frac{d}{dx}(f(x)g(x))\cdot h(x)+\frac{d}{dx}(h(x))\cdot (f(x)g(x))\amp \amp \text{ Apply the product rule to the product }</mrow>
+  <mrow>\amp \amp \amp \text{ of } f(x)g(x) \text{ and } h(x).</mrow>
+  <mrow> \amp=(f'(x)g(x)+g'(x)f(x)h)(x)+h'(x)f(x)g(x)\amp\amp\text{ Apply the product rule to } f(x)g(x).</mrow>
+  <mrow> \amp=f'(x)g(x)h(x)+f(x)g'(x)h(x)+f(x)g(x)h'(x).\amp\amp\text{ Simplify. }</mrow></md>
+</solution>
+</example>
+<example xml:id="fs-id1169736658392">
+<title>Combining the Quotient Rule and the Product Rule</title>
+ <statement id="fs-id1169736658396">
+<p id="fs-id1169736658401">For <m>h(x)=\frac{2x^3k(x)}{3x+2},</m> find <m>h'(x).</m></p>
+</statement>
+<solution id="fs-id1169736658471">
+<p id="fs-id1169736658474">This procedure is typical for finding the derivative of a rational function.</p>
+<md>
+  <mrow>h'(x)\amp=\frac{\frac{d}{dx}(2x^3k(x))\cdot (3x+2)-\frac{d}{dx}(3x+2)\cdot (2x^3k(x))}{(3x+2)^2}\amp\amp\text{ Apply the quotient rule. }</mrow>
+  <mrow> \amp=\frac{(6x^2k(x)+k'(x)\cdot 2x^3)}{(3x+2)-3(2x^3k(x))}{(3x+2)^2}\amp\amp\text{ Apply the product rule to find }</mrow>
+  <mrow>\amp \amp \amp \frac{d}{dx}(2x^3k(x)). \text{ Use } \frac{d}{dx}(3x+2)=3.</mrow>
+  <mrow> \amp=\frac{-6x^3k(x)+18x^3k(x)+12x^2k(x)+6x^4k'(x)+4x^3k'(x)}{(3x+2)^2}\amp \amp\text{ Simplify. }</mrow></md>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1169736607618">
+<p id="fs-id1169736607620">Find <m>\frac{d}{dx}(3f(x)-2g(x)).</m></p>
+</statement>
+<solution id="fs-id1169736607669">
+<p id="fs-id1169736607671"><m>3f'(x)-2g'(x).</m></p>
+</solution>
+<hint>
+<p id="fs-id1169736589229">Apply the difference rule and the constant multiple rule.</p>
+</hint>
+</exercise>
+<example xml:id="fs-id1169736589236">
+<title>Determining Where a Function Has a Horizontal Tangent</title>
+ <statement id="fs-id1169736589240">
+<p id="fs-id1169736589245">Determine the values of <m>x</m> for which <m>f(x)=x^3-7x^2+8x+1</m> has a horizontal tangent line.</p>
+</statement>
+<solution id="fs-id1169736589296">
+<p id="fs-id1169736589298">To find the values of <m>x</m> for which <m>f(x)</m> has a horizontal tangent line, we must solve <m>f'(x)=0.</m> Since</p>
+<me>f'(x)=3x^2-14x+8=(3x-2)(x-4),</me>
+<p id="fs-id1169739111144">we must solve <m>(3x-2)(x-4)=0.</m> Thus we see that the function has horizontal tangent lines at <m>x=\frac{2}{3}</m> and <m>x=4</m> as shown in the following graph.</p>
+<figure xml:id="CNX_Calc_Figure_03_03_002">
+  <image source="CNX_Calc_Figure_03_03_002.jpg" width="50%">
+<description>"The graph shows f(x) = x3 – 7x2 + 8x + 1, and the tangent lines are shown as x = 2/3 and x = 4." </description></image> <caption>This function has horizontal tangent lines at <m>x</m> = 2/3 and <m>x</m> = 4.</caption>
+</figure>
+</solution>
+</example>
+<example xml:id="fs-id1169739281977">
+<!-- Commenting out physics
+<title>Finding a Velocity</title>
+ <statement id="fs-id1169739281981">
+<p id="fs-id1169739281986">The position of an object on a coordinate axis at time <m>t</m> is given by <m>s(t)=\frac{t}{t^2+1}.</m> What is the initial velocity of the object?</p>
+</statement>
+<solution id="fs-id1169739282026">
+<p id="fs-id1169739282028">Since the initial velocity is <m>v(0)=s'(0),</m> begin by finding <m>s'(t)</m> by applying the quotient rule:</p>
+<me>s'(t)=\frac{1(t^2+1)-2t(t)}{(t^2+1)^2}=\frac{1-t^2}{(t^2+1)^2}.</me>
+<p id="fs-id1169739301434">After evaluating, we see that <m>v(0)=1.</m></p>
+</solution>
+</example>
+-->
+<title>Cost, Revenue, and Profit</title>
+ <statement id="fs-id1169739281981">
+<p id="fs-id1169739281986">Michael finds his cost and revenue in dollars when <m>x</m> units are sold to be
+<me>C(x)=10x^2+x+2000\text{ and } R(x)=x^3-0.1</me>,
+respectively.</p>
+<ol>
+<li> Find the profit function, <m>P(x).</m></li>
+<li> Find <m>P'(4)</m> and interpret.</li>
+</ol>
+</statement>
+<solution>
+<p> Recall that
+<md>
+<mrow>P(x)\amp=R(x)-C(x)</mrow>
+<mrow>\amp=x^3-0.1-(10x^2+x+2000)</mrow>
+<mrow>\amp=x^3-10x^2-x-2000.1</mrow>.
+</md>
+Using the power rule,
+<md>
+<mrow>P'(x)\amp=3x^2-20x-1</mrow>
+<mrow>P'(4)\amp=-33</mrow>
+</md>
+</p>
+<p> When 4 units are sold, the profit is decreasing (dropping) at a rate of <m>\$33</m> per unit sold. So if 1 more unit is sold, we would expect profit to decrease by <m>\$33</m>.</p>
+
+</solution>
+</example>
+<exercise>  <statement id="fs-id1169739301465">
+<p id="fs-id1169739301467">Find the values of <m>x</m> for which the line tangent to the graph of <m>f(x)=4x^2-3x+2</m> has a tangent line parallel to the line <m>y=2x+3.</m></p>
+</statement>
+<solution id="fs-id1169739297980">
+<p id="fs-id1169739297983"><m>\frac{5}{8}</m></p>
+</solution>
+<hint>
+<p id="fs-id1169739298001">Solve <m>f'(x)=2.</m></p>
+</hint>
+</exercise>
+<note id="fs-id1169739298028" class="project">
+<title>Project: Formula One Grandstands</title>
+<p id="fs-id1169739298036">Formula One car races can be very exciting to watch and attract a lot of spectators. Formula One track designers have to ensure sufficient grandstand space is available around the track to accommodate these viewers. However, car racing can be dangerous, and safety considerations are paramount. The grandstands must be placed where spectators will not be in danger should a driver lose control of a car (<xref ref="CNX_Calc_Figure_03_03_003"/>).</p>
+<figure xml:id="CNX_Calc_Figure_03_03_003">
+  <image source="CNX_Calc_Figure_03_03_003.jpg" width="50%">
+<description>"A photo of a grandstand next to a straightaway of a race track."
+  </description></image> <caption>The grandstand next to a straightaway of the Circuit de Barcelona-Catalunya race track, located where the spectators are not in danger.</caption>
+</figure>
+**********
+<p id="fs-id1169739298067">Safety is especially a concern on turns. If a driver does not slow down enough before entering the turn, the car may slide off the racetrack. Normally, this just results in a wider turn, which slows the driver down. But if the driver loses control completely, the car may fly off the track entirely, on a path tangent to the curve of the racetrack.</p>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1169739298074">Suppose you are designing a new Formula One track. One section of the track can be modeled by the function <m>f(x)=x^3+3x^2+x</m> (<xref ref="CNX_Calc_Figure_03_03_004"/>). The current plan calls for grandstands to be built along the first straightaway and around a portion of the first curve. The plans call for the front corner of the grandstand to be located at the point <m>(-1.9,2.8).</m> We want to determine whether this location puts the spectators in danger if a driver loses control of the car.</p>
+<figure xml:id="CNX_Calc_Figure_03_03_004">
+  <image source="CNX_Calc_Figure_03_03_004.jpg" width="50%"><description>"This figure has two parts labeled a and b. Figure a shows the graph of f(x) = x3 + 3x2 + x. Figure b shows the same graph but this time with two boxes on it. The first box appears along the left-hand side of the graph straddling the x-axis roughly parallel to f(x). The second box appears a little higher, also roughly parallel to f(x), with its front corner located at (-1.9, 2.8). Note that this corner is roughly in line with the direct path of the track before it started to turn."  </description></image> <caption>(a) One section of the racetrack can be modeled by the function <m>f(x)=x^3+3x^2+x.</m> (b) The front corner of the grandstand is located at <m>(-1.9,2.8).</m></caption></figure><ol id="fs-id1169736655867" list-type="enumerated" number-style="arabic">
+<li>Physicists have determined that drivers are most likely to lose control of their cars as they are coming into a turn, at the point where the slope of the tangent line is 1. Find the <m>(x,y)</m> coordinates of this point near the turn.</li>
+<li>Find the equation of the tangent line to the curve at this point.</li>
+<li>To determine whether the spectators are in danger in this scenario, find the <m>x</m>-coordinate of the point where the tangent line crosses the line <m>y=2.8.</m> Is this point safely to the right of the grandstand? Or are the spectators in danger?</li>
+<li>What if a driver loses control earlier than the physicists project? Suppose a driver loses control at the point <m>(-2.5,0.625).</m> What is the slope of the tangent line at this point?</li>
+<li>If a driver loses control as described in part 4, are the spectators safe?</li>
+<li>Should you proceed with the current design for the grandstand, or should the grandstands be moved?</li>
+</ol>
+</note>
+</subsection>
+<subsection id="fs-id1169736659062" class="key-concepts">
+<title>Key Concepts</title>
+<ul id="fs-id1169736659069" list-type="bulleted" bullet-style="bullet">
+<li>The derivative of a constant function is zero.</li>
+<li>The derivative of a power function is a function in which the power on <m>x</m> becomes the coefficient of the term and the power on <m>x</m> in the derivative decreases by 1.</li>
+<li>The derivative of a constant <m>c</m> multiplied by a function <m>f</m> is the same as the constant multiplied by the derivative.</li>
+<li>The derivative of the sum of a function <m>f</m> and a function <m>g</m> is the same as the sum of the derivative of <m>f</m> and the derivative of <emphasis effect="italics">g.</emphasis></li>
+<li>The derivative of the difference of a function <m>f</m> and a function <m>g</m> is the same as the difference of the derivative of <m>f</m> and the derivative of <emphasis effect="italics">g.</emphasis></li>
+<li>The derivative of a product of two functions is the derivative of the first function times the second function plus the derivative of the second function times the first function.</li>
+<li>The derivative of the quotient of two functions is the derivative of the first function times the second function minus the derivative of the second function times the first function, all divided by the square of the second function.</li>
+<li>We used the limit definition of the derivative to develop formulas that allow us to find derivatives without resorting to the definition of the derivative. These formulas can be used singly or in combination with each other.</li>
+</ul>
+</subsection>
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+
+<?ignore
+<subsection id="fs-id1169736659167" class="section-exercises">
+<p id="fs-id1169736659172">For the following exercises, find <m>f'(x)</m> for each function.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169739293620">
+<p id="fs-id1169739293622"><m>f(x)=x^7+10</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739293682">
+<p id="fs-id1169739293684"><m>f(x)=5x^3-x+1</m></p>
+</statement>
+<solution id="fs-id1169739293717">
+<p id="fs-id1169739293719"><m>f'(x)=15x^2-1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739293754">
+<p id="fs-id1169739293757"><m>f(x)=4x^2-7x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736595967">
+<p id="fs-id1169736595969"><m>f(x)=8x^4+9x^2-1</m></p>
+</statement>
+<solution id="fs-id1169736596007">
+<p id="fs-id1169736596010"><m>f'(x)=32x^3+18x</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736596047">
+<p id="fs-id1169736596049"><m>f(x)=x^4+\frac{2}{x}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739282661">
+<p id="fs-id1169739282663"><m>f(x)=3x(18x^4+\frac{1}{3}{x+1})</m></p>
+</statement>
+<solution id="fs-id1169739282712">
+<p id="fs-id1169739282715"><m>f'(x)=270x^4+\frac{3}{9}{<m:msup>(x+1)2</m:msup>}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736662538">
+<p id="fs-id1169736662540"><m>f(x)=(x+2)}{(2x^2-3)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736662632">
+<p id="fs-id1169736662634"><m>f(x)=x^2(\frac{2x^2}+\frac{5x^3})</m></p>
+</statement>
+<solution id="fs-id1169736662684">
+<p id="fs-id1169736662686"><m>f'(x)=\frac{-5}{x^2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736658890">
+<p id="fs-id1169736658892"><m>f(x)=\frac{x^3+2x^2-43}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736658973">
+<p id="fs-id1169736658975"><m>f(x)=\frac{4x^3-2x+1}{x^2}</m></p>
+</statement>
+<solution id="fs-id1169736659019">
+<p id="fs-id1169736659021"><m>f'(x)=\frac{4x^4+2x^2-2x}{x^4}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739303807">
+<p id="fs-id1169739303809"><m>f(x)=\frac{x^2+4}{x^2-4}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739303902">
+<p id="fs-id1169739303904"><m>f(x)=\frac{x+9}{x^2-7x+1}</m></p>
+</statement>
+<solution id="fs-id1169739284958">
+<p id="fs-id1169739284960"><m>f'(x)=\frac{-x^2-18x+64}{<m:msup>(x^2-7x+1)2</m:msup>}</m></p>
+</solution>
+
+<p id="fs-id1169739285029">For the following exercises, find the equation of the tangent line <m>T(x)</m> to the graph of the given function at the indicated point. Use a graphing calculator to graph the function and the tangent line.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169739285049">
+<p id="fs-id1169739285051"><emphasis effect="bold">[T]</emphasis> <m>y=3x^2+4x+1</m> at <m>(0,1)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739376114">
+<p id="fs-id1169739376116"><emphasis effect="bold">[T]</emphasis> <m>y=2\sqrt{x}+1</m> at <m>(4,5)</m></p>
+</statement>
+<solution id="fs-id1169739376156">
+<p id="fs-id1169739376158">
+<description>"The graph y is a slightly curving line with y intercept at 1. The line T(x) is straight with y intercept 3 and slope 1/2.">
+<image source="CNX_Calc_Figure_03_03_202.jpg" width="50%">
+
+<m>T(x)=\frac{1}{2}x+3</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739376209">
+<p id="fs-id1169739376211"><emphasis effect="bold">[T]</emphasis> <m>y=\frac{2}{x}{x-1}</m> at <m>(-1,1)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739345854">
+<p id="fs-id1169739345856"><emphasis effect="bold">[T]</emphasis> <m>y=\frac{2}{x}-\frac{3x^2}</m> at <m>(1,-1)</m></p>
+</statement>
+<solution id="fs-id1169739345904">
+<p id="fs-id1169739345906">
+<description>"The graph y is a two crescents with the crescent in the third quadrant sloping gently from (-3, -1) to (-1, -5) and the other crescent sloping more sharply from (0.8, -5) to (3, 0.2). The straight line T(x) is drawn through (0, -5) with slope 4.">
+<image source="CNX_Calc_Figure_03_03_204.jpg" width="50%">
+
+<m>T(x)=4x-5</m></p>
+</solution>
+
+<p id="fs-id1169739273563">For the following exercises, assume that <m>f(x)</m> and <m>g(x)</m> are both differentiable functions for all <m>x.</m> Find the derivative of each of the functions <m>h(x).</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169739273618">
+<p id="fs-id1169739273620"><m>h(x)=4f(x)+\frac{g(x)7}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739325497">
+<p id="fs-id1169739325499"><m>h(x)=x^3f(x)</m></p>
+</statement>
+<solution id="fs-id1169739325534">
+<p id="fs-id1169739325536"><m>h'(x)=3x^2f(x)+x^3f'(x)</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739325597">
+<p id="fs-id1169739325599"><m>h(x)=\frac{f(x)g(x)2}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739304922">
+<p id="fs-id1169739304924"><m>h(x)=\frac{3f(x)}{g(x)+2}</m></p>
+</statement>
+<solution id="fs-id1169739304970">
+<p id="fs-id1169739304972"><m>h'(x)=\frac{3f'(x)}{(g(x)+2)-3f(x)g'(x)}{<m:msup>(g(x)+2)2</m:msup>}</m></p>
+</solution>
+
+<p id="fs-id1169736597640">For the following exercises, assume that <m>f(x)</m> and <m>g(x)</m> are both differentiable functions with values as given in the following table. Use the following table to calculate the following derivatives.</p>
+<table xml:id="fs-id1169736597684" class="unnumbered column-header" summary="This table has five rows and five columns. The first column is a header column and it labels each row. The row headers from top to bottom are x, f(x), g(x), f’(x), and g’(x). To the right of the first row header are the values 1, 2, 3, and 4. To the right of the second row header are the values 3, 5, -2, and 0.To the right of the third row header are the values 2, 3, -4, and 6. To the right of the fourth row header are the values -1, 7, 8, and -3. To the right of the fifth row header are the values 4, 1, 2, and 9.">
+<label/>
+<tabular>
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+
+<row valign="top">
+<cell valign="top" halign ="left"><emphasis effect="bold"><m>x</m></emphasis></cell>
+<cell valign="top" halign ="left"><m>1</m></cell>
+<cell valign="top" halign ="left"><m>2</m></cell>
+<cell valign="top" halign ="left"><m>3</m></cell>
+<cell valign="top" halign ="left"><m>4</m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><emphasis effect="bold"><m>f(x)</m></emphasis></cell>
+<cell valign="top" halign ="left"><m>3</m></cell>
+<cell valign="top" halign ="left"><m>5</m></cell>
+<cell valign="top" halign ="left"><m>-2</m></cell>
+<cell valign="top" halign ="left"><m>0</m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><emphasis effect="bold"><m>g(x)</m></emphasis></cell>
+<cell valign="top" halign ="left"><m>2</m></cell>
+<cell valign="top" halign ="left"><m>3</m></cell>
+<cell valign="top" halign ="left"><m>-4</m></cell>
+<cell valign="top" halign ="left"><m>6</m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><emphasis effect="bold"><m>f'(x)</m></emphasis></cell>
+<cell valign="top" halign ="left"><m>-1</m></cell>
+<cell valign="top" halign ="left"><m>7</m></cell>
+<cell valign="top" halign ="left"><m>8</m></cell>
+<cell valign="top" halign ="left"><m>-3</m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><emphasis effect="bold"><m>g'(x)</m></emphasis></cell>
+<cell valign="top" halign ="left"><m>4</m></cell>
+<cell valign="top" halign ="left"><m>1</m></cell>
+<cell valign="top" halign ="left"><m>2</m></cell>
+<cell valign="top" halign ="left"><m>9</m></cell>
+</row>
+</tabular>
+
+</table>
+
+<!-- Move title outside statement--> <statement id="fs-id1169739275224">
+<p id="fs-id1169739275226">Find <m>h'(1)</m> if <m>h(x)=xf(x)+4g(x).</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739275304">
+<p id="fs-id1169739275306">Find <m>h'(2)</m> if <m>h(x)=\frac{f(x)}{g(x)}.</m></p>
+</statement>
+<solution id="fs-id1169739303630">
+<p id="fs-id1169739303632"><m>\frac{169}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739303647">
+<p id="fs-id1169739303650">Find <m>h'(3)</m> if <m>h(x)=2x+f(x)g(x).</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739303724">
+<p id="fs-id1169739303726">Find <m>h'(4)</m> if <m>h(x)=\frac{1}{x}+\frac{g(x)}{f(x)}.</m></p>
+</statement>
+<solution id="fs-id1169739350738">
+<p id="fs-id1169739350740">Undefined</p>
+</solution>
+
+<p id="fs-id1169739350745">For the following exercises, use the following figure to find the indicated derivatives, if they exist.</p>
+<description>"Two functions are graphed: f(x) and g(x). The function f(x) starts at (-1, 5) and decreases linearly to (3, 1) at which point it increases linearly to (5, 3). The function g(x) starts at the origin, increases linearly to (2.5, 2.5), and then remains constant at y = 2.5.">
+<image source="CNX_Calc_Figure_03_03_205.jpg" width="50%">
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739350766">
+<p id="fs-id1169739350768">Let <m>h(x)=f(x)+g(x).</m> Find</p>
+<ol marker="(a)">
+<li><m>h'(1),</m></li>
+<li><m>h'(3),</m> and</li>
+<li><m>h'(4).</m></li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736593511">
+<p id="fs-id1169736593513">Let <m>h(x)=f(x)g(x).</m> Find</p>
+<ol marker="(a)">
+<li><m>h'(1),</m></li>
+<li><m>h'(3),</m> and</li>
+<li><m>h'(4).</m></li>
+</ol>
+</statement>
+<solution id="fs-id1169736593620">
+<p id="fs-id1169736593622">a. <m>2,</m> b. does not exist, c. <m>2.5</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736593640">
+<p id="fs-id1169736593642">Let <m>h(x)=\frac{f(x)}{g(x)}.</m> Find</p>
+<ol marker="(a)">
+<li><m>h'(1),</m></li>
+<li><m>h'(3),</m> and</li>
+<li><m>h'(4).</m></li>
+</ol>
+</statement>
+
+<p id="fs-id1169739266693">For the following exercises,</p>
+<ol marker="(a)">
+<li>evaluate <m>f'(a),</m> and</li>
+<li>graph the function <m>f(x)</m> and the tangent line at <m>x=a.</m></li>
+</ol>
+
+<!-- Move title outside statement--> <statement id="fs-id1169739266753">
+<p id="fs-id1169739266756"><emphasis effect="bold">[T]</emphasis> <m>f(x)=2x^3+3x-x^2,a=2</m></p>
+</statement>
+<solution id="fs-id1169736655169">
+<p id="fs-id1169736655171">a. 23, b. <m>y=23x-28</m>
+<description>"The graph is a slightly deformed cubic function passing through the origin. The tangent line is drawn through (0, -28) with slope 23.">
+<image source="CNX_Calc_Figure_03_03_206.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736655208">
+<p id="fs-id1169736655210"><emphasis effect="bold">[T]</emphasis> <m>f(x)=\frac{1}{x}-x^2,a=1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736655294">
+<p id="fs-id1169736655296"><emphasis effect="bold">[T]</emphasis> <m>f(x)=x^2-<m:msup>x12</m:msup>+3x+2,a=0</m></p>
+</statement>
+<solution id="fs-id1169739305460">
+<p id="fs-id1169739305462">a. 3, b. <m>y=3x+2</m>
+<description>"The graph starts in the third quadrant, increases quickly and passes through the x axis near -0.9, then increases at a lower rate, passes through (0, 2), increases to (1, 5), and then decreases quickly and passes through the x axis near 1.2.">
+<image source="CNX_Calc_Figure_03_03_208.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739305500">
+<p id="fs-id1169739305502"><emphasis effect="bold">[T]</emphasis> <m>f(x)=\frac{1}{x}-<m:msup>x2\text{ / }3</m:msup>,a=-1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739305609">
+<p id="fs-id1169739305611">Find the equation of the tangent line to the graph of <m>f(x)=2x^3+4x^2-5x-3</m> at <m>x=-1.</m></p>
+</statement>
+<solution id="fs-id1169736662290">
+<p id="fs-id1169736662292"><m>y=-7x-3</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736662314">
+<p id="fs-id1169736662316">Find the equation of the tangent line to the graph of <m>f(x)=x^2+\frac{4}{x}-10</m> at <m>x=8.</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736662392">
+<p id="fs-id1169736662394">Find the equation of the tangent line to the graph of <m>f(x)=(3x-x^2)(3-x-x^2)</m> at <m>x=1.</m></p>
+</statement>
+<solution id="fs-id1169739303402">
+<p id="fs-id1169739303404"><m>y=-5x+7</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739303425">
+<p id="fs-id1169739303427">Find the point on the graph of <m>f(x)=x^3</m> such that the tangent line at that point has an <m>x</m> intercept of 6.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739303475">
+<p id="fs-id1169739303477">Find the equation of the line passing through the point <m>P(3,3)</m> and tangent to the graph of <m>f(x)=\frac{6x-1}.</m></p>
+</statement>
+<solution id="fs-id1169739303528">
+<p id="fs-id1169739303530"><m>y=-\frac{3}{2}x+\frac{152}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739303561">
+<p id="fs-id1169739303563">Determine all points on the graph of <m>f(x)=x^3+x^2-x-1</m> for which</p>
+<ol marker="(a)">
+<li>the tangent line is horizontal</li>
+<li>the tangent line has a slope of <m>-1.</m></li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739335939">
+<p id="fs-id1169739335941">Find a quadratic polynomial such that <m>f(1)=5,f'(1)=3</m> and <m>f\text{ ″ }(1)=-6.</m></p>
+</statement>
+<solution id="fs-id1169736613846">
+<p id="fs-id1169736613848"><m>y=-3x^2+9x-1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736613879">
+<p id="fs-id1169736613881">A car driving along a freeway with traffic has traveled <m>s(t)=t^3-6t^2+9t</m> meters in <m>t</m> seconds.</p>
+<ol marker="(a)">
+<li>Determine the time in seconds when the velocity of the car is 0.</li>
+<li>Determine the acceleration of the car when the velocity is 0.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736613989">
+<p id="fs-id1169736613991"><emphasis effect="bold">[T]</emphasis> A herring swimming along a straight line has traveled <m>s(t)=\frac{t^2}{t^2+2}</m> feet in <m>t</m> seconds.</p>
+<p id="fs-id1169736614035">Determine the velocity of the herring when it has traveled 3 seconds.</p>
+</statement>
+<solution id="fs-id1169736614040">
+<p id="fs-id1169739341306"><m>\frac{1}{2}{121}</m> or 0.0992 ft/s</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739341323">
+<p id="fs-id1169739341326">The population in millions of arctic flounder in the Atlantic Ocean is modeled by the function <m>P(t)=\frac{8t+3}{0.2t^2+1},</m> where <m>t</m> is measured in years.</p>
+<ol marker="(a)">
+<li>Determine the initial flounder population.</li>
+<li>Determine <m>P'(10)</m> and briefly interpret the result.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739341417">
+<p id="fs-id1169739341419"><emphasis effect="bold">[T]</emphasis> The concentration of antibiotic in the bloodstream <m>t</m> hours after being injected is given by the function <m>C(t)=\frac{2t^2+t}{t^3+50},</m> where <m>C</m> is measured in milligrams per liter of blood.</p>
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1169739341477" list-type="enumerated" number-style="lower-alpha"><li>Find the rate of change of <m>C(t).</m></li>
+<li>Determine the rate of change for <m>t=8,12,24,</m> and <m>36.</m></li>
+<li>Briefly describe what seems to be occurring as the number of hours increases.</li>
+</ol></statement>
+<solution id="fs-id1169739353277">
+<p id="fs-id1169739353279">a. <m>\frac{-2t^4-2t^3+200t+50}{<m:msup>(t^3+50)2</m:msup>}</m> b. <m>-0.02395</m> mg/L-hr, -0.01344 mg/L-hr, -0.003566 mg/L-hr, -0.001579 mg/L-hr c. The rate at which the concentration of drug in the bloodstream decreases is slowing to 0 as time increases.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739353350">
+<p id="fs-id1169739353352">A book publisher has a cost function given by <m>C(x)=\frac{x^3+2x+3}{x^2},</m> where <m>x</m> is the number of copies of a book in thousands and <m>C</m> is the cost, per book, measured in dollars. Evaluate <m>C'(2)</m> and explain its meaning.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739353435">
+<p id="fs-id1169739353438"><emphasis effect="bold">[T]</emphasis> According to Newton’s law of universal gravitation, the force <m>F</m> between two bodies of constant mass <m>m_1</m> and <m>m_2</m> is given by the formula <m>F=\frac{Gm_1m_2}{d^2},</m> where <m>G</m> is the gravitational constant and <m>d</m> is the distance between the bodies.</p>
+<ol marker="(a)">
+<li>Suppose that <m>G,m_1,\text{ and } m_2</m> are constants. Find the rate of change of force <m>F</m> with respect to distance <m>d.</m></li>
+<li>Find the rate of change of force <m>F</m> with gravitational constant <m>G=6.67 × <m:msup>10}{-11</m:msup></m> <m><m:msup>\text{ Nm }2</m:msup>\text{ / }<m:msup>\text{ kg }2</m:msup>,</m> on two bodies 10 meters apart, each with a mass of 1000 kilograms.</li>
+</ol>
+</statement>
+<solution id="fs-id1169739307958">
+<p id="fs-id1169739307960">a. <m>F'(d)=\frac{-2Gm_1m_2}{d^3}</m> b. <m>-1.33 × <m:msup>10}{-7</m:msup></m> N/m</p>
+</solution>
+
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1169739289276">
+<term>constant multiple rule</term>
+<meaning id="fs-id1169739289282">the derivative of a constant <m>c</m> multiplied by a function <m>f</m> is the same as the constant multiplied by the derivative: <m>\frac{d}{dx}(cf(x))=cf'(x)</m></meaning>
+</definition>
+<definition id="fs-id1169739289342">
+<term>constant rule</term>
+<meaning id="fs-id1169739289348">the derivative of a constant function is zero: <m>\frac{d}{dx}(c)=0,</m> where <m>c</m> is a constant</meaning>
+</definition>
+<definition id="fs-id1169739289383">
+<term>difference rule</term>
+<meaning id="fs-id1169739289388">the derivative of the difference of a function <m>f</m> and a function <m>g</m> is the same as the difference of the derivative of <m>f</m> and the derivative of <m>g</m>: <m>\frac{d}{dx}(f(x)-g(x))=f'(x)-g'(x)</m></meaning>
+</definition>
+<definition id="fs-id1169736592414">
+<term>power rule</term>
+<meaning id="fs-id1169736592419">the derivative of a power function is a function in which the power on <m>x</m> becomes the coefficient of the term and the power on <m>x</m> in the derivative decreases by 1: If <m>n</m> is an integer, then <m>\frac{d}{dx}x^n=nx^{n-1}</m></meaning>
+</definition>
+<definition id="fs-id1169736592467">
+<term>product rule</term>
+<meaning id="fs-id1169736592472">the derivative of a product of two functions is the derivative of the first function times the second function plus the derivative of the second function times the first function: <m>\frac{d}{dx}(f(x)g(x))=f'(x)g(x)+g'(x)f(x)</m></meaning>
+</definition>
+<definition id="fs-id1169736592566">
+<term>quotient rule</term>
+<meaning id="fs-id1169736592572">the derivative of the quotient of two functions is the derivative of the first function times the second function minus the derivative of the second function times the first function, all divided by the square of the second function: <m>\frac{d}{dx}(\frac{f(x)}{g(x)})=\frac{f'(x)g(x)-g'(x)f(x)}{(g(x))^2}</m></meaning>
+</definition>
+<definition id="fs-id1169736661322">
+<term>sum rule</term>
+<meaning id="fs-id1169736661328">the derivative of the sum of a function <m>f</m> and a function <m>g</m> is the same as the sum of the derivative of <m>f</m> and the derivative of <m>g</m>: <m>\frac{d}{dx}(f(x)+g(x))=f'(x)+g'(x)</m></meaning>
+</definition>
+</glossary>
+</document>
+?>

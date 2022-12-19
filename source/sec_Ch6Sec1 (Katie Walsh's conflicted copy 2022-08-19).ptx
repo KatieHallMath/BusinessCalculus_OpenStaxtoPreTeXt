@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_Ch6Sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Areas between Curves</title>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ul>
+<li>Determine the area of a region between two curves by integrating with respect to the independent variable.</li>
+<li>Find the area of a compound region.</li>
+<li>Determine the area of a region between two curves by integrating with respect to the dependent variable.</li>
+</ul>
+<p id="fs-id1167793932795">In <xref ref="ch_fifth">Introduction to Integration</xref>, we developed the concept of the definite integral to calculate the area below a curve on a given interval. In this section, we expand that idea to calculate the area of more complex regions. We start by finding the area between two curves that are functions of <m>x,</m> beginning with the simple case in which one function value is always greater than the other. We then look at cases when the graphs of the functions cross. Last, we consider how to calculate the area between two curves that are functions of <m>y.</m></p>
+</introduction>
+<subsection id="fs-id1167793485289">
+<title>Area of a Region between Two Curves</title>
+<p id="fs-id1167793369342">Let <m>f(x)</m> and <m>g(x)</m> be continuous functions over an interval <m>[a,b]</m> such that <m>f(x)\geq g(x)</m> on <m>[a,b].</m> We want to find the area between the graphs of the functions, as shown in the following figure.</p>
+<figure xml:id="CNX_Calc_Figure_06_01_001">
+<image source="CNX_Calc_Figure_06_01_001.jpg" width="50%">
+<description>"This figure is a graph in the first quadrant. There are two curves on the graph. The higher curve is labeled “f(x)” and the lower curve is labeled “g(x)”. There are two boundaries on the x-axis labeled a and b. There is shaded area between the two curves bounded by lines at x=a and x=b." </description></image> <caption>The area between the graphs of two functions, <m>f(x)</m> and <m>g(x),</m> on the interval <m>[a,b].</m></caption>
+</figure>
+<p id="fs-id1167794067547">As we did before, we are going to partition the interval on the <m>x\text{ -axis }</m> and approximate the area between the graphs of the functions with rectangles. So, for <m>i=0,1,2,\dots ,n,</m> let <m>P={x_i}</m> be a regular partition of <m>[a,b].</m> Then, for <m>i=1,2,\dots ,n,</m> choose a point <m>x_i^* \in [x_{i-1},x_i],</m> and on each interval <m>[x_{i-1} ,x_i]</m> construct a rectangle that extends vertically from <m>g(x_i^* )</m> to <m>f(x_i^* ).</m> <xref ref="CNX_Calc_Figure_06_01_002"/>(a) shows the rectangles when <m>x_i^* </m> is selected to be the left endpoint of the interval and <m>n=10.</m> <xref ref="CNX_Calc_Figure_06_01_002"/>(b) shows a representative rectangle in detail.</p>
+<note id="fs-id1167793366749" class="media-2">
+<p id="fs-id1167794072750">Use this <url href="http://www.openstax.org/l/20_CurveCalc" visual="http://www.openstax.org/l/20_CurveCalc">calculator</url> to learn more about the areas between two curves.</p>
+</note>
+<figure xml:id="CNX_Calc_Figure_06_01_002">
+  <image source="CNX_Calc_Figure_06_01_002.jpg" width="50%">
+<description>"This figure has three graphs. The first graph has two curves, one over the other. In between the curves is a rectangle. The top of the rectangle is on the upper curve labeled “f(x*)” and the bottom of the rectangle is on the lower curve and labeled “g(x*)”. The second graph, labeled “(a)”, has two curves on the graph. The higher curve is labeled “f(x)” and the lower curve is labeled “g(x)”. There are two boundaries on the x-axis labeled a and b. There is shaded area between the two curves bounded by lines at x=a and x=b. The third graph, labeled “(b)” has two curves one over the other. The first curve is labeled “f(x*)” and the lower curve is labeled “g(x*)”. There is a shaded rectangle between the two. The width of the rectangle is labeled as “delta x”." </description></image> <caption>(a) We can approximate the area between the graphs of two functions, <m>f(x)</m> and <m>g(x),</m> with rectangles. (b) The area of a typical rectangle goes from one curve to the other.</caption>
+</figure>
+<p id="fs-id1167793432313">The height of each individual rectangle is <m>f(x_i^* )-g(x_i^* )</m> and the width of each rectangle is <m>\Delta x.</m> Adding the areas of all the rectangles, we see that the area between the curves is approximated by</p>
+<me>A\approx \displaystyle{ \sum_{i=1}^n[f(x_i^*)-g(x_i^*)]\Delta x}.</me>
+<p id="fs-id1167793386764">This is a Riemann sum, so we take the limit as <m>n\to \infty </m> and we get</p>
+<me>A=\lim_{n\to \infty }\displaystyle{ \sum_{i=1}^n[f(x_i^* )-g(x_i^* )]\Delta x}=\displaystyle{\int_a^b [f(x)-g(x)]dx}.</me>
+<p id="fs-id1167794051267">These findings are summarized in the following theorem.</p>
+<theorem> <!-- Change next end note to end theorem -->
+<title>Finding the Area between Two Curves</title>
+<p id="fs-id1167793978678">Let <m>f(x)</m> and <m>g(x)</m> be continuous functions such that <m>f(x)\geq g(x)</m> over an interval <m>[a,b].</m> Let <m>R</m> denote the region bounded above by the graph of <m>f(x),</m> below by the graph of <m>g(x),</m> and on the left and right by the lines <m>x=a</m> and <m>x=b,</m> respectively. Then, the area of <m>R</m> is given by</p>
+<me>A=\displaystyle{ \int_{a}^{b} [f(x)-g(x)]dx}.</me>
+</theorem>
+<p id="fs-id1167793870660">We apply this theorem in the following example.</p>
+<example xml:id="fs-id1167793900960">
+<title>Finding the Area of a Region between Two Curves 1</title>
+<statement id="fs-id1167793950614">
+<p id="fs-id1167794070801">If <m>R</m> is the region bounded above by the graph of the function <m>f(x)=x+4</m> and below by the graph of the function <m>g(x)=3-\frac{x}{2}</m> over the interval <m>[1,4],</m> find the area of region <m>R.</m></p>
+</statement>
+<solution id="fs-id1167793379066">
+<p id="fs-id1167794055154">The region is depicted in the following figure.</p>
+<figure xml:id="CNX_Calc_Figure_06_01_003">
+<image source="CNX_Calc_Figure_06_01_003.jpg" width="50%">
+<description>"This figure is has two linear graphs in the first quadrant. They are the functions f(x) = x+4 and g(x)= 3-x/2. In between these lines is a shaded region, bounded above by f(x) and below by g(x). The shaded area is between x=1 and x=4." </description></image> <caption>A region between two curves is shown where one curve is always greater than the other.</caption>
+</figure>
+<p id="fs-id1167794284162">We have</p>
+<md>
+  <mrow>A\amp =\displaystyle{ \int_{a}^{b} [f(x)-g(x)]dx}</mrow>
+  <mrow> \amp=\displaystyle{\int_{1}^{4}[(x+4)-(3-\frac{x}{2})]dx}=\displaystyle{\int_{1}^{4}[\frac{3x}{2}+1]dx}</mrow><mrow> \amp=\left.\left[\frac{3x^2}{4}+x\right] \right|_1^4=(16-\frac{7}{4})=\frac{57}{4}.</mrow></md>
+<p id="fs-id1167793912500">The area of the region is <m>\frac{57}{4}\text{ units }^2.</m></p>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1167793887637">
+<p id="fs-id1167793270758">If <m>R</m> is the region bounded by the graphs of the functions <m>f(x)=\frac{x}{2}+5</m> and <m>g(x)=x+\frac{1}{2}</m> over the interval <m>[1,5],</m> find the area of region <m>R.</m></p>
+</statement>
+<solution id="fs-id1167793358414">
+<p id="fs-id1167793933114"><m>12</m> units <m>^2</m></p>
+</solution>
+<hint>
+<p id="fs-id1167793420838">Graph the functions to determine which function’s graph forms the upper bound and which forms the lower bound, then follow the process used in <xref ref="fs-id1167793900960"/>.</p>
+</hint></exercise>
+<example><title>Area between Revenue and Cost Functions</title>
+<statement>Suppose your daily revenue from selling used DVDs is <m>R(t)=100+5t</m> dollars per day while you daily costs are <m>C(t)=90+5t</m> dollars per day, where <m>t</m> represents the number of days from the beginning of the week. If <m>R</m> is the region bounded by the graphs of the functions <m>R(t) \text{ and } C(t)</m> over the interval [0,5], find the area of region <m>R</m>. What does the answer represent?
+</statement>
+<solution>
+<p>The region is depicted in the following figure.</p>
+<!--Insert figure for revenue and cost
+<figure xml:id="">
+<image source="" width="50%">
+<description>"This figure is has two linear graphs in the first quadrant. They are the functions R(t)=100+5t and C(t)=90+5t. In between these lines is a shaded region, bounded above by R(t) and below by C(t)). The shaded area is between t=0 and t=5." </description></image> <caption>A region between two curves is shown where one curve is always greater than the other.</caption>
+</figure>-->
+<p>We have</p>
+<md>
+  <mrow>A\amp=\displaystyle{ \int_{a}^{b} [R(t)-C(t)]dt} </mrow>
+  <mrow>\amp=\displaystyle{\int_{0}^{5}[(100+5t)-(90+5t)]dt}</mrow>
+  <mrow>\amp=\displaystyle{\int_{0}^{5}10 dt}</mrow>
+  <mrow> \amp=\left.\left[10t\right] \right|_0^5</mrow>
+  <mrow>\amp=50.</mrow></md>
+<p>The area of the region is <m>50</m> units <m>^2</m>. Recall from section 1.3, <xref ref="profit_13"/>. This gives us that the area of the region represents the the total profit over 5 days.</p>
+</solution>
+</example>
+<p id="fs-id1167793924679">In <xref ref="fs-id1167793900960"/>, we defined the interval of interest as part of the problem statement. Quite often, though, we want to define our interval of interest based on where the graphs of the two functions intersect. This is illustrated in the following example.</p>
+<example xml:id="fs-id1167793852231">
+<title>Finding the Area of a Region between Two Curves 2</title>
+ <statement id="fs-id1167793479819">
+<p id="fs-id1167793566211">If <m>R</m> is the region bounded above by the graph of the function <m>f(x)=9-(x/2)^2</m> and below by the graph of the function <m>g(x)=6-x,</m> find the area of region <m>R.</m></p>
+</statement>
+<solution id="fs-id1167794199950">
+<p id="fs-id1167794199953">The region is depicted in the following figure.</p>
+<figure xml:id="CNX_Calc_Figure_06_01_004">
+<image source="CNX_Calc_Figure_06_01_004.jpg" width="50%">
+<description>"This figure is has two graphs in the first quadrant. They are the functions f(x) = 9-(x/2)^2 and g(x)= 6-x. In between these graphs, an upside down parabola and a line, is a shaded region, bounded above by f(x) and below by g(x)."  </description></image> <caption>This graph shows the region below the graph of <m>f(x)</m> and above the graph of <m>g(x).</m></caption>
+</figure>
+<p id="fs-id1167793930934">We first need to compute where the graphs of the functions intersect. Setting <m>f(x)=g(x),</m> we get</p>
+<md><mrow>f(x)\amp =g(x)</mrow>
+<mrow>9-\left(\frac{x}{2}\right)^2\amp = 6-x</mrow>
+<mrow>9-\frac{x^2}{4}\amp = 6-x</mrow>
+<mrow>36-x^2\amp = 24-4x</mrow>
+<mrow>x^2-4x-12\amp = 0</mrow>
+<mrow>(x-6)(x+2)\amp =0.</mrow>
+</md>
+<p id="fs-id1167794061273">The graphs of the functions intersect when <m>x=6</m> or <m>x=-2,</m> so we want to integrate from <m>-2</m> to <m>6.</m> Since <m>f(x)\geq g(x)</m> for <m>-2\leq x\leq 6,</m> we obtain</p>
+<md>
+  <mrow>A\amp =\displaystyle{ \int_{a}^{b} [f(x)-g(x)]dx}</mrow>
+  <mrow> \amp=\displaystyle{\int_{-2}^{6}\left[9-(\frac{x}{2})^2-(6-x)\right]dx}=\displaystyle{\int_{-2}^{6}\left[3-\frac{x^2}{4}+x\right]dx}</mrow>
+  <mrow> \amp=\left.\left[3x-\frac{x^3}{12}+\frac{x^2}{2}\right] \right|_{-2}^{6}=\frac{64}{3}.</mrow></md>
+<p id="fs-id1167793638870">The area of the region is <m>64/3</m> units <m>^2</m>.</p>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1167793633072">
+<p id="fs-id1167793633074">If <m>R</m> is the region bounded above by the graph of the function <m>f(x)=x</m> and below by the graph of the function <m>g(x)=x^4,</m> find the area of region <m>R.</m></p>
+</statement>
+<solution id="fs-id1167793276950">
+<p id="fs-id1167793276952"><m>\frac{3}{10}</m> unit <m>^2</m></p>
+</solution>
+<hint>
+<p id="fs-id1167793634290">Use the process from <xref ref="fs-id1167793852231"/>.</p>
+</hint></exercise>
+</subsection>
+<subsection id="fs-id1167793443023">
+<title>Areas of Compound Regions</title>
+<p id="fs-id1167793400867">So far, we have required <m>f(x)\geq g(x)</m> over the entire interval of interest, but what if we want to look at regions bounded by the graphs of functions that cross one another? In that case, we modify the process we just developed by using the absolute value function.</p>
+<theorem> <!-- Change next end note to end theorem -->
+<title>Finding the Area of a Region between Curves That Cross</title>
+<p id="fs-id1167793589368">Let <m>f(x)</m> and <m>g(x)</m> be continuous functions over an interval <m>[a,b].</m> Let <m>R</m> denote the region between the graphs of <m>f(x)</m> and <m>g(x),</m> and be bounded on the left and right by the lines <m>x=a</m> and <m>x=b,</m> respectively. Then, the area of <m>R</m> is given by</p>
+<me>A=\displaystyle{ \int_{a}^{b} |f(x)-g(x)|dx}.</me>
+</theorem>
+<p id="fs-id1167793452414">In practice, applying this theorem requires us to break up the interval <m>[a,b]</m> and evaluate several integrals, depending on which of the function values is greater over a given part of the interval. We study this process in the following example.</p>
+<!--Commenting out trig
+<example xml:id="fs-id1167793263971">
+<title>Finding the Area of a Region Bounded by Functions That Cross</title>
+ <statement id="fs-id1167793263976">
+<p id="fs-id1167794226530">If <m>R</m> is the region between the graphs of the functions <m>f(x)=\sin x</m> and <m>g(x)=\cos  x</m> over the interval <m>[0,\pi],</m> find the area of region <m>R.</m></p>
+</statement>
+<solution id="fs-id1167794045876">
+<p id="fs-id1167793510078">The region is depicted in the following figure.</p>
+<figure xml:id="CNX_Calc_Figure_06_01_005">
+  <image source="CNX_Calc_Figure_06_01_005.jpg" width="50%">
+<description>"This figure is has two graphs. They are the functions f(x) = sinx and g(x)= cosx. They are both periodic functions that resemble waves. There are two shaded areas between the graphs. The first shaded area is labeled “R1” and has g(x) above f(x). This region begins at the y-axis and stops where the curves intersect. The second region is labeled “R2” and begins at the intersection with f(x) above g(x). The shaded region stops at x=pi."  </description></image> <caption>The region between two curves can be broken into two sub-regions.</caption>
+</figure>
+<p id="fs-id1167793420158">The graphs of the functions intersect at <m>x=\pi/4.</m> For <m>x\in[0,\pi/4],</m> <m>\cos  x\geq \sin x,</m> so</p>
+<me>|f(x)-g(x)|=|\sin x-\cos  x|=\cos  x-\sin x.</me>
+<p id="fs-id1167793258792">On the other hand, for <m>x\in[\pi/4,\pi],</m> <m>\sin x\geq \cos  x,</m> so</p>
+<me>|f(x)-g(x)|=|\sin x-\cos  x|=\sin x-\cos  x.</me>
+<p id="fs-id1167794040499">Then</p>
+<md>
+  <mrow>A\amp =\displaystyle{ \int_{a}^{b} |f(x)-g(x)|dx}</mrow>
+  <mrow> \amp=\displaystyle{ \int_0^{\pi}|\sin x-\cos  x|dx}=\displaystyle{ \int_0^{\pi/4}(\cos  x-\sin x)dx}+\displaystyle{ \int_{\pi/4}^{\pi}\sin x-\cos  x)dx}</mrow>
+  <mrow> \amp=\left.\left[\sin x+\cos  x\right] \right|_0^{\pi/4}+\left.\left[- \cos  x-\sin x\right] \right|_{\pi/4}^{\pi}</mrow>
+  <mrow> \amp=(\sqrt{2}-1)+(1+\sqrt{2})=2\sqrt{2}.</mrow></md>
+<p id="fs-id1167794117704">The area of the region is <m>2\sqrt{2}</m> units <m>^2</m>.</p>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1167794121635">
+<p id="fs-id1167794121637">If <m>R</m> is the region between the graphs of the functions <m>f(x)=\sin x</m> and <m>g(x)=\cos  x</m> over the interval <m>[\pi/2,2\pi],</m> find the area of region <m>R.</m></p>
+</statement>
+<solution id="fs-id1167793932266">
+<p id="fs-id1167793932268"><m>2+2\sqrt{2}</m> units <m>^2</m></p>
+</solution>
+<hint>
+<p id="fs-id1167793510312">The two curves intersect at <m>x=(5\pi)/4.</m></p>
+</hint></exercise>-->
+<example>
+<title>Finding the Area of a Region Bounded by Functions That Cross</title>
+ <statement>
+<p>If <m>R</m> is the region between the graphs of the functions <m>f(x)=-x</m> and <m>g(x)=2-x^2</m> over the interval <m>[-2,2],</m> find the area of region <m>R.</m></p>
+</statement>
+<solution>
+<p>Let's first find where the graphs intersect.</p>
+<md>
+<mrow>f(x)\amp=g(x)</mrow>
+<mrow>-x\amp=2-x^2</mrow>
+<mrow>x^2-x-2\amp=0</mrow>
+<mrow>(x-2)(x+1)\amp=0</mrow>
+<mrow>x\amp=-1,\;2</mrow>
+</md>
+<p>The graphs of the functions intersect at <m>x=-1\text{ and }x=2.</m> The region is depicted in the following figure.</p>
+<!--insert figure for f(x)=-x and g(x)=2-x^2
+<figure xml:id="">
+  <image source="" width="50%">
+<description>"This figure is has two graphs. They are the functions f(x)= -x and g(x)= 2-x^2. There are two shaded areas between the graphs. The first shaded area is labeled "R1" and has f(x) above g(x). This region begins at x=-2 and stops where the curves intersect at x=-1. The second region is labeled "R2" and begins at the intersection with g(x) above f(x). The shaded region stops at x=2."  </description></image> <caption>The region between two curves can be broken into two sub-regions.</caption>
+</figure>-->
+<p>For <m>x\in[-2,-1],</m> <m>f(x)\geq g(x)</m>. On the other hand, for <m>x\in[-1,2],</m> <m>g(x)\geq f(x)</m>. Then,</p>
+<md>
+  <mrow>A\amp =\displaystyle{ \int_{a}^{b} |f(x)-g(x)|dx}</mrow>
+  <mrow> \amp=\displaystyle{ \int_{-2}^{2}|-x-(2-x^2)|dx}=\displaystyle{ \int_{-2}^{-1}[-x-(2-x^2)]dx}+\displaystyle{ \int_{-1}^{2}[(2-x^2)-(-x)]dx}</mrow>
+  <mrow> \amp=\displaystyle{ \int_{-2}^{-1}(x^2-x-2)dx}+\displaystyle{ \int_{-1}^{2}(-x^2+x+2)dx}</mrow>
+  <mrow> \amp=\left.\left[\frac{1}{3}x^3-\frac{1}{2}x^2-2x\right] \right|_{-2}^{-1}+\left.\left[-\frac{1}{3}x^3+\frac{1}{2}x^2+2x\right] \right|_{-1}^{2}</mrow>
+  <mrow> \amp=\left(\frac{7}{6}-\left(-\frac{2}{3}\right)\right)+\left(\frac{10}{3}-\left(-\frac{7}{6}\right)\right)=\frac{19}{3}.</mrow></md>
+<p>The area of the region is <m>\frac{19}{3}</m> units <m>^2</m>.</p>
+</solution>
+</example>
+<exercise>  <statement>
+<p>If <m>R</m> is the region between the graphs of the functions <m>f(x)=x</m> and <m>g(x)=x^2</m> over the interval <m>[0,2],</m> find the area of region <m>R.</m></p>
+</statement>
+<solution>
+<p><m>1</m> unit <m>^2</m></p>
+</solution>
+<hint>
+<p>The two curves intersect at <m>x=1.</m></p>
+</hint></exercise>
+<example xml:id="fs-id1167793455088">
+<title>Finding the Area of a Complex Region</title>
+<statement id="fs-id1167793580238">
+<p id="fs-id1167793517455">Consider the region depicted in <xref ref="CNX_Calc_Figure_06_01_006"/>. Find the area of <m>R.</m></p>
+<figure xml:id="CNX_Calc_Figure_06_01_006">
+<image source="CNX_Calc_Figure_06_01_006.jpg" width="50%">
+<description>"This figure is has two graphs in the first quadrant. They are the functions f(x) = x^2 and g(x)= 2-x. In between these graphs is a shaded region, bounded to the left by f(x) and to the right by g(x). All of which is above the x-axis. The region is labeled R. The shaded area is between x=0 and x=2."  </description></image> <caption>Two integrals are required to calculate the area of this region.</caption>
+</figure>
+</statement>
+<solution id="fs-id1167793515406">
+<p id="fs-id1167793473492">As with <xref ref="fs-id1167793263971"/>, we need to divide the interval into two pieces. The graphs of the functions intersect at <m>x=1</m> (set <m>f(x)=g(x)</m> and solve for <m>x</m>), so we evaluate two separate integrals: one over the interval <m>[0,1]</m> and one over the interval <m>[1,2].</m></p>
+<p id="fs-id1167793615262">Over the interval <m>[0,1],</m> the region is bounded above by <m>f(x)=x^2</m> and below by the <m>x</m>-axis, so we have</p>
+<me>A_1=\displaystyle{ \int_{0}^{1} x^2dx}=\left.\frac{x^3}{3}\right|_0^1=\frac{1}{3}.</me>
+<p id="fs-id1167793276900">Over the interval <m>[1,2],</m> the region is bounded above by <m>g(x)=2-x</m> and below by the <m>x\text{ -axis, }</m> so we have</p>
+<me>A_2=\displaystyle{ \int_{1}^{2} (2-x)dx}=\left.\left[2x-\frac{x^2}{2}\right]\right|_1^2=\frac{1}{2}.</me>
+<p id="fs-id1167793619930">Adding these areas together, we obtain</p>
+<me>A=A_1+A_2=\frac{1}{3}+\frac{1}{2}=\frac{5}{6}.</me>
+<p id="fs-id1167794209440">The area of the region is <m>5/6</m> units <m>^2</m>.</p>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1167793581454">
+<p id="fs-id1167793581456">Consider the region depicted in the following figure. Find the area of <m>R.</m></p>
+<image source="CNX_Calc_Figure_06_01_007.jpg" width="50%">
+<description>"This figure is has two graphs in the first quadrant. They are the functions f(x) = squareroot of x and g(x)= 3/2 – x/2. In between these graphs is a shaded region, bounded to the left by f(x) and to the right by g(x). All of which is above the x-axis. The shaded area is between x=0 and x=3." </description></image>
+</statement>
+<solution id="fs-id1167793262777">
+<p id="fs-id1167793262779"><m>\frac{5}{3}</m> units <m>^2</m></p>
+</solution>
+<hint>
+<p id="fs-id1167794186806">The two curves intersect at <m>x=1.</m></p>
+</hint></exercise>
+</subsection>
+<!--Commenting out integrating with respect to y
+<subsection id="fs-id1167794215136">
+<title>Regions Defined with Respect to <m>y</m></title>
+<p id="fs-id1167793579591">In <xref ref="fs-id1167793455088"/>, we had to evaluate two separate integrals to calculate the area of the region. However, there is another approach that requires only one integral. What if we treat the curves as functions of <m>y,</m> instead of as functions of <m>x?</m> Review <xref ref="CNX_Calc_Figure_06_01_006"/>. Note that the left graph, shown in red, is represented by the function <m>y=f(x)=x^2.</m> We could just as easily solve this for <m>x</m> and represent the curve by the function <m>x=v(y)=\sqrt{y}.</m> (Note that <m>x=- \sqrt{y}</m> is also a valid representation of the function <m>y=f(x)=x^2</m> as a function of <m>y.</m> However, based on the graph, it is clear we are interested in the positive square root.) Similarly, the right graph is represented by the function <m>y=g(x)=2-x,</m> but could just as easily be represented by the function <m>x=u(y)=2-y.</m> When the graphs are represented as functions of <m>y,</m> we see the region is bounded on the left by the graph of one function and on the right by the graph of the other function. Therefore, if we integrate with respect to <m>y,</m> we need to evaluate one integral only. Let’s develop a formula for this type of integration.</p>
+<p id="fs-id1167793477137">Let <m>u(y)</m> and <m>v(y)</m> be continuous functions over an interval <m>[c,d]</m> such that <m>u(y)\geq v(y)</m> for all <m>y\in[c,d].</m> We want to find the area between the graphs of the functions, as shown in the following figure.</p>
+<figure xml:id="CNX_Calc_Figure_06_01_008">
+  <image source="CNX_Calc_Figure_06_01_008.jpg" width="50%">
+<description>"This figure is has two graphs in the first quadrant. They are the functions v(y) and u(y). In between these graphs is a shaded region, bounded to the left by v(y) and to the right by u(y). The region is labeled R. The shaded area is between the horizontal boundaries of y=c and y=d." </description></image> <caption>We can find the area between the graphs of two functions, <m>u(y)</m> and <m>v(y).</m></caption>
+</figure>
+<p id="fs-id1167794022639">This time, we are going to partition the interval on the <m>y\text{ -axis }</m> and use horizontal rectangles to approximate the area between the functions. So, for <m>i=0,1,2,\dots ,n,</m> let <m>Q={y_i}</m> be a regular partition of <m>[c,d].</m> Then, for <m>i=1,2,\dots ,n,</m> choose a point <m>y_i^* \in[y_{i-1} ,y_i],</m> then over each interval <m>[y_{i-1} ,y_i]</m> construct a rectangle that extends horizontally from <m>v(y_i^* )</m> to <m>u(y_i^* ).</m> <xref ref="CNX_Calc_Figure_06_01_009"/>(a) shows the rectangles when <m>y_i^* </m> is selected to be the lower endpoint of the interval and <m>n=10.</m> <xref ref="CNX_Calc_Figure_06_01_009"/>(b) shows a representative rectangle in detail.</p>
+<figure xml:id="CNX_Calc_Figure_06_01_009">
+  <image source="CNX_Calc_Figure_06_01_009.jpg" width="50%">
+<description>"This figure is has three graphs. The first figure has two curves. They are the functions v(y*) and u(y*). In between these curves is a horizontal rectangle. The second figure labeled “(a)”, is a shaded region, bounded to the left by v(y) and to the right by u(y). The shaded area is between the horizontal boundaries of y=c and y=d. This shaded area is broken into rectangles between the curves. The third figure, labeled “(b)”, is the two curves v(y*) and u(y*). In between the curves is a horizontal rectangle with width delta y."  </description></image> <caption>(a) Approximating the area between the graphs of two functions, <m>u(y)</m> and <m>v(y),</m> with rectangles. (b) The area of a typical rectangle.</caption>
+</figure>
+<p id="fs-id1167793948831">The height of each individual rectangle is <m>\Delta y</m> and the width of each rectangle is <m>u(y_i^* )-v(y_i^* ).</m> Therefore, the area between the curves is approximately</p>
+<me>A\approx \sum_{i=1}^n[u(y_i^* )-v(y_i^* )]\Delta y.</me>
+<p id="fs-id1167794181166">This is a Riemann sum, so we take the limit as <m>n\to \infty ,</m> obtaining</p>
+<me>A=\lim_{n\to \infty }\displaystyle{ \sum_{i=1}^n[u(y_i^* )-v(y_i^* )]\Delta y}=\displaystyle{\int_c^d [u(y)-v(y)]dy}.</me>
+<p id="fs-id1167793538360">These findings are summarized in the following theorem.</p>
+<theorem>  Change next end note to end theorem
+<title>Finding the Area between Two Curves, Integrating along the <m>y</m>-axis</title>
+<p id="fs-id1167793414228">Let <m>u(y)</m> and <m>v(y)</m> be continuous functions such that <m>u(y)\geq v(y)</m> for all <m>y\in[c,d].</m> Let <m>R</m> denote the region bounded on the right by the graph of <m>u(y),</m> on the left by the graph of <m>v(y),</m> and above and below by the lines <m>y=d</m> and <m>y=c,</m> respectively. Then, the area of <m>R</m> is given by</p>
+<me>A=\displaystyle{ \int_{c}^{d} [u(y)-v(y)]dy}.</me>
+</theorem>
+<example xml:id="fs-id1167793930320">
+<title>Integrating with Respect to <m>y</m></title>
+ <statement id="fs-id1167793930324">
+<p id="fs-id1167793246812">Let’s revisit <xref ref="fs-id1167793455088"/>, only this time let’s integrate with respect to <m>y.</m> Let <m>R</m> be the region depicted in <xref ref="CNX_Calc_Figure_06_01_010"/>. Find the area of <m>R</m> by integrating with respect to <m>y.</m></p>
+<figure xml:id="CNX_Calc_Figure_06_01_010">
+  <image source="CNX_Calc_Figure_06_01_010.jpg" width="50%">
+<description>"This figure is has two graphs in the first quadrant. They are the functions f(x) = x^2 and g(x)= 2-x. In between these graphs is a shaded region, bounded to the left by f(x) and to the right by g(x). All of which is above the x-axis. The region is labeled R. The shaded area is between x=0 and x=2."  </description></image> <caption>The area of region <m>R</m> can be calculated using one integral only when the curves are treated as functions of <m>y.</m></caption>
+</figure>
+</statement>
+<solution id="fs-id1167794075644">
+<p id="fs-id1167794075646">We must first express the graphs as functions of <m>y.</m> As we saw at the beginning of this section, the curve on the left can be represented by the function <m>x=v(y)=\sqrt{y},</m> and the curve on the right can be represented by the function <m>x=u(y)=2-y.</m></p>
+<p id="fs-id1167793275013">Now we have to determine the limits of integration. The region is bounded below by the <m>x</m>-axis, so the lower limit of integration is <m>y=0.</m> The upper limit of integration is determined by the point where the two graphs intersect, which is the point <m>(1,1),</m> so the upper limit of integration is <m>y=1.</m> Thus, we have <m>[c,d]=[0,1].</m></p>
+<p id="fs-id1167793943918">Calculating the area of the region, we get</p>
+<md>
+  <mrow>A\amp =\displaystyle{ \int_{c}^{d} [u(y)-v(y)]dy}</mrow>
+  <mrow> \amp=\displaystyle{ \int_{0}^{1} [(2-y)-\sqrt{y}]dy}=\left.\left[2y-\frac{y^2}{2}-\frac{2}{3}y^{3/2}\right] \right|_0^1</mrow>
+  <mrow> \amp=\frac{5}{6}.</mrow>
+</md>
+<p id="fs-id1167794329495">The area of the region is <m>5/6</m> units <m>^2</m>.</p>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1167793668619">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1167793668621">Let’s revisit the checkpoint associated with <xref ref="fs-id1167793455088"/>, only this time, let’s integrate with respect to <m>y.</m> Let <m>R</m> be the region depicted in the following figure. Find the area of <m>R</m> by integrating with respect to <m>y.</m></p>
+<image source="CNX_Calc_Figure_06_01_011.jpg" width="50%">
+<description>"This figure is has two graphs in the first quadrant. They are the functions f(x) = squareroot of x and g(x)= 3/2 – x/2. In between these graphs is a shaded region, bounded to the left by f(x) and to the right by g(x). All of which is above the x-axis. The shaded area is between x=0 and x=3." </description></image>
+</statement>
+<solution id="fs-id1167793589587">
+<p id="fs-id1167793589589"><m>\frac{5}{3}</m> units <m>^2</m></p>
+</solution>
+<hint>
+<p id="fs-id1167793499666">Follow the process from the previous example.</p>
+</hint></exercise>
+</subsection>-->
+<subsection id="fs-id1167793455282" class="key-concepts">
+<title>Key Concepts</title>
+<ul>
+<li>Just as definite integrals can be used to find the area under a curve, they can also be used to find the area between two curves.</li>
+<li>To find the area between two curves defined by functions, integrate the difference of the functions.</li>
+<li>If the graphs of the functions cross, or if the region is complex, use the absolute value of the difference of the functions. In this case, it may be necessary to evaluate two or more integrals and add the results to find the area of the region.</li>
+<!--Commenting out integration with respect to y
+<li>Sometimes it can be easier to integrate with respect to <m>y</m> to find the area. The principles are the same regardless of which variable is used as the variable of integration.</li>-->
+</ul>
+</subsection>
+<subsection id="fs-id1167793470788" class="key-equations">
+<title>Key Equations</title>
+<ul>
+<li><emphasis effect="bold">Area between two curves, integrating on the <m>x</m>-axis</emphasis>
+<m>A=\displaystyle{ \int_{a}^{b} [f(x)-g(x)]dx}</m></li>
+<!--Commenting out integration with respect to y
+<li><emphasis effect="bold">Area between two curves, integrating on the <m>y</m>-axis</emphasis>
+<m>A=\displaystyle{ \int_{c}^{d} [u(y)-v(y)]dy}</m></li>-->
+</ul>
+</subsection>
+</section>
+<?ignore
+<section id="fs-id1167793298894" class="section-exercises">
+<p id="fs-id1167793298898">For the following exercises, determine the area of the region between the two curves in the given figure by integrating over the <m>x\text{ -axis }\text{ . }</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1167793956499">
+<p id="fs-id1167793956501"><m>y=x^2-3 \text{ and } y=1</m></p>
+<description>"This figure is has two graphs. They are the functions f(x) = x^2-3and g(x)=1. In between these graphs is a shaded region, bounded above by g(x) and below by f(x). The shaded area is between x=-2 and x=2.">
+<image source="CNX_Calc_Figure_06_01_201.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1167793636187">
+<p id="fs-id1167793636190"><m>\frac{323}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793540986">
+<p id="fs-id1167793540988"><m>y=x^2 \text{ and } y=3x+4</m></p>
+<description>"This figure is has two graphs. They are the functions f(x) = x^2 and g(x)= 3x+4. In between these graphs is a shaded region, bounded above by g(x) and below by g(x).">
+<image source="CNX_Calc_Figure_06_01_202.jpg" width="50%">
+
+</statement>
+
+<p id="fs-id1167793929421">For the following exercises, split the region between the two curves into two smaller regions, then determine the area by integrating over the <m>x\text{ -axis }.</m> Note that you will have two integrals to solve.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1167793499143">
+<p id="fs-id1167793499145"><m>y=x^3</m> and <m>y=x^2+x</m></p>
+<description>"This figure is has two graphs. They are the functions f(x) = x^3 and g(x)= x^2+x. These graphs intersect twice. The regions between the intersections are shaded. The first region is bounded above by f(x) and below by g(x). The second region is bounded above by g(x) and below by f(x).">
+<image source="CNX_Calc_Figure_06_01_203.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1167794122421">
+<p id="fs-id1167793423473"><m>\frac{1}{3}{12}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793423489">
+<p id="fs-id1167793423491"><m>y=\cos  \theta </m> and <m>y=0.5,</m> for <m>0\leq \theta \leq \pi</m></p>
+<description>"This figure is has two graphs. They are the functions f(theta) = cos(theta) and g(x)= 0.5. These graphs intersect twice. The regions between the intersections are shaded. The first region is bounded above by f(x) and below by g(x). The second region is bounded above by g(x) and below by f(x).">
+<image source="CNX_Calc_Figure_06_01_204.jpg" width="50%">
+
+</statement>
+
+<p id="fs-id1167793463056">For the following exercises, determine the area of the region between the two curves by integrating over the <m>y\text{ -axis }.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1167794155182">
+<p id="fs-id1167794155184"><m>x=y^2 \text{ and } x=9</m></p>
+<description>"This figure is has two graphs. They are the equations x=y^2 and x=9. The region between the graphs is shaded. It is horizontal, between the y-axis and the line x=9.">
+<image source="CNX_Calc_Figure_06_01_205.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1167793948190">
+<p id="fs-id1167793948193"><m>36</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793470641">
+<p id="fs-id1167793470643"><m>y=x \text{ and } x=y^2</m></p>
+<description>"This figure is has two graphs. They are the equations y=x and x=y^2. The region between the graphs is shaded, bounded above by x=y^2 and below by y=x.">
+<image source="CNX_Calc_Figure_06_01_206.jpg" width="50%">
+
+</statement>
+
+<p id="fs-id1167793489563">For the following exercises, graph the equations and shade the area of the region between the curves. Determine its area by integrating over the <m>x\text{ -axis }.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1167793637358">
+<p id="fs-id1167793637360"><m>y=x^2 \text{ and } y=- x^2+18x</m></p>
+</statement>
+<solution id="fs-id1167793277663"><p id="fs-id1167793277664">
+<description>"This figure is has two graphs. They are the functions f(x)=x^2 and g(x)=-x^2+18x. The region between the graphs is shaded, bounded above by g(x) and below by f(x). It is in the first quadrant.">
+<image source="CNX_Calc_Figure_06_01_207.jpg" width="50%">
+
+243 square units</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167794199256">
+<p id="fs-id1167794199259"><m>y=\frac{1}{x},y=\frac{1x^2}, \text{ and } x=3</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793637973">
+<p id="fs-id1167793637975"><m>y=\cos  x</m> and <m>y=<m:msup>\cos 2</m:msup>x</m> on <m>x=[- \pi,\pi]</m></p>
+</statement>
+<solution id="fs-id1167793424310"><p id="fs-id1167793424311">
+<description>"This figure is has two graphs. They are the functions y=cos(x) and y=cos^2(x). The graphs are periodic and resemble waves. There are four regions created by intersections of the curves. The areas are shaded.">
+<image source="CNX_Calc_Figure_06_01_209.jpg" width="50%">
+
+4</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167794163653">
+<p id="fs-id1167794163655"><m>y=e^x,y=<m:msup>e2x-1</m:msup>, \text{ and } x=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793294686">
+<p id="fs-id1167793294688"><m>y=e^x,y=<m:msup>e- x</m:msup>,x=-1 \text{ and } x=1</m></p>
+</statement>
+<solution id="fs-id1167794324575"><p id="fs-id1167794324576">
+<description>"This figure is has two graphs. They are the functions f(x)=e^x and g(x)=e^-x. There are two shaded regions. In the second quadrant the region is bounded by x=-1, g(x) above and f(x) below. The second region is in the first quadrant and is bounded by f(x) above, g(x) below, and x=1.">
+<image source="CNX_Calc_Figure_06_01_211.jpg" width="50%">
+
+<m>\frac{2<m:msup>(e-1)2</m:msup>e}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793293857">
+<p id="fs-id1167793293859"><m>y=e,y=e^x, \text{ and } y=<m:msup>e- x</m:msup></m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793500023">
+<p id="fs-id1167793500025"><m>y=|x| \text{ and } y=x^2</m></p>
+</statement>
+<solution id="fs-id1167793956407"><p id="fs-id1167793956408">
+<description>"This figure is has two graphs. They are the functions f(x)=x^2 and g(x)=absolute value of x. There are two shaded regions. The first region is in the second quadrant and is between g(x) above and f(x) below. The second region is in the first quadrant and is bounded above by g(x) and below by f(x).">
+<image source="CNX_Calc_Figure_06_01_213.jpg" width="50%">
+
+<m>\frac{1}{3}</m></p>
+</solution>
+
+<p id="fs-id1167793546875">For the following exercises, graph the equations and shade the area of the region between the curves. If necessary, break the region into sub-regions to determine its entire area.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1167793546882">
+<p id="fs-id1167793546884"><m>y=\sin(\pix),y=2x, \text{ and } x\gt 0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793318492">
+<p id="fs-id1167793318494"><m>y=12-x,y=\sqrt{x}, \text{ and } y=1</m></p>
+</statement>
+<solution id="fs-id1167793706106"><p id="fs-id1167793706107">
+<description>"This figure is has three graphs. They are the functions f(x)=squareroot of x, y=12-x, and y=1. The region between the graphs is shaded, bounded above and to the left by f(x), above and to the right by the line y=12-x, and below by the line y=1. It is in the first quadrant.">
+<image source="CNX_Calc_Figure_06_01_215.jpg" width="50%">
+
+<m>\frac{343}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793626900">
+<p id="fs-id1167793626903"><m>y=\sin x</m> and <m>y=\cos  x</m> over <m>x=[- \pi,\pi]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793378473">
+<p id="fs-id1167793378475"><m>y=x^3 \text{ and } y=x^2-2x</m> over <m>x=[-1,1]</m></p>
+</statement>
+<solution id="fs-id1167793452509"><p id="fs-id1167793452510">
+<description>"This figure is has two graphs. They are the functions f(x)=x^3 and g(x)=x^2-2x. There are two shaded regions between the graphs. The first region is bounded to the left by the line x=-2, above by g(x) and below by f(x). The second region is bounded above by f(x), below by g(x) and to the right by the line x=2.">
+<image source="CNX_Calc_Figure_06_01_217.jpg" width="50%">
+
+<m>\frac{5}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793928051">
+<p id="fs-id1167793928053"><m>y=x^2+9 \text{ and } y=10+2x</m> over <m>x=[-1,3]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793455124">
+<p id="fs-id1167793455126"><m>y=x^3+3x</m> and <m>y=4x</m></p>
+</statement>
+<solution id="fs-id1167793386741"><p id="fs-id1167793386742">
+<description>"This figure is has two graphs. They are the functions f(x)=x^3+3x and g(x)=4x. There are two shaded regions between the graphs. The first region is bounded above by f(x) and below by g(x). The second region is bounded above by g(x), below by f(x).">
+<image source="CNX_Calc_Figure_06_01_219.jpg" width="50%">
+
+<m>\frac{1}{2}</m></p>
+</solution>
+
+<p id="fs-id1167793632700">For the following exercises, graph the equations and shade the area of the region between the curves. Determine its area by integrating over the <m>y\text{ -axis }.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1167793298203">
+<p id="fs-id1167793298205"><m>x=y^3 \text{ and } x=3y-2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793956301">
+<p id="fs-id1167793956303"><m>x=2y \text{ and } x=y^3-y</m></p>
+</statement>
+<solution id="fs-id1167793358324"><p id="fs-id1167793358325">
+<description>"This figure is has two graphs. They are the equations x=2y and x=y^3-y. The graphs intersect in the third quadrant and again in the first quadrant forming two closed regions in between them.">
+<image source="CNX_Calc_Figure_06_01_221.jpg" width="50%">
+
+<m>\frac{9}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793244347">
+<p id="fs-id1167793244349"><m>x=-3+y^2 \text{ and } x=y-y^2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793394827">
+<p id="fs-id1167793394829"><m>y^2=x \text{ and } x=y+2</m></p>
+</statement>
+<solution id="fs-id1167793423524"><p id="fs-id1167793423525">
+<description>"This figure is has two graphs. They are the equations x=y+2 and y^2=x. The graphs intersect, forming a region in between them">
+<image source="CNX_Calc_Figure_06_01_223.jpg" width="50%">
+
+<m>\frac{9}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793638666">
+<p id="fs-id1167793638668"><m>x=|y| \text{ and } 2x=- y^2+2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793469837">
+<p id="fs-id1167793469839"><m>x=\sin y,x=\cos (2y),y=\pi/2,\text{ and } y=- \pi/2</m></p>
+</statement>
+<solution id="fs-id1167793562241"><p id="fs-id1167793562242">
+<description>"This figure is has two graphs. They are the equations x=cos(y) and x=sin(y). The graphs intersect, forming two regions bounded above by the line y=pi/2 and below by the line y=-pi/2.">
+<image source="CNX_Calc_Figure_06_01_225.jpg" width="50%">
+
+<m>\frac{3\sqrt{3}2}</m></p>
+</solution>
+
+<p id="fs-id1167793423454">For the following exercises, graph the equations and shade the area of the region between the curves. Determine its area by integrating over the <m>x</m>-axis or <m>y</m>-axis, whichever seems more convenient.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1167793553635">
+<p id="fs-id1167793553637"><m>x=y^4\text{ and } x=y^5</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793372410">
+<p id="fs-id1167793372413"><m>y=xe^x,y=e^x,x=0, \text{ and } x=1</m></p>
+</statement>
+<solution id="fs-id1167793473597"><p id="fs-id1167793473598">
+<description>"This figure is has two graphs. They are the equations y=xe^x and y=e^x. The graphs intersect, forming a region in between them in the first quadrant.">
+<image source="CNX_Calc_Figure_06_01_227.jpg" width="50%">
+
+<m><m:msup>e-2</m:msup></m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793473629">
+<p id="fs-id1167793582460"><m>y=x^6\text{ and } y=x^4</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167794054215">
+<p id="fs-id1167794054217"><m>x=y^3+2y^2+1 \text{ and } x=- y^2+1</m></p>
+</statement>
+<solution id="fs-id1167793470768"><p id="fs-id1167793470769">
+<description>"This figure is has two graphs. They are the equations x=-y^2+1 and x=y^3+2y^2. The graphs intersect, forming two regions in between them.">
+<image source="CNX_Calc_Figure_06_01_229.jpg" width="50%">
+
+<m>\frac{274}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793479299">
+<p id="fs-id1167793479301"><m>y=|x| \text{ and } y=x^2-1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167794291679">
+<p id="fs-id1167794291681"><m>y=4-3x \text{ and } y=\frac{1}{x}</m></p>
+</statement>
+<solution id="fs-id1167793504038"><p id="fs-id1167793504039">
+<description>"This figure is has two graphs. They are the equations y=4-3x and y=1/x. The graphs intersect, having region between them shaded. The region is in the first quadrant.">
+<image source="CNX_Calc_Figure_06_01_231.jpg" width="50%">
+
+<m>\frac{4}{3}-\text{ ln }(3)</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793499065">
+<p id="fs-id1167793499067"><m>y=\sin x,x=- \pi/6,x=\pi/6,\text{ and } y=<m:msup>\cos 3</m:msup>x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793473547">
+<p id="fs-id1167793473549"><m>y=x^2-3x+2 \text{ and } y=x^3-2x^2-x+2</m></p>
+</statement>
+<solution id="fs-id1167793481991"><p id="fs-id1167793481992">
+<description>"This figure is has two graphs. They are the equations y=x^2-3x+2 and y=x^3-2x^2-x+2. The graphs intersect, having region between them shaded.">
+<image source="CNX_Calc_Figure_06_01_233.jpg" width="50%">
+
+<m>\frac{1}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793469773">
+<p id="fs-id1167793469776"><m>y=2 <m:msup>\cos 3</m:msup>(3x),y=-1,x=\frac{\pi}{4}, \text{ and } x=-\frac{\pi}{4}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793978420">
+<p id="fs-id1167793978422"><m>y+y^3=x \text{ and } 2y=x</m></p>
+</statement>
+<solution id="fs-id1167793636568"><p id="fs-id1167793636569">
+<description>"This figure is has two graphs. They are the equations 2y=x and y+y^3=x. The graphs intersect, forming two regions. The regions are shaded.">
+<image source="CNX_Calc_Figure_06_01_235.jpg" width="50%">
+
+<m>\frac{1}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793551302">
+<p id="fs-id1167793551304"><m>y=\sqrt{1-x^2} \text{ and } y=x^2-1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793545640">
+<p id="fs-id1167793545642"><m>y=<m:msup>\cos }{-1</m:msup>x,y=<m:msup>\sin}{-1</m:msup>x,x=-1, \text{ and } x=1</m></p>
+</statement>
+<solution id="fs-id1167793543511"><p id="fs-id1167793543512">
+<description>"This figure is has two graphs. They are the equations y=arccos(x) and y=arcsin (x). The graphs intersect, forming two regions. The first region is bounded to the left by x=-1. The second region is bounded to the right by x=1. Both regions are shaded.">
+<image source="CNX_Calc_Figure_06_01_237.jpg" width="50%">
+
+<m>-2(\sqrt{2}-\pi)</m></p>
+</solution>
+
+<p id="fs-id1167793477060">For the following exercises, find the exact area of the region bounded by the given equations if possible. If you are unable to determine the intersection points analytically, use a calculator to approximate the intersection points with three decimal places and determine the approximate area of the region.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1167793477068">
+<p id="fs-id1167793477070"><emphasis effect="bold">[T]</emphasis> <m>x=e^y \text{ and } y=x-2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793952123">
+<p id="fs-id1167793952125"><emphasis effect="bold">[T]</emphasis> <m>y=x^2 \text{ and } y=\sqrt{1-x^2}</m></p>
+</statement>
+<solution id="fs-id1167793518481">
+<p id="fs-id1167793518483"><m>1.067</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793518494">
+<p id="fs-id1167793518496"><emphasis effect="bold">[T]</emphasis> <m>y=3x^2+8x+9 \text{ and } 3y=x+24</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793395011">
+<p id="fs-id1167793395013"><emphasis effect="bold">[T]</emphasis> <m>x=\sqrt{4-y^2} \text{ and } y^2=1+x^2</m></p>
+</statement>
+<solution id="fs-id1167793421227">
+<p id="fs-id1167793421229"><m>0.852</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793776854">
+<p id="fs-id1167793776856"><emphasis effect="bold">[T]</emphasis> <m>x^2=y^3 \text{ and } x=3y</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793640026">
+<p id="fs-id1167793640028"><emphasis effect="bold">[T]</emphasis> <m>y=<m:msup>\sin3</m:msup>x+2,y=\text{ tan } x,x=-1.5, \text{ and } x=1.5</m></p>
+</statement>
+<solution id="fs-id1167793485259">
+<p id="fs-id1167793485261"><m>7.523</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793485272">
+<p id="fs-id1167793485274"><emphasis effect="bold">[T]</emphasis> <m>y=\sqrt{1-x^2} \text{ and } y^2=x^2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793521342">
+<p id="fs-id1167793521345"><emphasis effect="bold">[T]</emphasis> <m>y=\sqrt{1-x^2} \text{ and } y=x^2+2x+1</m></p>
+</statement>
+<solution id="fs-id1167793274954">
+<p id="fs-id1167793931525"><m>\frac{3\pi-4}{12}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793931547">
+<p id="fs-id1167793931549"><emphasis effect="bold">[T]</emphasis> <m>x=4-y^2 \text{ and } x=1+3y+y^2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793595214">
+<p id="fs-id1167793595216"><emphasis effect="bold">[T]</emphasis> <m>y=\cos  x,y=e^x,x=- \pi, \text{ and } x=0</m></p>
+</statement>
+<solution id="fs-id1167793599567">
+<p id="fs-id1167793599569"><m>1.429</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793221706">
+<p id="fs-id1167793221709">The largest triangle with a base on the <m>x\text{ -axis }</m> that fits inside the upper half of the unit circle <m>y^2+x^2=1</m> is given by <m>y=1+x</m> and <m>y=1-x.</m> See the following figure. What is the area inside the semicircle but outside the triangle?</p>
+<description>"This figure is has the graph of a circle with center at the origin and radius of 1. There is a triangle inscribed with base on the x-axis from -1 to 1 and the third corner at the point y=1.">
+<image source="CNX_Calc_Figure_06_01_238.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793634262">
+<p id="fs-id1167793634264">A factory selling cell phones has a marginal cost function <m>C(x)=0.01x^2-3x+229,</m> where <m>x</m> represents the number of cell phones, and a marginal revenue function given by <m>R(x)=429-2x.</m> Find the area between the graphs of these curves and <m>x=0.</m> What does this area represent?</p>
+</statement>
+<solution id="fs-id1167793626977">
+<p id="fs-id1167793626979"><m>\text{ $ }33,333.33</m> total profit for <m>200</m> cell phones sold</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793627003">
+<p id="fs-id1167793627005">An amusement park has a marginal cost function <m>C(x)=1000<m:msup>e- x</m:msup>+5,</m> where <m>x</m> represents the number of tickets sold, and a marginal revenue function given by <m>R(x)=60-0.1x.</m> Find the total profit generated when selling <m>550</m> tickets. Use a calculator to determine intersection points, if necessary, to two decimal places.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167794005223">
+<p id="fs-id1167794005225">The tortoise versus the hare: The speed of the hare is given by the sinusoidal function <m>H(t)=1-\cos ((\pit)/2)</m> whereas the speed of the tortoise is <m>T(t)=(1/2)<m:msup>\text{ tan }}{-1</m:msup>(t/4),</m> where <m>t</m> is time measured in hours and the speed is measured in miles per hour. Find the area between the curves from time <m>t=0</m> to the first time after one hour when the tortoise and hare are traveling at the same speed. What does it represent? Use a calculator to determine the intersection points, if necessary, accurate to three decimal places.</p>
+</statement>
+<solution id="fs-id1167793543332">
+<p id="fs-id1167793543334"><m>3.263</m> mi represents how far ahead the hare is from the tortoise</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793543346">
+<p id="fs-id1167793543348">The tortoise versus the hare: The speed of the hare is given by the sinusoidal function <m>H(t)=(1/2)-(1/2)\cos (2\pit)</m> whereas the speed of the tortoise is <m>T(t)=\sqrt{t},</m> where <m>t</m> is time measured in hours and speed is measured in kilometers per hour. If the race is over in <m>1</m> hour, who won the race and by how much? Use a calculator to determine the intersection points, if necessary, accurate to three decimal places.</p>
+</statement>
+
+<p id="fs-id1167793638807">For the following exercises, find the area between the curves by integrating with respect to <m>x</m> and then with respect to <m>y.</m> Is one method easier than the other? Do you obtain the same answer?</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1167794127466">
+<p id="fs-id1167794127468"><m>y=x^2+2x+1 \text{ and } y=- x^2-3x+4</m></p>
+</statement>
+<solution id="fs-id1167794127524">
+<p id="fs-id1167794127526"><m>\frac{343}{24}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793455308">
+<p id="fs-id1167793455310"><m>y=x^4\text{ and } x=y^5</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793455359">
+<p id="fs-id1167793455361"><m>x=y^2-2 \text{ and } x=2y</m></p>
+</statement>
+<solution id="fs-id1167793937962">
+<p id="fs-id1167793937964"><m>4\sqrt{3}</m></p>
+</solution>
+
+<p id="fs-id1167793937976">For the following exercises, solve using calculus, then check your answer with geometry.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1167793937982">
+<p id="fs-id1167793937984">Determine the equations for the sides of the square that touches the unit circle on all four sides, as seen in the following figure. Find the area between the perimeter of this square and the unit circle. Is there another way to solve this without using calculus?</p>
+<description>"This figure is the graph of a circle centered at the origin with radius of 1. There is a circumscribed square around the circle.">
+<image source="CNX_Calc_Figure_06_01_239.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1167793423273">
+<p id="fs-id1167793423276">Find the area between the perimeter of the unit circle and the triangle created from <m>y=2x+1,y=1-2x</m> and <m>y=-\frac{3}{5},</m> as seen in the following figure. Is there a way to solve this without using calculus?</p>
+<description>"This figure is the graph of a circle centered at the origin with radius of 1. There are three lines intersecting the circle. The lines intersect the circle at three points to form a triangle within the circle.">
+<image source="CNX_Calc_Figure_06_01_240.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1167794146810">
+<p id="fs-id1167794146812"><m>\pi-\frac{3}{2}{25}</m></p>
+</solution>
+
+</section>
+</content>
+</document>
+?>

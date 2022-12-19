@@ -1,0 +1,1090 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_Ch4Sec10" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Antiderivatives</title>
+  <introduction>
+    Note: This is section 4.10 in the standard OpenStax Calculus book. This book skips the sections on L'Hopital's Rule and Newton's Method. 
+  <title> Learning Objectives</title>
+  <ul>
+<li>Find the general antiderivative of a given function.</li>
+<li>Explain the terms and notation used for an indefinite integral.</li>
+<li>State the power rule for integrals.</li>
+<li>Use antidifferentiation to solve simple initial-value problems.</li>
+</ul>
+<p id="fs-id1165042951286">At this point, we have seen how to calculate derivatives of many functions and have been introduced to a variety of their applications. We now ask a question that turns this process around: Given a function <m>f,</m> how do we find a function with the derivative <m>f</m> and why would we be interested in such a function?</p>
+<p id="fs-id1165043307884">We answer the first part of this question by defining antiderivatives. The antiderivative of a function <m>f</m> is a function with a derivative <m>f.</m> Why are we interested in antiderivatives? The need for antiderivatives arises in many situations, and we look at various examples throughout the remainder of the text. Here we examine one specific example that involves rectilinear motion. In our examination in <xref ref="ch_third">Derivatives</xref> of rectilinear motion, we showed that given a position function <m>s(t)</m> of an object, then its velocity function <m>v(t)</m> is the derivative of <m>s(t)</m>—that is, <m>v(t)=s'(t).</m> Furthermore, the acceleration <m>a(t)</m> is the derivative of the velocity <m>v(t)</m>—that is, <m>a(t)=v'(t)=s\text{ ″ }(t).</m> Now suppose we are given an acceleration function <m>a,</m> but not the velocity function <m>v</m> or the position function <m>s.</m> Since <m>a(t)=v'(t),</m> determining the velocity function requires us to find an antiderivative of the acceleration function. Then, since <m>v(t)=s'(t),</m> determining the position function requires us to find an antiderivative of the velocity function. Rectilinear motion is just one case in which the need for antiderivatives arises. We will see many more examples throughout the remainder of the text. For now, let’s look at the terminology and notation for antiderivatives, and determine the antiderivatives for several types of functions. We examine various techniques for finding antiderivatives of more complicated functions later in the text, Volume 2.</p>
+</introduction>
+<subsection id="fs-id1165043404679">
+<title>The Reverse of Differentiation</title>
+<p id="fs-id1165043323795">At this point, we know how to find derivatives of various functions. We now ask the opposite question. Given a function <m>f,</m> how can we find a function with derivative <m>f?</m> If we can find a function <m>F</m> derivative <m>f,</m> we call <m>F</m> an antiderivative of <m>f.</m></p>
+<definition>
+<p id="fs-id1165042887564">A function <m>F</m> is an <term>antiderivative</term> of the function <m>f</m> if</p>
+<me>F'(x)=f(x)</me>
+<p id="fs-id1165042964886">for all <m>x</m> in the domain of <m>f.</m></p>
+</definition>
+<p id="fs-id1165042885645">Consider the function <m>f(x)=2x.</m> Knowing the power rule of differentiation, we conclude that <m>F(x)=x^2</m> is an antiderivative of <m>f</m> since <m>F'(x)=2x.</m> Are there any other antiderivatives of <m>f?</m> Yes; since the derivative of any constant <m>C</m> is zero, <m>x^2+C</m> is also an antiderivative of <m>2x.</m> Therefore, <m>x^2+5</m> and <m>x^2-\sqrt{2}</m> are also antiderivatives. Are there any others that are not of the form <m>x^2+C</m> for some constant <m>C?</m> The answer is no. From Corollary <m>2</m> of the Mean Value Theorem, we know that if <m>F</m> and <m>G</m> are differentiable functions such that <m>F'(x)=G'(x),</m> then <m>F(x)-G(x)=C</m> for some constant <m>C.</m> This fact leads to the following important theorem.</p>
+<theorem> <!-- Change next end note to end theorem -->
+<title>General Form of an Antiderivative</title>
+<p id="fs-id1165042884523">Let <m>F</m> be an antiderivative of <m>f</m> over an interval <m>I.</m> Then,</p>
+<ol marker="(a)">
+<li>for each constant <m>C,</m> the function <m>F(x)+C</m> is also an antiderivative of <m>f</m> over <m>I;</m></li>
+<li>if <m>G</m> is an antiderivative of <m>f</m> over <m>I,</m> there is a constant <m>C</m> for which <m>G(x)=F(x)+C</m> over <m>I.</m></li>
+</ol>
+<p id="fs-id1165042987370">In other words, the most general form of the antiderivative of <m>f</m> over <m>I</m> is <m>F(x)+C.</m></p>
+</theorem>
+<p id="fs-id1165043166857">We use this fact and our knowledge of derivatives to find all the antiderivatives for several functions.</p>
+<example xml:id="fs-id1165042616955">
+<title>Finding Antiderivatives</title>
+ <statement id="fs-id1165043431382">
+<p id="fs-id1165043021681">For each of the following functions, find all antiderivatives.</p>
+<ol marker="(a)">
+<li><m>f(x)=3x^2</m></li>
+<li><m>f(x)=\frac{1}{x}</m></li>
+<!-- Commenting out trig
+<li><m>f(x)=\cos  x</m></li>-->
+<li><m>f(x)=4x^3+2x</m></li>
+<li><m>f(x)=e^x</m></li>
+</ol>
+</statement>
+<solution id="fs-id1165043061462">
+<ol marker="(a)">
+<li>Because
+<me>\frac{d}{dx}(x^3)=3x^2</me>
+then <m>F(x)=x^3</m> is an antiderivative of <m>3x^2.</m> Therefore, every antiderivative of <m>3x^2</m> is of the form <m>x^3+C</m> for some constant <m>C,</m> and every function of the form <m>x^3+C</m> is an antiderivative of <m>3x^2.</m></li>
+<li>Let <m>f(x)=\ln |x|.</m> For <m>x\gt 0,f(x)=\ln (x)</m> and
+<me>\frac{d}{dx}(\ln  x)=\frac{1}{x}.</me>
+For <m>x\lt 0,f(x)=\ln (-x)</m> and
+<me>\frac{d}{dx}(\ln (-x))=-\frac{1}{-x}=\frac{1}{x}.</me>
+Therefore,
+<me>\frac{d}{dx}(\ln |x|)=\frac{1}{x}.</me>
+Thus, <m>F(x)=\ln |x|</m> is an antiderivative of <m>\frac{1}{x}.</m> Therefore, every antiderivative of <m>\frac{1}{x}</m> is of the form <m>\ln |x|+C</m> for some constant <m>C</m> and every function of the form <m>\ln |x|+C</m> is an antiderivative of <m>\frac{1}{x}.</m></li>
+<!--Commenting out trig
+<li>We have
+<me>\frac{d}{dx}(\sin x)=\cos  x,</me>
+so <m>F(x)=\sin x</m> is an antiderivative of <m>\cos  x.</m> Therefore, every antiderivative of <m>\cos  x</m> is of the form <m>\sin x+C</m> for some constant <m>C</m> and every function of the form <m>\sin x+C</m> is an antiderivative of <m>\cos  x.</m></li>
+-->
+<li>We have
+<me>\frac{d}{dx}(x^4)=4x^3</me>
+then <m>F(x)=x^4</m> is an antiderivative of <m>4x^3.</m> Similarly, <me>\frac{d}{dx}(x^2)=2x</me>
+then <m>F(x)=x^2</m> is an antiderivative of <m>2x.</m> Therefore, every antiderivative of <m>4x^3+2x</m> is of the form <m>x^4+x^2+C</m> for some constant <m>C,</m> and every function of the form <m>x^4+x^2+C</m> is an antiderivative of <m>4x^3+2x.</m></li>
+<li>Since
+<me>\frac{d}{dx}(e^x)=e^x,</me>
+then <m>F(x)=e^x</m> is an antiderivative of <m>e^x.</m> Therefore, every antiderivative of <m>e^x</m> is of the form <m>e^x+C</m> for some constant <m>C</m> and every function of the form <m>e^x+C</m> is an antiderivative of <m>e^x.</m></li>
+</ol>
+</solution>
+</example>
+<!--Commenting out trig
+<exercise>  <statement id="fs-id1165043194525">
+<p id="fs-id1165043353234">Find all antiderivatives of <m>f(x)=\sin x.</m></p>
+</statement>
+<solution id="fs-id1165043097583">
+<p id="fs-id1165042373760"><m>-\cos  x+C</m></p>
+</solution>
+<hint>
+<p id="fs-id1165043256949">What function has a derivative of <m>\sin x?</m></p>
+</hint></exercise>
+-->
+<exercise>  <statement>
+<p>Find all antiderivatives of <m>f(x)=-\frac{1}{x^2}.</m></p>
+</statement>
+<solution>
+<p><m>\frac{1}{x}</m></p>
+</solution>
+<hint>
+<p id="fs-id1165043256949">What function has a derivative of <m>-\frac{1}{x^2}?</m></p>
+</hint></exercise>
+</subsection>
+<subsection id="fs-id1165042332032">
+<title>Indefinite Integrals</title>
+<p id="fs-id1165043344704">We now look at the formal notation used to represent antiderivatives and examine some of their properties. These properties allow us to find antiderivatives of more complicated functions. Given a function <m>f,</m> we use the notation <m>f'(x)</m> or <m>\frac{df}{dx}</m> to denote the derivative of <m>f.</m> Here we introduce notation for antiderivatives. If <m>F</m> is an antiderivative of <m>f,</m> we say that <m>F(x)+C</m> is the most general antiderivative of <m>f</m> and write</p>
+<me> \int f(x)dx =F(x)+C.</me>
+<p id="fs-id1165042959838">The symbol <m> \int  </m> is called an <emphasis effect="italics">integral sign</emphasis>, and <m> \int f(x)dx </m> is called the indefinite integral of <m>f.</m></p>
+<definition>
+<p id="fs-id1165043393369">Given a function <m>f,</m> the <term>indefinite integral</term> of <m>f,</m> denoted</p>
+<me> \int f(x)dx ,</me>
+<p id="fs-id1165042350080">is the most general antiderivative of <m>f.</m> If <m>F</m> is an antiderivative of <m>f,</m> then</p>
+<me> \int f(x)dx =F(x)+C.</me>
+<p id="fs-id1165043096049">The expression <m>f(x)</m> is called the <emphasis effect="italics">integrand</emphasis> and the variable <m>x</m> is the <emphasis effect="italics">variable of integration</emphasis>.</p>
+</definition>
+<p id="fs-id1165042558766">Given the terminology introduced in this definition, the act of finding the antiderivatives of a function <m>f</m> is usually referred to as <emphasis effect="italics">integrating</emphasis> <m>f.</m></p>
+<p id="fs-id1165042936505">For a function <m>f</m> and an antiderivative <m>F,</m> the functions <m>F(x)+C,</m> where <m>C</m> is any real number, is often referred to as <emphasis effect="italics">the family of antiderivatives of</emphasis> <m>f.</m> For example, since <m>x^2</m> is an antiderivative of <m>2x</m> and any antiderivative of <m>2x</m> is of the form <m>x^2+C,</m> we write</p>
+<me> \int 2x dx=x^2+C .</me>
+<p id="fs-id1165043097500">The collection of all functions of the form <m>x^2+C,</m> where <m>C</m> is any real number, is known as the <emphasis effect="italics">family of antiderivatives of</emphasis> <m>2x.</m> <xref ref="CNX_Calc_Figure_04_10_001"/> shows a graph of this family of antiderivatives.</p>
+<figure xml:id="CNX_Calc_Figure_04_10_001">
+  <image source="CNX_Calc_Figure_04_10_001.jpg" width="50%">
+<description>"The graphs for y = x2 + 2, y = x2 + 1, y = x2, y = x2 - 1, and y = x2 - 2 are shown."
+  </description></image> <caption>The family of antiderivatives of <m>2x</m> consists of all functions of the form <m>x^2+C,</m> where <m>C</m> is any real number.</caption>
+</figure>
+<p id="fs-id1165042923290">For some functions, evaluating indefinite integrals follows directly from properties of derivatives. For example, for <m>n\neq -1,</m></p>
+<me> \int x^ndx=\frac{x^{n+1}}{n+1}+C ,</me>
+<p id="fs-id1165043015098">which comes directly from</p>
+<me>\frac{d}{dx}\left(\frac{x^{n+1}}{n+1}\right)=(n+1)\frac{x^n}{n+1}=x^n.</me>
+<p id="fs-id1165042343281">This fact is known as <emphasis effect="italics">the power rule for integrals</emphasis>.</p>
+<theorem>
+<title>Power Rule for Integrals</title>
+<p id="fs-id1165042514785">For <m>n\neq -1,</m></p>
+<me> \int x^ndx=\frac{x^{n+1}}{n+1}+C .</me>
+</theorem>
+<p id="fs-id1165043385541">Evaluating indefinite integrals for some other functions is also a straightforward calculation. The following table lists the indefinite integrals for several common functions.</p><!-- A more complete list appears in <link class="target-chapter" document="m54050">Appendix B</url>.</p>-->
+<table xml:id="fs-id1165043092431" summary="This is a table with two columns and fourteen rows, titled “Integration Formulas.” The first row is a header row, and labels column one “Differentiation Formula” and column two “Indefinite Integral.” The second row reads d/dx (k) = 0, the integral of kdx = the integral of kx^0dx = kx + C. The third row reads d/dx(x^n) = nx^(x-1), the integral of x^ndn = (x^n+1)/(n+1) + C for n is not equal to negative 1. The fourth row reads d/dx(ln(the absolute value of x))=1/x, the integral of (1/x)dx = ln(the absolute value of x) + C. The fifth row reads d/dx(e^x) = e^x, the integral of e^xdx = e^x + C. The six row reads d/dx(a^x)=(ln a)a^x, the integral of a^x dx is a^x/(ln a)+C.">
+<!-- Commenting out trig in the table description
+The sixth row reads d/dx(sinx) = cosx, the integral of cosxdx = sinx + C. The seventh row reads d/dx(cosx) = negative sinx, the integral of sinxdx = negative cosx + C. The eighth row reads d/dx(tanx) = sec squared x, the integral of sec squared xdx = tanx + C. The ninth row reads d/dx(cscx) = negative cscxcotx, the integral of cscxcotxdx = negative cscx + C. The tenth row reads d/dx(secx) = secxtanx, the integral of secxtanxdx = secx + C. The eleventh row reads d/dx(cotx) = negative csc squared x, the integral of csc squared xdx = negative cot x + C. The twelfth row reads d/dx(sin^-1(x)) = 1/the square root of (1 – x^2), the integral of 1/(the square root of (x^2 – 1) = sin^-1(x) + C. The thirteenth row reads d/dx (tan^-1(x)) = 1/(1 + x^2), the integral of 1/(1 + x^2)dx = tan^-1(x) + C. The fourteenth row reads d/dx(sec^-1(the absolute value of x)) = 1/x(the square root of x^2 – 1), the integral of 1/x(the square root of x^2 – 1)dx = sec^-1(the absolute value of x) + C.
+-->
+<title>Integration Formulas</title>
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Differentiation Formula</cell>
+<cell valign="top" halign ="left">Indefinite Integral</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(k)=0</m></cell>
+<cell valign="top" halign ="left"><m> \int kdx= \int kx^0dx  =kx+C</m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(x^n)=nx^{n-1}</m></cell>
+<cell valign="top" halign ="left"><m> \int x^ndn =\frac{x^{n+1}}{n+1}+C</m> for <m>n\neq -1</m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(\ln |x|)=\frac{1}{x}</m></cell>
+<cell valign="top" halign ="left"><m> \int \frac{1}{x}dx=\ln |x| +C</m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(e^x)=e^x</m></cell>
+<cell valign="top" halign ="left"><m> \int e^xdx =e^x+C</m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(a^x)=(\ln a)a^x</m></cell>
+<cell valign="top" halign ="left"><m> \int a^xdx =\frac{a^x}{\ln a}+C</m></cell>
+</row>
+<!-- Commmenting out trig
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(\sin x)=\cos  x</m></cell>
+<cell valign="top" halign ="left"><m> \int \cos  x dx=\sin x+C </m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(\cos  x)=-\sin x</m></cell>
+<cell valign="top" halign ="left"><m> \int \sin x dx=-\cos  x+C </m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(\tan  x)=\sec^2 x</m></cell>
+<cell valign="top" halign ="left"><m> \int \sec^2 x dx=\tan  x+C </m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(\text{ csc } x)=-\text{ csc } x \text{ cot } x</m></cell>
+<cell valign="top" halign ="left"><m> \int \text{ csc } x \text{ cot } x dx=-\text{ csc } x+C </m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(\text{ sec } x)=\text{ sec } x \tan  x</m></cell>
+<cell valign="top" halign ="left"><m> \int \text{ sec } x \tan  x dx=\text{ sec } x+C </m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(\text{ cot } x)=-\csc^2 x</m></cell>
+<cell valign="top" halign ="left"><m> \int \csc^2 x dx=-\text{ cot } x+C </m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(\sin^{-1}>x)=\frac{1}{\sqrt{1-x^2}}</m></cell>
+<cell valign="top" halign ="left"><m> \int \frac{1}{\sqrt{1-x^2}}=\sin^{-1}>x+C </m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(\tan^{-1} x)=\frac{1}{1+x^2}</m></cell>
+<cell valign="top" halign ="left"><m> \int \frac{1}{1+x^2}dx=\tan^{-1} x+C </m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>\frac{d}{dx}(\sec^{-1} |x|)=\frac{1}{x\sqrt{x^2-1}}</m></cell>
+<cell valign="top" halign ="left"><m> \int \frac{1}{x\sqrt{x^2-1}}dx=\sec^{-1} |x|+C </m></cell>
+</row>-->
+</tabular>
+</table>
+<p id="fs-id1165042328678">From the definition of indefinite integral of <m>f,</m> we know</p>
+<me> \int f(x)dx=F(x)+C </me>
+<p id="fs-id1165042322393">if and only if <m>F</m> is an antiderivative of <m>f.</m> Therefore, when claiming that</p>
+<me> \int f(x)dx=F(x)+C </me>
+<p id="fs-id1165042375807">it is important to check whether this statement is correct by verifying that <m>F'(x)=f(x).</m></p>
+<example xml:id="fs-id1165043393824">
+<title>Verifying an Indefinite Integral</title>
+<statement id="fs-id1165043393828">
+<p id="fs-id1165043428255">Each of the following statements is of the form <m> \int f(x)dx=F(x)+C .</m> Verify that each statement is correct by showing that <m>F'(x)=f(x).</m></p>
+<ol marker="(a)">
+<li><m> \int (x+e^x) dx=\frac{x^2}{2}+e^x+C</m></li>
+<li><m> \int xe^xdx =xe^x-e^x+C</m></li>
+</ol>
+</statement>
+<solution id="fs-id1165043427624">
+<ol marker="(a)">
+<li>Since
+<me>\frac{d}{dx}\left(\frac{x^2}{2}+e^x+C\right)=x+e^x,</me>
+the statement
+<me> \int (x+e^x) dx=\frac{x^2}{2}+e^x+C</me>
+is correct.
+Note that we are verifying an indefinite integral for a sum. Furthermore, <m>\frac{x^2}{2}</m> and <m>e^x</m> are antiderivatives of <m>x</m> and <m>e^x,</m> respectively, and the sum of the antiderivatives is an antiderivative of the sum. We discuss this fact again later in this section.</li>
+<li>Using the product rule, we see that
+<me>\frac{d}{dx}(xe^x-e^x+C)=e^x+xe^x-e^x=xe^x.</me>
+Therefore, the statement
+<me> \int xe^xdx =xe^x-e^x+C</me>
+is correct.
+Note that we are verifying an indefinite integral for a product. The antiderivative <m>xe^x-e^x</m> is not a product of the antiderivatives. Furthermore, the product of antiderivatives, <m>x^2e^x/2</m> is not an antiderivative of <m>xe^x</m> since
+<me>\frac{d}{dx}\left(\frac{x^2e^x}{2}\right)=xe^x+\frac{x^2e^x}{2}\neq xe^x.</me>
+In general, the product of antiderivatives is not an antiderivative of a product.</li>
+</ol>
+</solution>
+</example>
+<!-- Commenting out trig 
+<exercise>  <statement id="fs-id1165042364598">
+<p id="fs-id1165042364600">Verify that <m> \int x \cos  x dx=x \sin x+\cos  x+C. </m></p>
+</statement>
+<solution id="fs-id1165043257531">
+<p id="fs-id1165043257533"><m>\frac{d}{dx}(x \sin x+\cos  x+C)=\sin x+x \cos  x-\sin x=x \cos  x</m></p>
+</solution>
+<hint>
+<p id="fs-id1165043219881">Calculate <m>\frac{d}{dx}(x \sin x+\cos  x+C).</m></p>
+</hint></exercise>-->
+<exercise>  <statement>
+<p>Verify that <m> \int 3\sqrt{x} dx=2\sqrt{x^3}+C. </m></p>
+</statement>
+<solution>
+<p><m>\displaystyle{\frac{d}{dx}\left(2\sqrt{x^3}+C\right)=\frac{d}{dx}\left(2x^{3/2}+C\right)=3\sqrt{x}}</m></p>
+</solution>
+<hint>
+<p id="fs-id1165043219881">Calculate <m>\displaystyle{\frac{d}{dx}\left(2\sqrt{x^3}+C\right)}.</m></p>
+</hint></exercise>
+<p id="fs-id1165042318564">In <xref ref="fs-id1165043092431"/>, we listed the indefinite integrals for many elementary functions. Let’s now turn our attention to evaluating indefinite integrals for more complicated functions. For example, consider finding an antiderivative of a sum <m>f+g.</m> In <xref ref="fs-id1165043393824"/>a. we showed that an antiderivative of the sum <m>x+e^x</m> is given by the sum <m>(\frac{x^2}{2})+e^x</m>—that is, an antiderivative of a sum is given by a sum of antiderivatives. This result was not specific to this example. In general, if <m>F</m> and <m>G</m> are antiderivatives of any functions <m>f</m> and <m>g,</m> respectively, then</p>
+<me>\frac{d}{dx}(F(x)+G(x))=F'(x)+G'(x)=f(x)+g(x).</me>
+<p id="fs-id1165043372671">Therefore, <m>F(x)+G(x)</m> is an antiderivative of <m>f(x)+g(x)</m> and we have</p>
+<me> \int (f(x)+g(x)) dx=F(x)+G(x)+C.</me>
+<p id="fs-id1165043174082">Similarly,</p>
+<me> \int (f(x)-g(x)) dx=F(x)-G(x)+C.</me>
+<p id="fs-id1165042383134">In addition, consider the task of finding an antiderivative of <m>kf(x),</m> where <m>k</m> is any real number. Since</p>
+<me>\frac{d}{dx}(kf(x))=k\frac{d}{dx}F(x)=kf'(x)</me>
+<p id="fs-id1165043222034">for any real number <m>k,</m> we conclude that</p>
+<me> \int kf(x)dx =kF(x)+C.</me>
+<p id="fs-id1165043425482">These properties are summarized next.</p>
+<theorem xml:id="fs-id1165043425485"> <!-- Change next end note to end theorem -->
+<title>Properties of Indefinite Integrals</title>
+<p id="fs-id1165043395041">Let <m>F</m> and <m>G</m> be antiderivatives of <m>f</m> and <m>g,</m> respectively, and let <m>k</m> be any real number.</p>
+<p id="fs-id1165043393659">Sums and Differences</p>
+<me> \int (f(x)\pm g(x))dx=F(x)\pm G(x)+C </me>
+<p id="fs-id1165042328714">Constant Multiples</p>
+<me> \int kf(x)dx=kF(x)+C </me>
+</theorem>
+<p id="fs-id1165043248795">From this theorem, we can evaluate any integral involving a sum, difference, or constant multiple of functions with antiderivatives that are known. Evaluating integrals involving products, quotients, or compositions is more complicated (see <xref ref="fs-id1165043393824"/>b. for an example involving an antiderivative of a product.) We look at and address integrals involving these more complicated functions in <xref ref="ch_fifth">Introduction to Integration</xref>. In the next example, we examine how to use this theorem to calculate the indefinite integrals of several functions.</p>
+<example xml:id="fs-id1165043248811">
+<title>Evaluating Indefinite Integrals</title>
+<statement id="fs-id1165042705919">
+<p id="fs-id1165042705925">Evaluate each of the following indefinite integrals:</p>
+<ol marker="(a)">
+<li><m> \int (5x^3-7x^2+3x+4)dx </m></li>
+<li><m> \int \frac{x^2+4\sqrt[3]{x} }{x} dx</m></li>
+<!--Commenting out trig
+<li><m> \int \frac{4}{1+x^2} dx</m></li>
+<li><m> \int \tan  x \cos  x dx </m></li>-->
+<li><m> \int (x+1)(x+2) dx </m></li>
+<li><m> \int (2^x+7e^x) dx </m></li>
+</ol>
+</statement>
+<solution id="fs-id1165042552213">
+<ol marker="(a)">
+<li>Using <xref ref="fs-id1165043425485"/>, we can integrate each of the four terms in the integrand separately. We obtain
+<me> \int (5x^3-7x^2+3x+4)dx = \int 5x^3dx-  \int 7x^2dx + \int 3x dx + \int 4dx .</me>
+From the second part of <xref ref="fs-id1165043425485"/>, each coefficient can be written in front of the integral sign, which gives
+<me> \int 5x^3dx-  \int 7x^2dx + \int 3x dx + \int 4dx =5 \int x^3dx-7  \int x^2dx +3 \int x dx +4 \int 1dx. </me>
+Using the power rule for integrals, we conclude that
+<me> \int (5x^3-7x^2+3x+4)dx =\frac{5}{4}x^4-\frac{7}{3}x^3+\frac{3}{2}x^2+4x+C.</me></li>
+<li>Rewrite the integrand as
+<me>\frac{x^2+4\sqrt[3]{x} }{x}=\frac{x^2}{x}+\frac{4\sqrt[3]{x}}{x}.</me>
+Then, to evaluate the integral, integrate each of these terms separately. Using the power rule, we have
+<md>
+  <mrow> \int (x+\frac{4}{x^{2/3}}) dx\amp = \int x dx+4  \int x^{-2/3}  dx</mrow>
+  <mrow>\amp =\frac{1}{2}x^2+4\frac{1}{(\frac{-2}{3})+1}x^{(-2/3)+1}+C</mrow>
+  <mrow>\amp =\frac{1}{2}x^2+12x^{1/3}+C.</mrow></md></li>
+<!--Commenting out trig
+<li>Using <xref ref="fs-id1165043425485"/>, write the integral as
+<me>4 \int \frac{1}{1+x^2}dx .</me>
+Then, use the fact that <m>\tan^{-1} (x)</m> is an antiderivative of <m>\frac{1}{(1+x^2)}</m> to conclude that
+<me> \int \frac{4}{1+x^2}dx =4 \tan^{-1} (x)+C.</me></li>
+<li>Rewrite the integrand as
+<me>\tan  x \cos  x=\frac{\sin x}{\cos  x} \cos  x=\sin x.</me>
+Therefore,
+<me> \int \tan  x \cos  x = \int \sin x =-\cos  x+C.</me></li>-->
+<li>Rewrite the integrand as
+<me>(x+1)(x+2)=x^2+3x+2.</me>
+Therefore,
+<me> \int (x+1)(x+2) dx = \int x^2+3x+2 dx =\frac{1}{3}x^3+\frac{3}{2}x^2+2x+C.</me></li>
+<li>Using <xref ref="fs-id1165043425485"/>, we can integrate each of the two terms in the integrand separately. We obtain
+<me> \int (2^x+7e^x)dx = \int 2^xdx+\int 7e^xdx .</me>
+From the second part of <xref ref="fs-id1165043425485"/>, each coefficient can be written in front of the integral sign, which gives
+<me> \int 2^xdx+7\int e^xdx. </me>
+Using <xref ref="fs-id1165043092431"/>, we conclude that
+<me> \int (2^x+7e^x)dx =  \frac{2^x}{\ln 2}+7e^x+C.</me></li>
+</ol>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1165043426271">
+<p id="fs-id1165043426273">Evaluate <m> \int (4x^3-5x^2+x-7)dx .</m></p>
+</statement>
+<solution id="fs-id1165043259692">
+<p id="fs-id1165043259694"><m>x^4-\frac{5}{3}x^3+\frac{1}{2}x^2-7x+C</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042323621">Integrate each term in the integrand separately, making use of the power rule.</p>
+</hint></exercise>
+</subsection>
+<subsection id="fs-id1165042323629">
+<title>Initial-Value Problems</title>
+<p id="fs-id1165042323634">We look at techniques for integrating a large variety of functions involving products, quotients, and compositions later in the text. Here we turn to one common use for antiderivatives that arises often in many applications: solving differential equations.</p>
+<p id="fs-id1165042323639">A <emphasis effect="italics">differential equation</emphasis> is an equation that relates an unknown function and one or more of its derivatives. The equation</p>
+<men xml:id="fs-id1165042349924">\frac{dy}{dx}=f(x)</men>
+<p id="fs-id1165042349952">is a simple example of a differential equation. Solving this equation means finding a function <m>y</m> with a derivative <m>f.</m> Therefore, the solutions of <xref ref="fs-id1165042349924"/> are the antiderivatives of <m>f.</m> If <m>F</m> is one antiderivative of <m>f,</m> every function of the form <m>y=F(x)+C</m> is a solution of that differential equation. For example, the solutions of</p>
+<me>\frac{dy}{dx}=6x^2</me>
+<p id="fs-id1165043430997">are given by</p>
+<me>y= \int 6x^2dx=2x^3+C .</me>
+<p id="fs-id1165042407328">Sometimes we are interested in determining whether a particular solution curve passes through a certain point <m>(x_0,y_0)</m>—that is, <m>y(x_0)=y_0.</m> The problem of finding a function <m>y</m> that satisfies a differential equation</p>
+<me>\frac{dy}{dx}=f(x)</me>
+<p id="fs-id1165042368468">with the additional condition</p>
+<me>y(x_0)=y_0</me>
+<p id="fs-id1165042368497">is an example of an <term>initial-value problem</term>. The condition <m>y(x_0)=y_0</m> is known as an <emphasis effect="italics">initial condition</emphasis>. For example, looking for a function <m>y</m> that satisfies the differential equation</p>
+<me>\frac{dy}{dx}=6x^2</me>
+<p id="fs-id1165043393696">and the initial condition</p>
+<me>y(1)=5</me>
+<p id="fs-id1165043393719">is an example of an initial-value problem. Since the solutions of the differential equation are <m>y=2x^3+C,</m> to find a function <m>y</m> that also satisfies the initial condition, we need to find <m>C</m> such that <m>y(1)=2(1)^3+C=5.</m> From this equation, we see that <m>C=3,</m> and we conclude that <m>y=2x^3+3</m> is the solution of this initial-value problem as shown in the following graph.</p>
+<figure xml:id="CNX_Calc_Figure_04_10_002">
+<image source="CNX_Calc_Figure_04_10_002.jpg" width="50%">
+<description>"The graphs for y = 2x3 + 6, y = 2x3 + 3, y = 2x3, and y = 2x3 - 3 are shown." </description></image> <caption>Some of the solution curves of the differential equation <m>\frac{dy}{dx}=6x^2</m> are displayed. The function <m>y=2x^3+3</m> satisfies the differential equation and the initial condition <m>y(1)=5.</m></caption>
+</figure>
+<!--Commenting out trig
+<example xml:id="fs-id1165043327648">
+<title>Solving an Initial-Value Problem</title>
+ <statement id="fs-id1165043327652">
+<p id="fs-id1165043327658">Solve the initial-value problem</p>
+<me>\frac{dy}{dx}=\sin x,y(0)=5.</me>
+</statement>
+<solution id="fs-id1165043430927">
+<p id="fs-id1165043430929">First we need to solve the differential equation. If <m>\frac{dy}{dx}=\sin x,</m> then</p>
+<me>y= \int \sin(x)dx =-\cos  x+C.</me>
+<p id="fs-id1165042318817">Next we need to look for a solution <m>y</m> that satisfies the initial condition. The initial condition <m>y(0)=5</m> means we need a constant <m>C</m> such that <m>-\cos  x+C=5.</m> Therefore,</p>
+<me>C=5+\cos (0)=6.</me>
+<p id="fs-id1165043424835">The solution of the initial-value problem is <m>y=-\cos  x+6.</m></p>
+</solution>
+</example>-->
+<example>
+<title>Solving an Initial-Value Problem</title>
+ <statement>
+<p>Solve the initial-value problem</p>
+<me>\frac{dy}{dx}=2e^x,\;y(0)=5.</me>
+</statement>
+<solution>
+<p>First we need to solve the differential equation. If <m>\frac{dy}{dx}=2e^x,</m> then</p>
+<me>y= \int 2e^x dx =2e^x+C.</me>
+<p>Next we need to look for a solution <m>y</m> that satisfies the initial condition. The initial condition <m>y(0)=5</m> means we need a constant <m>C</m> such that <m>2e^0+C=5.</m> Therefore,</p>
+<me>C=5-2e^0=3.</me>
+<p id="fs-id1165043424835">The solution of the initial-value problem is <m>y=2e^x+3.</m></p>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1165042327339">
+<p id="fs-id1165042327341">Solve the initial value problem <m>\frac{dy}{dx}=3x^{-2},y(1)=2.</m></p>
+</statement>
+<solution id="fs-id1165043327480">
+<p id="fs-id1165043327482"><m>y=-\frac{3}{x}+5</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042640839">Find all antiderivatives of <m>f(x)=3x^{-2}.</m></p>
+</hint></exercise>
+<p id="fs-id1165043174043">Initial-value problems arise in many applications. Next we consider a problem in which a driver applies the brakes in a car. We are interested in how long it takes for the car to stop. Recall that the velocity function <m>v(t)</m> is the derivative of a position function <m>s(t),</m> and the acceleration <m>a(t)</m> is the derivative of the velocity function. In earlier examples in the text, we could calculate the velocity from the position and then compute the acceleration from the velocity. In the next example we work the other way around. Given an acceleration function, we calculate the velocity function. We then use the velocity function to determine the position function.</p>
+<example xml:id="fs-id1165042640762">
+<title>Decelerating Car</title>
+ <statement id="fs-id1165042640767">
+<p id="fs-id1165042640772">A car is traveling at the rate of <m>88</m> ft/sec <m>(60</m> mph) when the brakes are applied. The car begins decelerating at a constant rate of <m>15</m> ft/sec<sup>2</sup>.</p>
+<ol marker="(a)">
+<li>How many seconds elapse before the car stops?</li>
+<li>How far does the car travel during that time?</li>
+</ol>
+</statement>
+<solution id="fs-id1165043430833">
+<ol marker="(a)">
+<li>First we introduce variables for this problem. Let <m>t</m> be the time (in seconds) after the brakes are first applied. Let <m>a(t)</m> be the acceleration of the car (in feet per seconds squared) at time <m>t.</m> Let <m>v(t)</m> be the velocity of the car (in feet per second) at time <m>t.</m> Let <m>s(t)</m> be the car’s position (in feet) beyond the point where the brakes are applied at time <m>t.</m>
+The car is traveling at a rate of <m>88 \text{ ft/sec }.</m> Therefore, the initial velocity is <m>v(0)=88</m> ft/sec. Since the car is decelerating, the acceleration is
+<me>a(t)=-15\text{ft/s}^2.</me>
+The acceleration is the derivative of the velocity,
+<me>v'(t)=-15.</me>
+Therefore, we have an initial-value problem to solve:
+<me>v'(t)=-15,v(0)=88.</me>
+Integrating, we find that
+<me>v(t)=-15t+C.</me>
+Since <m>v(0)=88,C=88.</m> Thus, the velocity function is
+<me>v(t)=-15t+88.</me>
+To find how long it takes for the car to stop, we need to find the time <m>t</m> such that the velocity is zero. Solving <m>-15t+88=0,</m> we obtain <m>t=\frac{88}{15}</m> sec.</li>
+<li>To find how far the car travels during this time, we need to find the position of the car after <m>\frac{88}{15}</m> sec. We know the velocity <m>v(t)</m> is the derivative of the position <m>s(t).</m> Consider the initial position to be <m>s(0)=0.</m> Therefore, we need to solve the initial-value problem
+<me>s'(t)=-15t+88,s(0)=0.</me>
+Integrating, we have
+<me>s(t)=-\frac{15}{2}t^2+88t+C.</me>
+Since <m>s(0)=0,</m> the constant is <m>C=0.</m> Therefore, the position function is
+<me>s(t)=-\frac{15}{2}t^2+88t.</me>
+After <m>t=\frac{88}{15}</m> sec, the position is <m>s(\frac{88}{15})\approx 258.133</m> ft.</li>
+</ol>
+</solution>
+</example>
+<example>
+<title>Marginal Cost</title>
+<statement>Find the cost function, <m>C(x)</m>, if the marginal cost is <m>10e^x+40x-100</m> and fixed costs are $1000.</statement>
+<solution>
+Recall that the marginal cost is <m>C'(x)</m>. Thus,
+<me>C(x)=\int 10e^x+40x-100 dx=10e^x+20x^2-100x+C.</me>
+Using <xref ref="fixedcost_1.3">Section 1.3</xref>, <m>C(0)=1000</m> which we can use to find our integration contant:
+<me>10e^0+20(0)-100(0)+C=1000</me>
+<me>C=990.</me>
+Therefore, <m>C(x)=10e^x+20x^2-100x+990</m>.
+</solution>
+</example>
+<!--Commenting out physics
+<exercise>  <statement id="fs-id1165042708229">
+<p id="fs-id1165042708231">Suppose the car is traveling at the rate of <m>44</m> ft/sec. How long does it take for the car to stop? How far will the car travel?</p>
+</statement>
+<solution id="fs-id1165042708240">
+<p id="fs-id1165042708242"><m>2.93 \text{ sec }, 64.5 \text{ ft }</m></p>
+</solution>
+<hint>
+<p id="fs-id1165043396281"><m>v(t)=-15t+44.</m></p>
+</hint></exercise>-->
+<exercise>
+<title>Marginal Profit</title>
+<statement>
+<p>Find the profit function, <m>P(x)</m>, if the marginal profit is <m>2x^2+4x</m> where <m>x</m> is the number of units sold and profit is in dollars. Assume that the profit earned is 0 dollars when 0 units are sold.</p>
+</statement>
+<solution>
+<p><m>P(x)=\frac{2}{3}x^3+2x^2</m></p>
+</solution>
+<hint>
+<p>Recall that the marginal profit is <m>P'(x).</m></p>
+</hint></exercise>
+
+</subsection>
+<subsection id="fs-id1165043396312" class="key-concepts">
+<title>Key Concepts</title>
+<ul>
+<li>If <m>F</m> is an antiderivative of <m>f,</m> then every antiderivative of <m>f</m> is of the form <m>F(x)+C</m> for some constant <m>C.</m></li>
+<li>Solving the initial-value problem
+<me>\frac{dy}{dx}=f(x),y(x_0)=y_0</me>
+requires us first to find the set of antiderivatives of <m>f</m> and then to look for the particular antiderivative that also satisfies the initial condition.</li>
+</ul>
+</subsection>
+</section>
+<?ignore
+<section id="fs-id1165042709600" class="section-exercises">
+<p id="fs-id1165042709603">For the following exercises, show that <m>F(x)</m> are antiderivatives of <m>f(x).</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042333423">
+<p id="fs-id1165042333425"><m>F(x)=5x^3+2x^2+3x+1,f(x)=15x^2+4x+3</m></p>
+</statement>
+<solution id="fs-id1165042465567">
+<p id="fs-id1165042465569"><m>F'(x)=15x^2+4x+3</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042364152">
+<p id="fs-id1165042364154"><m>F(x)=x^2+4x+1,f(x)=2x+4</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043317348">
+<p id="fs-id1165043317350"><m>F(x)=x^2e^x,f(x)=e^x(x^2+2x)</m></p>
+</statement>
+<solution id="fs-id1165043327396">
+<p id="fs-id1165043327399"><m>F'(x)=2xe^x+x^2e^x</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042659413">
+<p id="fs-id1165042659415"><m>F(x)=\cos  x,f(x)=-\sin x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042640880">
+<p id="fs-id1165042640882"><m>F(x)=e^x,f(x)=e^x</m></p>
+</statement>
+<solution id="fs-id1165042640924">
+<p id="fs-id1165042640926"><m>F'(x)=e^x</m></p>
+</solution>
+
+<p id="fs-id1165042638498">For the following exercises, find the antiderivative of the function.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042638503">
+<p id="fs-id1165042638505"><m>f(x)=\frac{1x^2}+x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043390816">
+<p id="fs-id1165043390818"><m>f(x)=e^x-3x^2+\sin x</m></p>
+</statement>
+<solution id="fs-id1165043390856">
+<p id="fs-id1165043390859"><m>F(x)=e^x-x^3-\cos (x)+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042708321">
+<p id="fs-id1165042708323"><m>f(x)=e^x+3x-x^2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042659509">
+<p id="fs-id1165042659512"><m>f(x)=x-1+4 \sin(2x)</m></p>
+</statement>
+<solution id="fs-id1165042659552">
+<p id="fs-id1165042659554"><m>F(x)=\frac{x^2}{2}-x-2 \cos (2x)+C</m></p>
+</solution>
+
+<p id="fs-id1165042465656">For the following exercises, find the antiderivative <m>F(x)</m> of each function <m>f(x).</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042465688">
+<p id="fs-id1165042465690"><m>f(x)=5x^4+4x^5</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043427407">
+<p id="fs-id1165043427409"><m>f(x)=x+12x^2</m></p>
+</statement>
+<solution id="fs-id1165043108236">
+<p id="fs-id1165043108238"><m>F(x)=\frac{1}{2}x^2+4x^3+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043108283">
+<p id="fs-id1165043108285"><m>f(x)=\frac{1\sqrt{x}}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042657752">
+<p id="fs-id1165042657754"><m>f(x)=<m:msup>(\sqrt{x})3</m:msup></m></p>
+</statement>
+<solution id="fs-id1165042657785">
+<p id="fs-id1165042657787"><m>F(x)=\frac{2}{5}<m:msup>(\sqrt{x})5</m:msup>+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043219225">
+<p id="fs-id1165043219227"><m>f(x)=<m:msup>x1/3</m:msup>+<m:msup>(2x)}{1/3</m:msup></m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042707201">
+<p id="fs-id1165042707203"><m>f(x)=\frac{<m:msup>x1/3</m:msup>}{x^{2/3} }</m></p>
+</statement>
+<solution id="fs-id1165042707244">
+<p id="fs-id1165042707247"><m>F(x)=\frac{3}{2}x^{2/3} +C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043173831">
+<p id="fs-id1165043173833"><m>f(x)=2 \sin(x)+\sin(2x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042364507">
+<p id="fs-id1165042364510"><m>f(x)=\sec^2 (x)+1</m></p>
+</statement>
+<solution id="fs-id1165042364545">
+<p id="fs-id1165042364547"><m>F(x)=x+\tan (x)+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043281581">
+<p id="fs-id1165043281583"><m>f(x)=\sin x \cos  x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043281657">
+<p id="fs-id1165043281659"><m>f(x)=<m:msup>\sin2</m:msup>(x)\cos (x)</m></p>
+</statement>
+<solution id="fs-id1165043424712">
+<p id="fs-id1165043424715"><m>F(x)=\frac{1}{3}<m:msup>\sin3</m:msup>(x)+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043424758">
+<p id="fs-id1165043424760"><m>f(x)=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042660276">
+<p id="fs-id1165042660278"><m>f(x)=\frac{1}{2}\csc^2 (x)+\frac{1x^2}</m></p>
+</statement>
+<solution id="fs-id1165042660326">
+<p id="fs-id1165042660328"><m>F(x)=-\frac{1}{2} \text{ cot }(x)-\frac{1}{x}+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043173693">
+<p id="fs-id1165043173696"><m>f(x)=\text{ csc } x \text{ cot } x+3x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043173771">
+<p id="fs-id1165043173773"><m>f(x)=4 \text{ csc } x \text{ cot } x-\text{ sec } x \tan  x</m></p>
+</statement>
+<solution id="fs-id1165043252002">
+<p id="fs-id1165043252004"><m>F(x)=-\text{ sec } x-4 \text{ csc } x+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043252044">
+<p id="fs-id1165043252046"><m>f(x)=8 \text{ sec } x(\text{ sec } x-4 \tan  x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042676269">
+<p id="fs-id1165042676271"><m>f(x)=\frac{1}{2}<m:msup>e-4x</m:msup>+\sin x</m></p>
+</statement>
+<solution id="fs-id1165042676309">
+<p id="fs-id1165042676311"><m>F(x)=-\frac{1}{8}<m:msup>e-4x</m:msup>-\cos  x+C</m></p>
+</solution>
+
+<p id="fs-id1165042681088">For the following exercises, evaluate the integral.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042681094">
+<p id="fs-id1165042681096"><m> \int (-1)dx </m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042681139">
+<p id="fs-id1165042681142"><m> \int \sin x dx </m></p>
+</statement>
+<solution id="fs-id1165042681162">
+<p id="fs-id1165042681164"><m>-\cos  x+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042681183">
+<p id="fs-id1165042681185"><m> \int (4x+\sqrt{x})dx </m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042461204">
+<p id="fs-id1165042461206"><m> \int \frac{3x^2+2}{x^2}dx </m></p>
+</statement>
+<solution id="fs-id1165042461242">
+<p id="fs-id1165042461244"><m>3x-\frac{2}{x}+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042374849">
+<p id="fs-id1165042374851"><m> \int (\text{ sec } x \tan  x+4x)dx </m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042374917">
+<p id="fs-id1165042374920"><m> \int (4\sqrt{x}+<m:mroot>x4</m:mroot>)dx </m></p>
+</statement>
+<solution id="fs-id1165042374955">
+<p id="fs-id1165042374957"><m>\frac{8}{3}<m:msup>x3/2</m:msup>+\frac{4}{5}<m:msup>x5/4</m:msup>+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042327524">
+<p id="fs-id1165042327526"><m> \int (<m:msup>x-1/3</m:msup>-x^{2/3} ) dx</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042700341">
+<p id="fs-id1165042700343"><m> \int \frac{14x^3+2x+1}{x^3}dx </m></p>
+</statement>
+<solution id="fs-id1165042700386">
+<p id="fs-id1165042700388"><m>14x-\frac{2}{x}-\frac{12x^2}+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042700427">
+<p id="fs-id1165042700429"><m> \int (e^x+<m:msup>e-x</m:msup>) dx</m></p>
+</statement>
+
+<p id="fs-id1165042668727">For the following exercises, solve the initial value problem.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042668733">
+<p id="fs-id1165042668735"><m>f'(x)=<m:msup>x-3</m:msup>,f(1)=1</m></p>
+</statement>
+<solution id="fs-id1165042668778">
+<p id="fs-id1165042668780"><m>f(x)=-\frac{12x^2}+\frac{3}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042668821">
+<p id="fs-id1165042668823"><m>f'(x)=\sqrt{x}+x^2,f(0)=2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042315624">
+<p id="fs-id1165042315626"><m>f'(x)=\cos  x+\sec^2 (x),f(\frac{\pi}{4})=2+\frac{\sqrt{2}2}</m></p>
+</statement>
+<solution id="fs-id1165042684157">
+<p id="fs-id1165042684159"><m>f(x)=\sin x+\tan  x+1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042684194">
+<p id="fs-id1165042684196"><m>f'(x)=x^3-8x^2+16x+1,f(0)=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042684318">
+<p id="fs-id1165042684320"><m>f'(x)=\frac{2x^2}-\frac{x^2}{2},f(1)=0</m></p>
+</statement>
+<solution id="fs-id1165043422382">
+<p id="fs-id1165043422384"><m>f(x)=-\frac{1}{6}x^3-\frac{2}{x}+\frac{136}</m></p>
+</solution>
+
+<p id="fs-id1165043422431">For the following exercises, find two possible functions <m>f</m> given the second- or third-order derivatives.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165043422441">
+<p id="fs-id1165043422443"><m>f\text{ ″ }(x)=x^2+2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042326005">
+<p id="fs-id1165042326007"><m>f\text{ ″ }(x)=<m:msup>e-x</m:msup></m></p>
+</statement>
+<solution id="fs-id1165042326036">
+<p id="fs-id1165042326038">Answers may vary; one possible answer is <m>f(x)=<m:msup>e-x</m:msup></m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042326068">
+<p id="fs-id1165042326070"><m>f\text{ ″ }(x)=1+x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042326141">
+<p id="fs-id1165042326144"><m>f\text{ ‴ }(x)=\cos  x</m></p>
+</statement>
+<solution id="fs-id1165042326168">
+<p id="fs-id1165042666987">Answers may vary; one possible answer is <m>f(x)=-\sin x</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042667014">
+<p id="fs-id1165042667017"><m>f\text{ ‴ }(x)=8<m:msup>e-2x</m:msup>-\sin x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042667094">
+<p id="fs-id1165042667097">A car is being driven at a rate of <m>40</m> mph when the brakes are applied. The car decelerates at a constant rate of <m>10</m> ft/sec<sup>2</sup>. How long before the car stops?</p>
+</statement>
+<solution id="fs-id1165042667115">
+<p id="fs-id1165042667117"><m>5.867</m> sec</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042667129">
+<p id="fs-id1165042667131">In the preceding problem, calculate how far the car travels in the time it takes to stop.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042667149">
+<p id="fs-id1165042667151">You are merging onto the freeway, accelerating at a constant rate of <m>12</m> ft/sec<sup>2</sup>. How long does it take you to reach merging speed at <m>60</m> mph?</p>
+</statement>
+<solution id="fs-id1165042667169">
+<p id="fs-id1165042667171"><m>7.333</m> sec</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042498516">
+<p id="fs-id1165042498518">Based on the previous problem, how far does the car travel to reach merging speed?</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042498536">
+<p id="fs-id1165042498538">A car company wants to ensure its newest model can stop in <m>8</m> sec when traveling at <m>75</m> mph. If we assume constant deceleration, find the value of deceleration that accomplishes this.</p>
+</statement>
+<solution id="fs-id1165042498552">
+<p id="fs-id1165042498554"><m>13.75</m> ft/sec<sup>2</sup></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042498568">
+<p id="fs-id1165042498570">A car company wants to ensure its newest model can stop in less than <m>450</m> ft when traveling at <m>60</m> mph. If we assume constant deceleration, find the value of deceleration that accomplishes this.</p>
+</statement>
+
+<p id="fs-id1165042498599">For the following exercises, find the antiderivative of the function, assuming <m>F(0)=0.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042498622">
+<p id="fs-id1165042498624"><emphasis effect="bold">[T]</emphasis> <m>f(x)=x^2+2</m></p>
+</statement>
+<solution id="fs-id1165042498655">
+<p id="fs-id1165042498658"><m>F(x)=\frac{1}{3}x^3+2x</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042498695">
+<p id="fs-id1165042498697"><emphasis effect="bold">[T]</emphasis> <m>f(x)=4x-\sqrt{x}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042631786">
+<p id="fs-id1165042631788"><emphasis effect="bold">[T]</emphasis> <m>f(x)=\sin x+2x</m></p>
+</statement>
+<solution id="fs-id1165042631820">
+<p id="fs-id1165042631822"><m>F(x)=x^2-\cos  x+1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042631859">
+<p id="fs-id1165042631861"><emphasis effect="bold">[T]</emphasis> <m>f(x)=e^x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042631920">
+<p id="fs-id1165042631922"><emphasis effect="bold">[T]</emphasis> <m>f(x)=\frac{1<m:msup>(x+1)2</m:msup>}</m></p>
+</statement>
+<solution id="fs-id1165042418082">
+<p id="fs-id1165042418084"><m>F(x)=-\frac{1(x+1)}+1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042418128">
+<p id="fs-id1165042418130"><emphasis effect="bold">[T]</emphasis> <m>f(x)=<m:msup>e-2x</m:msup>+3x^2</m></p>
+</statement>
+
+<p id="fs-id1165042418221">For the following exercises, determine whether the statement is true or false. Either prove it is true or find a counterexample if it is false.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042418227">
+<p id="fs-id1165042418229">If <m>f(x)</m> is the antiderivative of <m>v(x),</m> then <m>2f(x)</m> is the antiderivative of <m>2v(x).</m></p>
+</statement>
+<solution id="fs-id1165042518927">
+<p id="fs-id1165042518929">True</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042518937">
+<p id="fs-id1165042518939">If <m>f(x)</m> is the antiderivative of <m>v(x),</m> then <m>f(2x)</m> is the antiderivative of <m>v(2x).</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042519013">
+<p id="fs-id1165042519016">If <m>f(x)</m> is the antiderivative of <m>v(x),</m> then <m>f(x)+1</m> is the antiderivative of <m>v(x)+1.</m></p>
+</statement>
+<solution id="fs-id1165042519083">
+<p id="fs-id1165042519085">False</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042519092">
+<p id="fs-id1165042519094">If <m>f(x)</m> is the antiderivative of <m>v(x),</m> then <m><m:msup>(f(x))2</m:msup></m> is the antiderivative of <m><m:msup>(v(x))2</m:msup>.</m></p>
+</statement>
+
+</section>
+<section id="fs-id1165042471211" class="review-exercises">
+<title>Chapter Review Exercises</title>
+<p id="fs-id1165042471218"><emphasis effect="italics">True or False</emphasis>? Justify your answer with a proof or a counterexample. Assume that <m>f(x)</m> is continuous and differentiable unless stated otherwise.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042471239">
+<p id="fs-id1165042471241">If <m>f(-1)=-6</m> and <m>f(1)=2,</m> then there exists at least one point <m>x∈[-1,1]</m> such that <m>f'(x)=4.</m></p>
+</statement>
+<solution id="fs-id1165042471324">
+<p id="fs-id1165042471326">True, by Mean Value Theorem</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042471334">
+<p id="fs-id1165042471336">If <m>f'(c)=0,</m> there is a maximum or minimum at <m>x=c.</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042459447">
+<p id="fs-id1165042459449">There is a function such that <m>f(x)\lt 0,f'(x)\gt 0,</m> and <m>f\text{ ″ }(x)\lt 0.</m> (A graphical “proof” is acceptable for this answer.)</p>
+</statement>
+<solution id="fs-id1165042459516">
+<p id="fs-id1165042459518">True</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042459525">
+<p id="fs-id1165042459527">There is a function such that there is both an inflection point and a critical point for some value <m>x=a.</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042459581">
+<p id="fs-id1165042459583">Given the graph of <m>f',</m> determine where <m>f</m> is increasing or decreasing.</p>
+<description>"The function increases to cross the x-axis at -2, reaches a maximum and then decreases through the origin, reaches a minimum and then increases to a maximum at 2, decreases to a minimum and then increases to pass through the x-axis at 4 and continues increasing.">
+<image source="CNX_Calc_Figure_04_10_201.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165042459614">
+<p id="fs-id1165042459616">Increasing: <m>(-2,0)∪(4,\infty ),</m> decreasing: <m>(-\infty ,-2)∪(0,4)</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042463778">
+<p id="fs-id1165042463780">The graph of <m>f</m> is given below. Draw <m>f'.</m></p>
+<description>"The function decreases rapidly and reaches a local minimum at -2, then it increases to reach a local maximum at 0, at which point it decreases slowly at first, then stops decreasing near 1, then continues decreasing to reach a minimum at 3, and then increases rapidly.">
+<image source="CNX_Calc_Figure_04_10_202.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042463830">
+<p id="fs-id1165042463832">Find the linear approximation <m>L(x)</m> to <m>y=x^2+\tan (\pix)</m> near <m>x=\frac{1}{4}.</m></p>
+</statement>
+<solution id="fs-id1165042463891">
+<p id="fs-id1165042463893"><m>L(x)=\frac{1}{7}{16}+\frac{1}{2}(1+4\pi)}{(x-\frac{1}{4})</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042542810">
+<p id="fs-id1165042542813">Find the differential of <m>y=x^2-5x-6</m> and evaluate for <m>x=2</m> with <m>dx=0.1.</m></p>
+</statement>
+
+<p id="fs-id1165042542901">Find the critical points and the local and absolute extrema of the following functions on the given interval.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042542908">
+<p id="fs-id1165042542910"><m>f(x)=x+<m:msup>\sin2</m:msup>(x)</m> over <m>[0,\pi]</m></p>
+</statement>
+<solution id="fs-id1165042542961">
+<p id="fs-id1165042542963">Critical point: <m>x=\frac{3\pi4},</m> absolute minimum: <m>x=0,</m> absolute maximum: <m>x=\pi</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042543009">
+<p id="fs-id1165042543011"><m>f(x)=3x^4-4x^3-12x^2+6</m> over <m>[-3,3]</m></p>
+</statement>
+
+<p id="fs-id1165042460392">Determine over which intervals the following functions are increasing, decreasing, concave up, and concave down.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042460398">
+<p id="fs-id1165042460400"><m>x(t)=3t^4-8t^3-18t^2</m></p>
+</statement>
+<solution id="fs-id1165042460444">
+<p id="fs-id1165042460446">Increasing: <m>(-1,0)∪(3,\infty ),</m> decreasing: <m>(-\infty ,-1)∪(0,3),</m> concave up: <m>(-\infty ,\frac{1}{3}(2-\sqrt{13}))∪(\frac{1}{3}(2+\sqrt{13}),\infty ),</m> concave down: <m>(\frac{1}{3}(2-\sqrt{13}),\frac{1}{3}(2+\sqrt{13}))</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042658585">
+<p id="fs-id1165042658587"><m>y=x+\sin(\pix)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043217998">
+<p id="fs-id1165043218000"><m>g(x)=x-\sqrt{x}</m></p>
+</statement>
+<solution id="fs-id1165043218025">
+<p id="fs-id1165043218027">Increasing: <m>(\frac{1}{4},\infty ),</m> decreasing: <m>(0,\frac{1}{4}),</m> concave up: <m>(0,\infty ),</m> concave down: nowhere</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043218095">
+<p id="fs-id1165043218097"><m>f(\theta )=\sin(3\theta )</m></p>
+</statement>
+
+<p id="fs-id1165042469787">Evaluate the following limits.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042469792">
+<p id="fs-id1165042469794"><m>\lim_{x\to \infty }\frac{3x\sqrt{x^2+1}}{\sqrt{x^4-1}}</m></p>
+</statement>
+<solution id="fs-id1165042469843">
+<p id="fs-id1165042711549"><m>3</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042711558">
+<p id="fs-id1165042711560"><m>\lim_{x\to \infty }\cos (\frac{1}{x})</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042711604">
+<p id="fs-id1165042711606"><m>\lim_{x\to 1}\frac{x-1}{\sin(\pix)}</m></p>
+</statement>
+<solution id="fs-id1165042711647">
+<p id="fs-id1165042711649"><m>-\frac{1}{\pi}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042711665">
+<p id="fs-id1165042711667"><m>\lim_{x\to \infty }<m:msup>(3x)}{1/x</m:msup></m></p>
+</statement>
+
+<p id="fs-id1165042711715">Use Newton’s method to find the first two iterations, given the starting point.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042711722">
+<p id="fs-id1165042711724"><m>y=x^3+1,x_0=0.5</m></p>
+</statement>
+<solution id="fs-id1165042711755">
+<p id="fs-id1165042711757"><m>x_1=-1,x_2=-1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042499467">
+<p id="fs-id1165042499470"><m>\frac{1x+1}=\frac{1}{2},x_0=0</m></p>
+</statement>
+
+<p id="fs-id1165042499541">Find the antiderivatives <m>F(x)</m> of the following functions.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042499559">
+<p id="fs-id1165042499561"><m>g(x)=\sqrt{x}-\frac{1x^2}</m></p>
+</statement>
+<solution id="fs-id1165042499593">
+<p id="fs-id1165042499595"><m>F(x)=\frac{2<m:msup>x3/2</m:msup>3}+\frac{1}{x}+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042499644">
+<p id="fs-id1165042499647"><m>f(x)=2x+6 \cos  x,F(\pi)=\pi^2+2</m></p>
+</statement>
+
+<p id="fs-id1165042711279">Graph the following functions by hand. Make sure to label the inflection points, critical points, zeros, and asymptotes.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042711286">
+<p id="fs-id1165042711288"><m>y=\frac{1x<m:msup>(x+1)2</m:msup>}</m></p>
+</statement>
+<solution id="fs-id1165042711321"><p id="fs-id1165042711322">
+<description>"This graph has vertical asymptotes at x = 0 and x = -1. The first part of the function occurs in the third quadrant with a horizontal asymptote at y = 0. The function decreases quickly from near (-5, 0) to near the vertical asymptote (-1, \infty ). On the other side of the asymptote, the function is roughly U-shaped and pointed down in the third quadrant between x = -1 and x = 0 with maximum near (-0.4, -6). On the other side of the x = 0 asympotote, the function decreases from its vertical asymptote near (0, \infty ) and to approach the horizontal asymptote y = 0.">
+<image source="CNX_Calc_Figure_04_10_204.jpg" width="50%">
+
+Inflection points: none; critical points: <m>x=-\frac{1}{3};</m> zeros: none; vertical asymptotes: <m>x=-1,</m> <m>x=0;</m> horizontal asymptote: <m>y=0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042711395">
+<p id="fs-id1165042711397"><m>y=x-\sqrt{4-x^2}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042711472">
+<p id="fs-id1165042711474">A car is being compacted into a rectangular solid. The volume is decreasing at a rate of <m>2</m> m<sup>3</sup>/sec. The length and width of the compactor are square, but the height is not the same length as the length and width. If the length and width walls move toward each other at a rate of <m>0.25</m> m/sec, find the rate at which the height is changing when the length and width are <m>2</m> m and the height is <m>1.5</m> m.</p>
+</statement>
+<solution id="fs-id1165042602893">
+<p id="fs-id1165042602895">The height is decreasing at a rate of <m>0.125</m> m/sec</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042602908">
+<p id="fs-id1165042602910">A rocket is launched into space; its kinetic energy is given by <m>K(t)=(\frac{1}{2})m(t)v<m:msup>(t)2</m:msup>,</m> where <m>K</m> is the kinetic energy in joules, <m>m</m> is the mass of the rocket in kilograms, and <m>v</m> is the velocity of the rocket in meters/second. Assume the velocity is increasing at a rate of <m>15</m> m/sec<sup>2</sup> and the mass is decreasing at a rate of <m>10</m> kg/sec because the fuel is being burned. At what rate is the rocket’s kinetic energy changing when the mass is <m>2000</m> kg and the velocity is <m>5000</m> m/sec? Give your answer in mega-Joules (MJ), which is equivalent to <m><m:msup>106</m:msup></m> J.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042603030">
+<p id="fs-id1165042603032">The famous <term class="no-emphasis">Regiomontanus’ problem</term> for angle maximization was proposed during the <m>15</m> th century. A painting hangs on a wall with the bottom of the painting a distance <m>a</m> feet above eye level, and the top <m>b</m> feet above eye level. What distance <m>x</m> (in feet) from the wall should the viewer stand to maximize the angle subtended by the painting, <m>\theta ?</m></p>
+<description>"A point is marked eye level, and from this point a right triangle is made with adjacent side length x and opposite side length a, which is the length from the bottom of the picture to the level of the eye. A second right triangle is made from the point marked eye level, with the adjacent side being x and the other side being length b, which is the height of the picture. The angle between the two hypotenuses is marked \theta .">
+<image source="CNX_Calc_Figure_04_10_206.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165042603078">
+<p id="fs-id1165042603081"><m>x=\sqrt{ab}</m> feet</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042603101">
+<p id="fs-id1165042603103">An airline sells tickets from Tokyo to Detroit for <m>\text{ $ }1200.</m> There are <m>500</m> seats available and a typical flight books <m>350</m> seats. For every <m>\text{ $ }10</m> decrease in price, the airline observes an additional five seats sold. What should the fare be to maximize profit? How many passengers would be onboard?</p>
+</statement>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1165042617549">
+<term>antiderivative</term>
+<meaning id="fs-id1165042617555">a function <m>F</m> such that <m>F'(x)=f(x)</m> for all <m>x</m> in the domain of <m>f</m> is an antiderivative of <m>f</m></meaning>
+</definition>
+<definition id="fs-id1165042617603">
+<term>indefinite integral</term>
+<meaning id="fs-id1165042617608">the most general antiderivative of <m>f(x)</m> is the indefinite integral of <m>f;</m> we use the notation <m> \int f(x)dx </m> to denote the indefinite integral of <m>f</m></meaning>
+</definition>
+<definition id="fs-id1165042617659">
+<term>initial value problem</term>
+<meaning id="fs-id1165042617665">a problem that requires finding a function <m>y</m> that satisfies the differential equation <m>\frac{dy}{dx}=f(x)</m> together with the initial condition <m>y(x_0)=y_0</m></meaning>
+</definition>
+</glossary>
+</document>
+?>
