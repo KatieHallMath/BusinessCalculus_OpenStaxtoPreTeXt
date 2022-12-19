@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<chapter xml:id="ch_third" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!-- Change title when you have one: -->
+  <title>Derivatives</title>
+  <xi:include href="./sec_Ch3Sec0.ptx" />
+  <xi:include href="./sec_Ch3Sec1.ptx" />
+  <xi:include href="./sec_Ch3Sec2.ptx" />
+  <xi:include href="./sec_Ch3Sec3.ptx" />
+  <xi:include href="./sec_Ch3Sec4.ptx" />
+  <xi:include href="./sec_Ch3Sec5.ptx" />
+  <xi:include href="./sec_Ch3Sec6.ptx" />
+  <xi:include href="./sec_Ch3Sec7.ptx" />
+  <xi:include href="./sec_Ch3Sec8.ptx" />
+  <xi:include href="./sec_Ch3Sec9.ptx" />
+<!--  <xi:include href="./sec_Ch2Sec2.ptx" />
+  <xi:include href="./sec_Ch2Sec3.ptx" />
+  <xi:include href="./sec_Ch2Sec4.ptx" /> -->
+</chapter>

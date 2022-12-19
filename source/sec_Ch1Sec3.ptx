@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch1Sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Mathematical Modeling</title>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ul>
+  <li>Discuss linear mathematical models for cost, revenue, profit, supply, and demand functions.</li>
+  <li>Find and analyze the break-even quantity and equilibrium point.</li>
+  <li>Discuss quadratic mathematical models.</li>
+  <li>Find and analyze the vertex point of a quadratic function.</li>
+  <li>Optimize cost, revenue, and profit functions.</li>
+  </ul>
+<p> Note: This is an additional section added to this custom version of the book.  It was written by Kim Savinon. </p>
+
+
+  <p id="fs-id1170573409710">A large variety of real-world situations can be described using <term>mathematical models</term>. A mathematical model is a method of simulating real-life situations with mathematical equations. Physicists, engineers, economists, and other researchers develop models by combining observation with quantitative data to develop equations, functions, graphs, and other mathematical tools to describe the behavior of various systems accurately. Models are useful because they help predict future outcomes. Examples of mathematical models include the study of population dynamics, investigations of weather patterns, and predictions of product sales.</p>
+</introduction>
+<subsection>
+<title>Mathematical Models of Cost, Revenue, and Profit</title>
+<introduction>
+<p>Given <m>x</m> the number of units produced, the <term>cost function</term> <m>C(x)</m> outputs the amount a business or company must pay in order to produce <m>x</m> units. There are typicically two types of costs: fixed and variable. In a linear cost model, the cost function is expressed as</p>
+<me>C(x)=mx+b</me>
+<p xml:id="fixedcost_13">where <m>m</m> is the cost per unit also referred to as the <term>variable</term> or <term>marginal cost</term>. Here, the variable cost term <m>mx</m> depends on the number of units produced. Some examples of variable/marginal costs are labor, material, or manufacturing costs. Additionally, <m>b</m> represents the <term>fixed costs</term> which is the amount one must pay to operate a business. The fixed cost is independent of the number of units produced. It is the amount one must pay if 0 units are produced since <m>b</m> is the <m>y</m>-intercept of the cost function. That is, <m>C(0)=b</m>. Some examples of fixed costs are rent, utility bills, or operating costs.</p>
+<p>The <term>revenue function</term> outputs the payment received from selling <m>x</m> units. In a linear model, the revenue is</p>
+<me>R(x)=px</me>
+<p>where <m>p</m> is the selling price per unit which is also called the <term>marginal revenue</term>.</p>
+<p>The <term>profit function</term> outputs the net proceeds after paying off the expenses/costs. That is,</p>
+<me xml:id="profit_13">P(x)=R(x)-C(x)</me>.
+<p>Notice that the above definition for the profit function holds if either of our revenue or cost functions are non-linear.</p>
+<p>If profits are negative, this is considered a <m>loss</m> and if profits are positive, this is considered a <m>gain</m>.</p>
+</introduction>
+<subsubsection>
+<title>Break-even Analysis</title>
+<p>Companies often look for the point at which there is no <em>loss</em> or <em>gain</em>. This gives you the minimum number of units a company must produce in order to make a profit.</p>
+<definition>The <term>break-even quantity</term> is the number of units <m>x</m> needed so that cost and revenue are equal, meaning the total profit is zero. That is, <m>C(x)=R(x)</m> or <m>P(x)=0</m>.
+</definition>
+<p> Observe that <m>C(x)=R(x)</m> and <m>P(x)=0</m> will yield the same break-even quantity solution since <m>R=C</m> if and only if <m>P=0</m>. This is illustrated in <xref ref="Busi_Calc_Figure_01_03_001"/>.</p>
+<figure xml:id="Busi_Calc_Figure_01_03_001">
+<image source="Busi_Calc_Figure_01_03_001.png" width="75%">
+<!-- This image was generated in Desmos. Link:https://www.desmos.com/calculator/pbiee6htnb-->
+<description>"This figure shows two intersection lines, R(x) and C(x).  R(x) is a line through the origin. C(x) is a line with a positive y-intercept and less steep slope than R(x). The lines intersect at a point labeled break even point. Before they intersect (to the left of intersection) the region between R(X) and C(x) is shaded and labeled loss. To the right of the intersection, the region between the lines is shaded and labeled gain."</description>
+</image> <caption>The point of intersection between <m>R(x)</m> and <m> C(x) </m> is the break-even point. When we are to the left of the break-even point,there is net loss and to the right there is net gain. </caption></figure>
+<example>
+   <statement>
+  <p>Peter's ice cream stand has an operating cost of $200 per week. The cost to make an ice cream sundae is $2 and they sell for $6. Compute the cost, revenue, and profit functions for one week. Then, find the break-even quantity. Let <m>x</m> represent the number of ice cream sundaes sold.</p>
+  </statement>
+  <solution> Since our operating costs (fixed costs) are $200 per week and the marginal cost is $2 per ice cream sundae, then
+  <me>C(x)=2x+200</me>.
+  Since the selling price is $6 per ice cream sundae, then
+  <me>R(x)=6x</me>.
+  Using <m>C(x)=2x+200</m> and <m>R(x)=6x</m>, we can obtain the profit function.
+  <me>P(x)=R(x)-C(x)</me>
+  <me>P(x)=6x-(2x+200)</me>
+  <me>P(x)=6x-2x-200</me>
+  <me>P(x)=4x-200</me>
+  <p>To find the break-even quantity, we may proceed by using two different methods. Both yield the same solution.</p>
+  <term>Method 1:</term> <m>\;R(x)=C(x)</m>
+  <me>6x=2x+200</me>
+  <me>4x=200</me>
+  <me>x=50</me>
+  <term>Method 2:</term> <m>\;P(x)=0</m>
+  <me>4x-200=0</me>
+  <me>4x=200</me>
+  <me>x=50</me>
+  Peter must sell at least 50 ice cream sundaes in one week in order to break-even.
+  </solution>
+  </example>
+  <exercise>
+   <statement>
+  <p>A suit department store has an operating cost of $1000 per week. The cost to supply a suit is $50 and they sell for $150 each. Compute the cost, revenue, and profit functions for one week. Then, find the break-even quantity. Let <m>x</m> represent the number of suits sold.</p>
+  </statement>
+  <solution>
+  <p>The cost and revenue functions are <m>C(x)=50x+1000,\;R(x)=150x.</m></p>
+  Profit function:
+  <me>P(x)=R(x)-C(x)</me>
+  <me>P(x)=100x-1000</me>
+  Break-even quantity:
+  <me>R(x)=C(x)</me>
+  <me>150x=50x+1000</me>
+  <me>x=10</me>
+  The department store must sell at least 10 suits in one week in order to break-even. That is, we must sell more than 10 suits to make a profit.
+  </solution>
+  <hint>
+  Recall that <m>P=R-C</m> and to find the break-even quantity, we can solve either <m>R=C</m> or <m>P=0</m>.
+  </hint>
+  </exercise>
+</subsubsection>
+</subsection>
+
+<subsection>
+<title>Mathematical Models of Supply and Demand</title>
+<introduction>
+<p>The <term>demand equation</term> <m>p(x)</m> gives you the price <m>p</m> of one unit when <m>x</m> units are wanted by the consumers. The independent variable here is <m>x</m>. Note that as we increase the price of one unit, the number of units wanted by the consumer will drop. As a result, we expect the demand equation to be a decreasing function.</p>
+<p>The <term>supply equation</term> <m>p(x)</m> gives you the price <m>p</m> needed to make <m>x</m> units available to the market. As we had with the demand equation, the independent variable here is <m>x</m>. Note that suppliers will naturally want to sell more units if the price is higher. As a result, we expect the supply equation to be an increasing function. If we supply more units than the market demanded, this is considered a <em>surplus</em>. If we supply less units than the market demanded, this is considered a <em>shortage</em>.</p>
+<note>The supply and demand functions as given above appear to be defined backwards and in some scenarios they may be written in the form <m>x=f(p)</m> where the independent variable is <m>p</m> and not <m>x</m>.</note>
+<example>
+   <statement>
+  <p>Suppose that 500 units of a certain item are sold per day by the entire industry at a price of $20 per item and that 1500 units can be sold per day by the same industry at a price of $15 per unit. Assuming a linear model, find the demand equation <m>p(x)</m> where <m>x</m> is the number of units sold per day.</p>
+  </statement>
+  <solution>
+  <p>Observe that 500 units are sold at a price of $20 per unit gives us the ordered pair <m>(500,20)</m>. Moreover, we also have that 1500 units are sold at a price of $15 per unit. That is, <m>(1500,15)</m>.</p>
+  <p>Since the demand equation is linear, we can compute the slope of the line <m>m</m> by using the above ordered pairs.</p>
+  <me>m=\frac{y_2-y_1}{x_2-x_1}=\frac{15-20}{1500-500}=-0.005</me>
+  Using point-slope form,
+  <me>p(x)-20=-0.005(x-500)</me>
+  <me>p(x)-20=-0.005x+2.5</me>
+  Hence, our demand equation is
+  <me>p(x)=-0.005x+22.5</me>.
+  </solution>
+  </example>
+  <exercise>
+  <statement>Suppose that when 100 units of a certain item are supplied, they are sold at a price of $1.25 per unit. When 80 more units of a certain item are supplied, the price per unit increased by $1. Assuming a linear model, find the supply equation <m>p(x)</m> where <m>x</m> is the number of units sold.
+  </statement>
+  <solution>
+  <p>Using the ordered pairs <m>(100,1.25)</m> and <m>(180,2.25)</m>,</p>
+  <me>m=\frac{2.25-1.25}{180-100}=0.0125.</me>
+  Supply equation:
+  <me>p(x)-1.25=0.0125(x-100)</me>
+  <me>p(x)=0.0125x</me>.
+  </solution>
+  <hint>
+  Use point-slope form to construct the linear supply equation.
+  </hint>
+  </exercise>
+</introduction>
+  <subsubsection>
+  <title>Equilibrium</title>
+  <p>Companies often look for the amount of units needed to guarantee there is neither a <m>surplus</m> or <m>shortage</m> of units. Meaning, we want supply and demand to be equal which brings us to the following definition.</p>
+<definition>The <term>equilibrium point</term> <m>\;(x,p)</m> is the number of units <m>x</m> and selling price <m>p</m> where supply and demand are equal. The <m>x</m>-coordinate is the <term>equilibrium quantity</term> and the <m>p</m>-coordinate is the <term>equilibrium price</term>.
+</definition>
+<figure xml:id="Busi_Calc_Figure_01_03_002">
+<image source="Busi_Calc_Figure_01_03_002.png" width="75%">
+<!-- This image was generated in Desmos. Link:https://www.desmos.com/calculator/or7banhles-->
+<description>"This figure shows two intersection lines, supply and demand. The supply equation is an increasing line through the origin. The demand equation is a decreasing line with a positive y-intercept. The lines intersect at a point labeled equilibrium point. Before they intersect (to the left of intersection) the region between the supply and demand equations is shaded and labeled shortage. To the right of the intersection, the region between the lines is shaded and labeled surplus."</description>
+</image> <caption>The point of intersection between the supply and demand equations is the equilibrium point. When we are to the left of the break-even point, there is a shortage of items and to the right there is a surplus of items. </caption>
+
+</figure>
+  <example>
+  <statement>Suppose the supply and demand equations for Peter's ice cream stand are <m>p=0.3x+1</m> and <m>p=-0.2x+11,</m> respectively. Find the equilibrium price and quantity. Suppose <m>x</m> is the number of ice cream sundaes sold and the price per sundae <m>p</m> is in dollars.
+  </statement>
+  <solution>
+  In order to find the equilibrium point <m>(x,p),</m> we must set Peter's supply and demand equations equal to one another.
+  <me>0.3x+1=-0.2x+11</me>
+  <me>0.5x=10</me>
+  <me>x=20</me>
+  <p>The equilibrium quantity is 20 ice cream sundaes.</p>
+  <p>Next, we can use either the supply or demand equation to solve for the equilibrium price. Notice that both equations will yield the same result.</p>
+  <term>Method 1:</term> Using the supply equation.
+  <me>p=0.3(20)+1=7</me>
+  <term>Method 2:</term> Using the demand equation.
+  <me>p=-0.2(20)+11=7</me>
+  The equilibrium price is $7.
+  </solution>
+  </example>
+  <exercise>
+  <statement>The supply and demand equations for Lola's smoothie shop are <m>p=0.2x+1</m> and <m>p=-0.5x+15,</m> respectively. Find the equilibrium point. Suppose <m>x</m> is the number of smoothies sold in one day and the price per smoothie <m>p</m> is in dollars.
+  </statement>
+  <solution>
+  Setting Lola's supply and demand equations equal to one another,
+  <me>0.2x+1=-0.5x+15</me>
+  <me>x=20</me>
+  <p>The equilibrium quantity is 20 smoothies.</p>
+  Using the supply equation:
+  <me>p=0.2(20)+1=5</me>
+  The equilibrium price is $5.
+  </solution>
+  <hint>
+  Recall that we must set the supply and demand equations equal to one another to find the equilibrium quantity.
+  </hint>
+  </exercise>
+  </subsubsection>
+</subsection>
+  <subsection>
+  <title>Quadratic Mathematical Models</title>
+  <p> As we saw in the previous section, a quadratic polynomial is typically of the form <m>f(x)=ax^2+bx+c</m> where if <m>a\gt 0</m> the graph of <m>f</m> opens upward and if <m>a\lt 0</m> the graph of <m>f</m> opens downward. (See <xref ref="CNX_Calc_Figure_01_02_005"/>(a).) The quadratic polynomial can also be written in standard form <m>f(x)=a(x-h)^2+k</m>. The point <m>(h,k)</m> is called the <term>vertex point</term>. The <m>x</m>-coordinate of the vertex point can be found using the <term>vertex formula</term>:
+  <me>h=-\frac{b}{2a}</me>
+  where <m>a,b</m> are the coefficients of a quadratic polynomial in standard form, <m>f(x)=ax^2+bx+c</m>.
+  The <m>y</m>-coordinate of the vertex point can be found by evaluating the quadratic function at <m>h</m>. That is, <m>k=f(h)</m>. Notice here that if the parabola opens upward, then the vertex is a <em>minimum</em>. Conversely, if the parabola opens downward, the vertex is a <em>maximum</em>.</p>
+  <!-- insert max/min vertex figure here-->
+  <p id="fs-id1170573411980">As an example, let’s consider a mathematical model that a company could use to describe its revenue for the sale of a particular item. Recall the revenue equation <m>R=p·x.</m> The company is interested in how the sales change as the price of the item changes. Suppose the data in <xref ref="fs-id1170573493744"/> show the number of units a company sells as a function of the price per item.</p>
+  <table xml:id="fs-id1170573493744" summary="A table with 2 rows and 5 columns. The first row is labeled &#x201C;p&#x201D; and has the values &#x201C;6; 8; 10; 12; 14&#x201D;. The second row is labeled &#x201C;n&#x201D; and has the values &#x201C;19.4; 18.5; 16.2; 13.8; 12.2&#x201D;." class="column-header">
+  <title>Number of Units Sold <m>x</m> (in Thousands) as a Function of Price per Unit <m>p</m> (in Dollars)</title>
+  <tabular>
+  <row valign="top">
+  <cell halign="left"><m>p</m></cell>
+  <cell halign="left"><m> 6 </m></cell>
+  <cell halign="left"><m> 8 </m></cell>
+  <cell halign="left"><m> 10 </m></cell>
+  <cell halign="left"><m> 12 </m></cell>
+  <cell halign="left"><m> 14 </m></cell>
+  </row>
+  <row valign="top">
+  <cell halign="left"><m>x</m></cell>
+  <cell halign="center"><m> 19.4 </m></cell>
+  <cell halign="center"><m> 18.5 </m></cell>
+  <cell halign="center"><m> 16.2 </m></cell>
+  <cell halign="center"><m> 13.8 </m></cell>
+  <cell halign="center"><m> 12.2 </m></cell>
+  </row>
+  </tabular>
+  </table>
+  <p id="fs-id1170573355032">In <xref ref="CNX_Calc_Figure_01_02_008"/>, we see the graph the number of units sold (in thousands) as a function of price (in dollars). We note from the shape of the graph that the number of units sold is likely a linear function of price per item, and the data can be closely approximated by the linear function <m>x= −1.04 p+ 26 </m> for <m> 0 \leq p\leq  25 ,</m> where <m>x</m> predicts the number of units sold in thousands. Using this linear function, the revenue (in thousands of dollars) can be estimated by the quadratic function</p>
+  <me>R(p)=p\cdot( −1.04 p+ 26 )= −1.04p^2+ 26 p</me>
+  <p id="fs-id1170573419099">for <m> 0 \leq p\leq  25 .</m> In <xref ref="fs-id1170573569241"/>, we use this quadratic function to predict the amount of revenue the company receives depending on the price the company charges per item. Note that we cannot conclude definitively the actual number of units sold for values of <m>p,</m> for which no data are collected. However, given the other data values and the graph shown, it seems reasonable that the number of units sold (in thousands) if the price charged is <m>p</m> dollars may be close to the values predicted by the linear function <m>x= −1.04 p+ 26 .</m></p>
+  <figure xml:id="CNX_Calc_Figure_01_02_008">
+    <image source="CNX_Calc_Figure_01_02_008x.jpg" width="50%">
+  <description>"An image of a graph. The y axis runs from 0 to 28 and is labeled n, units sold in thousands. The x axis runs from 0 to 28 and is labeled p, price in dollars. The graph is of the function x = -1.04p + 26, which is a decreasing line function that starts at the y intercept point (0, 26). There are 5 points plotted on the graph at (6, 19.4), (8, 18.5), (10, 16.2), (12, 13.8), and (14, 12.2). The points are not on the graph of the function line, but are very close to it. The function has an x intercept at the point (25, 0)."
+  </description> </image> <caption>The data collected for the number of items sold as a function of price is roughly linear. We use the linear function <m>x= -1.04 p+ 26 </m> to estimate this function.</caption>
+  </figure>
+  <example xml:id="fs-id1170573569241">
+  <title>Maximizing Revenue</title>
+   <statement id="fs-id1170573417595">
+  <p id="fs-id1170573417597">A company is interested in predicting the amount of revenue it will receive depending on the price it charges for a particular item. Using the data from <xref ref="fs-id1170573493744"/>, the company arrives at the following quadratic function to model revenue <m>R</m> (in thousands of dollars) as a function of price per item <m>p:</m></p>
+  <me>R(p)=p\cdot( -1.04 p+ 26 )= -1.04p^2+ 26 p</me>
+  <p id="fs-id1170573398640">for <m> 0 \leq p\leq  25 .</m></p>
+  <ol>
+  <li>Predict the revenue if the company sells the item at a price of <m>p=\$ 5 </m> and <m>p=\$ 17 .</m></li>
+  <li>Find the zeros of this function and interpret the meaning of the zeros.</li>
+  <li>Sketch a graph of <m>R.</m></li>
+  <li>Use the graph to determine the value of <m>p</m> that maximizes revenue. Find the maximum revenue.</li>
+  </ol>
+  </statement>
+  <solution id="fs-id1170573356030">
+  <ol>
+  <li>Evaluating the revenue function at <m>p= 5 </m> and <m>p= 17 ,</m> we can conclude that
+  <md>
+    <mrow> R( 5 )= −1.04 ( 5 )^2+ 26 ( 5 )= 104 , \text{ so revenue } = \$104,000; </mrow>
+     <mrow>R( 17 )= −1.04( 17 )^2+ 26 ( 17 )= 141.44 , \text{ so revenue } =\$144,440.</mrow>
+   </md></li>
+  <li>The zeros of this function can be found by solving the equation <m> −1.04p^2+ 26 p= 0 .</m> When we factor the quadratic expression, we get <m>p( −1.04 p+ 26 )= 0 .</m> The solutions to this equation are given by <m>p= 0 , 25 .</m> For these values of <m>p,</m> the revenue is zero. When <m>p=\$ 0 ,</m> the revenue is zero because the company is giving away its merchandise for free. When <m>p=\$ 25 ,</m> the revenue is zero because the price is too high, and no one will buy any items.</li>
+  <li>Knowing the fact that the function is quadratic, we also know the graph is a parabola. Since the leading coefficient is negative, the parabola opens downward.<newline/>
+  <image source="CNX_Calc_Figure_01_02_009.jpg" width="50%">
+  <description>"An image of a graph. The y axis runs from 0 to 170 and is labeled &#x201C;R, revenue in thousands of dollars&#x201D;. The x axis runs from 0 to 28 and is labeled &#x201C;p, price in dollars&#x201D;. The graph is of the function &#x201C;n = -1.04(p squared) + 26p&#x201D;, which is a parabola that starts at the origin. The function increases until the maximum point at (12.5, 162.5) and then begins decreasing. The function has x intercepts at the origin and the point (25, 0). The y intercept is at the origin."> </description>
+  </image>
+  </li>
+  <li>The function is a parabola opening downward. This means that its vertex point is a maximum. Using the vertex formula:
+  <me>h=\frac{-b}{2a}=\frac{-26}{2(-1.04)}=12.5.</me>
+  The maximum revenue occurs at a price of <m>p=\$ 12.50 </m> per item. At that price, the revenue is <m>R(p)= −1.04 ( 12.5 )^2 + 26 ( 12.5 )=\$ 162 , 500 .</m></li>
+  </ol>
+  </solution>
+  </example>
+  <p>Recall that both the supply and demand equations <m>p(x)</m> give the price per unit given the number of units sold. This means that using either the supply or demand equation and that <m>R=p\cdot x,</m> we can find the revenue equation:
+  <me>R=(\text{supply or demand equation})\cdot x.</me>
+  </p>
+  <example>
+  <title>Maximizing Profit and Minimizing Cost</title>
+  <statement>
+  <p>A clothing store determines that its supply equation for <m>x</m> dresses sold is <m>p=140-0.25x</m> and the cost for producing <m>x</m> dresses is <m>C(x)=2000-10x+0.25x^2</m>.</p>
+  <ol>
+  <li>Find the revenue function <m>R(x)</m>.</li>
+  <li>Find the profit function <m>P(x)</m>.</li>
+  <li>How many dresses must be sold in order to maximize profits?</li>
+  <li>What is the maximum profit?</li>
+  <li>How many dresses must be sold in order to minimize costs?</li>
+  </ol>
+  </statement>
+  <solution>
+  <ol>
+  <li>
+  We can find the revenue equation using the supply equation.
+  <me>R(x)=p\cdot x</me>
+  <me>R(x)=(140-0.25x)x</me>
+  <me>R(x)=140x-0.25x^2</me>.
+  </li>
+  <li>
+  Recall,
+  <me>P=R-C</me>
+  <me>P(x)=140x-0.25x^2-(2000-10x+0.25x^2)</me>
+  <me>P(x)=-0.5x^2+150x-2000</me>.
+  </li>
+  <li>
+  Since the profit function is a parabola opening downward, then the vertex of the profit function is a maximum.
+  <me>h=\frac{-b}{2a}=\frac{-150}{2(-0.5)}=150</me>
+  The clothing store must sell 150 dresses in order to maximize profits.
+  </li>
+  <li>
+  Since selling 150 dresses maximizes profits, evaluating <m>P(150)</m> will give us the maximum profits. <m>P(150)=-0.5(150)^2+150(150)-2000=\$ 9,250</m> is the maximum profit.
+  </li>
+  <li>
+  Observe that the cost equation <m>C(x)=2000-10x+0.25x^2</m> is a parabola opening upward. That is, its vertex is a minimum.
+  <me>h=\frac{-b}{2a}=\frac{10}{2(0.25)}=20</me>
+  The clothing store must sell 20 dresses in order to minimize costs.
+  </li>
+  </ol>
+  </solution>
+  </example>
+  <exercise>
+  <statement>
+  <p>The demand equation for diamond rings sold at a jewelry store in one month is <m>p=-0.05x+10.2</m> where <m>x</m> is the number of diamond rings sold in one month and the price of each diamond ring is in thousands of dollars.</p>
+  <ol>
+  <li>Find the revenue function <m>R(x)</m>.</li>
+  <li>How many diamond rings must be sold in order to maximize revenue?</li>
+  <li>What is the maximum revenue?</li>
+  <li>What is the price per diamond ring that will maximize revenue?</li>
+  </ol>
+  </statement>
+  <solution>
+  <ol>
+  <li>
+  <p>Using <m>R=p\cdot x</m> we obtain
+  <me>R(x)=(-0.05x+10.2)\cdot x=-0.05x^2+10.2x.</me></p>
+  </li>
+  <li>
+  <p>Since the graph of our revenue function <m>R(x)=-0.05x^2+10.2x</m> opens downward, the vertex point will give us maximum revenue. Using the vertex formula,
+  <me>h=-\frac{b}{2a}=-\frac{-10.2}{2(-0.05)}=102.</me>
+  Furthermore, selling 102 diamond rings in one month will maximize revenue.</p>
+  </li>
+  <li>
+  <p>Since revenue is maximized when 102 diamond rings are sold, evaluating <m>R(102)</m> will give us the maximum revenue.
+  <me>R(102)=-0.05(102)^2+10.2(102)=520.2</me>
+  Recalling that the price is in thousands of dollars, revenue will also be in thousands of dollars. As a result, the maximum revenue is <m>520.2\cdot(\$ 1,000)=\$ 520,200</m>.</p>
+  </li>
+  <li>
+  <p>In order to find the price per diamond ring that will maximize revenue we must evaluate the demand equation at <m>x=102</m>.
+  <me>p(102)=-0.05(102)+10.2=5.1</me>
+  Again, since the price is in thousands of dollars, the price per diamond ring that will maximize revenue is <m>5.1\cdot(\$1,000)=\$5,100</m>.</p>
+  </li>
+  </ol>
+  </solution>
+  <hint>
+  Use <m>R=p\cdot x</m> and the vertex of a parabola opening downward to find when revenue is maximized.
+  </hint>
+  </exercise>
+  </subsection>
+<conclusion>
+  <p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at <url href="https://openstax.org/details/books/calculus-volume-1" visual="https://openstax.org/books/calculus-volume-1/pages/1-1-review-of-functions">https://openstax.org/details/books/calculus-volume-1.</url> </p>
+
+</conclusion>
+</section>

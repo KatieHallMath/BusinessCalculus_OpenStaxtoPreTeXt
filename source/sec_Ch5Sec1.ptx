@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch5Sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Approximating Areas</title>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ul>
+  <!--Commenting out sigma notation
+<li>Use sigma (summation) notation to calculate sums and powers of integers.</li>-->
+<li>Use the sum of rectangular areas to approximate the area under a curve.</li>
+<li>Use Riemann sums to approximate area.</li>
+</ul>
+
+<p id="fs-id1170571599828"><term class="no-emphasis">Archimedes</term> was fascinated with calculating the areas of various shapes—in other words, the amount of space enclosed by the shape. He used a process that has come to be known as the <term> method of exhaustion</term>, which used smaller and smaller shapes, the areas of which could be calculated exactly, to fill an irregular region and thereby obtain closer and closer approximations to the total area. In this process, an area bounded by curves is filled with rectangles, triangles, and shapes with exact area formulas. These areas are then summed to approximate the area of the curved region.</p>
+<p id="fs-id1170572135238">In this section, we develop techniques to approximate the area between a curve, defined by a function <m>f(x),</m> and the <m>x</m>-axis on a closed interval <m>[a,b].</m> Like Archimedes, we first approximate the area under the curve using shapes of known area (namely, rectangles). By using smaller and smaller rectangles, we get closer and closer approximations to the area. Taking a limit allows us to calculate the exact area under the curve.</p>
+<p id="fs-id1170572206162">Let’s start by introducing some notation to make the calculations easier. We then consider the case when <m>f(x)</m> is continuous and nonnegative. Later in the chapter, we relax some of these restrictions and develop techniques that apply in more general cases.</p>
+</introduction>
+<subsection id="fs-id1170572611083">
+<title>Sigma (Summation) Notation</title>
+<p id="fs-id1170572444485">As mentioned, we will use shapes of known area to approximate the area of an irregular region bounded by curves. This process often requires adding up long strings of numbers. To make it easier to write down these lengthy sums, we look at some new notation here, called <term>sigma notation</term> (also known as <term>summation notation</term>). The Greek capital letter <m>\Sigma,</m> sigma, is used to express long sums of values in a compact form. For example, if we want to add all the integers from 1 to 20 without sigma notation, we have to write</p>
+<me>1+2+3+4+5+6+7+8+9+10+11+12+13+14+15+16+17+18+19+20.</me>
+<p id="fs-id1170572184284">We could probably skip writing a couple of terms and write</p>
+<me>1+2+3+4+ \cdots +19+20,</me>
+<p id="fs-id1170572512419">which is better, but still cumbersome. With sigma notation, we write this sum as</p>
+<me>\displaystyle{  \sum_{i=1}^{20} i},</me>
+<p id="fs-id1170572132999">which is much more compact.</p>
+<p id="fs-id1170571654708">Typically, sigma notation is presented in the form</p>
+<me>\displaystyle{  \sum_{i=1}^{n} a_i}</me>
+<p id="fs-id1170572108202">where <m>a_i</m> describes the terms to be added, and the <m>i</m> is called the <term>index</term>. Each term is evaluated, then we sum all the values, beginning with the value when <m>i=1</m> and ending with the value when <m>i=n.</m> For example, an expression like <m>\displaystyle{  \sum_{i=2}^{7} s_i}</m> is interpreted as <m>s_2+s_3+s_4+s_5+s_6+s_7.</m> Note that the index is used only to keep track of the terms to be added; it does not factor into the calculation of the sum itself. The index is therefore called a <term>dummy variable</term>. We can use any letter we like for the index. Typically, mathematicians use <m>i</m>, <m>j</m>, <m>k</m>, <m>m</m>, and <m>n</m> for indices.</p>
+<!-- Commenting out sigma notation
+<p id="fs-id1170572472220">Let’s try a couple of examples of using sigma notation.</p>
+<example xml:id="fs-id1170572294328">
+<title>Using Sigma Notation</title>
+ <statement id="fs-id1170572147560">
+<ol marker="(a)">
+<li>Write in sigma notation and evaluate the sum of terms <m>3^i</m> for <m>i=1,2,3,4,5.</m></li>
+<li>Write the sum in sigma notation:
+<me>1+\frac{1}{4}+\frac{1}{9}+\frac{1}{16}+\frac{1}{25}.</me></li>
+</ol>
+</statement>
+<solution id="fs-id1170572539832">
+<ol marker="(a)">
+<li>Write
+<md><mrow>\displaystyle{  \sum_{i=1}^{5} 3^i}\amp =3+3^2+3^3+3^4+3^5</mrow><mrow>\amp =363.</mrow></md></li>
+<li>The denominator of each term is a perfect square. Using sigma notation, this sum can be written as <m>\displaystyle{  \sum_{i=1}^{5} \frac{1}{i^2}}.</m></li>
+</ol>
+</solution>
+</example>
+<exercise> <statement id="fs-id1170572106837">
+<p id="fs-id1170572110224">Write in sigma notation and evaluate the sum of terms <m>2^i</m> for <m>i=3,4,5,6.</m></p>
+</statement>
+<solution id="fs-id1170571542919">
+<p id="fs-id1170572133846"><m>\displaystyle{  \sum_{i=3}^{6} 2^i}=2^3+2^4+2^5+2^6=120</m></p>
+</solution>
+<hint>
+<p id="fs-id1170572167964">Use the solving steps in <xref ref="fs-id1170572294328"/> as a guide.</p>
+</hint></exercise>
+<p id="fs-id1170572108042">The properties associated with the summation process are given in the following rule.</p>
+-->
+<theorem id="fs-id1170572230416">
+<title>Rule: Properties of Sigma Notation</title>
+<p id="fs-id1170572204646">Let <m>a_1,a_2 , \dots ,  a_n</m> and <m>b_1,b_2 , \dots ,  b_n</m> represent two sequences of terms and let <m>c</m> be a constant. The following properties hold for all positive integers <m>n</m> and for integers <m>m</m>, with <m>1\leq m\leq n.</m></p>
+<ol marker="(a)">
+<li><me>\displaystyle{  \sum_{i=1}^{n} c}=nc</me></li>
+<li><me>\displaystyle{  \sum_{i=1}^{n} ca_i}=c\displaystyle{  \sum_{i=1}^{n} a_i}</me></li>
+<li><me>\displaystyle{  \sum_{i=1}^{n} (a_i+b_i)}=\displaystyle{  \sum_{i=1}^{n} a_i}+\displaystyle{  \sum_{i=1}^{n} b_i}</me></li>
+<li><me>\displaystyle{  \sum_{i=1}^{n} (a_i-b_i)}=\displaystyle{  \sum_{i=1}^{n} a_i}-\displaystyle{  \sum_{i=1}^{n} b_i}</me></li>
+<li><me>\displaystyle{  \sum_{i=1}^{n} a_i}=\displaystyle{  \sum_{i=1}^{m} a_i}+\displaystyle{ \sum_{i=m+1}^n a_i}</me></li>
+</ol>
+<!--Commenting out proof
+<proof>
+<p id="fs-id1170572453570">We prove properties 2. and 3. here, and leave proof of the other properties to the Exercises.</p>
+<p id="fs-id1167794031899">2. We have</p>
+<md>
+  <mrow>\displaystyle{  \sum_{i=1}^{n} ca_i}\amp =ca_1+ca_2+ca_3+ \cdots +ca_n</mrow>
+  <mrow>\amp=c(a_1+a_2+a_3+ \cdots +a_n)</mrow>
+  <mrow>\amp=c\displaystyle{  \sum_{i=1}^{n} a_i}.</mrow></md>
+<p id="fs-id1167793969731">3. We have</p>
+<md>
+  <mrow>\displaystyle{  \sum_{i=1}^{n} (a_i+b_i)}\amp =(a_1+b_1)+(a_2+b_2)+(a_3+b_3)+ \cdots +(a_n+b_n)</mrow>
+  <mrow>\amp=(a_1+a_2+a_3+ \cdots +a_n)+(b_1+b_2+b_3+ \cdots +b_n)</mrow>
+  <mrow>\amp=\displaystyle{  \sum_{i=1}^{n} a_i}+\displaystyle{  \sum_{i=1}^{n} b_i}.</mrow></md>
+</proof> -->
+</theorem>
+<!--Commenting out sigma notation
+<p id="fs-id1170572451163">A few more formulas for frequently found functions simplify the summation process further. These are shown in the next rule, for <term>sums and powers of integers</term>, and we use them in the next set of examples.</p>
+<theorem>
+<title>Rule: Sums and Powers of Integers</title>
+<ol marker= "(a)">
+<li>The sum of <m>n</m> integers is given by
+<me>\displaystyle{  \sum_{i=1}^{n} i}=1+2+ \cdots +n=\frac{n(n+1)}{2}.</me></li>
+<li>The sum of consecutive integers squared is given by
+<me>\displaystyle{  \sum_{i=1}^{n} i^2}=1^2+2^2+ \cdots +n^2=\frac{n(n+1)(2n+1)}{6}.</me></li>
+<li>The sum of consecutive integers cubed is given by
+<me>\displaystyle{  \sum_{i=1}^{n} i^3}=1^3+2^3+ \cdots +n^3=\frac{n^2(n+1)^2}{4}.</me></li>
+</ol>
+</theorem>
+<example xml:id="fs-id1170572218770">
+<title>Evaluation Using Sigma Notation</title>
+<statement id="fs-id1170571596048">
+<p id="fs-id1170572297312">Write using sigma notation and evaluate:</p>
+<ol marker="(a)">
+<li>The sum of the terms <m>(i-3)^2 </m> for <m>i=1,2 , \dots ,  200.</m></li>
+<li>The sum of the terms <m>(i^3-i^2)</m> for <m>i=1,2,3,4,5,6.</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170572337072">
+<ol marker="(a)">
+<li>Multiplying out <m>(i-3)^2 ,</m> we can break the expression into three terms.
+<md>
+  <mrow>\displaystyle{  \sum_{i=1}^{200} (i-3)^2 }\amp =\displaystyle{  \sum_{i=1}^{200} (i^2-6i+9)}</mrow>
+  <mrow>\amp=\displaystyle{  \sum_{i=1}^{200} i^2}-\displaystyle{  \sum_{i=1}^{200} 6i}+\displaystyle{  \sum_{i=1}^{200} 9}</mrow>
+  <mrow>\amp =\displaystyle{  \sum_{i=1}^{200} i^2}-6\displaystyle{  \sum_{i=1}^{200} i}+\displaystyle{  \sum_{i=1}^{200} 9}</mrow>
+  <mrow>\amp =\frac{200(200+1)(400+1)}{6}-6[\frac{200(200+1)}{2}]+9(200)</mrow>
+  <mrow>\amp =2,686,700-120,600+1800</mrow>
+  <mrow>\amp =2,567,900</mrow></md>
+</li>
+<li>Use sigma notation property iv. and the rules for the sum of squared terms and the sum of cubed terms.
+<md><mrow>\displaystyle{  \sum_{i=1}^{6} (i^3-i^2)}\amp =\displaystyle{  \sum_{i=1}^{6} i^3}-\displaystyle{  \sum_{i=1}^{6} i^2}</mrow>
+<mrow>\amp=\frac{6^2(6+1)^2}{4}-\frac{6(6+1)(2(6)+1)}{6}</mrow>
+<mrow>\amp=\frac{1764}{4}-\frac{546}{6}</mrow>
+<mrow>\amp=350</mrow></md></li>
+</ol>
+</solution>
+</example>
+<exercise> <statement id="fs-id1170572439151">
+<p id="fs-id1170572439153">Find the sum of the values of <m>4+3i</m> for <m>i=1,2 , \dots ,  100.</m></p>
+</statement>
+<solution id="fs-id1170572248098">
+<p id="fs-id1170572292992">15,550</p>
+</solution>
+<hint>
+<p id="fs-id1170572248094">Use the properties of sigma notation to solve the problem.</p>
+</hint></exercise>
+<example xml:id="fs-id1170572337091">
+<title>Finding the Sum of the Function Values</title>
+<statement id="fs-id1170572337095">
+<p id="fs-id1170571657241">Find the sum of the values of <m>f(x)=x^3</m> over the integers <m>1,2,3 , \dots ,  10.</m></p>
+</statement>
+<solution id="fs-id1170572211730">
+<p id="fs-id1170571599435">Using the formula, we have</p>
+<md>
+  <mrow>\displaystyle{  \sum_{i=0}^{10} i^3}\amp =\frac{10^2(10+1)^2}{4}</mrow>
+  <mrow>\amp=\frac{100(121)}{4}</mrow>
+  <mrow>\amp=3025.</mrow></md>
+</solution>
+</example>
+<exercise> <statement id="fs-id1170572178192">
+<p id="fs-id1170572330437">Evaluate the sum indicated by the notation <m>\displaystyle{  \sum_{k=1}^{20}(2k+1)}.</m></p>
+</statement>
+<solution id="fs-id1170572280442">
+<p id="fs-id1170572280444">440</p>
+</solution>
+<hint>
+<p id="fs-id1170571618983">Use the rule on sum and powers of integers.</p>
+</hint></exercise>
+-->
+</subsection>
+<subsection id="fs-id1170572383827">
+<title>Approximating Area</title>
+<p id="fs-id1170572332122">Now that we have the necessary notation, we return to the problem at hand: approximating the area under a curve. Let <m>f(x)</m> be a continuous, nonnegative function defined on the closed interval <m>[a,b].</m> We want to approximate the area <m>A</m> bounded by <m>f(x)</m> above, the <m>x</m>-axis below, the line <m>x=a</m> on the left, and the line <m>x=b</m> on the right (<xref ref="CNX_Calc_Figure_05_01_001"/>).</p>
+<figure xml:id="CNX_Calc_Figure_05_01_001">
+  <image source="CNX_Calc_Figure_05_01_017.jpg" width="50%">
+<description>"A graph in quadrant one of an area bounded by a generic curve f(x) at the top, the x-axis at the bottom, the line x = a to the left, and the line x = b to the right. About midway through, the concavity switches from concave down to concave up, and the function starts to increases shortly before the line x = b." </description></image> <caption>An area (shaded region) bounded by the curve <m>f(x)</m> at top, the <m>x</m>-axis at bottom, the line <m>x=a</m> to the left, and the line <m>x=b</m> at right.</caption>
+</figure>
+<p id="fs-id1170572419054">How do we approximate the area under this curve? The approach is a geometric one. By dividing a region into many small shapes that have known area formulas, we can sum these areas and obtain a reasonable estimate of the true area. We begin by dividing the interval <m>[a,b]</m> into <m>n</m> subintervals of equal width, <m>\frac{b-a}{n}.</m> We do this by selecting equally spaced points <m>x_0,x_1,x_2 , \dots ,  x_n</m> with <m>x_0=a,x_n=b,</m> and</p>
+<me>x_i-x_{i-1} =\frac{b-a}{n}</me>
+<p id="fs-id1170571652138">for <m>i=1,2,3 , \dots ,  n.</m></p>
+<p id="fs-id1170572621706">We denote the width of each subinterval with the notation <m> \Delta x </m>, so <m>\Delta x =\frac{b-a}{n}</m> and</p>
+<me>x_i=x_0+i\Delta x </me>
+<p id="fs-id1170571696623">for <m>i=1,2,3 , \dots ,  n.</m> This notion of dividing an interval <m>[a,b]</m> into subintervals by selecting points from within the interval is used quite often in approximating the area under a curve, so let’s define some relevant terminology.</p>
+<definition> <!-- Change next /note to /definition and remove above note-->
+<p id="fs-id1170572370693">A set of points <m>P={x_i}</m> for <m>i=0,1,2 , \dots ,  n</m> with <m>a=x_0\lt x_1\lt x_2\lt  \cdots \lt x_n=b,</m> which divides the interval <m>[a,b]</m> into subintervals of the form <m>[x_0,x_1],[x_1,x_2] , \dots ,  [x_{n-1} ,x_n]</m> is called a <term>partition</term> of <m>[a,b].</m> If the subintervals all have the same width, the set of points forms a <term>regular partition</term> of the interval <m>[a,b].</m></p>
+</definition>
+<p id="fs-id1170572452131">We can use this regular partition as the basis of a method for estimating the area under the curve. We next examine two methods: the left-endpoint approximation and the right-endpoint approximation.</p>
+<note id="fs-id1170572452136">
+<title>Rule: Left-Endpoint Approximation</title>
+<p id="fs-id1170571696639">On each subinterval <m>[x_{i-1} ,x_i]</m> (for <m>i=1,2,3 , \dots ,  n),</m> construct a rectangle with width <m> \Delta x </m> and height equal to <m>f(x_{i-1} ),</m> which is the function value at the left endpoint of the subinterval. Then the area of this rectangle is <m>f(x_{i-1} )\Delta x .</m> Adding the areas of all these rectangles, we get an approximate value for <m>A</m> (<xref ref="CNX_Calc_Figure_05_01_002"/>). We use the notation <emphasis effect="italics">L_n </emphasis> to denote that this is a <term>left-endpoint approximation</term> of <m>A</m> using <m>n</m> subintervals.</p>
+<md>
+  <mrow>A\approx L_n\amp =f(x_0)\Delta x +f(x_1)\Delta x + \cdots +f(x_{n-1} )\Delta x </mrow>
+  <mrow>\amp=\displaystyle{  \sum_{i=1}^{n} f(x_{i-1} )\Delta x }</mrow></md>
+</note>
+<figure xml:id="CNX_Calc_Figure_05_01_002">
+<image source="CNX_Calc_Figure_05_01_001.jpg" width="50%">
+<description>"A diagram showing the left-endpoint approximation of area under a curve. Under a parabola with vertex on the y axis and above the x axis, rectangles are drawn between a=x0 on the origin and b = xn. The rectangles have endpoints at a=x0, x1, x2&#x2026;x(n-1), and b = xn, spaced equally. The height of each rectangle is determined by the value of the given function at the left endpoint of the rectangle."</description></image> <caption>In the left-endpoint approximation of area under a curve, the height of each rectangle is determined by the function value at the left of each subinterval.</caption>
+</figure>
+<p id="fs-id1170572243150">The second method for approximating area under a curve is the right-endpoint approximation. It is almost the same as the left-endpoint approximation, but now the heights of the rectangles are determined by the function values at the right of each subinterval.</p>
+<note id="fs-id1170572601211">
+<title>Rule: Right-Endpoint Approximation</title>
+<p id="fs-id1170572601216">Construct a rectangle on each subinterval <m>[x_{i-1} ,x_i],</m> only this time the height of the rectangle is determined by the function value <m>f(x_i)</m> at the right endpoint of the subinterval. Then, the area of each rectangle is <m>f(x_i)\Delta x </m> and the approximation for <m>A</m> is given by</p>
+<md>
+  <mrow>A\approx R_n\amp =f(x_1)\Delta x +f(x_2)\Delta x + \cdots +f(x_n)\Delta x </mrow>
+  <mrow>\amp=\displaystyle{  \sum_{i=1}^{n} f(x_i)\Delta x }.</mrow></md>
+<p id="fs-id1170571678912">The notation <m>R_n</m> indicates this is a <term>right-endpoint approximation</term> for <m>A</m> (<xref ref="CNX_Calc_Figure_05_01_003"/>).</p>
+</note>
+<figure xml:id="CNX_Calc_Figure_05_01_003">
+  <image source="CNX_Calc_Figure_05_01_002.jpg" width="50%">
+<description>"A diagram showing the right-endpoint approximation of area under a curve. Under a parabola with vertex on the y axis and above the x axis, rectangles are drawn between a=x0 on the origin and b = xn. The rectangles have endpoints at a=x0, x1, x2&#x2026;x(n-1), and b = xn, spaced equally. The height of each rectangle is determined by the value of the given function at the right endpoint of the rectangle."</description></image> <caption>In the right-endpoint approximation of area under a curve, the height of each rectangle is determined by the function value at the right of each subinterval. Note that the right-endpoint approximation differs from the left-endpoint approximation in <xref ref="CNX_Calc_Figure_05_01_002"/>.</caption>
+</figure>
+<p id="fs-id1170571628182">The graphs in <xref ref="CNX_Calc_Figure_05_01_004"/> represent the curve <m>f(x)=\frac{x^2}{2}.</m> In graph (a) we divide the region represented by the interval <m>[0,3]</m> into six subintervals, each of width 0.5. Thus, <m>\Delta x =0.5.</m> We then form six rectangles by drawing vertical lines perpendicular to <m>x_{i-1} ,</m> the left endpoint of each subinterval. We determine the height of each rectangle by calculating <m>f(x_{i-1} )</m> for <m>i=1,2,3,4,5,6.</m> The intervals are <m>[0,0.5],[0.5,1],[1,1.5],[1.5,2],[2,2.5],[2.5,3].</m> We find the area of each rectangle by multiplying the height by the width. Then, the sum of the rectangular areas approximates the area between <m>f(x)</m> and the <m>x</m>-axis. When the left endpoints are used to calculate height, we have a left-endpoint approximation. Thus,</p>
+<md><mrow>A\approx L_6\amp =\displaystyle{  \sum_{i=1}^{6} f(x_{i-1} )\Delta x }=f(x_0)\Delta x +f(x_1)\Delta x +f(x_2)\Delta x +f(x_3)\Delta x +f(x_4)\Delta x +f(x_5)\Delta x </mrow><mrow>\amp=f(0)0.5+f(0.5)0.5+f(1)0.5+f(1.5)0.5+f(2)0.5+f(2.5)0.5</mrow><mrow>\amp =(0)0.5+(0.125)0.5+(0.5)0.5+(1.125)0.5+(2)0.5+(3.125)0.5</mrow><mrow>\amp =0+0.0625+0.25+0.5625+1+1.5625</mrow><mrow>\amp =3.4375.</mrow></md>
+<figure xml:id="CNX_Calc_Figure_05_01_004">
+  <image source="CNX_Calc_Figure_05_01_003.jpg" width="50%">
+<description>"Diagrams side by side, showing the differences in approximating the area under a parabolic curve with vertex at the origin between the left endpoints method (the first diagram) and the right endpoints method (the second diagram). In the first diagram, rectangles are drawn at even intervals (delta x) under the curve with heights determined by the value of the function at the left endpoints. In the second diagram, the rectangles are drawn in the same fashion, but with heights determined by the value of the function at the right endpoints. The endpoints in both are spaced equally from the origin to (3, 0), labeled x0 to x6." </description></image> <caption>Methods of approximating the area under a curve by using (a) the left endpoints and (b) the right endpoints.</caption>
+</figure>
+<p id="fs-id1170572607946">In <xref ref="CNX_Calc_Figure_05_01_004"/>(b), we draw vertical lines perpendicular to <m>x_i</m> such that <m>x_i</m> is the right endpoint of each subinterval, and calculate <m>f(x_i)</m> for <m>i=1,2,3,4,5,6.</m> We multiply each <m>f(x_i)</m> by <m> \Delta x </m> to find the rectangular areas, and then add them. This is a right-endpoint approximation of the area under <m>f(x).</m> Thus,</p>
+<md><mrow>A\approx R_6\amp =\displaystyle{  \sum_{i=1}^{6} f(x_i)\Delta x }=f(x_1)\Delta x +f(x_2)\Delta x +f(x_3)\Delta x +f(x_4)\Delta x +f(x_5)\Delta x +f(x_6)\Delta x </mrow><mrow>\amp =f(0.5)0.5+f(1)0.5+f(1.5)0.5+f(2)0.5+f(2.5)0.5+f(3)0.5</mrow><mrow>\amp =(0.125)0.5+(0.5)0.5+(1.125)0.5+(2)0.5+(3.125)0.5+(4.5)0.5</mrow><mrow>\amp =0.0625+0.25+0.5625+1+1.5625+2.25</mrow><mrow>\amp =5.6875.</mrow></md>
+<example xml:id="fs-id1170571758983">
+<title>Approximating the Area Under a Curve</title>
+<statement id="fs-id1170571758987">
+<p id="fs-id1170571758993">Use both left-endpoint and right-endpoint approximations to approximate the area under the curve of <m>f(x)=x^2</m> on the interval <m>[0,2];</m> use <m>n=4.</m></p>
+</statement>
+<solution id="fs-id1170572368397">
+<p id="fs-id1170572368402">First, divide the interval <m>[0,2]</m> into <m>n</m> equal subintervals. Using <m>n=4,\Delta x =\frac{(2-0)}{4}=0.5.</m> This is the width of each rectangle. The intervals <m>[0,0.5],[0.5,1],[1,1.5],[1.5,2]</m> are shown in <xref ref="CNX_Calc_Figure_05_01_005"/>. Using a left-endpoint approximation, the heights are <m>f(0)=0,f(0.5)=0.25,f(1)=1,f(1.5)=2.25.</m> Then,</p>
+<md><mrow>L_4\amp =f(x_0)\Delta x +f(x_1)\Delta x +f(x_2)\Delta x +f(x_3)\Delta x </mrow><mrow>\amp =0(0.5)+0.25(0.5)+1(0.5)+2.25(0.5)</mrow><mrow>\amp =1.75.</mrow></md>
+<figure xml:id="CNX_Calc_Figure_05_01_005">
+  <image source="CNX_Calc_Figure_05_01_010.jpg" width="50%">
+<description>"A graph of the left-endpoint approximation of the area under the curve f(x) = x^2 from 0 to 2 with endpoints spaced .5 units apart. The heights of the rectangle are determined by the values of the function at their left endpoints."</description></image> <caption>The graph shows the left-endpoint approximation of the area under <m>f(x)=x^2</m> from 0 to 2.</caption>
+</figure>
+<p id="fs-id1170571657278">The right-endpoint approximation is shown in <xref ref="CNX_Calc_Figure_05_01_006"/>. The intervals are the same, <m>\Delta x =0.5,</m> but now use the right endpoint to calculate the height of the rectangles. We have</p>
+<md><mrow>R_4\amp =f(x_1)\Delta x +f(x_2)\Delta x +f(x_3)\Delta x +f(x_4)\Delta x </mrow><mrow>\amp =0.25(0.5)+1(0.5)+2.25(0.5)+4(0.5)</mrow><mrow>\amp =3.75.</mrow></md>
+<figure xml:id="CNX_Calc_Figure_05_01_006">
+  <image source="CNX_Calc_Figure_05_01_011.jpg" width="50%">
+<description>"A graph of the right-endpoint approximation method of the area under the curve f(x) = x^2 from 0 to 2 with endpoints spaced .5 units apart. The heights of the rectangles are determined by the values of the function at the right endpoints."</description></image> <caption>The graph shows the right-endpoint approximation of the area under <m>f(x)=x^2</m> from 0 to 2.</caption>
+</figure>
+<p id="fs-id1170572448355">The left-endpoint approximation is 1.75; the right-endpoint approximation is 3.75.</p>
+</solution>
+
+</example>
+<exercise> <statement id="fs-id1170572448367">
+<p id="fs-id1170572448369">Sketch left-endpoint and right-endpoint approximations for <m>f(x)=\frac{1}{x}</m> on <m>[1,2];</m> use <m>n=4.</m> Approximate the area using both methods.</p>
+</statement>
+<solution id="fs-id1170572622437">
+<p id="fs-id1170572622439">The left-endpoint approximation is 0.7595. The right-endpoint approximation is 0.6345. See below.
+<image source="CNX_Calc_Figure_05_01_012.jpg" width="50%">
+<description>"Two graphs side by side showing the left-endpoint approximation ad right-endpoint approximation of the area under the curve f(x) = 1/x from 1 to 2 with endpoints spaced evenly at .25 units. The heights of the left-endpoint approximation one are determined by the values of the function at the left endpoints, and the height of the right-endpoint approximation one are determined by the values of the function at the right endpoints." </description></image>
+</p>
+</solution>
+<hint>
+<p id="fs-id1170572622429">Follow the solving strategy in <xref ref="fs-id1170571758983"/> step-by-step.</p>
+</hint></exercise>
+<p id="fs-id1170572216478">Looking at <xref ref="CNX_Calc_Figure_05_01_004"/> and the graphs in <xref ref="fs-id1170571758983"/>, we can see that when we use a small number of intervals, neither the left-endpoint approximation nor the right-endpoint approximation is a particularly accurate estimate of the area under the curve. However, it seems logical that if we increase the number of points in our partition, our estimate of <m>A</m> will improve. We will have more rectangles, but each rectangle will be thinner, so we will be able to fit the rectangles to the curve more precisely.</p>
+<p id="fs-id1170572216496">We can demonstrate the improved approximation obtained through smaller intervals with an example. Let’s explore the idea of increasing <m>n</m>, first in a left-endpoint approximation with four rectangles, then eight rectangles, and finally 32 rectangles. Then, let’s do the same thing in a right-endpoint approximation, using the same sets of intervals, of the same curved region. <xref ref="CNX_Calc_Figure_05_01_008"/> shows the area of the region under the curve <m>f(x)=(x-1)^3+4</m> on the interval <m>[0,2]</m> using a left-endpoint approximation where <m>n=4.</m> The width of each rectangle is</p>
+<me>\Delta x =\frac{2-0}{4}=\frac{1}{2}.</me>
+<p id="fs-id1170572337010">The area is approximated by the summed areas of the rectangles, or</p>
+<md><mrow>L_4\amp =f(0)}{(0.5)+f(0.5)}{(0.5)+f(1)}{(0.5)+f(1.5)0.5</mrow><mrow>\amp =7.5.</mrow></md>
+<figure xml:id="CNX_Calc_Figure_05_01_008">
+  <image source="CNX_Calc_Figure_05_01_004.jpg" width="50%">
+<description>"A graph of the left-endpoint approximation of the area under the given curve from a = x0 to b=x4. The heights of the rectangles are determined by the values of the function at the left endpoints."  </description></image> <caption>With a left-endpoint approximation and dividing the region from <m>a</m> to <m>b</m> into four equal intervals, the area under the curve is approximately equal to the sum of the areas of the rectangles.</caption>
+</figure>
+<p id="fs-id1170571637049"><xref ref="CNX_Calc_Figure_05_01_009"/> shows the same curve divided into eight subintervals. Comparing the graph with four rectangles in <xref ref="CNX_Calc_Figure_05_01_008"/> with this graph with eight rectangles, we can see there appears to be less white space under the curve when <m>n=8.</m> This white space is area under the curve we are unable to include using our approximation. The area of the rectangles is</p>
+<md><mrow>L_8\amp =f(0)(0.25)+f(0.25)(0.25)+f(0.5)(0.25)+f(0.75)(0.25)</mrow><mrow> \amp+f(1)(0.25)+f(1.25)(0.25)+f(1.5)(0.25)+f(1.75)(0.25)</mrow><mrow>\amp =7.75.</mrow></md>
+<figure xml:id="CNX_Calc_Figure_05_01_009">
+  <image source="CNX_Calc_Figure_05_01_005.jpg" width="50%">
+<description>"A graph showing the left-endpoint approximation for the area under the given curve from a=x0 to b = x8. The heights of the rectangles are determined by the values of the function at the left endpoints."  </description></image> <caption>The region under the curve is divided into <m>n=8</m> rectangular areas of equal width for a left-endpoint approximation.</caption>
+</figure>
+<p id="fs-id1170571636300">The graph in <xref ref="CNX_Calc_Figure_05_01_010"/> shows the same function with 32 rectangles inscribed under the curve. There appears to be little white space left. The area occupied by the rectangles is</p>
+<md><mrow>L_{32}\amp =f(0)(0.0625)+f(0.0625)(0.0625)+f(0.125)(0.0625)+ \cdots +f(1.9375)(0.0625)</mrow><mrow>\amp =7.9375.</mrow></md>
+<figure xml:id="CNX_Calc_Figure_05_01_010">
+  <image source="CNX_Calc_Figure_05_01_006.jpg" width="50%">
+<description>"A graph of the left-endpoint approximation of the area under the given curve from a = x0 to b = x32. The heights of the rectangles are determined by the values of the function at the left endpoints." </description></image> <caption>Here, 32 rectangles are inscribed under the curve for a left-endpoint approximation.</caption>
+</figure>
+<p id="fs-id1170572380031">We can carry out a similar process for the right-endpoint approximation method. A right-endpoint approximation of the same curve, using four rectangles (<xref ref="CNX_Calc_Figure_05_01_011"/>), yields an area</p>
+<md><mrow>R_4\amp =f(0.5)(0.5)+f(1)(0.5)+f(1.5)(0.5)+f(2)(0.5)</mrow><mrow>\amp =8.5.</mrow></md>
+<figure xml:id="CNX_Calc_Figure_05_01_011">
+  <image source="CNX_Calc_Figure_05_01_007.jpg" width="50%">
+<description>"A graph of the right-endpoint approximation for the area under the given curve from x0 to x4. The heights of the rectangles are determined by the values of the function at the right endpoints."  </description></image> <caption>Now we divide the area under the curve into four equal subintervals for a right-endpoint approximation.</caption>
+</figure>
+<p id="fs-id1170571699013">Dividing the region over the interval <m>[0,2]</m> into eight rectangles results in <m>\Delta x =\frac{2-0}{8}=0.25.</m> The graph is shown in <xref ref="CNX_Calc_Figure_05_01_012"/>. The area is</p>
+<md>
+  <mrow>R_8\amp =f(0.25)(0.25)+f(0.5)(0.25)+f(0.75)(0.25)+f(1)(0.25)</mrow>
+ <mrow>\amp +f(1.25)(0.25)+f(1.5)(0.25)+f(1.75)(0.25)+f(2)(0.25)</mrow><mrow>\amp =8.25.</mrow></md>
+<figure xml:id="CNX_Calc_Figure_05_01_012">
+  <image source="CNX_Calc_Figure_05_01_008.jpg" width="50%">
+<description>"A graph of the right-endpoint approximation for the area under the given curve from a=x0 to b=x8.The heights of the rectangles are determined by the values of the function at the right endpoints." </description></image> <caption>Here we use right-endpoint approximation for a region divided into eight equal subintervals.</caption>
+</figure>
+<p id="fs-id1170571609283">Last, the right-endpoint approximation with <m>n=32</m> is close to the actual area (<xref ref="CNX_Calc_Figure_05_01_013"/>). The area is approximately</p>
+<md><mrow>R_{32}\amp =f(0.0625)(0.0625)+f(0.125)(0.0625)+f(0.1875)(0.0625)+ \cdots +f(2)(0.0625)</mrow><mrow>\amp =8.0625.</mrow></md>
+<figure xml:id="CNX_Calc_Figure_05_01_013">
+<image source="CNX_Calc_Figure_05_01_009.jpg" width="50%">
+<description>"A graph of the right-endpoint approximation for the area under the given curve from a=x0 to b=x32. The heights of the rectangles are determined by the values of the function at the right endpoints."
+</description></image> <caption>The region is divided into 32 equal subintervals for a right-endpoint approximation.</caption>
+</figure>
+<p id="fs-id1170572305760">Based on these figures and calculations, it appears we are on the right track; the rectangles appear to approximate the area under the curve better as <m>n</m> gets larger. Furthermore, as <m>n</m> increases, both the left-endpoint and right-endpoint approximations appear to approach an area of 8 square units. <xref ref="fs-id1170572305783"/> shows a numerical comparison of the left- and right-endpoint methods. The idea that the approximations of the area under the curve get better and better as <m>n</m> gets larger and larger is very important, and we now explore this idea in more detail.</p>
+<table xml:id="fs-id1170572305783" summary="A table with four rows and three columns. The first row has headers Values of n, Approximate Area Ln, and Approximate Area Rn. The first column contains the values n=4, n=8, and n=32. The second column contains the values 7.5, 7.75, and 7.94. The third column contains the values 8.5, 8.25, and 8.06.">
+<title>Converging Values of Left- and Right-Endpoint Approximations as <m>n</m> Increases</title>
+<tabular>
+<row valign="top" header="yes">
+<cell halign ="left">Values of <m>n</m></cell>
+<cell halign ="left">Approximate Area <emphasis effect="italics">L_n </emphasis></cell>
+<cell halign ="left">Approximate Area <emphasis effect="italics">R<sub>n</sub></emphasis></cell>
+</row>
+<row valign="top">
+<cell halign ="left"><m>n=4</m></cell>
+<cell halign ="left">7.5</cell>
+<cell halign ="left">8.5</cell>
+</row>
+<row valign="top">
+<cell halign ="left"><m>n=8</m></cell>
+<cell halign ="left">7.75</cell>
+<cell halign ="left">8.25</cell>
+</row>
+<row valign="top">
+<cell halign ="left"><m>n=32</m></cell>
+<cell halign ="left">7.94</cell>
+<cell halign ="left">8.06</cell>
+</row>
+</tabular>
+</table>
+</subsection>
+<subsection id="fs-id1170572551818">
+<title>Forming Riemann Sums</title>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572551824">
+  So far we have been using rectangles to approximate the area under a curve. The heights of these rectangles have been determined by evaluating the function at either the right or left endpoints of the subinterval <m>[x_{i-1} ,x_i].</m> In reality, there is no reason to restrict evaluation of the function to one of these two points only. We could evaluate the function at any point <emphasis effect="italics">x_i </emphasis> in the subinterval <m>[x_{i-1} ,x_i],</m> and use <m>f(x_i^* )</m> as the height of our rectangle. This gives us an estimate for the area of the form</p><me>A\approx \displaystyle{  \sum_{i=1}^{n} f(x_i^* )\Delta x }.</me>
+<p id="fs-id1170572376498">A sum of this form is called a Riemann sum, named for the 19th-century mathematician Bernhard Riemann, who developed the idea.</p>
+<definition> <!-- Change next /note to /definition and remove above note-->
+<p id="fs-id1170572376508">Let <m>f(x)</m> be defined on a closed interval <m>[a,b]</m> and let <m>P</m> be a regular partition of <m>[a,b].</m> Let <m> \Delta x </m> be the width of each subinterval <m>[x_{i-1} ,x_i]</m> and for each <m>i</m>, let <m>x_i^* </m> be any point in <m>[x_{i-1} ,x_i].</m> A <term>Riemann sum</term> is defined for <m>f(x)</m> as</p>
+<me>\displaystyle{  \sum_{i=1}^{n} f(x_i^* )\Delta x }.</me>
+</definition>
+<p id="fs-id1170572344248">Recall that with the left- and right-endpoint approximations, the estimates seem to get better and better as <m>n</m> get larger and larger. The same thing happens with Riemann sums. Riemann sums give better approximations for larger values of <m>n</m>. We are now ready to define the area under a curve in terms of Riemann sums.</p>
+<definition> <!-- Change next /note to /definition and remove above note-->
+<p id="fs-id1170572344265">Let <m>f(x)</m> be a continuous, nonnegative function on an interval <m>[a,b],</m> and let <m>\displaystyle{  \sum_{i=1}^{n} f(x_i^* )\Delta x }</m> be a Riemann sum for <m>f(x).</m> Then, the <term>area under the curve</term> <m>y=f(x)</m> on <m>[a,b]</m> is given by</p>
+<me>A=\lim_{n\to \infty }\displaystyle{  \sum_{i=1}^{n} f(x_i^* )\Delta x }.</me>
+</definition>
+<!--<note id="fs-id1170572217482" class="media-2">
+<p id="fs-id1170572217485">See a <url href="http://www.openstax.org/l/20_riemannsums">graphical demonstration</url> of the construction of a Riemann sum.</p>
+</note>-->
+<p id="fs-id1170572217494">Some subtleties here are worth discussing. First, note that taking the limit of a sum is a little different from taking the limit of a function <m>f(x)</m> as <m>x</m> goes to infinity. Limits of sums are discussed in detail in the chapter on Sequences and Series; however, for now we can assume that the computational techniques we used to compute limits of functions can also be used to calculate limits of sums.</p>
+<p id="fs-id1170572217522">Second, we must consider what to do if the expression converges to different limits for different choices of <m>{x_i^* }.</m> Fortunately, this does not happen. Although the proof is beyond the scope of this text, it can be shown that if <m>f(x)</m> is continuous on the closed interval <m>[a,b],</m> then <m>\displaystyle{\lim_{n\to \infty } \sum_{i=1}^{n} f(x_i^* )\Delta x }</m> exists and is unique (in other words, it does not depend on the choice of <m>{x_i^* }\text{ ). }</m></p>
+<p id="fs-id1170571547592">We look at some examples shortly. But, before we do, let’s take a moment and talk about some specific choices for <m>{x_i^* }.</m> Although any choice for <m>{x_i^* }</m> gives us an estimate of the area under the curve, we don’t necessarily know whether that estimate is too high (overestimate) or too low (underestimate). If it is important to know whether our estimate is high or low, we can select our value for <m>{x_i^* }</m> to guarantee one result or the other.</p>
+<p id="fs-id1170571711342">If we want an overestimate, for example, we can choose <m>{x_i^* }</m> such that for <m>i=1,2,3 , \dots ,  n,f(x_i^* )\geq f(x)</m> for all <m>x∈[x_{i-1} ,x_i].</m> In other words, we choose <m>{x_i^* }</m> so that for <m>i=1,2,3 , \dots ,  n,f(x_i^* )</m> is the maximum function value on the interval <m>[x_{i-1} ,x_i].</m> If we select <m>{x_i^* }</m> in this way, then the Riemann sum <m>\displaystyle{  \sum_{i=1}^{n} f(x_i^* )\Delta x }</m> is called an <term>upper sum</term>. Similarly, if we want an underestimate, we can choose <m>{x_i^* }</m> so that for <m>i=1,2,3 , \dots ,  n,f(x_i^* )</m> is the minimum function value on the interval <m>[x_{i-1} ,x_i].</m> In this case, the associated Riemann sum is called a <term>lower sum</term>. Note that if <m>f(x)</m> is either increasing or decreasing throughout the interval <m>[a,b],</m> then the maximum and minimum values of the function occur at the endpoints of the subintervals, so the upper and lower sums are just the same as the left- and right-endpoint approximations.</p>
+<example xml:id="fs-id1170572274802">
+<title>Finding Lower and Upper Sums</title>
+ <statement id="fs-id1170572274807">
+<p id="fs-id1170572274812">Find a lower sum for <m>f(x)=10-x^2</m> on <m>[1,2];</m> let <m>n=4</m> subintervals.</p>
+</statement>
+<solution id="fs-id1170571733888">
+<p id="fs-id1170571733893">With <m>n=4</m> over the interval <m>[1,2],\Delta x =\frac{1}{4}.</m> We can list the intervals as <m>[1,1.25],[1.25,1.5],[1.5,1.75],[1.75,2].</m> Because the function is decreasing over the interval <m>[1,2],</m> <xref ref="CNX_Calc_Figure_05_01_014"/> shows that a lower sum is obtained by using the right endpoints.</p>
+<figure xml:id="CNX_Calc_Figure_05_01_014">
+<image source="CNX_Calc_Figure_05_01_014.jpg" width="50%">
+<description>"The graph of f(x) = 10 &#x2212; x^2 from 0 to 2. It is set up for a right-end approximation of the area bounded by the curve and the x axis on [1, 2], labeled a=x0 to x4. It shows a lower sum." </description></image> <caption>The graph of <m>f(x)=10-x^2</m> is set up for a right-endpoint approximation of the area bounded by the curve and the <m>x</m>-axis on <m>[1,2],</m> and it shows a lower sum.</caption>
+</figure>
+<p id="fs-id1170572307267">The Riemann sum is</p>
+<md><mrow>\displaystyle{ \sum_{k=1}^4(10-x^2)}{(0.25)}\amp =0.25[10-(1.25)^2+10-(1.5)^2+10-(1.75)^2+10-(2)^2</mrow><mrow>\amp =0.25[8.4375+7.75+6.9375+6]</mrow><mrow>\amp =7.28.</mrow></md>
+<p id="fs-id1170572376172">The area of 7.28 is a lower sum and an underestimate.</p>
+</solution>
+</example>
+<exercise> <statement id="fs-id1170572376184">
+<ol marker="(a)">
+<li>Find an upper sum for <m>f(x)=10-x^2</m> on <m>[1,2];</m> let <m>n=4.</m></li>
+<li>Sketch the approximation.</li>
+</ol>
+</statement>
+<solution id="fs-id1170571653951">
+<ol marker="(a)">
+<li><m>\text{ Upper sum }=8.0313.</m></li>
+<li><p id="fs-id1167794046300">
+<image source="CNX_Calc_Figure_05_01_015.jpg" width="50%">
+<description>"A graph of the function f(x) = 10 &#x2212; x^2 from 0 to 2. It is set up for a right endpoint approximation over the area [1,2], which is labeled a=x0 to x4. It is an upper sum." </description></image>
+</p>
+</li>
+</ol>
+</solution>
+<hint>
+<p id="fs-id1170571653916"><m>f(x)</m> is decreasing on <m>[1,2],</m> so the maximum function values occur at the left endpoints of the subintervals.</p>
+</hint></exercise>
+<!--Commenting out trig
+<example xml:id="fs-id1170572551906">
+<title>Finding Lower and Upper Sums for <m>f(x)=\sin x</m></title>
+ <statement id="fs-id1170572551910">
+<p id="fs-id1170572551936">Find a lower sum for <m>f(x)=\sin x</m> over the interval <m>[a,b]=[0,\frac{\pi}{2}];</m> let <m>n=6.</m></p>
+</statement>
+<solution id="fs-id1170572626580">
+<p id="fs-id1170572626586">Let’s first look at the graph in <xref ref="CNX_Calc_Figure_05_01_016"/> to get a better idea of the area of interest.</p>
+<figure xml:id="CNX_Calc_Figure_05_01_016">
+<image source="CNX_Calc_Figure_05_01_016.jpg" width="50%">
+<description>"A graph of the function y = sin(x) from 0 to pi. It is set up for a left endpoint approximation from 0 to pi/2 and n=6. It is a lower sum." </description></image> <caption>The graph of <m>y=\sin x</m> is divided into six regions: <m>\Delta x =\frac{\pi\text{ / }26}=\frac{\pi}{12}.</m></caption>
+</figure>
+<p id="fs-id1170571699095">The intervals are <m>[0,\frac{\pi}{12}],[\frac{\pi}{12},\frac{\pi}{6}],[\frac{\pi}{6},\frac{\pi}{4}],[\frac{\pi}{4},\frac{\pi}{3}],[\frac{\pi}{3},\frac{5\pi}{12}],</m> and <m>[\frac{5\pi}{12},\frac{\pi}{2}].</m> Note that <m>f(x)=\sin x</m> is increasing on the interval <m>[0,\frac{\pi}{2}],</m> so a left-endpoint approximation gives us the lower sum. A left-endpoint approximation is the Riemann sum <m>\displaystyle{  \sum_{i=0}^{5} \sin x_i(\frac{\pi}{12})}.</m> We have</p>
+<md><mrow>A\amp \approx \sin(0)(\frac{\pi}{12})+\sin(\frac{\pi}{12})(\frac{\pi}{12})+\sin(\frac{\pi}{6})(\frac{\pi}{12})+\sin(\frac{\pi}{4})(\frac{\pi}{12})+\sin(\frac{\pi}{3})(\frac{\pi}{12})+\sin(\frac{5}{\pi}{12})(\frac{\pi}{12})</mrow><mrow>\amp =0.863.</mrow></md>
+</solution>
+</example>
+<exercise> <statement id="fs-id1170572554395">
+<p id="fs-id1170572554397">Using the function <m>f(x)=\sin x</m> over the interval <m>[0,\frac{\pi}{2}],</m> find an upper sum; let <m>n=6.</m></p>
+</statement>
+<solution id="fs-id1170571769555">
+<p id="fs-id1170571769558"><m>A\approx 1.125</m></p>
+</solution>
+<hint>
+<p id="fs-id1170571769548">Follow the steps from <xref ref="fs-id1170572551906"/>.</p>
+</hint></exercise>
+-->
+</subsection>
+<subsection id="fs-id1170571769572" class="key-concepts">
+<title>Key Concepts</title>
+<ul>
+<li>The use of sigma (summation) notation of the form <m>\displaystyle{  \sum_{i=1}^{n} a_i}</m> is useful for expressing long sums of values in compact form.</li>
+<li>For a continuous function defined over an interval <m>[a,b],</m> the process of dividing the interval into <m>n</m> equal parts, extending a rectangle to the graph of the function, calculating the areas of the series of rectangles, and then summing the areas yields an approximation of the area of that region.</li>
+<li>The width of each rectangle is <m>\Delta x =\frac{b-a}{n}.</m></li>
+<li>Riemann sums are expressions of the form <m>\displaystyle{  \sum_{i=1}^{n} f(x_i^* )\Delta x },</m> and can be used to estimate the area under the curve <m>y=f(x).</m> Left- and right-endpoint approximations are special kinds of Riemann sums where the values of <m>{x_i^* }</m> are chosen to be the left or right endpoints of the subintervals, respectively.</li>
+<li>Riemann sums allow for much flexibility in choosing the set of points <m>{x_i^* }</m> at which the function is evaluated, often with an eye to obtaining a lower sum or an upper sum.</li>
+</ul>
+</subsection>
+<subsection id="fs-id1170572565393" class="key-equations">
+<title>Key Equations</title>
+<ul>
+<li><emphasis effect="bold">Properties of Sigma Notation</emphasis>
+<md>
+<mrow>\displaystyle{  \sum_{i=1}^{n} c}=nc</mrow>
+<mrow>\displaystyle{  \sum_{i=1}^{n} ca_i}=c\displaystyle{  \sum_{i=1}^{n} a_i}</mrow>
+<mrow>\displaystyle{  \sum_{i=1}^{n} (a_i+b_i)}=\displaystyle{  \sum_{i=1}^{n} a_i}+\displaystyle{  \sum_{i=1}^{n} b_i}</mrow>
+<mrow>\displaystyle{  \sum_{i=1}^{n} (a_i-b_i)}=\displaystyle{  \sum_{i=1}^{n} a_i}-\displaystyle{  \sum_{i=1}^{n} b_i}</mrow>
+<mrow>\displaystyle{  \sum_{i=1}^{n} a_i}=\displaystyle{  \sum_{i=1}^{m} a_i}+\displaystyle{ \sum_{i=m+1}^n a_i}</mrow></md></li>
+<!--Commenting out sigma notation
+<li><emphasis effect="bold">Sums and Powers of Integers</emphasis>
+<md>
+<mrow>\displaystyle{  \sum_{i=1}^{n} i}=1+2+ \cdots +n=\frac{n(n+1)}{2}</mrow>
+<mrow>\displaystyle{  \sum_{i=1}^{n} i^2}=1^2+2^2+ \cdots +n^2=\frac{n(n+1)(2n+1)}{6}</mrow>
+<mrow>\displaystyle{  \sum_{i=0}^{n} i^3}=1^3+2^3+ \cdots +n^3=\frac{n^2(n+1)^2}{4}</mrow></md></li>-->
+<li><emphasis effect="bold">Left-Endpoint Approximation</emphasis>
+<m>A\approx L_n=f(x_0)\Delta x +f(x_1)\Delta x + \cdots +f(x_{n-1} )\Delta x =\displaystyle{  \sum_{i=1}^{n} f(x_{i-1} )\Delta x }</m></li>
+<li><emphasis effect="bold">Right-Endpoint Approximation</emphasis>
+<m>A\approx R_n=f(x_1)\Delta x +f(x_2)\Delta x + \cdots +f(x_n)\Delta x =\displaystyle{  \sum_{i=1}^{n} f(x_i)\Delta x }</m></li>
+</ul>
+</subsection>
+</section>
+<?ignore
+
+<subsection id="fs-id1170572373448" class="section-exercises">
+
+<!-- Move title outside statement--> <statement id="fs-id1170572373453">
+<p id="fs-id1170572373455">State whether the given sums are equal or unequal.</p>
+<ol marker="(a)">
+<li><m>\displaystyle{  \sum_{i=1}^{10} i}</m> and <m>\displaystyle{  \sum_{k=1}^{10}k}</m></li>
+<li><m>\displaystyle{  \sum_{i=1}^{10} i}</m> and <m>\displaystyle{  \sum_{i=6}^{15} (i-5)}</m></li>
+<li><m>\displaystyle{  \sum_{i=1}^{10} i(i-1)}</m> and <m>\displaystyle{ <m:munderover>∑j=09</m:munderover>(j+1)j}</m></li>
+<li><m>\displaystyle{  \sum_{i=1}^{10} i(i-1)}</m> and <m>\displaystyle{  \sum_{k=1}^{10} (k^2-k)}</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170572274947">
+<p id="fs-id1170572274949">a. They are equal; both represent the sum of the first 10 whole numbers. b. They are equal; both represent the sum of the first 10 whole numbers. c. They are equal by substituting <m>j=i-1.</m> d. They are equal; the first sum factors the terms of the second.</p>
+</solution>
+
+<p id="fs-id1170571636147">In the following exercises, use the rules for sums of powers of integers to compute the sums.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571636154">
+<p id="fs-id1170571636156"><m>\displaystyle{  \sum_{i=5}^{10} i}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571636202">
+<p id="fs-id1170571636204"><m>\displaystyle{  \sum_{i=5}^{10} i^2}</m></p>
+</statement>
+<solution id="fs-id1170572510072">
+<p id="fs-id1170572510074"><m>385-30=355</m></p>
+</solution>
+
+<p id="fs-id1170572510091">Suppose that <m>\displaystyle{  \sum_{i=1}^{100} a_i=15}</m> and <m>\displaystyle{  \sum_{i=1}^{100} b_i=-12}.</m> In the following exercises, compute the sums.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571712533">
+<p id="fs-id1170571712535"><m>\displaystyle{  \sum_{i=1}^{100} (a_i+b_i)}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571712599">
+<p id="fs-id1170571712601"><m>\displaystyle{  \sum_{i=1}^{100} (a_i-b_i)}</m></p>
+</statement>
+<solution id="fs-id1170572419246">
+<p id="fs-id1170572419248"><m>15-(-12)=27</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572419274">
+<p id="fs-id1170572419276"><m>\displaystyle{  \sum_{i=1}^{100} (3a_i-4b_i)}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571699459">
+<p id="fs-id1170571699461"><m>\displaystyle{  \sum_{i=1}^{100} (5a_i+4b_i)}</m></p>
+</statement>
+<solution id="fs-id1170572601240">
+<p id="fs-id1170572601242"><m>5(15)+4(-12)=27</m></p>
+</solution>
+
+<p id="fs-id1170572601276">In the following exercises, use summation properties and formulas to rewrite and evaluate the sums.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572601282">
+<p id="fs-id1170572601284"><m>\displaystyle{  \sum_{k=1}^{20} 100(k^2-5k+1)}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571638191">
+<p id="fs-id1170571638193"><m>\displaystyle{  \sum_{j=1}^{50} (j^2-2j)}</m></p>
+</statement>
+<solution id="fs-id1170571638235">
+<p id="fs-id1170571638237"><m>\displaystyle{  \sum_{j=1}^{50} j^2}-2\displaystyle{  \sum_{j=1}^{50} j}=\frac{(50)}{(51)}{(101)6}-\frac{2(50)}{(51)2}=40,\text{ ​ }375</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571810843">
+<p id="fs-id1170571810845"><m>\displaystyle{ <m:munderover>∑j=11}{20</m:munderover>(j^2-10j)}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571539156">
+<p id="fs-id1170571539158"><m>\displaystyle{  \sum_{k=1}^{25} [<m:msup>(2k)2</m:msup>-100k]}</m></p>
+</statement>
+<solution id="fs-id1170571539208">
+<p id="fs-id1170571539210"><m>4\displaystyle{  \sum_{k=1}^{25} k^2}-100\displaystyle{  \sum_{k=1}^{25} k}=\frac{4(25)}{(26)}{(51)9}-50(25)}{(26)=-10,\text{ ​ }400</m></p>
+</solution>
+
+<p id="fs-id1170571580948">Let <m>L_n</m> denote the left-endpoint sum using <m>n</m> subintervals and let <m>R_n</m> denote the corresponding right-endpoint sum. In the following exercises, compute the indicated left and right sums for the given functions on the indicated interval.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571580977">
+<p id="fs-id1170571580979"><m>L</m><sub>4</sub> for <m>f(x)=\frac{1x-1}</m> on <m>[2,3]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572396515">
+<p id="fs-id1170572396517"><m>R</m><sub>4</sub> for <m>g(x)=\text{ cos }(\pix)</m> on <m>[0,1]</m></p>
+</statement>
+<solution id="fs-id1170572396570">
+<p id="fs-id1170571562422"><m>R_4=0.25</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571562441">
+<p id="fs-id1170571562443"><m>L</m><sub>6</sub> for <m>f(x)=\frac{1x(x-1)}</m> on <m>[2,5]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218581">
+<p id="fs-id1170572218583"><m>R</m><sub>6</sub> for <m>f(x)=\frac{1x(x-1)}</m> on <m>[2,5]</m></p>
+</statement>
+<solution id="fs-id1170572218642">
+<p id="fs-id1170572218645"><m>R_6=0.372</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572218663">
+<p id="fs-id1170572218665"><m>R</m><sub>4</sub> for <m>\frac{1x^2+1}</m> on <m>[-2,2]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572386159">
+<p id="fs-id1170572386161"><m>L</m><sub>4</sub> for <m>\frac{1x^2+1}</m> on <m>[-2,2]</m></p>
+</statement>
+<solution id="fs-id1170572643185">
+<p id="fs-id1170572643187"><m>L_4=2.20</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572643206">
+<p id="fs-id1170572643208"><m>R</m><sub>4</sub> for <m>x^2-2x+1</m> on <m>[0,2]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572643272">
+<p id="fs-id1170572643274"><m>L</m><sub>8</sub> for <m>x^2-2x+1</m> on <m>[0,2]</m></p>
+</statement>
+<solution id="fs-id1170572373694">
+<p id="fs-id1170572373696"><m>L_8=0.6875</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572373714">
+<p id="fs-id1170572373717">Compute the left and right Riemann sums—<m>L</m><sub>4</sub> and <m>R</m><sub>4</sub>, respectively—for <m>f(x)=(2-|x|)</m> on <m>[-2,2].</m> Compute their average value and compare it with the area under the graph of <m>f</m>.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571710709">
+<p id="fs-id1170571710711">Compute the left and right Riemann sums—<m>L</m><sub>6</sub> and <m>R</m><sub>6</sub>, respectively—for <m>f(x)=(3-|3-x|)</m> on <m>[0,6].</m> Compute their average value and compare it with the area under the graph of <m>f</m>.</p>
+</statement>
+<solution id="fs-id1170572399035">
+<p id="fs-id1170572399037"><m>L_6=9.000=R_6.</m> The graph of <m>f</m> is a triangle with area 9.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572399071">
+<p id="fs-id1170572399073">Compute the left and right Riemann sums—<m>L</m><sub>4</sub> and <m>R</m><sub>4</sub>, respectively—for <m>f(x)=\sqrt{4-x^2}</m> on <m>[-2,2]</m> and compare their values.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572629159">
+<p id="fs-id1170572629161">Compute the left and right Riemann sums—<m>L</m><sub>6</sub> and <m>R</m><sub>6</sub>, respectively—for <m>f(x)=\sqrt{9-<m:msup>(x-3)2</m:msup>}</m> on <m>[0,6]</m> and compare their values.</p>
+</statement>
+<solution id="fs-id1170572629234">
+<p id="fs-id1170572629236"><m>L_6=13.12899=R_6.</m> They are equal.</p>
+</solution>
+
+<p id="fs-id1170571689723">Express the following endpoint sums in sigma notation but do not evaluate them.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571689728">
+<p id="fs-id1170571689730"><m>L</m><sub>30</sub> for <m>f(x)=x^2</m> on <m>[1,2]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571614614">
+<p id="fs-id1170571614616"><m>L</m><sub>10</sub> for <m>f(x)=\sqrt{4-x^2}</m> on <m>[-2,2]</m></p>
+</statement>
+<solution id="fs-id1170571614668">
+<p id="fs-id1170571614670"><m><m:msub>L10</m:msub>=\frac{410}\displaystyle{  \sum_{i=1}^{10} \sqrt{4-(-2+4\frac{(i-1)}{10})}}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572379043">
+<p id="fs-id1170572379045"><m>R</m><sub>20</sub> for <m>f(x)=\sin x</m> on <m>[0,\pi]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571572002">
+<p id="fs-id1170571572004"><m>R</m><sub>100</sub> for <m>\text{ ln } x</m> on <m>[1,e]</m></p>
+</statement>
+<solution id="fs-id1170571777859">
+<p id="fs-id1170571777861"><m><m:msub>R100</m:msub>=\frac{e-1}{100}\displaystyle{  \sum_{i=1}^{100} \text{ ln }(1+(e-1)\frac{i100})}</m></p>
+</solution>
+
+<p id="fs-id1170572569923">In the following exercises, graph the function then use a calculator or a computer program to evaluate the following left and right endpoint sums. Is the area under the curve between the left and right endpoint sums?</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572569930">
+<p id="fs-id1170572569933"><emphasis effect="bold">[T]</emphasis> <m>L</m><sub>100</sub> and <m>R</m><sub>100</sub> for <m>y=x^2-3x+1</m> on the interval <m>[-1,1]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572309993">
+<p id="fs-id1170572309995"><emphasis effect="bold">[T]</emphasis> <m>L</m><sub>100</sub> and <m>R</m><sub>100</sub> for <m>y=x^2</m> on the interval <m>[0,1]</m></p>
+</statement>
+<solution id="fs-id1170572310046">
+<p id="fs-id1167794173599"><description>"A graph of the given function on the interval [0, 1]. It is set up for a left endpoint approximation and is an underestimate because the function is increasing. Ten rectangles are shown for visual clarity, but this behavior persists for more rectangles.">
+<image source="CNX_Calc_Figure_05_01_207.jpg" width="50%">
+
+<m><m:msub>R100</m:msub>=0.33835,<m:msub>L100</m:msub>=0.32835.</m> The plot shows that the left Riemann sum is an underestimate because the function is increasing. Similarly, the right Riemann sum is an overestimate. The area lies between the left and right Riemann sums. Ten rectangles are shown for visual clarity. This behavior persists for more rectangles.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571613730">
+<p id="fs-id1170571613732"><emphasis effect="bold">[T]</emphasis> <m>L</m><sub>50</sub> and <m>R</m><sub>50</sub> for <m>y=\frac{x+1}{x^2-1}</m> on the interval <m>[2,4]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572451377">
+<p id="fs-id1170572451379"><emphasis effect="bold">[T]</emphasis> <m>L</m><sub>100</sub> and <m>R</m><sub>100</sub> for <m>y=x^3</m> on the interval <m>[-1,1]</m></p>
+</statement>
+<solution id="fs-id1170572451430">
+<p id="fs-id1167794094128"><description>"A graph of the given function over [-1,1] set up for a left endpoint approximation. It is an underestimate since the function is increasing. Ten rectangles are shown for visual clarity, but this behavior persists for more rectangles.">
+<image source="CNX_Calc_Figure_05_01_209.jpg" width="50%">
+
+<m><m:msub>L100</m:msub>=-0.02,<m:msub>R100</m:msub>=0.02.</m> The left endpoint sum is an underestimate because the function is increasing. Similarly, a right endpoint approximation is an overestimate. The area lies between the left and right endpoint estimates.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572329969">
+<p id="fs-id1170572329971"><emphasis effect="bold">[T]</emphasis> <m>L</m><sub>50</sub> and <m>R</m><sub>50</sub> for <m>y=\text{ tan }(x)</m> on the interval <m>[0,\frac{\pi}{4}]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572379133">
+<p id="fs-id1170572379135"><emphasis effect="bold">[T]</emphasis> <m>L</m><sub>100</sub> and <m>R</m><sub>100</sub> for <m>y=<m:msup>e2x</m:msup></m> on the interval <m>[-1,1]</m></p>
+</statement>
+<solution id="fs-id1170572589190">
+<p id="fs-id1167794047771"><description>"A graph of the given function over the interval -1 to 1 set up for a left endpoint approximation. It is an underestimate since the function is increasing. Ten rectangles are shown for isual clarity, but this behavior persists for more rectangles.">
+<image source="CNX_Calc_Figure_05_01_211.jpg" width="50%">
+
+<m><m:msub>L100</m:msub>=3.555,<m:msub>R100</m:msub>=3.670.</m> The plot shows that the left Riemann sum is an underestimate because the function is increasing. Ten rectangles are shown for visual clarity. This behavior persists for more rectangles.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572589242">
+<p id="fs-id1170572589244">Let <emphasis effect="italics">t<sub>j</sub></emphasis> denote the time that it took Tejay van Garteren to ride the <m>j</m>th stage of the Tour de France in 2014. If there were a total of 21 stages, interpret <m>\displaystyle{  \sum_{j=1}^{21} t_j}.</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571613614">
+<p id="fs-id1170571613616">Let <m>r_j</m> denote the total rainfall in Portland on the <m>j</m>th day of the year in 2009. Interpret <m>\displaystyle{  \sum_{j=1}^{31} r_j}.</m></p>
+</statement>
+<solution id="fs-id1170571613661">
+<p id="fs-id1170571613663">The sum represents the cumulative rainfall in January 2009.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571613671">
+<p id="fs-id1170571613673">Let <m>d_j</m> denote the hours of daylight and <m>δ_j</m> denote the increase in the hours of daylight from day <m>j-1</m> to day <m>j</m> in Fargo, North Dakota, on the <m>j</m>th day of the year. Interpret <m>d_1+\displaystyle{  \sum_{j=2}^{365} δ_j}.</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572434953">
+<p id="fs-id1170572434955">To help get in shape, Joe gets a new pair of running shoes. If Joe runs 1 mi each day in week 1 and adds <m>\frac{110}</m> mi to his daily routine each week, what is the total mileage on Joe’s shoes after 25 weeks?</p>
+</statement>
+<solution id="fs-id1170572434971">
+<p id="fs-id1170572434973">The total mileage is <m>7 × \displaystyle{  \sum_{i=1}^{25} (1+\frac{(i-1)}{10})}=7 × 25+\frac{710} × 12 × 25=385 \text{ mi }.</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572347040">
+<p id="fs-id1170572347042">The following table gives approximate values of the average annual atmospheric rate of increase in carbon dioxide (CO<sub>2</sub>) each decade since 1960, in parts per million (ppm). Estimate the total increase in atmospheric CO<sub>2</sub> between 1964 and 2013.</p>
+<table xml:id="fs-id1170572347058" summary="A table with two columns and six rows. The first column contains the label &#x201C;Decade&#x201D; and the values 1964 &#x2013; 1973, 1974-1983, 1984 &#x2013; 1993, 1994-2003, and 2004-2013. The second column contains the label &#x201C;ppm/y&#x201D; and the values 1.0, 1.34, 1.40, 1.87, and 2.07.">
+<title>Average Annual Atmospheric CO<sub>2</sub> Increase, 1964–2013</title>
+<tabular>
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row valign="top">
+<cell halign ="left">Decade</cell>
+<cell halign ="left">Ppm/y</cell>
+</row>
+
+
+<row valign="top">
+<cell halign ="left">1964–1973</cell>
+<cell halign ="left">1.07</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1974–1983</cell>
+<cell halign ="left">1.34</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1984–1993</cell>
+<cell halign ="left">1.40</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1994–2003</cell>
+<cell halign ="left">1.87</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2004–2013</cell>
+<cell halign ="left">2.07</cell>
+</row>
+</tabular>
+
+<!-- NOTE: Move description inside image tag. -->  </description></image> <caption><emphasis effect="italics">Source</emphasis>: http://www.esrl.noaa.gov/gmd/ccgg/trends/.</caption>
+</table>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572627098">
+<p id="fs-id1170572627100">The following table gives the approximate increase in sea level in inches over 20 years starting in the given year. Estimate the net change in mean sea level from 1870 to 2010.</p>
+<table xml:id="fs-id1170572627108" summary="A table with two columns and eight rows. The first column contains the label &#x201C;Starting Year&#x201D; and the values 1870, 1890, 1910, 1930, 1950, 1970, and 1990. The second column contains the label &#x201C;20-Year Change&#x201D; and the values 0.3, 1.5, 0.2, 2.8, 0.7, 1.1, and 1.5.">
+<title>Approximate 20-Year Sea Level Increases, 1870–1990</title>
+<tabular>
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row valign="top">
+<cell halign ="left">Starting Year</cell>
+<cell halign ="left">20-Year Change</cell>
+</row>
+
+
+<row valign="top">
+<cell halign ="left">1870</cell>
+<cell halign ="left">0.3</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1890</cell>
+<cell halign ="left">1.5</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1910</cell>
+<cell halign ="left">0.2</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1930</cell>
+<cell halign ="left">2.8</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1950</cell>
+<cell halign ="left">0.7</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1970</cell>
+<cell halign ="left">1.1</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1990</cell>
+<cell halign ="left">1.5</cell>
+</row>
+</tabular>
+
+<!-- NOTE: Move description inside image tag. -->  </description></image> <caption><emphasis effect="italics">Source</emphasis>: http://link.springer.com/article/10.1007%2Fs10712-011-9119-1</caption>
+</table>
+</statement>
+<solution id="fs-id1170572572334">
+<p id="fs-id1170572572337">Add the numbers to get 8.1-in. net increase.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571712771">
+<p id="fs-id1170571712773">The following table gives the approximate increase in dollars in the average price of a gallon of gas per decade since 1950. If the average price of a gallon of gas in 2010 was $2.60, what was the average price of a gallon of gas in 1950?</p>
+<table xml:id="fs-id1170571712782" summary="A table with two columns and seven rows. The first column contains the label &#x201C;Starting Year&#x201D; and values 1950, 1960, 1970, 1980, 1990, and 2000. The second column contains the label &#x201C;10-Year Change&#x201D; and the values 0.03, 0.05, 0.86, -0.03, 0.29, and 1.12.">
+<title>Approximate 10-Year Gas Price Increases, 1950–2000</title>
+<tabular>
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row valign="top">
+<cell halign ="left">Starting Year</cell>
+<cell halign ="left">10-Year Change</cell>
+</row>
+
+
+<row valign="top">
+<cell halign ="left">1950</cell>
+<cell halign ="left">0.03</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1960</cell>
+<cell halign ="left">0.05</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1970</cell>
+<cell halign ="left">0.86</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1980</cell>
+<cell halign ="left">-0.03</cell>
+</row>
+<row valign="top">
+<cell halign ="left">1990</cell>
+<cell halign ="left">0.29</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2000</cell>
+<cell halign ="left">1.12</cell>
+</row>
+</tabular>
+
+<!-- NOTE: Move description inside image tag. -->  </description></image> <caption><emphasis effect="italics">Source</emphasis>: http://epb.lbl.gov/homepages/Rick_Diamond/docs/lbnl55011-trends.pdf.</caption>
+</table>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572129804">
+<p id="fs-id1170572129806">The following table gives the percent growth of the U.S. population beginning in July of the year indicated. If the U.S. population was 281,421,906 in July 2000, estimate the U.S. population in July 2010.</p>
+<table xml:id="fs-id1170572129815" summary="A table with two columns and eleven rows. The first column contains the label &#x201C;Year&#x201D; and the values 2000 through 2009, increasing by one. The second column contains the label &#x201C;% Change / Year&#x201D; and the values 1.12, 0.99, 0.93, 0.86, 0.93, 0.93, 0.97, 0.96, 0.95, and 0.88.">
+<title>Annual Percentage Growth of U.S. Population, 2000–2009</title>
+<tabular>
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row valign="top">
+<cell halign ="left">Year</cell>
+<cell halign ="left">% Change/Year</cell>
+</row>
+
+
+<row valign="top">
+<cell halign ="left">2000</cell>
+<cell halign ="left">1.12</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2001</cell>
+<cell halign ="left">0.99</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2002</cell>
+<cell halign ="left">0.93</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2003</cell>
+<cell halign ="left">0.86</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2004</cell>
+<cell halign ="left">0.93</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2005</cell>
+<cell halign ="left">0.93</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2006</cell>
+<cell halign ="left">0.97</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2007</cell>
+<cell halign ="left">0.96</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2008</cell>
+<cell halign ="left">0.95</cell>
+</row>
+<row valign="top">
+<cell halign ="left">2009</cell>
+<cell halign ="left">0.88</cell>
+</row>
+</tabular>
+
+<!-- NOTE: Move description inside image tag. -->  </description></image> <caption><emphasis effect="italics">Source</emphasis>: http://www.census.gov/popest/data.</caption>
+</table>
+<p id="fs-id1170572330263">(<emphasis effect="italics">Hint:</emphasis> To obtain the population in July 2001, multiply the population in July 2000 by 1.0112 to get 284,573,831.)</p>
+</statement>
+<solution id="fs-id1170572330273">
+<p id="fs-id1170572330275">309,389,957</p>
+</solution>
+
+<p id="fs-id1170572330281">In the following exercises, estimate the areas under the curves by computing the left Riemann sums, <m>L</m><sub>8</sub>.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572330294">
+<description>"A graph of a function that increases linearly with a slope of 1 from (0,1) to (3,4). It curves from (3,4) to (5,4), changing direction from increasing to decreasing at (4,5). Finally, it decreases linearly with a slope of 1 from (5,4) to (8,1).">
+<image source="CNX_Calc_Figure_05_01_201.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572129114">
+<description>"The graph of a smooth curve going through the points (0,3), (1,2), (2,1), (3,2), (4,3), (5,4), (6,5), (7,4), and (8,3).">
+<image source="CNX_Calc_Figure_05_01_202.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1170572129130">
+<p id="fs-id1170572129132"><m>L_8=3+2+1+2+3+4+5+4=24</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572223504">
+<description>"The graph of a smooth curve going through the points (0,0), (1,1), (2,2), (3,1), (4,3), (5,2), (6,4), (7,5), and (8,7).">
+<image source="CNX_Calc_Figure_05_01_203.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572223574">
+<description>"The graph of a smooth curve going through the points (0, 3), (1, 5), (2, 7), (3, 6), (4, 8), (5, 6), (6, 5), (7, 4), and (8, 6).">
+<image source="CNX_Calc_Figure_05_01_204.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1170572309712">
+<p id="fs-id1170572309714"><m>L_8=3+5+7+6+8+6+5+4=44</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572309766">
+<p id="fs-id1170572309769"><emphasis effect="bold">[T]</emphasis> Use a computer algebra system to compute the Riemann sum, <m>L_N,</m> for <m>N=10,30,50</m> for <m>f(x)=\sqrt{1-x^2}</m> on <m>[-1,1].</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571547452">
+<p id="fs-id1170571547454"><emphasis effect="bold">[T]</emphasis> Use a computer algebra system to compute the Riemann sum, <emphasis effect="italics">L_n </emphasis>, for <m>N=10,30,50</m> for <m>f(x)=\frac{1\sqrt{1+x^2}}</m> on <m>[-1,1].</m></p>
+</statement>
+<solution id="fs-id1170571628957">
+<p id="fs-id1170571628959"><m><m:msub>L10</m:msub>\approx 1.7604,<m:msub>L30</m:msub>\approx 1.7625,<m:msub>L50</m:msub>\approx 1.76265</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571629004">
+<p id="fs-id1170571629006"><emphasis effect="bold">[T]</emphasis> Use a computer algebra system to compute the Riemann sum, <emphasis effect="italics">L_n </emphasis>, for <m>N=10,30,50</m> for <m>f(x)=<m:msup>\sin2</m:msup>x</m> on <m>[0,2\pi].</m> Compare these estimates with <m>\pi</m>.</p>
+</statement>
+
+<p id="fs-id1170572351508">In the following exercises, use a calculator or a computer program to evaluate the endpoint sums <emphasis effect="italics">R<sub>N</sub></emphasis> and <emphasis effect="italics">L_n </emphasis> for <m>N=1,10,100.</m> How do these estimates compare with the exact answers, which you can find via geometry?</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572351542">
+<p id="fs-id1170572351544"><emphasis effect="bold">[T]</emphasis> <m>y=\text{ cos }(\pix)</m> on the interval <m>[0,1]</m></p>
+</statement>
+<solution id="fs-id1170572351587">
+<p id="fs-id1170572351589"><m>R_1=-1,L_1=1,<m:msub>R10</m:msub>=-0.1,<m:msub>L10</m:msub>=0.1,<m:msub>L100</m:msub>=0.01,</m> and <m><m:msub>R100</m:msub>=-0.1.</m> By symmetry of the graph, the exact area is zero.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571638124">
+<p id="fs-id1170571638126"><emphasis effect="bold">[T]</emphasis> <m>y=3x+2</m> on the interval <m>[3,5]</m></p>
+</statement>
+
+<p id="fs-id1170571610369">In the following exercises, use a calculator or a computer program to evaluate the endpoint sums <emphasis effect="italics">R<sub>N</sub></emphasis> and <emphasis effect="italics">L_n </emphasis> for <m>N=1,10,100.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572448428">
+<p id="fs-id1170572448430"><emphasis effect="bold">[T]</emphasis> <m>y=x^4-5x^2+4</m> on the interval <m>[-2,2],</m> which has an exact area of <m>\frac{3}{2}{15}</m></p>
+</statement>
+<solution id="fs-id1170572448493">
+<p id="fs-id1170572448495"><m>R_1=0,L_1=0,<m:msub>R10</m:msub>=2.4499,<m:msub>L10</m:msub>=2.4499,<m:msub>R100</m:msub>=2.1365,<m:msub>L100</m:msub>=2.1365</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572368499">
+<p id="fs-id1170572368502"><emphasis effect="bold">[T]</emphasis> <m>y=\text{ ln } x</m> on the interval <m>[1,2],</m> which has an exact area of <m>2 \text{ ln }(2)-1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572306445">
+<p id="fs-id1170572306447">Explain why, if <m>f(a)\geq 0</m> and <m>f</m> is increasing on <m>[a,b],</m> that the left endpoint estimate is a lower bound for the area below the graph of <m>f</m> on <m>[a,b].</m></p>
+</statement>
+<solution id="fs-id1170572503292">
+<p id="fs-id1170572503294">If <m>[c,d]</m> is a subinterval of <m>[a,b]</m> under one of the left-endpoint sum rectangles, then the area of the rectangle contributing to the left-endpoint estimate is <m>f(c)}{(d-c).</m> But, <m>f(c)\leq f(x)</m> for <m>c\leq x\leq d,</m> so the area under the graph of <m>f</m> between <m>c</m> and <m>d</m> is <m>f(c)}{(d-c)</m> plus the area below the graph of <m>f</m> but above the horizontal line segment at height <m>f(c),</m> which is positive. As this is true for each left-endpoint sum interval, it follows that the left Riemann sum is less than or equal to the area below the graph of <m>f</m> on <m>[a,b].</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571813937">
+<p id="fs-id1170571813939">Explain why, if <m>f(b)\geq 0</m> and <m>f</m> is decreasing on <m>[a,b],</m> that the left endpoint estimate is an upper bound for the area below the graph of <m>f</m> on <m>[a,b].</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572480435">
+<p id="fs-id1170572480438">Show that, in general, <m>R_N-L_N=(b-a) × \frac{f(b)-f(a)N}.</m></p>
+</statement>
+<solution id="fs-id1170572624704">
+<p id="fs-id1170572624706"><m>L_N=\frac{b-a}{n}\displaystyle{  \sum_{i=1}^{N} f(a+(b-a)\frac{i-1N})}=\frac{b-a}{n}\displaystyle{ <m:munderover>∑i=0}{N-1</m:munderover>f(a+(b-a)\frac{i}{N})}</m> and <m>R_N=\frac{b-a}{n}\displaystyle{  \sum_{i=1}^{N} f(a+(b-a)\frac{i}{N})}.</m> The left sum has a term corresponding to <m>i=0</m> and the right sum has a term corresponding to <m>i=N.</m> In <m>R_N-L_N,</m> any term corresponding to <m>i=1,2 , \dots ,  N-1</m> occurs once with a plus sign and once with a minus sign, so each such term cancels and one is left with <m>R_N-L_N=\frac{b-a}{n}(f(a+(b-a))\frac{N}{N})-(f(a)+(b-a)\frac{0}{N})=\frac{b-a}{n}(f(b)-f(a)).</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571629738">
+<p id="fs-id1170571629740">Explain why, if <m>f</m> is increasing on <m>[a,b],</m> the error between either <emphasis effect="italics">L_n </emphasis> or <emphasis effect="italics">R<sub>N</sub></emphasis> and the area <m>A</m> below the graph of <m>f</m> is at most <m>(b-a)\frac{f(b)-f(a)N}.</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571624171">
+<p id="fs-id1170571624173">For each of the three graphs:</p>
+<ol marker="(a)">
+<li>Obtain a lower bound <m>L(A)</m> for the area enclosed by the curve by adding the areas of the squares <emphasis effect="italics">enclosed completely</emphasis> by the curve.</li>
+<li>Obtain an upper bound <m>U(A)</m> for the area by adding to <m>L(A)</m> the areas <m>B(A)</m> of the squares <emphasis effect="italics">enclosed partially</emphasis> by the curve.
+<description>"Three graphs, stacked vertically, drawn on graph paper. Each shows the same image. However, the axes become progressively more exact in units. The first is marked in units, from negative 3 units to positive 3 units on each axis. The second has the half-units marked, and the third has the quarter units marked. As such, the graph paper boxes become smaller and smaller. The image is symmetrical across each axis and is a curved cross shape. It meets the axes at (0,3), (3,0), (0,-3), and (-3,0) and has corners roughly at (.7,.7), (.7,-.7), (-.7,-7.), and (-.7,.7). In graph 1, no square unit boxes are completely contained inside the shape. Twenty boxes are enclosed partially by the shape. In graph 2, nine boxes are completely contained inside the shape, and eleven boxes are enclosed partially by the shape. In graph 3, 11 boxes are completely contained inside the shape, and 4.5 are enclosed partially by the shape.">
+<image source="CNX_Calc_Figure_05_01_212.jpg" width="50%">
+
+</li>
+</ol>
+</statement>
+<solution id="fs-id1170571698238">
+<p id="fs-id1170571698240">Graph 1: a. <m>L(A)=0,B(A)=20;</m> b. <m>U(A)=20.</m> Graph 2: a. <m>L(A)=9;</m> b. <m>B(A)=11,U(A)=20.</m> Graph 3: a. <m>L(A)=11.0;</m> b. <m>B(A)=4.5,U(A)=15.5.</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572617950">
+<p id="fs-id1170572617952">In the previous exercise, explain why <m>L(A)</m> gets no smaller while <m>U(A)</m> gets no larger as the squares are subdivided into four boxes of equal area.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572617995">
+<p id="fs-id1170572617997">A unit circle is made up of <m>n</m> wedges equivalent to the inner wedge in the figure. The base of the inner triangle is 1 unit and its height is <m>\sin(\frac{\pi}{n}).</m> The base of the outer triangle is <m>B=\text{ cos }(\frac{\pi}{n})+\sin(\frac{\pi}{n})\text{ tan }(\frac{\pi}{n})</m> and the height is <m>H=B \sin(\frac{2\pin}).</m> Use this information to argue that the area of a unit circle is equal to <m>\pi</m>.</p>
+<description>"A wedge of a circle cut at an acute angle theta = 2pi / n. Several extra lines are drawn. The first is a line A connecting the ends of the two radii, creating a triangle. The second is another line B parallel to the A, connecting the radii a few units in from each endpoint. A concentric curve C connects the endpoints of B and is tangent to A near its midpoint. The area between this curve C and the edge of the circle is shaded in pink, and the rest of the wedge is purple. A final concentric curve is drawn very close to angle theta.">
+<image source="CNX_Calc_Figure_05_01_213.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1170572554298">
+<p id="fs-id1170572554300">Let <m>A</m> be the area of the unit circle. The circle encloses <m>n</m> congruent triangles each of area <m>\frac{\sin(\frac{2\pin})2},</m> so <m>\frac{n}{2}\sin(\frac{2\pin})\leq A.</m> Similarly, the circle is contained inside <m>n</m> congruent triangles each of area <m>\frac{BH2}=\frac{1}{2}(\text{ cos }(\frac{\pi}{n})+\sin(\frac{\pi}{n})\text{ tan }(\frac{\pi}{n}))\sin(\frac{2\pin}),</m> so <m>A\leq \frac{n}{2}\sin(\frac{2\pin})}{(\text{ cos }(\frac{\pi}{n}))+\sin(\frac{\pi}{n})\text{ tan }(\frac{\pi}{n}).</m> As <m>n\to \infty ,\frac{n}{2}\sin(\frac{2\pin})=\frac{\pi \sin(\frac{2\pin})}{(\frac{2\pin})}\to \pi,</m> so we conclude <m>\pi\leq A.</m> Also, as <m>n\to \infty ,\text{ cos }(\frac{\pi}{n})+\sin(\frac{\pi}{n})\text{ tan }(\frac{\pi}{n})\to 1,</m> so we also have <m>A\leq \pi.</m> By the squeeze theorem for limits, we conclude that <m>A=\pi.</m></p>
+</solution>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1170571577527">
+<term>left-endpoint approximation</term>
+<meaning id="fs-id1170571577533">an approximation of the area under a curve computed by using the left endpoint of each subinterval to calculate the height of the vertical sides of each rectangle</meaning>
+</definition>
+<definition id="fs-id1170571577538">
+<term>lower sum</term>
+<meaning id="fs-id1170571577544">a sum obtained by using the minimum value of <m>f(x)</m> on each subinterval</meaning>
+</definition>
+<definition id="fs-id1170571577561">
+<term>partition</term>
+<meaning id="fs-id1170571577566">a set of points that divides an interval into subintervals</meaning>
+</definition>
+<definition id="fs-id1170571577570">
+<term>regular partition</term>
+<meaning id="fs-id1170571577576">a partition in which the subintervals all have the same width</meaning>
+</definition>
+<definition id="fs-id1170571577580">
+<term>riemann sum</term>
+<meaning id="fs-id1170571577585">an estimate of the area under the curve of the form <m>A\approx \displaystyle{  \sum_{i=1}^{n} f}(x_i^* )\Delta x </m></meaning>
+</definition>
+<definition id="fs-id1170572373515">
+<term>right-endpoint approximation</term>
+<meaning id="fs-id1170572373521">the right-endpoint approximation is an approximation of the area of the rectangles under a curve using the right endpoint of each subinterval to construct the vertical sides of each rectangle</meaning>
+</definition>
+<definition id="fs-id1170572373527">
+<term>sigma notation</term>
+<meaning id="fs-id1170572373532">(also, <emphasis effect="bold">summation notation</emphasis>) the Greek letter sigma (\Sigma) indicates addition of the values; the values of the index above and below the sigma indicate where to begin the summation and where to end it</meaning>
+</definition>
+<definition id="fs-id1170572373545">
+<term>upper sum</term>
+<meaning id="fs-id1170572373550">a sum obtained by using the maximum value of <m>f(x)</m> on each subinterval</meaning>
+</definition>
+</glossary>
+</document>
+?>

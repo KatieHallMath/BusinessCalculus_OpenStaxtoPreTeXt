@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch3Sec4" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Derivatives as Rates of Change</title>
+  <introduction>
+  <title> Learning Objectives</title>
+<ol>
+<li>Determine a new value of a quantity from the old value and the amount of change.</li>
+<li>Calculate the average rate of change and explain how it differs from the instantaneous rate of change.</li>
+<li>Apply rates of change to displacement, velocity, and acceleration of an object moving along a straight line.</li>
+<li>Predict the future population from the present value and the population growth rate.</li>
+<li>Use derivatives to calculate marginal cost and revenue in a business situation.</li>
+</ol>
+
+<p id="fs-id1169739111246">In this section we look at some applications of the derivative by focusing on the interpretation of the derivative as the rate of change of a function. These applications include <term>acceleration</term> and velocity in physics, <term>population growth rates</term> in biology, and marginal functions in economics.</p>
+</introduction>
+<subsection id="fs-id1169739031094">
+<title>Amount of Change Formula</title>
+<p id="fs-id1169739001719">One application for derivatives is to estimate an unknown value of a function at a point by using a known value of a function at some given point together with its rate of change at the given point. If <m>f(x)</m> is a function defined on an interval <m>[a,a+h],</m> then the <term>amount of change</term> of <m>f(x)</m> over the interval is the change in the <m>y</m> values of the function over that interval and is given by</p>
+<me>f(a+h)-f(a).</me>
+<p id="fs-id1169739019267">The <term>average rate of change</term> of the function <m>f</m> over that same interval is the ratio of the amount of change over that interval to the corresponding change in the <m>x</m> values. It is given by</p>
+<me>\frac{f(a+h)-f(a)}{h}.</me>
+<p id="fs-id1169738865347">As we already know, the instantaneous rate of change of <m>f(x)</m> at <m>a</m> is its derivative</p>
+<me>f'(a)=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}.</me>
+<p id="fs-id1169739038407">For small enough values of <m>h,f'(a)\approx \frac{f(a+h)-f(a)}{h}.</m> We can then solve for <m>f(a+h)</m> to get the amount of change formula:</p>
+<men xml:id="fs-id1169739034265">f(a+h)\approx f(a)+f'(a)h.</men>
+<p id="fs-id1169738850663">We can use this formula if we know only <m>f(a)</m> and <m>f'(a)</m> and wish to estimate the value of <m>f(a+h).</m> For example, we may use the current population of a city and the rate at which it is growing to estimate its population in the near future. As we can see in <xref ref="CNX_Calc_Figure_03_04_001"/>, we are approximating <m>f(a+h)</m> by the <m>y</m> coordinate at <m>a+h</m> on the line tangent to <m>f(x)</m> at <m>x=a.</m> Observe that the accuracy of this estimate depends on the value of <m>h</m> as well as the value of <m>f'(a).</m></p>
+<figure xml:id="CNX_Calc_Figure_03_04_001">
+<image source="CNX_Calc_Figure_03_04_001.jpg" width="50%">
+  <description>"On the Cartesian coordinate plane with a and a + h marked on the x axis, the function f is graphed. It passes through (a, f(a)) and (a + h, f(a + h)). A straight line is drawn through (a, f(a)) with its slope being the derivative at that point. This straight line passes through (a + h, f(a) + f’(a)h). There is a line segment connecting (a + h, f(a + h)) and (a + h, f(a) + f’(a)h), and it is marked that this is the error in using f(a) + f’(a)h to estimate f(a + h).">
+ </description></image> <caption>The new value of a changed quantity equals the original value plus the rate of change times the interval of change: <m>f(a+h)\approx f(a)+f'(a)h.</m></caption></figure>
+
+ <note id="fs-id1169739182517" class="media-2">
+<p id="fs-id1169739172502">Here is an interesting <url href="http://www.openstax.org/l/20_chainrule" visual="http://www.openstax.org/l/20_chainrule">demonstration</url> of rate of change.</p>
+</note>
+<example xml:id="fs-id1169738907373">
+<title>Estimating the Value of a Function</title>
+ <statement id="fs-id1169739304009">
+<p id="fs-id1169738865923">If <m>f(3)=2</m> and <m>f'(3)=5,</m> estimate <m>f(3.2).</m></p>
+</statement>
+<solution id="fs-id1169739182869">
+<p id="fs-id1169738857080">Begin by finding <m>h.</m> We have <m>h=3.2-3=0.2.</m> Thus,</p>
+<me>f(3.2)=f(3+0.2)\approx f(3)+(0.2)f'(3)=2+0.2(5)=3.</me>
+</solution>
+</example>
+<exercise> <statement id="fs-id1169739001128">
+<p id="fs-id1169738905166">Given <m>f(10)=-5</m> and <m>f'(10)=6,</m> estimate <m>f(10.1).</m></p>
+</statement>
+<solution id="fs-id1169739187355">
+<p id="fs-id1169739097606"><m>-4.4</m></p>
+</solution>
+<hint>
+<p id="fs-id1169738908581">Use the same process as in the preceding example.</p>
+</hint>
+</exercise>
+</subsection>
+<subsection id="fs-id1169738889827">
+<title>Motion along a Line</title>
+<p id="fs-id1169738881072">Another use for the derivative is to analyze motion along a line. We have described velocity as the rate of change of position. If we take the derivative of the velocity, we can find the acceleration, or the rate of change of velocity. It is also important to introduce the idea of <term>speed</term>, which is the magnitude of velocity. Thus, we can state the following mathematical definitions.</p>
+<definition>
+<p id="fs-id1169738947283">Let <m>s(t)</m> be a function giving the position of an object at time <m>t.</m></p>
+<p id="fs-id1169739195686">The velocity of the object at time <m>t</m> is given by <m>v(t)=s'(t).</m></p>
+<p id="fs-id1169739105154">The speed of the object at time <m>t</m> is given by <m>|v(t)|.</m></p>
+<p id="fs-id1169739016931">The acceleration of the object at <m>t</m> is given by <m>a(t)=v'(t)=s''(t).</m></p>
+</definition>
+<example xml:id="fs-id1169738906211">
+<title>Comparing Instantaneous Velocity and Average Velocity</title>
+<statement id="fs-id1169739297937">
+<p id="fs-id1169738942237">A ball is dropped from a height of 64 feet. Its height above ground (in feet) <m>t</m> seconds later is given by <m>s(t)=-16t^2+64.</m></p>
+<image source="CNX_Calc_Figure_03_04_002.jpg" width="50%">
+<description>"On the Cartesian coordinate plane, the function s(t) = -16t2 + 64 is graphed. This function starts at (0, 64) and decreases to (0, 2)."   </description></image>
+<ol marker="(a)">
+<li>What is the instantaneous velocity of the ball when it hits the ground?</li>
+<li>What is the average velocity during its fall?</li>
+</ol>
+</statement>
+<solution id="fs-id1169739023791">
+<p id="fs-id1169739233455">The first thing to do is determine how long it takes the ball to reach the ground. To do this, set <m>s(t)=0.</m> Solving <m>-16t^2+64=0,</m> we get <m>t=2,</m> so it take 2 seconds for the ball to reach the ground.</p>
+<ol marker="(a)">
+<li>The instantaneous velocity of the ball as it strikes the ground is <m>v(2).</m> Since <m>v(t)=s'(t)=-32t,</m> we obtain <m>v(t)=-64 \text{ ft/s }.</m></li>
+<li>The average velocity of the ball during its fall is
+<me>v_{\text{ ave }}=\frac{s(2)-s(0)}{2-0}=\frac{0-64}{2}=-32 \text{ ft/s }.</me></li>
+</ol>
+</solution>
+</example>
+<!-- Commenting out physics
+<example xml:id="fs-id1169738904404">
+<title>Interpreting the Relationship between <m>v(t)</m> and <m>a(t)</m></title>
+ <statement id="fs-id1169739009978">
+<p id="fs-id1169738941480">A particle moves along a coordinate axis in the positive direction to the right. Its position at time <m>t</m> is given by <m>s(t)=t^3-4t+2.</m> Find <m>v(1)</m> and <m>a(1)</m> and use these values to answer the following questions.</p>
+<ol marker="(a)">
+<li>Is the particle moving from left to right or from right to left at time <m>t=1?</m></li>
+<li>Is the particle speeding up or slowing down at time <m>t=1?</m></li>
+</ol>
+</statement>
+<solution id="fs-id1169738938122">
+<p id="fs-id1169738823468">Begin by finding <m>v(t)</m> and <m>a(t).</m></p>
+<p id="fs-id1169738969278">and <m>a(t)=v'(t)=s''(t)=6t.</m></p>
+<p id="fs-id1169739096229">Evaluating these functions at <m>t=1,</m> we obtain <m>v(1)=-1</m> and <m>a(1)=6.</m></p>
+<ol marker="(a)">
+<li>Because <m>v(1)\lt 0,</m> the particle is moving from right to left.</li>
+<li>Because <m>v(1)\lt 0</m> and <m>a(1)\gt 0,</m> velocity and acceleration are acting in opposite directions. In other words, the particle is being accelerated in the direction opposite the direction in which it is traveling, causing <m>|v(t)|</m> to decrease. The particle is slowing down.</li>
+</ol>
+</solution>
+</example>
+<example xml:id="fs-id1169738889577">
+<title>Position and Velocity</title>
+ <statement id="fs-id1169738893707">
+<p id="fs-id1169739231121">The position of a particle moving along a coordinate axis is given by <m>s(t)=t^3-9t^2+24t+4,t\geq 0.</m></p>
+<ol marker="(a)">
+<li>Find <m>v(t).</m></li>
+<li>At what time(s) is the particle at rest?</li>
+<li>On what time intervals is the particle moving from left to right? From right to left?</li>
+<li>Use the information obtained to sketch the path of the particle along a coordinate axis.</li>
+</ol>
+</statement>
+<solution id="fs-id1169739099324">
+<ol marker="(a)">
+<li>The velocity is the derivative of the position function:
+<me>v(t)=s'(t)=3t^2-18t+24.</me></li>
+<li>The particle is at rest when <m>v(t)=0,</m> so set <m>3t^2-18t+24=0.</m> Factoring the left-hand side of the equation produces <m>3(t-2)(t-4)=0.</m> Solving, we find that the particle is at rest at <m>t=2</m> and <m>t=4.</m></li>
+<li>The particle is moving from left to right when <m>v(t)\gt 0</m> and from right to left when <m>v(t)\lt 0.</m> <xref ref="CNX_Calc_Figure_03_04_003"/> gives the analysis of the sign of <m>v(t)</m> for <m>t\geq 0,</m> but it does not represent the axis along which the particle is moving.
+<figure xml:id="CNX_Calc_Figure_03_04_003">
+  <image source="CNX_Calc_Figure_03_04_003.jpg" width="50%">
+<description>"A number line marked with 0, 2, and 4. Between 0 and 2, there is a plus sign. Above 2, there is a 0. Between 2 and 4 there is a negative sign. Above 4 there is a 0. After 4 there is a plus sign and v(t)." </description></image> <caption>The sign of v(t) determines the direction of the particle.</caption>
+</figure>
+Since <m>3t^2-18t+24\gt 0</m> on <m>[0,2)\cup (2,\text{ + }\infty ),</m> the particle is moving from left to right on these intervals.
+Since <m>3t^2-18t+24\lt 0</m> on <m>(2,4),</m> the particle is moving from right to left on this interval.</li>
+<li>Before we can sketch the graph of the particle, we need to know its position at the time it starts moving <m>(t=0)</m> and at the times that it changes direction <m>(t=2,4).</m> We have <m>s(0)=4,s(2)=24,</m> and <m>s(4)=20.</m> This means that the particle begins on the coordinate axis at 4 and changes direction at 0 and 20 on the coordinate axis. The path of the particle is shown on a coordinate axis in <xref ref="CNX_Calc_Figure_03_04_004"/>.
+<figure xml:id="CNX_Calc_Figure_03_04_004">
+  <image source="CNX_Calc_Figure_03_04_005.jpg" width="50%">
+<description>"A number line is given and above it a line snakes, starting at t = 0 above 4 on the number line. Then the line at t = 2 is above 24 on the number line. Then the line decreases at t = 4 to be above 20 on the number line, at which point the line reverses direction again and increases indefinitely." </description></image> <caption>The path of the particle can be determined by analyzing v(t).</caption>
+</figure></li>
+</ol>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1169736657171">
+<p id="fs-id1169739343676">A particle moves along a coordinate axis. Its position at time <m>t</m> is given by <m>s(t)=t^2-5t+1.</m> Is the particle moving from right to left or from left to right at time <m>t=3?</m></p>
+</statement>
+<solution id="fs-id1169739102324">
+<p id="fs-id1169739299934">left to right</p>
+</solution>
+<hint>
+<p id="fs-id1169739236686">Find <m>v(3)</m> and look at the sign.</p>
+</hint>
+</exercise>
+-->
+</subsection>
+<subsection id="fs-id1169739351610">
+<title>Population Change</title>
+<p id="fs-id1169736660717">In addition to analyzing velocity, speed, acceleration, and position, we can use derivatives to analyze various types of populations, including those as diverse as bacteria colonies and cities. We can use a current population, together with a growth rate, to estimate the size of a population in the future. The population growth rate is the rate of change of a population and consequently can be represented by the derivative of the size of the population.</p>
+<definition> <!-- Change next /note to /definition and remove above note-->
+<p id="fs-id1169739274980">If <m>P(t)</m> is the number of entities present in a population, then the population growth rate of <m>P(t)</m> is defined to be <m>P'(t).</m></p>
+</definition>
+<example xml:id="fs-id1169739270775">
+<title>Estimating a Population</title>
+<statement id="fs-id1169739299436">
+<p id="fs-id1169739300220">The population of a city is tripling every 5 years. If its current population is 10,000, what will be its approximate population 2 years from now?</p>
+</statement>
+<solution id="fs-id1169739300222">
+<p id="fs-id1169739299610">Let <m>P(t)</m> be the population (in thousands) <m>t</m> years from now. Thus, we know that <m>P(0)=10</m> and based on the information, we anticipate <m>P(5)=30.</m> Now estimate <m>P'(0),</m> the current growth rate, using</p>
+<me>P'(0)\approx \frac{P(5)-P(0)}{5-0}=\frac{30-10}{5}=4.</me>
+<p id="fs-id1169739201103">By applying <xref ref="fs-id1169739034265"/> to <m>P(t),</m> we can estimate the population 2 years from now by writing</p>
+<me>P(2)\approx P(0)+(2)P'(0)\approx 10+2(4)=18;</me>
+<p id="fs-id1169736662775">thus, in 2 years the population will be 18,000.</p>
+</solution>
+</example>
+<exercise> <statement id="fs-id1169736656694">
+<p id="fs-id1169736656696">The current population of a mosquito colony is known to be 3,000; that is, <m>P(0)=3,000.</m> If <m>P'(0)=100,</m> estimate the size of the population in 3 days, where <m>t</m> is measured in days.</p>
+</statement>
+<solution id="fs-id1169739273299">
+<p id="fs-id1169739019878">3,300</p>
+</solution>
+<hint>
+<p id="fs-id1169739188550">Use <m>P(3)\approx P(0)+3P'(0).</m></p>
+</hint>
+</exercise>
+</subsection>
+<subsection id="fs-id1169739304237">
+<title>Changes in Cost and Revenue</title>
+<p id="fs-id1169736616122">In addition to analyzing motion along a line and population growth, derivatives are useful in analyzing changes in cost, revenue, and profit. The concept of a marginal function is common in the fields of business and economics and implies the use of derivatives. The marginal cost is the derivative of the cost function. The marginal revenue is the derivative of the revenue function. The marginal profit is the derivative of the profit function, which is based on the cost function and the revenue function.</p>
+<definition> <!-- Change next /note to /definition and remove above note-->
+<p id="fs-id1169736618496">If <m>C(x)</m> is the cost of producing <m>x</m> items, then the <term>marginal cost</term> <m>MC(x)</m> is <m>MC(x)=C'(x).</m></p>
+<p id="fs-id1169739343667">If <m>R(x)</m> is the revenue obtained from selling <m>x</m> items, then the marginal revenue <m>MR(x)</m> is <m>MR(x)=R'(x).</m></p>
+<p id="fs-id1169739194208">If <m>P(x)=R(x)-C(x)</m> is the profit obtained from selling <m>x</m> items, then the <term>marginal profit</term> <m>MP(x)</m> is defined to be <m>MP(x)=P'(x)=MR(x)-MC(x)=R'(x)-C'(x).</m></p>
+</definition>
+<p id="fs-id1169739299256">We can roughly approximate</p>
+<me>MC(x)=C'(x)=\lim_{h\to 0}\frac{C(x+h)-C(x)}{h}</me>
+<p id="fs-id1169739007166">by choosing an appropriate value for <m>h.</m> Since <m>x</m> represents objects, a reasonable and small value for <m>h</m> is 1. Thus, by substituting <m>h=1,</m> we get the approximation <m>MC(x)=C'(x)\approx C(x+1)-C(x).</m> Consequently, <m>C'(x)</m> for a given value of <m>x</m> can be thought of as the change in cost associated with producing one additional item. In a similar way, <m>MR(x)=R'(x)</m> approximates the revenue obtained by selling one additional item, and <m>MP(x)=P'(x)</m> approximates the profit obtained by producing and selling one additional item.</p>
+<example xml:id="fs-id1169739302508">
+<title>Applying Marginal Revenue</title>
+ <statement id="fs-id1169739274271">
+<p id="fs-id1169739274279">Assume that the number of barbeque dinners that can be sold, <m>x,</m> can be related to the price charged, <m>p,</m> by the equation <m>p(x)=9-0.03x,0\leq x\leq 300.</m></p>
+<p id="fs-id1169739305211">In this case, the revenue in dollars obtained by selling <m>x</m> barbeque dinners is given by</p>
+<me>R(x)=xp(x)=x(9-0.03x)=-0.03x^2+9x \text{ for } 0\leq x\leq 300.</me>
+<p id="fs-id1169739194211">Use the marginal revenue function to estimate the revenue obtained from selling the 101st barbeque dinner. Compare this to the actual revenue obtained from the sale of this dinner.</p>
+</statement>
+<solution id="fs-id1169739351547">
+<p id="fs-id1169739351550">First, find the marginal revenue function: <m>MR(x)=R'(x)=-0.06x+9.</m></p>
+<p id="fs-id1169739305060">Next, use <m>R'(100)</m> to approximate <m>R(101)-R(100),</m> the revenue obtained from the sale of the 101st dinner. Since <m>R'(100)=3,</m> the revenue obtained from the sale of the 101st dinner is approximately \$3.</p>
+<p id="fs-id1169736611332">The actual revenue obtained from the sale of the 101st dinner is</p>
+<me>R(101)-R(100)=602.97-600=2.97,\text{ or } \$2.97.</me>
+<p id="fs-id1169739298517">The marginal revenue is a fairly good estimate in this case and has the advantage of being easy to compute.</p>
+</solution>
+</example>
+<exercise> <statement id="fs-id1169736589104">
+<p id="fs-id1169736589106">Suppose that the profit obtained from the sale of <m>x</m> fish-fry dinners is given by <m>P(x)=-0.03x^2+8x-50.</m> Use the marginal profit function to estimate the profit from the sale of the 101st fish-fry dinner.</p>
+</statement>
+<solution id="fs-id1169739208503">
+<p id="fs-id1169739208505">\$2</p>
+</solution>
+<hint>
+<p id="fs-id1169739273788">Use <m>P'(100)</m> to approximate <m>P(101)-P(100).</m></p>
+</hint>
+</exercise>
+</subsection>
+<subsection id="fs-id1169739269517" class="key-concepts">
+<title>Key Concepts</title>
+<ul id="fs-id1169739269667" list-type="bulleted" bullet-style="bullet">
+<li>Using <m>f(a+h)\approx f(a)+f'(a)h,</m> it is possible to estimate <m>f(a+h)</m> given <m>f'(a)</m> and <m>f(a).</m></li>
+<li>The rate of change of position is velocity, and the rate of change of velocity is acceleration. Speed is the absolute value, or magnitude, of velocity.</li>
+<li>The population growth rate and the present population can be used to predict the size of a future population.</li>
+<li>Marginal cost, marginal revenue, and marginal profit functions can be used to predict, respectively, the cost of producing one more item, the revenue obtained by selling one more item, and the profit obtained by producing and selling one more item.</li>
+</ul>
+</subsection>
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+<?ignore
+
+<subsection id="fs-id1169739300381" class="section-exercises">
+<p id="fs-id1169739300384">For the following exercises, the given functions represent the position of a particle traveling along a horizontal line.</p>
+<ol marker="(a)">
+<li>Find the velocity and acceleration functions.</li>
+<li>Determine the time intervals when the object is slowing down or speeding up.</li>
+</ol>
+
+<!-- Move title outside statement--> <statement id="fs-id1169739303991">
+<p id="fs-id1169736656891"><m>s(t)=2t^3-3t^2-12t+8</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739301138">
+<p id="fs-id1169736659584"><m>s(t)=2t^3-15t^2+36t-10</m></p>
+</statement>
+<solution id="fs-id1169739303945">
+<p id="fs-id1169739303947">a. <m>v(t)=6t^2-30t+36,a(t)=12t-30;</m> b. speeds up <m>(2,2.5)\cup (3,\infty ),</m> slows down <m>(0,2)\cup (2.5,3)</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739286494">
+<p id="fs-id1169739286496"><m>s(t)=\frac{t1+t^2}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736609269">
+<p id="fs-id1169736609271">A rocket is fired vertically upward from the ground. The distance <m>s</m> in feet that the rocket travels from the ground after <m>t</m> seconds is given by <m>s(t)=-16t^2+560t.</m></p>
+<ol marker="(a)">
+<li>Find the velocity of the rocket 3 seconds after being fired.</li>
+<li>Find the acceleration of the rocket 3 seconds after being fired.</li>
+</ol>
+</statement>
+<solution id="fs-id1169736657205">
+<p id="fs-id1169736657207">a. <m>464<m:msup> \text{ ft/s }2</m:msup></m> b. <m>-32<m:msup> \text{ ft/s }2</m:msup></m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739253581">
+<p id="fs-id1169739253583">A ball is thrown downward with a speed of 8 ft/s from the top of a 64-foot-tall building. After <m>t</m> seconds, its height above the ground is given by <m>s(t)=-16t^2-8t+64.</m></p>
+<ol marker="(a)">
+<li>Determine how long it takes for the ball to hit the ground.</li>
+<li>Determine the velocity of the ball when it hits the ground.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739274632">
+<p id="fs-id1169739274634">The position function <m>s(t)=t^2-3t-4</m> represents the position of the back of a car backing out of a driveway and then driving in a straight line, where <m>s</m> is in feet and <m>t</m> is in seconds. In this case, <m>s(t)=0</m> represents the time at which the back of the car is at the garage door, so <m>s(0)=-4</m> is the starting position of the car, 4 feet inside the garage.</p>
+<ol marker="(a)">
+<li>Determine the velocity of the car when <m>s(t)=0.</m></li>
+<li>Determine the velocity of the car when <m>s(t)=14.</m></li>
+</ol>
+</statement>
+<solution id="fs-id1169736611430">
+<p id="fs-id1169736611432">a. 5 ft/s b. 9 ft/s</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739188626">
+<p id="fs-id1169739188628">The position of a hummingbird flying along a straight line in <m>t</m> seconds is given by <m>s(t)=3t^3-7t</m> meters.</p>
+<ol marker="(a)">
+<li>Determine the velocity of the bird at <m>t=1</m> sec.</li>
+<li>Determine the acceleration of the bird at <m>t=1</m> sec.</li>
+<li>Determine the acceleration of the bird when the velocity equals 0.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739300063">
+<p id="fs-id1169739300065">A potato is launched vertically upward with an initial velocity of 100 ft/s from a potato gun at the top of an 85-foot-tall building. The distance in feet that the potato travels from the ground after <m>t</m> seconds is given by <m>s(t)=-16t^2+100t+85.</m></p>
+<ol marker="(a)">
+<li>Find the velocity of the potato after <m>0.5 \text{ s }</m> and <m>5.75 \text{ s }.</m></li>
+<li>Find the speed of the potato at 0.5 s and 5.75 s.</li>
+<li>Determine when the potato reaches its maximum height.</li>
+<li>Find the acceleration of the potato at 0.5 s and 1.5 s.</li>
+<li>Determine how long the potato is in the air.</li>
+<li>Determine the velocity of the potato upon hitting the ground.</li>
+</ol>
+</statement>
+<solution id="fs-id1169739356248">
+<p id="fs-id1169739356250">a. 84 ft/s, -84 ft/s b. 84 ft/s c. <m>\frac{258} \text{ s }</m> d. <m>-32<m:msup> \text{ ft/s }2</m:msup></m> in both cases e. <m>\frac{1}{8}(25+\sqrt{965}) \text{ s }</m> f. <m>-4\sqrt{965} \text{ ft/s }</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736656945">
+<p id="fs-id1169736656947">The position function <m>s(t)=t^3-8t</m> gives the position in miles of a freight train where east is the positive direction and <m>t</m> is measured in hours.</p>
+<ol marker="(a)">
+<li>Determine the direction the train is traveling when <m>s(t)=0.</m></li>
+<li>Determine the direction the train is traveling when <m>a(t)=0.</m></li>
+<li>Determine the time intervals when the train is slowing down or speeding up.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739191159">
+<p id="fs-id1169739191161">The following graph shows the position <m>y=s(t)</m> of an object moving along a straight line.</p>
+<description>"On the Cartesian coordinate plane, a function is graphed that is part of a parabola from the origin to (2, 2) with maximum at (1.5, 2.25). Then the function is constant until (5, 2), at which points becomes a parabola again, decreasing to a minimum at (6, 1) and then increasing to (7, 2).">
+<image source="CNX_Calc_Figure_03_04_201.jpg" width="50%">
+
+<ol marker="(a)">
+<li>Use the graph of the position function to determine the time intervals when the velocity is positive, negative, or zero.</li>
+<li>Sketch the graph of the velocity function.</li>
+<li>Use the graph of the velocity function to determine the time intervals when the acceleration is positive, negative, or zero.</li>
+<li>Determine the time intervals when the object is speeding up or slowing down.</li>
+</ol>
+</statement>
+<solution id="fs-id1169736663031">
+<p id="fs-id1169736663033">a. Velocity is positive on <m>(0,1.5)\cup (6,7),</m> negative on <m>(1.5,2)\cup (5,6),</m> and zero on <m>(2,5).</m> b.
+<description>"The graph is a straight line from (0, 2) to (2, -1), then is discontinuous with a straight line from (2, 0) to (5, 0), and then is discontinuous with a straight line from (5, -4) to (7, 4).">
+<image source="CNX_Calc_Figure_03_04_202.jpg" width="50%">
+
+c. Acceleration is positive on <m>(5,7),</m> negative on <m>(0,2),</m> and zero on <m>(2,5).</m> d. The object is speeding up on <m>(6,7)\cup (1.5,2)</m> and slowing down on <m>(0,1.5)\cup (5,6).</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739270638">
+<p id="fs-id1169739270640">The cost function, in dollars, of a company that manufactures food processors is given by <m>C(x)=200+\frac{7}{x}+\frac{x^27},</m> where <m>x</m> is the number of food processors manufactured.</p>
+<ol marker="(a)">
+<li>Find the marginal cost function.</li>
+<li>Use the marginal cost function to estimate the cost of manufacturing the thirteenth food processor.</li>
+<li>Find the actual cost of manufacturing the thirteenth food processor.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736659655">
+<p id="fs-id1169736659657">The price <m>p</m> (in dollars) and the demand <m>x</m> for a certain digital clock radio is given by the price–demand function <m>p=10-0.001x.</m></p>
+<ol marker="(a)">
+<li>Find the revenue function <m>R(x).</m></li>
+<li>Find the marginal revenue function.</li>
+<li>Find the marginal revenue at <m>x=2000</m> and <m>5000.</m></li>
+</ol>
+</statement>
+<solution id="fs-id1169736654358">
+<p id="fs-id1169739242389">a. <m>R(x)=10x-0.001x^2</m> b. <m>R'(x)=10-0.002x</m> c. $6 per item, $0 per item</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736656506">
+<p id="fs-id1169736656508"><emphasis effect="bold">[T]</emphasis> A profit is earned when revenue exceeds cost. Suppose the profit function for a skateboard manufacturer is given by <m>P(x)=30x-0.3x^2-250,</m> where <m>x</m> is the number of skateboards sold.</p>
+<ol marker="(a)">
+<li>Find the exact profit from the sale of the thirtieth skateboard.</li>
+<li>Find the marginal profit function and use it to estimate the profit from the sale of the thirtieth skateboard.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739301643">
+<p id="fs-id1169739301645"><emphasis effect="bold">[T]</emphasis> In general, the profit function is the difference between the revenue and cost functions: <m>P(x)=R(x)-C(x).</m></p>
+<p id="fs-id1169736608474">Suppose the price-demand and cost functions for the production of cordless drills is given respectively by <m>p=143-0.03x</m> and <m>C(x)=75,000+65x,</m> where <m>x</m> is the number of cordless drills that are sold at a price of <m>p</m> dollars per drill and <m>C(x)</m> is the cost of producing <m>x</m> cordless drills.</p>
+<ol marker="(a)">
+<li>Find the marginal cost function.</li>
+<li>Find the revenue and marginal revenue functions.</li>
+<li>Find <m>R'(1000)</m> and <m>R'(4000).</m> Interpret the results.</li>
+<li>Find the profit and marginal profit functions.</li>
+<li>Find <m>P'(1000)</m> and <m>P'(4000).</m> Interpret the results.</li>
+</ol>
+</statement>
+<solution id="fs-id1169739273060">
+<p id="fs-id1169739273062">a. <m>C'(x)=65</m> b. <m>R(x)=143x-0.03x^2,R'(x)=143-0.06x</m> c. <m>83,-97.</m> At a production level of 1000 cordless drills, revenue is increasing at a rate of $83 per drill; at a production level of 4000 cordless drills, revenue is decreasing at a rate of $97 per drill. d. <m>P(x)=-0.03x^2+78x-75000,P'(x)=-0.06x+78</m> e. <m>18,-162.</m> At a production level of 1000 cordless drills, profit is increasing at a rate of $18 per drill; at a production level of 4000 cordless drills, profit is decreasing at a rate of $162 per drill.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739274866">
+<p id="fs-id1169739274868">A small town in Ohio commissioned an actuarial firm to conduct a study that modeled the rate of change of the town’s population. The study found that the town’s population (measured in thousands of people) can be modeled by the function <m>P(t)=-\frac{1}{3}t^3+64t+3000,</m> where <m>t</m> is measured in years.</p>
+<ol marker="(a)">
+<li>Find the rate of change function <m>P'(t)</m> of the population function.</li>
+<li>Find <m>P'(1),P'(2),P'(3),</m> and <m>P'(4).</m> Interpret what the results mean for the town.</li>
+<li>Find <m>P''(1),P''(2),P''(3),</m> and <m>P''(4).</m> Interpret what the results mean for the town’s population.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736662794">
+<p id="fs-id1169736662796"><emphasis effect="bold">[T]</emphasis> A culture of bacteria grows in number according to the function <m>N(t)=3000(1+\frac{4}{t}{t^2+100}),</m> where <m>t</m> is measured in hours.</p>
+<ol marker="(a)">
+<li>Find the rate of change of the number of bacteria.</li>
+<li>Find <m>N'(0),N'(10),N'(20),</m> and <m>N'(30).</m></li>
+<li>Interpret the results in (b).</li>
+<li>Find <m>N''(0),N''(10),N''(20),</m> and <m>N''(30).</m> Interpret what the answers imply about the bacteria population growth.</li>
+</ol>
+</statement>
+<solution id="fs-id1169736611359">
+<p id="fs-id1169736611361">a. <m>N'(t)=3000(\frac{-4t^2+400}{<m:msup>(t^2+100)2</m:msup>})</m> b. <m>120,0,-14.4,-9.6</m> c. The bacteria population increases from time 0 to 10 hours; afterwards, the bacteria population decreases. d. <m>0,-6,0.384,0.432.</m> The rate at which the bacteria is increasing is decreasing during the first 10 hours. Afterwards, the bacteria population is decreasing at a decreasing rate.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736610053">
+<p id="fs-id1169736610055">The centripetal force of an object of mass <m>m</m> is given by <m>F(r)=\frac{mv^2r},</m> where <m>v</m> is the speed of rotation and <m>r</m> is the distance from the center of rotation.</p>
+<ol marker="(a)">
+<li>Find the rate of change of centripetal force with respect to the distance from the center of rotation.</li>
+<li>Find the rate of change of centripetal force of an object with mass 1000 kilograms, velocity of 13.89 m/s, and a distance from the center of rotation of 200 meters.</li>
+</ol>
+</statement>
+
+<p id="fs-id1169736656016">The following questions concern the population (in millions) of London by decade in the 19th century, which is listed in the following table.</p>
+<table xml:id="fs-id1169736656020" summary="This table has 11 rows and two columns. The first row is a header row and it labels each column. The first column header is Years since 1800 and the second column is Population (millions). Under the first column are the values 1, 11, 21, 31, 41, 51, 61, 71, 81, and 91. Under the second column are the values 0.8795, 1.040, 1.264, 1.516, 1.661, 2.000, 2.634, 3.272, 3.911, and 4.422.">
+<title>Population of London</title>
+<tabular>
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row valign="top">
+<cell valign="top" halign ="left">Years since 1800</cell>
+<cell valign="top" halign ="left">Population (millions)</cell>
+</row>
+
+
+<row valign="top">
+<cell valign="top" halign ="left">1</cell>
+<cell valign="top" halign ="left">0.8795</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">11</cell>
+<cell valign="top" halign ="left">1.040</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">21</cell>
+<cell valign="top" halign ="left">1.264</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">31</cell>
+<cell valign="top" halign ="left">1.516</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">41</cell>
+<cell valign="top" halign ="left">1.661</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">51</cell>
+<cell valign="top" halign ="left">2.000</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">61</cell>
+<cell valign="top" halign ="left">2.634</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">71</cell>
+<cell valign="top" halign ="left">3.272</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">81</cell>
+<cell valign="top" halign ="left">3.911</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">91</cell>
+<cell valign="top" halign ="left">4.422</cell>
+</row>
+</tabular>
+
+<!-- NOTE: Move description inside image tag. -->  </description></image> <caption>Source: http://en.wikipedia.org/wiki/Demographics_of_London.</caption>
+</table>
+
+<!-- Move title outside statement--> <statement id="fs-id1169739270173">
+<p id="fs-id1169739270175"><emphasis effect="bold">[T]</emphasis></p>
+<ol marker="(a)">
+<li>Using a calculator or a computer program, find the best-fit linear function to measure the population.</li>
+<li>Find the derivative of the equation in a. and explain its physical meaning.</li>
+<li>Find the second derivative of the equation and explain its physical meaning.</li>
+</ol>
+</statement>
+<solution id="fs-id1169739270196">
+<p id="fs-id1169739270198">a. <m>P(t)=0.03983+0.4280</m> b. <m>P'(t)=0.03983.</m> The population is increasing. c. <m>P''(t)=0.</m> The rate at which the population is increasing is constant.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739343734">
+<p id="fs-id1169739343736"><emphasis effect="bold">[T]</emphasis></p>
+<ol marker="(a)">
+<li>Using a calculator or a computer program, find the best-fit quadratic curve through the data.</li>
+<li>Find the derivative of the equation and explain its physical meaning.</li>
+<li>Find the second derivative of the equation and explain its physical meaning.</li>
+</ol>
+</statement>
+
+<p id="fs-id1169739251285">For the following exercises, consider an astronaut on a large planet in another galaxy. To learn more about the composition of this planet, the astronaut drops an electronic sensor into a deep trench. The sensor transmits its vertical position every second in relation to the astronaut’s position. The summary of the falling sensor data is displayed in the following table.</p>
+<table xml:id="fs-id1169739251296" class="unnumbered" summary="This table has seven rows and two columns. The first row is a header row and it labels each column. The first column header is Time after dropping (s) and the second column is Position (m). Under the first column are the values 0, 1, 2, 3, 4, and 5. Under the second column are the values 0, -1, -2, -5, -7, and -14.">
+<label/>
+<tabular>
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row valign="top">
+<cell valign="top" halign ="left">Time after dropping (s)</cell>
+<cell valign="top" halign ="left">Position (m)</cell>
+</row>
+
+
+<row valign="top">
+<cell valign="top" halign ="left">0</cell>
+<cell valign="top" halign ="left">0</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">1</cell>
+<cell valign="top" halign ="left">-1</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">2</cell>
+<cell valign="top" halign ="left">-2</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">3</cell>
+<cell valign="top" halign ="left">-5</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">4</cell>
+<cell valign="top" halign ="left">-7</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">5</cell>
+<cell valign="top" halign ="left">-14</cell>
+</row>
+</tabular>
+
+</table>
+
+<!-- Move title outside statement--> <statement id="fs-id1169736654817">
+<p id="fs-id1169736654819"><emphasis effect="bold">[T]</emphasis></p>
+<ol marker="(a)">
+<li>Using a calculator or computer program, find the best-fit quadratic curve to the data.</li>
+<li>Find the derivative of the position function and explain its physical meaning.</li>
+<li>Find the second derivative of the position function and explain its physical meaning.</li>
+</ol>
+</statement>
+<solution id="fs-id1169736654840">
+<p id="fs-id1169736654842">a. <m>p(t)=-0.6071x^2+0.4357x-0.3571</m> b. <m>p'(t)=-1.214x+0.4357.</m> This is the velocity of the sensor. c. <m>p''(t)=-1.214.</m> This is the acceleration of the sensor; it is a constant acceleration downward.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739269449">
+<p id="fs-id1169739269451"><emphasis effect="bold">[T]</emphasis></p>
+<ol marker="(a)">
+<li>Using a calculator or computer program, find the best-fit cubic curve to the data.</li>
+<li>Find the derivative of the position function and explain its physical meaning.</li>
+<li>Find the second derivative of the position function and explain its physical meaning.</li>
+<li>Using the result from c. explain why a cubic function is not a good choice for this problem.</li>
+</ol>
+</statement>
+
+<p id="fs-id1169739336089">The following problems deal with the Holling type I, II, and III equations. These equations describe the ecological event of growth of a predator population given the amount of prey available for consumption.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169739336096">
+<p id="fs-id1169736609871"><emphasis effect="bold">[T]</emphasis> The <term class="no-emphasis">Holling type I equation</term> is described by <m>f(x)=ax,</m> where <m>x</m> is the amount of prey available and <m>a\gt 0</m> is the rate at which the predator meets the prey for consumption.</p>
+<ol marker="(a)">
+<li>Graph the Holling type I equation, given <m>a=0.5.</m></li>
+<li>Determine the first derivative of the Holling type I equation and explain physically what the derivative implies.</li>
+<li>Determine the second derivative of the Holling type I equation and explain physically what the derivative implies.</li>
+<li>Using the interpretations from b. and c. explain why the Holling type I equation may not be realistic.</li>
+</ol>
+</statement>
+<solution id="fs-id1169736609949">
+<p id="fs-id1169736609951">a.
+<description>"The graph is a straight line drawn through the origin with slope 1/2.">
+<image source="CNX_Calc_Figure_03_04_203.jpg" width="50%">
+
+b. <m>f'(x)=a.</m> The more increase in prey, the more growth for predators. c. <m>f''(x)=0.</m> As the amount of prey increases, the rate at which the predator population growth increases is constant. d. This equation assumes that if there is more prey, the predator is able to increase consumption linearly. This assumption is unphysical because we would expect there to be some saturation point at which there is too much prey for the predator to consume adequately.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739190649">
+<p id="fs-id1169739190651"><emphasis effect="bold">[T]</emphasis> The Holling type II equation is described by <m>f(x)=\frac{a}{x}{n+x},</m> where <m>x</m> is the amount of prey available and <m>a\gt 0</m> is the maximum consumption rate of the predator.</p>
+<ol marker="(a)">
+<li>Graph the Holling type II equation given <m>a=0.5</m> and <m>n=5.</m> What are the differences between the Holling type I and II equations?</li>
+<li>Take the first derivative of the Holling type II equation and interpret the physical meaning of the derivative.</li>
+<li>Show that <m>f(n)=\frac{1}{2}a</m> and interpret the meaning of the parameter <m>n.</m></li>
+<li>Find and interpret the meaning of the second derivative. What makes the Holling type II function more realistic than the Holling type I function?</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739299239">
+<p id="fs-id1169739299241"><emphasis effect="bold">[T]</emphasis> The Holling type III equation is described by <m>f(x)=\frac{ax^2}{n^2+x^2},</m> where <m>x</m> is the amount of prey available and <m>a\gt 0</m> is the maximum consumption rate of the predator.</p>
+<ol marker="(a)">
+<li>Graph the Holling type III equation given <m>a=0.5</m> and <m>n=5.</m> What are the differences between the Holling type II and III equations?</li>
+<li>Take the first derivative of the Holling type III equation and interpret the physical meaning of the derivative.</li>
+<li>Find and interpret the meaning of the second derivative (it may help to graph the second derivative).</li>
+<li>What additional ecological phenomena does the Holling type III function describe compared with the Holling type II function?</li>
+</ol>
+</statement>
+<solution id="fs-id1169736592158">
+<p id="fs-id1169736592160">a.
+<description>"The graph increases from the origin quickly at first and then slowly to (10, 0.4).">
+<image source="CNX_Calc_Figure_03_04_205.jpg" width="50%">
+
+b. <m>f'(x)=\frac{2axn^2}{<m:msup>(n^2+x^2)2</m:msup>}.</m> When the amount of prey increases, the predator growth increases. c. <m>f''(x)=\frac{2an^2(n^2-3x^2)}{<m:msup>(n^2+x^2)3</m:msup>}.</m> When the amount of prey is extremely small, the rate at which predator growth is increasing is increasing, but when the amount of prey reaches above a certain threshold, the rate at which predator growth is increasing begins to decrease. d. At lower levels of prey, the prey is more easily able to avoid detection by the predator, so fewer prey individuals are consumed, resulting in less predator growth.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736617627">
+<p id="fs-id1169736617629"><emphasis effect="bold">[T]</emphasis> The populations of the snowshoe hare (in thousands) and the lynx (in hundreds) collected over 7 years from 1937 to 1943 are shown in the following table. The snowshoe hare is the primary prey of the lynx.</p>
+<table xml:id="fs-id1169736617637" summary="This table has five rows and two columns. The first row is a header row and it labels each column. The first column header is Population of snowshoe hare (thousands) and the second column is Population of lynx (hundreds). Under the first column are the values 20, 55, 65, and 95. Under the second column are the values 10, 15, 55, and 60.">
+<title>Snowshoe Hare and Lynx Populations</title>
+<tabular>
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row valign="top">
+<cell valign="top" halign ="left">Population of snowshoe hare (thousands)</cell>
+<cell valign="top" halign ="left">Population of lynx (hundreds)</cell>
+</row>
+
+
+<row valign="top">
+<cell valign="top" halign ="left">20</cell>
+<cell valign="top" halign ="left">10</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">55</cell>
+<cell valign="top" halign ="left">15</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">65</cell>
+<cell valign="top" halign ="left">55</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">95</cell>
+<cell valign="top" halign ="left">60</cell>
+</row>
+</tabular>
+
+<!-- NOTE: Move description inside image tag. -->  </description></image> <caption>Source: http://www.biotopics.co.uk/newgcse/predatorprey.html.</caption>
+</table>
+<ol marker="(a)">
+<li>Graph the data points and determine which Holling-type function fits the data best.</li>
+<li>Using the meanings of the parameters <m>a</m> and <m>n,</m> determine values for those parameters by examining a graph of the data. Recall that <m>n</m> measures what prey value results in the half-maximum of the predator value.</li>
+<li>Plot the resulting Holling-type I, II, and III functions on top of the data. Was the result from part a. correct?</li>
+</ol>
+</statement>
+
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1169739252840">
+<term>acceleration</term>
+<meaning id="fs-id1169739252845">is the rate of change of the velocity, that is, the derivative of velocity</meaning>
+</definition>
+<definition id="fs-id1169739252849">
+<term>amount of change</term>
+<meaning id="fs-id1169739252854">the amount of a function <m>f(x)</m> over an interval <m>[x,x+h]</m> is <m>f(x+h)-f(x)</m></meaning>
+</definition>
+<definition id="fs-id1169739190003">
+<term>average rate of change</term>
+<meaning id="fs-id1169739190009">is a function <m>f(x)</m> over an interval <m>[x,x+h]</m> is <m>\frac{f(x+h)-f(a)}{b-a}</m></meaning>
+</definition>
+<definition id="fs-id1169739190084">
+<term>marginal cost</term>
+<meaning id="fs-id1169739190090">is the derivative of the cost function, or the approximate cost of producing one more item</meaning>
+</definition>
+<definition id="fs-id1169739190095">
+<term>marginal revenue</term>
+<meaning id="fs-id1169739190100">is the derivative of the revenue function, or the approximate revenue obtained by selling one more item</meaning>
+</definition>
+<definition id="fs-id1169739190106">
+<term>marginal profit</term>
+<meaning id="fs-id1169739190111">is the derivative of the profit function, or the approximate profit obtained by producing and selling one more item</meaning>
+</definition>
+<definition id="fs-id1169739190116">
+<term>population growth rate</term>
+<meaning id="fs-id1169739190122">is the derivative of the population with respect to time</meaning>
+</definition>
+<definition id="fs-id1169739190126">
+<term>speed</term>
+<meaning id="fs-id1169739190131">is the absolute value of velocity, that is, <m>|v(t)|</m> is the speed of an object at time <m>t</m> whose velocity is given by <m>v(t)</m></meaning>
+</definition>
+</glossary>
+</document>
+?>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains all of the "backmatter" material  -->
+<!-- We show examples of how to have hints to divisional  -->
+<!-- excercies appear in a section, and then their        -->
+<!-- solutions in the next.  Then there is an appendix    -->
+<!-- with all notation generated, and finally the index.  -->
+<backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta_backmatter">
+  <title>Backmatter</title>
+<!--
+  <solutions divisional="hint">
+    <title>Selected Hints</title>
+  </solutions>
+
+  <solutions divisional="solution">
+    <title>Selected Solutions</title>
+  </solutions>
+
+  <appendix>
+    <title>List of Symbols</title>
+    <notation-list/>
+  </appendix>
+
+  <index>
+    <title>Index</title>
+    <index-list/>
+  </index>
+-->
+  <colophon>
+    <p>
+      This book was authored in <pretext/>.
+    </p>
+
+    <p> The conversion from the OpenStax Calculus CNXML to  <pretext/> format was done by Katie Hall at University of Connecticut in summer 2022. If you'd like to help improve this conversion or convert other volumes, please contact me at <email> katie.hall@uconn.edu </email> </p>
+
+    <p> Using the <pretext/> format, this book was also edited by Kim Savinon and Katie Hall to be used for a business calculus course. </p>
+  </colophon>
+</backmatter>

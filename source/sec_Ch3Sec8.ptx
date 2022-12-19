@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch3Sec8" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Implicit Differentiation</title>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ul>
+<li>Find the derivative of a complicated function by using implicit differentiation.</li>
+<li>Use implicit differentiation to determine the equation of a tangent line.</li>
+</ul>
+
+<p id="fs-id1169737797432">We have already studied how to find equations of tangent lines to functions and the rate of change of a function at a specific point. In all these cases we had the explicit equation for the function and differentiated these functions explicitly. Suppose instead that we want to determine the equation of a tangent line to an arbitrary curve or the rate of change of an arbitrary curve at a point. In this section, we solve these problems by finding the derivatives of functions that define <m>y</m> implicitly in terms of <m>x.</m></p>
+</introduction>
+<subsection id="fs-id1169737702731">
+<title>Implicit Differentiation</title>
+<p id="fs-id1169737919331">In most discussions of math, if the dependent variable <m>y</m> is a function of the independent variable <m>x,</m> we express <m>y</m> in terms of <m>x.</m> If this is the case, we say that <m>y</m> is an explicit function of <m>x.</m> For example, when we write the equation <m>y=x^2+1,</m> we are defining <m>y</m> explicitly in terms of <m>x.</m> On the other hand, if the relationship between the function <m>y</m> and the variable <m>x</m> is expressed by an equation where <m>y</m> is not expressed entirely in terms of <m>x,</m> we say that the equation defines <m>y</m> implicitly in terms of <m>x.</m> For example, the equation <m>y\geq x^2=1</m> defines the function <m>y=x^2+1</m> implicitly.</p>
+<p id="fs-id1169737766039">Implicit differentiation allows us to find slopes of tangents to curves that are clearly not functions (they fail the vertical line test). We are using the idea that portions of <m>y</m> are functions that satisfy the given equation, but that <m>y</m> is not actually a function of <m>x.</m></p>
+<p id="fs-id1169738018789">In general, an equation defines a function implicitly if the function satisfies that equation. An equation may define many different functions implicitly. For example, the functions</p>
+<p id="fs-id1169737771295"><m>y=\sqrt{25\geq x^2}</m> and <m>y=\begin{cases} \sqrt{25\geq x^2} \amp\text{ if }\geq 5\lt x\lt 0 \\ -\sqrt{25\geq x^2} \amp \text{ if } 0\lt x\lt 25\end{cases},</m> which are illustrated in <xref ref="CNX_Calc_Figure_03_08_001"/>, are just three of the many functions defined implicitly by the equation <m>x^2+y^2=25.</m></p>
+<figure xml:id="CNX_Calc_Figure_03_08_001">
+  <image source="CNX_Calc_Figure_03_08_001.jpg" width="67%">
+<description>"The circle with radius 5 and center at the origin is graphed fully in one picture. Then, only its segments in quadrants I and II are graphed. Then, only its segments in quadrants III and IV are graphed. Lastly, only its segments in quadrants II and IV are graphed.">  </description></image> <caption>The equation <m>x^2+y^2=25</m> defines many functions implicitly.</caption>
+</figure>
+<p id="fs-id1169737773822">If we want to find the slope of the line tangent to the graph of <m>x^2+y^2=25</m> at the point <m>(3,4),</m> we could evaluate the derivative of the function <m>y=\sqrt{25\geq x^2}</m> at <m>x=3.</m> On the other hand, if we want the slope of the tangent line at the point <m>(3,\geq 4),</m> we could use the derivative of <m>y=-\sqrt{25\geq x^2}.</m> However, it is not always easy to solve for a function defined implicitly by an equation. Fortunately, the technique of <term>implicit differentiation</term> allows us to find the derivative of an implicitly defined function without ever solving for the function explicitly. The process of finding <m>\frac{dy}{dx}</m> using implicit differentiation is described in the following problem-solving strategy.</p>
+<note id="fs-id1169737850132" class="problem-solving">
+<title>Problem-Solving Strategy: Implicit Differentiation</title>
+<p id="fs-id1169737749590">To perform implicit differentiation on an equation that defines a function <m>y</m> implicitly in terms of a variable <m>x,</m> use the following steps:</p>
+<ol>
+<li>Take the derivative of both sides of the equation. Keep in mind that <m>y</m> is a function of <m>x</m>. Consequently, whereas <m>\frac{d}{dx}(\sin x)=\cos  x,\frac{d}{dx}(\sin y)=\cos  y\frac{dy}{dx}</m> because we must use the chain rule to differentiate <m>\sin y</m> with respect to <m>x.</m></li>
+<li>Rewrite the equation so that all terms containing <m>\frac{dy}{dx}</m> are on the left and all terms that do not contain <m>\frac{dy}{dx}</m> are on the right.</li>
+<li>Factor out <m>\frac{dy}{dx}</m> on the left.</li>
+<li>Solve for <m>\frac{dy}{dx}</m> by dividing both sides of the equation by an appropriate algebraic expression.</li>
+</ol>
+</note>
+<example xml:id="fs-id1169737819953">
+  <title>Using Implicit Differentiation</title>
+ <statement id="fs-id1169738018639">
+<p id="fs-id1169737931738">Assuming that <m>y</m> is defined implicitly by the equation <m>x^2+y^2=25,</m> find <m>\frac{dy}{dx}.</m></p>
+</statement>
+<solution id="fs-id1169737966996">
+<p id="fs-id1169737948455">Follow the steps in the problem-solving strategy.</p>
+<md>
+  <mrow>\frac{d}{dx}(x^2+y^2)\amp=\frac{d}{dx}(25)\amp\amp\text{ Step 1. Differentiate both sides of the equation. }</mrow>
+  <mrow>\frac{d}{dx}(x^2)+\frac{d}{dx}(y^2)\amp= 0 \amp \amp\text{ Step 1.1. Use the sum rule on the left. }</mrow>
+  <mrow>\amp \amp \amp \text{ On the right } \frac{d}{dx}(25)=0.</mrow>
+  <mrow>2x+2y\frac{dy}{dx}\amp= 0\amp\amp \text{ Step 1.2. Take the derivatives, so } \frac{d}{dx}(x^2)=2x</mrow>
+  <mrow>\amp \amp \amp\text{ and } \frac{d}{dx}(y^2)=2y\frac{dy}{dx}.</mrow>
+  <mrow>2y\frac{dy}{dx}\amp= \geq 2x\amp\amp \text{ Step 2. Keep the terms with } \frac{dy}{dx} \text{ on the left. }</mrow>
+  <mrow>\amp \amp \amp\text{ Move the remaining terms to the right. }</mrow>
+<mrow>\frac{dy}{dx}\amp=\geq \frac{x}{y}\amp \amp\text{ Step 4. Divide both sides of the equation by }</mrow>
+<mrow>\amp \amp \amp2y. \text{ (Step 3 does not apply in this case.) }</mrow></md>
+<note id="fs-id1169738146824">
+<title>Analysis</title>
+<p id="fs-id1169737758515">Note that the resulting expression for <m>\frac{dy}{dx}</m> is in terms of both the independent variable <m>x</m> and the dependent variable <m>y.</m> Although in some cases it may be possible to express <m>\frac{dy}{dx}</m> in terms of <m>x</m> only, it is generally not possible to do so.</p>
+</note>
+</solution>
+</example>
+<example xml:id="fs-id1169738068274">
+  <title>Using Implicit Differentiation</title>
+ <statement id="fs-id1169737946720">
+<title>Using Implicit Differentiation and the Product Rule</title>
+<p id="fs-id1169737948472">Assuming that <m>y</m> is defined implicitly by the equation <m>x^3 \sin y+y=4x+3,</m> find <m>\frac{dy}{dx}.</m></p>
+</statement>
+<solution id="fs-id1169738041617">
+<md>
+  <mrow>\frac{d}{dx}(x^3\sin y+y)\amp=\frac{d}{dx}(4x+3)\amp \amp \text{ Step 1: Differentiate both sides of the equation. }</mrow>
+  <mrow>\frac{d}{dx}(x^3\sin y)+\frac{d}{dx}(y)\amp= 4\amp \amp \text{ Step 1.1: Apply the sum rule on the left. }</mrow>
+  <mrow>\amp \amp \amp \text{ On the right, } \frac{d}{dx}(4x+3)=4.</mrow>
+  <mrow>(\frac{d}{dx}(x^3)\cdot \sin y+\frac{d}{dx}(\sin y)\cdot x^3)+\frac{dy}{dx}\amp= 4\amp \amp \text{ Step 1.2: Use the product rule to find }</mrow>
+  <mrow>\amp \amp \amp \frac{d}{dx}(x^3\sin y). \text{ Observe that } \frac{d}{dx}(y)=\frac{dy}{dx}.</mrow>
+  <mrow>3x^2\sin y+(\cos  y\frac{dy}{dx})\cdot x^3+\frac{dy}{dx}\amp= 4\amp \amp \text{ Step 1.3: We know } \frac{d}{dx}(x^3)=3x^2. \text{ Use the }</mrow>
+  <mrow>\amp \amp \amp \text{ chain rule to obtain } \frac{d}{dx}(\sin y)=\cos  y\frac{dy}{dx}.</mrow>
+  <mrow>x^3\cos  y\frac{dy}{dx}+\frac{dy}{dx}\amp = 4\geq 3x^2\sin y \amp \amp \text{ Step 2: Keep all terms containing } \frac{dy}{dx} \text{ on the }</mrow>
+  <mrow>\amp \amp \amp \text{ left. Move all other terms to the right. }</mrow>
+  <mrow>\frac{dy}{dx}(x^3\cos  y+1)\amp= 4\geq 3x^2\sin y\amp \amp \text{ Step 3: Factor out } \frac{dy}{dx} \text{ on the left. }</mrow>
+  <mrow>\frac{dy}{dx}\amp=\frac{4\geq 3x^2\sin y}{x^3\cos  y+1}\amp \amp \text{ Step 4: Solve for } \frac{dy}{dx} \text{ by dividing both sides of }</mrow>
+  <mrow>\amp \amp \amp x^m \text{ the equation by } x^3\cos  y+1.</mrow></md>
+</solution>
+</example>
+<example xml:id="fs-id1169738217476">
+<title>Using Implicit Differentiation to Find a Second Derivative</title>
+ <statement id="fs-id1169738185353">
+<p id="fs-id1169738211084">Find <m>\frac{d^2y}{dx^2}</m> if <m>x^2+y^2=25.</m></p>
+</statement>
+<solution id="fs-id1169738226741">
+<p id="fs-id1169738226743">In <xref ref="fs-id1169737819953"/>, we showed that <m>\frac{dy}{dx}=\geq \frac{x}{y}.</m> We can take the derivative of both sides of this equation to find <m>\frac{d^2y}{dx^2}.</m></p>
+<md>
+  <mrow>\frac{d^2y}{dx^2}\amp=\frac{d}{dy}(\geq \frac{x}{y})\amp\amp\text{ Differentiate both sides of } \frac{dy}{dx}=\geq \frac{x}{y}.</mrow>
+  <mrow>\amp =\geq \frac{(1\cdot y\geq x\frac{dy}{dx})}{y^2}\amp\amp \text{ Use the quotient rule to find } \frac{d}{dy}(\geq \frac{x}{y}).</mrow>
+  <mrow>\amp =\frac{-y+x\frac{dy}{dx}}{y^2}\amp \amp \text{ Simplify. }</mrow>
+  <mrow>\amp =\frac{-y+x(\geq \frac{x}{y})}{y^2}\amp\amp \text{ Substitute } \frac{dy}{dx}=\geq \frac{x}{y}.</mrow>
+  <mrow>\amp =\frac{-y^2\geq x^2}{y^3}\amp\amp \text{ Simplify. }</mrow></md>
+<p id="fs-id1169738044967">At this point we have found an expression for <m>\frac{d^2y}{dx^2}.</m> If we choose, we can simplify the expression further by recalling that <m>x^2+y^2=25</m> and making this substitution in the numerator to obtain <m>\frac{d^2y}{dx^2}=\geq \frac{25}{y^3}.</m></p>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1169738220223">
+<p id="fs-id1169738220225">Find <m>\frac{dy}{dx}</m> for <m>y</m> defined implicitly by the equation <m>4x^5+\text{ tan } y=y^2+5x.</m></p>
+</statement>
+<solution id="fs-id1169738190462">
+<p id="fs-id1169737953797"><m>\frac{dy}{dx}=\frac{5\geq 20x^4}{\sec^2y\geq 2y}</m></p>
+</solution>
+<hint>
+<p id="fs-id1169738221942">Follow the problem solving strategy, remembering to apply the chain rule to differentiate <m>\text{ tan }</m> and <m>y^2.</m></p>
+</hint></exercise>
+</subsection>
+<subsection id="fs-id1169737140783">
+<title>Finding Tangent Lines Implicitly</title>
+<p id="fs-id1169737931596">Now that we have seen the technique of implicit differentiation, we can apply it to the problem of finding equations of tangent lines to curves described by equations.</p>
+<example xml:id="fs-id1169737931601">
+<title>Finding a Tangent Line to a Circle</title>
+ <statement id="fs-id1169737906660">
+<p id="fs-id1169737950789">Find the equation of the line tangent to the curve <m>x^2+y^2=25</m> at the point <m>(3,\geq 4).</m></p>
+</statement>
+<solution id="fs-id1169738180812">
+<p id="fs-id1169737143580">Although we could find this equation without using implicit differentiation, using that method makes it much easier. In <xref ref="fs-id1169737819953"/>, we found <m>\frac{dy}{dx}=\geq \frac{x}{y}.</m></p>
+<p id="fs-id1169737144361">The slope of the tangent line is found by substituting <m>(3,\geq 4)</m> into this expression. Consequently, the slope of the tangent line is <m>\frac{dy}{dx}|_{(3,\geq 4)}=\geq \frac{3}{\geq 4}=\frac{3}{4}.</m></p>
+<p id="fs-id1169738198658">Using the point <m>(3,\geq 4)</m> and the slope <m>\frac{3}{4}</m> in the point-slope equation of the line, we obtain the equation <m>y=\frac{3}{4}x\geq \frac{25}{4}</m> (<xref ref="CNX_Calc_Figure_03_08_002"/>).</p>
+<figure xml:id="CNX_Calc_Figure_03_08_002">
+  <image source="CNX_Calc_Figure_03_08_002.jpg" width="50%">
+<description>"The circle with radius 5 and center at the origin is graphed. A tangent line is drawn through the point (3, \geq 4)." </description></image> <caption>The line <m>y=\frac{3}{4}x\geq \frac{25}{4}</m> is tangent to <m>x^2+y^2=25</m> at the point (3, \geq 4).</caption>
+</figure>
+</solution>
+</example>
+<example xml:id="fs-id1169737142255">
+<title>Finding the Equation of the Tangent Line to a Curve</title>
+ <statement id="fs-id1169737142260">
+<p id="fs-id1169737143587">Find the equation of the line tangent to the graph of <m>y^3+x^3\geq 3xy=0</m> at the point <m>(\frac{3}{2},\frac{3}{2})</m> (<xref ref="CNX_Calc_Figure_03_08_003"/>). This curve is known as the folium (or leaf) of Descartes.</p>
+<figure xml:id="CNX_Calc_Figure_03_08_003">
+  <image source="CNX_Calc_Figure_03_08_003.jpg" width="50%">
+<description>"A folium is shown, which is a line that creates a loop that crosses over itself. In this graph, it crosses over itself at (0, 0). Its tangent line from (3/2, 3/2) is shown." </description></image> <caption>Finding the tangent line to the <term class="no-emphasis">folium of Descartes</term> at <m>(\frac{3}{2},\frac{3}{2}).</m></caption>
+</figure>
+</statement>
+<solution id="fs-id1169738217005">
+<p id="fs-id1169738217007">Begin by finding <m>\frac{dy}{dx}.</m></p>
+<md>
+  <mrow>\frac{d}{dx}(y^3+x^3\geq 3xy)\amp = \frac{d}{dx}(0)</mrow>
+  <mrow>3y^2\frac{dy}{dx}+3x^2\geq (3y+\frac{dy}{dx}3x)\amp = 0</mrow>
+  <mrow>\frac{dy}{dx}\amp = \frac{3y\geq 3x^2}{3y^2\geq 3x}.</mrow></md>
+<p id="fs-id1169737904704">Next, substitute <m>(\frac{3}{2},\frac{3}{2})</m> into <m>\frac{dy}{dx}=\frac{3y\geq 3x^2}{3y^2\geq 3x}</m> to find the slope of the tangent line:</p>
+<me>\frac{dy}{dx}|_{(\frac{3}{2},\frac{3}{2})}=\geq 1.</me>
+<p id="fs-id1169737950853">Finally, substitute into the point-slope equation of the line to obtain</p>
+<me>y=-x+3.</me>
+</solution>
+</example>
+<example xml:id="fs-id1169737935216">
+<title>Applying Implicit Differentiation</title>
+ <statement id="fs-id1169737935221">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1169737935226">In a simple video game, a rocket travels in an elliptical orbit whose path is described by the equation <m>4x^2+25y^2=100.</m> The rocket can fire missiles along lines tangent to its path. The object of the game is to destroy an incoming asteroid traveling along the positive <m>x</m>-axis toward <m>(0,0).</m> If the rocket fires a missile when it is located at <m>(3,\frac{8}{5}),</m> where will it intersect the <m>x</m>-axis?</p></statement>
+<solution id="fs-id1169737700340">
+<p id="fs-id1169738099354">To solve this problem, we must determine where the line tangent to the graph of</p>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1169738099357"><m>4x^2+25y^2=100</m> at <m>(3,\frac{8}{5})</m> intersects the <m>x</m>-axis. Begin by finding <m>\frac{dy}{dx}</m> implicitly.</p><p id="fs-id1169738214601">Differentiating, we have</p>
+<me>8x+50y\frac{dy}{dx}=0.</me>
+<p id="fs-id1169737144293">Solving for <m>\frac{dy}{dx},</m> we have</p>
+<me>\frac{dy}{dx}=\geq \frac{4x}{25y}.</me>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1169738219286">The slope of the tangent line is <m>\frac{dy}{dx}|_{(3,\frac{8}{5})}=\geq \frac{3}{10}.</m> The equation of the tangent line is <m>y=\geq \frac{3}{10}x+\frac{5}{2}.</m> To determine where the line intersects the <m>x</m>-axis, solve <m>0=\geq \frac{3}{10}x+\frac{5}{2}.</m> The solution is <m>x=\frac{25}{3}.</m> The missile intersects the <m>x</m>-axis at the point <m>(\frac{25}{3},0).</m></p></solution>
+</example>
+<exercise>  <statement id="fs-id1169738186791">
+<p id="fs-id1169738186793">Find the equation of the line tangent to the hyperbola <m>x^2\geq y^2=16</m> at the point <m>(5,3).</m></p>
+</statement>
+<solution id="fs-id1169737145207">
+<p id="fs-id1169737145209"><m>y=\frac{5}{3}x\geq \frac{16}{3}</m></p>
+</solution>
+<hint>
+<p id="fs-id1169738240184"><m>\frac{dy}{dx}=\frac{x}{y}</m></p>
+</hint></exercise>
+</subsection>
+<subsection id="fs-id1169738240212" class="key-concepts">
+<title>Key Concepts</title>
+<ul>
+<li>We use implicit differentiation to find derivatives of implicitly defined functions (functions defined by equations).</li>
+<li>By using implicit differentiation, we can find the equation of a tangent line to the graph of a curve.</li>
+</ul>
+</subsection>
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+<?ignore
+<section id="fs-id1169738240232" class="section-exercises">
+<p id="fs-id1169738240235">For the following exercises, use implicit differentiation to find <m>\frac{dy}{dx}.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169738212641">
+<p id="fs-id1169738212643"><m>x^2\geq y^2=4</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738106197">
+<p id="fs-id1169738106200"><m>6x^2+3y^2=12</m></p>
+</statement>
+<solution id="fs-id1169738106226">
+<p id="fs-id1169738106228"><m>\frac{dy}{dx}=\frac{\geq 2xy}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738106259">
+<p id="fs-id1169738106261"><m>x^2y=y\geq 7</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738073289">
+<p id="fs-id1169738073291"><m>3x^3+9xy^2=5x^3</m></p>
+</statement>
+<solution id="fs-id1169738223309">
+<p id="fs-id1169738223311"><m>\frac{dy}{dx}=\frac{x3y}\geq \frac{y2x}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738223352">
+<p id="fs-id1169738223354"><m>xy\geq \cos  (xy)=1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738237487">
+<p id="fs-id1169738237489"><m>y\sqrt{x+4}=xy+8</m></p>
+</statement>
+<solution id="fs-id1169738237516">
+<p id="fs-id1169738237518"><m>\frac{dy}{dx}=\frac{y\geq \frac{y2\sqrt{x+4}}}{\sqrt{x+4}\geq x}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738073151">
+<p id="fs-id1169738073153"><m>-xy\geq 2=\frac{x}{7}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169737911360">
+<p id="fs-id1169737911362"><m>y \sin (xy)=y^2+2</m></p>
+</statement>
+<solution id="fs-id1169737911397">
+<p id="fs-id1169737911399"><m>\frac{dy}{dx}=\frac{y^2\cos  (xy)}{2y\geq \sin (xy)\geq xy \cos  xy}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738212454">
+<p id="fs-id1169738212456"><m><m:msup>(xy)2</m:msup>+3x=y^2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738187226">
+<p id="fs-id1169738187228"><m>x^3y+xy^3=\geq 8</m></p>
+</statement>
+<solution id="fs-id1169738187254">
+<p id="fs-id1169738187256"><m>\frac{dy}{dx}=\frac{\geq 3x^2y\geq y^3}{x^3+3xy^2}</m></p>
+</solution>
+
+<p id="fs-id1169738184790">For the following exercises, find the equation of the tangent line to the graph of the given equation at the indicated point. Use a calculator or computer software to graph the function and the tangent line.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169738184797">
+<p id="fs-id1169738184799"><emphasis effect="bold">[T]</emphasis> <m>x^4y\geq xy^3=\geq 2,(\geq 1,\geq 1)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738184894">
+<p id="fs-id1169738184896"><emphasis effect="bold">[T]</emphasis> <m>x^2y^2+5xy=14,(2,1)</m></p>
+</statement>
+<solution id="fs-id1169738226137">
+<p id="fs-id1169738226140">
+<description>"The graph has a crescent in each of the four quadrants. There is a straight line marked T(x) with slope \geq 1/2 and y intercept 2.">
+<image source="CNX_Calc_Figure_03_08_202.jpg" width="50%">
+
+<m>y=\frac{\geq 12}x+2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738226179">
+<p id="fs-id1169738226181"><emphasis effect="bold">[T]</emphasis> <m>\text{ tan } (xy)=y,(\frac{π}{4},1)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738238124">
+<p id="fs-id1169738238126"><emphasis effect="bold">[T]</emphasis> <m>xy^2+\sin (πy)\geq 2x^2=10,(2,\geq 3)</m></p>
+</statement>
+<solution id="fs-id1169738234515">
+<p id="fs-id1169738234517">
+<description>"The graph has two curves, one in the first quadrant and one in the fourth quadrant. They are symmetric about the x axis. The curve in the first quadrant goes from (0.3, 5) to (1.5, 3.5) to (5, 4). There is a straight line marked T(x) with slope 1/(π + 12) and y intercept \geq (3π + 38)/(π + 12).">
+<image source="CNX_Calc_Figure_03_08_204.jpg" width="50%">
+
+<m>y=\frac{1π+12}x\geq \frac{3π+38}{π+12}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738234578">
+<p id="fs-id1169738234580"><emphasis effect="bold">[T]</emphasis> <m>\frac{x}{y}+5x\geq 7=\geq \frac{3}{4}y,(1,2)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738221159">
+<p id="fs-id1169738221161"><emphasis effect="bold">[T]</emphasis> <m>xy+\sin (x)=1,(\frac{π}{2},0)</m></p>
+</statement>
+<solution id="fs-id1169738221209">
+<p id="fs-id1169738221212">
+<description>"The graph starts in the third quadrant near (\geq 5, 0), remains near 0 until x = \geq 4, at which point it decreases until it reaches near (0, \geq 5). There is an asymptote at x = 0. The graph begins again near (0, 5) decreases to (1, 0) and then increases a little bit before decreasing to be near (5, 0). There is a straight line marked T(x) that coincides with y = 0.">
+<image source="CNX_Calc_Figure_03_08_206.jpg" width="50%">
+
+<m>y=0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738221242">
+<p id="fs-id1169738221244"><emphasis effect="bold">[T]</emphasis> The graph of a folium of Descartes with equation <m>2x^3+2y^3\geq 9xy=0</m> is given in the following graph.</p>
+<description>"A folium is graphed which has equation 2x3 + 2y3 – 9xy = 0. It crosses over itself at (0, 0).">
+<image source="CNX_Calc_Figure_03_08_207.jpg" width="50%">
+
+<ol marker="(a)">
+<li>Find the equation of the tangent line at the point <m>(2,1).</m> Graph the tangent line along with the folium.</li>
+<li>Find the equation of the normal line to the tangent line in a. at the point <m>(2,1).</m></li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738244352">
+<p id="fs-id1169738244354">For the equation <m>x^2+2xy\geq 3y^2=0,</m></p>
+<ol marker="(a)">
+<li>Find the equation of the normal to the tangent line at the point <m>(1,1).</m></li>
+<li>At what other point does the normal line in a. intersect the graph of the equation?</li>
+</ol>
+</statement>
+<solution id="fs-id1169738244419">
+<p id="fs-id1169738244421">a. <m>y=-x+2</m> b. <m>(3,\geq 1)</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738244460">
+<p id="fs-id1169738244462">Find all points on the graph of <m>y^3\geq 27y=x^2\geq 90</m> at which the tangent line is vertical.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738211824">
+<p id="fs-id1169738211826">For the equation <m>x^2+xy+y^2=7,</m></p>
+<ol marker="(a)">
+<li>Find the <m>x</m>-intercept(s).</li>
+<li>Find the slope of the tangent line(s) at the <m>x</m>-intercept(s).</li>
+<li>What does the value(s) in b. indicate about the tangent line(s)?</li>
+</ol>
+</statement>
+<solution id="fs-id1169738211882">
+<p id="fs-id1169738211884">a. <m>(\pm\sqrt{7},0)</m> b. <m>\geq 2</m> c. They are parallel since the slope is the same at both intercepts.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738211916">
+<p id="fs-id1169738211918">Find the equation of the tangent line to the graph of the equation <m><m:msup>\sin}{\geq 1</m:msup>x+<m:msup>\sin}{\geq 1</m:msup>y=\frac{π}{6}</m> at the point <m>(0,\frac{1}{2}).</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738201888">
+<p id="fs-id1169738201890">Find the equation of the tangent line to the graph of the equation <m><m:msup>\text{ tan }}{\geq 1</m:msup>(x+y)=x^2+\frac{π}{4}</m> at the point <m>(0,1).</m></p>
+</statement>
+<solution id="fs-id1169738201950">
+<p id="fs-id1169738201952"><m>y=-x+1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738186909">
+<p id="fs-id1169738186911">Find <m>y'</m> and <m>y\text{ ″ }</m> for <m>x^2+6xy\geq 2y^2=3.</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169737934271">
+<p id="fs-id1169737934273"><emphasis effect="bold">[T]</emphasis> The number of cell phones produced when <m>x</m> dollars is spent on labor and <m>y</m> dollars is spent on capital invested by a manufacturer can be modeled by the equation <m>60<m:msup>x3\text{ / }4</m:msup><m:msup>y1\text{ / }4</m:msup>=3240.</m></p>
+<ol marker="(a)">
+<li>Find <m>\frac{dy}{dx}</m> and evaluate at the point <m>(81,16).</m></li>
+<li>Interpret the result of a.</li>
+</ol>
+</statement>
+<solution id="fs-id1169738185026">
+<p id="fs-id1169738185028">a. <m>\geq 0.5926</m> b. When $81 is spent on labor and $16 is spent on capital, the amount spent on capital is decreasing by $0.5926 per $1 spent on labor.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738185042">
+<p id="fs-id1169738185044"><emphasis effect="bold">[T]</emphasis> The number of cars produced when <m>x</m> dollars is spent on labor and <m>y</m> dollars is spent on capital invested by a manufacturer can be modeled by the equation <m>30<m:msup>x1\text{ / }3</m:msup><m:msup>y2\text{ / }3</m:msup>=360.</m></p>
+<p id="fs-id1169738185091">(Both <m>x</m> and <m>y</m> are measured in thousands of dollars.)</p>
+<ol marker="(a)">
+<li>Find <m>\frac{dy}{dx}</m> and evaluate at the point <m>(27,8).</m></li>
+<li>Interpret the result of a.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738185164">
+<p id="fs-id1169738185166">The volume of a right circular cone of radius <m>x</m> and height <m>y</m> is given by <m>V=\frac{1}{3}πx^2y.</m> Suppose that the volume of the cone is <m>85π <m:msup>\text{ cm }3</m:msup>.</m> Find <m>\frac{dy}{dx}</m> when <m>x=4</m> and <m>y=16.</m></p>
+</statement>
+<solution id="fs-id1169737954150">
+<p id="fs-id1169737954152"><m>\geq 8</m></p>
+</solution>
+
+<p id="fs-id1169737954161">For the following exercises, consider a closed rectangular box with a square base with side <m>x</m> and height <m>y.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169737954177">
+<p id="fs-id1169737954179">Find an equation for the surface area of the rectangular box, <m>S(x,y).</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169737954244">
+<p id="fs-id1169737954246">If the surface area of the rectangular box is 78 square feet, find <m>\frac{dy}{dx}</m> when <m>x=3</m> feet and <m>y=5</m> feet.</p>
+</statement>
+<solution id="fs-id1169738071330">
+<p id="fs-id1169738071332"><m>\geq 2.67</m></p>
+</solution>
+
+<p id="fs-id1169738071340">For the following exercises, use implicit differentiation to determine <m>y'.</m> Does the answer agree with the formulas we have previously determined?</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169738071356">
+<p id="fs-id1169738071358"><m>x=\sin y</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738071409">
+<p id="fs-id1169738071411"><m>x=\cos  y</m></p>
+</statement>
+<solution id="fs-id1169738071427">
+<p id="fs-id1169738071429"><m>y'=\geq \frac{1\sqrt{1\geq x^2}}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738071463">
+<p id="fs-id1169738071465"><m>x=\text{ tan } y</m></p>
+</statement>
+
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1169738191096">
+<term>implicit differentiation</term>
+<meaning id="fs-id1169738191101">is a technique for computing <m>\frac{dy}{dx}</m> for a function defined by an equation, accomplished by differentiating both sides of the equation (remembering to treat the variable <m>y</m> as a function) and solving for <m>\frac{dy}{dx}</m></meaning>
+</definition>
+</glossary>
+</document>
+?>

@@ -1,0 +1,1461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch4Sec6" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Limits at Infinity and Asymptotes</title>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ul>
+
+<li>Calculate the limit of a function as <m>x</m> increases or decreases without bound.</li>
+<li>Recognize a horizontal asymptote on the graph of a function.</li>
+<li>Estimate the end behavior of a function as <m>x</m> increases or decreases without bound.</li>
+<!-- Commenting out oblique/slant asymptote
+<li>Recognize an oblique asymptote on the graph of a function.</li>-->
+<li>Analyze a function and its derivatives to draw its graph.</li>
+</ul>
+<p id="fs-id1165043249877">We have shown how to use the first and second derivatives of a function to describe the shape of a graph. To graph a function <m>f</m> defined on an unbounded domain, we also need to know the behavior of <m>f</m> as <m>x\to\pm\infty.</m> In this section, we define limits at infinity and show how these limits affect the graph of a function. At the end of this section, we outline a strategy for graphing an arbitrary function <m>f.</m></p>
+</introduction>
+<subsection id="fs-id1165043145047">
+<title>Limits at Infinity</title>
+<introduction>
+<p id="fs-id1165043308392">We begin by examining what it means for a function to have a finite limit at infinity. Then we study the idea of a function with an infinite limit at infinity. Back in <xref ref="ch_first">Introduction to Functions and Graphs</xref>, we looked at vertical asymptotes; in this section we deal with horizontal and oblique asymptotes.</p>
+</introduction>
+<subsubsection id="fs-id1165042704801">
+<title>Limits at Infinity and Horizontal Asymptotes</title>
+<p id="fs-id1165043107285">Recall that <m>\displaystyle{\lim_{x\to a}f(x)=L}</m> means <m>f(x)</m> becomes arbitrarily close to <m>L</m> as long as <m>x</m> is sufficiently close to <m>a.</m> We can extend this idea to limits at infinity. For example, consider the function <m>f(x)=2+\frac{1}{x}.</m> As can be seen graphically in <xref ref="CNX_Calc_Figure_04_06_001"/> and numerically in <xref ref="fs-id1165043428402"/>, as the values of <m>x</m> get larger, the values of <m>f(x)</m> approach <m>2.</m> We say the limit as <m>x</m> approaches <m>\infty</m> of <m>f(x)</m> is <m>2</m> and write <m>\displaystyle{\lim_{x\to\infty}f(x)=2.}</m> Similarly, for <m>x\lt 0,</m> as the values <m>|x|</m> get larger, the values of <m>f(x)</m> approaches <m>2.</m> We say the limit as <m>x</m> approaches <m>-\infty</m> of <m>f(x)</m> is <m>2</m> and write <m>\displaystyle{\lim_{x\to a}f(x)=2.}</m></p>
+<figure xml:id="CNX_Calc_Figure_04_06_001">
+<image source="CNX_Calc_Figure_04_06_019.jpg" width="90%">
+<description>"The function f(x) 2 + 1/x is graphed. The function starts negative near y = 2 but then decreases to &#x2212;&#x221E; near x = 0. The function then decreases from &#x221E; near x = 0 and gets nearer to y = 2 as x increases. There is a horizontal line denoting the asymptote y = 2."  </description></image> <caption>The function approaches the asymptote <m>y=2</m> as <m>x</m> approaches <m>\pm\infty.</m></caption>
+</figure>
+<table xml:id="fs-id1165043428402" class="column-header" summary="The table has four rows and five columns. The first column is a header column and it reads x, 2 + 1/x, x, and 2 + 1/x. After the header, the first row reads 10, 100, 1000, and 10000. The second row reads 2.1, 2.01, 2.001, and 2.0001. The third row reads &#x2212;10, &#x2212;100, &#x2212;1000, and &#x2212;10000. The fourth row reads 1.9, 1.99, 1.999, and 1.9999.">
+<title>Values of a function <m>f</m> as <m>x\to\pm\infty</m></title>
+<tabular>
+<row valign="top">
+<cell valign="middle" halign ="left"><emphasis effect="bold"><m>x</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>10</m></cell>
+<cell valign="middle" halign ="center"><m>100</m></cell>
+<cell valign="middle" halign ="center"><m>1,000</m></cell>
+<cell valign="middle" halign ="center"><m>10,000</m></cell>
+</row>
+<row valign="top">
+<cell valign="middle" halign ="left"><emphasis effect="bold"><m>2+\frac{1}{x}</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>2.1</m></cell>
+<cell valign="middle" halign ="center"><m>2.01</m></cell>
+<cell valign="middle" halign ="center"><m>2.001</m></cell>
+<cell valign="middle" halign ="center"><m>2.0001</m></cell>
+</row>
+<row valign="top">
+<cell valign="middle" halign ="left"><emphasis effect="bold"><m>x</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>-10</m></cell>
+<cell valign="middle" halign ="center"><m>-100</m></cell>
+<cell valign="middle" halign ="center"><m>-1000</m></cell>
+<cell valign="middle" halign ="center"><m>-10,000</m></cell>
+</row>
+<row valign="top">
+<cell valign="middle" halign ="left"><emphasis effect="bold"><m>2+\frac{1}{x}</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>1.9</m></cell>
+<cell valign="middle" halign ="center"><m>1.99</m></cell>
+<cell valign="middle" halign ="center"><m>1.999</m></cell>
+<cell valign="middle" halign ="center"><m>1.9999</m></cell>
+</row>
+</tabular>
+</table>
+<p xml:id="fs-id1165042936244">More generally, for any function <m>f,</m> we say the limit as <m>x\to\infty</m> of <m>f(x)</m> is <m>L</m> if <m>f(x)</m> becomes arbitrarily close to <m>L</m> as long as <m>x</m> is sufficiently large. In that case, we write <m>\displaystyle{\lim_{x\to\infty}f(x)=L.}</m> Similarly, we say the limit as <m>x\to-\infty</m> of <m>f(x)</m> is <m>L</m> if <m>f(x)</m> becomes arbitrarily close to <m>L</m> as long as <m>x\lt 0</m> and <m>|x|</m> is sufficiently large. In that case, we write <m>\displaystyle{\lim_{x\to-\infty}f(x)=L.}</m> We now look at the definition of a function having a limit at infinity.</p>
+<definition>
+<p id="fs-id1165042970725">(Informal) If the values of <m>f(x)</m> become arbitrarily close to <m>L</m> as <m>x</m> becomes sufficiently large, we say the function <m>f</m> has a <term>limit at infinity</term> and write</p>
+<me>\lim_{x\to\infty}f(x)=L.</me>
+<p id="fs-id1165042374662">If the values of <m>f(x)</m> becomes arbitrarily close to <m>L</m> for <m>x\lt 0</m> as <m>|x|</m> becomes sufficiently large, we say that the function <m>f</m> has a limit at negative infinity and write</p>
+<me>\lim_{x\to–\infty}f(x)=L.</me></definition>
+<p id="fs-id1165043157752">If the values <m>f(x)</m> are getting arbitrarily close to some finite value <m>L</m> as <m>x\to\infty</m> or <m>x\to-\infty,</m> the graph of <m>f</m> approaches the line <m>y=L.</m> In that case, the line <m>y=L</m> is a horizontal asymptote of <m>f</m> (<xref ref="CNX_Calc_Figure_04_06_002"/>). For example, for the function <m>f(x)=\frac{1}{x},</m> since <m>\displaystyle{\lim_{x\to\infty}f(x)=0,}</m> the line <m>y=0</m> is a horizontal asymptote of <m>f(x)=\frac{1}{x}.</m></p>
+<definition>
+<p id="fs-id1165042973921">If <m>\displaystyle{\lim_{x\to\infty}f(x)=L}</m> or <m>\displaystyle{\lim_{x\to-\infty}f(x)=L,}</m> we say the line <m>y=L</m> is a <term>horizontal asymptote</term> of <m>f.</m></p>
+</definition>
+<figure xml:id="CNX_Calc_Figure_04_06_002">
+<image source="CNX_Calc_Figure_04_06_020.jpg" width="90%">
+<description>"The figure is broken up into two figures labeled a and b. Figure a shows a function f(x) approaching but never touching a horizontal dashed line labeled L from above. Figure b shows a function f(x) approaching but never a horizontal dashed line labeled M from below." </description></image> <caption>(a) As <m>x\to\infty,</m> the values of <m>f</m> are getting arbitrarily close to <m>L.</m> The line <m>y=L</m> is a horizontal asymptote of <m>f.</m> (b) As <m>x\to-\infty,</m> the values of <m>f</m> are getting arbitrarily close to <m>M.</m> The line <m>y=M</m> is a horizontal asymptote of <m>f.</m></caption>
+</figure>
+<p xml:id="fs-id1165042647732">A function cannot cross a vertical asymptote because the graph must approach infinity (or <m>-\infty)</m> from at least one direction as <m>x</m> approaches the vertical asymptote. However, a function may cross a horizontal asymptote. The function <m>f(x)=\frac{-2x+5}{x^2-4x+3}</m> intersects its horizontal asymptote <m>y=0</m> once as shown in
+<xref ref="Busi_Calc_Figure_04_06_001"/>
+<figure xml:id="Busi_Calc_Figure_04_06_001">
+<image source="Busi_Calc_Figure_04_06_001.png" width="70%">
+<description>"The function <m>f(x) = \frac{-2x+5}{x^2-4x+3}</m> is shown. It has a horizontal asymptote at <m>y = 0</m> and it crosses its horizontal asymptote at <m>x=2.5</m>."  </description></image> <caption>The graph of <m>f(x)=\frac{-2x+5}{x^2-4x+3}</m> crosses its horizontal asymptote <m>y=0</m> at <m>x=2.5</m>.</caption>
+</figure>
+</p>
+<p>In fact, a function may cross a horizontal asymptote an unlimited number of times. For example, the function <m>f(x)=\frac{(\cos x)}{x}+1</m> shown in <xref ref="CNX_Calc_Figure_04_06_003"/> intersects the horizontal asymptote <m>y=1</m> an infinite number of times as it oscillates around the asymptote with ever-decreasing amplitude.</p><figure xml:id="CNX_Calc_Figure_04_06_003">
+<image source="CNX_Calc_Figure_04_06_002.jpg" width="70%">
+<description>"The function f(x) = (cos x)/x + 1 is shown. It decreases from (0, &#x221E;) and then proceeds to oscillate around y = 1 with decreasing amplitude."  </description></image> <caption>The graph of <m>f(x)=(\cos x)/x+1</m> crosses its horizontal asymptote <m>y=1</m> an infinite number of times.</caption>
+</figure>
+<p id="fs-id1165042373486">The algebraic limit laws <!-- Commenting out trig
+and squeeze theorem -->
+we introduced in <xref ref="ch_second">Introduction to Limits</xref> also apply to limits at infinity. We illustrate how to use these laws to compute several limits at infinity. We will make use of the following theorem in order to evaluate limits at infinity.</p>
+<theorem>
+<p>For any number <m>n>0</m>,</p>
+<me>\lim_{x\to\pm\infty}\frac{1}{x^n}=0</me>
+</theorem>
+<example xml:id="fs-id1165042962649">
+<title>Computing Limits at Infinity</title>
+<statement id="fs-id1165043429468">
+<p id="fs-id1165043262623">For each of the following functions <m>f,</m> evaluate <m>\displaystyle{\lim_{x\to\infty}f(x)}</m> and <m>\displaystyle{\lim_{x\to-\infty}f(x).}</m> Determine the horizontal asymptote(s) for <m>f.</m></p>
+<ol marker="(a)">
+<li><m>f(x)=5-\frac{2}{x^2}</m></li>
+<!-- Commenting out trig
+<li><m>f(x)=\frac{\sin x}{x}</m></li>
+<li><m>f(x)=\tan^{-1} (x)</m></li>
+-->
+<li><m>f(x)=2+\frac{3}{x}</m></li>
+</ol>
+</statement>
+<solution id="fs-id1165043350238">
+<ol marker="(a)"><li>Using the algebraic limit laws, we have <m>\displaystyle{\lim_{x\to\infty}\left(5-\frac{2}{x^2}\right)=\lim_{x\to\infty}5-2\left(\lim_{x\to\infty}\frac{1}{x}\right).\left(\lim_{x\to\infty}\frac{1}{x}\right)=5-2\cdot0=5.}</m>
+
+Similarly, <m>\displaystyle{\lim_{x\to-\infty}f(x)=5.}</m>
+
+Therefore, <m>f(x)=5-\frac{2}{x^2}</m> has a horizontal asymptote of <m>y=5</m> and <m>f</m> approaches this horizontal asymptote as <m>x\to\pm\infty</m> as shown in the following graph.
+<figure xml:id="CNX_Calc_Figure_04_06_004">
+<image source="CNX_Calc_Figure_04_06_003.jpg" width="50%">
+<description>"The function f(x) = 5 &#x2013; 2/x2 is graphed. The function approaches the horizontal asymptote y = 5 as x approaches &#xB1;&#x221E;."  </description></image> <caption>This function approaches a horizontal asymptote as <m>x\to\pm\infty.</m></caption>
+</figure></li>
+
+<li>Using the algebraic limit laws, we have <m>\displaystyle{\lim_{x\to\infty}\left(2+\frac{3}{x}\right)=\lim_{x\to\infty}2+3\left(\lim_{x\to\infty}\frac{1}{x}\right)=2+2\cdot0=2.}</m>
+
+Similarly, <m>\displaystyle{\lim_{x\to-\infty}f(x)=2.}</m>
+
+Therefore, <m>f(x)=2+\frac{3}{x}</m> has a horizontal asymptote of <m>y=2</m> and <m>f</m> approaches this horizontal asymptote as <m>x\to\pm\infty</m> as shown in the following graph.
+<!-- Include image of f(x)=2+\frac{3}{x}
+<figure xml:id="">
+<image source="" width="50%">
+<description>""  </description></image> <caption></m></caption>
+</figure>-->
+</li>
+
+<!-- Commenting out trig
+<li>Since <m>-1\leq \sin x\leq 1</m> for all <m>x,</m> we have
+<me>\frac{-1}{x}\leq \frac{\sin x}{x}\leq \frac{1}{x}</me>
+for all <m>x\neq 0.</m> Also, since
+<me>\lim_{x\to\infty}\frac{-1}{x}=0=\lim_{x\to\infty}\frac{1}{x},</me>
+we can apply the squeeze theorem to conclude that
+<me>\lim_{x\to\infty}\frac{\sin x}{x}=0.</me>
+Similarly,
+<me>\lim_{x\to-\infty}\frac{\sin x}{x}=0.</me>
+
+Thus, <m>f(x)=\frac{\sin x}{x}</m> has a horizontal asymptote of <m>y=0</m> and <m>f(x)</m> approaches this horizontal asymptote as <m>x\to\pm\infty</m> as shown in the following graph.
+<figure xml:id="CNX_Calc_Figure_04_06_005">
+<image source="CNX_Calc_Figure_04_06_004.jpg" width="50%">
+<description>"The function f(x) = (sin x)/x is shown. It has a global maximum at (0, 1) and then proceeds to oscillate around y = 0 with decreasing amplitude." </description></image> <caption>This function crosses its horizontal asymptote multiple times.</caption>
+</figure></li>
+<li>To evaluate <m>\lim_{x\to\infty}\tan^{-1} (x)</m> and <m>\lim_{x\to-\infty}\tan^{-1} (x),</m> we first consider the graph of <m>y=\tan (x)</m> over the interval <m>(-\pi/2,\pi/2)</m> as shown in the following graph.
+<figure xml:id="CNX_Calc_Figure_04_06_006">
+<image source="CNX_Calc_Figure_04_06_021.jpg" width="50%">
+<description>"The function f(x) = tan x is shown. It increases from (&#x2212;&#x3C0;/2, &#x2212;&#x221E;), passes through the origin, and then increases toward (&#x3C0;/2, &#x221E;). There are vertical dashed lines marking x = &#xB1;&#x3C0;/2." </description></image> <caption>The graph of <m>\tan  x</m> has vertical asymptotes at <m>x=\pm\frac{\pi}{2}</m></caption>
+</figure></li>
+</ol><p id="fs-id1165043092430">Since</p>
+<me>\lim_{x\to(-pi/2)^-}\tan  x=\infty,</me>
+<p id="fs-id1165042514177">it follows that</p>
+<me>\lim_{x\to\infty}\tan^{-1} (x)=\frac{\pi}{2}.</me>
+<p id="fs-id1165043097156">Similarly, since</p>
+<me>\lim_{x\to(-pi/2)^+}\tan  x=-\infty,</me>
+<p id="fs-id1165043131939">it follows that</p>
+<me>\lim_{x\to-\infty}\tan^{-1} (x)=-\frac{\pi}{2}.</me>
+<p id="fs-id1165042707528">As a result, <m>y=\frac{\pi}{2}</m> and <m>y=-\frac{\pi}{2}</m> are horizontal asymptotes of <m>f(x)=\tan^{-1} (x)</m> as shown in the following graph.</p>
+<figure xml:id="CNX_Calc_Figure_04_06_007">
+<image source="CNX_Calc_Figure_04_06_005.jpg" width="50%">
+<description>"The function f(x) = tan&#x2212;1 x is shown. It increases from (&#x2212;&#x221E;, &#x2212;&#x3C0;/2), passes through the origin, and then increases toward (&#x221E;, &#x3C0;/2). There are horizontal dashed lines marking y = &#xB1;&#x3C0;/2." </description></image> <caption>This function has two horizontal asymptotes.</caption>
+</figure>
+-->
+</ol>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1165043315933">
+<p id="fs-id1165043315935">Evaluate <m>\displaystyle{\lim_{x\to-\infty}\left(3+\frac{4}{x}\right)}</m> and <m>\displaystyle{\lim_{x\to\infty}\left(3+\frac{4}{x}\right).}</m> Determine the horizontal asymptotes of <m>f(x)=3+\frac{4}{x},</m> if any.</p>
+</statement>
+<solution id="fs-id1165043390795">
+<p id="fs-id1165043390798">Both limits are <m>3.</m> The line <m>y=3</m> is a horizontal asymptote.</p>
+</solution>
+<hint>
+
+<p id="fs-id1165042318511"><m>\displaystyle{\lim_{x\to\pm\infty}\frac{1}{x}=0}</m></p>
+</hint></exercise>
+</subsubsection>
+
+<subsubsection id="fs-id1165042333169">
+<title>Infinite Limits at Infinity</title>
+<p id="fs-id1165042333174">Sometimes the values of a function <m>f</m> become arbitrarily large as <m>x\to\infty</m> (or as <m>x\to-\infty).</m> In this case, we write <m>\displaystyle{\lim_{x\to\infty}f(x)=\infty}</m> (or <m>\displaystyle{\lim_{x\to-\infty}f(x)=\infty).}</m> On the other hand, if the values of <m>f</m> are negative but become arbitrarily large in magnitude as <m>x\to\infty</m> (or as <m>x\to-\infty),</m> we write <m>\displaystyle{\lim_{x\to\infty}f(x)=-\infty}</m> (or <m>\displaystyle{\lim_{x\to-\infty}f(x)=-\infty).}</m></p>
+<p id="fs-id1165042606820">For example, consider the function <m>f(x)=x^3.</m> As seen in <xref ref="fs-id1165042406634"/> and <xref ref="CNX_Calc_Figure_04_06_008"/>, as <m>x\to\infty</m> the values <m>f(x)</m> become arbitrarily large. Therefore, <m>\displaystyle{\lim_{x\to\infty}x^3=\infty.}</m> On the other hand, as <m>x\to-\infty,</m> the values of <m>f(x)=x^3</m> are negative but become arbitrarily large in magnitude. Consequently, <m>\displaystyle{\lim_{x\to-\infty}x^3=-\infty.}</m></p>
+<table xml:id="fs-id1165042406634" class="column-header" summary="The table has four rows and six columns. The first column is a header column and it reads x, x3, x, and x3. After the header, the first row reads 10, 20, 50, 100, and 1000. The second row reads 1000, 8000, 125000, 1,000,000, and 1,000,000,000. The third row reads &#x2212;10, &#x2212;20, &#x2212;50, &#x2212;100, and &#x2212;1000. The forth row reads &#x2212;1000, &#x2212;8000, &#x2212;125,000, &#x2212;1,000,000, and &#x2212;1,000,000,000.">
+<title>Values of a power function as <m>x\to\pm\infty</m></title>
+<tabular>
+<row valign="top">
+<cell valign="top" halign ="left"><emphasis effect="bold"><m>x</m></emphasis></cell>
+<cell valign="top" halign ="center"><m>10</m></cell>
+<cell valign="top" halign ="center"><m>20</m></cell>
+<cell valign="top" halign ="center"><m>50</m></cell>
+<cell valign="top" halign ="center"><m>100</m></cell>
+<cell valign="top" halign ="center"><m>1000</m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><emphasis effect="bold"><m>x^3</m></emphasis></cell>
+<cell valign="top" halign ="center"><m>1000</m></cell>
+<cell valign="top" halign ="center"><m>8000</m></cell>
+<cell valign="top" halign ="center"><m>125,000</m></cell>
+<cell valign="top" halign ="center"><m>1,000,000</m></cell>
+<cell valign="top" halign ="center"><m>1,000,000,000</m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><emphasis effect="bold"><m>x</m></emphasis></cell>
+<cell valign="top" halign ="center"><m>-10</m></cell>
+<cell valign="top" halign ="center"><m>-20</m></cell>
+<cell valign="top" halign ="center"><m>-50</m></cell>
+<cell valign="top" halign ="center"><m>-100</m></cell>
+<cell valign="top" halign ="center"><m>-1000</m></cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><emphasis effect="bold"><m>x^3</m></emphasis></cell>
+<cell valign="top" halign ="center"><m>-1000</m></cell>
+<cell valign="top" halign ="center"><m>-8000</m></cell>
+<cell valign="top" halign ="center"><m>-125,000</m></cell>
+<cell valign="top" halign ="center"><m>-1,000,000</m></cell>
+<cell valign="top" halign ="center"><m>-1,000,000,000</m></cell>
+</row>
+</tabular>
+</table>
+<figure xml:id="CNX_Calc_Figure_04_06_022">
+<image source="CNX_Calc_Figure_04_06_022.jpg" width="80%">
+<description>"The function f(x) = x3 is graphed. It is apparent that this function rapidly approaches infinity as x approaches infinity."  </description></image> <caption>For this function, the functional values approach infinity as <m>x\to\pm\infty.</m></caption>
+</figure>
+
+<definition>
+<p id="fs-id1165043276356">(Informal) We say a function <m>f</m> has an infinite limit at infinity and write</p>
+<me>\lim_{x\to\infty}f(x)=\infty.</me>
+<p id="fs-id1165042709557">if <m>f(x)</m> becomes arbitrarily large for <m>x</m> sufficiently large. We say a function has a negative infinite limit at infinity and write</p>
+<me>\lim_{x\to\infty}f(x)=-\infty.</me>
+<p id="fs-id1165042327355">if <m>f(x)\lt 0</m> and <m>|f(x)|</m> becomes arbitrarily large for <m>x</m> sufficiently large. Similarly, we can define infinite limits as <m>x\to-\infty.</m></p>
+</definition>
+</subsubsection>
+<!-- Commenting out epsilon delta definition of the limit (formal definition of the limit)
+<subsubsection id="fs-id1165042328702">
+<title>Formal Definitions</title>
+<p id="fs-id1165042328707">Earlier, we used the terms <term> arbitrarily close</term>, <term>arbitrarily large</term>, and <term>sufficiently large</term> to define limits at infinity informally. Although these terms provide accurate descriptions of limits at infinity, they are not precise mathematically. Here are more formal definitions of limits at infinity. We then look at how to use these definitions to prove results involving limits at infinity.</p>
+<definition>
+<p id="fs-id1165043308445">(Formal) We say a function <m>f</m> has a <term>limit at infinity</term>, if there exists a real number <m>L</m> such that for all <m>\varepsilon \gt 0,</m> there exists <m>N\gt 0</m> such that</p>
+<me>|f(x)-L|\lt \varepsilon </me>
+<p id="fs-id1165043298558">for all <m>x\gt N.</m> In that case, we write</p>
+<me>\lim_{x\to\infty}f(x)=L</me>
+<p id="fs-id1165042512686">(see <xref ref="CNX_Calc_Figure_04_06_009"/>).</p>
+<p id="fs-id1165042327662">We say a function <m>f</m> has a limit at negative infinity if there exists a real number <m>L</m> such that for all <m>\varepsilon \gt 0,</m> there exists <m>N\lt 0</m> such that</p>
+<me>|f(x)-L|\lt \varepsilon </me>
+<p id="fs-id1165042472034">for all <m>x\lt N.</m> In that case, we write</p>
+<me>\lim_{x\to-\infty}f(x)=L.</me>
+</definition>
+<figure xml:id="CNX_Calc_Figure_04_06_009">
+<image source="CNX_Calc_Figure_04_06_023.jpg" width="50%">
+<description>"The function f(x) is graphed, and it has a horizontal asymptote at L. L is marked on the y axis, as is L + &#x949; and L &#x2013; &#x949;. On the x axis, N is marked as the value of x such that f(x) = L + &#x949;." </description></image> <caption>For a function with a limit at infinity, for all <m>x\gt N,</m> <m>|f(x)-L|\lt \varepsilon .</m></caption>
+</figure>
+<p xml:id="fs-id1165043396243">Earlier in this section, we used graphical evidence in <xref ref="CNX_Calc_Figure_04_06_001"/> and numerical evidence in <xref ref="fs-id1165043428402"/> to conclude that <m>\lim_{x\to\infty}(2+\frac{1}{x})=2.</m> Here we use the formal definition of limit at infinity to prove this result rigorously.</p>
+<example xml:id="fs-id1165042970473">
+<title>A Finite Limit at Infinity Example</title>
+<statement id="fs-id1165042587294">
+<p id="fs-id1165042587296">Use the formal definition of limit at infinity to prove that <m>\lim_{x\to\infty}(2+\frac{1}{x})=2.</m></p></statement>
+<solution id="fs-id1165042369575">
+<p id="fs-id1165042369578">Let <m>\varepsilon \gt 0.</m> Let <m>N=\frac{1}{\varepsilon }.</m> Therefore, for all <m>x\gt N,</m> we have</p>
+<me>|2+\frac{1}{x}-2|=|\frac{1}{x}|=\frac{1}{x}\lt \frac{1}{N}=\varepsilon \text{ . }</me>
+</solution>
+
+</example><exercise> <statement id="fs-id1165042480097">
+<p xml:id="fs-id1165042480099">Use the formal definition of limit at infinity to prove that <m>\lim_{x\to\infty}(3-\frac{1}{x^2})=3.</m></p></statement>
+<solution id="fs-id1165042367885">
+<p id="fs-id1165042367887">Let <m>\varepsilon \gt 0.</m> Let <m>N=\frac{1}{\sqrt{\varepsilon }}.</m> Therefore, for all <m>x\gt N,</m> we have</p>
+<p id="fs-id1165042376362"><m>|3-\frac{1}{x^2}-3|=\frac{1}{x^2}\lt \frac{1}{N^2}=\varepsilon </m></p>
+<p id="fs-id1165042320298">Therefore, <m>\lim_{x\to\infty}(3-1/x^2)=3.</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042332065">Let <m>N=\frac{1}{\sqrt{\varepsilon }}.</m></p>
+</hint></exercise>
+<p id="fs-id1165042374773">We now turn our attention to a more precise definition for an infinite limit at infinity.</p>
+
+<definition>
+<p id="fs-id1165042374780">(Formal) We say a function <m>f</m> has an <term>infinite limit at infinity</term> and write</p>
+<me>\lim_{x\to\infty}f(x)=\infty</me>
+<p id="fs-id1165043423999">if for all <m>M\gt 0,</m> there exists an <m>N\gt 0</m> such that</p>
+<me>f(x)\gt M</me>
+<p id="fs-id1165042374733">for all <m>x\gt N</m> (see <xref ref="CNX_Calc_Figure_04_06_010"/>).</p>
+<p id="fs-id1165042374750">We say a function has a negative infinite limit at infinity and write</p>
+<me>\lim_{x\to\infty}f(x)=-\infty</me>
+<p id="fs-id1165043426267">if for all <m>M\lt 0,</m> there exists an <m>N\gt 0</m> such that</p>
+<me>f(x)\lt M</me>
+<p id="fs-id1165043259707">for all <m>x\gt N.</m></p>
+<p id="fs-id1165043259751">Similarly we can define limits as <m>x\to-\infty.</m></p>
+</definition>
+<figure xml:id="CNX_Calc_Figure_04_06_010">
+<image source="CNX_Calc_Figure_04_06_024.jpg" width="70%">
+<description>"The function f(x) is graphed. It continues to increase rapidly after x = N, and f(N) = M."  </description></image> <caption>For a function with an infinite limit at infinity, for all <m>x\gt N,</m> <m>f(x)\gt M.</m></caption>
+</figure>
+<p id="fs-id1165042705963">Earlier, we used graphical evidence (<xref ref="CNX_Calc_Figure_04_06_008"/>) and numerical evidence (<xref ref="fs-id1165042406634"/>) to conclude that <m>\lim_{x\to\infty}x^3=\infty.</m> Here we use the formal definition of infinite limit at infinity to prove that result.</p>
+<example xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" xml:id="fs-id1165042323534">
+<title>An Infinite Limit at Infinity</title>
+<statement id="fs-id1165042323538">
+<p id="fs-id1165043395589">Use the formal definition of infinite limit at infinity to prove that <m>\lim_{x\to\infty}x^3=\infty.</m></p>
+</statement>
+<solution id="fs-id1165043430973">
+<p id="fs-id1165043430975">Let <m>M\gt 0.</m> Let <m>N=\sqrt[3]{M}.</m> Then, for all <m>x\gt N,</m> we have</p>
+<me>x^3\gt N^3=(\sqrt[3]{M})^3=M.</me>
+<p id="fs-id1165042604681">Therefore, <m>\lim_{x\to\infty}x^3=\infty.</m></p>
+</solution>
+</example><exercise> <statement id="fs-id1165042320224">
+<p id="fs-id1165042320226">Use the formal definition of infinite limit at infinity to prove that <m>\lim_{x\to\infty}3x^2=\infty.</m></p>
+</statement>
+<solution id="fs-id1165042708270">
+<p id="fs-id1165042708272">Let <m>M\gt 0.</m> Let <m>N=\sqrt{\frac{M}{3}}.</m> Then, for all <m>x\gt N,</m> we have</p>
+<p id="fs-id1165042383154"><m>3x^2\gt 3N^2=3(\sqrt{\frac{M}{3}})^2=\frac{3M}{3}=M</m></p>
+</solution>
+<hint>
+<p id="fs-id1165043219104">Let <m>N=\sqrt{\frac{M}{3}}.</m></p>
+</hint></exercise>
+</subsubsection>
+-->
+</subsection>
+<subsection id="fs-id1165042368487">
+<title>End Behavior</title>
+<introduction>
+<p id="fs-id1165042368492">The behavior of a function as <m>x\to\pm\infty</m> is called the function's <term>end behavior</term>. At each of the function's ends, the function could exhibit one of the following types of behavior:</p>
+<ol marker="(a)">
+<li>The function <m>f(x)</m> approaches a horizontal asymptote <m>y=L.</m></li>
+<li>The function <m>f(x)\to\infty</m> or <m>f(x)\to-\infty.</m></li>
+<li>The function does not approach a finite limit, nor does it approach <m>\infty</m> or <m>-\infty.</m> In this case, the function may have some oscillatory behavior.</li>
+</ol>
+<p id="fs-id1165042323661">Let's consider several classes of functions here and look at the different types of end behaviors for these functions.</p>
+</introduction>
+<subsubsection id="fs-id1165042323666">
+<title>End Behavior for Polynomial Functions</title>
+<p id="fs-id1165042323672">Consider the power function <m>f(x)=x^n</m> where <m>n</m> is a positive integer. From <xref ref="CNX_Calc_Figure_04_06_011"/> and <xref ref="CNX_Calc_Figure_04_06_012"/>, we see that</p>
+<me>\lim_{x\to\infty}x^n=\infty;\;n=1,2,3\text{ ,… }</me>
+<p id="fs-id1165042705925">and</p>
+<me>\lim_{x\to-\infty}x^n=\begin{cases}\infty \amp n=2,4,6,\dots \\ -\infty \amp n=1,3,5,\dots.\end{cases}</me>
+<figure xml:id="CNX_Calc_Figure_04_06_011">
+<image source="CNX_Calc_Figure_04_06_025.jpg" width="70%">
+<description>"The functions x2, x4, and x6 are graphed, and it is apparent that as the exponent grows the functions increase more quickly." </description></image> <caption>For power functions with an even power of <m>n,</m> <m>\displaystyle{\lim_{x\to\infty}x^n=\infty=\lim_{x\to-\infty}x^n.}</m></caption>
+</figure>
+<figure xml:id="CNX_Calc_Figure_04_06_012">
+<image source="CNX_Calc_Figure_04_06_026.jpg" width="70%">
+<description>"The functions x, x3, and x5 are graphed, and it is apparent that as the exponent grows the functions increase more quickly." </description></image> <caption>For power functions with an odd power of <m>n,</m> <m>\displaystyle{\lim_{x\to\infty}x^n=\infty}</m> and <m>\displaystyle{\lim_{x\to-\infty}x^n=-\infty.}</m></caption>
+</figure>
+<p id="fs-id1165042318644">Using these facts, it is not difficult to evaluate <m>\displaystyle{\lim_{x\to\infty}cx^n}</m> and <m>\displaystyle{\lim_{x\to-\infty}cx^n,}</m> where <m>c</m> is any constant and <m>n</m> is a positive integer. If <m>c\gt 0,</m> the graph of <m>y=cx^n</m> is a vertical stretch or compression of <m>y=x^n,</m> and therefore</p>
+<me>\lim_{x\to\infty}cx^n=\lim_{x\to\infty}x^n \text{ and } \lim_{x\to-\infty}cx^n=\lim_{x\to-\infty}x^n \text{ if } c\gt 0.</me>
+<p id="fs-id1165043424818">If <m>c\lt 0,</m> the graph of <m>y=cx^n</m> is a vertical stretch or compression combined with a reflection about the <m>x</m>-axis, and therefore</p>
+<me>\lim_{x\to\infty}cx^n=-\lim_{x\to\infty}x^n \text{ and } \lim_{x\to-\infty}cx^n=-\lim_{x\to-\infty}x^n \text{ if } c\lt 0.</me>
+<p id="fs-id1165042640745">If <m>c=0,y=cx^n=0,</m> in which case <m>\displaystyle{\lim_{x\to\infty}cx^n=0=\lim_{x\to-\infty}cx^n.}</m></p>
+<example xml:id="fs-id1165043219126">
+<title>Limits at Infinity for Power Functions</title>
+<statement id="fs-id1165043219130">
+<p id="fs-id1165043219135">For each function <m>f,</m> evaluate <m>\displaystyle{\lim_{x\to\infty}f(x)}</m> and <m>\displaystyle{\lim_{x\to-\infty}f(x).}</m></p>
+<ol marker="(a)">
+<li><m>f(x)=-5x^3</m></li>
+<li><m>f(x)=2x^4</m></li>
+</ol>
+</statement>
+<solution id="fs-id1165043254250">
+<ol marker="(a)">
+<li>Since the coefficient of <m>x^3</m> is <m>-5,</m> the graph of <m>f(x)=-5x^3</m> involves a vertical stretch and reflection of the graph of <m>y=x^3</m> about the <m>x</m>-axis. Therefore, <m>\displaystyle{\lim_{x\to\infty}(-5x^3)=-\infty}</m> and <m>\displaystyle{\lim_{x\to-\infty}(-5x^3)=\infty.}</m></li>
+  <li>Since the coefficient of <m>x^4</m> is <m>2,</m> the graph of <m>f(x)=2x^4</m> is a vertical stretch of the graph of <m>y=x^4.</m> Therefore, <m>\displaystyle{\lim_{x\to\infty}2x^4=\infty}</m> and <m>\displaystyle{\lim_{x\to-\infty}2x^4=\infty.}</m></li>
+</ol>
+</solution>
+</example>
+<exercise>
+<statement id="fs-id1165042401062">
+<p id="fs-id1165042401064">Let <m>f(x)=-3x^4.</m> Find <m>\displaystyle{\lim_{x\to\infty}f(x).}</m></p>
+</statement>
+<solution id="fs-id1165042708209">
+<p id="fs-id1165042708212"><m>-\infty</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042708228">The coefficient <m>-3</m> is negative.</p>
+</hint></exercise>
+<p id="fs-id1165042708240">We now look at how the limits at infinity for power functions can be used to determine <m>\displaystyle{\lim_{x\to\pm\infty}f(x)}</m> for any polynomial function <m>f.</m> Consider a polynomial function</p>
+<me>f(x)=a_nx^n+a_{n-1} x^{n-1} +\dots+a_1x+a_0</me>
+<p id="fs-id1165043327638">of degree <m>n\geq 1</m> so that <m>a_n\neq 0.</m> Factoring, we see that</p>
+<me>f(x)=a_nx^n\left(1+\frac{a_{n-1} }{a_n} \frac{1}{x}+\dots+\frac{a_1}{a_n} \frac{1}{x^{n-1}}+\frac{a_0}{a_n}\frac{1}{x^n}\right).</me>
+<p id="fs-id1165043348532">As <m>x\to\pm\infty,</m> all the terms inside the parentheses approach zero except the first term. We conclude that</p>
+<me>\lim_{x\to\pm\infty}f(x)=\lim_{x\to\pm\infty}a_nx^n.</me>
+<p id="fs-id1165043317360">For example, the function <m>f(x)=5x^3-3x^2+4</m> behaves like <m>g(x)=5x^3</m> as <m>x\to\pm\infty</m> as shown in <xref ref="CNX_Calc_Figure_04_06_013"/> and <xref ref="fs-id1165043250976"/>.</p>
+<figure xml:id="CNX_Calc_Figure_04_06_013">
+<image source="CNX_Calc_Figure_04_06_006.jpg" width="50%">
+<description>"Both functions f(x) = 5x3 &#x2013; 3x2 + 4 and g(x) = 5x3 are plotted. Their behavior for large positive and large negative numbers converges."</description></image> <caption>The end behavior of a polynomial is determined by the behavior of the term with the largest exponent.</caption>
+</figure>
+<table xml:id="fs-id1165043250976" class="column-header" summary="The table has six rows and four columns. The first column is a header column and it reads x, f(x) = 5x3 &#x2013; 3x2 + 4, g(x) = 5x3, x, f(x) = 5x3 &#x2013; 3x2 + 4, and g(x) = 5x3. After the header, the first row reads 10, 100, and 1000. The second row reads 4704, 4,970,004, and 4,997,000,004. The third row reads 5000, 5,000,000, 5,000,000,000. The fourth row reads &#x2212;10, &#x2212;100, and &#x2212;1000. The fifth row reads &#x2212;5296, &#x2212;5,029,996, and &#x2212;5,002,999,996. The sixth row reads &#x2212;5000, &#x2212;5,000,000, and &#x2212;5,000,000,000.">
+<title>A polynomial's end behavior is determined by the term with the largest exponent.</title>
+<tabular>
+<row valign="top">
+<cell valign="middle" halign ="left"><emphasis effect="bold"><m>x</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>10</m></cell>
+<cell valign="middle" halign ="center"><m>100</m></cell>
+<cell valign="middle" halign ="center"><m>1000</m></cell>
+</row>
+<row valign="top">
+<cell valign="middle" halign ="center"><emphasis effect="bold"><m>f(x)=5x^3-3x^2+4</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>4704</m></cell>
+<cell valign="middle" halign ="center"><m>4,970,004</m></cell>
+<cell valign="middle" halign ="center"><m>4,997,000,004</m></cell>
+</row>
+<row valign="top">
+<cell valign="middle" halign ="left"><emphasis effect="bold"><m>g(x)=5x^3</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>5000</m></cell>
+<cell valign="middle" halign ="center"><m>5,000,000</m></cell>
+<cell valign="middle" halign ="center"><m>5,000,000,000</m></cell>
+</row>
+<row valign="top">
+<cell valign="middle" halign ="left"><emphasis effect="bold"><m>x</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>-10</m></cell>
+<cell valign="middle" halign ="center"><m>-100</m></cell>
+<cell valign="middle" halign ="center"><m>-1000</m></cell>
+</row>
+<row valign="top">
+<cell valign="middle" halign ="left"><emphasis effect="bold"><m>f(x)=5x^3-3x^2+4</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>-5296</m></cell>
+<cell valign="middle" halign ="center"><m>-5,029,996</m></cell>
+<cell valign="middle" halign ="center"><m>-5,002,999,996</m></cell>
+</row>
+<row valign="top">
+<cell valign="middle" halign ="left"><emphasis effect="bold"><m>g(x)=5x^3</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>-5000</m></cell>
+<cell valign="middle" halign ="center"><m>-5,000,000</m></cell>
+<cell valign="middle" halign ="center"><m>-5,000,000,000</m></cell>
+</row>
+</tabular>
+</table>
+</subsubsection>
+<subsubsection id="fs-id1165042638488">
+<title>End Behavior for Algebraic Functions</title>
+<p id="fs-id1165042638493">The end behavior for rational functions and functions involving radicals is a little more complicated than for polynomials. In <xref ref="fs-id1165042638553"/>, we show that the limits at infinity of a rational function <m>f(x)=\frac{p(x)}{q(x)}</m> depend on the relationship between the degree of the numerator and the degree of the denominator. To evaluate the limits at infinity for a rational function, we divide the numerator and denominator by the highest power of <m>x</m> appearing in the denominator. This determines which term in the overall expression dominates the behavior of the function at large values of <m>x.</m></p>
+<example xml:id="fs-id1165042638553">
+<title>Determining End Behavior for Rational Functions</title>
+<statement id="fs-id1165042638557">
+<p id="fs-id1165042638562">For each of the following functions, determine the limits as <m>x\to\infty</m> and <m>x\to-\infty.</m> Then, use this information to describe the end behavior of the function.</p>
+<ol marker="(a)"><li><m>f(x)=\frac{3x-1}{2x+5}</m> (<emphasis effect="italics">Note:</emphasis> The degree of the numerator and the denominator are the same.)</li>
+<li><m>f(x)=\frac{3x^2+2x}{4x^3-5x+7}</m> (<emphasis effect="italics">Note:</emphasis> The degree of numerator is less than the degree of the denominator.)</li>
+<li><m>f(x)=\frac{3x^2+4x}{x+2}</m> (<emphasis effect="italics">Note:</emphasis> The degree of numerator is greater than the degree of the denominator.)</li>
+</ol></statement>
+<solution id="fs-id1165042708377">
+<ol marker="(a)">
+<li>The highest power of <m>x</m> in the denominator is <m>x.</m> Therefore, dividing the numerator and denominator by <m>x</m> and applying the algebraic limit laws, we see that
+<md>
+<mrow>\displaystyle{\lim_{x\to\pm\infty}\frac{3x-1}{2x+5}\amp =\lim_{x\to\pm\infty}\frac{3-1/x}{2+5/x}}</mrow>
+<mrow>\amp=\displaystyle{\frac{\lim_{x\to\pm\infty}(3-1/x)}{\lim_{x\to\pm\infty}(2+5/x)}}</mrow>
+<mrow>\amp=\displaystyle{\frac{\lim_{x\to\pm\infty}3-\lim_{x\to\pm\infty}1/x}{\lim_{x\to\pm\infty}2+\lim_{x\to\pm\infty}5/x}}</mrow>
+<mrow>=\frac{3-0}{2+0}=\frac{3}{2}.</mrow>
+</md>
+Since <m>\displaystyle{\lim_{x\to\pm\infty}f(x)=\frac{3}{2}},</m> we know that <m>y=\frac{3}{2}</m> is a horizontal asymptote for this function as shown in the following graph.
+<figure xml:id="CNX_Calc_Figure_04_06_007">
+<image source="CNX_Calc_Figure_04_06_007.jpg" width="70%">
+<description>"The function f(x) = (3x + 1)/(2x + 5) is plotted as is its horizontal asymptote at y = 3/2.">
+<!-- NOTE: Move description inside image tag. -->  </description></image> <caption>The graph of this rational function approaches a horizontal asymptote as <m>x\to\pm\infty.</m></caption>
+</figure></li>
+<li>Since the largest power of <m>x</m> appearing in the denominator is <m>x^3,</m> divide the numerator and denominator by <m>x^3.</m> After doing so and applying algebraic limit laws, we obtain
+<me>\lim_{x\to\pm\infty}\frac{3x^2+2x}{4x^3-5x+7}=\lim_{x\to\pm\infty}\frac{3/x+2/x^2}{4-5/x^2+7/x^3}=\frac{3(0)+2(0)}{4-5(0)+7(0)}=0.</me>
+Therefore <m>f</m> has a horizontal asymptote of <m>y=0</m> as shown in the following graph.
+<figure xml:id="CNX_Calc_Figure_04_06_008">
+<image source="CNX_Calc_Figure_04_06_008.jpg" width="50%">
+<description>"The function f(x) = (3x2 + 2x)/(4x2 &#x2013; 5x + 7) is plotted as is its horizontal asymptote at y = 0."</description></image> <caption>The graph of this rational function approaches the horizontal asymptote <m>y=0</m> as <m>x\to\pm\infty.</m></caption>
+</figure></li>
+<li>Dividing the numerator and denominator by <m>x,</m> we have
+<me>\lim_{x\to\pm\infty}\frac{3x^2+4x}{x+2}=\lim_{x\to\pm\infty}\frac{3x+4}{1+2/x}.</me>
+As <m>x\to\pm\infty,</m> the denominator approaches <m>1.</m> As <m>x\to\infty,</m> the numerator approaches <m>+\infty.</m> As <m>x\to-\infty,</m> the numerator approaches <m>-\infty.</m> Therefore <m>\displaystyle{\lim_{x\to\infty}f(x)=\infty},</m> whereas <m>\displaystyle{\lim_{x\to-\infty}f(x)=-\infty}</m> as shown in the following figure.
+<figure xml:id="CNX_Calc_Figure_04_06_027">
+<image source="CNX_Calc_Figure_04_06_027.jpg" width="70%">
+<description>"The function f(x) = (3x2 + 4x)/(x + 2) is plotted. It appears to have a diagonal asymptote as well as a vertical asymptote at x = &#x2212;2." </description></image> <caption>As <m>x\to\infty,</m> the values <m>f(x)\to\infty.</m> As <m>x\to-\infty,</m> the values <m>f(x)\to-\infty.</m></caption>
+</figure></li>
+</ol>
+</solution>
+</example>
+<exercise><statement id="fs-id1165042660294">
+<p xml:id="fs-id1165042660296">Evaluate <m>\displaystyle{\lim_{x\to\pm\infty}\frac{3x^2+2x-1}{5x^2-4x+7}}</m> and use these limits to determine the end behavior of <m>f(x)=\frac{3x^2+2x-1}{5x^2-4x+7}.</m></p></statement>
+<solution id="fs-id1165042374869">
+<p id="fs-id1165042374871"><m>\frac{3}{5}</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042374889">Divide the numerator and denominator by <m>x^2.</m></p>
+</hint></exercise>
+<!-- Commenting out slant/oblique asymptote
+<p id="fs-id1165042374905">Before proceeding, consider the graph of <m>f(x)=\frac{(3x^2+4x)}{(x+2)}</m> shown in <xref ref="CNX_Calc_Figure_04_06_017"/>. As <m>x\to\infty</m> and <m>x\to-\infty,</m> the graph of <m>f</m> appears almost linear. Although <m>f</m> is certainly not a linear function, we now investigate why the graph of <m>f</m> seems to be approaching a linear function. First, using long division of polynomials, we can write</p>
+<me>f(x)=\frac{3x^2+4x}{x+2}=3x-2+\frac{4}{x+2}.</me>
+<p id="fs-id1165043219268">Since <m>\frac{4}{(x+2)}\to0</m> as <m>x\to\pm\infty,</m> we conclude that</p>
+<me>\lim_{x\to\pm\infty}(f(x)-(3x-2))=\lim_{x\to\pm\infty}\frac{4}{x+2}=0.</me>
+<p id="fs-id1165042465646">Therefore, the graph of <m>f</m> approaches the line <m>y=3x-2</m> as <m>x\to\pm\infty.</m> This line is known as an <term>oblique asymptote</term> for <m>f</m> (<xref ref="CNX_Calc_Figure_04_06_017"/>).</p>
+<figure xml:id="CNX_Calc_Figure_04_06_017">
+<image source="CNX_Calc_Figure_04_06_009.jpg" width="50%">
+<description>"The function f(x) = (3x2 + 4x)/(x + 2) is plotted as is its diagonal asymptote y = 3x &#x2013; 2." </description></image> <caption>The graph of the rational function <m>f(x)=(3x^2+4x)/(x+2)</m> approaches the oblique asymptote <m>y=3x-2 \text{ as } x\to\pm\infty.</m></caption>
+</figure>
+-->
+<p id="fs-id1165042461217">We can summarize the results of <xref ref="fs-id1165042638553"/> to make the following conclusion regarding end behavior for rational functions. Consider a rational function</p>
+<me>f(x)=\frac{p(x)}{q(x)}=\frac{a_nx^n+a_{n-1} x^{n-1} +\dots+a_1x+a_0}{b_mx^m+b_{m-1}x^{m-1}+\dots+b_1x+b_0},</me>
+<p id="fs-id1165042315666">where <m>a_n\neq 0 \text{ and } b_m\neq 0.</m></p>
+<ol>
+<li>If the degree of the numerator is the same as the degree of the denominator <m>(n=m),</m> then <m>f</m> has a horizontal asymptote of <m>y=a_n/b_m</m> as <m>x\to\pm\infty.</m></li>
+<li>If the degree of the numerator is less than the degree of the denominator <m>(n\lt m),</m> then <m>f</m> has a horizontal asymptote of <m>y=0</m> as <m>x\to\pm\infty.</m></li>
+<li>If the degree of the numerator is greater than the degree of the denominator <m>(n\gt m),</m> then <m>f</m> does not have a horizontal asymptote. The limits at infinity are either positive or negative infinity, depending on the signs of the leading terms. In addition, using long division, the function can be rewritten as
+<me>f(x)=\frac{p(x)}{q(x)}=g(x)+\frac{r(x)}{q(x)},</me>
+where the degree of <m>r(x)</m> is less than the degree of <m>q(x).</m> As a result, <m>\displaystyle{\lim_{x\to\pm\infty}r(x)/q(x)=0.}</m> Therefore, the values of <m>[f(x)-g(x)]</m> approach zero as <m>x\to\pm\infty.</m>
+<!-- Commenting out oblique/slant asymptote
+If the degree of <m>p(x)</m> is exactly one more than the degree of <m>q(x)</m> <m>(n=m+1),</m> the function <m>g(x)</m> is a linear function. In this case, we call <m>g(x)</m> an oblique asymptote.
+-->
+Now let's consider the end behavior for functions involving a radical.</li>
+</ol>
+<example xml:id="fs-id1165042631816">
+<title>Determining End Behavior for a Function Involving a Radical</title>
+ <statement id="fs-id1165042631820">
+<p id="fs-id1165042631826">Find the limits as <m>x\to\infty</m> and <m>x\to-\infty</m> for <m>f(x)=\frac{3x-2}{\sqrt{4x^2+5}}</m> and describe the end behavior of <m>f.</m></p>
+</statement>
+<solution id="fs-id1165042631903">
+<p id="fs-id1165042631905">Let's use the same strategy as we did for rational functions: divide the numerator and denominator by a power of <m>x.</m> To determine the appropriate power of <m>x,</m> consider the expression <m>\sqrt{4x^2+5}</m> in the denominator. Since</p>
+<me>\sqrt{4x^2+5}\approx \sqrt{4x^2}=2|x|</me>
+<p id="fs-id1165042418106">for large values of <m>x</m> in effect <m>x</m> appears just to the first power in the denominator. Therefore, we divide the numerator and denominator by <m>|x|.</m> Then, using the fact that <m>|x|=x</m> for <m>x\gt 0,</m> <m>|x|=-x</m> for <m>x\lt 0,</m> and <m>|x|=\sqrt{x^2}</m> for all <m>x,</m> we calculate the limits as follows:</p>
+<md>
+<mrow>\lim_{x\to\infty}\frac{3x-2}{\sqrt{4x^2+5}}\amp = \lim_{x\to\infty}\frac{(1/|x|)}{(3x-2)}{(1/|x|)\sqrt{4x^2+5}}</mrow>
+<mrow>\amp=\lim_{x\to\infty}\frac{(1/x)}{(3x-2)}{\sqrt{(1/x^2)}{(4x^2+5)}}</mrow>
+<mrow>\amp= \lim_{x\to\infty}\frac{3-2/x}{\sqrt{4+5/x^2}}=\frac{3}{\sqrt{4}}=\frac{3}{2}</mrow>
+<mrow>\lim_{x\to-\infty}\frac{3x-2}{\sqrt{4x^2+5}}\amp = \lim_{x\to-\infty}\frac{(1/|x|)}{(3x-2)}{(1/|x|)\sqrt{4x^2+5}}</mrow>
+<mrow>\amp= \lim_{x\to-\infty}\frac{(-1/x)}{(3x-2)}{\sqrt{(1/x^2)}{(4x^2+5)}}</mrow>
+<mrow>\amp= \lim_{x\to-\infty}\frac{-3+2/x}{\sqrt{4+5/x^2}}=\frac{-3}{\sqrt{4}}=\frac{-3}{2}.</mrow></md>
+<p id="fs-id1165042463819">Therefore, <m>f(x)</m> approaches the horizontal asymptote <m>y=\frac{3}{2}</m> as <m>x\to\infty</m> and the horizontal asymptote <m>y=-\frac{3}{2}</m> as <m>x\to-\infty</m> as shown in the following graph.</p>
+<figure xml:id="CNX_Calc_Figure_04_06_010">
+<image source="CNX_Calc_Figure_04_06_010.jpg" width="80%">
+<description>"The function f(x) = (3x &#x2212; 2)/(the square root of the quantity (4x2 + 5)) is plotted. It has two horizontal asymptotes at y = &#xB1;3/2, and it crosses y = &#x2212;3/2 before converging toward it from below." </description></image> <caption>This function has two horizontal asymptotes and it crosses one of the asymptotes.</caption>
+</figure>
+</solution>
+</example>
+<exercise><statement id="fs-id1165042463921">
+<p id="fs-id1165042463923">Evaluate <m>\displaystyle{\lim_{x\to\infty}\frac{\sqrt{3x^2+4}}{x+6}.}</m></p>
+</statement>
+<solution id="fs-id1165043327291">
+<p id="fs-id1165043327293"><m>\pm\sqrt{3}</m></p>
+</solution>
+<hint>
+<p id="fs-id1165043327311">Divide the numerator and denominator by <m>|x|.</m></p>
+</hint></exercise>
+</subsubsection>
+<subsubsection id="fs-id1165043327330">
+<title>Determining End Behavior for Transcendental Functions</title>
+<!-- Commenting out trig
+<p id="fs-id1165043327335">The six basic trigonometric functions are periodic and do not approach a finite limit as <m>x\to\pm\infty.</m> For example, <m>\sin x</m> oscillates between <m>1 \text{ and } -1</m> (<xref ref="CNX_Calc_Figure_04_06_019"/>). The tangent function <m>x</m> has an infinite number of vertical asymptotes as <m>x\to\pm\infty;</m> therefore, it does not approach a finite limit nor does it approach <m>\pm\infty</m> as <m>x\to\pm\infty</m> as shown in <xref ref="CNX_Calc_Figure_04_06_020"/>.</p>
+<figure xml:id="CNX_Calc_Figure_04_06_011">
+<image source="CNX_Calc_Figure_04_06_011.jpg" width="60%">
+<description>"The function f(x) = sin x is graphed." </description></image> <caption>The function <m>f(x)=\sin x</m> oscillates between <m>1 \text{ and } -1</m> as <m>x\to\pm\infty</m></caption>
+</figure>
+<figure xml:id="CNX_Calc_Figure_04_06_012">
+<image source="CNX_Calc_Figure_04_06_012.jpg" width="60%">
+<description>"The function f(x) = tan x is graphed."  </description></image> <caption>The function <m>f(x)=\tan  x</m> does not approach a limit and does not approach <m>\pm\infty</m> as <m>x\to\pm\infty</m></caption>
+</figure>
+-->
+<p id="fs-id1165042459472">Recall that for any base <m>b\gt 0,b\neq 1,</m> the function <m>y=b^x</m> is an exponential function with domain <m>(-\infty,\infty)</m> and range <m>(0,\infty).</m> If <m>b\gt 1,y=b^x</m> is increasing over <m>(-\infty,\infty).</m> If <m>0\lt b\lt 1,</m> <m>y=b^x</m> is decreasing over <m>(-\infty,\infty).</m> For the natural exponential function <m>f(x)=e^x,</m> <m>e\approx 2.718\gt 1.</m> Therefore, <m>f(x)=e^x</m> is increasing on <m>(-\infty,\infty)</m> and the range is <m>(0,\infty).</m> The exponential function <m>f(x)=e^x</m> approaches <m>\infty</m> as <m>x\to\infty</m> and approaches <m>0</m> as <m>x\to-\infty</m> as shown in <xref ref="fs-id1165042542966"/> and <xref ref="CNX_Calc_Figure_04_06_021"/>.</p>
+<table xml:id="fs-id1165042542966" class="column-header" summary="The table has two rows and six columns. The first column is a header column and it reads x and ex. After the header, the first row reads &#x2212;5, &#x2212;2, 0, 2, and 5. The second row reads 0.00674, 0.135, 1, 7.389, and 148.413.">
+<title>End behavior of the natural exponential function</title>
+<tabular>
+
+<row valign="top">
+<cell valign="middle" halign ="center"><emphasis effect="bold"><m>x</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>-5</m></cell>
+<cell valign="middle" halign ="center"><m>-2</m></cell>
+<cell valign="middle" halign ="center"><m>0</m></cell>
+<cell valign="middle" halign ="center"><m>2</m></cell>
+<cell valign="middle" halign ="center"><m>5</m></cell>
+</row>
+<row valign="top">
+<cell valign="middle" halign ="center"><emphasis effect="bold"><m>e^x</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>0.00674</m></cell>
+<cell valign="middle" halign ="center"><m>0.135</m></cell>
+<cell valign="middle" halign ="center"><m>1</m></cell>
+<cell valign="middle" halign ="center"><m>7.389</m></cell>
+<cell valign="middle" halign ="center"><m>148.413</m></cell>
+</row>
+</tabular>
+
+</table>
+<figure xml:id="CNX_Calc_Figure_04_06_021">
+<image source="CNX_Calc_Figure_04_06_013.jpg" width="50%">
+<description>"The function f(x) = ex is graphed." </description></image> <caption>The exponential function approaches zero as <m>x\to-\infty</m> and approaches <m>\infty</m> as <m>x\to\infty.</m></caption>
+</figure>
+<p id="fs-id1165043218124">Recall that the natural logarithm function <m>f(x)=\text{ ln }(x)</m> is the inverse of the natural exponential function <m>y=e^x.</m> Therefore, the domain of <m>f(x)=\text{ ln }(x)</m> is <m>(0,\infty)</m> and the range is <m>(-\infty,\infty).</m> The graph of <m>f(x)=\text{ ln }(x)</m> is the reflection of the graph of <m>y=e^x</m> about the line <m>y=x.</m> Therefore, <m>\text{ ln }(x)\to-\infty</m> as <m>x\to0^+</m> and <m>\text{ ln }(x)\to\infty</m> as <m>x\to\infty</m> as shown in <xref ref="CNX_Calc_Figure_04_06_022"/> and <xref ref="fs-id1165042460463"/>.</p>
+<table xml:id="fs-id1165042460463" class="column-header" summary="The table has two rows and six columns. The first column is a header column and it reads x and ln(x). After the header, the first row reads 0.01, 0.1, 1, 10, and 100. The second row reads &#x2212;4.605, &#x2212;2.303, 0, 2.303, and 4.605.">
+<title>End behavior of the natural logarithm function</title>
+<tabular>
+<row valign="top">
+<cell valign="middle" halign ="left"><emphasis effect="bold"><m>x</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>0.01</m></cell>
+<cell valign="middle" halign ="center"><m>0.1</m></cell>
+<cell valign="middle" halign ="center"><m>1</m></cell>
+<cell valign="middle" halign ="center"><m>10</m></cell>
+<cell valign="middle" halign ="center"><m>100</m></cell>
+</row>
+<row valign="top">
+<cell valign="middle" halign ="left"><emphasis effect="bold"><m>\text{ ln }(x)</m></emphasis></cell>
+<cell valign="middle" halign ="center"><m>-4.605</m></cell>
+<cell valign="middle" halign ="center"><m>-2.303</m></cell>
+<cell valign="middle" halign ="center"><m>0</m></cell>
+<cell valign="middle" halign ="center"><m>2.303</m></cell>
+<cell valign="middle" halign ="center"><m>4.605</m></cell>
+</row>
+</tabular>
+</table>
+<figure xml:id="CNX_Calc_Figure_04_06_014">
+<image source="CNX_Calc_Figure_04_06_014.jpg" width="50%">
+<description>"The function f(x) = ln(x) is graphed."  </description></image> <caption>The natural logarithm function approaches <m>\infty</m> as <m>x\to\infty.</m></caption>
+</figure>
+<example xml:id="fs-id1165042469818">
+<title>Determining End Behavior for a Transcendental Function</title>
+ <statement id="fs-id1165042469822">
+<p id="fs-id1165042469828">Find the limits as <m>x\to\infty</m> and <m>x\to-\infty</m> for <m>f(x)=\frac{(2+3e^x)}{(7-5e^x)}</m> and describe the end behavior of <m>f.</m></p>
+</statement>
+<solution id="fs-id1165042711622">
+<p id="fs-id1165042711624">To find the limit as <m>x\to\infty,</m> divide the numerator and denominator by <m>e^x\text{ : }</m></p>
+<md><mrow>\lim_{x\to\infty}f(x)\amp =\lim_{x\to\infty}\frac{2+3e^x}{7-5e^x}</mrow><mrow>=\lim_{x\to\infty}\frac{(2/e^x)+3}{(7/e^x)-5}.</mrow></md>
+<p id="fs-id1165042499478">As shown in <xref ref="CNX_Calc_Figure_04_06_021"/>, <m>e^x\to\infty</m> as <m>x\to\infty.</m> Therefore,</p>
+<me>\lim_{x\to\infty}\frac{2}{e^x}=0=\lim_{x\to\infty}\frac{7}{e^x}.</me>
+<p id="fs-id1165042499577">We conclude that <m>\displaystyle{\lim_{x\to\infty}f(x)=-\frac{3}{5}},</m> and the graph of <m>f</m> approaches the horizontal asymptote <m>y=-\frac{3}{5}</m> as <m>x\to\infty.</m> To find the limit as <m>x\to-\infty,</m> use the fact that <m>e^x\to0</m> as <m>x\to-\infty</m> to conclude that <m>\displaystyle{\lim_{x\to\infty}f(x)=\frac{2}{7}},</m> and therefore the graph of approaches the horizontal asymptote <m>y=\frac{2}{7}</m> as <m>x\to-\infty.</m></p>
+</solution>
+</example>
+<exercise><statement id="fs-id1165042711312">
+<p id="fs-id1165042711314">Find the limits as <m>x\to\infty</m> and <m>x\to-\infty</m> for <m>f(x)=\frac{(3e^x-4)}{(5e^x+2)}.</m></p>
+</statement>
+<solution id="fs-id1165042711399">
+<p id="fs-id1165042711402"><m>\displaystyle{\lim_{x\to\infty}f(x)=\frac{3}{5}},</m> <m>\displaystyle{\lim_{x\to-\infty}f(x)=-2}</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042711480"><m>\displaystyle{\lim_{x\to\infty}e^x=\infty}</m> and <m>\displaystyle{\lim_{x\to\infty}e^x=0}.</m></p>
+</hint></exercise>
+</subsubsection>
+</subsection>
+<subsection id="fs-id1165042602932">
+<title>Guidelines for Drawing the Graph of a Function</title>
+<p id="fs-id1165042602938">We now have enough analytical tools to draw graphs of a wide variety of algebraic and transcendental functions. Before showing how to graph specific functions, let's look at a general strategy to use when graphing any function.</p>
+<note id="fs-id1165042602944" class="problem-solving">
+<title>Problem-Solving Strategy: Drawing the Graph of a Function</title>
+<p id="fs-id1165042602951">Given a function <m>f,</m> use the following steps to sketch a graph of <m>f\text{ : }</m></p>
+<ol>
+<li>Determine the domain of the function.</li>
+<li>Locate the <m>x</m>- and <m>y</m>-intercepts.</li>
+<li>Evaluate <m>\displaystyle{\lim_{x\to\infty}f(x)}</m> and <m>\displaystyle{\lim_{x\to-\infty}f(x)}</m> to determine the end behavior. If either of these limits is a finite number <m>L,</m> then <m>y=L</m> is a horizontal asymptote.
+<!-- Commenting out olique asymptote If either of these limits is <m>\infty</m> or <m>-\infty,</m> determine whether <m>f</m> has an oblique asymptote. If <m>f</m> is a rational function such that <m>f(x)=\frac{p(x)}{q(x)},</m> where the degree of the numerator is greater than the degree of the denominator, then <m>f</m> can be written as
+<me>f(x)=\frac{p(x)}{q(x)}=g(x)+\frac{r(x)}{q(x)},</me>
+where the degree of <m>r(x)</m> is less than the degree of <m>q(x).</m> The values of <m>f(x)</m> approach the values of <m>g(x)</m> as <m>x\to\pm\infty.</m> If <m>g(x)</m> is a linear function, it is known as an <emphasis effect="italics">oblique asymptote</emphasis>.--></li>
+<li>Determine whether <m>f</m> has any vertical asymptotes.</li>
+<li>Calculate <m>f'.</m> Find all critical points and determine the intervals where <m>f</m> is increasing and where <m>f</m> is decreasing. Determine whether <m>f</m> has any local extrema.</li>
+<li>Calculate <m>f''.</m> Determine the intervals where <m>f</m> is concave up and where <m>f</m> is concave down. Use this information to determine whether <m>f</m> has any inflection points. The second derivative can also be used as an alternate means to determine or verify that <m>f</m> has a local extremum at a critical point.</li>
+</ol>
+</note>
+<p id="fs-id1165042617762">Now let's use this strategy to graph several different functions. We start by graphing a polynomial function.</p>
+<example xml:id="fs-id1165042617768">
+<title>Sketching a Graph of a Polynomial</title>
+<statement id="fs-id1165042617772">
+<p id="fs-id1165042707708">Sketch a graph of <m>f(x)=(x-1)^2(x+2).</m></p>
+</statement>
+<solution id="fs-id1165042707758">
+<p xml:id="fs-id1165042707761">Step 1. Since <m>f</m> is a polynomial, the domain is the set of all real numbers.</p><p xml:id="fs-id1165042707768">Step 2. When <m>x=0,f(x)=2.</m> Therefore, the <m>y</m>-intercept is <m>(0,2).</m> To find the <m>x</m>-intercepts, we need to solve the equation <m>(x-1)^2(x+2)=0,</m> gives us the <m>x</m>-intercepts <m>(1,0)</m> and <m>(-2,0)</m></p><p xml:id="fs-id1165042707901">Step 3. We need to evaluate the end behavior of <m>f.</m> As <m>x\to\infty,</m> <m>(x-1)^2\to\infty</m> and <m>(x+2)\to\infty.</m> Therefore, <m>\displaystyle{\lim_{x\to\infty}f(x)=\infty.}</m> As <m>x\to-\infty,</m> <m>(x-1)^2\to\infty</m> and <m>(x+2)\to-\infty.</m> Therefore, <m>\displaystyle{\lim_{x\to-\infty}f(x)=-\infty.}</m> To get even more information about the end behavior of <m>f,</m> we can multiply the factors of <m>f.</m> When doing so, we see that</p><me>f(x)=(x-1)^2(x+2)=x^3-3x+2.</me>
+<p id="fs-id1165042525532">Since the leading term of <m>f</m> is <m>x^3,</m> we conclude that <m>f</m> behaves like <m>y=x^3</m> as <m>x\to\pm\infty.</m></p>
+<p xml:id="fs-id1165043382921">Step 4. Since <m>f</m> is a polynomial function, it does not have any vertical asymptotes.</p><p xml:id="fs-id1165043382928">Step 5. The first derivative of <m>f</m> is</p><me>f'(x)=3x^2-3.</me>
+<p id="fs-id1165043382970">Therefore, <m>f</m> has two critical points: <m>x=1,-1.</m> Divide the interval <m>(-\infty,\infty)</m> into the three smaller intervals: <m>(-\infty,-1),</m> <m>(-1,1),</m> and <m>(1,\infty).</m> Then, choose test points <m>x=-2,</m> <m>x=0,</m> and <m>x=2</m> from these intervals and evaluate the sign of <m>f'(x)</m> at each of these test points, as shown in the following table.</p>
+<table xml:id="fs-id1165043383127" class="unnumbered" summary="This table has four rows and four columns. The first row is a header row, and it reads Interval, Test Point, Sign of Derivative f&#x2019;(x) = 3x2 &#x2013; 3 = 3(x &#x2013; 1)(x + 1), and Conclusion. Under the header row, the first column reads (&#x2212;&#x221E;, &#x2212;1), (&#x2212;1, 1), and (1, &#x221E;). The second column reads x = &#x2212;2, x = 0, and x = 2. The third column reads (+)(&#x2212;)(&#x2212;) = +, (+)(&#x2212;)(+) = &#x2212;, and (+)(+)(+) = +. The fourth column reads f is increasing, f is decreasing, and f is increasing.">
+<label/>
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Interval</cell>
+<cell valign="top" halign ="left">Test Point</cell>
+<cell valign="top" halign ="left">Sign of Derivative <m>f(x)=3x^2-3=3(x-1)(x+1)</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+
+
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-\infty,-1)</m></cell>
+<cell valign="top" halign ="left"><m>x=-2</m></cell>
+<cell valign="top" halign ="left"><m>(+)(-)(-)=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is increasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-1,1)</m></cell>
+<cell valign="top" halign ="left"><m>x=0</m></cell>
+<cell valign="top" halign ="left"><m>(+)(-)(+)=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is decreasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(1,\infty)</m></cell>
+<cell valign="top" halign ="left"><m>x=2</m></cell>
+<cell valign="top" halign ="left"><m>(+)(+)(+)=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is increasing.</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1165042539204">From the table, we see that <m>f</m> has a local maximum at <m>x=-1</m> and a local minimum at <m>x=1.</m> Evaluating <m>f(x)</m> at those two points, we find that the local maximum value is <m>f(-1)=4</m> and the local minimum value is <m>f(1)=0.</m></p>
+<p xml:id="fs-id1165042539284">Step 6. The second derivative of <m>f</m> is</p><me>f''(x)=6x.</me>
+<p id="fs-id1165042539318">The second derivative is zero at <m>x=0.</m> Therefore, to determine the concavity of <m>f,</m> divide the interval <m>(-\infty,\infty)</m> into the smaller intervals <m>(-\infty,0)</m> and <m>(0,\infty),</m> and choose test points <m>x=-1</m> and <m>x=1</m> to determine the concavity of <m>f</m> on each of these smaller intervals as shown in the following table.</p>
+<table xml:id="fs-id1165042381927" class="unnumbered" summary="This table has three rows and four columns. The first row is a header row, and it reads Interval, Test Point, Sign of f&#x2019;&#x2019;(x) = 6x, and Conclusion. Under the header row, the first column reads (&#x2212;&#x221E;, 0) and (0, &#x221E;). The second column reads x = &#x2212;1 and x = 1. The third column reads &#x2212; and +. The fourth column reads f is concave down and f is concave up.">
+<label/>
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Interval</cell>
+<cell valign="top" halign ="left">Test Point</cell>
+<cell valign="top" halign ="left">Sign of <m>f''(x)=6x</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-\infty,0)</m></cell>
+<cell valign="top" halign ="left"><m>x=-1</m></cell>
+<cell valign="top" halign ="left"><m>-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is concave down.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(0,\infty)</m></cell>
+<cell valign="top" halign ="left"><m>x=1</m></cell>
+<cell valign="top" halign ="left"><m>+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is concave up.</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1165042382153">We note that the information in the preceding table confirms the fact, found in step <m>5,</m> that <m>f</m> has a local maximum at <m>x=-1</m> and a local minimum at <m>x=1.</m> In addition, the information found in step <m>5</m>—namely, <m>f</m> has a local maximum at <m>x=-1</m> and a local minimum at <m>x=1,</m> and <m>f'(x)=0</m> at those points—combined with the fact that <m>f''</m> changes sign only at <m>x=0</m> confirms the results found in step <m>6</m> on the concavity of <m>f.</m></p>
+<p id="fs-id1165042709981">Combining this information, we arrive at the graph of <m>f(x)=(x-1)^2(x+2)</m> shown in the following graph.</p>
+<figure xml:id="CNX_Calc_Figure_04_06_015">
+<image source="CNX_Calc_Figure_04_06_015.jpg" width="75%">
+<description>"The function <m>f(x) = (x -1)^2 (x + 2)</m> is graphed. It crosses the x axis at <m>x = 2</m> and touches the x axis at <m>x = 1."</m> </description>
+</image><caption></caption>
+</figure>
+<!-- Why won't the figure render?
+<figure source="CNX_Calc_Figure_04_06_015.jpg" width="50%">
+<description>"The function f(x) = (x &#x2212;1)2 (x + 2) is graphed. It crosses the x axis at x = &#x2212;2 and touches the x axis at x = 1.">
+</description></figure>-->
+</solution>
+</example>
+<exercise><statement id="fs-id1165042710053">
+<p id="fs-id1165042710055">Sketch a graph of <m>f(x)=(x-1)^3(x+2).</m></p>
+</statement>
+<solution id="fs-id1165042710105">
+
+<figure xml:id="CNX_Calc_Figure_04_06_028"> 
+<image source="CNX_Calc_Figure_04_06_028.jpg" width="50%">
+<description>"The function <m>f(x) = (x-1)^3(x + 2)</m> is graphed."</description>
+</image><caption></caption>
+</figure>
+</solution>
+<hint>
+<p id="fs-id1165042710130"><m>f</m> is a fourth-degree polynomial.</p>
+</hint></exercise>
+<example xml:id="fs-id1165042710140">
+<title>Sketching a Rational Function</title>
+ <statement id="fs-id1165042710144">
+<p xml:id="fs-id1165042710150">Sketch the graph of <m>f(x)=\frac{x^2}{(1-x^2)}\text{ . }</m></p></statement>
+<solution id="fs-id1165042407412">
+<p xml:id="fs-id1165042407414">Step 1. The function <m>f</m> is defined as long as the denominator is not zero. Therefore, the domain is the set of all real numbers <m>x</m> except <m>x=\pm1.</m></p><p xml:id="fs-id1165042407440">Step 2. Find the intercepts. If <m>x=0,</m> then <m>f(x)=0,</m> so <m>0</m> is an intercept. If <m>y=0,</m> then <m>\frac{x^2}{(1-x^2)}=0,</m> which implies <m>x=0.</m> Therefore, <m>(0,0)</m> is the only intercept.</p><p xml:id="fs-id1165042407553">Step 3. Evaluate the limits at infinity. Since <m>f</m> is a rational function, divide the numerator and denominator by the highest power in the denominator: <m>x^2.</m> We obtain</p><me>\lim_{x\to\pm\infty}\frac{x^2}{1-x^2}=\lim_{x\to\pm\infty}\frac{1}{1/x^2-1}=-1.</me>
+<p id="fs-id1165042407655">Therefore, <m>f</m> has a horizontal asymptote of <m>y=-1</m> as <m>x\to\infty</m> and <m>x\to-\infty.</m></p>
+<p xml:id="fs-id1165042491004">Step 4. To determine whether <m>f</m> has any vertical asymptotes, first check to see whether the denominator has any zeroes. We find the denominator is zero when <m>x=\pm1.</m> To determine whether the lines <m>x=1</m> or <m>x=-1</m> are vertical asymptotes of <m>f,</m> evaluate <m>\displaystyle{\lim_{x\to1}f(x)}</m> and <m>\displaystyle{\lim_{x\to-1}f(x).}</m> By looking at each one-sided limit as <m>x\to1,</m> we see that</p><me>\lim_{x\to1^+}\frac{x^2}{1-x^2}=-\infty \text{ and } \lim_{x\to1^-}\frac{x^2}{1-x^2}=\infty.</me>
+<p id="fs-id1165042491222">In addition, by looking at each one-sided limit as <m>x\to-1,</m> we find that</p>
+<me>\lim_{x\to-1^+}\frac{x^2}{1-x^2}=\infty \text{ and } \lim_{x\to-1^-}\frac{x^2}{1-x^2}=-\infty.</me>
+<p xml:id="fs-id1165043262266">Step 5. Calculate the first derivative:</p><me>f'(x)=\frac{2x(1-x^2)+2x(x^2)}{(1-x^2)^2}=\frac{2x}{(1-x^2)^2}.</me>
+<p id="fs-id1165043262390">Critical points occur at points <m>x</m> where <m>f'(x)=0</m> or <m>f'(x)</m> is undefined. We see that <m>f'(x)=0</m> when <m>x=0.</m> The derivative <m>f'</m> is not undefined at any point in the domain of <m>f.</m> However, <m>x=\pm1</m> are not in the domain of <m>f.</m> Therefore, to determine where <m>f</m> is increasing and where <m>f</m> is decreasing, divide the interval <m>(-\infty,\infty)</m> into four smaller intervals: <m>(-\infty,-1),</m> <m>(-1,0),</m> <m>(0,1),</m> and <m>(1,\infty),</m> and choose a test point in each interval to determine the sign of <m>f'(x)</m> in each of these intervals. The values <m>x=-2,</m> <m>x=-\frac{1}{2},</m> <m>x=\frac{1}{2},</m> and <m>x=2</m> are good choices for test points as shown in the following table.</p>
+<table xml:id="fs-id1165043341618" class="unnumbered" summary="This table has four columns and five rows. The first row is a header row, and it reads Interval, Test Point, Sign of f&#x2019;(x) = 2x/(1 &#x2212; x2)2, and Conclusion. Under the header row, the first column reads (&#x2212;&#x221E;, &#x2212;1), (&#x2212;1, 0), (0, 1), and (1, &#x221E;). The second column reads x = &#x2212;2, x = &#x2212;1/2, x = 1/2, and x = 2. The third column reads &#x2212;/+ = &#x2212;, &#x2212;/+ = &#x2212;, +/+ = +, and +/+ = +. The fourth column reads f is decreasing, f is decreasing, f is increasing, and f is increasing.">
+<label/>
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Interval</cell>
+<cell valign="top" halign ="left">Test Point</cell>
+<cell valign="top" halign ="left">Sign of <m>f'(x)=\frac{2x}{(1-x^2)^2}</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-\infty,-1)</m></cell>
+<cell valign="top" halign ="left"><m>x=-2</m></cell>
+<cell valign="top" halign ="left"><m>-/+=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is decreasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-1,0)</m></cell>
+<cell valign="top" halign ="left"><m>x=-1/2</m></cell>
+<cell valign="top" halign ="left"><m>-/+=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is decreasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(0,1)</m></cell>
+<cell valign="top" halign ="left"><m>x=1/2</m></cell>
+<cell valign="top" halign ="left"><m>+/+=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is increasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(1,\infty)</m></cell>
+<cell valign="top" halign ="left"><m>x=2</m></cell>
+<cell valign="top" halign ="left"><m>+/+=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is increasing.</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1165043183348">From this analysis, we conclude that <m>f</m> has a local minimum at <m>x=0</m> but no local maximum.</p>
+<p xml:id="fs-id1165043183355">Step 6. Calculate the second derivative:</p><md>
+<mrow>f''(x)\amp=\frac{(1-x^2)^2(2)-2x(2(1-x^2)(-2x))}{(1-x^2)^4}</mrow>
+<mrow>\amp=\frac{(1-x^2)}{[2(1-x^2)+8x^2]}{(1-x^2)^4}</mrow>
+<mrow>\amp=\frac{2(1-x^2)+8x^2}{(1-x^2)^3}</mrow>
+<mrow>\amp=\frac{6x^2+2}{(1-x^2)^3}.</mrow></md>
+<p id="fs-id1165043384128">To determine the intervals where <m>f</m> is concave up and where <m>f</m> is concave down, we first need to find all points <m>x</m> where <m>f''(x)=0</m> or <m>f''(x)</m> is undefined. Since the numerator <m>6x^2+2\neq 0</m> for any <m>x,</m> <m>f''(x)</m> is never zero. Furthermore, <m>f''</m> is not undefined for any <m>x</m> in the domain of <m>f.</m> However, as discussed earlier, <m>x=\pm1</m> are not in the domain of <m>f.</m> Therefore, to determine the concavity of <m>f,</m> we divide the interval <m>(-\infty,\infty)</m> into the three smaller intervals <m>(-\infty,-1),</m> <m>(-1,-1),</m> and <m>(1,\infty),</m> and choose a test point in each of these intervals to evaluate the sign of <m>f''(x).</m> in each of these intervals. The values <m>x=-2,</m> <m>x=0,</m> and <m>x=2</m> are possible test points as shown in the following table.</p>
+<table xml:id="fs-id1165043384406" class="unnumbered" summary="This table has four columns and four rows. The first row is a header row, and it reads Interval, Test Point, Sign of f&#x2019;&#x2019;(x) = (6x2 + 2)/(1 &#x2212; x2)3, and Conclusion. Under the header row, the first column reads (&#x2212;&#x221E;, &#x2212;1), (&#x2212;1, 1), and (1, &#x221E;). The second column reads x = &#x2212;2, x = 0, and x = 2. The third column reads +/&#x2212; = &#x2212;, +/+ = +, and +/&#x2212; = &#x2212;. The fourth column reads f is concave down, f is concave up, and f is concave down.">
+
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Interval</cell>
+<cell valign="top" halign ="left">Test Point</cell>
+<cell valign="top" halign ="left">Sign of <m>f''(x)=\frac{6x^2+2}{(1-x^2)^3}</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-\infty,-1)</m></cell>
+<cell valign="top" halign ="left"><m>x=-2</m></cell>
+<cell valign="top" halign ="left"><m>+/-=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is concave down.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-1,-1)</m></cell>
+<cell valign="top" halign ="left"><m>x=0</m></cell>
+<cell valign="top" halign ="left"><m>+/+=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is concave up.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(1,\infty)</m></cell>
+<cell valign="top" halign ="left"><m>x=2</m></cell>
+<cell valign="top" halign ="left"><m>+/-=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is concave down.</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1165042592688">Combining all this information, we arrive at the graph of <m>f</m> shown below. Note that, although <m>f</m> changes concavity at <m>x=-1</m> and <m>x=1,</m> there are no inflection points at either of these places because <m>f</m> is not continuous at <m>x=-1</m> or <m>x=1.</m></p>
+<image source="CNX_Calc_Figure_04_06_016.jpg" width="50%">
+<description>"The function f(x) = x2/(1 &#x2212; x2) is graphed. It has asymptotes y = &#x2212;1, x = &#x2212;1, and x = 1." </description></image>
+</solution>
+</example>
+<exercise><statement id="fs-id1165042592770">
+<p id="fs-id1165042592772">Sketch a graph of <m>f(x)=\frac{(3x+5)}{(8+4x)}.</m></p>
+</statement>
+<solution id="fs-id1165042592824"><p id="fs-id1165042592825">
+<image source="CNX_Calc_Figure_04_06_029.jpg" width="50%">
+<description>"The function f(x) = (3x + 5)/(8 + 4x) is graphed. It appears to have asymptotes at x = &#x2212;2 and y = 1.">
+</description></image>
+</p>
+</solution>
+<hint>
+<p id="fs-id1165042592850">A line <m>y=L</m> is a horizontal asymptote of <m>f</m> if the limit as <m>x\to\infty</m> or the limit as <m>x\to-\infty</m> of <m>f(x)</m> is <m>L.</m> A line <m>x=a</m> is a vertical asymptote if at least one of the one-sided limits of <m>f</m> as <m>x\to a</m> is <m>\infty</m> or <m>-\infty.</m></p>
+</hint></exercise>
+<!--Commenting out oblique asymptote
+<example xml:id="fs-id1165042592955">
+<title>Sketching a Rational Function with an Oblique Asymptote</title>
+<statement id="fs-id1165042592959">
+<p id="fs-id1165042592964">Sketch the graph of <m>f(x)=\frac{x^2}{(x-1)}</m></p>
+</statement>
+<solution id="fs-id1165042593004">
+<p xml:id="fs-id1165042593006">Step 1. The domain of <m>f</m> is the set of all real numbers <m>x</m> except <m>x=1.</m></p><p xml:id="fs-id1165042712534">Step 2. Find the intercepts. We can see that when <m>x=0,</m> <m>f(x)=0,</m> so <m>(0,0)</m> is the only intercept.</p><p xml:id="fs-id1165042712584">Step 3. Evaluate the limits at infinity. Since the degree of the numerator is one more than the degree of the denominator, <m>f</m> must have an oblique asymptote. To find the oblique asymptote, use long division of polynomials to write</p><me>f(x)=\frac{x^2}{x-1}=x+1+\frac{1x-1}.</me>
+<p id="fs-id1165042712649">Since <m>1/(x-1)\to0</m> as <m>x\to\pm\infty,</m> <m>f(x)</m> approaches the line <m>y=x+1</m> as <m>x\to\pm\infty.</m> The line <m>y=x+1</m> is an oblique asymptote for <m>f.</m></p>
+<p xml:id="fs-id1165042712758">Step 4. To check for vertical asymptotes, look at where the denominator is zero. Here the denominator is zero at <m>x=1.</m> Looking at both one-sided limits as <m>x\to1,</m> we find</p><me>\lim_{x\to 1^+}\frac{x^2}{x-1}=\infty \text{ and } \lim_{x\to1^-}\frac{x^2}{x-1}=-\infty.</me>
+<p id="fs-id1165042403315">Therefore, <m>x=1</m> is a vertical asymptote, and we have determined the behavior of <m>f</m> as <m>x</m> approaches <m>1</m> from the right and the left.</p>
+<p xml:id="fs-id1165042403340">Step 5. Calculate the first derivative:</p><me>f'(x)=\frac{(x-1)}{(2x)-x^2(1)}{(x-1)^2}=\frac{x^2-2x}{(x-1)^2}.</me>
+<p id="fs-id1165042403459">We have <m>f'(x)=0</m> when <m>x^2-2x=x(x-2)=0.</m> Therefore, <m>x=0</m> and <m>x=2</m> are critical points. Since <m>f</m> is undefined at <m>x=1,</m> we need to divide the interval <m>(-\infty,\infty)</m> into the smaller intervals <m>(-\infty,0),</m> <m>(0,1),</m> <m>(1,2),</m> and <m>(2,\infty),</m> and choose a test point from each interval to evaluate the sign of <m>f'(x)</m> in each of these smaller intervals. For example, let <m>x=-1,</m> <m>x=\frac{1}{2},</m> <m>x=\frac{3}{2},</m> and <m>x=3</m> be the test points as shown in the following table.</p>
+<table xml:id="fs-id1165042710566" class="unnumbered" summary="This table has four columns and five rows. The first row is a header row, and it reads Interval, Test Point, Sign of f&#x2019;(x) = (x2 &#x2212; 2x)/(x &#x2212; 1)2 = x(x &#x2212; 2)/(x &#x2212; 1)2, and Conclusion. Under the header row, the first column reads (&#x2212;&#x221E;, 0), (0, 1), (1, 2), and (2, &#x221E;). The second column reads x = &#x2212;1, x = 1/2, x = 3/2, and x = 3. The third column reads (&#x2212;)(&#x2212;)/+ = +, (+)(&#x2212;)/+ = &#x2212;, (+)(&#x2212;)/+ = &#x2212;, and (+)(+)/+ = +. The fourth column reads f is increasing, f is decreasing, f is decreasing, and f is increasing.">
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Interval</cell>
+<cell valign="top" halign ="left">Test Point</cell>
+<cell valign="top" halign ="left">Sign of <m>f(x)=\frac{x^2-2x}{(x-1)^2}=\frac{x(x-2)}{(x-1)^2}</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-\infty,0)</m></cell>
+<cell valign="top" halign ="left"><m>x=-1</m></cell>
+<cell valign="top" halign ="left"><m>(-)}{(-)/+=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is increasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(0,1)</m></cell>
+<cell valign="top" halign ="left"><m>x=1/2</m></cell>
+<cell valign="top" halign ="left"><m>(\text{ + })}{(-)/+=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is decreasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(1,2)</m></cell>
+<cell valign="top" halign ="left"><m>x=3/2</m></cell>
+<cell valign="top" halign ="left"><m>(\text{ + })}{(-)/+=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is decreasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(2,\infty)</m></cell>
+<cell valign="top" halign ="left"><m>x=3</m></cell>
+<cell valign="top" halign ="left"><m>(\text{ + })}{(\text{ + })/+=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is increasing.</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1165042476453">From this table, we see that <m>f</m> has a local maximum at <m>x=0</m> and a local minimum at <m>x=2.</m> The value of <m>f</m> at the local maximum is <m>f(0)=0</m> and the value of <m>f</m> at the local minimum is <m>f(2)=4.</m> Therefore, <m>(0,0)</m> and <m>(2,4)</m> are important points on the graph.</p>
+<p xml:id="fs-id1165042464546">Step 6. Calculate the second derivative:</p><md><mrow>f''(x)\amp =\frac{(x-1)^2(2x-2)-(x^2-2x)}{(2(x-1))}{(x-1)^4}</mrow>
+<mrow>\amp=\frac{(x-1)}{[(x-1)}{(2x-2)-2(x^2-2x)]}{(x-1)^4}</mrow>
+<mrow>\amp=\frac{(x-1)}{(2x-2)-2(x^2-2x)}{(x-1)^3}</mrow>
+<mrow>\amp=\frac{2x^2-4x+2-(2x^2-4x)}{(x-1)^3}</mrow>
+<mrow>\amp=\frac{2(x-1)^3}.</mrow></md>
+<p id="fs-id1165042652400">We see that <m>f''(x)</m> is never zero or undefined for <m>x</m> in the domain of <m>f.</m> Since <m>f</m> is undefined at <m>x=1,</m> to check concavity we just divide the interval <m>(-\infty,\infty)</m> into the two smaller intervals <m>(-\infty,1)</m> and <m>(1,\infty),</m> and choose a test point from each interval to evaluate the sign of <m>f''(x)</m> in each of these intervals. The values <m>x=0</m> and <m>x=2</m> are possible test points as shown in the following table.</p>
+<table xml:id="fs-id1165042652542" class="unnumbered" summary="This table has four columns and three rows. The first row is a header row, and it reads Interval, Test Point, Sign of f&#x2019;&#x2019;(x) = 2/(x &#x2212; 1)3, and Conclusion. Under the header row, the first column reads (&#x2212;&#x221E;, 1) and (1, &#x221E;). The column row reads x = 0 and x = 2. The third column reads +/&#x2212; = &#x2212; and +/+ = +. The fourth column reads f is concave down and f is concave up.">
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Interval</cell>
+<cell valign="top" halign ="left">Test Point</cell>
+<cell valign="top" halign ="left">Sign of <m>f''(x)=\frac{2(x-1)^3}</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-\infty,1)</m></cell>
+<cell valign="top" halign ="left"><m>x=0</m></cell>
+<cell valign="top" halign ="left"><m>+/-=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is concave down.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(1,\infty)</m></cell>
+<cell valign="top" halign ="left"><m>x=2</m></cell>
+<cell valign="top" halign ="left"><m>+/+=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is concave up.</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1165042606958">From the information gathered, we arrive at the following graph for <m>f.</m></p>
+<image source="CNX_Calc_Figure_04_06_017.jpg" width="50%">
+<description>"The function f(x) = x2/(x &#x2212; 1) is graphed. It has asymptotes y = x + 1 and x = 1." </description></image>
+</solution>
+</example>
+<exercise><statement id="fs-id1165042606988">
+<p id="fs-id1165042606991">Find the oblique asymptote for <m>f(x)=\frac{(3x^3-2x+1)}{(2x^2-4)}.</m></p>
+</statement>
+<solution id="fs-id1165042607057">
+<p id="fs-id1165042607059"><m>y=\frac{3}{2}x</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042607084">Use long division of polynomials.</p>
+</hint></exercise>-->
+<example xml:id="fs-id1165042607090">
+<title>Sketching the Graph of a Function with a Cusp</title>
+<statement id="fs-id1165042607095">
+<p id="fs-id1165042607100">Sketch a graph of <m>f(x)=(x-1)^{2/3}.</m></p>
+</statement>
+<solution id="fs-id1165042607143">
+<p xml:id="fs-id1165042607145">Step 1. Since the cube-root function is defined for all real numbers <m>x</m> and <m>(x-1)^{2/3}=(\sqrt[3]{x-1})^2,</m> the domain of <m>f</m> is all real numbers.</p><p id="fs-id1165042607208">Step 2: To find the <m>y</m>-intercept, evaluate <m>f(0).</m> Since <m>f(0)=1,</m> the <m>y</m>-intercept is <m>(0,1).</m> To find the <m>x</m>-intercept, solve <m>(x-1)^{2/3}=0.</m> The solution of this equation is <m>x=1,</m> so the <m>x</m>-intercept is <m>(1,0).</m></p>
+<p id="fs-id1165042583208">Step 3: Since <m>\lim_{x\to\pm\infty}(x-1)^{2/3}=\infty,</m> the function continues to grow without bound as <m>x\to\infty</m> and <m>x\to-\infty.</m></p>
+<p id="fs-id1165042583285">Step 4: The function has no vertical asymptotes.</p>
+<p id="fs-id1165042583288">Step 5: To determine where <m>f</m> is increasing or decreasing, calculate <m>f'.</m> We find</p>
+<me>f'(x)=\frac{2}{3}(x-1)^{-1/3}=\frac{2}{3(x-1)^{1/3}}.</me>
+<p id="fs-id1165042583388">This function is not zero anywhere, but it is undefined when <m>x=1.</m> Therefore, the only critical point is <m>x=1.</m> Divide the interval <m>(-\infty,\infty)</m> into the smaller intervals <m>(-\infty,1)</m> and <m>(1,\infty),</m> and choose test points in each of these intervals to determine the sign of <m>f'(x)</m> in each of these smaller intervals. Let <m>x=0</m> and <m>x=2</m> be the test points as shown in the following table.</p>
+<table xml:id="fs-id1165042504467" class="unnumbered" summary="This table has four columns and three rows. The first row is a header row, and it reads Interval, Test Point, Sign of f&#x2019;(x) = 2/(3(x &#x2212; 1)1/3), and Conclusion. Under the header row, the first column reads (&#x2212;&#x221E;, 1) and (1, &#x221E;). The second column reads x = 0 and x = 2. The third column reads +/&#x2212; = &#x2212; and +/+ = +. The fourth column reads f is decreasing and f is increasing.">
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Interval</cell>
+<cell valign="top" halign ="left">Test Point</cell>
+<cell valign="top" halign ="left">Sign of <m>f'(x)=\frac{2}{3(x-1)^{1/3}}</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-\infty,1)</m></cell>
+<cell valign="top" halign ="left"><m>x=0</m></cell>
+<cell valign="top" halign ="left"><m>+/-=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is decreasing.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(1,\infty)</m></cell>
+<cell valign="top" halign ="left"><m>x=2</m></cell>
+<cell valign="top" halign ="left"><m>+/+=+</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is increasing.</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1165042504734">We conclude that <m>f</m> has a local minimum at <m>x=1.</m> Evaluating <m>f</m> at <m>x=1,</m> we find that the value of <m>f</m> at the local minimum is zero. Note that <m>f'(1)</m> is undefined, so to determine the behavior of the function at this critical point, we need to examine <m>\lim_{x\to 1}f'(x).</m> Looking at the one-sided limits, we have</p>
+<me>\lim_{x\to 1^+}\frac{2}{3(x-1)^{1/3}}=\infty \text{ and } \lim_{x\to1^-}\frac{2}{3(x-1)^{1/3}}=-\infty.</me>
+<p id="fs-id1165042510285">Therefore, <m>f</m> has a cusp at <m>x=1.</m></p>
+<p id="fs-id1165042510304">Step 6: To determine concavity, we calculate the second derivative of <m>f\text{ : }</m></p>
+<me>f''(x)=-\frac{2}{9}(x-1)^{-4/3}=\frac{-2}{9(x-1)^{4/3}}.</me>
+<p id="fs-id1165042510398">We find that <m>f''(x)</m> is defined for all <m>x,</m> but is undefined when <m>x=1.</m> Therefore, divide the interval <m>(-\infty,\infty)</m> into the smaller intervals <m>(-\infty,1)</m> and <m>(1,\infty),</m> and choose test points to evaluate the sign of <m>f''(x)</m> in each of these intervals. As we did earlier, let <m>x=0</m> and <m>x=2</m> be test points as shown in the following table.</p>
+<table xml:id="fs-id1165042510530" class="unnumbered" summary="This table has four columns and three rows. The first row is a header row, and it reads Interval, Test Point, Sign of f&#x2019;&#x2019;(x) = &#x2212;2/(9(x &#x2212; 1)4/3), and Conclusion. Under the header row, the first column reads (&#x2212;&#x221E;, 1) and (1, &#x221E;). The second column reads x = 0 and x = 2. The third column reads &#x2212;/+ = &#x2212; and &#x2212;/+ = &#x2212;. The fourth column reads f is concave down and f is concave down.">
+<label/>
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left">Interval</cell>
+<cell valign="top" halign ="left">Test Point</cell>
+<cell valign="top" halign ="left">Sign of <m>f''(x)=\frac{-2}{9(x-1)^{4/3}}</m></cell>
+<cell valign="top" halign ="left">Conclusion</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(-\infty,1)</m></cell>
+<cell valign="top" halign ="left"><m>x=0</m></cell>
+<cell valign="top" halign ="left"><m>-/+=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is concave down.</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left"><m>(1,\infty)</m></cell>
+<cell valign="top" halign ="left"><m>x=2</m></cell>
+<cell valign="top" halign ="left"><m>-/+=-</m></cell>
+<cell valign="top" halign ="left"><m>f</m> is concave down.</cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1165042643969">From this table, we conclude that <m>f</m> is concave down everywhere. Combining all of this information, we arrive at the following graph for <m>f.</m></p>
+<image source="CNX_Calc_Figure_04_06_018.jpg" width="50%">
+<description>"The function f(x) = (x &#x2212; 1)2/3 is graphed. It touches the x axis at x = 1, where it comes to something of a sharp point and then flairs out on either side.">
+</description></image>
+</solution>
+</example>
+<exercise><statement id="fs-id1165042644013">
+<p id="fs-id1165042644015">Consider the function <m>f(x)=5-x^2/3.</m> Determine the point on the graph where a cusp is located. Determine the end behavior of <m>f.</m></p>
+</statement>
+<solution id="fs-id1165042644058">
+<p id="fs-id1165042644060">The function <m>f</m> has a cusp at <m>(0,5)</m> <m>\lim_{x\to0^-}f'(x)=\infty,</m> <m>\lim_{x\to0^+}f'(x)=-\infty.</m> For end behavior, <m>\lim_{x\to\pm\infty}f(x)=-\infty.</m></p>
+</solution>
+<hint>
+<p id="fs-id1165042633573">A function <m>f</m> has a cusp at a point <m>a</m> if <m>f(a)</m> exists, <m>f(a)</m> is undefined, one of the one-sided limits as <m>x\to a</m> of <m>f(x)</m> is <m>+\infty,</m> and the other one-sided limit is <m>-\infty.</m></p>
+</hint></exercise>
+</subsection>
+<subsection id="fs-id1165042633662" class="key-concepts">
+<title>Key Concepts</title>
+<ul>
+<li>The limit of <m>f(x)</m> is <m>L</m> as <m>x\to\infty</m> (or as <m>x\to-\infty)</m> if the values <m>f(x)</m> become arbitrarily close to <m>L</m> as <m>x</m> becomes sufficiently large.</li>
+<li>The limit of <m>f(x)</m> is <m>\infty</m> as <m>x\to\infty</m> if <m>f(x)</m> becomes arbitrarily large as <m>x</m> becomes sufficiently large. The limit of <m>f(x)</m> is <m>-\infty</m> as <m>x\to\infty</m> if <m>f(x)\lt 0</m> and <m>|f(x)|</m> becomes arbitrarily large as <m>x</m> becomes sufficiently large. We can define the limit of <m>f(x)</m> as <m>x</m> approaches <m>-\infty</m> similarly.</li>
+<li>For a polynomial function <m>p(x)=a_nx^n+a_{n-1} x^{n-1} +\dots+a_1x+a_0,</m> where <m>a_n\neq 0,</m> the end behavior is determined by the leading term <m>a_nx^n.</m> If <m>n\neq 0,</m> <m>p(x)</m> approaches <m>\infty</m> or <m>-\infty</m> at each end.</li>
+<li>For a rational function <m>f(x)=\frac{p(x)}{q(x)},</m> the end behavior is determined by the relationship between the degree of <m>p</m> and the degree of <m>q.</m> If the degree of <m>p</m> is less than the degree of <m>q,</m> the line <m>y=0</m> is a horizontal asymptote for <m>f.</m> If the degree of <m>p</m> is equal to the degree of <m>q,</m> then the line <m>y=\frac{a_n}{b_n}</m> is a horizontal asymptote, where <m>a_n</m> and <m>b_n</m> are the leading coefficients of <m>p</m> and <m>q,</m> respectively. If the degree of <m>p</m> is greater than the degree of <m>q,</m> then <m>f</m> approaches <m>\infty</m> or <m>-\infty</m> at each end.</li>
+</ul>
+</subsection>
+</section>
+<?ignore
+<section id="fs-id1165042640624" class="section-exercises">
+<p id="fs-id1165042640628">For the following exercises, examine the graphs. Identify where the vertical asymptotes are located.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042640635">
+<description>"The function graphed decreases very rapidly as it approaches x = 1 from the left, and on the other side of x = 1, it seems to start near infinity and then decrease rapidly.">
+<image source="CNX_Calc_Figure_04_06_201.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165042640651">
+<p id="fs-id1165042640653"><m>x=1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042640668">
+<description>"The function graphed increases very rapidly as it approaches x = &#x2212;3 from the left, and on the other side of x = &#x2212;3, it seems to start near negative infinity and then increase rapidly to form a sort of U shape that is pointing down, with the other side of the U being at x = 2. On the other side of x = 2, the graph seems to start near infinity and then decrease rapidly.">
+<image source="CNX_Calc_Figure_04_06_202.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043197222">
+<description>"The function graphed decreases very rapidly as it approaches x = &#x2212;1 from the left, and on the other side of x = &#x2212;1, it seems to start near negative infinity and then increase rapidly to form a sort of U shape that is pointing down, with the other side of the U being at x = 2. On the other side of x = 2, the graph seems to start near infinity and then decrease rapidly.">
+<image source="CNX_Calc_Figure_04_06_203.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165043197241">
+<p id="fs-id1165043197243"><m>x=-1,x=2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043197267">
+<description>"The function graphed decreases very rapidly as it approaches x = 0 from the left, and on the other side of x = 0, it seems to start near infinity and then decrease rapidly to form a sort of U shape that is pointing up, with the other side of the U being at x = 1. On the other side of x = 1, there is another U shape pointing down, with its other side being at x = 2. On the other side of x = 2, the graph seems to start near negative infinity and then increase rapidly.">
+<image source="CNX_Calc_Figure_04_06_204.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043197320">
+<description>"The function graphed decreases very rapidly as it approaches x = 0 from the left, and on the other side of x = 0, it seems to start near infinity and then decrease rapidly to form a sort of U shape that is pointing up, with the other side being a normal function that appears as if it will take the entirety of the values of the x-axis.">
+<image source="CNX_Calc_Figure_04_06_205.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1165043197338">
+<p id="fs-id1165043197340"><m>x=0</m></p>
+</solution>
+
+<p id="fs-id1165043197353">For the following functions <m>f(x),</m> determine whether there is an asymptote at <m>x=a.</m> Justify your answer without graphing on a calculator.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165043197385">
+<p id="fs-id1165043197388"><m>f(x)=\frac{x+1}{x^2+5x+4},a=-1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043197449">
+<p id="fs-id1165043197451"><m>f(x)=\frac{xx-2},a=2</m></p>
+</statement>
+<solution id="fs-id1165043197487">
+<p id="fs-id1165043197490">Yes, there is a vertical asymptote</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043197497">
+<p id="fs-id1165043197500"><m>f(x)=<m:msup>(x+2)}{3/2</m:msup>,a=-2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043197557">
+<p id="fs-id1165043197560"><m>f(x)=(x-1)^{-1/3},a=1</m></p>
+</statement>
+<solution id="fs-id1165043197608">
+<p id="fs-id1165043197610">Yes, there is vertical asymptote</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043197618">
+<p id="fs-id1165043197620"><m>f(x)=1+<m:msup>x-2/5</m:msup>,a=1</m></p>
+</statement>
+
+<p id="fs-id1165043377731">For the following exercises, evaluate the limit.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165043377736">
+<p id="fs-id1165043377738"><m>\lim_{x\to\infty}\frac{13x+6}</m></p>
+</statement>
+<solution id="fs-id1165043377770">
+<p id="fs-id1165043377772"><m>0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043377782">
+<p id="fs-id1165043377784"><m>\lim_{x\to\infty}\frac{2x-5}{4x}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043377835">
+<p id="fs-id1165043377837"><m>\lim_{x\to\infty}\frac{x^2-2x+5}{x+2}</m></p>
+</statement>
+<solution id="fs-id1165043377882">
+<p id="fs-id1165043377884"><m>\infty</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043377893">
+<p id="fs-id1165043377896"><m>\lim_{x\to-\infty}\frac{3x^3-2x}{x^2+2x+8}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043377965">
+<p id="fs-id1165043377967"><m>\lim_{x\to-\infty}\frac{x^4-4x^3+1}{2-2x^2-7x^4}</m></p>
+</statement>
+<solution id="fs-id1165043378032">
+<p id="fs-id1165043378034"><m>-\frac{1}{7}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043378050">
+<p id="fs-id1165043378052"><m>\lim_{x\to\infty}\frac{3}{x}{\sqrt{x^2+1}}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043216345">
+<p id="fs-id1165043216347"><m>\lim_{x\to-\infty}\frac{\sqrt{4x^2-1}}{x+2}</m></p>
+</statement>
+<solution id="fs-id1165043216392">
+<p id="fs-id1165043216394"><m>-2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043216404">
+<p id="fs-id1165043216407"><m>\lim_{x\to\infty}\frac{4}{x}{\sqrt{x^2-1}}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043216457">
+<p id="fs-id1165043216459"><m>\lim_{x\to-\infty}\frac{4}{x}{\sqrt{x^2-1}}</m></p>
+</statement>
+<solution id="fs-id1165043216499">
+<p id="fs-id1165043216501"><m>-4</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043216512">
+<p id="fs-id1165043216514"><m>\lim_{x\to\infty}\frac{2\sqrt{x}}{x-\sqrt{x}+1}</m></p>
+</statement>
+
+<p id="fs-id1165043216563">For the following exercises, find the horizontal and vertical asymptotes.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165043216569">
+<p id="fs-id1165043216571"><m>f(x)=x-\frac{9}{x}</m></p>
+</statement>
+<solution id="fs-id1165043216597">
+<p id="fs-id1165043216600">Horizontal: none, vertical: <m>x=0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043216616">
+<p id="fs-id1165043216618"><m>f(x)=\frac{11-x^2}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043216681">
+<p id="fs-id1165043216683"><m>f(x)=\frac{x^3}{4-x^2}</m></p>
+</statement>
+<solution id="fs-id1165043216718">
+<p id="fs-id1165043216720">Horizontal: none, vertical: <m>x=\pm2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043216739">
+<p id="fs-id1165043216741"><m>f(x)=\frac{x^2+3}{x^2+1}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043210296">
+<p id="fs-id1165043210298"><m>f(x)=\sin(x) \sin(2x)</m></p>
+</statement>
+<solution id="fs-id1165043210338">
+<p id="fs-id1165043210340">Horizontal: none, vertical: none</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043210348">
+<p id="fs-id1165043210350"><m>f(x)=\text{ cos } x+\text{ cos }(3x)+\text{ cos }(5x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043210411">
+<p id="fs-id1165043210413"><m>f(x)=\frac{x \sin(x)}{x^2-1}</m></p>
+</statement>
+<solution id="fs-id1165043210455">
+<p id="fs-id1165043210457">Horizontal: <m>y=0,</m> vertical: <m>x=\pm1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043210487">
+<p id="fs-id1165043210489"><m>f(x)=\frac{x\sin(x)}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043210552">
+<p id="fs-id1165043210554"><m>f(x)=\frac{1x^3+x^2}</m></p>
+</statement>
+<solution id="fs-id1165043210589">
+<p id="fs-id1165043210591">Horizontal: <m>y=0,</m> vertical: <m>x=0</m> and <m>x=-1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043210628">
+<p id="fs-id1165043210630"><m>f(x)=\frac{1x-1}-2x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043349200">
+<p id="fs-id1165043349202"><m>f(x)=\frac{x^3+1}{x^3-1}</m></p>
+</statement>
+<solution id="fs-id1165043349242">
+<p id="fs-id1165043349244">Horizontal: <m>y=1,</m> vertical: <m>x=1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043349272">
+<p id="fs-id1165043349274"><m>f(x)=\frac{\sin x+\text{ cos } x}{\sin x-\text{ cos } x}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043349348">
+<p id="fs-id1165043349350"><m>f(x)=x-\sin x</m></p>
+</statement>
+<solution id="fs-id1165043349375">
+<p id="fs-id1165043349378">Horizontal: none, vertical: none</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043349385">
+<p id="fs-id1165043349388"><m>f(x)=\frac{1}{x}-\sqrt{x}</m></p>
+</statement>
+
+<p id="fs-id1165043349432">For the following exercises, construct a function <m>f(x)</m> that has the given asymptotes.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165043349450">
+<p id="fs-id1165043349452"><m>x=1</m> and <m>y=2</m></p>
+</statement>
+<solution id="fs-id1165043349474">
+<p id="fs-id1165043349476">Answers will vary, for example: <m>y=\frac{2}{x}{x-1}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043349504">
+<p id="fs-id1165043349506"><m>x=1</m> and <m>y=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043349561">
+<p id="fs-id1165043349563"><m>y=4,</m> <m>x=-1</m></p>
+</statement>
+<solution id="fs-id1165043349587">
+<p id="fs-id1165043349589">Answers will vary, for example: <m>y=\frac{4}{x}{x+1}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043349617">
+<p id="fs-id1165043349619"><m>x=0</m></p>
+</statement>
+
+<p id="fs-id1165042709113">For the following exercises, graph the function on a graphing calculator on the window <m>x=[-5,5]</m> and estimate the horizontal asymptote or limit. Then, calculate the actual horizontal asymptote or limit.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042709140">
+<p id="fs-id1165042709142"><emphasis effect="bold">[T]</emphasis> <m>f(x)=\frac{1x+10}</m></p>
+</statement>
+<solution id="fs-id1165042709175">
+<p id="fs-id1165042709177"><m>y=0</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042709192">
+<p id="fs-id1165042709194"><emphasis effect="bold">[T]</emphasis> <m>f(x)=\frac{x+1}{x^2+7x+6}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042709259">
+<p id="fs-id1165042709261"><emphasis effect="bold">[T]</emphasis> <m>\lim_{x\to-\infty}x^2+10x+25</m></p>
+</statement>
+<solution id="fs-id1165042709304">
+<p id="fs-id1165042709306"><m>\infty</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042709316">
+<p id="fs-id1165042709318"><emphasis effect="bold">[T]</emphasis> <m>\lim_{x\to-\infty}\frac{x+2}{x^2+7x+6}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042709387">
+<p id="fs-id1165042709389"><emphasis effect="bold">[T]</emphasis> <m>\lim_{x\to\infty}\frac{3x+2}{x+5}</m></p>
+</statement>
+<solution id="fs-id1165042709431">
+<p id="fs-id1165042709433"><m>y=3</m></p>
+</solution>
+
+<p id="fs-id1165042709446">For the following exercises, draw a graph of the functions without using a calculator. Be sure to notice all important features of the graph: local maxima and minima, inflection points, and asymptotic behavior.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1165042709453">
+<p id="fs-id1165042709456"><m>y=3x^2+2x+4</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042709504">
+<p id="fs-id1165042709506"><m>y=x^3-3x^2+4</m></p>
+</statement>
+<solution id="fs-id1165042558119"><p id="fs-id1165042558120">
+<description>"The function starts in the third quadrant, increases to pass through (&#x2212;1, 0), increases to a maximum and y intercept at 4, decreases to touch (2, 0), and then increases to (4, 20).">
+<image source="CNX_Calc_Figure_04_06_207.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042558142">
+<p id="fs-id1165042558144"><m>y=\frac{2x+1}{x^2+6x+5}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042558207">
+<p id="fs-id1165042558209"><m>y=\frac{x^3+4x^2+3x}{3x+9}</m></p>
+</statement>
+<solution id="fs-id1165042558252"><p id="fs-id1165042558253">
+<description>"An upward-facing parabola with minimum between x = 0 and x = &#x2212;1 with y intercept between 0 and 1.">
+<image source="CNX_Calc_Figure_04_06_209.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042558274">
+<p id="fs-id1165042558276"><m>y=\frac{x^2+x-2}{x^2-3x-4}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042558345">
+<p id="fs-id1165042558347"><m>y=\sqrt{x^2-5x+4}</m></p>
+</statement>
+<solution id="fs-id1165042558375"><p id="fs-id1165042558376">
+<description>"This graph starts at (&#x2212;2, 4) and decreases in a convex way to (1, 0). Then the graph starts again at (4, 0) and increases in a convex way to (6, 3).">
+<image source="CNX_Calc_Figure_04_06_211.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042558397">
+<p id="fs-id1165042558399"><m>y=2x\sqrt{16-x^2}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042558448">
+<p id="fs-id1165042558450"><m>y=\frac{\text{ cos } xx},</m> on <m>x=[-2\pi,2\pi]</m></p>
+</statement>
+<solution id="fs-id1165042558495"><p id="fs-id1165042558496">
+<description>"This graph has vertical asymptote at x = 0. The first part of the function occurs in the second and third quadrants and starts in the third quadrant just below (&#x2212;2&#x3C0;, 0), increases and passes through the x axis at &#x2212;3&#x3C0;/2, reaches a maximum and then decreases through the x axis at &#x2212;&#x3C0;/2 before approaching the asymptote. On the other side of the asymptote, the function starts in the first quadrant, decreases quickly to pass through &#x3C0;/2, decreases to a local minimum and then increases through (3&#x3C0;/2, 0) before staying just above (2&#x3C0;, 0).">
+<image source="CNX_Calc_Figure_04_06_213.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165042558521">
+<p id="fs-id1165042558523"><m>y=e^x-x^3</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043404026">
+<p id="fs-id1165043404029"><m>y=x \tan  x,x=[-\pi,\pi]</m></p>
+</statement>
+<solution id="fs-id1165043404066"><p id="fs-id1165043404067">
+<description>"This graph has vertical asymptotes at x = &#xB1;&#x3C0;/2. The graph is symmetric about the y axis, so describing the left hand side will be sufficient. The function starts at (&#x2212;&#x3C0;, 0) and decreases quickly to the asymptote. Then it starts on the other side of the asymptote in the second quadrant and decreases to the the origin.">
+<image source="CNX_Calc_Figure_04_06_215.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043404090">
+<p id="fs-id1165043404092"><m>y=x \text{ ln }(x),x\gt 0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043404143">
+<p id="fs-id1165043404145"><m>y=x^2\sin(x),x=[-2\pi,2\pi]</m></p>
+</statement>
+<solution id="fs-id1165043404193"><p id="fs-id1165043404194">
+<description>"This function starts at (&#x2212;2&#x3C0;, 0), increases to near (&#x2212;3&#x3C0;/2, 25), decreases through (&#x2212;&#x3C0;, 0), achieves a local minimum and then increases through the origin. On the other side of the origin, the graph is the same but flipped, that is, it is congruent to the other half by a rotation of 180 degrees.">
+<image source="CNX_Calc_Figure_04_06_217.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043404217">
+<p id="fs-id1165043404219">For <m>f(x)=\frac{P(x)}{Q(x)}</m> to have an asymptote at <m>y=2</m> then the polynomials <m>P(x)</m> and <m>Q(x)</m> must have what relation?</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043404363">
+<p id="fs-id1165043404366">For <m>f(x)=\frac{P(x)}{Q(x)}</m> to have an asymptote at <m>x=0,</m> then the polynomials <m>P(x)</m> and <m>Q(x).</m> must have what relation?</p>
+</statement>
+<solution id="fs-id1165043208541">
+<p xml:id="fs-id1165043208543">The degree of <m>Q(x)</m> must be greater than the degree of <m>P(x)</m>.</p></solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043208600">
+<p id="fs-id1165043208602">If <m>f'(x)</m> has asymptotes at <m>y=3</m> and <m>x=1,</m> then <m>f(x)</m> has what asymptotes?</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043208678">
+<p id="fs-id1165043208681">Both <m>f(x)=\frac{1(x-1)}</m> and <m>g(x)=\frac{1(x-1)^2}</m> have asymptotes at <m>x=1</m> and <m>y=0.</m> What is the most obvious difference between these two functions?</p>
+</statement>
+<solution id="fs-id1165043208775">
+<p xml:id="fs-id1165043208777"><m>\lim_{x\to1^-}f(x)=-\infty \text{ and } \lim_{x\to1^-}g(x)=\infty</m></p></solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1165043208847">
+<p id="fs-id1165043208849">True or false: Every ratio of polynomials has vertical asymptotes.</p>
+</statement>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1165043208865">
+<term>end behavior</term>
+<meaning id="fs-id1165043208870">the behavior of a function as <m>x\to\infty</m> and <m>x\to-\infty</m></meaning>
+</definition>
+<definition id="fs-id1165043208899">
+<term>horizontal asymptote</term>
+<meaning id="fs-id1165043208905">if <m>\lim_{x\to\infty}f(x)=L</m> or <m>\lim_{x\to-\infty}f(x)=L,</m> then <m>y=L</m> is a horizontal asymptote of <m>f</m></meaning>
+</definition>
+<definition id="fs-id1165042462524">
+<term>infinite limit at infinity</term>
+<meaning id="fs-id1165042462530">a function that becomes arbitrarily large as <m>x</m> becomes large</meaning>
+</definition>
+<definition id="fs-id1165042462539">
+<term>limit at infinity</term>
+<meaning id="fs-id1165042462545">the limiting value, if it exists, of a function as <m>x\to\infty</m> or <m>x\to-\infty</m></meaning>
+</definition>
+<definition id="fs-id1165042462574">
+<term>oblique asymptote</term>
+<meaning id="fs-id1165042462579">the line <m>y=mx+b</m> if <m>f(x)</m> approaches it as <m>x\to\infty</m> or <m>x\to-\infty</m></meaning>
+</definition>
+</glossary>
+</document>
+?>

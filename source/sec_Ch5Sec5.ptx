@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_Ch5Sec5" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Definite Integral</title>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ul>
+<li>Use substitution to evaluate indefinite integrals.</li>
+<li>Use substitution to evaluate definite integrals.</li>
+</ul>
+<p id="fs-id1170573367590">The Fundamental Theorem of Calculus gave us a method to evaluate integrals without using Riemann sums. The drawback of this method, though, is that we must be able to find an antiderivative, and this is not always easy. In this section we examine a technique, called <term>integration by substitution</term>, to help us find antiderivatives. Specifically, this method helps us find antiderivatives when the integrand is the result of a chain-rule derivative.</p>
+<p id="fs-id1170573502792">At first, the approach to the substitution procedure may not appear very obvious. However, it is primarily a visual task—that is, the integrand shows you what to do; it is a matter of recognizing the form of the function. So, what are we supposed to see? We are looking for an integrand of the form <m>f(g(x))g'(x)dx.</m> For example, in the integral <m>\displaystyle{ \int  (x^2-3)^3 2xdx},</m> we have <m>f(x)=x^3,g(x)=x^2-3,</m> and <m>g'(x)=2x.</m> Then,</p>
+<me>f[g(x)]g'(x)= (x^2-3)^3 (2x),</me>
+<p id="fs-id1170573209422">and we see that our integrand is in the correct form.</p>
+<p id="fs-id1170573431694">The method is called <emphasis effect="italics">substitution</emphasis> because we substitute part of the integrand with the variable <m>u</m> and part of the integrand with <m>du</m>. It is also referred to as <term>change of variables</term> because we are changing variables to obtain an expression that is easier to work with for applying the integration rules.</p>
+</introduction>
+<subsection>
+  <title>Substitution with Indefinite Integrals</title>
+<theorem> <!-- Change next end note to end theorem -->
+<title>Substitution with Indefinite Integrals</title>
+<p id="fs-id1170571193831">Let <m>u=g(x),,</m> where <m>g'(x)</m> is continuous over an interval, let <m>f(x)</m> be continuous over the corresponding range of <m>g</m>, and let <m>F(x)</m> be an antiderivative of <m>f(x).</m> Then,</p>
+<md><mrow>\displaystyle{ \int f(g(x))g'(x)dx}\amp =\displaystyle{ \int f}(u)du</mrow><mrow> \amp =F(u)+C</mrow><mrow> \amp =F(g(x))+C.</mrow></md>
+<!--Commenting out proof
+<proof>
+<p id="fs-id1170573351199">Let <m>f</m>, <m>g</m>, <m>u</m>, and <m>F</m> be as specified in the theorem. Then</p>
+<md><mrow>\frac{d}{dx}F(g(x))\amp =F'(g(x))g'(x)</mrow><mrow> \amp =f[g(x)]g'(x).</mrow></md>
+<p id="fs-id1170573366538">Integrating both sides with respect to <m>x</m>, we see that</p>
+<me>\displaystyle{ \int f[g(x)]g'(x)dx}=F(g(x))+C.</me>
+<p id="fs-id1170573362143">If we now substitute <m>u=g(x),</m> and <m>du=g'(x)dx,</m> we get</p>
+<md><mrow>\displaystyle{ \int f[g(x)]g'(x)dx}\amp =\displaystyle{ \int f}(u)du</mrow><mrow> \amp =F(u)+C</mrow><mrow> \amp =F(g(x))+C.</mrow></md>
+</proof>-->
+</theorem>
+<p id="fs-id1170573368234">Returning to the problem we looked at originally, we let <m>u=x^2-3</m> and then <m>du=2xdx.</m> Rewrite the integral in terms of <m>u</m>:</p>
+<me>\displaystyle{ \int {\underbrace{(x^2-3)}_{u}}^3 \underbrace{(2xdx)}_{du}}=\displaystyle{ \int u^3du.}</me>
+<p id="fs-id1170573306278">Using the power rule for integrals, we have</p>
+<me>\displaystyle{ \int u^3du=\frac{u^4}{4}+C}.</me>
+<p id="fs-id1170571099748">Substitute the original expression for <m>x</m> back into the solution:</p>
+<me>\frac{u^4}{4}+C=\frac{(x^2-3)^4}{4}+C.</me>
+<p id="fs-id1170573363034">We can generalize the procedure in the following Problem-Solving Strategy.</p>
+<note id="fs-id1170573435531" class="problem-solving">
+<title>Problem-Solving Strategy: Integration by Substitution</title>
+<ol>
+<li>Look carefully at the integrand and select an expression <m>g(x)</m> within the integrand to set equal to <m>u</m>. Let’s select <m>g(x).</m> such that <m>g'(x)</m> is also part of the integrand.</li>
+<li>Substitute <m>u=g(x)</m> and <m>du=g'(x)dx.</m> into the integral.</li>
+<li>We should now be able to evaluate the integral with respect to <m>u</m>. If the integral can’t be evaluated we need to go back and select a different expression to use as <m>u</m>.</li>
+<li>Evaluate the integral in terms of <m>u</m>.</li>
+<li>Write the result in terms of <m>x</m> and the expression <m>g(x).</m></li>
+</ol>
+</note>
+<example xml:id="fs-id1170573385785">
+<title>Using Substitution to Find an Antiderivative</title>
+ <statement id="fs-id1170573307347">
+<p id="fs-id1170573386292">Use substitution to find the antiderivative of <m>\displaystyle{ \int 6x (3x^2+4)^4 dx}.</m></p>
+</statement>
+<solution id="fs-id1170573385491">
+<p id="fs-id1170573569711">The first step is to choose an expression for <m>u</m>. We choose <m>u=3x^2+4.</m> because then <m>du=6xdx.,</m> and we already have <m>du</m> in the integrand. Write the integral in terms of <m>u</m>:</p>
+<me>\displaystyle{ \int 6x (3x^2+4)^4dx}=\displaystyle{ \int u^4du}.</me>
+<p id="fs-id1170573398341">Remember that <m>du</m> is the derivative of the expression chosen for <m>u</m>, regardless of what is inside the integrand. Now we can evaluate the integral with respect to <m>u</m>:</p>
+<md>
+  <mrow>\displaystyle{ \int u^4du}\amp =\frac{u^5}{5}+C</mrow>
+  <mrow> \amp =\frac{(3x^2+4)^5}{5}+C.</mrow>
+</md>
+<p id="fs-id1170573208347"><em>Analysis</em></p>
+<p id="fs-id1170573569153">We can check our answer by taking the derivative of the result of integration. We should obtain the integrand. Picking a value for <m>C</m> of 1, we let <m>y=\frac{1}{5}(3x^2+4)^5+1.</m> We have</p>
+<me>y=\frac{1}{5}(3x^2+4)^5+1,</me>
+<p id="fs-id1170573411738">so</p>
+<md><mrow>y' \amp =\frac{1}{5}\cdot 5(3x^2+4)^4 6x</mrow><mrow> \amp =6x(3x^2+4)^4.</mrow></md>
+<p id="fs-id1170573371003">This is exactly the expression we started with inside the integrand.</p>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1170571227254">
+<p id="fs-id1170571334089">Use substitution to find the antiderivative of <m>\displaystyle{ \int 3x^2(x^3-3)^2dx}.</m></p>
+</statement>
+<solution id="fs-id1170570976463">
+<p id="fs-id1170573405086"><m>\displaystyle{ \int 3x^2(x^3-3)^2dx}=\frac{1}{3}(x^3-3)^3+C</m></p>
+</solution>
+<hint>
+<p id="fs-id1170573396896">Let <m>u=x^3-3.</m></p>
+</hint></exercise>
+<p id="fs-id1170571121618">Sometimes we need to adjust the constants in our integral if they don’t match up exactly with the expressions we are substituting.</p>
+<example xml:id="fs-id1170571334083">
+<title>Using Substitution with Alteration</title>
+ <statement id="fs-id1170571027516">
+<p id="fs-id1170573384093">Use substitution to find the antiderivative of <m>\displaystyle{ \int z\sqrt{z^2-5}dz}.</m></p>
+</statement>
+<solution id="fs-id1170573396957">
+<p id="fs-id1170573391210">Rewrite the integral as <m>\displaystyle{ \int z(z^2-5)^{1/2}dz}.</m> Let <m>u=z^2-5</m> and <m>du=2z dz.</m> Now we have a problem because <m>du=2z dz</m> and the original expression has only <m>z dz.</m> We have to alter our expression for <m>du</m> or the integral in <m>u</m> will be twice as large as it should be. If we multiply both sides of the <m>du</m> equation by <m>\frac{1}{2}.</m> we can solve this problem. Thus,</p>
+<md><mrow>u\amp =z^2-5</mrow><mrow>du\amp =2z dz</mrow><mrow>\frac{1}{2}du\amp =\frac{1}{2}(2z)dz=z dz.</mrow></md>
+<p id="fs-id1170570976225">Write the integral in terms of <m>u</m>, but pull the <m>\frac{1}{2}</m> outside the integration symbol:</p>
+<me>\displaystyle{ \int z (z^2-5)^{1/2}dz=}\frac{1}{2}\displaystyle{ \int u^{1/2}du.}</me>
+<p id="fs-id1170573586341">Integrate the expression in <m>u</m>:</p>
+<md><mrow>\frac{1}{2}\displaystyle{ \int u^{1/2} du}\amp =\frac{1}{2}\cdot\frac{u^{3/2}}{\frac{3}{2}}+C</mrow><mrow> \amp =\frac{1}{2}\cdot\frac{2}{3}u^{3/2}+C</mrow><mrow> \amp =\frac{1}{3}u^{3/2}+C</mrow><mrow> \amp =\frac{1}{3}(z^2-5)^{3/2}+C.</mrow></md>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1170571381835">
+<p id="fs-id1170573759886">Use substitution to find the antiderivative of <m>\displaystyle{ \int x^2(x^3+5)^9dx}.</m></p>
+</statement>
+<solution id="fs-id1170573274198">
+<p id="fs-id1170573361491"><m>\frac{(x^3+5)^{10}}{30}+C</m></p>
+</solution>
+<hint>
+<p id="fs-id1170571138635">Multiply the <m>du</m> equation by <m>\frac{1}{3}.</m></p>
+</hint></exercise>
+<!--Commenting out trig
+<example xml:id="fs-id1170573573975">
+<title>Using Substitution with Integrals of Trigonometric Functions</title>
+ <statement id="fs-id1170573333636">
+<p id="fs-id1170573385625">Use substitution to evaluate the integral <m>\displaystyle{ \int \frac{\sin t}{\cos^3t}dt}.</m></p>
+</statement>
+<solution id="fs-id1170573387820">
+<p id="fs-id1170573437523">We know the derivative of <m>\cos  t</m> is <m>- \sin t,</m> so we set <m>u=\cos  t.</m> Then <m>du=- \sin tdt.</m> Substituting into the integral, we have</p>
+<me>\displaystyle{ \int \frac{\sin t}{\cos^3t}dt=- \displaystyle{ \int \frac{du}{u^3}}}.</me>
+<p id="fs-id1170573364147">Evaluating the integral, we get</p>
+<md><mrow>- \displaystyle{ \int \frac{du}{u^3}}\amp =- \displaystyle{ \int u^{-3}du}</mrow><mrow> \amp =- (-\frac{1}{2})u^{-2}+C.</mrow></md>
+<p id="fs-id1170573409376">Putting the answer back in terms of <m>t</m>, we get</p>
+<md><mrow>\displaystyle{ \int \frac{\sin t}{\cos^3t}dt}\amp =\frac{1}{2u^2}+C</mrow><mrow> \amp =\frac{1}{2\cos^2t}+C.</mrow></md>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1170573717717">
+<p id="fs-id1170571198076">Use substitution to evaluate the integral <m>\displaystyle{ \int \frac{\cos  t}{\sin^2t}dt.}</m></p>
+</statement>
+<solution id="fs-id1170573580526">
+<p id="fs-id1170571171177"><m>-\frac{1}{\sin t}+C</m></p>
+</solution>
+<hint>
+<p id="fs-id1170571258771">Use the process from <xref ref="fs-id1170573573975"/> to solve the problem.</p>
+</hint></exercise>-->
+<example xml:id="U_Sub_55">
+ <statement>
+<p>Use substitution to evaluate the integral <m>\displaystyle{ \int\frac{t^2+1}{(t^3+3t+1)^4}dt}.</m></p>
+</statement>
+<solution>
+<p>We know the derivative of <m>t^3+3t+1</m> is <m>3t^2+3,</m> so we set <m>u=t^3+3t+1.</m> Then <m>du=(3t^2+3)dt.</m> Moreover, <m>\frac{1}{3}du=(t^2+1)dt.</m> Substituting into the integral, we have</p>
+<me>\displaystyle{ \int\frac{t^2+1}{(t^3+3t+1)^4}dt=\frac{1}{3} \displaystyle{ \int \frac{du}{u^4}}}.</me>
+<p>Evaluating the integral, we get</p>
+<md><mrow> \displaystyle{\frac{1}{3}\int \frac{du}{u^4}}\amp = \displaystyle{ \frac{1}{3}\int u^{-4}du}</mrow><mrow> \amp = -\frac{1}{9}u^{-3}+C.</mrow></md>
+<p>Putting the answer back in terms of <m>t</m>, we get</p>
+<md><mrow>\displaystyle{ \int \frac{t^2+1}{(t^3+3t+1)^4}dt}\amp =-\frac{1}{9}u^{-3}+C</mrow><mrow> \amp =-\frac{1}{9(t^3+3t+1)^3}+C.</mrow></md>
+</solution>
+</example>
+<exercise>  <statement>
+<p>Use substitution to evaluate the integral <m>\displaystyle{ \int (t+1)(t^2+2t)^7 dt.}</m></p>
+</statement>
+<solution>
+<p><m>\frac{1}{16}(t^2+2t)^8+C</m></p>
+</solution>
+<hint>
+<p>Use the process from <xref ref="U_Sub_55"/> to solve the problem.</p>
+</hint></exercise>
+<subsubsection>
+<title>Indefinite Integrals Involving Exponential and Logarithmic Functions</title>
+<example><statement>Find the antiderivative of the exponential function <m>e^{-x}</m>.</statement>
+<solution> Use substitution, setting <m>u=-x</m>, and then <m>du=-1 dx</m>. Multiply the <m>du</m> by -1, so you now have <m>-du=dx</m>. Then,
+<md>
+<mrow>\int e^{-x} dx\amp=-\int e^u du</mrow>
+<mrow>\amp=-e^u +C</mrow>
+<mrow>\amp=-e^{-x}+C.</mrow>
+</md>
+</solution>
+</example>
+<exercise>
+<statement>Find the antiderivative of the function using substitution: <m>x^2e^{-2x^3}</m>.</statement>
+<solution><m>-\frac{1}{6}e^{-2x^3}+C</m>
+</solution>
+<hint>
+Use <m>u=-2x^3</m>.
+</hint>
+</exercise>
+<p>A common mistake when dealing with exponential expressions is treating the exponent on e the same way we treat exponents in polynomial expressions. We cannot use the power rule for the exponent on e. This can be especially confusing when we have both exponentials and polynomials in the same expression, as in the previous checkpoint. In these cases, we should always double-check to make sure we’re using the right rules for the functions we’re integrating.</p>
+
+<example><title>Square Root of an Exponential Function</title>
+<statement>Find the antiderivative of the exponential function <m>e^x\sqrt{1+e^x}</m>.</statement>
+<solution><p>First rewrite the problem using a rational exponent:</p>
+<me>\int e^x\sqrt{1+e^x}dx=\int e^x(1+e^x)^{1/2}dx</me>
+<p>Using substitution, chose <m>u=1+e^x</m>. Then, <m>du=e^x dx</m>. We have (<xref ref="CNX_Calc_Figure_05_06_001"/>)</p>
+<me>\int u^{1/2}du=\frac{u^{3/2}}{3/2}+C=\frac{2}{3}u^{3/2}+C=\frac{2}{3}(1+e^x)^{3/2}+C.</me>
+<figure xml:id="CNX_Calc_Figure_05_06_001">
+<image source="CNX_Calc_Figure_05_06_001.jpg" width="75%">
+<description>"The graph shows an exponential function times the square root of an exponential function."</description>
+</image> <caption>The graph shows an exponential function times the square root of an exponential function.</caption>
+</figure>
+</solution>
+</example>
+<exercise>
+<statement>Find the antiderivative of <m>e^x(3e^x-2)^2</m>.</statement>
+<solution><m>\frac{1}{9}(3e^x-2)^3+C</m>
+</solution>
+<hint>
+Use <m>u=3e^x-2</m>.
+</hint>
+</exercise>
+<example><title>Find an Antiderivative Involving <m>\ln x</m></title>
+<statement>Find the antiderivative of the function <m>\frac{3}{x-10}</m>.</statement>
+<solution><p>First factor the 3 outside the integral symbol. Then use the <m>u^{-1}</m> rule. Thus,</p>
+<md>
+<mrow>\int \frac{3}{x-10} dx\amp=3\int \frac{1}{x-10}dx</mrow>
+<mrow>\amp=3\int \frac{du}{u}</mrow>
+<mrow>\amp=3\ln|u|+C</mrow>
+<mrow>\amp=3\ln|x-10|+C,\;x\neq10.</mrow>
+</md>
+<p>See <xref ref="CNX_Calc_Figure_05_06_003"/>.</p>
+<figure xml:id="CNX_Calc_Figure_05_06_003">
+<image source="CNX_Calc_Figure_05_06_003.jpg" width="75%">
+<description>"The graph shows the rational function 3/(x-10) with a discontinuity at x=10."</description>
+</image> <caption>The domain of this function is  <m>x\neq10</m>.</caption>
+</figure>
+</solution>
+</example>
+<exercise>
+<statement>Find the antiderivative of <m>\frac{1}{x+2}</m>.</statement>
+<solution><m>\ln|x+2|+C</m>
+</solution>
+<hint>
+Use <m>u=x+2</m>.
+</hint>
+</exercise>
+<example><title>Finding an Antiderivative of a Rational Function</title>
+<statement>Find the antiderivative of <m>\frac{2x^3+3x}{x^4+3x^2}</m>.</statement>
+<solution><p>Use substitution. Let <m>u=x^4+3x^2</m>, then <m>du=4x^3+6x</m>. Alter <m>du</m> by factoring out the 2. Thus,</p>
+<md>
+<mrow>du\amp=(4x^3+6x)dx</mrow>
+<mrow>\amp=2(2x^3+3x)dx</mrow>
+<mrow>\frac{1}{2}\amp=(2x^3+3x)dx</mrow>
+</md>
+<p>Rewite the integrand in <m>u</m>:</p>
+<me>\int\frac{2x^3+3x}{x^4+3x^2}dx=\frac{1}{2}\int u^{-1}du.</me>
+Then we have
+<md>
+<mrow>\frac{1}{2}\int u^{-1}du\amp=\frac{1}{2}\ln|u|+C</mrow>
+<mrow>\amp=\frac{1}{2}\ln|x^4+3x^2|+C.</mrow>
+</md>
+</solution>
+</example>
+<p>Exponential functions are used in many real-life applications. The number e is often associated with compounded or accelerating growth, as we have seen in earlier sections about the derivative. Although the derivative represents a rate of change or a growth rate, the integral represents the total change or the total growth. Let's look at an example in which integration of an exponential function solves a common business application.</p>
+<p>A price-demand function tells us the relationship between the quantity of a product demanded and the price of the product. In general, price decreases as quantity demanded increases. The marginal price-demand function is the derivative of the price-demand function and it tells us how fast the price changes at a given level of production. These functions are used in business to determine the price-elasticity of demand, and to help companies determine whether changing production levels would be profitable.</p>
+<example><title>Finding a Price-Demand Equation</title>
+<statement>
+Find the price-demand equation for a particular brand of toothpaste at a supermarket chain when the demand is 50 tubes per week at $2.35 per tube, given that the marginal price-demand function,  <m>p'(x)</m>,  for <m>x</m> number of tubes per week, is given as
+<me>p'(x)=-0.015e^{-0.01x}.</me>
+If the supermarket chain sells 100 tubes per week, what price should it set?
+</statement>
+<solution>
+<p>To find the price-demand equation, integrate the marginal price-demand function. First find the antiderivative, then look at the particulars. Thus,</p>
+<md>
+<mrow>p(x)\amp=\int -0.015e^{-0.01x}dx</mrow>
+<mrow>\amp=-0.01\int e^{-0.01x}dx.</mrow>
+</md>
+<p>Using substitution, let  <m>u=-0.01\text{ and } du=-0.01 dx.</m> Then, divide both sides of the <m>du</m> equation by -0.01. This gives</p>
+<md>
+<mrow>\frac{-0.015}{-0.01}\int e^udu\amp=1.5\int e^udu</mrow>
+<mrow>\amp=1.5e^u+C</mrow>
+<mrow>\amp=1.5e^{-0.01x}+C.</mrow>
+</md>
+<p>The next step is to solve for C. We know that when the price is $2.35 per tube, the demand is 50 tubes per week. This means</p>
+<md>
+<mrow>p(50)\amp=1.5e^{-0.01(50)}+C</mrow>
+<mrow>\amp=2.35.</mrow>
+</md>
+Now, just solve for C:
+<md>
+<mrow>C\amp=2.35-1.5e{-0.5}</mrow>
+<mrow>\amp=2.35-0.91</mrow>
+<mrow>\amp=1.44.</mrow>
+</md>
+Thus,
+<me>p(x)=1.5e^{-0.01x}+1.44.</me>
+<p>If the supermarket sells 100 tubes of toothpaste per week, the price would be</p>
+<me>p(100)=1.5e^{-0.01(100)}+1.44=1.5e^{-1}+1.44\approx 1.99.</me>
+<p>The supermarket should charge $1.99 per tube if it is selling 100 tubes per week.</p>
+</solution>
+</example>
+<exercise>
+<title>Average Future Value of an Account Continuously Compounded</title>
+<statement>An account with initial amount of $2000 is compounded continuosly at an annual rate of 10% per year. What is the average amount of money in the account over the first 8 years?</statement>
+<solution><m>2500e^{8(0.1)}-2500\approx \$ 3063.85</m>
+</solution>
+<hint>Find the average value over the interval [0,8]. Recall the Average Value of a function over an interval is <xref ref="Average-Value_5.2"/> and to find the future value of an account continuously compounded use <xref ref="Compounded-Continuously_1.5"/>.
+</hint>
+</exercise>
+</subsubsection>
+<p id="fs-id1170573413569">Sometimes we need to manipulate an integral in ways that are more complicated than just multiplying or dividing by a constant. We need to eliminate all the expressions within the integrand that are in terms of the original variable. When we are done, <m>u</m> should be the only variable in the integrand. In some cases, this means solving for the original variable in terms of <m>u</m>. This technique should become clear in the next example.</p>
+<example xml:id="fs-id1170573426799">
+<title>Finding an Antiderivative Using <m>u</m>-Substitution</title>
+ <statement id="fs-id1170573533908">
+<p id="fs-id1170573328644">Use substitution to find the antiderivative of <m>\displaystyle{ \int \frac{x}{\sqrt{x-1}}dx.}</m></p>
+</statement>
+<solution id="fs-id1170573438282">
+<p id="fs-id1170573435928">If we let <m>u=x-1,</m> then <m>du=dx.</m> But this does not account for the <m>x</m> in the numerator of the integrand. We need to express <m>x</m> in terms of <m>u</m>. If <m>u=x-1,</m> then <m>x=u+1.</m> Now we can rewrite the integral in terms of <m>u</m>:</p>
+<md><mrow>\displaystyle{ \int \frac{x}{\sqrt{x-1}}dx}\amp =\displaystyle{ \int \frac{u+1}{\sqrt{u}}du}</mrow><mrow> \amp =\displaystyle{ \int \sqrt{u}+\frac{1}{\sqrt{u}}du}</mrow><mrow> \amp =\displaystyle{ \int (u^{1/2}+u^{-1/2})du}.</mrow></md>
+<p id="fs-id1170573544033">Then we integrate in the usual way, replace <m>u</m> with the original expression, and factor and simplify the result. Thus,</p>
+<md><mrow>\displaystyle{ \int (u^{1/2}+u^{-1/2})du}\amp =\frac{2}{3}u^{3/2}+2u^{1/2}+C</mrow><mrow> \amp =\frac{2}{3}(x-1)^{3/2}+2(x-1)^{1/2}+C</mrow><mrow> \amp =(x-1)^{1/2}\left[\frac{2}{3}(x-1)+2\right]+C</mrow><mrow> \amp =(x-1)^{1/2}\left(\frac{2}{3}x-\frac{2}{3}+\frac{6}{3}\right)</mrow><mrow> \amp =(x-1)^{1/2}\left(\frac{2}{3}x+\frac{4}{3}\right)</mrow><mrow> \amp =\frac{2}{3}(x-1)^{1/2}(x+2)+C.</mrow></md>
+</solution>
+</example>
+<!--Commenting out trig
+<exercise>  <statement id="fs-id1170571189256">
+<p id="fs-id1170571087102">Use substitution to evaluate the indefinite integral <m>\displaystyle{ \int \cos^{3}t \sin t dt}.</m></p>
+</statement>
+<solution id="fs-id1170573436334">
+<p id="fs-id1170571285848"><m>-\frac{\cos^{4}t}{4}+C</m></p>
+</solution>
+<hint>
+<p id="fs-id1170573501914">Use the process from <xref ref="fs-id1170573426799"/> to solve the problem.</p>
+</hint></exercise>-->
+<exercise>  <statement>
+<p>Use substitution to evaluate the indefinite integral <m>\displaystyle{ \int\frac{t^2}{\sqrt{t-1}} dt}.</m></p>
+</statement>
+<solution>
+<p><m>\frac{2}{5}\sqrt{(t-1)^5}+\frac{4}{3}\sqrt{(t-1)^3}+2\sqrt{t-1}+C</m></p>
+</solution>
+<hint>
+<p>Use the process from <xref ref="fs-id1170573426799"/> to solve the problem.</p>
+</hint></exercise>
+</subsection>
+<subsection id="fs-id1170573399047">
+<title>Substitution for Definite Integrals</title>
+<p id="fs-id1170573387843">Substitution can be used with definite integrals, too. However, using substitution to evaluate a definite integral requires a change to the limits of integration. If we change variables in the integrand, the limits of integration change as well.</p>
+<theorem> <!-- Change next end note to end theorem -->
+<title>Substitution with Definite Integrals</title>
+<p id="fs-id1170570999523">Let <m>u=g(x)</m> and let <m>g'</m> be continuous over an interval <m>[a,b],</m> and let <m>f</m> be continuous over the range of <m>u=g(x).</m> Then,</p>
+<me>\displaystyle{ \int_{a}^{b} f(g(x))g'(x)dx}=\displaystyle{ \int_{g(a)}^{g(b)}f(u)du}.</me>
+</theorem>
+<p id="fs-id1170573502228">Although we will not formally prove this theorem, we justify it with some calculations here. From the substitution rule for indefinite integrals, if <m>F(x)</m> is an antiderivative of <m>f(x),</m> we have</p>
+<me>\displaystyle{ \int f(g(x))g'(x)dx=F(g(x))+C.}</me>
+<p id="fs-id1170573420715">Then</p>
+<md><mrow>\displaystyle{ \int_{a}^{b} f[g(x)]g'(x)dx}\amp =\left.F(g(x))\right|_{x=a}^{x=b}</mrow>
+<mrow> \amp =F(g(b))-F(g(a))</mrow>
+<mrow> \amp =\left.F(u)\right|_{u=g(a)}^{u=g(b)}</mrow>
+<mrow> \amp =\displaystyle{ \int_{g(a)}^{g(b)}f(u)du},</mrow></md>
+<p id="fs-id1170571100165">and we have the desired result.</p>
+<example xml:id="fs-id1170571215481">
+<title>Using Substitution to Evaluate a Definite Integral</title>
+<statement id="fs-id1170573750246">
+<p id="fs-id1170571382554">Use substitution to evaluate <m>\displaystyle{ \int_{0}^{1} x^2(1+2x^3)^5}dx.</m></p>
+</statement>
+<solution id="fs-id1170573623806">
+<p id="fs-id1170573440252">Let <m>u=1+2x^3,</m> so <m>du=6x^2dx.</m> Since the original function includes one factor of <m>x^2</m> and <m>du=6x^2dx,</m> multiply both sides of the <m>du</m> equation by <m>1/6.</m> Then,</p>
+<md><mrow>du\amp = 6x^2dx</mrow><mrow>\frac{1}{6}du\amp = x^2dx.</mrow></md>
+<p id="fs-id1170571157085">To adjust the limits of integration, note that when <m>x=0,u=1+2(0)=1,</m> and when <m>x=1,u=1+2(1)=3.</m> Then</p>
+<me>\displaystyle{ \int_{0}^{1} x^2(1+2x^3)^5dx=\frac{1}{6}\displaystyle{ \int_{1}^{3} u^5du}}.</me>
+<p id="fs-id1170571285285">Evaluating this expression, we get</p>
+<md><mrow>\frac{1}{6}\displaystyle{ \int_{1}^{3} u^5du}\amp =\left.\left(\frac{1}{6}\right)\left(\frac{u^6}{6}\right)\right|_1^3</mrow><mrow> \amp =\frac{1}{36}\left[(3)^6-(1)^6\right]</mrow><mrow> \amp =\frac{182}{9}.</mrow></md>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1170571061498">
+<p id="fs-id1170571061500">Use substitution to evaluate the definite integral <m>\displaystyle{ \int_{-1}^{0}y(2y^2-3)^5dy}.</m></p>
+</statement>
+<solution id="fs-id1170571254551">
+<p id="fs-id1170573518898"><m>\frac{91}{3}</m></p>
+</solution>
+<hint>
+<p id="fs-id1170573593922">Use the steps from <xref ref="fs-id1170571215481"/> to solve the problem.</p>
+</hint></exercise>
+<subsubsection>
+<title>Definite Integrals Involving Exponential and Logarithmic Functions</title>
+<example xml:id="fs-id1170573593895">
+<title>Using Substitution with an Exponential Function</title>
+ <statement id="fs-id1170571158819">
+<p id="fs-id1170571158824">Use substitution to evaluate <m>\displaystyle{ \int_{0}^{1} xe^{4x^2+3}dx}.</m></p>
+</statement>
+<solution id="fs-id1170573574268">
+<p id="fs-id1170571347206">Let <m>u=4x^3+3.</m> Then, <m>du=8xdx.</m> To adjust the limits of integration, we note that when <m>x=0,u=3,</m> and when <m>x=1,u=7.</m> So our substitution gives</p>
+<md><mrow>\displaystyle{ \int_{0}^{1} xe^{4x^2+3}dx}\amp =\frac{1}{8}\displaystyle{ \int_{3}^{7} e^udu}</mrow><mrow> \amp =\left.\frac{1}{8}e^u\right|_3^7</mrow><mrow> \amp =\frac{e^7-e^3}{8}</mrow><mrow>\amp\approx 134.568.</mrow></md>
+</solution>
+</example>
+<!--Commenting out trig
+<exercise>  <statement id="fs-id1170571099765">
+<p id="fs-id1170571099767">Use substitution to evaluate <m>\displaystyle{ \int_{0}^{1} x^2\cos (\frac{\pi}{2}x^3)dx}.</m></p>
+</statement>
+<solution id="fs-id1170571051097">
+<p id="fs-id1170573438316"><m>\frac{2}{3\pi}\approx 0.2122</m></p>
+</solution>
+<hint>
+<p id="fs-id1170573592042">Use the process from <xref ref="fs-id1170573593895"/> to solve the problem.</p>
+</hint></exercise>-->
+<exercise>  <statement>
+<p>Use substitution to evaluate <m>\displaystyle{ \int_{0}^{1} (x^3+1)e^{x^4+4x+3} dx}.</m></p>
+</statement>
+<solution>
+<p><m>\frac{1}{4}(e^8-e^3)\approx 740.218</m></p>
+</solution>
+<hint>
+<p>Use the process from <xref ref="fs-id1170573593895"/> to solve the problem.</p>
+</hint></exercise>
+<example><statement>Evaluate
+<me>\int_A^4\frac{1}{2x+1}dx\text{ where }0\lt A\lt 4</me>.
+</statement>
+<solution>
+<p>Let <m>u=2x+1.</m> Then, <m>du=2dx.</m> To adjust the limits of integration, we note that when <m>x=A,\;u=2A+1,</m> and when <m>x=4,\;u=9.</m> So our substitution gives</p>
+<md><mrow>\displaystyle{ \int_{A}^{4} \frac{1}{2x+1}}\amp =\frac{1}{2}\displaystyle{ \int_{2A+1}^{9} \frac{1}{u}du}</mrow><mrow> \amp =\left.\frac{1}{2}\ln|u|\right|_{2A+1}^9</mrow><mrow> \amp =\frac{\ln 9-\ln|2A+1|}{2}.</mrow>
+<mrow> \amp =\frac{\ln 9-\ln(2A+1)}{2}\text{ since }0\lt A\lt 4.</mrow></md>
+</solution>
+</example>
+<p id="fs-id1170571289709">Substitution may be only one of the techniques needed to evaluate a definite integral. All of the properties and rules of integration apply independently, and trigonometric functions may need to be rewritten using a trigonometric identity before we can apply substitution. Also, we have the option of replacing the original expression for <m>u</m> after we find the antiderivative, which means that we do not have to change the limits of integration. </p>
+<!-- Commenting out trig
+These two approaches are shown in <xref ref="fs-id1170570994085"/>.
+<example xml:id="fs-id1170570994085">
+<title>Using Substitution to Evaluate a Trigonometric Integral</title>
+ <statement id="fs-id1170571213224">
+<p id="fs-id1170571219853">Use substitution to evaluate <m>\displaystyle{ \int_ 0^{\pi/2}\cos^{2}\theta  d\theta }.</m></p>
+</statement>
+<solution id="fs-id1170571094860">
+<p id="fs-id1170571030577">Let us first use a trigonometric identity to rewrite the integral. The trig identity <m>\cos^{2}\theta =\frac{1+\cos  2\theta}{2}</m> allows us to rewrite the integral as</p>
+<me>\displaystyle{ \int_0^{\pi/2} \cos^{2}\theta d\theta }=\displaystyle{ \int_0^{\pi/2} \frac{1+\cos  2\theta}{2}d\theta .}</me>
+<p id="fs-id1170573351678">Then,</p>
+<md>
+  <mrow>\displaystyle{ \int_0^{\pi/2} (\frac{1+\cos  2\theta}{2})}d\theta \amp =\displaystyle{ \int_0^{\pi/2} (\frac{1}{2}+\frac{1}{2}\cos  2\theta )d\theta }</mrow>
+  <mrow> \amp =\frac{1}{2}\displaystyle{ \int_0^{\pi/2} d\theta }+\frac{1}{2}\displaystyle{ \int_0^{\pi/2} \cos  2\theta d\theta .}</mrow>
+</md>
+<p id="fs-id1170571374921">We can evaluate the first integral as it is, but we need to make a substitution to evaluate the second integral. Let <m>u=2\theta .</m> Then, <m>du=2d\theta ,</m> or <m>\frac{1}{2}du=d\theta .</m> Also, when <m>\theta =0,u=0,</m> and when <m>\theta =\pi/2,u=\pi.</m> Expressing the second integral in terms of <m>u</m>, we have</p>
+<md>
+  <mrow>\frac{1}{2}\displaystyle{ \int_0^{\pi/2} d\theta +\frac{1}{2}\displaystyle{ \int_0^{\pi/2} \cos  2\theta d\theta }}\amp =\frac{1}{2}\displaystyle{ \int_0^{\pi/2} d\theta +\frac{1}{2}(\frac{1}{2})\displaystyle{ \int_0^{\pi}\cos  udu}}</mrow>
+  <mrow> \amp =\left.\frac{\theta}{2}\right|_{\theta =0}^{\theta =\pi/2}+\left.\frac{1}{4}\sin u\right|_{u=0}^{u=\theta}</mrow>
+  <mrow> \amp =(\frac{\pi}{4}-0)+(0-0)=\frac{\pi}{4}.</mrow></md>
+</solution>
+</example>-->
+</subsubsection>
+</subsection>
+<subsection id="fs-id1170571220845" class="key-concepts">
+<title>Key Concepts</title>
+<ul>
+<li>Substitution is a technique that simplifies the integration of functions that are the result of a chain-rule derivative. The term ‘substitution’ refers to changing variables or substituting the variable <m>u</m> and <m>du</m> for appropriate expressions in the integrand.</li>
+<li>When using substitution for a definite integral, we also have to change the limits of integration.</li>
+</ul>
+</subsection>
+<subsection id="fs-id1170573581296" class="key-equations">
+<title>Key Equations</title>
+<ul>
+<li><em>Substitution with Indefinite Integrals</em>
+<me>\displaystyle{ \int f(g(x))g'(x)dx=\displaystyle{ \int f(u)du}}=F(u)+C=F(g(x))+C</me></li>
+<li><em>Substitution with Definite Integrals</em>
+<me>\displaystyle{ \int_{a}^{b} f(g(x))g'(x)dx}=\displaystyle{ \int_{g(a)}^{g(b)}f(u)du}</me></li>
+</ul>
+</subsection>
+</section>
+<?ignore
+<subsection id="fs-id1170571209484" class="section-exercises">
+
+<!-- Move title outside statement--> <statement id="fs-id1170573549516">
+<p id="fs-id1170573549518">Why is <m>u</m>-substitution referred to as <emphasis effect="italics">change of variable</emphasis>?</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573575167">
+<p id="fs-id1170573575169">2. If <m>f=g\circ h,</m> when reversing the chain rule, <m>\frac{d}{dx}(g\circ h)(x)=g'(h(x))h'(x),</m> should you take <m>u=g(x)</m> or <m>u=h(x)?</m></p>
+</statement>
+<solution id="fs-id1170573417080">
+<p id="fs-id1170573501482"><m>u=h(x)</m></p>
+</solution>
+
+<p id="fs-id1170571118049">In the following exercises, verify each identity using differentiation. Then, using the indicated <m>u</m>-substitution, identify <m>f</m> such that the integral takes the form <m>\displaystyle{ \int f(u)du}.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571033650">
+<p id="fs-id1170571033652"><m>\displaystyle{ \int x\sqrt{x+1}}dx=\frac{215}<m:msup>(x+1)}{3/2</m:msup>(3x-2)+C;u=x+1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573718859">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170573750112">For <m>x\gt 1:\displaystyle{ \int \frac{x^2}{\sqrt{x-1}}dx}=\frac{215}\sqrt{x-1}(3x^2+4x+8)+C;u=x-1</m></p></statement>
+<solution id="fs-id1170573398683">
+<p id="fs-id1170573398685"><m>f(u)=\frac{<m:msup>(u+1)2</m:msup>}{\sqrt{u}}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571303035">
+<p id="fs-id1170571248540"><m>\displaystyle{ \int x\sqrt{4x^2+9}dx=\frac{112}<m:msup>(4x^2+9)}{3/2</m:msup>+C};u=4x^2+9</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571305052">
+<p id="fs-id1170571305054"><m>\displaystyle{ \int \frac{x\sqrt{4x^2+9}}dx=\frac{1}{4}\sqrt{4x^2+9}+C};u=4x^2+9</m></p>
+</statement>
+<solution id="fs-id1170573573905">
+<p id="fs-id1170573436276"><m>du=8xdx;f(u)=\frac{18\sqrt{u}}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573759852">
+<p id="fs-id1170573759854"><m>\displaystyle{ \int \frac{x<m:msup>(4x^2+9)2</m:msup>}dx=-\frac{18(4x^2+9)}};u=4x^2+9</m></p>
+</statement>
+
+<p id="fs-id1170570992528">In the following exercises, find the antiderivative using the indicated substitution.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571119995">
+<p id="fs-id1170571119997"><m>\displaystyle{ \int <m:msup>(x+1)4</m:msup>dx};u=x+1</m></p>
+</statement>
+<solution id="fs-id1170573385473">
+<p id="fs-id1170573385475"><m>\frac{1}{5}<m:msup>(x+1)5</m:msup>+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170570996056">
+<p id="fs-id1170570996058"><m>\displaystyle{ \int <m:msup>(x-1)5</m:msup>dx};u=x-1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571240500">
+<p id="fs-id1170571240502"><m>\displaystyle{ \int <m:msup>(2x-3)}{-7</m:msup>dx};u=2x-3</m></p>
+</statement>
+<solution id="fs-id1170573518182">
+<p id="fs-id1170573518184"><m>-\frac{112<m:msup>(3-2x)6</m:msup>}+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573760682">
+<p id="fs-id1170573760685"><m>\displaystyle{ \int <m:msup>(3x-2)}{-11</m:msup>dx};u=3x-2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573417178">
+<p id="fs-id1170573417180"><m>\displaystyle{ \int \frac{x\sqrt{x^2+1}}dx};u=x^2+1</m></p>
+</statement>
+<solution id="fs-id1170573535991">
+<p id="fs-id1170573535993"><m>\sqrt{x^2+1}+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573542519">
+<p id="fs-id1170573542521"><m>\displaystyle{ \int \frac{x\sqrt{1-x^2}}dx};u=1-x^2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573546495">
+<p id="fs-id1170573546497"><m>\displaystyle{ \int (x-1)<m:msup>(x^2-2x)3</m:msup>dx};u=x^2-2x</m></p>
+</statement>
+<solution id="fs-id1170573726589">
+<p id="fs-id1170573726592"><m>\frac{1}{8}<m:msup>(x^2-2x)4</m:msup>+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571145636">
+<p id="fs-id1170571145638"><m>\displaystyle{ \int (x^2-2x)<m:msup>(x^3-3x^2)2</m:msup>dx};u=x^3=3x^2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573623734">
+<p id="fs-id1170573623736"><m>\displaystyle{ \int \cos^{3}\theta d\theta };u=\sin \theta </m> <m>\(Hint\text{ : } \cos^{2}\theta =1-<m:msup>\sin2</m:msup>\theta \text{ ) }</m></p>
+</statement>
+<solution id="fs-id1170573618431">
+<p id="fs-id1170573618433"><m>\sin \theta -\frac{<m:msup>\sin3</m:msup>\theta 3}+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571227346">
+<p id="fs-id1170571227348"><m>\displaystyle{ \int <m:msup>\sin3</m:msup>\theta d\theta };u=\cos  \theta </m> <m>\(Hint\text{ : } <m:msup>\sin2</m:msup>\theta =1-\cos^{2}\theta \text{ ) }</m></p>
+</statement>
+
+<p id="fs-id1170571136653">In the following exercises, use a suitable change of variables to determine the indefinite integral.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571136658">
+<p id="fs-id1170571136660"><m>\displaystyle{ \int x<m:msup>(1-x)}{99</m:msup>dx}</m></p>
+</statement>
+<solution id="fs-id1170571098393">
+<p id="fs-id1170571098395"><m>\frac{<m:msup>(1-x)}{101</m:msup>}{101}-\frac{<m:msup>(1-x)}{100</m:msup>}{100}+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571304983">
+<p id="fs-id1170571304985"><m>\displaystyle{ \int t<m:msup>(1-t^2)}{10</m:msup>dt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571275279">
+<p id="fs-id1170571275281"><m>\displaystyle{ \int <m:msup>(11x-7)}{-3</m:msup>dx}</m></p>
+</statement>
+<solution id="fs-id1170573732553">
+<p id="fs-id1170573732555"><m>-\frac{122(7-11x^2)}+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573422123">
+<p id="fs-id1170573422126"><m>\displaystyle{ \int <m:msup>(7x-11)4</m:msup>dx}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573727308">
+<p id="fs-id1170573727310"><m>\displaystyle{ \int \cos^{3}\theta  \sin \theta d\theta }</m></p>
+</statement>
+<solution id="fs-id1170573404918">
+<p id="fs-id1170573404920"><m>-\frac{\cos^{4}\theta 4}+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571094886">
+<p id="fs-id1170571094888"><m>\displaystyle{ \int <m:msup>\sin7</m:msup>\theta  \cos  \theta d\theta }</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573726094">
+<p id="fs-id1170573726096"><m>\displaystyle{ \int \cos^{2}(\pit)\sin(\pit)dt}</m></p>
+</statement>
+<solution id="fs-id1170571227211">
+<p id="fs-id1170571227213"><m>-\frac{\cos^{3}(\pit)}{3\pi}+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573759911">
+<p id="fs-id1170573759913"><m>\displaystyle{ \int <m:msup>\sin2</m:msup>x\cos^{3}xdx}</m> <m>\(Hint\text{ : } <m:msup>\sin2</m:msup>x+\cos^{2}x=1\text{ ) }</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571340508">
+<p id="fs-id1170571340510"><m>\displaystyle{ \int t \sin(t^2)\cos (t^2)dt}</m></p>
+</statement>
+<solution id="fs-id1170573727337">
+<p id="fs-id1170573727339"><m>-\frac{1}{4}<m:mspace width="0.05em"/>\cos^{2}(t^2)+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571340411">
+<p id="fs-id1170571340413"><m>\displaystyle{ \int t^2}\cos^{2}(t^3)\sin(t^3)dt</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571232632">
+<p id="fs-id1170571232634"><m>\displaystyle{ \int \frac{x^2}{<m:msup>(x^3-3)2</m:msup>}dx}</m></p>
+</statement>
+<solution id="fs-id1170571158897">
+<p id="fs-id1170571158899"><m>-\frac{13(x^3-3)}+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170570999554">
+<p id="fs-id1170570999556"><m>\displaystyle{ \int \frac{x^3}{\sqrt{1-x^2}}dx}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571057349">
+<p id="fs-id1170571057351"><m>\displaystyle{ \int \frac{y^5}{<m:msup>(1-y^3)}{3/2</m:msup>}dy}</m></p>
+</statement>
+<solution id="fs-id1170573525698">
+<p id="fs-id1170573525700"><m>-\frac{2(y^3-2)}{3\sqrt{1-y^3}}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571269416">
+<p id="fs-id1170571269419"><m><m:msup>\displaystyle{ \int \cos  \theta (1-\cos  \theta )}}{99</m:msup>\sin \theta d\theta </m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571160790">
+<p id="fs-id1170571160792"><m><m:msup>\displaystyle{ \int (1-\cos^{3}\theta )}}{10</m:msup>\cos^{2}\theta  \sin \theta d\theta </m></p>
+</statement>
+<solution id="fs-id1170571198028">
+<p id="fs-id1170571198030"><m>\frac{133}<m:msup>(1-\cos^{3}\theta )}{11</m:msup>+C</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571379756">
+<p id="fs-id1170571379758"><m>\displaystyle{ \int (\cos  \theta -1)<m:msup>(\cos^{2}\theta -2 \cos  \theta )3</m:msup>\sin \theta d\theta }</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571030685">
+<p id="fs-id1170571030687"><m>\displaystyle{ \int (<m:msup>\sin2</m:msup>\theta -2 \sin \theta )<m:msup>(<m:msup>\sin3</m:msup>\theta -3<m:msup>\sin2</m:msup>\theta )3</m:msup>\cos  \theta d\theta }</m></p>
+</statement>
+<solution id="fs-id1170573633892">
+<p id="fs-id1170573633894"><m>\frac{112}<m:msup>(<m:msup>\sin3</m:msup>\theta -3<m:msup>\sin2</m:msup>\theta )4</m:msup>+C</m></p>
+</solution>
+
+<p id="fs-id1170571114997">In the following exercises, use a calculator to estimate the area under the curve using left Riemann sums with 50 terms, then use substitution to solve for the exact answer.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571115004">
+<p id="fs-id1170571115006"><emphasis effect="bold">[T]</emphasis> <m>y=3<m:msup>(1-x)2</m:msup></m> over <m>[0,2]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571158791">
+<p id="fs-id1170571158793"><emphasis effect="bold">[T]</emphasis> <m>y=x<m:msup>(1-x^2)3</m:msup></m> over <m>[-1,2]</m></p>
+</statement>
+<solution id="fs-id1170571269338">
+<p id="fs-id1170571269340"><m><m:msub>L50</m:msub>=-8.5779.</m> The exact area is <m>\frac{-818}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571337337">
+<p id="fs-id1170571337339"><emphasis effect="bold">[T]</emphasis> <m>y=\sin x<m:msup>(1-\cos  x)2</m:msup></m> over <m>[0,\pi]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571159914">
+<p id="fs-id1170571159917"><emphasis effect="bold">[T]</emphasis> <m>y=\frac{x<m:msup>(x^2+1)2</m:msup>}</m> over <m>[-1,1]</m></p>
+</statement>
+<solution id="fs-id1170571057415">
+<p id="fs-id1170571057417"><m><m:msub>L50</m:msub>=-0.006399</m> … The exact area is 0.</p>
+</solution>
+
+<p id="fs-id1170571057435">In the following exercises, use a change of variables to evaluate the definite integral.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571057441">
+<p id="fs-id1170571057443"><m>\displaystyle{ \int_{0}^{1} x\sqrt{1-x^2}}dx</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571026376">
+<p id="fs-id1170571026378"><m>\displaystyle{ \int_{0}^{1} \frac{x\sqrt{1+x^2}}dx}</m></p>
+</statement>
+<solution id="fs-id1170573618358">
+<p id="fs-id1170573618361"><m>u=1+x^2,du=2xdx,\frac{1}{2}\displaystyle{ \int_{1}^{2} <m:msup>u-1/2</m:msup>du=\sqrt{2}-1}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571037387">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170571037389"><m>\displaystyle{ \int_{0}^{2} \frac{t^2}{\sqrt{5+t^2}}dt}</m></p></statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571329550">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170571150593"><m>\displaystyle{ \int_{0}^{1} \frac{t^2}{\sqrt{1+t^3}}dt}</m></p></statement>
+<solution id="fs-id1170571150632">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170571150634"><m>u=1+t^3,du=3t^2dt,\frac{1}{3}\displaystyle{ \int_{1}^{2} <m:msup>u-1/2</m:msup>du=\frac{2}{3}(\sqrt{2}-1)}</m></p></solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571160646">
+<p id="fs-id1170571160648"><m>\displaystyle{ <m:msubsup>\int 0\pi/4</m:msubsup><m:msup>\text{ sec }2</m:msup>\theta  \text{ tan } \theta d\theta }</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571078762">
+<p id="fs-id1170571078764"><m>\displaystyle{ <m:msubsup>\int 0\pi/4</m:msubsup>\frac{\sin \theta }{\cos^{4}\theta }d\theta }</m></p>
+</statement>
+<solution id="fs-id1170573704612">
+<p id="fs-id1170573704614"><m>u=\cos  \theta ,du=- \sin \theta d\theta ,\displaystyle{ <m:msubsup>\int 1/\sqrt{2}1</m:msubsup><m:msup>u-4</m:msup>du=\frac{1}{3}(2\sqrt{2}-1)}</m></p>
+</solution>
+
+<p id="fs-id1170571377045">In the following exercises, evaluate the indefinite integral <m>\displaystyle{ \int f(x)dx}</m> with constant <m>C=0</m> using <m>u</m>-substitution. Then, graph the function and the antiderivative over the indicated interval. If possible, estimate a value of <m>C</m> that would need to be added to the antiderivative to make it equal to the definite integral <m>F(x)=\displaystyle{ \int_{a}^{x} f(t)dt},</m> with <m>a</m> the left endpoint of the given interval.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571303695">
+<p id="fs-id1170571303698"><emphasis effect="bold">[T]</emphasis> <m>\displaystyle{ \int (2x+1)<m:msup>ex^2+x-6</m:msup>dx}</m> over <m>[-3,2]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573762459">
+<p id="fs-id1170573762461"><emphasis effect="bold">[T]</emphasis> <m>\displaystyle{ \int \frac{\cos (\text{ ln }(2x))x}dx}</m> on <m>[0,2]</m></p>
+</statement>
+<solution id="fs-id1170573762524">
+<p id="fs-id1170573762526">
+<description>"Two graphs. The first shows the function f(x) = cos(ln(2x)) / x, which increases sharply over the approximate interval (0,.25) and then decreases gradually to the x axis. The second shows the function f(x) = sin(ln(2x)), which decreases sharply on the approximate interval (0, .25) and then increases in a gently curve into the first quadrant.">
+<image source="CNX_Calc_Figure_05_05_204.jpg" width="50%">
+
+The antiderivative is <m>y=\sin(\text{ ln }(2x)).</m> Since the antiderivative is not continuous at <m>x=0,</m> one cannot find a value of <m>C</m> that would make <m>y=\sin(\text{ ln }(2x))-C</m> work as a definite integral.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571021799">
+<p id="fs-id1170571021802"><emphasis effect="bold">[T]</emphasis> <m>\displaystyle{ \int \frac{3x^2+2x+1}{\sqrt{x^3+x^2+x+4}}dx}</m> over <m>[-1,2]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573542459">
+<p id="fs-id1170573542461"><emphasis effect="bold">[T]</emphasis> <m>\displaystyle{ \int \frac{\sin x}{\cos^{3}x}dx}</m> over <m>[-\frac{\pi}{3},\frac{\pi}{3}]</m></p>
+</statement>
+<solution id="fs-id1170571340045">
+<p id="fs-id1170571340048">
+<description>"Two graphs. The first is the function f(x) = sin(x) / cos(x)^3 over [-5pi/16, 5pi/16]. It is an increasing concave down function for values less than zero and an increasing concave up function for values greater than zero. The second is the fuction f(x) = &#xBD; sec(x)^2 over the same interval. It is a wide, concave up curve which decreases for values less than zero and increases for values greater than zero.">
+<image source="CNX_Calc_Figure_05_05_206.jpg" width="50%">
+
+The antiderivative is <m>y=\frac{1}{2}<m:mspace width="0.05em"/><m:msup>\text{ sec }2</m:msup>x.</m> You should take <m>C=-2</m> so that <m>F(-\frac{\pi}{3})=0.</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571340128">
+<p id="fs-id1170571340131"><emphasis effect="bold">[T]</emphasis> <m>\displaystyle{ \int (x+2)<m:msup>e- x^2-4x+3</m:msup>dx}</m> over <m>[-5,1]</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571098889">
+<p id="fs-id1170571098892"><emphasis effect="bold">[T]</emphasis> <m>\displaystyle{ \int 3x^2\sqrt{2x^3+1}}dx</m> over <m>[0,1]</m></p>
+</statement>
+<solution id="fs-id1170571098949">
+<p id="fs-id1170571098951">
+<description>"Two graphs. The first shows the function f(x) = 3x^2 * sqrt(2x^3 + 1). It is an increasing concave up curve starting at the origin. The second shows the function f(x) = 1/3 * (2x^3 + 1)^(1/3). It is an increasing concave up curve starting at about 0.3.">
+<image source="CNX_Calc_Figure_05_05_208.jpg" width="50%">
+
+The antiderivative is <m>y=\frac{1}{3}<m:msup>(2x^3+1)}{3/2</m:msup>.</m> One should take <m>C=-\frac{1}{3}.</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571160885">
+<p id="fs-id1170571160887">If <m>h(a)=h(b)</m> in <m>\displaystyle{ \int_{a}^{b} g'(h(x))h(x)dx},</m> what can you say about the value of the integral?</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571160977">
+<p id="fs-id1170571160979">Is the substitution <m>u=1-x^2</m> in the definite integral <m>\displaystyle{ \int_{0}^{2} \frac{x1-x^2}dx}</m> okay? If not, why not?</p>
+</statement>
+<solution id="fs-id1170571291122">
+<p id="fs-id1170571291124">No, because the integrand is discontinuous at <m>x=1.</m></p>
+</solution>
+
+<p id="fs-id1170571291140">In the following exercises, use a change of variables to show that each definite integral is equal to zero.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571291146">
+<p id="fs-id1170571291148"><m>\displaystyle{ <m:msubsup>\int 0\pi</m:msubsup>\cos^{2}(2\theta )\sin(2\theta )d\theta }</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571158579">
+<p id="fs-id1170571158582"><m>\displaystyle{ <m:msubsup>\int 0\sqrt{\pi}</m:msubsup>t \cos (t^2)\sin(t^2)dt}</m></p>
+</statement>
+<solution id="fs-id1170571158637">
+<p id="fs-id1170571158639"><m>u=\sin(t^2);</m> the integral becomes <m>\frac{1}{2}\displaystyle{ \int_{0}^{0} udu}.</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571046472">
+<p id="fs-id1170571046474"><m>\displaystyle{ \int_{0}^{1} (1-2t)dt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571046572">
+<p id="fs-id1170571046574"><m>\displaystyle{ \int_{0}^{1} \frac{1-2t}{(1+<m:msup>(t-\frac{1}{2})2</m:msup>)}dt}</m></p>
+</statement>
+<solution id="fs-id1170571327397">
+<p id="fs-id1170571327399"><m>u=(1+<m:msup>(t-\frac{1}{2})2</m:msup>);</m> the integral becomes <m>- \displaystyle{ <m:msubsup>\int 5/4}{5/4</m:msubsup>\frac{1}{u}du}.</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571327486">
+<p id="fs-id1170571327488"><m>\displaystyle{ <m:msubsup>\int 0\pi</m:msubsup>\sin(<m:msup>(t-\frac{\pi}{2})3</m:msup>)\cos (t-\frac{\pi}{2})dt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571371145">
+<p id="fs-id1170571371147"><m>\displaystyle{ \int_{0}^{2} (1-t)\cos (\pit)dt}</m></p>
+</statement>
+<solution id="fs-id1170571050109">
+<p id="fs-id1170571050111"><m>u=1-t;</m> the integral becomes<m><m:mtable columnalign="left"><mrow>\displaystyle{ <m:msubsup>\int 1-1</m:msubsup>u \cos (\pi(1-u))du}</mrow><mrow> \amp =\displaystyle{ <m:msubsup>\int 1-1</m:msubsup>u[\cos  \pi \cos  u-\sin \pi \sin u]du}</mrow><mrow> \amp =- \displaystyle{ <m:msubsup>\int 1-1</m:msubsup>u \cos  udu}</mrow><mrow> \amp =\displaystyle{ \int_{-1}^{1} u \cos  udu=0}</mrow></m>since the integrand is odd.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571134792">
+<p id="fs-id1170571134794"><m>\displaystyle{ <m:msubsup>\int \pi/4}{3\pi/4</m:msubsup><m:msup>\sin2</m:msup>t \cos  tdt}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571276373">
+<p id="fs-id1170571276375">Show that the average value of <m>f(x)</m> over an interval <m>[a,b]</m> is the same as the average value of <m>f(cx)</m> over the interval <m>[\frac{a}{c},\frac{b}{c}]</m> for <m>c\gt 0.</m></p>
+</statement>
+<solution id="fs-id1170571276457">
+<p id="fs-id1170571276459">Setting <m>u=cx</m> and <m>du=cdx</m> gets you <m>\frac{1\frac{b}{c}-\frac{a}{c}}\displaystyle{ <m:msubsup>\int a/c}{b/c</m:msubsup>f(cx)dx=\frac{cb-a}} \displaystyle{ <m:msubsup>\int u=a}{u=b</m:msubsup>f(u)\frac{duc}=\frac{1}{b-a} \displaystyle{ \int_{a}^{b} f(u)du}}.</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571273655">
+<p id="fs-id1170571273657">Find the area under the graph of <m>f(t)=\frac{t<m:msup>(1+t^2)a</m:msup>}</m> between <m>t=0</m> and <m>t=x</m> where <m>a\gt 0</m> and <m>a\neq 1</m> is fixed, and evaluate the limit as <m>x\to \infty .</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571132656">
+<p id="fs-id1170571132658">Find the area under the graph of <m>g(t)=\frac{t<m:msup>(1-t^2)a</m:msup>}</m> between <m>t=0</m> and <m>t=x,</m> where <m>0\lt x\lt 1</m> and <m>a\gt 0</m> is fixed. Evaluate the limit as <m>x\to 1.</m></p>
+</statement>
+<solution id="fs-id1170571132759">
+<p id="fs-id1170571245712"><m>\displaystyle{ \int_{0}^{x} g(t)dt=\frac{1}{2}\displaystyle{ <m:msubsup>\int u=1-x^21</m:msubsup>\frac{d}{u}{u^a}}}=\frac{12(1-a)}<m:msup>u1-a</m:msup><m:msubsup>|u=1-x^21</m:msubsup>=\frac{12(1-a)}(1-<m:msup>(1-x^2)}{1-a</m:msup>).</m> As <m>x\to 1</m> the limit is <m>\frac{12(1-a)}</m> if <m>a\lt 1,</m> and the limit diverges to +\infty  if <m>a\gt 1.</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170573713779">
+<p id="fs-id1170573713781">The area of a semicircle of radius 1 can be expressed as <m>\displaystyle{ \int_{-1}^{1} \sqrt{1-x^2}dx}.</m> Use the substitution <m>x=\cos  t</m> to express the area of a semicircle as the integral of a trigonometric function. You do not need to compute the integral.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571169775">
+<p id="fs-id1170571169777">The area of the top half of an ellipse with a major axis that is the <m>x</m>-axis from <m>x=-1</m> to <m>a</m> and with a minor axis that is the <m>y</m>-axis from <m>y=- b</m> to <m>b</m> can be written as <m>\displaystyle{ <m:msubsup>\int - aa</m:msubsup>b\sqrt{1-\frac{x^2}{a^2}}dx}.</m> Use the substitution <m>x=a \cos  t</m> to express this area in terms of an integral of a trigonometric function. You do not need to compute the integral.</p>
+</statement>
+<solution id="fs-id1170571169895">
+<p id="fs-id1170571169897"><m>\displaystyle{ <m:msubsup>\int t=\pi0</m:msubsup>b\sqrt{1-\cos^{2}t}} × (- a \sin t)dt=\displaystyle{ <m:msubsup>\int t=0\pi</m:msubsup>ab<m:msup>\sin2</m:msup>tdt}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571068047">
+<p id="fs-id1170571068049"><emphasis effect="bold">[T]</emphasis> The following graph is of a function of the form <m>f(t)=a \sin(nt)+b \sin(mt).</m> Estimate the coefficients <m>a</m> and <m>b</m>, and the frequency parameters <m>n</m> and <m>m</m>. Use these estimates to approximate <m>\displaystyle{ <m:msubsup>\int 0\pi</m:msubsup>f(t)dt}.</m></p>
+<description>"A graph of a function of the given form over [0, 2pi], which has six turning points. They are located at just before pi/4, just after pi/2, between 3pi/4 and pi, between pi and 5pi/4, just before 3pi/2, and just after 7pi/4 at about 3, -2, 1, -1, 2, and -3. It begins at the origin and ends at (2pi, 0). It crosses the x axis between pi/4 and pi/2, just before 3pi/4, pi, just after 5pi/4, and between 3pi/2 and 4pi/4.">
+<image source="CNX_Calc_Figure_05_05_201.jpg" width="50%">
+
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571249465">
+<p id="fs-id1170571249467"><emphasis effect="bold">[T]</emphasis> The following graph is of a function of the form <m>f(x)=a \cos (nt)+b \cos (mt).</m> Estimate the coefficients <m>a</m> and <m>b</m> and the frequency parameters <m>n</m> and <m>m</m>. Use these estimates to approximate <m>\displaystyle{ <m:msubsup>\int 0\pi</m:msubsup>f(t)dt}.</m></p>
+<description>"The graph of a function of the given form over [0, 2pi]. It begins at (0,1) and ends at (2pi, 1). It has five turning points, located just after pi/4, between pi/2 and 3pi/4, pi, between 5pi/4 and 3pi/2, and just before 7pi/4 at about -1.5, 2.5, -3, 2.5, and -1. It crosses the x axis between 0 and pi/4, just before pi/2, just after 3pi/4, just before 5pi/4, just after 3pi/2, and between 7pi/4 and 2pi.">
+<image source="CNX_Calc_Figure_05_05_202.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1170573497142">
+<p id="fs-id1170573497145"><m>f(t)=2 \cos (3t)-\cos (2t);\displaystyle{ \int_0^{\pi/2} (2 \cos (3t)-\cos (2t))=-\frac{2}{3}}</m></p>
+</solution>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1170573497269">
+<term>change of variables</term>
+<meaning id="fs-id1170573497274">the substitution of a variable, such as <m>u</m>, for an expression in the integrand</meaning>
+</definition>
+<definition id="fs-id1170573497284">
+<term>integration by substitution</term>
+<meaning id="fs-id1170573497289">a technique for integration that allows integration of functions that are the result of a chain-rule derivative</meaning>
+</definition>
+</glossary>
+</document>
+?>

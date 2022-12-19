@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This frontmatter division will contain all content before the -->
+<!-- first chapter.  Fill in and comment/uncomment to see how this -->
+<!-- works.                                                        -->
+
+<frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta_frontmatter">
+  <titlepage>
+    <author>
+      <personname>Custom Business Calculus Edition </personname>
+      <!--<department></department>
+      <institution></institution>-->
+    </author>
+    <date><today/></date>
+  </titlepage>
+
+  <colophon>
+    <p> This book was adapted from OpenStax Calculus. The copyright infomation for OpenStax Calculus, which extends to this custom edition, is below. </p>
+    <website>
+      <name><c>openstax.org/details/books/calculus-volume-1</c></name>
+      <address>https://openstax.org/details/books/calculus-volume-1</address>
+    </website>
+
+    <copyright>
+      <!-- In addition to specifying the copyright holder, you should  -->
+      <!-- include a license, such as the cc-by-sa license shown below -->
+      <!-- so people reading your book know how they can use it.       -->
+      <year>2020</year>
+      <holder>Rice University</holder>
+      <!-- <minilicense><image source="../images/by-sa.png" /></minilicense> -->
+      <shortlicense>
+        <!-- <image source="../images/by-sa.png" width="15%"/>  -->
+        Calculus Volumes 1, 2, and 3 are licensed under an Attribution-NonCommercial-Sharealike 4.0 International License (CC BY-NC-SA), which means you can share, remix, transform, and build upon the content, as long as you credit OpenStax and license your new creations under the same terms.
+
+        To view a copy of this license, visit
+        <url
+          href="http://creativecommons.org/licenses/by-sa/4.0/"
+          visual="creativecommons.org/licenses/by-sa/4.0">
+          CreativeCommons.org</url>
+      </shortlicense>
+    </copyright>
+
+  </colophon>
+
+<!--  <dedication>
+    <p>
+      For ...
+    </p>
+  </dedication>
+
+  <acknowledgement>
+    <p>
+      I would like to thank...
+    </p>
+  </acknowledgement> -->
+
+  <preface xml:id="meta_frontmatter-preface">
+    <!-- You should be a little careful about what you put here -->
+    <!-- Avoid elements that should have a number, for example  -->
+    <title> Preface: OpenStax Calculus Volume 1 </title>
+    <p id="fs-idm443119440">Welcome to <em>Calculus Volume 1</em>, an OpenStax resource. This textbook was written to increase student access to high-quality learning materials, maintaining highest standards of academic rigor at little to no cost. </p>
+    <section id="eip-43"><title>About OpenStax</title><p id="eip-320">OpenStax is a nonprofit based at Rice University, and it’s our mission to improve student access to education. Our first openly licensed college textbook was published in 2012, and our library has since scaled to over 25 books for college and AP<registered/> courses used by hundreds of thousands of students. OpenStax Tutor, our low-cost personalized learning tool, is being used in college courses throughout the country.  Through our partnerships with philanthropic foundations and our alliance with other educational resource organizations, OpenStax is breaking down the most common barriers to learning and empowering students and instructors to succeed.</p>
+    </section>
+    <section id="eip-490">
+      <title>About OpenStax's resources</title>
+      <subsection id="eip-606"><title>Customization</title><p id="eip-463"><em>Calculus Volume 1</em> is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC-BY-NC-SA) license, which means that you can distribute, remix, and build upon the content, as long as you provide attribution to OpenStax and its content contributors, do not use the content for commercial purposes, and distribute the content under the same CC-BY-NC-SA license.
+      </p><p id="eip-626">Because our books are openly licensed, you are free to use the entire book or pick and choose the sections that are most relevant to the needs of your course. Feel free to remix the content by assigning your students certain chapters and sections in your syllabus, in the order that you prefer. You can even provide a direct link in your syllabus to the sections in the web view of your book.</p><p id="eip-655">Instructors also have the option of creating a customized version of their OpenStax book. The custom version can be made available to students in low-cost print or digital form through their campus bookstore. Visit your book page on OpenStax.org for more information.</p></subsection>
+      <subsection id="eip-676"><title>Errata</title><p id="eip-459">All OpenStax textbooks undergo a rigorous review process. However, like any professional-grade textbook, errors sometimes occur. Since our books are web based, we can make updates periodically when deemed pedagogically necessary. If you have a correction to suggest, submit it through the link on your book page on OpenStax.org. Subject matter experts review all errata suggestions. OpenStax is committed to remaining transparent about all updates, so you will also find a list of past errata changes on your book page on OpenStax.org.</p></subsection>
+      <subsection id="eip-86"><title>Format</title><p id="eip-643">You can access this textbook for free in web view or PDF through OpenStax.org, and for a low cost in print.
+      </p>
+      </subsection>
+    </section>
+    <section id="eip-717"><title>About <em>Calculus Volume 1</em></title><p id="eip-35">Calculus is designed for the typical two- or three-semester general calculus course, incorporating innovative features to enhance student learning. The book guides students through the core concepts of calculus and helps them understand how those concepts apply to their lives and the world around them. Due to the comprehensive nature of the material, we are offering the book in three volumes for flexibility and efficiency. Volume 1 covers functions, limits, derivatives, and integration.</p>
+      <subsection id="eip-576"><title>Coverage and scope</title><p id="eip-21">Our <em>Calculus Volume 1</em> textbook adheres to the scope and sequence of most general calculus courses nationwide. We have worked to make calculus interesting and accessible to students while maintaining the mathematical rigor inherent in the subject. With this objective in mind, the content of the three volumes of <em>Calculus</em> have been developed and arranged to provide a logical progression from fundamental to more advanced concepts, building upon what students have already learned and emphasizing connections between topics and between theory and applications. The goal of each section is to enable students not just to recognize concepts, but work with them in ways that will be useful in later courses and future careers. The organization and pedagogical features were developed and vetted with feedback from mathematics educators dedicated to the project.</p>
+      <ul>
+  <li> <p> Volume 1 </p>
+  <ul>
+  <li>Chapter 1: Functions and Graphs</li>
+  <li>Chapter 2: Limits</li>
+  <li>Chapter 3: Derivatives</li>
+  <li>Chapter 4: Applications of Derivatives</li>
+  <li>Chapter 5: Integration</li>
+  <li>Chapter 6: Applications of Integration</li>
+</ul></li>
+  <li><p> Volume 2 </p>
+  <ul><li>Chapter 1: Integration</li>
+  <li>Chapter 2: Applications of Integration</li>
+  <li>Chapter 3: Techniques of Integration</li>
+  <li>Chapter 4: Introduction to Differential Equations</li>
+  <li>Chapter 5: Sequences and Series</li>
+  <li>Chapter 6: Power Series</li>
+  <li>Chapter 7: Parametric Equations and Polar Coordinates</li></ul></li>
+  <li><p> Volume 3 </p>
+  <ul>
+  <li>Chapter 1: Parametric Equations and Polar Coordinates</li>
+  <li>Chapter 2: Vectors in Space</li>
+  <li>Chapter 3: Vector-Valued Functions</li>
+  <li>Chapter 4: Differentiation of Functions of Several Variables</li>
+  <li>Chapter 5: Multiple Integration</li>
+  <li>Chapter 6: Vector Calculus</li>
+  <li>Chapter 7: Second-Order Differential Equations</li>
+</ul></li></ul></subsection>
+  <subsection id="eip-56"><title>Pedagogical foundation</title><p id="eip-377">Throughout <em>Calculus Volume 1</em> you will find examples and exercises that present classical ideas and techniques as well as modern applications and methods. Derivations and explanations are based on years of classroom experience on the part of long-time calculus professors, striving for a balance of clarity and rigor that has proven successful with their students. Motivational applications cover important topics in probability, biology, ecology, business, and economics, as well as areas of physics, chemistry, engineering, and computer science. <em>Student Projects</em> in each chapter give students opportunities to explore interesting sidelights in pure and applied mathematics, from determining a safe distance between the grandstand and the track at a Formula One racetrack, to calculating the center of mass of the Grand Canyon Skywalk or the terminal speed of a skydiver. <em>Chapter Opening Applications</em> pose problems that are solved later in the chapter, using the ideas covered in that chapter. Problems include the hydraulic force against the Hoover Dam, and the comparison of relative intensity of two earthquakes. <em>Definitions, Rules,</em> and <em>Theorems</em> are highlighted throughout the text, including over 60 <em>Proofs</em> of theorems.
+  </p></subsection><subsection id="eip-694"><title>Assessments that reinforce key concepts </title><p id="eip-385">In-chapter <em>Examples</em> walk students through problems by posing a question, stepping out a solution, and then asking students to practice the skill with a “Checkpoint” question. The book also includes assessments at the end of each chapter so students can apply what they’ve learned through practice problems. Many exercises are marked with a <em>[T]</em> to indicate they are suitable for solution by technology, including calculators or Computer Algebra Systems (CAS). Answers for selected exercises are available in the <em>Answer Key</em> at the back of the book. The book also includes assessments at the end of each chapter so students can apply what they’ve learned through practice problems.
+  </p></subsection><subsection id="eip-333"><title>Early or late transcendentals</title><p id="eip-963">
+  <em>Calculus Volume 1</em> is designed to accommodate both Early and Late Transcendental approaches to calculus. Exponential and logarithmic functions are introduced informally in Chapter 1 and presented in more rigorous terms in Chapter 6. Differentiation and integration of these functions is covered in Chapters 3–5 for instructors who want to include them with other types of functions. These discussions, however, are in separate sections that can be skipped for instructors who prefer to wait until the integral definitions are given before teaching the calculus derivations of exponentials and logarithms.
+  </p></subsection><subsection id="eip-323"><title>Comprehensive art program</title><p id="eip-683">
+  Our art program is designed to enhance students’ understanding of concepts through clear and effective illustrations, diagrams, and photographs.
+  </p>
+
+  <image source="CNX_Calc_Figure_Preface_001_img.jpg" width="50%"/>
+  <image source="CNX_Calc_Figure_Preface_002_img.jpg" width="50%"/>
+
+
+</subsection></section><section id="eip-705"><title>Additional resources</title><subsection id="eip-776"><title>Student and instructor resources</title><p id="eip-199">We’ve compiled additional resources for both students and instructors, including Getting Started Guides, an instructor solution manual, and PowerPoint slides. Instructor resources require a verified instructor account, which can be requested on your OpenStax.org log-in. Take advantage of these resources to supplement your OpenStax book.
+  </p></subsection><subsection id="eip-427"><title>Community Hubs</title><p id="eip-391">
+  OpenStax partners with the Institute for the Study of Knowledge Management in Education (ISKME) to offer Community Hubs on OER Commons – a platform for instructors to share community-created resources that support OpenStax books, free of charge. Through our Community Hubs, instructors can upload their own materials or download resources to use in their own courses, including additional ancillaries, teaching material, multimedia, and relevant course content. We encourage instructors to join the hubs for the subjects most relevant to your teaching and research as an opportunity both to enrich your courses and to engage with other faculty.
+
+  </p><p id="eip-idm367257376">
+  To reach the Community Hubs, visit <url href="www.oercommons.org/hubs/OpenStax">www.oercommons.org/hubs/OpenStax</url>.
+  </p></subsection><subsection id="eip-356"><title>Partner resources</title><p id="eip-395">OpenStax Partners are our allies in the mission to make high-quality learning materials affordable and accessible to students and instructors everywhere. Their tools integrate seamlessly with our OpenStax titles at a low cost. To access the partner resources for your text, visit your book page on OpenStax.org.
+  </p></subsection></section><section id="eip-653"><title>About the authors</title><subsection id="eip-957" class="sr-contrib-auth"><title>Senior contributing authors</title><p id="fs-id1169977081770"><em>Gilbert Strang, Massachusetts Institute of Technology</em>
+  Dr. Strang received his PhD from UCLA in 1959 and has been teaching mathematics at MIT ever since. His Calculus online textbook is one of eleven that he has published and is the basis from which our final product has been derived and updated for today’s student. Strang is a decorated mathematician and past Rhodes Scholar at Oxford University.
+  </p><p id="eip-175"><em>Edwin “Jed” Herman, University of Wisconsin-Stevens Point</em>
+  Dr. Herman earned a BS in Mathematics from Harvey Mudd College in 1985, an MA in Mathematics from UCLA in 1987, and a PhD in Mathematics from the University of Oregon in 1997. He is currently a Professor at the University of Wisconsin-Stevens Point. He has more than 20 years of experience teaching college mathematics, is a student research mentor, is experienced in course development/design, and is also an avid board game designer and player.
+  </p></subsection><subsection id="fs-id1169977069259" class="contrib-auth"><title>Contributing authors</title><p id="eip-988">
+<ul>
+<li>  Catherine Abbott, Keuka College</li>
+
+<li>  Nicoleta Virginia Bila, Fayetteville State University</li>
+
+<li>  Sheri J. Boyd, Rollins College</li>
+
+<li>  Joyati Debnath, Winona State University</li>
+
+<li>  Valeree Falduto, Palm Beach State College</li>
+
+<li>  Joseph Lakey, New Mexico State University</li>
+
+<li>  Julie Levandosky, Framingham State University</li>
+
+<li>  David McCune, William Jewell College</li>
+
+<li>  Michelle Merriweather, Bronxville High School</li>
+
+<li>  Kirsten R. Messer, Colorado State University - Pueblo</li>
+
+<li>  Alfred K. Mulzet, Florida State College at Jacksonville</li>
+
+<li>  William Radulovich (retired), Florida State College at Jacksonville</li>
+
+<li>  Erica M. Rutter, Arizona State University</li>
+
+<li>  David Smith, University of the Virgin Islands</li>
+
+<li>  Elaine A. Terry, Saint Joseph’s University</li>
+
+<li>  David Torain, Hampton University</li> </ul></p></subsection>
+
+  <subsection id="eip-452"><title>Reviewers</title><p id="eip-55">
+<ul>
+  <li>Marwan A. Abu-Sawwa, Florida State College at Jacksonville</li>
+  <li>Kenneth J. Bernard, Virginia State University</li>
+  <li>John Beyers, University of Maryland</li>
+  <li>Charles Buehrle, Franklin &amp; Marshall College</li>
+  <li>Matthew Cathey, Wofford College</li>
+<li>  Michael Cohen, Hofstra University</li>
+  <li>William DeSalazar, Broward County School System</li>
+<li>  Murray Eisenberg, University of Massachusetts Amherst</li>
+<li>  Kristyanna Erickson, Cecil College</li>
+  <li>Tiernan Fogarty, Oregon Institute of Technology</li>
+<li>  David French, Tidewater Community College</li>
+  <li>Marilyn Gloyer, Virginia Commonwealth University</li>
+<li>  Shawna Haider, Salt Lake Community College</li>
+<li>  Lance Hemlow, Raritan Valley Community College</li>
+<li>  Jerry Jared, The Blue Ridge School</li>
+<li>  Peter Jipsen, Chapman University</li>
+<li>  David Johnson, Lehigh University</li>
+<li>  M.R. Khadivi, Jackson State University</li>
+<li>  Robert J. Krueger, Concordia University</li>
+<li>  Tor A. Kwembe, Jackson State University</li>
+<li>  Jean-Marie Magnier, Springfield Technical Community College</li>
+<li>  Cheryl Chute Miller, SUNY Potsdam</li>
+<li>  Bagisa Mukherjee, Penn State University, Worthington Scranton Campus</li>
+<li>  Kasso Okoudjou, University of Maryland College Park</li>
+<li>  Peter Olszewski, Penn State Erie, The Behrend College</li>
+<li>  Steven Purtee, Valencia College</li>
+<li>  Alice Ramos, Bethel College</li>
+<li>  Doug Shaw, University of Northern Iowa</li>
+<li>  Hussain Elalaoui-Talibi, Tuskegee University</li>
+<li>  Jeffrey Taub, Maine Maritime Academy</li>
+<li>  William Thistleton, SUNY Polytechnic Institute</li>
+<li>  A. David Trubatch, Montclair State University</li>
+<li>  Carmen Wright, Jackson State University</li>
+<li>  Zhenbu Zhang, Jackson State University </li>
+</ul>
+  </p></subsection>
+  </section>
+  <!--<xi:include href="./preface.ptx" />-->
+  </preface>
+
+<preface>
+  <title> Preface: Business Calculus Custom Edition </title>
+<p>  This book has been adapted by Katie Hall and Kim Savinon at University of Connecticut to be used for a Business Calculus course. </p>
+</preface>
+</frontmatter>

@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch3Sec6" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Chain Rule</title>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ul>
+<li>State the chain rule for the composition of two functions.</li>
+<li>Apply the chain rule together with the power rule.</li>
+<li>Apply the chain rule and the product/quotient rules correctly in combination when both are necessary.</li>
+<!--Commenting out trig and proof
+<li>Recognize the chain rule for a composition of three or more functions.</li>
+<li>Describe the proof of the chain rule.</li>
+-->
+</ul>
+<p id="fs-id1169738949189">We have seen the techniques for differentiating basic functions <m>(x^n,<!-- Commenting out trig \sin x,\cos x,-->\text{ etc }.)</m> as well as sums, differences, products, quotients, and constant multiples of these functions. However, these techniques do not allow us to differentiate compositions of functions, such as <m>h(x)=(9x+1)^2</m> or <m>k(x)=\sqrt{3x^2+1}.</m> In this section, we study the rule for finding the derivative of the composition of two or more functions.</p>
+</introduction>
+<subsection id="fs-id1169738923754">
+<title>Deriving the Chain Rule</title>
+<!--Commenting out trig
+<p id="fs-id1169738824611">When we have a function that is a composition of two or more functions, we could use all of the techniques we have already learned to differentiate it. However, using all of those techniques to break down a function into simpler parts that we are able to differentiate can get cumbersome. Instead, we use the <term>chain rule</term>, which states that the derivative of a composite function is the derivative of the outer function evaluated at the inner function times the derivative of the inner function.</p>
+<p id="fs-id1169736656600">To put this rule into context, let’s take a look at an example: <m>h(x)=\sin (x^3).</m> We can think of the derivative of this function with respect to <m>x</m> as the rate of change of <m>\sin(x^3)</m> relative to the change in <m>x.</m> Consequently, we want to know how <m>\sin(x^3)</m> changes as <m>x</m> changes. We can think of this event as a chain reaction: As <m>x</m> changes, <m>x^3</m> changes, which leads to a change in <m>\sin (x^3).</m> This chain reaction gives us hints as to what is involved in computing the derivative of <m> \sin(x^3).</m> First of all, a change in <m>x</m> forcing a change in <m>x^3</m> suggests that somehow the derivative of <m>x^3</m> is involved. In addition, the change in <m>x^3</m> forcing a change in <m>\sin(x^3)</m> suggests that the derivative of <m>\sin(u)</m> with respect to <m>u,</m> where <m>u=x^3,</m> is also part of the final derivative.</p>
+<p id="fs-id1169738823074">We can take a more formal look at the derivative of <m>h(x)=\sin (x^3)</m> by setting up the limit that would give us the derivative at a specific value <m>a</m> in the domain of <m>h(x)=\sin (x^3).</m></p>
+<me>h'(a)=\lim_{x\to a}\frac{\sin (x^3)- \sin(a^3)}{x- a}.</me>
+<p id="fs-id1169738954231">This expression does not seem particularly helpful; however, we can modify it by multiplying and dividing by the expression <m>x^3- a^3</m> to obtain</p>
+<me>h'(a)=\lim_{x\to a}\frac{\sin (x^3)- \sin(a^3)}{x^3- a^3}\cdot \frac{x^3- a^3}{x- a}.</me>
+<p id="fs-id1169738969849">From the definition of the derivative, we can see that the second factor is the derivative of <m>x^3</m> at <m>x=a.</m> That is,</p>
+<me>\lim_{x\to a}\frac{x^3- a^3}{x- a}=\frac{d}{dx}(x^3)=3a^2.</me>
+<p id="fs-id1169738971694">However, it might be a little more challenging to recognize that the first term is also a derivative. We can see this by letting <m>u=x^3</m> and observing that as <m>x\to a,u\to a^3\text{ : }</m></p>
+<md><mrow>\lim_{x\to a}\frac{\sin (x^3)- \sin (a^3)}{x^3- a^3}\amp=\lim_{u\to a^3}\frac{\sin u- \sin (a^3)}{u- a^3}</mrow>
+<mrow>\amp=\frac{d}{du}(\sin u)_{u=a^3}</mrow><mrow>\amp=\cos (a^3).</mrow></md><p id="fs-id1169739000166">Thus, <m>h'(a)=\cos(a^3)\cdot 3a^2.</m></p>
+<p id="fs-id1169739044550">In other words, if <m>h(x)=\sin (x^3),</m> then <m>h'(x)=\cos (x^3)\cdot 3x^2.</m> Thus, if we think of <m>h(x)=\sin(x^3)</m> as the composition <m>(f\circ g)(x)=f(g(x))</m> where <m>f(x)=</m> sin <m>x</m> and <m>g(x)=x^3,</m> then the derivative of <m>h(x)=\sin(x^3)</m> is the product of the derivative of <m>g(x)=x^3</m> and the derivative of the function <m>f(x)=\sin x</m> evaluated at the function <m>g(x)=x^3.</m> At this point, we anticipate that for <m>h(x)=\sin (g(x)),</m> it is quite likely that <m>h'(x)=\cos(g(x))g'(x).</m> As we determined above, this is the case for <m>h(x)=\sin (x^3).</m></p>
+-->
+<p>When we have a function that is a composition of two or more functions, we could use all of the techniques we have already learned to differentiate it. However, using all of those techniques to break down a function into simpler parts that we are able to differentiate can get cumbersome. Instead, we use the <term>chain rule</term>, which states that the derivative of a composite function is the derivative of the outer function evaluated at the inner function times the derivative of the inner function.</p>
+<p>To put this rule into context, let’s take a look at an example: <m>h(x)=h(x)=(9x+1)^2.</m> We can think of the derivative of this function with respect to <m>x</m> as the rate of change of <m>(9x+1)^2</m> relative to the change in <m>x.</m> Consequently, we want to know how <m>(9x+1)^2</m> changes as <m>x</m> changes. We can think of this event as a chain reaction: As <m>x</m> changes, <m>9x+1</m> changes, which leads to a change in <m>(9x+1)^2.</m> This chain reaction gives us hints as to what is involved in computing the derivative of <m>(9x+1)^2.</m> First of all, a change in <m>x</m> forcing a change in <m>9x+1</m> suggests that somehow the derivative of <m>9x+1</m> is involved. In addition, the change in <m>9x+1</m> forcing a change in <m>(9x+1)^2</m> suggests that the derivative of <m>u^2</m> with respect to <m>u,</m> where <m>u=9x+1,</m> is also part of the final derivative.</p>
+<p>We can take a more formal look at the derivative of <m>h(x)=(9x+1)^2</m> by setting up the limit that would give us the derivative at a specific value <m>a</m> in the domain of <m>h(x)=(9x+1)^2.</m></p>
+<me>h'(a)=\lim_{x\to a}\frac{(9x+1)^2-(9a+1)^2}{x-a}.</me>
+<p>This expression does not seem particularly helpful; however, we can modify it by factoring the numerator using the difference of squares formula to obtain</p>
+<md>
+<mrow>h'(a)\amp=\lim_{x\to a}\frac{\big((9x+1)+(9a+1)\big)\big((9x+1)-(9a+1)\big)}{x-a}.</mrow>
+<mrow>\amp=\lim_{x\to a}\frac{(9x+9a+2)(9x-9a)}{x-a}</mrow>
+<mrow>\amp=\lim_{x\to a}\frac{(9x+9a+2)\cdot 9\cdot(x-a)}{x-a}</mrow>
+<mrow>\amp=\lim_{x\to a}(9x+9a+2)\cdot 9</mrow>
+<mrow>\amp=(18a+2)\cdot 9</mrow>
+<mrow>\amp=2(9a+1)^1\cdot 9</mrow>
+</md>
+<p>Thus, <m>h'(a)=2(9a+1)\cdot 9</m></p>
+<p>In other words, if <m>h(x)=(9x+1)^2,</m> then <m>h'(x)=2(9x+1)\cdot 9.</m> Thus, if we think of <m>h(x)=(9x+1)^2</m> as the composition <m>(f\circ g)(x)=f(g(x))</m> where <m>f(x)=x^2</m> and <m>g(x)=9x+1,</m> then the derivative of <m>h(x)=(9x+1)^2</m> is the product of the derivative of <m>g(x)=9x+1</m> and the derivative of the function <m>f(x)=x^2</m> evaluated at the function <m>g(x)=9x+1.</m> At this point, we anticipate that for <m>h(x)=(g(x))^2,</m> it is quite likely that <m>h'(x)=2(g(x))\cdot g'(x).</m> As we determined above, this is the case for <m>h(x)=(9x+1)^2.</m></p>
+<p id="fs-id1169738955406">Now that we have derived a special case of the chain rule, we state the general case and then apply it in a general form to other composite functions.
+<!-- Commenting out proof
+An informal proof is provided at the end of the section.
+-->
+</p>
+<note id="fs-id1169739194586">
+<title>Rule: The Chain Rule</title>
+<p id="fs-id1169736612521">Let <m>f</m> and <m>g</m> be functions. For all <m>x</m> in the domain of <m>g</m> for which <m>g</m> is differentiable at <m>x</m> and <m>f</m> is differentiable at <m>g(x),</m> the derivative of the composite function</p>
+<me>h(x)=(f\circ g)(x)=f(g(x))</me>
+<p id="fs-id1169738949353">is given by</p>
+<me>h'(x)=f'(g(x))g'(x).</me>
+<p id="fs-id1169739199751">Alternatively, if <m>y</m> is a function of <m>u,</m> and <m>u</m> is a function of <m>x,</m> then</p>
+<me>\frac{dy}{dx}=\frac{dy}{du}\cdot \frac{du}{dx}.</me>
+</note>
+<note id="fs-id1169738971083" class="media-2">
+<p id="fs-id1169739080685">Watch an <url href="http://www.openstax.org/l/20_chainrule2" visual="http://www.openstax.org/l/20_chainrule2">animation</url> of the chain rule.</p>
+</note>
+<note id="fs-id1169736619728" class="problem-solving">
+<title>Problem-Solving Strategy: Applying the Chain Rule</title>
+<ol id="fs-id1169739182671" list-type="enumerated" number-style="arabic">
+<li>To differentiate <m>h(x)=f(g(x)),</m> begin by identifying <m>f(x)</m> and <m>g(x).</m></li>
+<li>Find <m>f'(x)</m> and evaluate it at <m>g(x)</m> to obtain <m>f'(g(x)).</m></li>
+<li>Find <m>g'(x).</m></li>
+<li>Write <m>h'(x)=f'(g(x))\cdot g'(x).</m></li>
+</ol>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1169739269865"><emphasis effect="italics">Note</emphasis>: When applying the chain rule to the composition of two or more functions, keep in mind that we work our way from the outside function in. It is also useful to remember that the derivative of the composition of two functions can be thought of as having two parts; the derivative of the composition of three functions has three parts; and so on. Also, remember that we never evaluate a derivative at a derivative.</p></note>
+</subsection>
+<subsection id="fs-id1169739001005">
+<title>The Chain and Power Rules Combined</title>
+<p id="fs-id1169739096228">We can now apply the chain rule to composite functions, but note that we often need to use it with other rules. For example, to find derivatives of functions of the form <m>h(x)=(g(x))^n ,</m> we need to use the chain rule combined with the power rule. To do so, we can think of <m>h(x)=(g(x))^n </m> as <m>f(g(x))</m> where <m>f(x)=x^n.</m> Then <m>f'(x)=nx^{n-1}.</m> Thus, <m>f'(g(x))=n(g(x))^{n-1}.</m> This leads us to the derivative of a power function using the chain rule,</p>
+<me>h'(x)=n(g(x))^{n-1}g'(x)</me>
+<note id="fs-id1169739187734">
+<title>Rule: Power Rule for Composition of Functions</title>
+<p id="fs-id1169738978364">For all values of <m>x</m> for which the derivative is defined, if</p>
+<me>h(x)=(g(x))^n .</me>
+<p id="fs-id1169739242349">Then</p>
+<men xml:id="fs-id1169739222795">h'(x)=n(g(x))^{n-1}g'(x).</men>
+</note>
+<example xml:id="fs-id1169739274312">
+<title>Using the Chain and Power Rules</title>
+ <statement id="fs-id1169739282636">
+<p id="fs-id1169736589119">Find the derivative of <m>h(x)=\frac{1}{(3x^2+1)^2}.</m></p>
+</statement>
+<solution id="fs-id1169736658838">
+<p id="fs-id1169736658840">First, rewrite <m>h(x)=\frac{1}{(3x^2+1)^2}=(3x^2+1)^{-2}.</m></p>
+<p id="fs-id1169739333152">Applying the power rule with <m>g(x)=3x^2+1,</m> we have</p>
+<me>h'(x)=- 2(3x^2+1)^{- 3}(6x).</me>
+<p id="fs-id1169736655793">Rewriting back to the original form gives us</p>
+<me>h'(x)=\frac{- 12x}{(3x^2+1)^3}.</me>
+</solution>
+</example>
+<exercise> <statement id="fs-id1169736595959">
+<p id="fs-id1169736595961">Find the derivative of <m>h(x)=(2x^3+2x- 1)^4.</m></p>
+</statement>
+<solution id="fs-id1169736613650">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1169739325717"><m>h'(x)=4(2x^3+2x- 1)^3(6x^2+2)=8(3x^2+1)(2x^3+2x- 1)^3</m></p></solution>
+<hint>
+<p id="fs-id1169739179049">Use <xref ref="fs-id1169739222795"/> with <m>g(x)=2x^3+2x- 1</m></p>
+</hint>
+</exercise>
+<example xml:id="fs-id1169739302258">
+<title>Using the Chain and Power Rules</title>
+<statement id="fs-id1169736609874">
+<p id="fs-id1169739273001">Find the derivative of <m>k(x)=\sqrt{3x^2+1}.</m></p>
+</statement>
+<solution id="fs-id1169736617705">
+<p id="fs-id1169739182335">First recall that <m>\sqrt{3x^2+1}=(3x^2+1)^{1/2},</m> so we can rewrite <m>k(x)=\sqrt{3x^2+1}</m> as <m>k(x)=(3x^2+1)^{1/2}.</m></p>
+<p id="fs-id1169739351647">Applying the power rule with <m>g(x)=3x^2+1,</m> we obtain</p>
+<me>k'(x)=\frac{1}{2}(3x^2+1)^{-1/2}\cdot 6x=3x(3x^2+1)^{-1/2}=\frac{3x}{\sqrt{3x^2+1}}.</me>
+</solution>
+</example>
+<example xml:id="fs-id1169739190027">
+<title>Finding the Equation of a Tangent Line</title>
+<statement>
+<p id="fs-id1169736613825">Find the equation of a line tangent to the graph of <m>h(x)=\frac{1}{(3x-5)^2}</m> at <m>x=2.</m></p>
+</statement>
+<solution id="fs-id1169739336064">
+<p id="fs-id1169739336066">Because we are finding an equation of a line, we need a point. The <m>x</m>-coordinate of the point is 2. To find the <m>y</m>-coordinate, substitute 2 into <m>h(x).</m> Since <m>h(2)=\frac{1}{(3(2)- 5)^2}=1,</m> the point is <m>(2,1).</m></p>
+<p id="fs-id1169736607681">For the slope, we need <m>h'(2).</m> To find <m>h'(x),</m> first we rewrite <m>h(x)=(3x- 5)^{-2}</m> and apply the power rule to obtain</p>
+<me>h'(x)=-2(3x- 5)^{-3}(3)=- 6(3x-5)^{-3}.</me>
+<p id="fs-id1169739111347">By substituting, we have <m>h'(2)=-6(3(2)-5)^{-3}=-6.</m> Therefore, the line has equation <m>y-1=-6(x-2).</m> Rewriting, the equation of the line is <m>y=-6x+13.</m></p>
+</solution>
+</example>
+<exercise> <statement id="fs-id1169739301873">
+<p id="fs-id1169739303885">Find the equation of the line tangent to the graph of <m>f(x)=(x^2- 2)^3</m> at <m>x=- 2.</m></p>
+</statement>
+<solution id="fs-id1169739300282">
+<p id="fs-id1169738869705"><m>y=- 48x- 88</m></p>
+</solution>
+<hint>
+<p id="fs-id1169739252012">Use the preceding example as a guide.</p>
+</hint>
+</exercise>
+</subsection>
+<subsection id="fs-id1169739252019">
+<title>Combining the Chain Rule with Other Rules</title>
+<p id="fs-id1169739293763">Now that we can combine the chain rule and the power rule, we examine how to combine the chain rule with the other rules we have learned. In particular, we can use it with the formulas for the derivatives of
+<!-- Commenting out trig
+trigonometric functions-->
+quotient or product rule.</p>
+<!-- Commenting out trig
+<example xml:id="fs-id1169736656617">
+<title>Using the Chain Rule on a General Cosine Function</title>
+<statement id="fs-id1169736656621">
+<p id="fs-id1169739327889">Find the derivative of <m>h(x)=\cos (g(x)).</m></p>
+</statement>
+<solution id="fs-id1169736657088">
+<p id="fs-id1169736657090">Think of <m>h(x)=\cos(g(x))</m> as <m>f(g(x))</m> where <m>f(x)=\cos x.</m> Since <m>f'(x)=-\sin x.</m> we have <m>f'(g(x))=-\sin (g(x)).</m> Then we do the following calculation.</p>
+<md><mrow>h'(x)\amp=f'(g(x))g'(x)\amp \amp \text{ Apply the chain rule. }</mrow>
+<mrow>\amp =-\sin (g(x))g'(x)\amp\amp\text{ Substitute } f'(g(x))=-\sin (g(x)).</mrow></md>
+<p id="fs-id1169739285002">Thus, the derivative of <m>h(x)=\cos (g(x))</m> is given by <m>h'(x)=-\sin (g(x))g'(x).</m></p>
+</solution>
+</example>
+<p id="fs-id1169739301534">In the following example we apply the rule that we have just derived.</p>
+<example xml:id="fs-id1169739301537">
+  <title>Using the Chain Rule on a Cosine Function</title>
+ <statement id="fs-id1169739301541">
+<p id="fs-id1169739301547">Find the derivative of <m>h(x)=\cos (5x^2).</m></p>
+</statement>
+<solution id="fs-id1169736607669">
+<p id="fs-id1169736607671">Let <m>g(x)=5x^2.</m> Then <m>g'(x)=10x.</m> Using the result from the previous example,</p>
+<md><mrow>h'(x)\amp=-\sin (5x^2)\cdot 10x</mrow><mrow>\amp=- 10x \sin (5x^2).</mrow></md>
+</solution>
+</example>
+<example xml:id="fs-id1169739333921">
+<title>Using the Chain Rule on Another Trigonometric Function</title>
+ <statement id="fs-id1169739333926">
+<p id="fs-id1169739333931">Find the derivative of <m>h(x)=\sec (4x^5+2x).</m></p>
+</statement>
+<solution id="fs-id1169739300090">
+<p id="fs-id1169739300092">Apply the chain rule to <m>h(x)=\sec(g(x))</m> to obtain</p>
+<me>h'(x)=\sec(g(x)\tan (g(x))g'(x).</me>
+<p id="fs-id1169736615162">In this problem, <m>g(x)=4x^5+2x,</m> so we have <m>g'(x)=20x^4+2.</m> Therefore, we obtain</p>
+<md><mrow>h'(x)\amp=\sec (4x^5+2x) \tan (4x^5+2x)(20x^4+2)</mrow><mrow>\amp=(20x^4+2)\sec (4x^5+2x) \tan (4x^5+2x).</mrow></md>
+</solution>
+</example>
+<exercise> <statement id="fs-id1169739188149">
+<p id="fs-id1169739188151">Find the derivative of <m>h(x)=\sin(7x+2).</m></p>
+</statement>
+<solution id="fs-id1169736589238">
+<p id="fs-id1169736589240"><m>h'(x)=7 \cos (7x+2)</m></p>
+</solution>
+<hint>
+<p id="fs-id1169736607578">Apply the chain rule to <m>h(x)=\sin g(x)</m> first and then use <m>g(x)=7x+2.</m></p>
+</hint>
+</exercise>
+<p id="fs-id1169736610159">At this point we provide a list of derivative formulas that may be obtained by applying the chain rule in conjunction with the formulas for derivatives of trigonometric functions. Their derivations are similar to those used in <xref ref="fs-id1169736656617"/> and <xref ref="fs-id1169739333921"/>. For convenience, formulas are also given in Leibniz’s notation, which some students find easier to remember. (We discuss the chain rule using Leibniz’s notation at the end of this section.) It is not absolutely necessary to memorize these as separate formulas as they are all applications of the chain rule to previously learned formulas.</p>
+<theorem>  Change next end note to end theorem
+<title>Using the Chain Rule with Trigonometric Functions</title>
+<p id="fs-id1169736655841">For all values of <m>x</m> for which the derivative is defined,</p>
+<md><mrow>\amp\frac{d}{dx}(\sin(g(x)) =\cos (g(x))g'(x)\amp \amp \frac{d}{dx} \sin u =\cos u\frac{du}{dx}</mrow><mrow>\amp\frac{d}{dx}(\cos(g(x)) =-\sin (g(x))g'(x)\amp \amp \frac{d}{dx} \cos u =-\sin u\frac{du}{dx}</mrow><mrow>\amp\frac{d}{dx}(\tan(g(x)) =\sec^2(g(x))g'(x)\amp \amp \frac{d}{dx} \tan u =\sec^2u\frac{du}{dx}</mrow><mrow>\amp\frac{d}{dx}(\cot(g(x)) =-\csc^2(g(x))g'(x)\amp \amp \frac{d}{dx} \cot u =-\csc^2u\frac{du}{dx}</mrow><mrow>\amp\frac{d}{dx}(\sec(g(x)) =\sec(g(x) \tan (g(x))g'(x)\amp \amp \frac{d}{dx} \sec u =\sec u \tan u\frac{du}{dx}</mrow><mrow>\amp\frac{d}{dx}(\csc(g(x)) =-\csc(g(x))\cot (g(x))g'(x)\amp \amp \frac{d}{dx} \csc u =-\csc u \cot u\frac{du}{dx}.</mrow></md>
+</theorem>
+-->
+
+<example xml:id="fs-id1169739298047">
+<title>Combining the Chain Rule with the Product Rule</title>
+<statement id="fs-id1169739298051">
+<p id="fs-id1169739298056">Find the derivative of <m>h(x)=(2x+1)^5(3x- 2)^7.</m></p>
+</statement>
+<solution id="fs-id1169739345780">
+<p id="fs-id1169739345782">First apply the product rule, then apply the chain rule to each term of the product.</p>
+<md><mrow>h'(x)\amp=\frac{d}{dx}((2x+1)^5)\cdot (3x- 2)^7+\frac{d}{dx}((3x- 2)^7)\cdot (2x+1)^5\amp\amp\text{ Apply the product rule. }</mrow>
+<mrow>\amp=5(2x+1)^4\cdot 2\cdot (3x- 2)^7+7(3x- 2)^6\cdot 3\cdot (2x+1)^5\amp\amp\text{ Apply the chain rule. }</mrow>
+<mrow>\amp=10(2x+1)^4(3x- 2)^7+21(3x- 2)^6(2x+1)^5\amp\amp\text{ Simplify. }</mrow>
+<mrow>\amp=(2x+1)^4(3x- 2)^6(10(3x- 2)+21(2x+1))\amp\amp\text{ Factor out } (2x+1)^4(3x- 2)^6.</mrow>
+<mrow>\amp=(2x+1)^4(3x- 2)^6(72x+1)\amp\amp\text{ Simplify. }</mrow></md></solution>
+</example>
+<exercise>
+ <statement id="fs-id1169736603467">
+<p id="fs-id1169736603469">Find the derivative of <m>h(x)=\frac{x}{(2x+3)^3}.</m></p>
+</statement>
+<solution id="fs-id1169736603513">
+<p id="fs-id1169736603515"><m>h'(x)=\frac{3- 4x}{(2x+3)^4}</m></p>
+</solution>
+<hint>
+<p id="fs-id1169736603573">Start out by applying the quotient rule. Remember to use the chain rule to differentiate the denominator.</p>
+</hint>
+</exercise>
+</subsection>
+<!-- Commenting out trig
+<subsection id="fs-id1169736603581">
+<title>Composites of Three or More Functions</title>
+<p id="fs-id1169739304867">We can now combine the chain rule with other rules for differentiating functions, but when we are differentiating the composition of three or more functions, we need to apply the chain rule more than once. If we look at this situation in general terms, we can generate a formula, but we do not need to remember it, as we can simply apply the chain rule multiple times.</p>
+<p id="fs-id1169739304874">In general terms, first we let</p>
+<me>k(x)=h(f(g(x))).</me>
+<p id="fs-id1169739304924">Then, applying the chain rule once we obtain</p>
+<me>k'(x)=\frac{d}{dx}(h(f(g(x)))=h'(f(g(x)))\cdot \frac{d}{dx}f((g(x))).</me>
+<p id="fs-id1169736597613">Applying the chain rule again, we obtain</p>
+<me>k'(x)=h'(f(g(x))f'(g(x))g'(x)).</me>
+<note id="fs-id1169736597703">
+<title>Rule: Chain Rule for a Composition of Three Functions</title>
+<p id="fs-id1169736597709">For all values of <m>x</m> for which the function is differentiable, if</p>
+<me>k(x)=h(f(g(x))),</me>
+<p id="fs-id1169736597763">then</p>
+<me>k'(x)=h'(f(g(x)))f'(g(x))g'(x).</me>
+<p id="fs-id1169736658568">In other words, we are applying the chain rule twice.</p>
+</note>
+<p id="fs-id1169736658572">Notice that the derivative of the composition of three functions has three parts. (Similarly, the derivative of the composition of four functions has four parts, and so on.) Also, <emphasis effect="italics">remember, we can always work from the outside in, taking one derivative at a time.</emphasis></p>
+<example xml:id="fs-id1169736658580">
+  <title>Differentiating a Composite of Three Functions</title>
+ <statement id="fs-id1169736658584">
+<p id="fs-id1169736658589">Find the derivative of <m>k(x)=\cos^4(7x^2+1).</m></p>
+</statement>
+<solution id="fs-id1169736658637">
+<p id="fs-id1169736658640">First, rewrite <m>k(x)</m> as</p>
+<me>k(x)=(\cos (7x^2+1))^4.</me>
+<p id="fs-id1169739275169">Then apply the chain rule several times.</p>
+<md><mrow>k'(x)\amp=4(\cos (7x^2+1))^3(\frac{d}{dx}\cos (7x^2+1))\amp\amp\text{ Apply the chain rule. }</mrow>
+<mrow>\amp=4(\cos (7x^2+1))^3(-\sin (7x^2+1))(\frac{d}{dx}(7x^2+1))\amp\amp\text{ Apply the chain rule. }</mrow>
+<mrow>\amp=4(\cos (7x^2+1))^3(-\sin (7x^2+1))(14x)\amp\amp\text{ Apply the chain rule. }</mrow>
+<mrow>\amp=- 56x \sin (7x^2+1)\cos^3(7x^2+1)\amp\amp\text{ Simplify. }</mrow></md></solution>
+</example>
+<exercise>  <statement id="fs-id1169739350749">
+<p id="fs-id1169739350751">Find the derivative of <m>h(x)=\sin^6(x^3).</m></p>
+</statement>
+<solution id="fs-id1169739350789">
+<p id="fs-id1169739350792"><m>h'(x)=18x^2\sin^5(x^3) \cos (x^3)</m></p>
+</solution>
+<hint>
+<p id="fs-id1169739350858">Rewrite <m>h(x)=\sin^6(x^3)=(\sin(x^3))^6</m> and use <xref ref="fs-id1169736658580"/> as a guide.</p>
+</hint>
+</exercise>
+<example xml:id="fs-id1169736593542">
+<title>Using the Chain Rule in a Velocity Problem</title>
+<statement id="fs-id1169736593546">
+<p id="fs-id1169736593552">A particle moves along a coordinate axis. Its position at time <m>t</m> is given by <m>s(t)=\sin (2t)+\cos (3t).</m> What is the velocity of the particle at time <m>t=\frac{\pi}{6}?</m></p>
+</statement>
+<solution id="fs-id1169736593619">
+<p id="fs-id1169736593621">To find <m>v(t),</m> the velocity of the particle at time <m>t,</m> we must differentiate <m>s(t).</m> Thus,</p>
+<me>v(t)=s'(t)=2 \cos (2t)- 3 \sin (3t).</me>
+<p id="fs-id1169739266652">Substituting <m>t=\frac{\pi}{6}</m> into <m>v(t),</m> we obtain <m>v(\frac{\pi}{6})=- 2.</m></p>
+</solution>
+</example>
+<exercise> <statement id="fs-id1169739266717">
+<p id="fs-id1169739266719">A particle moves along a coordinate axis. Its position at time <m>t</m> is given by <m>s(t)=\sin(4t).</m> Find its acceleration at time <m>t.</m></p>
+</statement>
+<solution id="fs-id1169739266762">
+<p id="fs-id1169739266765"><m>a(t)=- 16 \sin(4t)</m></p>
+</solution>
+<hint>
+<p id="fs-id1169736655167">Acceleration is the second derivative of position.</p>
+</hint>
+</exercise>
+</subsection>
+-->
+<subsection id="fs-id1169736655174">
+<!-- Commenting out proof
+<title>Proof</title>
+<p id="fs-id1169736655179">At this point, we present a very informal proof of the chain rule. For simplicity’s sake we ignore certain issues: For example, we assume that <m>g(x)\neq g(a)</m> for <m>x\neq a</m> in some open interval containing <m>a.</m> We begin by applying the limit definition of the derivative to the function <m>h(x)</m> to obtain <m>h'(a)\text{ : }</m></p>
+<me>h'(a)=\lim_{x\to a}\frac{f(g(x))- f(g(a))}{x- a}.</me>
+<p id="fs-id1169739305452">Rewriting, we obtain</p>
+<me>h'(a)=\lim_{x\to a}\frac{f(g(x))- f(g(a))}{g(x)- g(a)}\cdot \frac{g(x)- g(a)}{x- a}.</me>
+<p id="fs-id1169739305587">Although it is clear that</p>
+<me>\lim_{x\to a}\frac{g(x)- g(a)}{x- a}=g'(a),</me>
+<p id="fs-id1169736662280">it is not obvious that</p>
+<me>\lim_{x\to a}\frac{f(g(x))- f(g(a))}{g(x)- g(a)}=f'(g(a)).</me>
+<p id="fs-id1169736662391">To see that this is true, first recall that since <m>g</m> is differentiable at <m>a,g</m> is also continuous at <m>a.</m> Thus,</p>
+<me>\lim_{x\to a}g(x)=g(a).</me>
+<p id="fs-id1169739303393">Next, make the substitution <m>y=g(x)</m> and <m>b=g(a)</m> and use change of variables in the limit to obtain</p>
+<me>\lim_{x\to a}\frac{f(g(x))- f(g(a))}{g(x)- g(a)}=\lim_{y\to b}\frac{f(y)- f(b)}{y- b}=f'(b)=f'(g(a)).</me>
+<p id="fs-id1169739335832">Finally,</p>
+<me>h'(a)=\lim_{x\to a}\frac{f(g(x))- f(g(a))}{g(x)- g(a)}\cdot \frac{g(x)- g(a)}{x- a}=f'(g(a))g'(a).</me>
+<p id="fs-id1169736613846"><m> \square </m></p>
+-->
+
+<example xml:id="fs-id1169736613849">
+  <title>Using the Chain Rule with Functional Values</title>
+<statement id="fs-id1169736613854">
+<p id="fs-id1169736613859">Let <m>h(x)=f(g(x)).</m> If <m>g(1)=4,g'(1)=3,</m> and <m>f'(4)=7,</m> find <m>h'(1).</m></p>
+</statement>
+<solution id="fs-id1169736613976">
+<p id="fs-id1169736613978">Use the chain rule, then substitute.</p>
+<md><mrow>h'(1)\amp=f'(g(1))g'(1)\amp \amp\text{ Apply the chain rule. }</mrow>
+<mrow>\amp=f'(4)\cdot 3\amp\amp\text{ Substitute } g(1)=4 \text{ and } g'(1)=3.</mrow>
+<mrow>\amp=7\cdot 3\amp\amp\text{ Substitute } f'(4)=7.</mrow>
+<mrow>\amp=21\amp\amp\text{ Simplify. }</mrow></md>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1169739341446">
+<p id="fs-id1169739341448">Given <m>h(x)=f(g(x)).</m> If <m>g(2)=- 3,g'(2)=4,</m> and <m>f'(- 3)=7,</m> find <m>h'(2).</m></p>
+</statement>
+<solution id="fs-id1169739353310">
+<p id="fs-id1169739353312"><m>28</m></p>
+</solution>
+<hint>
+<p id="fs-id1169739353326">Follow <xref ref="fs-id1169736613849"/>.</p>
+</hint>
+</exercise>
+</subsection>
+<subsection id="fs-id1169739353337">
+<title>The Chain Rule Using Leibniz’s Notation</title>
+<p id="fs-id1169739353342">As with other derivatives that we have seen, we can express the chain rule using Leibniz’s notation. This notation for the chain rule is used heavily in physics applications.</p>
+<p id="fs-id1169739353347"><m>\text{ For } h(x)=f(g(x)),</m> let <m>u=g(x)</m> and <m>y=h(x)=g(u).</m> Thus,</p>
+<me>h'(x)=\frac{dy}{dx},\;f'(g(x))=f'(u)=\frac{dy}{du},</me>
+<p>and</p>
+<me>g'(x)=\frac{du}{dx}.</me>
+<p id="fs-id1169739307916">Consequently,</p>
+<me>\frac{dy}{dx}=h'(x)=f'(g(x))g'(x)=\frac{dy}{du}\cdot \frac{du}{dx}.</me>
+<note id="fs-id1169739308016">
+<title>Rule: Chain Rule Using Leibniz’s Notation</title>
+<p id="fs-id1169739264124">If <m>y</m> is a function of <m>u,</m> and <m>u</m> is a function of <m>x,</m> then</p>
+<me>\frac{dy}{dx}=\frac{dy}{du}\cdot \frac{du}{dx}.</me>
+</note>
+<example xml:id="fs-id1169739264200">
+<title>Taking a Derivative Using Leibniz’s Notation, Example 1</title>
+<statement id="fs-id1169739264204">
+<p id="fs-id1169739264209">Find the derivative of <m>y=(\frac{x}{3x+2})^5.</m></p>
+</statement>
+<solution id="fs-id1169739264246">
+<p id="fs-id1169739264248">First, let <m>u=\frac{x}{3x+2}.</m> Thus, <m>y=u^5.</m> Next, find <m>\frac{du}{dx}</m> and <m>\frac{dy}{du}.</m> Using the quotient rule,</p>
+<me>\frac{du}{dx}=\frac{2}{(3x+2)^2}</me>
+<p id="fs-id1169739289304">and</p>
+<me>\frac{dy}{du}=5u^4.</me>
+<p id="fs-id1169739289337">Finally, we put it all together.</p>
+<md>
+  <mrow>\frac{dy}{dx}\amp=\frac{dy}{du}\cdot \frac{du}{dx}\amp\amp\text{ Apply the chain rule. }</mrow>
+  <mrow>\amp=5u^4\cdot \frac{2}{(3x+2)^2} \amp \amp \text{ Substitute } \frac{dy}{du}=5u^4 \text{ and } \frac{du}{dx}=\frac{2}{(3x+2)^2}.</mrow>
+  <mrow>\amp=5(\frac{x}{3x+2})^4\cdot \frac{2}{(3x+2)^2}\amp\amp\text{ Substitute } u=\frac{x}{3x+2}.</mrow>
+  <mrow>\amp=\frac{10x^4}{(3x+2)^6}\amp\amp\text{ Simplify. }</mrow></md>
+<p id="fs-id1169736592575">It is important to remember that, when using the Leibniz form of the chain rule, the final answer must be expressed entirely in terms of the original variable given in the problem.</p>
+</solution>
+</example>
+<!-- Commenting out trig
+<example xml:id="fs-id1169736592583">
+<statement id="fs-id1169736592587">
+<title>Taking a Derivative Using Leibniz’s Notation, Example 2</title>
+<p id="fs-id1169736592592">Find the derivative of <m>y=\tan (4x^2- 3x+1).</m></p>
+</statement>
+<solution id="fs-id1169736661258">
+<p id="fs-id1169736661260">First, let <m>u=4x^2- 3x+1.</m> Then <m>y=\tan u.</m> Next, find <m>\frac{du}{dx}</m> and <m>\frac{dy}{du}\text{ : }</m></p>
+<me>\frac{du}{dx}=8x- 3 \text{ and } \frac{dy}{du}=\sec^2u.</me>
+<p id="fs-id1169736661398">Finally, we put it all together.</p>
+<md><mrow>\frac{dy}{dx}\amp=\frac{dy}{du}\cdot \frac{du}{dx}\amp\amp\text{ Apply the chain rule. }</mrow><mrow>\amp=\sec^2u\cdot (8x- 3)\amp\amp\text{ Use } \frac{du}{dx}=8x- 3 \text{ and } \frac{dy}{du}=\sec^2u.</mrow><mrow>\amp=\sec^2(4x^2- 3x+1)\cdot (8x- 3)\amp\amp\text{ Substitute } u=4x^2- 3x+1.</mrow></md>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1169739302088">
+<p id="fs-id1169739302090">Use Leibniz’s notation to find the derivative of <m>y=\cos (x^3).</m> Make sure that the final answer is expressed entirely in terms of the variable <m>x.</m></p>
+</statement>
+<solution id="fs-id1169736594029">
+<p id="fs-id1169736594031"><m>\frac{dy}{dx}=- 3x^2\sin (x^3)</m></p>
+</solution>
+<hint>
+<p id="fs-id1169736594079">Let <m>u=x^3.</m></p>
+</hint>
+</exercise>
+-->
+
+</subsection>
+<subsection id="fs-id1169736594101" class="key-concepts">
+<title>Key Concepts</title>
+<ul id="fs-id1169736594108" list-type="bulleted" bullet-style="bullet">
+<li>The chain rule allows us to differentiate compositions of two or more functions. It states that for <m>h(x)=f(g(x)),</m>
+<me>h'(x)=f'(g(x))g'(x).</me>
+In Leibniz’s notation this rule takes the form
+<me>\frac{dy}{dx}=\frac{dy}{du}\cdot \frac{du}{dx}.</me></li>
+<li>We can use the chain rule with other rules that we have learned, and we can derive formulas for some of them.</li>
+<li>The chain rule combines with the power rule to form a new rule:
+<me>\text{ If } h(x)=(g(x))^n ,\text{ then } h'(x)=n(g(x))^{n-1}g'(x).</me></li>
+<!-- Commenting out trig
+<li>When applied to the composition of three functions, the chain rule can be expressed as follows: If <m>h(x)=f(g(k(x))),</m> then <m>h'(x)=f'(g(k(x))g'(k(x))k'(x).</m></li>
+-->
+</ul>
+</subsection>
+<subsection id="fs-id1169736654969" class="key-equations">
+<title>Key Equations</title>
+<ul id="fs-id1169736654976" list-type="bulleted" bullet-style="bullet">
+<li><emphasis effect="bold">The chain rule</emphasis>
+<m>h'(x)=f'(g(x))g'(x)</m></li>
+<li><emphasis effect="bold">The power rule for functions</emphasis>
+<m>h'(x)=n(g(x))^{n-1}g'(x)</m></li>
+</ul>
+</subsection>
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+<?ignore
+<section id="fs-id1169736655110" class="section-exercises">
+<p id="fs-id1169736655114">For the following exercises, given <m>y=f(u)</m> and <m>u=g(x),</m> find <m>\frac{dy}{dx}</m> by using Leibniz’s notation for the chain rule: <m>\frac{dy}{dx}=\frac{dy}{du} \frac{du}{dx}.</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169736659370">
+<p id="fs-id1169736659372"><m>y=3u- 6,u=2x^2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736659430">
+<p id="fs-id1169736659432"><m>y=6u^3,u=7x- 4</m></p>
+</statement>
+<solution id="fs-id1169736659464">
+<p id="fs-id1169736659466"><m>18u^2\cdot 7=18<m:msup>(7x- 4)2</m:msup>\cdot 7</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739281038">
+<p id="fs-id1169739281040"><m>y=\sin u,u=5x- 1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739281117">
+<p id="fs-id1169739281119"><m>y=\cos u,u=\frac{-x8}</m></p>
+</statement>
+<solution id="fs-id1169739281151">
+<p id="fs-id1169739281153"><m>-\sin u\cdot \frac{- 18}=-\sin (\frac{-x8})\cdot \frac{- 18}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739281210">
+<p id="fs-id1169739281212"><m>y=\tan u,u=9x+2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739262400">
+<p id="fs-id1169739262402"><m>y=\sqrt{4u+3},u=x^2- 6x</m></p>
+</statement>
+<solution id="fs-id1169739262440">
+<p id="fs-id1169739262442"><m>\frac{8x- 24}{2\sqrt{4u+3}}=\frac{4x- 12}{\sqrt{4x^2- 24x+3}}</m></p>
+</solution>
+
+<p id="fs-id1169739262507">For each of the following exercises,</p>
+<ol marker="(a)">
+<li>decompose each function in the form <m>y=f(u)</m> and <m>u=g(x),</m> and</li>
+<li>find <m>\frac{dy}{dx}</m> as a function of <m>x.</m></li>
+</ol>
+
+<!-- Move title outside statement--> <statement id="fs-id1169736602726">
+<p id="fs-id1169736602729"><m>y=<m:msup>(3x- 2)6</m:msup></m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736602830">
+<p id="fs-id1169736602832"><m>y=<m:msup>(3x^2+1)3</m:msup></m></p>
+</statement>
+<solution id="fs-id1169736602864">
+<p id="fs-id1169736602866">a. <m>u=3x^2+1;</m> b. <m>18x(3x^2+1)^2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736602924">
+<p id="fs-id1169736588867"><m>y=<m:msup>\sin5</m:msup>(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736588945">
+<p id="fs-id1169736588947"><m>y=<m:msup>(\frac{x}{7}+\frac{7}{x})7</m:msup></m></p>
+</statement>
+<solution id="fs-id1169736588980">
+<p id="fs-id1169736588982">a. <m>f(u)=u^7,u=\frac{x}{7}+\frac{7}{x};</m> b. <m>7<m:msup>(\frac{x}{7}+\frac{7}{x})6</m:msup>\cdot (\frac{1}{7}- \frac{7x^2})</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736589085">
+<p id="fs-id1169736589087"><m>y=\tan (\sec x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739251118">
+<p id="fs-id1169739251120"><m>y=\csc (\pix+1)</m></p>
+</statement>
+<solution id="fs-id1169739251147">
+<p id="fs-id1169739251149">a. <m>f(u)=\csc u,u=\pix+1;</m> b. <m>-\pi \csc (\pix+1)\cdot \cot (\pix+1)</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739280325">
+<p id="fs-id1169739280327"><m>y=<m:msup>\cot2</m:msup>x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739280419">
+<p id="fs-id1169739280421"><m>y=- 6 <m:msup>\sin}{- 3</m:msup>x</m></p>
+</statement>
+<solution id="fs-id1169739280443">
+<p id="fs-id1169739280445">a. <m>f(u)=- 6<m:msup>u- 3</m:msup>,u=\sin x,</m> b. <m>18 <m:msup>\sin}{- 4</m:msup>x\cdot \cos x</m></p>
+</solution>
+
+<p id="fs-id1169739280513">For the following exercises, find <m>\frac{dy}{dx}</m> for each function.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169736653152">
+<p id="fs-id1169736653155"><m>y=<m:msup>(3x^2+3x- 1)4</m:msup></m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736653252">
+<p id="fs-id1169736653254"><m>y=<m:msup>(5- 2x)}{- 2</m:msup></m></p>
+</statement>
+<solution id="fs-id1169736653284">
+<p id="fs-id1169736653286"><m>\frac{4<m:msup>(5- 2x)3</m:msup>}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736653318">
+<p id="fs-id1169736653320"><m>y=<m:msup>\cos3</m:msup>(\pix)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739195142">
+<p id="fs-id1169739195144"><m>y=<m:msup>(2x^3- x^2+6x+1)3</m:msup></m></p>
+</statement>
+<solution id="fs-id1169739195190">
+<p id="fs-id1169739195192"><m>6<m:msup>(2x^3- x^2+6x+1)2</m:msup>(3x^2- x+3)</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739195261">
+<p id="fs-id1169739195263"><m>y=\frac{1<m:msup>\sin2</m:msup>(x)}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739195339">
+<p id="fs-id1169739195341"><m>y=<m:msup>(\tan x+\sin x)}{- 3</m:msup></m></p>
+</statement>
+<solution id="fs-id1169738989494">
+<p id="fs-id1169738989496"><m>- 3<m:msup>(\tan x+\sin x)}{- 4</m:msup>\cdot (<m:msup>\sec2</m:msup>x+\cos x)</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738989562">
+<p id="fs-id1169738989564"><m>y=x^2<m:msup>\cos4</m:msup>x</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738989645">
+<p id="fs-id1169738989647"><m>y=\sin (\cos 7x)</m></p>
+</statement>
+<solution id="fs-id1169738989674">
+<p id="fs-id1169738989676"><m>- 7 \cos (\cos 7x)\cdot \sin 7x</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736585009">
+<p id="fs-id1169736585011"><m>y=\sqrt{6+\sec \pix^2}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736585117">
+<p id="fs-id1169736585119"><m>y=<m:msup>\cot3</m:msup>(4x+1)</m></p>
+</statement>
+<solution id="fs-id1169736585150">
+<p id="fs-id1169736585152"><m>- 12 <m:msup>\cot2</m:msup>(4x+1)\cdot <m:msup>\csc2</m:msup>(4x+1)</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738988195">
+<p id="fs-id1169738988197">Let <m>y=<m:msup>[f(x)]3</m:msup></m> and suppose that <m>f'(1)=4</m> and <m>\frac{dy}{dx}=10</m> for <m>x=1.</m> Find <m>f(1).</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738988315">
+<p id="fs-id1169738988317">Let <m>y=<m:msup>(f(x)+5x^2)4</m:msup></m> and suppose that <m>f(- 1)=- 4</m> and <m>\frac{dy}{dx}=3</m> when <m>x=- 1.</m> Find <m>f'(- 1)</m></p>
+</statement>
+<solution id="fs-id1169739374483">
+<p id="fs-id1169739374485"><m>10\frac{3}{4}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739374501">
+<p id="fs-id1169739374503">Let <m>y=<m:msup>(f(u)+3x)2</m:msup></m> and <m>u=x^3- 2x.</m> If <m>f(4)=6</m> and <m>\frac{dy}{dx}=18</m> when <m>x=2,</m> find <m>f'(4).</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739374646">
+<p id="fs-id1169739374648"><emphasis effect="bold">[T]</emphasis> Find the equation of the tangent line to <m>y=-\sin (\frac{x}{2})</m> at the origin. Use a calculator to graph the function and the tangent line together.</p>
+</statement>
+<solution id="fs-id1169739374680">
+<p id="fs-id1169739374682"><m>y=\frac{- 12}x</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738991880">
+<p id="fs-id1169738991882"><emphasis effect="bold">[T]</emphasis> Find the equation of the tangent line to <m>y=<m:msup>(3x+\frac{1}{x})2</m:msup></m> at the point <m>(1,16).</m> Use a calculator to graph the function and the tangent line together.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738991958">
+<p id="fs-id1169738991960">Find the <m>x</m>-coordinates at which the tangent line to <m>y=<m:msup>(x- \frac{6}{x})8</m:msup></m> is horizontal.</p>
+</statement>
+<solution id="fs-id1169738991996">
+<p id="fs-id1169738991998"><m>x=\pm\sqrt{6}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169738992016">
+<p id="fs-id1169738992018"><emphasis effect="bold">[T]</emphasis> Find an equation of the line that is normal to <m>g(\theta )=<m:msup>\sin2</m:msup>(\pi\theta )</m> at the point <m>(\frac{1}{4},\frac{1}{2}).</m> Use a calculator to graph the function and the normal line together.</p>
+</statement>
+
+<p id="fs-id1169736582610">For the following exercises, use the information in the following table to find <m>h'(a)</m> at the given value for <m>a.</m></p>
+<table xml:id="fs-id1169736582646" class="unnumbered" summary="This table has five rows and five columns. The first row is a header row and it labels each column. The column headers from left to right are x, f(x), f&#x2019;(x), g(x), and g&#x2019;(x). Under the first column are the values 0, 1, 2, and 3. Under the second column are the values 2, 1, 4, and 3. Under the third column are the values 5, &#x2212;2, 4, and &#x2212;3. Under the fourth column are the values 0, 3, 1, and 2. Under the fifth column are g&#x2019;(x) are the values 2, 0, &#x2212;1, and 3.">
+<label/>
+<tabular>
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<thead>
+<row valign="top">
+<cell valign="top" halign ="left"><m>x</m></cell>
+<cell valign="top" halign ="left"><m>f(x)</m></cell>
+<cell valign="top" halign ="left"><m>f'(x)</m></cell>
+<cell valign="top" halign ="left"><m>g(x)</m></cell>
+<cell valign="top" halign ="left"><m>g'(x)</m></cell>
+</row>
+
+
+<row valign="top">
+<cell valign="top" halign ="left">0</cell>
+<cell valign="top" halign ="left">2</cell>
+<cell valign="top" halign ="left">5</cell>
+<cell valign="top" halign ="left">0</cell>
+<cell valign="top" halign ="left">2</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">1</cell>
+<cell valign="top" halign ="left">1</cell>
+<cell valign="top" halign ="left">- 2</cell>
+<cell valign="top" halign ="left">3</cell>
+<cell valign="top" halign ="left">0</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">2</cell>
+<cell valign="top" halign ="left">4</cell>
+<cell valign="top" halign ="left">4</cell>
+<cell valign="top" halign ="left">1</cell>
+<cell valign="top" halign ="left">- 1</cell>
+</row>
+<row valign="top">
+<cell valign="top" halign ="left">3</cell>
+<cell valign="top" halign ="left">3</cell>
+<cell valign="top" halign ="left">- 3</cell>
+<cell valign="top" halign ="left">2</cell>
+<cell valign="top" halign ="left">3</cell>
+</row>
+</tabular>
+
+</table>
+
+<!-- Move title outside statement--> <statement id="fs-id1169739243336">
+<p id="fs-id1169739243338"><m>h(x)=f(g(x));a=0</m></p>
+</statement>
+<solution id="fs-id1169739243382">
+<p id="fs-id1169739243384">10</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739243391">
+<p id="fs-id1169739243393"><m>h(x)=g(f(x));a=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736662056">
+<p id="fs-id1169736662058"><m>h(x)=<m:msup>(x^4+g(x))}{- 2</m:msup>;a=1</m></p>
+</statement>
+<solution id="fs-id1169736662116">
+<p id="fs-id1169736662118"><m>- \frac{1}{8}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736662134">
+<p id="fs-id1169736662136"><m>h(x)=<m:msup>(\frac{f(x)}{g(x)})2</m:msup>;a=3</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736662223">
+<p id="fs-id1169736662225"><m>h(x)=f(x+f(x));a=1</m></p>
+</statement>
+<solution id="fs-id1169736608226">
+<p id="fs-id1169736608228"><m>- 4</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736608239">
+<p id="fs-id1169736608241"><m>h(x)=<m:msup>(1+g(x))3</m:msup>;a=2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736608307">
+<p id="fs-id1169736608309"><m>h(x)=g(2+f(x^2));a=1</m></p>
+</statement>
+<solution id="fs-id1169736608361">
+<p id="fs-id1169736608364"><m>- 12</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736608374">
+<p id="fs-id1169736608376"><m>h(x)=f(g(\sin x));a=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736592171">
+<p id="fs-id1169736592173"><emphasis effect="bold">[T]</emphasis> The position function of a freight train is given by <m>s(t)=100<m:msup>(t+1)}{- 2</m:msup>,</m> with <m>s</m> in meters and <m>t</m> in seconds. At time <m>t=6</m> s, find the train’s</p>
+<ol marker="(a)">
+<li>velocity and</li>
+<li>acceleration.</li>
+<li>Using a. and b. is the train speeding up or slowing down?</li>
+</ol>
+</statement>
+<solution id="fs-id1169736592254">
+<p id="fs-id1169736592256">a. <m>- \frac{200}{343}</m> m/s, b. <m>\frac{600}{2401}</m> m/s<sup>2</sup>, c. The train is slowing down since velocity and acceleration have opposite signs.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736592290">
+<p id="fs-id1169736592292"><emphasis effect="bold">[T]</emphasis> A mass hanging from a vertical spring is in simple harmonic motion as given by the following position function, where <m>t</m> is measured in seconds and <m>s</m> is in inches:</p>
+<p id="fs-id1169736592309"><m>s(t)=- 3 \cos (\pit+\frac{\pi}{4}).</m></p>
+<ol marker="(a)">
+<li>Determine the position of the spring at <m>t=1.5</m> s.</li>
+<li>Find the velocity of the spring at <m>t=1.5</m> s.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736616212">
+<p id="fs-id1169736616214"><emphasis effect="bold">[T]</emphasis> The total cost to produce <m>x</m> boxes of Thin Mint Girl Scout cookies is <m>C</m> dollars, where <m>C=0.0001x^3- 0.02x^2+3x+300.</m> In <m>t</m> weeks production is estimated to be <m>x=1600+100t</m> boxes.</p>
+<ol marker="(a)">
+<li>Find the marginal cost <m>C'(x).</m></li>
+<li>Use Leibniz’s notation for the chain rule, <m>\frac{d}{C}{dt}=\frac{d}{C}{dx}\cdot \frac{d}{x}{dt},</m> to find the rate with respect to time <m>t</m> that the cost is changing.</li>
+<li>Use b. to determine how fast costs are increasing when <m>t=2</m> weeks. Include units with the answer.</li>
+</ol>
+</statement>
+<solution id="fs-id1169736616381">
+<p id="fs-id1169736616383">a. <m>C'(x)=0.0003x^2- 0.04x+3</m> b. <m>\frac{d}{C}{dt}=100\cdot (0.0003x^2- 0.04x+3)</m> c. Approximately \$90,300 per week</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736618624">
+<p id="fs-id1169736618626"><emphasis effect="bold">[T]</emphasis> The formula for the area of a circle is <m>A=\pir^2,</m> where <m>r</m> is the radius of the circle. Suppose a circle is expanding, meaning that both the area <m>A</m> and the radius <m>r</m> (in inches) are expanding.</p>
+<ol marker="(a)">
+<li>Suppose <m>r=2- \frac{100}{<m:msup>(t+7)2</m:msup>}</m> where <m>t</m> is time in seconds. Use the chain rule <m>\frac{d}{A}{dt}=\frac{d}{A}{dr}\cdot \frac{d}{r}{dt}</m> to find the rate at which the area is expanding.</li>
+<li>Use a. to find the rate at which the area is expanding at <m>t=4</m> s.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736618831">
+<p id="fs-id1169736618834"><emphasis effect="bold">[T]</emphasis> The formula for the volume of a sphere is <m>S=\frac{4}{3}\pir^3,</m> where <m>r</m> (in feet) is the radius of the sphere. Suppose a spherical snowball is melting in the sun.</p>
+<ol marker="(a)">
+<li>Suppose <m>r=\frac{1<m:msup>(t+1)2</m:msup>}- \frac{112}</m> where <m>t</m> is time in minutes. Use the chain rule <m>\frac{d}{S}{dt}=\frac{d}{S}{dr}\cdot \frac{d}{r}{dt}</m> to find the rate at which the snowball is melting.</li>
+<li>Use a. to find the rate at which the volume is changing at <m>t=1</m> min.</li>
+</ol>
+</statement>
+<solution id="fs-id1169739066787">
+<p id="fs-id1169739066789">a. <m>\frac{d}{S}{dt}=- \frac{8\pir^2}{<m:msup>(t+1)3</m:msup>}</m> b. The volume is decreasing at a rate of <m>- \frac{\pi36}</m> ft<sup>3</sup>/min.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739066860">
+<p id="fs-id1169739066862"><emphasis effect="bold">[T]</emphasis> The daily temperature in degrees Fahrenheit of Phoenix in the summer can be modeled by the function <m>T(x)=94- 10 \cos[\frac{\pi12}(x- 2)],</m> where <m>x</m> is hours after midnight. Find the rate at which the temperature is changing at 4 p.m.</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739296657">
+<p id="fs-id1169739296659"><emphasis effect="bold">[T]</emphasis> The depth (in feet) of water at a dock changes with the rise and fall of tides. The depth is modeled by the function <m>D(t)=5 \sin (\frac{\pi}{6}t- \frac{7\pi6})+8,</m> where <m>t</m> is the number of hours after midnight. Find the rate at which the depth is changing at 6 a.m.</p>
+</statement>
+<solution id="fs-id1169739296727">
+<p id="fs-id1169739296729"><m>~2.3</m> ft/hr</p>
+</solution>
+
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1169739296745">
+<term>chain rule</term>
+<meaning id="fs-id1169739296750">the chain rule defines the derivative of a composite function as the derivative of the outer function evaluated at the inner function times the derivative of the inner function</meaning>
+</definition>
+</glossary>
+</document>
+?>

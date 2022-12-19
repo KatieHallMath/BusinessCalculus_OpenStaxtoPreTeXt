@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch2Sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Limit Laws</title>
+  <introduction>
+  <title> Learning Objectives</title>
+
+<ol>
+<li>Recognize the basic limit laws.</li>
+<li>Use the limit laws to evaluate the limit of a function.</li>
+<li>Evaluate the limit of a function by factoring.</li>
+<li>Use the limit laws to evaluate the limit of a polynomial or rational function.</li>
+<li>Evaluate the limit of a function by factoring or by using conjugates.</li>
+<!-- Commenting out trig
+<li>Evaluate the limit of a function by using the squeeze theorem.</li>
+-->
+</ol>
+<p id="fs-id1170572549838">In the previous section, we evaluated limits by looking at graphs or by constructing a table of values. In this section, we establish laws for calculating limits and learn how to apply these laws.
+<!-- Commenting out trig
+In the Student Project at the end of this section, you have the opportunity to apply these limit laws to derive the formula for the area of a circle by adapting a method devised by the Greek mathematician Archimedes.
+-->
+We begin by restating two useful limit results from the previous section. These two results, together with the limit laws, serve as a foundation for calculating many limits.</p>
+</introduction>
+<subsection id="fs-id1170571680604">
+<title>Evaluating Limits with the Limit Laws</title>
+<p id="fs-id1170571680609">The first two limit laws were stated in <xref ref="fs-id1170572086324"/> <!--document="m53491"--> and we repeat them here. These basic results, together with the other limit laws, allow us to evaluate limits of many algebraic functions.</p>
+<theorem xml:id="fs-id1170572451153">
+<title>Basic Limit Results</title>
+<p id="fs-id1170572205248">For any real number <m>a</m> and any constant <m>c</m>,</p>
+<ol marker="(i)">
+<li><m>\lim_{x \to a }x=a</m></li>
+<li><m>\lim_{x \to a }c=c</m></li>
+</ol>
+</theorem>
+<example xml:id="fs-id1170572111463">
+<title>Evaluating a Basic Limit</title>
+ <statement id="fs-id1170572204863">
+<p id="fs-id1170571569246">Evaluate each of the following limits using <xref ref="fs-id1170572451153"/>.</p>
+<ol marker="(a)">
+<li><m>\lim_{x \to 2 }x</m></li>
+<li><m>\lim_{x \to 2 }5</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170572108298">
+<ol marker="(a)">
+<li>The limit of <m>x</m> as <m>x</m> approaches <m>a</m> is <m>a</m>: <m>\displaystyle{\lim_{x \to 2 }x=2.}</m></li>
+<li>The limit of a constant is that constant: <m>\displaystyle{\lim_{x \to 2 }5=5.}</m></li>
+</ol>
+</solution>
+</example>
+<p id="fs-id1170572570027">We now take a look at the <term>limit laws</term>, the individual properties of limits. The proofs that these laws hold are omitted here.</p>
+<theorem>
+<title>Limit Laws</title>
+<p id="fs-id1170572086164">Let <m>f(x)</m> and <m>g(x)</m> be defined for all <m>x\neq a</m> over some open interval containing <m>a</m>. Assume that <m> L </m> and <m> M </m> are real numbers such that <m>\displaystyle{\lim_{x \to a }f(x)=L}</m> and <m>\displaystyle{\lim_{x \to a }g(x)=M.}</m> Let <m>c</m> be a constant. Then, each of the following statements holds:</p>
+<p id="fs-id1170572204187"><term>Sum law for limits</term>: <m>\displaystyle{\lim_{x \to a }(f(x)+g(x))=\lim_{x \to a }f(x)+\lim_{x \to a }g(x)=L+M}</m></p>
+<p id="fs-id1170572627273"><term>Difference law for limits</term>: <m>\displaystyle{\lim_{x \to a }(f(x)-g(x))=\lim_{x \to a }f(x)-\lim_{x \to a }g(x)=L-M}</m></p>
+<p id="fs-id1170572450574"><term>Constant multiple law for limits</term>: <m>\displaystyle{\lim_{x \to a }cf(x)=c\cdot \lim_{x \to a }f(x)=cL}</m></p>
+<p id="fs-id1170572104032"><term>Product law for limits</term>: <m>\displaystyle{\lim_{x \to a }(f(x)\cdot g(x))=\lim_{x \to a }f(x)\cdot \lim_{x \to a }g(x)=L\cdot M}</m></p>
+<p id="fs-id1170572347458"><term>Quotient law for limits</term>: <m>\displaystyle{\lim_{x \to a }\frac{f(x)}{g(x)}=\displaystyle{\frac{\lim_{x \to a }f(x)}{\lim_{x \to a }g(x)}}=\frac{L}{M}}</m> for <m>M\neq 0</m></p>
+<p id="fs-id1170572246193"><term>Power law for limits</term>: <m>\displaystyle{\lim_{x \to a }(f(x))^n=\left(\lim_{x \to a }f(x)\right)^n=L^n}</m> for every positive integer <m>n</m>.</p>
+<p id="fs-id1170572232633"><term>Root law for limits</term>: <m>\displaystyle{\lim_{x \to a }\sqrt[n]{f(x)}=\sqrt[n]{\lim_{x \to a }f(x)}=\sqrt[n]{L}}</m> for all <m>L</m> if <m>n</m> is odd and for <m>L\geq 0</m> if <m>n</m> is even.</p>
+</theorem>
+<p id="fs-id1170572479215">We now practice applying these limit laws to evaluate a limit.</p>
+<example xml:id="fs-id1170572451489">
+<title>Evaluating a Limit Using Limit Laws</title>
+ <statement id="fs-id1170572421782">
+<p id="fs-id1170572109838">Use the limit laws to evaluate <m>\displaystyle{\lim_{x \to -3 }(4x+2).}</m></p>
+</statement>
+<solution id="fs-id1170571597614">
+<p id="fs-id1170572169042">Let’s apply the limit laws one step at a time to be sure we understand how they work. We need to keep in mind the requirement that, at each application of a limit law, the new limits must exist for the limit law to be applied.</p>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170571565987">
+  <md><mrow>\lim_{x \to -3 }(4x+2)    \amp=\lim_{x \to -3 }4x+\lim_{x \to -3 }2   \amp\text{ Apply the sum law. }</mrow>
+  <mrow>                              \amp=4\cdot \lim_{x \to -3 }x+\lim_{x \to -3 }2\amp\text{ Apply the constant multiple law. }</mrow>
+  <mrow>                              \amp=4\cdot (-3)+2=-10.                       \amp\text{ Apply the basic limit results and simplify. }</mrow></md></p></solution>
+
+</example>
+<example xml:id="fs-id1170572509954">
+<title>Using Limit Laws Repeatedly</title>
+ <statement id="fs-id1170572232728">
+<p id="fs-id1170572226107">Use the limit laws to evaluate <m>\displaystyle{\lim_{x \to 2 }\frac{2x^2-3x+1}{x^3+4}.}</m></p>
+</statement>
+<solution id="fs-id1170572217543">
+<p id="fs-id1170572506406">To find this limit, we need to apply the limit laws several times. Again, we need to keep in mind that as we rewrite the limit in terms of other limits, each new limit must exist for the limit law to be applied.</p>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572099921">
+  <md><mrow>\lim_{x \to 2 }\frac{2x^2-3x+1}{x^3+4}\amp=\displaystyle{\frac{\lim_{x \to 2 }(2x^2-3x+1)}{\lim_{x \to 2 }(x^3+4)}}\amp\text{ Apply the quotient law, making sure that. } (2)^3+4\neq 0</mrow><mrow>\amp=\displaystyle{\frac{2\cdot \lim_{x \to 2 }x^2-3\cdot \lim_{x \to 2 }x+\lim_{x \to 2 }1}{\lim_{x \to 2 }x^3+\lim_{x \to 2 }4}}\amp\text{ Apply the sum law and constant multiple law. }</mrow><mrow>\amp=\displaystyle{\frac{2\cdot \lim_{x \to 2 }x^2-3\cdot \lim_{x \to 2 }x+\lim_{x \to 2 }1}{(\lim_{x \to 2 }x)^3+\lim_{x \to 2 }4}}\amp\text{ Apply the power law. }</mrow><mrow>\amp=\displaystyle{\frac{2(4)-3(2)+1}{(2)^3+4}=\frac{1}{4}.}\amp\text{ Apply the basic limit laws and simplify. }</mrow></md></p></solution>
+
+</example>
+
+
+<exercise>
+ <statement id="fs-id1170571689090">
+<p id="fs-id1170571655486">Use the limit laws to evaluate <m>\displaystyle{\lim_{x \to 6 }(2x-1)\sqrt{x+4}.}</m> In each step, indicate the limit law applied.</p>
+</statement>
+<solution id="fs-id1170572101793">
+<p id="fs-id1170572094142"><m>11\sqrt{10}</m></p>
+</solution>
+<hint id="fs-id1170571638267" type="hint">
+
+<p id="fs-id1170572209920">Begin by applying the product law.</p>
+</hint>
+
+</exercise>
+</subsection>
+<subsection id="fs-id1170572207275">
+<title>Limits of Polynomial and Rational Functions</title>
+<p id="fs-id1170572133214">By now you have probably noticed that, in each of the previous examples, it has been the case that <m>\lim_{x \to a }f(x)=f(a).</m> This is not always true, but it does hold for all polynomials for any choice of <m>a</m> and for all rational functions at all values of <m>a</m> for which the rational function is defined.</p>
+<theorem xml:id="fs-id1170572557796">
+<title>Limits of Polynomial and Rational Functions</title>
+<p id="fs-id1170572557802">Let <m>p(x)</m> and <m>q(x)</m> be polynomial functions. Let <m>a</m> be a real number. Then,</p>
+<me>\lim_{x \to a }p(x)=p(a)</me>
+<me>\lim_{x \to a }\frac{p(x)}{q(x)}=\frac{p(a)}{q(a)} \text{ when } q(a)\neq 0.</me>
+</theorem>
+<!-- Commenting out proof
+<p id="fs-id1170571650163">To see that this theorem holds, consider the polynomial <m>p(x)=c_nx^n+c_{n-1}x^{n-1}+\cdots+c_1x+c_0.</m> By applying the sum, constant multiple, and power laws, we end up with</p>
+<md><mrow>\lim_{x \to a }p(x)    \amp=\lim_{x \to a }(c_nx^n+c^{n-1}x^{n-1}+\cdots+c_1x+c_0)</mrow>
+<mrow>                           \amp=c_n(\lim_{x \to a }x)^n+c^{n-1}(\lim_{x \to a }x)^{n-1}+\cdots+c_1(\lim_{x \to a }x)+\lim_{x \to a }c_0</mrow>
+<mrow>                            \amp=c_na^n+c^{n-1}a^{n-1}+\cdots+c_1a+c_0</mrow>
+<mrow>                         \amp=p(a).</mrow></md>
+<p id="fs-id1170572628443">It now follows from the quotient law that if <m>p(x)</m> and <m>q(x)</m> are polynomials for which <m>q(a)\neq 0,</m> then</p>
+<me>\lim_{x \to a }\frac{p(x)}{q(x)}=\frac{p(a)}{q(a)}.</me>
+-->
+
+<p id="fs-id1170572305824"><xref ref="fs-id1170572305829"/> applies this result.</p>
+<example xml:id="fs-id1170572305829">
+<title>Evaluating a Limit of a Rational Function</title>
+<statement id="fs-id1170572305834">
+<p id="fs-id1170572305839">Evaluate the <m>\displaystyle{\lim_{x \to 3 }\frac{2x^2-3x+1}{5x+4}.}</m></p>
+</statement>
+<solution id="fs-id1170572305890">
+<p id="fs-id1170572305892">Since 3 is in the domain of the rational function <m>f(x)=\frac{2x^2-3x+1}{5x+4},</m> we can calculate the limit by substituting 3 for <m>x</m> into the function. Thus,</p>
+<me>\lim_{x \to 3 }\frac{2x^2-3x+1}{5x+4}=\frac{10}{19}.</me>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1170571675275">
+<p id="fs-id1170571675277">Evaluate <m>\displaystyle{\lim_{x \to -2 }(3x^3-2x+7).}</m></p>
+</statement>
+<solution id="fs-id1170571688070">
+<p id="fs-id1170571688072">-13;</p>
+</solution>
+<hint>
+
+<p id="fs-id1170571688063">Use <xref ref="fs-id1170572557796"/></p>
+</hint>
+
+</exercise>
+</subsection>
+<subsection id="fs-id1170571688080">
+<title>Additional Limit Evaluation Techniques</title>
+<p id="fs-id1170571688085">As we have seen, we may evaluate easily the limits of polynomials and limits of some (but not all) rational functions by direct substitution. However, as we saw in the introductory section on limits, it is certainly possible for <m>\displaystyle{\lim_{x \to a }f(x)}</m> to exist when <m>f(a)</m> is undefined. The following observation allows us to evaluate many limits of this type:</p>
+<p id="fs-id1170571688129">If for all <m>x\neq a,f(x)=g(x)</m> over some open interval containing <m>a</m>, then <m>\displaystyle{\lim_{x \to a }f(x)=\lim_{x \to a }g(x).}</m></p>
+<p id="fs-id1170572404968">To understand this idea better, consider the limit <m>\displaystyle{\lim_{x \to 1 }\frac{x^2-1}{x-1}.}</m></p>
+<p id="fs-id1170572405008">The function</p>
+<md><mrow>f(x)\amp=\frac{x^2-1}{x-1}</mrow><mrow>\amp=\frac{(x-1)(x+1)}{x-1}</mrow></md>
+<p id="fs-id1170571689728">and the function <m>g(x)=x+1</m> are identical for all values of <m>x\neq 1.</m> The graphs of these two functions are shown in <xref ref="CNX_Calc_Figure_02_03_001"/>.</p>
+<figure xml:id="CNX_Calc_Figure_02_03_001">
+<image source="CNX_Calc_Figure_02_03_001.jpg" width="75%">
+<description>"Two graphs side by side. The first is a graph of g(x) = x + 1, a linear function with y intercept at (0,1) and x intercept at (-1,0). The second is a graph of f(x) = (x^2 – 1) / (x – 1). This graph is identical to the first for all x not equal to 1, as there is an open circle at (1,2) in the second graph." </description></image> <caption>The graphs of <m>f(x)</m> and <m>g(x)</m> are identical for all <m>x\neq 1.</m> Their limits at 1 are equal.</caption>
+</figure>
+<p id="fs-id1170571650070">We see that</p>
+<md><mrow>\lim_{x \to 1 }\frac{x^2-1}{x-1}\amp=\lim_{x \to 1 }\frac{(x-1)(x+1)}{(x-1)}</mrow><mrow>\amp=\lim_{x \to 1 }(x+1)</mrow><mrow>\amp=2.</mrow></md>
+<p id="fs-id1170571649704">The limit has the form <m>\displaystyle{\lim_{x \to a }\frac{f(x)}{g(x)},}</m> where <m>\displaystyle{\lim_{x \to a }f(x)=0}</m> and <m>\displaystyle{\lim_{x \to a }g(x)=0.}</m> (In this case, we say that <m>f(x)/g(x)</m> has the indeterminate form <m>0/0\text{ .) }</m> The following Problem-Solving Strategy provides a general outline for evaluating limits of this type.</p>
+<note id="fs-id1170571611384" class="problem-solving">
+<title>Problem-Solving Strategy: Calculating a Limit When <m>f(x)/g(x)</m> has the Indeterminate Form 0/0</title>
+<ol marker="(a)">
+<li><p> First, we need to make sure that our function has the appropriate form and cannot be evaluated immediately using the limit laws.</p></li>
+<li><p>We then need to find a function that is equal to <m>h(x)=f(x)/g(x)</m> for all <m>x\neq a</m> over some interval containing <m>a</m>. To do this, we may need to try one or more of the following steps:</p>
+<ol marker="(i)">
+<li><p>If <m>f(x)</m> and <m>g(x)</m> are polynomials, we should factor each function and cancel out any common factors.</p></li>
+<li><p>If the numerator or denominator contains a difference involving a square root, we should try multiplying the numerator and denominator by the conjugate of the expression involving the square root.</p></li>
+<li><p>If <m>f(x)/g(x)</m> is a complex fraction, we begin by simplifying it.</p></li>
+</ol></li>
+<li><p>Last, we apply the limit laws.</p></li>
+</ol>
+</note>
+<p id="fs-id1170571669700">The next examples demonstrate the use of this Problem-Solving Strategy. <xref ref="fs-id1170571669713"/> illustrates the factor-and-cancel technique; <xref ref="fs-id1170572307613"/> shows multiplying by a conjugate. In <xref ref="fs-id1170571612021"/>, we look at simplifying a complex fraction.</p>
+<example xml:id="fs-id1170571669713">
+<title>Evaluating a Limit by Factoring and Canceling</title>
+<statement id="fs-id1170571669717">
+<p id="fs-id1170571669723">Evaluate <m>\displaystyle{\lim_{x \to 3 }\frac{x^2-3x}{2x^2-5x-3}.}</m></p>
+</statement>
+<solution id="fs-id1170572335181">
+<p id="fs-id1170572335183"><emphasis effect="bold">Step 1.</emphasis> The function <m>f(x)=\frac{x^2-3x}{2x^2-5x-3}</m> is undefined for <m>x=3.</m> In fact, if we substitute 3 into the function we get <m>0/0,</m> which is undefined. Factoring and canceling is a good strategy:</p>
+<me>\lim_{x \to 3 }\frac{x^2-3x}{2x^2-5x-3}=\lim_{x \to 3 }\frac{x(x-3)}{(x-3)}{(2x+1)}</me>
+<p id="fs-id1170572548178"><emphasis effect="bold">Step 2.</emphasis> For all <m>x\neq 3,\frac{x^2-3x}{2x^2-5x-3}=\frac{x}{2x+1}.</m> Therefore,</p>
+<me>\lim_{x \to 3 }\frac{x(x-3)}{(x-3)}{(2x+1)}=\lim_{x \to 3 }\frac{x}{2x+1}.</me>
+<p id="fs-id1170572347050"><emphasis effect="bold">Step 3.</emphasis> Evaluate using the limit laws:</p>
+<me>\lim_{x \to 3 }\frac{x}{2x+1}=\frac{3}{7}.</me>
+</solution>
+
+</example>
+<exercise> <statement id="fs-id1170571598004">
+<p id="fs-id1170571598007">Evaluate <m>\displaystyle{\lim_{x \to -3 }\frac{x^2+4x+3}{x^2-9}.}</m></p>
+</statement>
+<solution id="fs-id1170571598065">
+<p id="fs-id1170571598067"><m>\frac{1}{3}</m></p>
+</solution>
+<hint>
+
+<p id="fs-id1170571598058">Follow the steps in the Problem-Solving Strategy and <xref ref="fs-id1170571669713"/>.</p>
+</hint>
+
+</exercise>
+<example xml:id="fs-id1170572307613">
+<title>Evaluating a Limit by Multiplying by a Conjugate</title> <statement id="fs-id1170572307617">
+<p id="fs-id1170572307623">Evaluate <m>\displaystyle{\lim_{x \to -1 }\frac{\sqrt{x+2}-1}{x+1}.}</m></p>
+</statement>
+<solution id="fs-id1170572307669">
+<p id="fs-id1170572307671"><emphasis effect="bold">Step 1.</emphasis> <m>\frac{\sqrt{x+2}-1}{x+1}</m> has the form <m>0/0</m> at -1. Let’s begin by multiplying by <m>\sqrt{x+2}+1,</m> the conjugate of <m>\sqrt{x+2}-1,</m> on the numerator and denominator:</p>
+<me>\lim_{x \to -1 }\frac{\sqrt{x+2}-1}{x+1}=\lim_{x \to -1 }\frac{\sqrt{x+2}-1}{x+1}\cdot \frac{\sqrt{x+2}+1}{\sqrt{x+2}+1}.</me>
+<p id="fs-id1170572306393"><emphasis effect="bold">Step 2.</emphasis> We then multiply out the numerator. We don’t multiply out the denominator because we are hoping that the <m>(x+1)</m> in the denominator cancels out in the end:</p>
+<me>=\lim_{x \to -1 }\frac{x+1}{(x+1)}{(\sqrt{x+2}+1)}.</me>
+<p id="fs-id1170571562568"><emphasis effect="bold">Step 3.</emphasis> Then we cancel:</p>
+<me>=\lim_{x \to -1 }\frac{1}{\sqrt{x+2}+1}.</me>
+<p id="fs-id1170571562617"><emphasis effect="bold">Step 4.</emphasis> Last, we apply the limit laws:</p>
+<me>\lim_{x \to -1 }\frac{1}{\sqrt{x+2}+1}=\frac{1}{2}.</me>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1170571611954">
+<p id="fs-id1170571611956">Evaluate <m>\displaystyle{\lim_{x \to 5 }\frac{\sqrt{x-1}-2}{x-5}.}</m></p>
+</statement>
+<solution id="fs-id1170571612006">
+<p id="fs-id1170571612008"><m>\frac{1}{4}</m></p>
+</solution>
+<hint>
+
+<p id="fs-id1170571611999">Follow the steps in the Problem-Solving Strategy and <xref ref="fs-id1170572307613"/>.</p>
+</hint>
+
+</exercise>
+
+
+<example xml:id="fs-id1170571612021">
+<title>Evaluating a Limit by Simplifying a Complex Fraction</title>
+ <statement id="fs-id1170571612026">
+<p id="fs-id1170571612031">Evaluate <m>\displaystyle{\lim_{x \to 1 }\frac{\frac{1}{x+1}-\frac{1}{2}}{x-1}.}</m></p>
+</statement>
+<solution id="fs-id1170571681057">
+<p id="fs-id1170571681059"><emphasis effect="bold">Step 1.</emphasis> <m>\frac{\frac{1}{x+1}-\frac{1}{2}}{x-1}</m> has the form <m>0/0</m> at 1. We simplify the algebraic fraction by multiplying by <m>2(x+1)/2(x+1):</m></p>
+<me>\lim_{x \to 1 }\frac{\frac{1}{x+1}-\frac{1}{2}}{x-1}=\lim_{x \to 1 }\frac{\frac{1}{x+1}-\frac{1}{2}}{x-1}\cdot \frac{2(x+1)}{2(x+1)}.</me>
+<p id="fs-id1170571596311"><emphasis effect="bold">Step 2.</emphasis> Next, we multiply through the numerators. Do not multiply the denominators because we want to be able to cancel the factor <m>(x-1)\text{ : }</m></p>
+<me>=\lim_{x \to 1 }\frac{2-(x+1)}{2(x-1)}{(x+1)}.</me>
+<p id="fs-id1170571622151"><emphasis effect="bold">Step 3.</emphasis> Then, we simplify the numerator:</p>
+<me>=\lim_{x \to 1 }\frac{-x+1}{2(x-1)(x+1)}.</me>
+<p id="fs-id1170571650203"><emphasis effect="bold">Step 4.</emphasis> Now we factor out -1 from the numerator:</p>
+<me>=\lim_{x \to 1 }\frac{-(x-1)}{2(x-1)(x+1)}.</me>
+<p id="fs-id1170571650278"><emphasis effect="bold">Step 5.</emphasis> Then, we cancel the common factors of <m>(x-1)\text{ : }</m></p>
+<me>=\lim_{x \to 1 }\frac{-1}{2(x+1)}.</me>
+<p id="fs-id1170572394292"><emphasis effect="bold">Step 6.</emphasis> Last, we evaluate using the limit laws:</p>
+<me>\lim_{x \to 1 }\frac{-1}{2(x+1)}=-\frac{1}{4}.</me>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1170572394358">
+<p id="fs-id1170572394360">Evaluate <m>\displaystyle{\lim_{x \to -3 }\frac{\frac{1}{x+2}+1}{x+3}.}</m></p>
+</statement>
+<solution id="fs-id1170571648124">
+<p id="fs-id1170571648126">-1</p>
+</solution>
+<hint>
+
+<p id="fs-id1170572394407">Follow the steps in the Problem-Solving Strategy and <xref ref="fs-id1170571612021"/>.</p>
+</hint>
+
+</exercise>
+<p id="fs-id1170571648132"><xref ref="fs-id1170571648139"/> does not fall neatly into any of the patterns established in the previous examples. However, with a little creativity, we can still use these same techniques.</p>
+<example xml:id="fs-id1170571648139">
+<title>Evaluating a Limit When the Limit Laws Do Not Apply</title>
+ <statement id="fs-id1170571648144">
+<p id="fs-id1170571648149">Evaluate <m>\displaystyle{\lim_{x \to 0 }\left(\frac{1}{x}+\frac{5}{x(x-5)}\right).}</m></p>
+</statement>
+<solution id="fs-id1170571648203">
+<p id="fs-id1170571648205">Both <m>1/x</m> and <m>5/x(x-5)</m> fail to have a limit at zero. Since neither of the two functions has a limit at zero, we cannot apply the sum law for limits; we must use a different strategy. In this case, we find the limit by performing addition and then applying one of our previous strategies. Observe that</p>
+<md><mrow>\frac{1}{x}+\frac{5}{x(x-5)}\amp=\frac{x-5+5}{x(x-5)}</mrow><mrow>\amp=\frac{x}{x(x-5)}.</mrow></md>
+<p id="fs-id1170571649584">Thus,</p>
+<md><mrow>\lim_{x \to 0 }\left(\frac{1}{x}+\frac{5}{x(x-5)}\right)\amp=\lim_{x \to 0 }\frac{x}{x(x-5)}</mrow><mrow>\amp=\lim_{x \to 0 }\frac{1}{x-5}</mrow><mrow>\amp=-\frac{1}{5}.</mrow></md>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1170571681427">
+<p id="fs-id1170571681429">Evaluate <m>\displaystyle{\lim_{x \to 3 }\left(\frac{1}{x-3}-\frac{4}{x^2-2x-3}\right).}</m></p>
+</statement>
+<solution id="fs-id1170572233824">
+<p id="fs-id1170572233826"><m>\frac{1}{4}</m></p>
+</solution>
+<hint>
+
+<p id="fs-id1170572233797">Use the same technique as <xref ref="fs-id1170571648139"/>. Don’t forget to factor <m>x^2-2x-3</m> before getting a common denominator.</p>
+</hint>
+
+</exercise>
+<p id="fs-id1170572233839">Let’s now revisit one-sided limits. Simple modifications in the limit laws allow us to apply them to one-sided limits. For example, to apply the limit laws to a limit of the form <m> \displaystyle{\lim_{x\to a^-} h(x),}</m> we require the function <m>h(x)</m> to be defined over an open interval of the form <m>(b,a);</m> for a limit of the form <m>\displaystyle{\lim_{x \to a^+} h(x),}</m> we require the function <m>h(x)</m> to be defined over an open interval of the form <m>(a,c).</m> <xref ref="fs-id1170571679268"/> illustrates this point.</p>
+<example xml:id="fs-id1170571679268">
+<title>Evaluating a One-Sided Limit Using the Limit Laws</title>
+ <statement id="fs-id1170571679272">
+<p id="fs-id1170571679278">Evaluate each of the following limits, if possible.</p>
+<ol marker="(a)">
+<li><m>\lim_{x \to 3^-}\sqrt{x-3}</m></li>
+<li><m>\lim_{x \to 3^+}\sqrt{x-3}</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170571679345">
+<p id="fs-id1170571679347"><xref ref="CNX_Calc_Figure_02_03_002"/> illustrates the function <m>f(x)=\sqrt{x-3}</m> and aids in our understanding of these limits.</p>
+<figure xml:id="CNX_Calc_Figure_02_03_002">
+<image source="CNX_Calc_Figure_02_03_002.jpg" width="50%">
+<description>"A graph of the function f(x) = sqrt(x-3). Visually, the function looks like the top half of a parabola opening to the right with vertex at (3,0)." </description></image> <caption>The graph shows the function <m>f(x)=\sqrt{x-3}.</m></caption>
+</figure>
+<ol marker="(a)">
+<li>The function <m>f(x)=\sqrt{x-3}</m> is defined over the interval <m>[3,+\infty).</m> Since this function is not defined to the left of 3, we cannot apply the limit laws to compute <m>\displaystyle{\lim_{x \to 3^-}\sqrt{x-3}.}</m> In fact, since <m>f(x)=\sqrt{x-3}</m> is undefined to the left of 3, <m>\displaystyle{\lim_{x \to 3^-}\sqrt{x-3}}</m> does not exist.</li>
+<li>Since <m>f(x)=\sqrt{x-3}</m> is defined to the right of 3, the limit laws do apply to <m>\displaystyle{\lim_{x \to 3^+}\sqrt{x-3}.}</m> By applying these limit laws we obtain <m>\displaystyle{\lim_{x \to 3^+}\sqrt{x-3}=0.}</m></li>
+</ol>
+</solution>
+</example>
+
+<p id="fs-id1170571558874">In <xref ref="fs-id1170571558882"/> we look at one-sided limits of a piecewise-defined function and use these limits to draw a conclusion about a two-sided limit of the same function.</p>
+<example xml:id="fs-id1170571558882">
+
+<!-- Move title outside statement--> <statement id="fs-id1170571558886">
+<title>Evaluating a Two-Sided Limit Using the Limit Laws</title>
+<p id="fs-id1170571558891">For <m>f(x)=\begin{cases} 4x-3\amp\text{ if } x\lt 2\\ (x-3)^2\amp\text{ if } x\geq 2 \end{cases},</m> evaluate each of the following limits:</p>
+<ol marker="(a)">
+<li><m>\lim_{x \to 2^-}f(x)</m></li>
+<li><m>\lim_{x \to 2^+}f(x)</m></li>
+<li><m>\lim_{x \to 2 }f(x)</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170571573822">
+<p id="fs-id1170571573824"><xref ref="CNX_Calc_Figure_02_03_003"/> illustrates the function <m>f(x)</m> and aids in our understanding of these limits.</p>
+<figure xml:id="CNX_Calc_Figure_02_03_003">
+<image source="CNX_Calc_Figure_02_03_003.jpg" width="50%">
+<description>"The graph of a piecewise function with two segments. For x\lt 2, the function is linear with the equation 4x-3. There is an open circle at (2,5). The second segment is a parabola and exists for x\gt =2, with the equation (x-3)^2. There is a closed circle at (2,1). The vertex of the parabola is at (3,0)." </description></image> <caption>This graph shows a function <m>f(x).</m></caption>
+</figure>
+<ol marker="(a)">
+<li>Since <m>f(x)=4x-3</m> for all <m>x</m> in <m>(-\infty,2),</m> replace <m>f(x)</m> in the limit with <m>4x-3</m> and apply the limit laws:<newline/>
+<me>\lim_{x \to 2^-}f(x)=\lim_{x \to 2^-}(4x-3)=5.</me></li>
+<li>Since <m>f(x)=(x-3)^2</m> for all <m>x</m> in <m>(2,+\infty),</m> replace <m>f(x)</m> in the limit with <m>(x-3)^2</m> and apply the limit laws:<newline/>
+<me>\lim_{x \to 2^+}f(x)=\lim_{x \to 2^+}(x-3)^2=1.</me></li>
+<li>Since <m>\displaystyle{\lim_{x \to 2^-}f(x)=5}</m> and <m>\displaystyle{\lim_{x \to 2^+}f(x)=1,}</m> we conclude that <m>\displaystyle{\lim_{x \to 2 }f(x)}</m> does not exist.</li>
+</ol>
+</solution>
+</example>
+<exercise>  <statement id="fs-id1170572235175">
+<p id="fs-id1170572235178">Graph <m>f(x)=\begin{cases}-x-2 \amp \text{ if } x\lt -1 \\ 2 \amp \text{ if } x=-1 \\ x^3 \amp \text{ if } x\gt -1 \end{cases} </m> and evaluate <m>\displaystyle{\lim_{x\to -1^-}f(x).}</m></p>
+</statement>
+<solution id="fs-id1170572559751">
+<p id="fs-id1170572559753">
+<image source="CNX_Calc_Figure_02_03_004.jpg" width="50%">
+<description>"The graph of a piecewise function with three segments. The first is a linear function, -x-2, for x\lt -1. The x intercept is at (-2,0), and there is an open circle at (-1,-1). The next segment is simply the point (-1, 2). The third segment is the function x^3 for x \gt  -1, which crossed the x axis and y axis at the origin."
+</description>
+</image>
+<m>\displaystyle{\lim_{x\to -1^-}f(x)=-1}</m></p>
+</solution>
+<hint>
+<p id="fs-id1170572235312">Use the method in <xref ref="fs-id1170571558882"/> to evaluate the limit.</p>
+</hint>
+</exercise>
+<p id="fs-id1170572559812">We now turn our attention to evaluating a limit of the form <m>\displaystyle{\lim_{x \to a }\frac{f(x)}{g(x)},}</m> where <m>\displaystyle{\lim_{x \to a }f(x)=K,}</m> where <m>K\neq 0</m> and <m>\displaystyle{\lim_{x \to a }g(x)=0.}</m> That is, <m>f(x)/g(x)</m> has the form <m>K/0,K\neq 0</m> at <m>a</m>.</p>
+<example xml:id="fs-id1170571611196">
+<title>Evaluating a Limit of the Form <m>K/0,K\neq 0</m> Using the Limit Laws</title>
+<statement id="fs-id1170571611200">
+<p id="fs-id1170571611224">Evaluate <m>\displaystyle{\lim_{x \to 2^-}\frac{x-3}{x^2-2x}.}</m></p>
+</statement>
+<solution id="fs-id1170571611270">
+<p id="fs-id1170571611272"><emphasis effect="bold">Step 1.</emphasis> After substituting in <m>x=2,</m> we see that this limit has the form <m>-1/0.</m> That is, as <m>x</m> approaches 2 from the left, the numerator approaches -1; and the denominator approaches 0. Consequently, the magnitude of <m>\frac{x-3}{x(x-2)}</m> becomes infinite. To get a better idea of what the limit is, we need to factor the denominator:</p>
+<me>\lim_{x \to 2^-}\frac{x-3}{x^2-2x}=\lim_{x \to 2^-}\frac{x-3}{x(x-2)}.</me>
+<p id="fs-id1170572420356"><emphasis effect="bold">Step 2.</emphasis> Since <m>x-2</m> is the only part of the denominator that is zero when 2 is substituted, we then separate <m>1/(x-2)</m> from the rest of the function:</p>
+<me>=\lim_{x \to 2^-}\frac{x-3}{x}\cdot \frac{1}{x-2}.</me>
+<p id="fs-id1170571612925"><emphasis effect="bold">Step 3.</emphasis> <m>\displaystyle{\lim_{x \to 2^-}\frac{x-3}{x}=-\frac{1}{2}}</m> and <m>\displaystyle{\lim_{x \to 2^-}\frac{1}{x-2}=-\infty.}</m> Therefore, the product of <m>(x-3)/x</m> and <m>1/(x-2)</m> has a limit of <m>+\infty</m></p>
+<me>\lim_{x \to 2^-}\frac{x-3}{x^2-2x}=+\infty.</me>
+</solution>
+
+</example>
+<exercise> <statement id="fs-id1170571650523">
+<p id="fs-id1170571650526">Evaluate <m>\displaystyle{\lim_{x \to 1 }\frac{x+2}{(x-1)^2}.}</m></p>
+</statement>
+<solution id="fs-id1170572611883">
+<p id="fs-id1170572611885"><m>+\infty</m></p>
+</solution>
+<hint>
+<p id="fs-id1170572611875">Use the methods from <xref ref="fs-id1170571611196"/>.</p>
+</hint>
+</exercise>
+</subsection>
+
+<!-- Commenting out trig
+<subsection id="fs-id1170572611892">
+<title>The Squeeze Theorem</title>
+<p id="fs-id1170572611898">The techniques we have developed thus far work very well for algebraic functions, but we are still unable to evaluate limits of very basic trigonometric functions. The next theorem, called the <term>squeeze theorem</term>, proves very useful for establishing basic trigonometric limits. This theorem allows us to calculate limits by “squeezing” a function, with a limit at a point <m>a</m> that is unknown, between two functions having a common known limit at <m>a</m>. <xref ref="CNX_Calc_Figure_02_03_005"/> illustrates this idea.</p>
+<figure xml:id="CNX_Calc_Figure_02_03_005">
+<image source="CNX_Calc_Figure_02_03_005.jpg" width="50%">
+<description>"A graph of three functions over a small interval. All three functions curve. Over this interval, the function g(x) is trapped between the functions h(x), which gives greater y values for the same x values, and f(x), which gives smaller y values for the same x values. The functions all approach the same limit when x=a."</description></image> <caption>The Squeeze Theorem applies when <m>f(x)\leq g(x)\leq h(x)</m> and <m>\lim_{x \to a }f(x)=\lim_{x \to a }h(x).</m></caption>
+</figure>
+<theorem>
+<title>The Squeeze Theorem</title>
+<p id="fs-id1170571603686">Let <m>f(x),g(x),</m> and <m>h(x)</m> be defined for all <m>x\neq a</m> over an open interval containing <m>a</m>. If</p>
+<me>f(x)\leq g(x)\leq h(x)</me>
+<p id="fs-id1170571603783">for all <m>x\neq a</m> in an open interval containing <m>a</m> and</p>
+<me>\lim_{x \to a }f(x)=L=\lim_{x \to a }h(x)</me>
+<p id="fs-id1170571654186">where <m>L</m> is a real number, then <m>\lim_{x \to a }g(x)=L.</m></p>
+</theorem>
+<example xml:id="fs-id1170571654228">
+<title>Applying the Squeeze Theorem</title>
+ <statement id="fs-id1170571654232">
+<p id="fs-id1170571654238">Apply the squeeze theorem to evaluate <m>\lim_{x \to 0 }x\cos x.</m></p>
+</statement>
+<solution id="fs-id1170571654267">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170571654269">Because <m>-1\leq \cos x\leq 1</m> for all <m>x</m>, we have <m>-|x|\leq x\cos x\leq |x|</m>.
+Since <m>\lim_{x \to 0 }(-|x|)=0=\lim_{x \to 0 }|x|,</m> from the squeeze theorem, we obtain <m>\lim_{x \to 0 }x\cos x=0.</m>
+The graphs of <m>f(x)=-|x|,g(x)=x\cos x,</m> and <m>h(x)=|x|</m> are shown in <xref ref="CNX_Calc_Figure_02_03_006"/>.</p><figure xml:id="CNX_Calc_Figure_02_03_006">
+<image source="CNX_Calc_Figure_02_03_006.jpg" width="50%">
+
+<description>"The graph of three functions: h(x) = x, f(x) = -x, and g(x) = xcos(x). The first, h(x) = x, is a linear function with slope of 1 going through the origin. The second, f(x), is also a linear function with slope of -1; going through the origin. The third, g(x) = xcos(x), curves between the two and goes through the origin. It opens upward for x\gt 0 and downward for x\gt 0."</description></image> <caption>The graphs of <m>f(x),g(x),</m> and <m>h(x)</m> are shown around the point <m>x=0.</m></caption>
+</figure>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1170572633053">
+<p id="fs-id1170572633055">Use the squeeze theorem to evaluate <m>\lim_{x \to 0 }x^2\sin\frac{1}{x}.</m></p>
+</statement>
+<solution id="fs-id1170572560335">
+<p id="fs-id1170572560337">0</p>
+</solution>
+<hint>
+<p id="fs-id1170572633090">Use the fact that <m>-x^2\leq x^2\sin (1/x)\leq x^2</m> to help you find two functions such that <m>x^2\sin (1/x)</m> is squeezed between them.</p>
+</hint>
+</exercise>
+<p id="fs-id1170572560344">We now use the squeeze theorem to tackle several very important limits. Although this discussion is somewhat lengthy, these limits prove invaluable for the development of the material in both the next section and the next chapter. The first of these limits is <m>\lim_{\theta \to 0}\sin \theta.</m> Consider the unit circle shown in <xref ref="CNX_Calc_Figure_02_03_007"/>. In the figure, we see that <m>\sin \theta</m> is the <m>y</m>-coordinate on the unit circle and it corresponds to the line segment shown in blue. The radian measure of angle <m>\theta</m> is the length of the arc it subtends on the unit circle. Therefore, we see that for <m>0\lt \theta\lt \frac{\pi}{2},0\lt \sin \theta\lt \theta.</m></p>
+<figure xml:id="CNX_Calc_Figure_02_03_007">
+<image source="CNX_Calc_Figure_02_03_007.jpg" width="50%">
+<description>"A diagram of the unit circle in the x,y plane – it is a circle with radius 1 and center at the origin. A specific point (cos(theta), sin(theta)) is labeled in quadrant 1 on the edge of the circle. This point is one vertex of a right triangle inside the circle, with other vertices at the origin and (cos(theta), 0).  As such, the lengths of the sides are cos(theta) for the base and sin(theta) for the height, where theta is the angle created by the hypotenuse and base. The radian measure of angle theta is the length of the arc it subtends on the unit circle. The diagram shows that for 0 \lt  theta \lt  pi/2,  0 \lt  sin(theta) \lt  theta."
+</description></image> <caption>The sine function is shown as a line on the unit circle.</caption>
+</figure>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572560467">Because <m>\lim_{\theta\to 0^+}0=0</m> and <m>\lim_{\theta\to 0^+}\theta=0,</m> by using the squeeze theorem we conclude that</p><me>\lim_{\theta\to 0^+}\sin \theta=0.</me>
+<p id="fs-id1170571545529">To see that <m>\lim_{\theta\to 0^-}\sin \theta=0</m> as well, observe that for <m>-\frac{\pi }{2}\lt \theta\lt 0,0\lt -\theta\lt \frac{\pi }{2}</m> and hence, <m>0\lt \sin (-\theta)\lt -\theta.</m> Consequently, <m>0\lt -\sin \theta\lt -\theta.</m> It follows that <m>0\gt \sin \theta\gt \theta.</m> An application of the squeeze theorem produces the desired limit. Thus, since <m>\lim_{\theta\to 0^+}\sin \theta=0</m> and <m>\lim_{\theta\to 0^-}\sin \theta=0,</m></p>
+<me>\lim_{\theta\to0}\sin \theta=0.</me>
+<p id="fs-id1170572642408">Next, using the identity <m>\cos \theta=\sqrt{1-\sin^2>\theta}</m> for <m>-\frac{\pi }{2}\lt \theta\lt \frac{\pi }{2},</m> we see that</p>
+<me>\lim_{\theta\to0}\cos \theta=\lim_{\theta\to0}\sqrt{1-\sin^2>\theta}=1.</me>
+<p id="fs-id1170571656512">We now take a look at a limit that plays an important role in later chapters—namely, <m>\lim_{\theta\to0}\frac{\sin \theta}{\theta}.</m> To evaluate this limit, we use the unit circle in <xref ref="CNX_Calc_Figure_02_03_008"/>. Notice that this figure adds one additional triangle to <xref ref="CNX_Calc_Figure_02_03_008"/>. We see that the length of the side opposite angle <m> \theta </m> in this new triangle is <m>\tan\theta.</m> Thus, we see that for <m>0\lt \theta\lt \frac{\pi}{2},\sin \theta\lt \theta\lt \tan \theta.</m></p>
+<figure xml:id="CNX_Calc_Figure_02_03_008">
+  <image source="CNX_Calc_Figure_02_03_008.jpg" width="50%">
+
+<description>"The same diagram as the previous one. However, the triangle is expanded. The base is now from the origin to (1,0). The height goes from (1,0) to (1, tan(theta)). The hypotenuse goes from the origin to (1, tan(theta)). As such, the height is now tan(theta). It shows that for 0 \lt  theta \lt  pi/2, sin(theta) \lt  theta \lt  tan(theta)."
+  </description></image> <caption>The sine and tangent functions are shown as lines on the unit circle.</caption>
+</figure>
+<p id="fs-id1170571649306">By dividing by <m>\sin \theta</m> in all parts of the inequality, we obtain</p>
+<me>1\lt \frac{\theta}{\sin \theta}\lt \frac{1}{\cos \theta}.</me>
+<p id="fs-id1170571649359">Equivalently, we have</p>
+<me>1\gt \frac{\sin \theta}{\theta}\gt \cos \theta.</me>
+<p id="fs-id1170571649397">Since <m>\lim_{\theta\to 0^+}1=1=\lim_{\theta\to 0^+}\cos \theta,</m> we conclude that <m>\lim_{\theta\to 0^+}\frac{\sin \theta}{\theta}=1.</m> By applying a manipulation similar to that used in demonstrating that <m>\lim_{\theta\to 0^-}\sin \theta=0,</m> we can show that <m>\lim_{\theta\to 0^-}\frac{\sin \theta}{\theta}=1.</m> Thus,</p>
+<me>\lim_{\theta\to0}\frac{\sin \theta}{\theta}=1.</me>
+<p id="fs-id1170571611766">In <xref ref="fs-id1170572243714"/> we use this limit to establish <m>\lim_{\theta\to0}\frac{1-\cos \theta}{\theta}=0.</m> This limit also proves useful in later chapters.</p>
+<example xml:id="fs-id1170572243714">
+<title>Evaluating an Important Trigonometric Limit</title>
+<statement id="fs-id1170572243718">
+<p id="fs-id1170572243724">Evaluate <m>\lim_{\theta\to0}\frac{1-\cos \theta}{\theta}.</m></p>
+</statement>
+<solution id="fs-id1170572243762">
+<p id="fs-id1170572243764">In the first step, we multiply by the conjugate so that we can use a trigonometric identity to convert the cosine in the numerator to a sine:</p>
+<md><mrow>\lim_{\theta\to0}\frac{1-\cos \theta}{\theta}\amp=\lim_{\theta\to0}\frac{1-\cos \theta}{\theta}\cdot \frac{1+\cos \theta}{1+\cos \theta}</mrow><mrow>\amp=\lim_{\theta\to0}\frac{1-\cos^2\theta}{\theta(1+\cos \theta)}</mrow><mrow>\amp=\lim_{\theta\to0}\frac{\sin^2 \theta}{\theta(1+\cos \theta)}</mrow><mrow>\amp=\lim_{\theta\to0}\frac{\sin \theta}{\theta}\cdot \frac{\sin \theta}{1+\cos \theta}</mrow><mrow>\amp=1\cdot \frac{0}{2}=0.</mrow></md>
+<p id="fs-id1170571652241">Therefore,</p>
+<me>\lim_{\theta\to0}\frac{1-\cos \theta}{\theta}=0.</me>
+</solution>
+</example>
+<exercise> <statement id="fs-id1170571610222">
+<p id="fs-id1170571610224">Evaluate <m>\lim_{\theta\to0}\frac{1-\cos \theta}{\sin \theta}.</m></p>
+</statement>
+<solution id="fs-id1170571610288">
+<p id="fs-id1170571610290">0</p>
+</solution>
+<hint>
+
+<p id="fs-id1170571610267">Multiply numerator and denominator by <m>1+\cos \theta.</m></p>
+</hint>
+
+</exercise>
+<note id="fs-id1170571610297" class="project">
+<title>Project: Deriving the Formula for the Area of a Circle</title>
+<p id="fs-id1170571610304">Some of the geometric formulas we take for granted today were first derived by methods that anticipate some of the methods of calculus. The Greek mathematician <term class="no-emphasis">Archimedes</term> (ca. 287-212; BCE) was particularly inventive, using polygons inscribed within circles to approximate the area of the circle as the number of sides of the polygon increased. He never came up with the idea of a limit, but we can use this idea to see what his geometric constructions could have predicted about the limit.</p>
+<p id="fs-id1170571610320">We can estimate the area of a circle by computing the area of an inscribed regular polygon. Think of the regular polygon as being made up of <m>n</m> triangles. By taking the limit as the vertex angle of these triangles goes to zero, you can obtain the area of the circle. To see this, carry out the following steps:</p>
+<ol marker ="(a)">
+<li>Express the height <m>h</m> and the base <m>b</m> of the isosceles triangle in <xref ref="CNX_Calc_Figure_02_03_009"/> in terms of <m>\theta</m> and <m>r</m>.<newline/>
+<figure xml:id="CNX_Calc_Figure_02_03_009">
+  <image source="CNX_Calc_Figure_02_03_009.jpg" width="50%">
+<description>"A diagram of a circle with an inscribed polygon – namely, an octagon. An isosceles triangle is drawn with one of the sides of the octagon as the base and center of the circle/octagon as the top vertex. The height h goes from the center of the base b to the center, and each of the legs is also radii r of the circle. The angle created by the height h and one of the legs r is labeled as theta."</description> </image>
+</figure></li>
+<li>Using the expressions that you obtained in step 1, express the area of the isosceles triangle in terms of <m> \theta </m> and <m>r</m>.<newline/>(Substitute <m>(1/2) \sin \theta</m> for <m>\sin(\theta / 2) \text{ cos }(\theta / 2)</m> in your expression.)</li>
+<li>If an <m>n</m>-sided regular polygon is inscribed in a circle of radius <m>r</m>, find a relationship between <m> \theta </m> and <m>n</m>. Solve this for <m>n</m>. Keep in mind there are 2<m>\pi </m> radians in a circle. (Use radians, not degrees.)</li>
+<li>Find an expression for the area of the <m>n</m>-sided polygon in terms of <m>r</m> and <m> \theta </m>.</li>
+<li>To find a formula for the area of the circle, find the limit of the expression in step 4 as <m> \theta </m> goes to zero. (<emphasis effect="italics">Hint:</emphasis> <m>\lim_{\theta\to0}\frac{(\sin \theta)}{\theta}=1\text{ ). }</m></li>
+</ol>
+<p id="fs-id1170572624423">The technique of estimating areas of regions by using polygons is revisited in --><!-- <link class="target-chapter" document="m53623">--> <!--Introduction to Integration --> <!--</url>--> <!--.</p>
+</note>
+</subsection>
+-->
+<subsection id="fs-id1170572624436" class="key-concepts">
+<title>Key Concepts</title>
+<ul>
+<li>The limit laws allow us to evaluate limits of functions without having to go through step-by-step processes each time.</li>
+<li>For polynomials and rational functions, <m>\displaystyle{\lim_{x \to a }f(x)=f(a).}</m></li>
+<li>You can evaluate the limit of a function by factoring and canceling, by multiplying by a conjugate, or by simplifying a complex fraction.</li>
+
+<!-- Commenting out trig
+<li>The squeeze theorem allows you to find the limit of a function if the function is always greater than one function and less than another function with limits that are known.</li>
+-->
+
+</ul>
+</subsection>
+<subsection id="fs-id1170572624507" class="key-equations">
+<title>Key Equations</title>
+<ul>
+<li><emphasis effect="bold">Basic Limit Results</emphasis><newline/>
+<m>\displaystyle{\lim_{x \to a }x=a.\; \lim_{x \to a }c=c}</m></li>
+<!-- Commenting out trig
+<li><emphasis effect="bold">Important Limits</emphasis><newline/>
+<m>\lim_{\theta\to0}\sin \theta=0</m><newline/>
+<m>\lim_{\theta\to0}\cos \theta=1</m><newline/>
+<m>\lim_{\theta\to0}\frac{\sin \theta}{\theta}=1</m><newline/>
+<m>\lim_{\theta\to0}\frac{1-\cos \theta}{\theta}=0</m></li>
+-->
+
+</ul>
+</subsection>
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+<?ignore
+
+
+<section id="fs-id1170572597916" class="section-exercises">
+<p id="fs-id1170572597920">In the following exercises, use the limit laws to evaluate each limit. Justify each step by indicating the appropriate limit law(s).</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572597926">
+<p id="fs-id1170572597929"><m>\lim_{x \to 0 }(4x^2-2x+3)</m></p>
+</statement>
+<solution id="fs-id1170572597972">
+<p id="fs-id1170572597974">Use constant multiple law and difference law: <m>\lim_{x \to 0 }(4x^2-2x+3)=4\lim_{x \to 0 }x^2-2\lim_{x \to 0 }x+\lim_{x \to 0 }3=3</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572347616">
+<p id="fs-id1170572347618"><m>\lim_{x \to 1 }\frac{x^3+3x^2+5}{4-7x}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571574690">
+<p id="fs-id1170571574692"><m>\lim_{x \to -2 }\sqrt{x^2-6x+3}</m></p>
+</statement>
+<solution id="fs-id1170571574732">
+<p id="fs-id1170571574734">Use root law: <m>\lim_{x \to -2 }\sqrt{x^2-6x+3}=\sqrt{\lim_{x \to -2 }(x^2-6x+3)}=\sqrt{19}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572229066">
+<p id="fs-id1170572229068"><m>\lim_{x \to -1 }<m:msup>(9x+1)2</m:msup></m></p>
+</statement>
+
+<p id="fs-id1170572229201">In the following exercises, use direct substitution to evaluate each limit.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572229206">
+<p id="fs-id1170572229209"><m>\lim_{x \to 7 }x^2</m></p>
+</statement>
+<solution id="fs-id1170571654820">
+<p id="fs-id1170571654822">49</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571654830">
+<p id="fs-id1170571654832"><m>\lim_{x \to -2 }(4x^2-1)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571654880">
+<p id="fs-id1170571654882"><m>\lim_{x \to 0 }\frac{11+\sin x}</m></p>
+</statement>
+<solution id="fs-id1170571654914">
+<p id="fs-id1170571654916">1</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571654923">
+<p id="fs-id1170571654925"><m>\lim_{x \to 2 }<m:msup>e2x-x^2</m:msup></m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571654970">
+<p id="fs-id1170571654972"><m>\lim_{x \to 1 }\frac{2-7x}{x+6}</m></p>
+</statement>
+<solution id="fs-id1170572482574">
+<p id="fs-id1170572482577"><m>-\frac{5}{7}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572482593">
+<p id="fs-id1170572482595"><m>\lim_{x \to 3 }\text{ ln }<m:msup>e3x</m:msup></m></p>
+</statement>
+
+<p id="fs-id1170572482632">In the following exercises, use direct substitution to show that each limit leads to the indeterminate form <m>0/0.</m> Then, evaluate the limit.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572482652">
+<p id="fs-id1170572482654"><m>\lim_{x \to 4 }\frac{x^2-16}{x-4}</m></p>
+</statement>
+<solution id="fs-id1170572482692">
+<p id="fs-id1170572482694"><m>\lim_{x \to 4 }\frac{x^2-16}{x-4}=\frac{16-16}{4-4}=\frac{0}{0};</m> then, <m>\lim_{x \to 4 }\frac{x^2-16}{x-4}=\lim_{x \to 4 }\frac{(x+4)}{(x-4)}{x-4}=8</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572403296">
+<p id="fs-id1170572403299"><m>\lim_{x \to 2 }\frac{x-2}{x^2-2x}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571586168">
+<p id="fs-id1170571586170"><m>\lim_{x \to 6 }\frac{3x-18}{2x-12}</m></p>
+</statement>
+<solution id="fs-id1170571586209">
+<p id="fs-id1170571586211"><m>\lim_{x \to 6 }\frac{3x-18}{2x-12}=\frac{18-18}{12-12}=\frac{0}{0};</m> then, <m>\lim_{x \to 6 }\frac{3x-18}{2x-12}=\lim_{x \to 6 }\frac{3(x-6)}{2(x-6)}=\frac{3}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572503563">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572503565"><m>\lim_{h\to0}\frac{<m:msup>(1+h)2</m:msup>-1h}</m></p></statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572499901">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572499903"><m>\lim_{t\to9}\frac{t-9}{\sqrt{t}-3}</m></p></statement>
+<solution id="fs-id1170572499939">
+<p id="fs-id1170572499942"><m>\lim_{x \to 9 }\frac{t-9}{\sqrt{t}-3}=\frac{9-9}{3-3}=\frac{0}{0};</m> then, <m>\lim_{t\to9}\frac{t-9}{\sqrt{t}-3}=\lim_{t\to9}\frac{t-9}{\sqrt{t}-3}\frac{\sqrt{t}+3}{\sqrt{t}+3}=\lim_{t\to9}(\sqrt{t}+3)=6</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571655856">
+<p id="fs-id1170571655859"><m>\lim_{h\to0}\frac{\frac{1a+h}-\frac{1}{a}h},</m> where <m>a</m> is a real-valued constant</p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571657392">
+<p id="fs-id1170571657395"><m>\lim_{\theta\to\pi }\frac{\sin \theta}{\text{ tan } \theta}</m></p>
+</statement>
+<solution id="fs-id1170571657432">
+<p id="fs-id1170571657434"><m>\lim_{\theta\to\pi }\frac{\sin \theta}{\text{ tan } \theta}=\frac{\sin \pi }{\text{ tan } \pi }=\frac{0}{0};</m> then, <m>\lim_{\theta\to\pi }\frac{\sin \theta}{\text{ tan } \theta}=\lim_{\theta\to\pi }\frac{\sin \theta}{\frac{\sin \theta}{\cos \theta}}=\lim_{\theta\to\pi }\cos \theta=-1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571599918">
+<p id="fs-id1170571599920"><m>\lim_{x \to 1 }\frac{x^3-1}{x^2-1}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572551468">
+<p id="fs-id1170572551470"><m>\lim_{x\to1/2}\frac{2x^2+3x-2}{2x-1}</m></p>
+</statement>
+<solution id="fs-id1170572551524">
+<p id="fs-id1170572551526"><m>\lim_{x\to1/2}\frac{2x^2+3x-2}{2x-1}=\frac{\frac{1}{2}+\frac{3}{2}-2}{1-1}=\frac{0}{0};</m> then, <m>\lim_{x\to1/2}\frac{2x^2+3x-2}{2x-1}=\lim_{x\to1/2}\frac{(2x-1)}{(x+2)}{2x-1}=\frac{5}{2}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571599677">
+<p id="fs-id1170571599679"><m>\lim_{x \to -3 }\frac{\sqrt{x+4}-1}{x+3}</m></p>
+</statement>
+
+<p id="fs-id1170572174650">In the following exercises, use direct substitution to obtain an undefined expression. Then, use the method of <xref ref="fs-id1170571611196"/> to simplify the function to help determine the limit.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572174660">
+<p id="fs-id1170572174662"><m>\lim_{x\to<m:msup>-2-</m:msup>}\frac{2x^2+7x-4}{x^2+x-2}</m></p>
+</statement>
+<solution id="fs-id1170572174722">
+<p id="fs-id1170572174724">-\infty</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572174731">
+<p id="fs-id1170572174734"><m>\lim_{x\to<m:msup>-2+</m:msup>}\frac{2x^2+7x-4}{x^2+x-2}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572174803">
+<p id="fs-id1170572174805"><m>\lim_{x \to 1^-}\frac{2x^2+7x-4}{x^2+x-2}</m></p>
+</statement>
+<solution id="fs-id1170571610804">
+<p id="fs-id1170571610806">-\infty</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571610814">
+<p id="fs-id1170571610816"><m>\lim_{x \to 1^+}\frac{2x^2+7x-4}{x^2+x-2}</m></p>
+</statement>
+
+<p id="fs-id1170571610881">In the following exercises, assume that <m>\lim_{x \to 6 }f(x)=4,\lim_{x \to 6 }g(x)=9,</m> and <m>\lim_{x \to 6 }h(x)=6.</m> Use these three facts and the limit laws to evaluate each limit.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170571610980">
+<p id="fs-id1170571610983"><m>\lim_{x \to 6 }2f(x)g(x)</m></p>
+</statement>
+<solution id="fs-id1170571669782">
+<p id="fs-id1170571669784"><m>\lim_{x \to 6 }2f(x)g(x)=2\lim_{x \to 6 }f(x)\lim_{x \to 6 }g(x)=72</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571669883">
+<p id="fs-id1170571669885"><m>\lim_{x \to 6 }\frac{g(x)-1}{f(x)}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572480476">
+<p id="fs-id1170572480478"><m>\lim_{x \to 6 }(f(x)+\frac{1}{3}g(x))</m></p>
+</statement>
+<solution id="fs-id1170572480530">
+<p id="fs-id1170572480532"><m>\lim_{x \to 6 }(f(x)+\frac{1}{3}g(x))=\lim_{x \to 6 }f(x)+\frac{1}{3}\lim_{x \to 6 }g(x)=7</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572243208">
+<p id="fs-id1170572243210"><m>\lim_{x \to 6 }\frac{<m:msup>(h(x))3</m:msup>2}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572217321">
+<p id="fs-id1170572217323"><m>\lim_{x \to 6 }\sqrt{g(x)-f(x)}</m></p>
+</statement>
+<solution id="fs-id1170572217365">
+<p id="fs-id1170572217368"><m>\lim_{x \to 6 }\sqrt{g(x)-f(x)}=\sqrt{\lim_{x \to 6 }g(x)-\lim_{x \to 6 }f(x)}=\sqrt{5}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572217472">
+<p id="fs-id1170572217474"><m>\lim_{x \to 6 }x\cdot f(x)</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572549030">
+<p id="fs-id1170572549032"><m>\lim_{x \to 6 }[(x+1)\cdot f(x)]</m></p>
+</statement>
+<solution id="fs-id1170572549082">
+<p id="fs-id1170572549084"><m>\lim_{x \to 6 }[(x+1)f(x)]=(\lim_{x \to 6 }(x+1))}{(\lim_{x \to 6 }f(x))=28</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571563316">
+<p id="fs-id1170571563319"><m>\lim_{x \to 6 }(f(x)\cdot g(x)-h(x))</m></p>
+</statement>
+
+<p id="fs-id1170572624104"><emphasis effect="bold">[T]</emphasis> In the following exercises, use a calculator to draw the graph of each piecewise-defined function and study the graph to evaluate the given limits.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572624115">
+<p id="fs-id1170572624117"><m>f(x)={<m:mtable columnalign="left"><mrow><m:mtd>x^2,\ampx\leq 3</mrow><mrow><m:mtd>x+4,\ampx\gt 3</mrow></md></p>
+<ol marker="(a)">
+<li><m>\lim_{x \to 3^-}f(x)</m></li>
+<li><m>\lim_{x \to 3^+}f(x)</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170572624248">
+<p id="fs-id1170572624250"><newline/>
+<description>"The graph of a piecewise function with two segments. The first is the parabola x^2, which exists for x\lt =3. The vertex is at the origin, it opens upward, and there is a closed circle at the endpoint (3,9). The second segment is the line x+4, which is a linear function existing for x \gt  3. There is an open circle at (3, 7), and the slope is 1.">
+<image source="CNX_Calc_Figure_02_03_202.jpg" width="50%">
+<newline/>
+a. 9; b. 7</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572380909">
+<p id="fs-id1170572380911"><m>g(x)={<m:mtable columnalign="left"><mrow><m:mtd>x^3-1,\ampx\leq 0</mrow><mrow><m:mtd>1,\ampx\gt 0</mrow></md></p>
+<ol marker="(a)">
+<li><m>\lim_{x \to 0^-}g(x)</m></li>
+<li><m>\lim_{x \to 0^+}g(x)</m></li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572381071">
+<p id="fs-id1170572381073"><m>h(x)={<m:mtable columnalign="left"><mrow><m:mtd>x^2-2x+1,\ampx\lt 2</mrow><mrow><m:mtd>3-x,\ampx\geq 2</mrow></md></p>
+<ol marker="(a)">
+<li><m>\lim_{x \to 2^-}h(x)</m></li>
+<li><m>\lim_{x \to 2^+}h(x)</m></li>
+</ol>
+</statement>
+<solution id="fs-id1170572268042">
+<p id="fs-id1170572268044"><newline/>
+<description>"The graph of a piecewise function with two segments. The first segment is the parabola x^2 – 2x + 1, for x \lt  2. It opens upward and has a vertex at (1,0). The second segment is the line 3-x for x\gt = 2. It has a slope of -1 and an x intercept at (3,0).">
+<image source="CNX_Calc_Figure_02_03_204.jpg" width="50%">
+<newline/>
+a. 1; b. 1</p>
+</solution>
+
+<p id="fs-id1170572268067">In the following exercises, use the following graphs and the limit laws to evaluate each limit.</p>
+<description>"Two graphs of piecewise functions. The upper is f(x), which has two linear segments. The first is a line with negative slope existing for x \lt  -3. It goes toward the point (-3,0) at x= -3. The next has increasing slope and goes to the point (-3,-2) at x=-3. It exists for x \gt  -3. Other key points are (0, 1), (-5,2), (1,2), (-7, 4), and (-9,6). The lower piecewise function has a linear segment and a curved segment. The linear segment exists for x \lt  -3 and has decreasing slope. It goes to (-3,-2) at x=-3. The curved segment appears to be the right half of a downward opening parabola. It goes to the vertex point (-3,2) at x=-3. It crosses the y axis a little below y=-2. Other key points are (0, -7/3), (-5,0), (1,-5), (-7, 2), and (-9, 4).">
+<image source="CNX_Calc_Figure_02_03_201.jpg" width="50%">
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572268092">
+<p id="fs-id1170572268094"><m>\lim_{x\to<m:msup>-3+</m:msup>}(f(x)+g(x))</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571690337">
+<p id="fs-id1170571690339"><m>\lim_{x\to<m:msup>-3-</m:msup>}(f(x)-3g(x))</m></p>
+</statement>
+<solution id="fs-id1170572434874">
+<p id="fs-id1170572434876"><m>\lim_{x\to<m:msup>-3-</m:msup>}(f(x)-3g(x))=\lim_{x\to<m:msup>-3-</m:msup>}f(x)-3\lim_{x\to<m:msup>-3-</m:msup>}g(x)=0+6=6</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572435010">
+<p id="fs-id1170572435012"><m>\lim_{x \to 0 }\frac{f(x)g(x)3}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572219520">
+<p id="fs-id1170572219522"><m>\lim_{x \to -5 }\frac{2+g(x)}{f(x)}</m></p>
+</statement>
+<solution id="fs-id1170572219570">
+<p id="fs-id1170572219572"><m>\lim_{x \to -5 }\frac{2+g(x)}{f(x)}=\frac{2+(\lim_{x \to -5 }g(x))}{\lim_{x \to -5 }f(x)}=\frac{2+02}=1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572590098">
+<p id="fs-id1170572590100"><m>\lim_{x \to 1 }<m:msup>(f(x))2</m:msup></m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572552595">
+<p id="fs-id1170572552597"><m>\lim_{x \to 1 }<m:mroot>f(x)-g(x)}{3</m:mroot></m></p>
+</statement>
+<solution id="fs-id1170572552640">
+<p id="fs-id1170572552642"><m>\lim_{x \to 1 }<m:mroot>f(x)-g(x)3</m:mroot>=<m:mroot>\lim_{x \to 1 }f(x)-\lim_{x \to 1 }g(x)3</m:mroot>=<m:mroot>2+53</m:mroot>=<m:mroot>73</m:mroot></m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572128653">
+<p id="fs-id1170572128656"><m>\lim_{x \to -7 }(x\cdot (x))</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572128834">
+<p id="fs-id1170572128836"><m>\lim_{x \to -9 }[x\cdot (x)+2\cdot (x)]</m></p>
+</statement>
+<solution id="fs-id1170572540772">
+<p id="fs-id1170572540774"><m>\lim_{x \to -9 }(xf(x)+2g(x))=(\lim_{x \to -9 }x)}{(\lim_{x \to -9 }f(x))+2\lim_{x \to -9 }(g(x))=(-9)}{(6)+2(4)=-46</m></p>
+</solution>
+
+<p id="fs-id1170572511239">For the following problems, evaluate the limit using the squeeze theorem. Use a calculator to graph the functions <m>f(x),g(x),</m> and <m>h(x)</m> when possible.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1170572511284">
+<p id="fs-id1170572511286"><emphasis effect="bold">[T]</emphasis> True or False? If <m>2x-1\leq g(x)\leq x^2-2x+3,</m> then <m>\lim_{x \to 2 }g(x)=0.</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170572511391">
+<p id="fs-id1170572511393"><emphasis effect="bold">[T]</emphasis> <m>\lim_{\theta\to0}<m:msup>\theta2</m:msup>\cos (\frac{1\theta})</m></p>
+</statement>
+<solution id="fs-id1170571625942">
+<p id="fs-id1170571625945">The limit is zero.<newline/>
+<description>"The graph of three functions over the domain [-1,1], colored red, green, and blue as follows: red: theta^2, green: theta^2 * cos (1/theta), and blue: - (theta^2). The red and blue functions open upwards and downwards respectively as parabolas with vertices at the origin. The green function is trapped between the two.">
+<image source="CNX_Calc_Figure_02_03_206.jpg" width="50%">
+</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571625968">
+<p id="fs-id1170571625970"><m>\lim_{x \to 0 }f(x),</m> where <m>f(x)={<m:mtable columnalign="left"><mrow><m:mtd>0,\ampx \text{ rational }</mrow><mrow><m:mtd>x^2,\ampx \text{ irrrational }</mrow></md></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571626096">
+<p id="fs-id1170571626098"><emphasis effect="bold">[T]</emphasis> In physics, the magnitude of an electric field generated by a point charge at a distance <m>r</m> in vacuum is governed by Coulomb’s law: <m>E(r)=\frac{q4\pi ε_0r^2},</m> where <m>E</m> represents the magnitude of the electric field, <m>q</m> is the charge of the particle, <m>r</m> is the distance between the particle and where the strength of the field is measured, and <m>\frac{14\pi ε_0}</m> is Coulomb’s constant: <m>8.988 × <m:msup>109</m:msup> \text{ N }\cdot m:msup>\text{ m }2</m:msup>/<m:msup>\text{ C }2</m:msup>.</m></p>
+<ol marker="(a)">
+<li>Use a graphing calculator to graph <m>E(r)</m> given that the charge of the particle is <m>q=<m:msup>10}{-10</m:msup>.</m></li>
+<li>Evaluate <m>\lim_{r\to 0^+}E(r).</m> What is the physical meaning of this quantity? Is it physically relevant? Why are you evaluating from the right?</li>
+</ol>
+</statement>
+<solution id="fs-id1170571612254">
+<p id="fs-id1170571612256">a.<newline/>
+<description>"A graph of a function with two curves. The first is in quadrant two and curves asymptotically to infinity along the y axis and to 0 along the x axis as x goes to negative infinity. The second is in quadrant one and curves asymptotically to infinity along the y axis and to 0 along the x axis as x goes to infinity.">
+<image source="CNX_Calc_Figure_02_03_207.jpg" width="50%">
+<newline/>
+b. \infty. The magnitude of the electric field as you approach the particle <m>q</m> becomes infinite. It does not make physical sense to evaluate negative distance.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1170571612289">
+<p id="fs-id1170571612291"><emphasis effect="bold">[T]</emphasis> The density of an object is given by its mass divided by its volume: <m>ρ=m/V.</m></p>
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572512567" list-type="enumerated" number-style="lower-alpha"><li>Use a calculator to plot the volume as a function of density <m>(V=m/ρ),</m> assuming you are examining something of mass 8 kg (<m>m=8\text{ ). }</m></li>
+<li>Evaluate <m>\lim_{ρ\to 0^+}V(ρ)</m> and explain the physical meaning.</li>
+</ol></statement>
+
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1170572512680">
+<term>constant multiple law for limits</term>
+<meaning id="fs-id1170572512686">the limit law <m>\lim_{x \to a }cf(x)=c\cdot lim_{x \to a }f(x)=cL</m>
+</meaning>
+</definition>
+<definition id="fs-id1170572512757">
+<term>difference law for limits</term>
+<meaning id="fs-id1170572512762">the limit law <m>\lim_{x \to a }(f(x)-g(x))=\lim_{x \to a }f(x)-\lim_{x \to a }g(x)=L-M</m>
+</meaning>
+</definition>
+<definition id="fs-id1170572478051">
+<term>limit laws</term>
+<meaning id="fs-id1170572478056">the individual properties of limits; for each of the individual laws, let <m>f(x)</m> and <m>g(x)</m> be defined for all <m>x\neq a</m> over some open interval containing <m>a</m>; assume that <m>L</m> and <m>M</m> are real numbers so that <m>\lim_{x \to a }f(x)=L</m> and <m>\lim_{x \to a }g(x)=M;</m> let <m>c</m> be a constant</meaning>
+</definition>
+<definition id="fs-id1170572541755">
+<term>power law for limits</term>
+<meaning id="fs-id1170572541761">the limit law <m>\lim_{x \to a }<m:msup>(f(x))n</m:msup>=<m:msup>(\lim_{x \to a }f(x))n</m:msup>=L^n</m> for every positive integer <m>n</m></meaning>
+</definition>
+<definition id="fs-id1170572541851">
+<term>product law for limits</term>
+<meaning id="fs-id1170572541857">the limit law <m>\lim_{x \to a }(f(x)\cdot (x))=\lim_{x \to a }f(x)\cdot lim_{x \to a }g(x)=L\cdot </m></meaning>
+</definition>
+<definition id="fs-id1170572291727">
+<term>quotient law for limits</term>
+<meaning id="fs-id1170572291733">the limit law <m>\lim_{x \to a }\frac{f(x)}{g(x)}=\frac{\lim_{x \to a }f(x)}{\lim_{x \to a }g(x)}=\frac{L}{M}</m> for <m>M\neq 0</m></meaning>
+</definition>
+<definition id="fs-id1170572291845">
+<term>root law for limits</term>
+<meaning id="fs-id1170572291851">the limit law <m>\lim_{x \to a }<m:mroot>f(x)n</m:mroot>=<m:mroot>\lim_{x \to a }f(x)n</m:mroot>=<m:mroot>Ln</m:mroot></m> for all <m>L</m> if <m>n</m> is odd and for <m>L\geq 0</m> if <m>n</m> is even</meaning>
+</definition>
+<definition id="fs-id1170572418897">
+<term>squeeze theorem</term>
+<meaning id="fs-id1170572418903">states that if <m>f(x)\leq g(x)\leq h(x)</m> for all <m>x\neq a</m> over an open interval containing <m>a</m> and <m>\lim_{x \to a }f(x)=L=\lim_{x \to a }h(x)</m> where <m>L</m> is a real number, then <m>\lim_{x \to a }g(x)=L</m></meaning>
+</definition>
+<definition id="fs-id1170572419050">
+<term>sum law for limits</term>
+<meaning id="fs-id1170572419055">The limit law <m>\lim_{x \to a }(f(x)+g(x))=\lim_{x \to a }f(x)+\lim_{x \to a }g(x)=L+M</m></meaning>
+</definition>
+</glossary>
+</document>
+?>

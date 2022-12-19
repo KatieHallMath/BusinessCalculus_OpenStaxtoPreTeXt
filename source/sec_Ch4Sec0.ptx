@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<introduction xml:id="sec_Ch4Sec0" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Introduction</title>
+
+
+<figure xml:id="CNX_Calc_Figure_04_00_002" class="splash">
+
+<image source="CNX_Calc_Figure_04_00_003.jpg" width="50%">
+<description>"A photo of a rocket lifting off." </description></image> <caption>As a rocket is being launched, at what rate should the angle of a video camera change to continue viewing the rocket? (credit: modification of work by Steve Jurvetson, Wikimedia Commons)</caption>
+</figure>
+<p id="fs-id1165043057434">A rocket is being launched from the ground and cameras are recording the event. A video camera is located on the ground a certain distance from the launch pad. At what rate should the angle of inclination (the angle the camera makes with the ground) change to allow the camera to record the flight of the rocket as it heads upward? <!--(See <xref ref="fs-id1165043116552" document="m53604"/>.)--></p>
+<p id="fs-id1165043065949">A rocket launch involves two related quantities that change over time. Being able to solve this type of problem is just one application of derivatives introduced in this chapter. We also look at how derivatives are used to find maximum and minimum values of functions. As a result, we will be able to solve applied optimization problems, such as maximizing revenue and minimizing surface area. In addition, we examine how derivatives are used to evaluate complicated limits, to approximate roots of functions, and to provide accurate graphs of functions.</p>
+</introduction>

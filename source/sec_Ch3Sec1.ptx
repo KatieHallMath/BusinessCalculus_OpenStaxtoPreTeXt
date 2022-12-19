@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_Ch3Sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Defining the Derivative</title>>
+  <introduction>
+  <title> Learning Objectives</title>
+  <ul>
+<li>Recognize the meaning of the tangent to a curve at a point.</li>
+<li>Calculate the slope of a tangent line.</li>
+<li>Identify the derivative as the limit of a difference quotient.</li>
+<li>Calculate the derivative of a given function at a point.</li>
+<li>Describe the velocity as a rate of change.</li>
+<li>Explain the difference between average velocity and instantaneous velocity.</li>
+<li>Estimate the derivative from a table of values.</li>
+</ul>
+
+<p id="fs-id1169739300479">Now that we have both a conceptual understanding of a limit and the practical ability to compute limits, we have established the foundation for our study of calculus, the branch of mathematics in which we compute derivatives and integrals. Most mathematicians and historians agree that calculus was developed independently by the Englishman Isaac <term class="no-emphasis">Newton</term> <m>\text{ (1643–1727) }</m> and the German Gottfried <term class="no-emphasis">Leibniz</term> <m>\text{ (1646–1716), }</m> whose images appear in <xref ref="CNX_Calc_Figure_03_01_001"/>. When we credit Newton and Leibniz with developing calculus, we are really referring to the fact that Newton and Leibniz were the first to understand the relationship between the derivative and the integral. Both mathematicians benefited from the work of predecessors, such as Barrow, Fermat, and Cavalieri. The initial relationship between the two mathematicians appears to have been amicable; however, in later years a bitter controversy erupted over whose work took precedence. Although it seems likely that Newton did, indeed, arrive at the ideas behind calculus first, we are indebted to Leibniz for the notation that we commonly use today.</p>
+<figure xml:id="CNX_Calc_Figure_03_01_001">
+<image source="CNX_Calc_Figure_03_01_001.jpg" width="50%">
+<description>"Photos of Newton and Leibniz."
+ </description></image> <caption>Newton and Leibniz are credited with developing calculus independently.</caption>
+</figure>
+</introduction>
+<subsection id="fs-id1169739218205">
+<title>Tangent Lines</title>
+<p id="fs-id1169739302308">We begin our study of calculus by revisiting the notion of secant lines and tangent lines. Recall that we used the slope of a secant line to a function at a point <m>(a,f(a))</m> to estimate the rate of change, or the rate at which one variable changes in relation to another variable. We can obtain the slope of the secant by choosing a value of <m>x</m> near <m>a</m> and drawing a line through the points <m>(a,f(a))</m> and <m>(x,f(x)),</m> as shown in <xref ref="CNX_Calc_Figure_03_01_002"/>. The slope of this line is given by an equation in the form of a difference quotient:</p>
+<me>m_{\text{ sec }}=\frac{f(x)-f(a)}{x-a}.</me>
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1169738929481">We can also calculate the slope of a secant line to a function at a value <m>a</m> by using this equation and replacing <m>x</m> with <m>a+h,</m> where <m>h</m> is a value close to 0. We can then calculate the slope of the line through the points <m>(a,f(a))</m> and <m>(a+h,f(a+h)).</m> In this case, we find the secant line has a slope given by the following difference quotient with increment <m>h\text{ : }</m></p><me>m_{\text{ sec }}=\frac{f(a+h)-f(a)}{a+h-a}=\frac{f(a+h)-f(a)}{h}.</me>
+<definition> <!-- Change next /note to /definition and remove above note-->
+<p id="fs-id1169738924962">Let <m>f</m> be a function defined on an interval <m>I</m> containing <m>a.</m> If <m>x\neq a</m> is in <m>I,</m> then</p>
+<me>Q=\frac{f(x)-f(a)}{x-a}</me>
+<p id="fs-id1169738879993">is a <term>difference quotient</term>.</p>
+<p id="fs-id1169739195558">Also, if <m>h\neq 0</m> is chosen so that <m>a+h</m> is in <m>I,</m> then</p>
+<me>Q=\frac{f(a+h)-f(a)}{h}</me>
+<p id="fs-id1169738913121">is a difference quotient with increment <m>h.</m></p>
+</definition>
+<note id="fs-id1169739019841" class="media-2">
+<p xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1169739040482">View the development of the <url href="http://www.openstax.org/l/20_calcapplets" visual="http://www.openstax.org/l/20_calcapplets">derivative</url> with this applet.</p></note>
+<p id="fs-id1169738819917">These two expressions for calculating the slope of a secant line are illustrated in <xref ref="CNX_Calc_Figure_03_01_002"/>. We will see that each of these two methods for finding the slope of a secant line is of value. Depending on the setting, we can choose one or the other. The primary consideration in our choice usually depends on ease of calculation.</p>
+<figure xml:id="CNX_Calc_Figure_03_01_002">
+<image source="CNX_Calc_Figure_03_01_002.jpg" width="100%">
+<description>"This figure consists of two graphs labeled a and b. Figure a shows the Cartesian coordinate plane with 0, a, and x marked on the x-axis. There is a curve labeled y = f(x) with points marked (a, f(a)) and (x, f(x)). There is also a straight line that crosses these two points (a, f(a)) and (x, f(x)). At the bottom of the graph, the equation msec = (f(x) - f(a))/(x - a) is given. Figure b shows a similar graph, but this time a + h is marked on the x-axis instead of x. Consequently, the curve labeled y = f(x) passes through (a, f(a)) and (a + h, f(a + h)) as does the straight line. At the bottom of the graph, the equation msec = (f(a + h) - f(a))/h is given."
+ </description></image> <caption>We can calculate the slope of a secant line in either of two ways.</caption>
+</figure>
+<p id="fs-id1169738909226">In <xref ref="CNX_Calc_Figure_03_01_003"/>(a) we see that, as the values of <m>x</m> approach <m>a,</m> the slopes of the secant lines provide better estimates of the rate of change of the function at <m>a.</m> Furthermore, the secant lines themselves approach the tangent line to the function at <m>a,</m> which represents the limit of the secant lines. Similarly, <xref ref="CNX_Calc_Figure_03_01_003"/>(b) shows that as the values of <m>h</m> get closer to <m>0,</m> the secant lines also approach the tangent line. The slope of the tangent line at <m>a</m> is the rate of change of the function at <m>a,</m> as shown in <xref ref="CNX_Calc_Figure_03_01_003"/>(c).</p>
+<figure xml:id="CNX_Calc_Figure_03_01_003">
+<image source="CNX_Calc_Figure_03_01_003.jpg" width="100%">
+<description>"This figure consists of three graphs labeled a, b, and c. Figure a shows the Cartesian coordinate plane with 0, a, x2, and x1 marked in order on the x-axis. There is a curve labeled y = f(x) with points marked (a, f(a)), (x2, f(x2)), and (x1, f(x1)). There are three straight lines: the first crosses (a, f(a)) and (x1, f(x1)); the second crosses (a, f(a)) and (x2, f(x2)); and the third only touches (a, f(a)), making it the tangent. At the bottom of the graph, the equation mtan = limx \to  a (f(x) - f(a))/(x - a) is given. Figure b shows a similar graph, but this time a + h2 and a + h1 are marked on the x-axis instead of x2 and x1. Consequently, the curve labeled y = f(x) passes through (a, f(a)), (a + h2, f(a + h2)), and (a + h1, f(a + h1)) and the straight lines similarly cross the graph as in Figure a. At the bottom of the graph, the equation mtan = limh \to  0 (f(a + h) - f(a))/h is given. Figure c shows only the curve labeled y = f(x) and its tangent at point (a, f(a))."
+</description></image> <caption>The secant lines approach the tangent line (shown in green) as the second point approaches the first.</caption>
+</figure>
+<note id="fs-id1169739096692" class="media-2">
+<p id="fs-id1169738875428">You can use this <url href="http://www.openstax.org/l/20_diffmicros" visual="http://www.openstax.org/l/20_diffmicros">site</url> to explore graphs to see if they have a tangent line at a point.</p>
+</note>
+<p id="fs-id1169738949813">In <xref ref="CNX_Calc_Figure_03_01_008"/> we show the graph of <m>f(x)=\sqrt{x}</m> and its tangent line at <m>(1,1)</m> in a series of tighter intervals about <m>x=1.</m> As the intervals become narrower, the graph of the function and its tangent line appear to coincide, making the values on the tangent line a good approximation to the values of the function for choices of <m>x</m> close to <m>1.</m> In fact, the graph of <m>f(x)</m> itself appears to be locally linear in the immediate vicinity of <m>x=1.</m></p>
+<figure xml:id="CNX_Calc_Figure_03_01_008">
+<image source="CNX_Calc_Figure_03_01_008.jpg" width="100%">
+<description>"This figure consists of four graphs labeled a, b, c, and d. Figure a shows the graphs of the square root of x and the equation y = (x + 1)/2 with the x-axis going from 0 to 4 and the y-axis going from 0 to 2.5. The graphs of these two functions look very close near 1; there is a box around where these graphs look close. Figure b shows a close up of these same two functions in the area of the box from Figure a, specifically x going from 0 to 2 and y going from 0 to 1.4. Figure c is the same graph as Figure b, but this one has a box from 0 to 1.1 in the x coordinate and 0.8 and 1 on the y coordinate. There is an arrow indicating that this is blown up in Figure d. Figure d shows a very close picture of the box from Figure c, and the two functions appear to be touching for almost the entire length of the graph."</description></image> <caption>For values of <m>x</m> close to <m>1,</m> the graph of <m>f(x)=\sqrt{x}</m> and its tangent line appear to coincide.</caption>
+</figure>
+<p id="fs-id1169738971600">Formally we may define the tangent line to the graph of a function as follows.</p>
+<definition > <!-- Change next /note to /definition and remove above note-->
+<p id="fs-id1169738962299">Let <m>f(x)</m> be a function defined in an open interval containing <m>a.</m> The <emphasis effect="italics">tangent line</emphasis> to <m>f(x)</m> at <m>a</m> is the line passing through the point <m>(a,f(a))</m> having slope</p>
+<men xml:id="fs-id1169739226063">m_{\text{ tan }}=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}</men>
+<p id="fs-id1169738970954">provided this limit exists.</p>
+<p id="fs-id1169738947329">Equivalently, we may define the tangent line to <m>f(x)</m> at <m>a</m> to be the line passing through the point <m>(a,f(a))</m> having slope</p>
+<men xml:id="fs-id1169738970614">m_{\text{ tan }}=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}</men>
+<p id="fs-id1169738888769">provided this limit exists.</p>
+</definition>
+<p id="fs-id1169739243045">Just as we have used two different expressions to define the slope of a secant line, we use two different forms to define the slope of the tangent line. In this text we use both forms of the definition. As before, the choice of definition will depend on the setting. Now that we have formally defined a tangent line to a function at a point, we can use this definition to find equations of tangent lines.</p>
+<example xml:id="fs-id1169739298611">
+ <statement id="fs-id1169738975370">
+<title>Finding a Tangent Line</title>
+<p id="fs-id1169739030550">Find the equation of the line tangent to the graph of <m>f(x)=x^2</m> at <m>x=3.</m></p>
+</statement>
+<solution id="fs-id1169739186668">
+<p id="fs-id1169738899144">First find the slope of the tangent line. In this example, use <xref ref="fs-id1169739226063"/>.</p>
+<md>
+  <mrow>m_{\text{ tan }}\amp=\lim_{x\to 3}\frac{f(x)-f(3)}{x-3}\amp\amp\text{ Apply the definition. }</mrow>
+  <mrow>\amp=\lim_{x\to 3}\frac{x^2-9}{x-3}\amp\amp\text{ Substitute } f(x)=x^2 \text{ and } f(3)=9.</mrow>
+  <mrow>\amp=\lim_{x\to 3}\frac{(x-3)(x+3)}{x-3}=\lim_{x\to 3}(x+3)=6\amp\amp\text{ Factor the numerator to evaluate the limit. }</mrow></md>
+<p id="fs-id1169739020694">Next, find a point on the tangent line. Since the line is tangent to the graph of <m>f(x)</m> at <m>x=3,</m> it passes through the point <m>(3,f(3)).</m> We have <m>f(3)=9,</m> so the tangent line passes through the point <m>(3,9).</m></p>
+<p id="fs-id1169738993948">Using the point-slope equation of the line with the slope <m>m=6</m> and the point <m>(3,9),</m> we obtain the line <m>y-9=6(x-3).</m> Simplifying, we have <m>y=6x-9.</m> The graph of <m>f(x)=x^2</m> and its tangent line at <m>3</m> are shown in <xref ref="CNX_Calc_Figure_03_01_005"/>.</p>
+<figure xml:id="CNX_Calc_Figure_03_01_005">
+<image source="CNX_Calc_Figure_03_01_005.jpg" width="50%">
+<description>"This figure consists of the graphs of f(x) = x squared and y = 6x - 9. The graphs of these functions appear to touch at x = 3."  </description></image> <caption>The tangent line to <m>f(x)</m> at <m>x=3.</m></caption>
+</figure>
+</solution>
+
+</example>
+<example xml:id="fs-id1169739223534">
+<title>The Slope of a Tangent Line Revisited</title>
+<statement id="fs-id1169739030059">
+<p id="fs-id1169739031271">Use <xref ref="fs-id1169738970614"/> to find the slope of the line tangent to the graph of <m>f(x)=x^2</m> at <m>x=3.</m></p>
+</statement>
+<solution id="fs-id1169739023994">
+<p id="fs-id1169738885423">The steps are very similar to <xref ref="fs-id1169739298611"/>. See <xref ref="fs-id1169738970614"/> for the definition.</p>
+<md>
+  <mrow>m_{\text{ tan }}\amp=\lim_{h\to 0}\frac{f(3+h)-f(3)}{h}\amp\text{ Apply the definition. }</mrow>
+  <mrow>\amp=\lim_{h\to 0}\frac{(3+h)^2-9}{h}\amp\text{ Substitute } f(3+h)=(3+h)^2 \text{ and } f(3)=9.</mrow>
+  <mrow>\amp=\lim_{h\to 0}\frac{9+6h+h^2-9}{h}\amp\text{ Expand and simplify to evaluate the limit. }</mrow><mrow>\amp=\lim_{h\to 0}\frac{h(6+h)}{h}=\lim_{h\to 0}(6+h)=6</mrow></md>
+<p id="fs-id1169738960593">We obtained the same value for the slope of the tangent line by using the other definition, demonstrating that the formulas can be interchanged.</p>
+</solution>
+</example>
+<example xml:id="fs-id1169738966727">
+<title>Finding the Equation of a Tangent Line</title>
+ <statement id="fs-id1169738969706">
+<p id="fs-id1169738935464">Find the equation of the line tangent to the graph of <m>f(x)=1\text{ / }x</m> at <m>x=2.</m></p>
+</statement>
+<solution id="fs-id1169738999233">
+<p id="fs-id1169739001198">We can use <xref ref="fs-id1169739226063"/>, but as we have seen, the results are the same if we use <xref ref="fs-id1169738970614"/>.</p>
+<md>
+  <mrow>m_{\text{ tan }}\amp=\lim_{x\to 2}\frac{f(x)-f(2)}{x-2}\amp\text{ Apply the definition. }</mrow>
+  <mrow>\amp=\lim_{x\to 2}\frac{\frac{1}{x}-\frac{1}{2}}{x-2}\amp\text{ Substitute } f(x)=\frac{1}{x} \text{ and }f(2)=\frac{1}{2}.</mrow>
+  <mrow>\amp=\lim_{x\to 2}\frac{\left(\frac{1}{x}-\frac{1}{2}\right)}{\left(x-2\right)}\cdot \frac{2x}{2x}\amp\text{ Multiply numerator and denominator by } 2x \text{ to simplify fractions. }</mrow>
+  <mrow>\amp=\lim_{x\to 2}\frac{2-x}{2x(x-2)}\amp\text{ Simplify. }</mrow>
+  <mrow>\amp=\lim_{x\to 2}\frac{-1}{2x}\amp\text{ Simplify using } \frac{2-x}{x-2}=-1,\text{ for } x\neq 2.</mrow>
+  <mrow>\amp=-\frac{1}{4}\amp\text{ Evaluate the limit. }</mrow></md>
+<p id="fs-id1169739270491">We now know that the slope of the tangent line is <m>-\frac{1}{4}.</m> To find the equation of the tangent line, we also need a point on the line. We know that <m>f(2)=\frac{1}{2}.</m> Since the tangent line passes through the point <m>(2,\frac{1}{2})</m> we can use the point-slope equation of a line to find the equation of the tangent line. Thus the tangent line has the equation <m>y=-\frac{1}{4}x+1.</m> The graphs of <m>f(x)=\frac{1}{x}</m> and <m>y=-\frac{1}{4}x+1</m> are shown in <xref ref="CNX_Calc_Figure_03_01_006"/>.</p>
+<figure xml:id="CNX_Calc_Figure_03_01_006">
+<image source="CNX_Calc_Figure_03_01_006.jpg" width="50%">
+<description>"This figure consists of the graphs of f(x) = 1/x and y = -x/4 + 1. The part of the graph f(x) = 1/x in the first quadrant appears to touch the other function’s graph at x = 2."
+  </description></image> <caption>The line is tangent to <m>f(x)</m> at <m>x=2.</m></caption>
+</figure>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1169739231712">
+<p id="fs-id1169739231715">Find the slope of the line tangent to the graph of <m>f(x)=\sqrt{x}</m> at <m>x=4.</m></p>
+</statement>
+<solution id="fs-id1169739195992">
+<p id="fs-id1169739236594"><m>\frac{1}{4}</m></p>
+</solution>
+<hint>
+<p id="fs-id1169738973750">Use either <xref ref="fs-id1169739226063"/> or <xref ref="fs-id1169738970614"/>. Multiply the numerator and the denominator by a conjugate.</p>
+</hint>
+</exercise>
+</subsection>
+<subsection id="fs-id1169739028315">
+<title>The Derivative of a Function at a Point</title>
+<p id="fs-id1169739269344">The type of limit we compute in order to find the slope of the line tangent to a function at a point occurs in many applications across many disciplines. These applications include velocity and acceleration in physics, marginal profit functions in business, and growth rates in biology. This limit occurs so frequently that we give this value a special name: the <term>derivative</term>. The process of finding a derivative is called <term>differentiation</term>.</p>
+<definition>
+<p id="fs-id1169738859079">Let <m>f(x)</m> be a function defined in an open interval containing <m>a.</m> The derivative of the function <m>f(x)</m> at <m>a,</m> denoted by <m>f'(a),</m> is defined by</p>
+<men xml:id="fs-id1169739179144">f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}</men>
+<p id="fs-id1169739032184">provided this limit exists.</p>
+<p id="fs-id1169739032188">Alternatively, we may also define the derivative of <m>f(x)</m> at <m>a</m> as</p>
+<men xml:id="fs-id1169739188551">f'(a)=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}.</men>
+</definition>
+<example xml:id="fs-id1169739198956">
+<title>Estimating a Derivative</title>
+ <statement id="fs-id1169739204504">
+<p id="fs-id1169739204510">For <m>f(x)=x^2,</m> use a table to estimate <m>f'(3)</m> using <xref ref="fs-id1169739179144"/>.</p>
+</statement>
+<solution id="fs-id1169739014532">
+<p id="fs-id1169739033831">Create a table using values of <m>x</m> just below <m>3</m> and just above <m>3.</m></p>
+<table xml:id="fs-id1169739301095" class="unnumbered" summary="This table has seven rows and two columns. The first row is a header row and it labels each column. The first column header is x and the second column is (x2 - 9)/(x - 3). Under the first column are the values 2.9, 2.99, 2.999, 3.001, 3.01, and 3.1. Under the second column are the values 5.9, 5.99, 5.999, 6.001, 6.01, and 6.1.">
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left"><m>x</m></cell>
+<cell valign="top" halign ="left"><m>\frac{x^2-9}{x-3}</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>2.9</m></cell>
+<cell valign="top" halign ="left"><m>5.9</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>2.99</m></cell>
+<cell valign="top" halign ="left"><m>5.99</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>2.999</m></cell>
+<cell valign="top" halign ="left"><m>5.999</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>3.001</m></cell>
+<cell valign="top" halign ="left"><m>6.001</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>3.01</m></cell>
+<cell valign="top" halign ="left"><m>6.01</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>3.1</m></cell>
+<cell valign="top" halign ="left"><m>6.1</m></cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1169739032830">After examining the table, we see that a good estimate is <m>f'(3)=6.</m></p>
+</solution>
+
+</example>
+<exercise> <!-- Change /note to /end exercise-->
+
+<!-- Move title outside statement--> <statement id="fs-id1169739298318">
+<p id="fs-id1169739298320">For <m>f(x)=x^2,</m> use a table to estimate <m>f'(3)</m> using <xref ref="fs-id1169739188551"/>.</p>
+</statement>
+<solution id="fs-id1169739190377">
+<p id="fs-id1169739190379"><m>6</m></p>
+</solution>
+<hint>
+
+<p id="fs-id1169739027513">Evaluate <m>\frac{(x+h)-x^2}{h}</m> at <m>h=-0.1,-0.01,-0.001,0.001,0.01,0.1</m></p>
+</hint>
+
+</exercise>
+<example xml:id="fs-id1169739044032">
+<title>Finding a Derivative</title>
+<statement id="fs-id1169739129044">
+<p id="fs-id1169739001692">For <m>f(x)=3x^2-4x+1,</m> find <m>f'(2)</m> by using <xref ref="fs-id1169739179144"/>.</p>
+</statement>
+<solution id="fs-id1169739104710">
+<p id="fs-id1169739104712">Substitute the given function and value directly into the equation.</p>
+<md><mrow>f'(x)\amp=\lim_{x\to 2}\frac{f(x)-f(2)}{x-2}\amp\text{ Apply the definition. }</mrow><mrow>\amp=\lim_{x\to 2}\frac{(3x^2-4x+1)-5}{x-2}\amp\text{ Substitute } f(x)=3x^2-4x+1 \text{ and } f(2)=5.</mrow><mrow>\amp=\lim_{x\to 2}\frac{(x-2)(3x+2)}{x-2}\amp\text{ Simplify and factor the numerator. }</mrow><mrow>\amp=\lim_{x\to 2}(3x+2)\amp\text{ Cancel the common factor. }</mrow><mrow>\amp=8\amp\text{ Evaluate the limit. }</mrow></md>
+</solution>
+
+</example>
+<example xml:id="fs-id1169739093789">
+<title>Revisiting the Derivative</title>
+ <statement id="fs-id1169739204629">
+<p id="fs-id1169739025974">For <m>f(x)=3x^2-4x+1,</m> find <m>f'(2)</m> by using <xref ref="fs-id1169739188551"/>.</p>
+</statement>
+<solution id="fs-id1169739270482">
+<p id="fs-id1169739270484">Using this equation, we can substitute two values of the function into the equation, and we should get the same value as in <xref ref="fs-id1169739044032"/>.</p>
+<md>
+  <mrow>f'(2)\amp=\lim_{h\to 0}\frac{f(2+h)-f(2)}{h}\amp\amp\text{ Apply the definition. }</mrow>
+  <mrow>\amp=\lim_{h\to 0}\frac{(3(2+h)^2-4(2+h)+1)-5}{h}\amp\amp\text{ Substitute } f(2)=5 \text{ and }f(2+h)=3(2+h)^2-4(2+h)+1.</mrow>
+  <mrow>\amp=\lim_{h\to 0}\frac{3h^2+8h}{h}\amp\amp\text{ Simplify the numerator. }</mrow>
+  <mrow>\amp=\lim_{h\to 0}\frac{h(3h+8)}{h}\amp\amp\text{ Factor the numerator. }</mrow>
+  <mrow>\amp=\lim_{h\to 0}(3h+8)\amp\amp\text{ Cancel the common factor. }</mrow>
+  <mrow>\amp=8\amp\amp\text{ Evaluate the limit. }</mrow></md>
+<p id="fs-id1169738850760">The results are the same whether we use <xref ref="fs-id1169739179144"/> or <xref ref="fs-id1169739188551"/>.</p>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1169739236876">
+<p id="fs-id1169739269938">For <m>f(x)=x^2+3x+2,</m> find <m>f'(1).</m></p>
+</statement>
+<solution id="fs-id1169739293548">
+<p id="fs-id1169739293550"><m>f'(1)=5</m></p>
+</solution>
+<hint>
+
+<p id="fs-id1169736618844">Use either <xref ref="fs-id1169739179144"/>, <xref ref="fs-id1169739188551"/>, or try both. Use either <xref ref="fs-id1169738966727"/> or <xref ref="fs-id1169739198956"/> as a guide.</p>
+</hint>
+</exercise>
+</subsection>
+<subsection id="fs-id1169736616175">
+<title>Velocities and Rates of Change</title>
+<p id="fs-id1169739353680">Now that we can evaluate a derivative, we can use it in velocity applications. Recall that if <m>s(t)</m> is the position of an object moving along a coordinate axis, the <term class="no-emphasis">average velocity</term> of the object over a time interval <m>[a,t]</m> if <m>t\gt a</m> or <m>[t,a]</m> if <m>t\lt a</m> is given by the difference quotient</p>
+<men xml:id="fs-id1169739303202">v_\text{ ave }=\frac{s(t)-s(a)}{t-a}.</men>
+<p id="fs-id1169739189992">As the values of <m>t</m> approach <m>a,</m> the values of <m>v_\text{ ave }</m> approach the value we call the <term class="no-emphasis">instantaneous velocity</term> at <m>a.</m> That is, instantaneous velocity at <m>a,</m> denoted <m>v(a),</m> is given by</p>
+<men>v(a)=s'(a)=\lim_{t\to a}\frac{s(t)-s(a)}{t-a}.</men>
+<p id="fs-id1169739064816">To better understand the relationship between average velocity and instantaneous velocity, see <xref ref="CNX_Calc_Figure_03_01_007"/>. In this figure, the slope of the tangent line (shown in red) is the instantaneous velocity of the object at time <m>t=a</m> whose position at time <m>t</m> is given by the function <m>s(t).</m> The slope of the secant line (shown in green) is the average velocity of the object over the time interval <m>[a,t].</m></p>
+<figure xml:id="CNX_Calc_Figure_03_01_007">
+  <image source="CNX_Calc_Figure_03_01_007.jpg" width="50%">
+<description>"This figure consists of the Cartesian coordinate plane with 0, a, and t1 marked on the t-axis. The function y = s(t) is graphed in the first quadrant along with two lines marked tangent and secant. The tangent line touches y = s(t) at only one point, (a, s(a)). The secant line touches y = s(t) at two points: (a, s(a)) and (t1, s(t1))." </description></image> <caption>The slope of the secant line is the average velocity over the interval <m>[a,t].</m> The slope of the tangent line is the instantaneous velocity.</caption>
+</figure>
+<p id="fs-id1169736619727">We can use <xref ref="fs-id1169739179144"/> to calculate the instantaneous velocity, or we can estimate the velocity of a moving object by using a table of values. We can then confirm the estimate by using <xref ref="fs-id1169739303202"/>.</p>
+<example xml:id="fs-id1169739179204">
+
+<!--Commenting our physics
+<title>Estimating Velocity</title>
+<statement id="fs-id1169739179208">
+<p id="fs-id1169739188880">A lead weight on a spring is oscillating up and down. Its position at time <m>t</m> with respect to a fixed horizontal line is given by <m>s(t)=\sin t</m> (<xref ref="CNX_Calc_Figure_03_01_010"/>). Use a table of values to estimate <m>v(0).</m> Check the estimate by using <xref ref="fs-id1169739179144"/>.</p>
+<figure xml:id="CNX_Calc_Figure_03_01_010">
+  <image source="CNX_Calc_Figure_03_01_010.jpg" width="50%">
+<description>"A picture of a spring hanging down with a weight at the end. There is a horizontal dashed line marked 0 a little bit above the weight."
+ </description></image> <caption>A lead weight suspended from a spring in vertical oscillatory motion.</caption>
+</figure>
+</statement>
+<solution id="fs-id1169738960038">
+<p id="fs-id1169738960040">We can estimate the instantaneous velocity at <m>t=0</m> by computing a table of average velocities using values of <m>t</m> approaching <m>0,</m> as shown in <xref ref="fs-id1169739242675"/>.</p>
+<table xml:id="fs-id1169739242675" summary="This table has seven rows and two columns. The first row is a header row and it labels each column. The first column header is x and the second column is (sin t - sin 0)/(t - 0) = (sin t)/t. Under the first column are the values -0.1, -0.01, -0.001, 0.001, 0.01, and 0.1. Under the second column are the values 0.998334166, 0.9999833333, 0.999999833, 0.999999833, 0.9999833333, and 0.998334166.">
+<title>Average velocities using values of <m>t</m> approaching 0</title>
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left"><m>t</m></cell>
+<cell valign="top" halign ="left"><m>\frac{\sin t-\sin 0}{t-0}=\frac{\sin t}{t}</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>-0.1</m></cell>
+<cell valign="top" halign ="left"><m>0.998334166</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>-0.01</m></cell>
+<cell valign="top" halign ="left"><m>0.9999833333</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>-0.001</m></cell>
+<cell valign="top" halign ="left"><m>0.999999833</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>0.001</m></cell>
+<cell valign="top" halign ="left"><m>0.999999833</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>0.01</m></cell>
+<cell valign="top" halign ="left"><m>0.9999833333</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>0.1</m></cell>
+<cell valign="top" halign ="left"><m>0.998334166</m></cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1169739188902">From the table we see that the average velocity over the time interval <m>[-0.1,0]</m> is <m>0.998334166,</m> the average velocity over the time interval <m>[-0.01,0]</m> is <m>0.9999833333,</m> and so forth. Using this table of values, it appears that a good estimate is <m>v(0)=1.</m></p>
+<p id="fs-id1169739298311">By using <xref ref="fs-id1169739179144"/>, we can see that</p>
+<me>v(0)=s'(0)=\lim_{t\to 0}\frac{\sin t-\sin 0}{t-0}=\lim_{t\to 0}\frac{\sin tt}=1.</me>
+<p id="fs-id1169739111046">Thus, in fact, <m>v(0)=1.</m></p>
+</solution>
+-->
+
+<title> Estimating Marginal Cost</title>
+<statement>
+<p>The cost function for coffee is given by <m>C(x)=\frac{18}{x}</m> where <m>x</m> is the number of thousand items made. Use a table to estimate the marginal cost of producing 1000 items and interpret.</p>
+</statement>
+<solution>
+<p>Using <xref ref="fs-id1169739179144"/>, we can estimate the marginal cost at <m>x=1000</m> by computing a table of the slopes of the secant line using values of <m>x</m> approaching <m>1000</m>. This is shown in <xref ref="fs-id1169739242675"/>.</p>
+<table xml:id="fs-id1169739242675" summary="This table has seven rows and two columns. The first row is a header row and it labels each column. The first column header is x and the second column is (C(x)-C(1))/(x - 1). Under the first column are the values 0.9, 0.99, 0.999, 1.001, 1.01, and 1.1. Under the second column are the values -20, -18.18181818, -18.01801802, -17.98201798, -17.82178218, and -16.36363636.">
+<title>Slopes of the secant lines using values of <m>x</m> approaching 1</title>
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left"><m>x</m></cell>
+<cell valign="top" halign ="left"><m>\frac{C(x)-C(1)}{x-1}</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>0.9</m></cell>
+<cell valign="top" halign ="left"><m>-20</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>0.99</m></cell>
+<cell valign="top" halign ="left"><m>-18.18181818</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>0.999</m></cell>
+<cell valign="top" halign ="left"><m>-18.01801802</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>1.001</m></cell>
+<cell valign="top" halign ="left"><m>-17.98201798</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>1.01</m></cell>
+<cell valign="top" halign ="left"><m>-17.82178218</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>1.1</m></cell>
+<cell valign="top" halign ="left"><m>-16.36363636</m></cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1169739188902">From the table we see that the slope of the secant line over the interval <m>[0.9,1]</m> is <m>-20,</m> the slope of the secant line over the interval <m>[0.99,1]</m> is <m>-18.18181818,</m> and so forth. Using this table of values, it appears that a good estimate is <m>C'(1)=-18.</m></p>
+<p> When <m>1000</m> items are produced, the cost is decreasing at a rate of <m>\$18</m> per thousand items made. So if we produce <m>1000</m> more items, we can expect costs to drop by <m>\$18</m>.</p>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1169739220846">
+<p id="fs-id1169739220848">A rock is dropped from a height of <m>64</m> feet. Its height above ground at time <m>t</m> seconds later is given by <m>s(t)=-16t^2+64,0 \leq t \leq 2.</m> Find its instantaneous velocity <m>1</m> second after it is dropped, using <xref ref="fs-id1169739179144"/>.</p>
+</statement>
+<solution id="fs-id1169739298452">
+<p id="fs-id1169739298454"><m>-32</m> ft/s</p>
+</solution>
+<hint>
+
+<p id="fs-id1169739189236"><m>v(t)=s'(t).</m> Follow the earlier examples of the derivative using <xref ref="fs-id1169739179144"/>.</p>
+</hint>
+
+</exercise>
+<p id="fs-id1169739305376">As we have seen throughout this section, the slope of a tangent line to a function and instantaneous velocity are related concepts. Each is calculated by computing a derivative and each measures the instantaneous rate of change of a function, or the rate of change of a function at any point along the function.</p>
+<definition>
+<p id="fs-id1169739269977">The <term>instantaneous rate of change</term> of a function <m>f(x)</m> at a value <m>a</m> is its derivative <m>f'(a).</m></p>
+</definition>
+<example xml:id="fs-id1169739204154">
+<title>Chapter Opener: Estimating Rate of Change of Velocity</title>
+ <statement id="fs-id1169739204158">
+<figure xml:id="CNX_Calc_Figure_03_01_009">
+<image source="CNX_Calc_Figure_03_01_009.jpg" width="50%">
+<description>"The same sports car speeding along a winding road from the beginning of the chapter."
+ </description></image> <caption>(credit: modification of work by Codex41, Flickr)</caption>
+</figure>
+<p id="fs-id1169739204172">Reaching a top speed of <m>270.49</m> mph, the Hennessey Venom GT is one of the fastest cars in the world. In tests it went from <m>0</m> to <m>60</m> mph in <m>3.05</m> seconds, from <m>0 \text{ to } 100</m> mph in <m>5.88</m> seconds, from <m>0 \text{ to } 200</m> mph in <m>14.51</m> seconds, and from <m>0 \text{ to } 229.9</m> mph in <m>19.96</m> seconds. Use this data to draw a conclusion about the rate of change of velocity (that is, its <term class="no-emphasis">acceleration</term>) as it approaches <m>229.9</m> mph. Does the rate at which the car is accelerating appear to be increasing, decreasing, or constant?</p>
+</statement>
+<solution id="fs-id1169739298971">
+<p id="fs-id1169739298973">First observe that <m>60</m> mph = <m>88</m> ft/s, <m>100</m> mph <m>\approx146.67</m> ft/s, <m>200</m> mph <m>\approx293.33</m> ft/s, and <m>229.9</m> mph <m>\approx337.19</m> ft/s. We can summarize the information in a table.</p>
+<table xml:id="fs-id1169739188462" summary="This table has six rows and two columns. The first row is a header row and it labels each column. The first column header is x and the second column is v(t). Under the first column are the values 0, 3.05, 5.88, 14.51, and 19.96. Under the second column are the values 0, 88, 147.67, 293.33, and 337.19.">
+<title><m>v(t)</m> at different values of <m>t</m></title>
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left"><m>t</m></cell>
+<cell valign="top" halign ="left"><m>v(t)</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>0</m></cell>
+<cell valign="top" halign ="left"><m>0</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>3.05</m></cell>
+<cell valign="top" halign ="left"><m>88</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>5.88</m></cell>
+<cell valign="top" halign ="left"><m>147.67</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>14.51</m></cell>
+<cell valign="top" halign ="left"><m>293.33</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>19.96</m></cell>
+<cell valign="top" halign ="left"><m>337.19</m></cell>
+</row>
+</tabular>
+</table>
+<p id="fs-id1169739019682">Now compute the average acceleration of the car in feet per second on intervals of the form <m>[t,19.96]</m> as <m>t</m> approaches <m>19.96,</m> as shown in the following table.</p>
+<table xml:id="fs-id1169739188868" summary="This table has five rows and two columns. The first row is a header row and it labels each column. The first column header is x and the second column is (v(t) - v(19.96))/(t - 19.96) = (v(t) - 337.19)/(t - 19.96). Under the first column are the values 0, 3.05, 5.88, and 14.51. Under the second column are the values 16.89, 14.74, 13.46, and 8.05.">
+<title>Average acceleration</title>
+<tabular>
+<row valign="top" header="yes">
+<cell valign="top" halign ="left"><m>t</m></cell>
+<cell valign="top" halign ="left"><m>\frac{v(t)-v(19.96)}{t-19.96}=\frac{v(t)-337.19}{t-19.96}</m></cell>
+</row>
+
+
+<row>
+<cell valign="top" halign ="left"><m>0.0</m></cell>
+<cell valign="top" halign ="left"><m>16.89</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>3.05</m></cell>
+<cell valign="top" halign ="left"><m>14.74</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>5.88</m></cell>
+<cell valign="top" halign ="left"><m>13.46</m></cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>14.51</m></cell>
+<cell valign="top" halign ="left"><m>8.05</m></cell>
+</row>
+</tabular>
+
+</table>
+<p id="fs-id1169739303947">The rate at which the car is accelerating is decreasing as its velocity approaches <m>229.9</m> mph <m>(337.19</m> ft/s).</p>
+</solution>
+
+</example>
+<example xml:id="fs-id1169739187343">
+<title>Rate of Change of Temperature</title>
+ <statement id="fs-id1169739187347">
+<p id="fs-id1169739187352">A homeowner sets the thermostat so that the temperature in the house begins to drop from <m>70\text{ ° }\text{ F }</m> at <m>9</m> p.m., reaches a low of <m>60\text{ ° }</m> during the night, and rises back to <m>70\text{ ° }</m> by <m>7</m> a.m. the next morning. Suppose that the temperature in the house is given by <m>T(t)=0.4t^2-4t+70</m> for <m>0 \leq t \leq 10,</m> where <m>t</m> is the number of hours past <m>9</m> p.m. Find the instantaneous rate of change of the temperature at midnight.</p>
+</statement>
+<solution id="fs-id1169739297922">
+<p id="fs-id1169739297924">Since midnight is <m>3</m> hours past <m>9</m> p.m., we want to compute <m>T'(3).</m> Refer to <xref ref="fs-id1169739179144"/>.</p>
+<md><mrow>T'(3)\amp=\lim_{t\to 3}\frac{T(t)-T(3)}{t-3}\amp\amp\text{ Apply the definition. }</mrow>
+<mrow>\amp=\lim_{t\to 3}\frac{0.4t^2-4t+70-61.6}{t-3}\amp\amp\text{ Substitute } T(t)=0.4t^2-4t+70 \text{ and }T(3)=61.6.</mrow>
+<mrow>\amp=\lim_{t\to 3}\frac{0.4t^2-4t+8.4}{t-3}\amp\amp\text{ Simplify. }</mrow>
+<mrow>\amp=\lim_{t\to 3}\frac{0.4(t-3)(t-7)}{t-3}\amp\amp \text{Factor.}</mrow>
+<mrow>\amp=\lim_{t\to 3}0.4(t-7)\amp\amp\text{ Cancel. }</mrow><mrow>\amp=-1.6\amp\amp\text{ Evaluate the limit. }</mrow></md>
+<p id="fs-id1169739274032">The instantaneous rate of change of the temperature at midnight is <m>-1.6\text{ ° }\text{ F }</m> per hour.</p>
+</solution>
+
+</example>
+<example xml:id="fs-id1169739253544">
+<title>Rate of Change of Profit</title>
+ <statement id="fs-id1169739253548">
+<p id="fs-id1169739253553">A toy company can sell <m>x</m> electronic gaming systems at a price of <m>p=-0.01x+400</m> dollars per gaming system. The cost of manufacturing <m>x</m> systems is given by <m>C(x)=100x+10,000</m> dollars. Find the rate of change of profit when <m>10,000</m> games are produced. Should the toy company increase or decrease production?</p>
+</statement>
+<solution id="fs-id1169739274606">
+<p id="fs-id1169739274608">The profit <m>P(x)</m> earned by producing <m>x</m> gaming systems is <m>R(x)-C(x),</m> where <m>R(x)</m> is the revenue obtained from the sale of <m>x</m> games. Since the company can sell <m>x</m> games at <m>p=-0.01x+400</m> per game,</p>
+<me>R(x)=xp=x(-0.01x+400)=-0.01x^2+400x.</me>
+<p id="fs-id1169739302924">Consequently,</p>
+<me>P(x)=-0.01x^2+300x-10,000.</me>
+<p id="fs-id1169739190488">Therefore, evaluating the rate of change of profit gives</p>
+<md><mrow>P'(10000)\amp=\lim_{x\to 10000}\frac{P(x)-P(10000)}{x-10000}</mrow><mrow>\amp=\lim_{x\to 10000}\frac{-0.01x^2+300x-10000-1990000}{x-10000}</mrow><mrow>\amp=\lim_{x\to 10000}\frac{-0.01x^2+300x-2000000}{x-10000}</mrow><mrow>\amp=100.</mrow></md>
+<p id="fs-id1169736587942">Since the rate of change of profit <m>P'(10,000)\gt 0</m> and <m>P(10,000)\gt 0,</m> the company should increase production.</p>
+</solution>
+
+</example>
+<exercise>  <statement id="fs-id1169739273083">
+<p id="fs-id1169739273085">A coffee shop determines that the daily profit on scones obtained by charging <m>s</m> dollars per scone is <m>P(s)=-20s^2+150s-10.</m> The coffee shop currently charges <m>\$3.25</m> per scone. Find <m>P'(3.25),</m> the rate of change of profit when the price is <m>\$3.25</m> and decide whether or not the coffee shop should consider raising or lowering its prices on scones.</p>
+</statement>
+<solution id="fs-id1169739242328">
+<p id="fs-id1169739242330"><m>P'(3.25)=20\gt 0;</m> raise prices</p>
+</solution>
+<hint>
+
+<p id="fs-id1169736611546">Use <xref ref="fs-id1169739253544"/> for a guide.</p>
+</hint>
+
+</exercise>
+</subsection>
+<subsection id="fs-id1169736611554" class="key-concepts">
+<title>Key Concepts</title>
+<ul id="fs-id1169736611561" list-type="bulleted" bullet-style="bullet">
+<li>The slope of the tangent line to a curve measures the instantaneous rate of change of a curve. We can calculate it by finding the limit of the difference quotient or the difference quotient with increment <m>h.</m></li>
+<li>The derivative of a function <m>f(x)</m> at a value <m>a</m> is found using either of the definitions for the slope of the tangent line.</li>
+<li>Velocity is the rate of change of position. As such, the velocity <m>v(t)</m> at time <m>t</m> is the derivative of the position <m>s(t)</m> at time <m>t.</m> Average velocity is given by<newline/>
+<me>v_\text{ ave }=\frac{s(t)-s(a)}{t-a}.</me>
+Instantaneous velocity is given by<newline/>
+<me>v(a)=s'(a)=\lim_{t\to a}\frac{s(t)-s(a)}{t-a}.</me></li>
+<li>We may estimate a derivative by using a table of values.</li>
+</ul>
+</subsection>
+<subsection id="fs-id1169739274316" class="key-equations">
+<title>Key Equations</title>
+<ul id="fs-id1169739274323" list-type="bulleted" bullet-style="bullet">
+<li><emphasis effect="bold">Difference quotient</emphasis><newline/>
+<m>Q=\frac{f(x)-f(a)}{x-a}</m></li>
+<li><emphasis effect="bold">Difference quotient with increment</emphasis> <m>h</m>
+<me>Q=\frac{f(a+h)-f(a)}{a+h-a}=\frac{f(a+h)-f(a)}{h}</me></li>
+<li><emphasis effect="bold">Slope of tangent line</emphasis><newline/>
+<md>
+<mrow>m_{\text{ tan }}\amp=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}</mrow>
+<mrow>m_{\text{ tan }}\amp=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}</mrow>
+</md></li>
+<li><emphasis effect="bold">Derivative of</emphasis> <m>f(x)</m> <emphasis effect="bold">at</emphasis> <m>a</m>
+<md>
+<mrow>f'(a)\amp=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}</mrow>
+<mrow>f'(a)\amp=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}</mrow>
+</md></li>
+<li><emphasis effect="bold">Average velocity</emphasis><newline/>
+<m>v_{\text{ ave }}=\frac{s(t)-s(a)}{t-a}</m></li>
+<li><emphasis effect="bold">Instantaneous velocity</emphasis><newline/>
+<m>\displaystyle{v(a)=s'(a)=\lim_{t\to a}\frac{s(t)-s(a)}{t-a}}</m></li>
+</ul>
+</subsection>
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+
+<?ignore
+
+
+<section id="fs-id1169736611271" class="section-exercises">
+<p id="fs-id1169736611276">For the following exercises, use <xref ref="fs-id1169739226063"/> to find the slope of the secant line between the values <m>x_1</m> and <m>x_2</m> for each function <m>y=f(x).</m></p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169736611317">
+<p id="fs-id1169736611319"><m>f(x)=4x+7;x_1=2,x_2=5</m></p>
+</statement>
+<solution id="fs-id1169739301849">
+<p id="fs-id1169739301851"><m>4</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739301861">
+<p id="fs-id1169739301863"><m>f(x)=8x-3;x_1=-1,x_2=3</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736589138">
+<p id="fs-id1169736589140"><m>f(x)=x^2+2x+1;x_1=3,x_2=3.5</m></p>
+</statement>
+<solution id="fs-id1169739302799">
+<p id="fs-id1169739302801"><m>8.5</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739302812">
+<p id="fs-id1169739302814"><m>f(x)=\text{ - }x^2+x+2;x_1=0.5,x_2=1.5</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739302883">
+<p id="fs-id1169739304574"><m>f(x)=\frac{43x-1};x_1=1,x_2=3</m></p>
+</statement>
+<solution id="fs-id1169739304628">
+<p id="fs-id1169739304630"><m>-\frac{3}{4}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739304646">
+<p id="fs-id1169739304648"><m>f(x)=\frac{x-7}{2x+1};x_1=0,x_2=2</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739305160">
+<p id="fs-id1169739305162"><m>f(x)=\sqrt{x};x_1=1,x_2=16</m></p>
+</statement>
+<solution id="fs-id1169736613356">
+<p id="fs-id1169736613358"><m>0.2</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736613368">
+<p id="fs-id1169736613371"><m>f(x)=\sqrt{x-9};x_1=10,x_2=13</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736594855">
+<p id="fs-id1169736594857"><m>f(x)=<m:msup>x1\text{ / }3</m:msup>+1;x_1=0,x_2=8</m></p>
+</statement>
+<solution id="fs-id1169736594912">
+<p id="fs-id1169736594914"><m>0.25</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736594925">
+<p id="fs-id1169736594927"><m>f(x)=6<m:msup>x2\text{ / }3</m:msup>+2<m:msup>x1\text{ / }3</m:msup>;x_1=1,x_2=27</m></p>
+</statement>
+
+<p id="fs-id1169739188626">For the following functions,</p>
+<ol marker="(a)">
+<li>use <xref ref="fs-id1169738970614"/> to find the slope of the tangent line <m>m_{\text{ tan }}=f'(a),</m> and</li>
+<li>find the equation of the tangent line to <m>f</m> at <m>x=a.</m></li>
+</ol>
+
+<!-- Move title outside statement--> <statement id="fs-id1169736610048">
+<p id="fs-id1169736610051"><m>f(x)=3-4x,a=2</m></p>
+</statement>
+<solution id="fs-id1169736610085">
+<p id="fs-id1169736610087">a. <m>-4</m> b. <m>y=3-4x</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736611613">
+<p id="fs-id1169736611615"><m>f(x)=\frac{x}{5}+6,a=-1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739303248">
+<p id="fs-id1169739303250"><m>f(x)=x^2+x,a=1</m></p>
+</statement>
+<solution id="fs-id1169739303286">
+<p id="fs-id1169739303288">a. <m>3</m> b. <m>y=3x-1</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739303314">
+<p id="fs-id1169739303317"><m>f(x)=1-x-x^2,a=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739302415">
+<p id="fs-id1169739302418"><m>f(x)=\frac{7}{x},a=3</m></p>
+</statement>
+<solution id="fs-id1169739302448">
+<p id="fs-id1169739302451">a. <m>\frac{-79}</m> b. <m>y=\frac{-79}x+\frac{143}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739333058">
+<p id="fs-id1169739333060"><m>f(x)=\sqrt{x+8},a=1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739242367">
+<p id="fs-id1169739242369"><m>f(x)=2-3x^2,a=-2</m></p>
+</statement>
+<solution id="fs-id1169739242406">
+<p id="fs-id1169739242409">a. <m>12</m> b. <m>y=12x+14</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739242436">
+<p id="fs-id1169739242438"><m>f(x)=\frac{-3}{x-1},a=4</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739273190">
+<p id="fs-id1169739273192"><m>f(x)=\frac{2x+3},a=-4</m></p>
+</statement>
+<solution id="fs-id1169739273228">
+<p id="fs-id1169739327268">a. <m>-2</m> b. <m>y=-2x-10</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739327296">
+<p id="fs-id1169739327298"><m>f(x)=\frac{3x^2},a=3</m></p>
+</statement>
+
+<p id="fs-id1169739270609">For the following functions <m>y=f(x),</m> find <m>f'(a)</m> using <xref ref="fs-id1169739226063"/>.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169739270652">
+<p id="fs-id1169739270654"><m>f(x)=5x+4,a=-1</m></p>
+</statement>
+<solution id="fs-id1169739270688">
+<p id="fs-id1169739270690"><m>5</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739270700">
+<p id="fs-id1169739270702"><m>f(x)=-7x+1,a=3</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739067664">
+<p id="fs-id1169739067666"><m>f(x)=x^2+9x,a=2</m></p>
+</statement>
+<solution id="fs-id1169739067703">
+<p id="fs-id1169739067705"><m>13</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739067716">
+<p id="fs-id1169739067718"><m>f(x)=3x^2-x+2,a=1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739194752">
+<p id="fs-id1169739194755"><m>f(x)=\sqrt{x},a=4</m></p>
+</statement>
+<solution id="fs-id1169739194783">
+<p id="fs-id1169739194786"><m>\frac{1}{4}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739194799">
+<p id="fs-id1169739194802"><m>f(x)=\sqrt{x-2},a=6</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739304172">
+<p id="fs-id1169739304175"><m>f(x)=\frac{1}{x},a=2</m></p>
+</statement>
+<solution id="fs-id1169739304206">
+<p id="fs-id1169739304208"><m>-\frac{1}{4}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739304224">
+<p id="fs-id1169739304226"><m>f(x)=\frac{1x-3},a=-1</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736611382">
+<p id="fs-id1169736611384"><m>f(x)=\frac{1x^3},a=1</m></p>
+</statement>
+<solution id="fs-id1169736611419">
+<p id="fs-id1169736611421"><m>-3</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736611432">
+<p id="fs-id1169736611434"><m>f(x)=\frac{1\sqrt{x}},a=4</m></p>
+</statement>
+
+<p id="fs-id1169739182382">For the following exercises, given the function <m>y=f(x),</m></p>
+<ol marker="(a)">
+<li>find the slope of the secant line <m>PQ</m> for each point <m>Q(x,f(x))</m> with <m>x</m> value given in the table.</li>
+<li>Use the answers from a. to estimate the value of the slope of the tangent line at <m>P.</m></li>
+<li>Use the answer from b. to find the equation of the tangent line to <m>f</m> at point <m>P.</m></li>
+</ol>
+
+<!-- Move title outside statement--> <statement id="fs-id1169739187796">
+<p id="fs-id1169739187798"><emphasis effect="bold">[T]</emphasis> <m>f(x)=x^2+3x+4,P(1,8)</m> (Round to <m>6</m> decimal places.)</p>
+<table xml:id="fs-id1169739187857" class="unnumbered" summary="This table has seven rows and four columns. The first row is a header row and it labels each column. The first column header is x, the second is Slope mPQ, the third is x, and the fourth is Slope mPQ. Under the first column are the values 1.1, 1.01, 1.001, 1.0001, 1.00001, 1.000001. Under the second column are the labels (i), (ii), (iii), (iv), (v), and (vi). Under the third column are the values 0.9, 0.99, 0.999, 0.9999, 0.99999, and 0.999999. Under the fourth column are the labels (vii), (viii), (ix), (x), (xi), and (xii).">
+<label/>
+<tabular>
+
+
+
+
+<row valign="top" header="yes">
+<cell valign="top" halign ="left"><m>x</m></cell>
+<cell valign="top" halign ="left">Slope <m><m:msub>mPQ</m:msub></m></cell>
+<cell valign="top" halign ="left"><m>x</m></cell>
+<cell valign="top" halign ="left">Slope <m><m:msub>mPQ</m:msub></m></cell>
+</row>
+
+
+<row>
+<cell valign="top" halign ="left">1.1</cell>
+<cell valign="top" halign ="left">(i)</cell>
+<cell valign="top" halign ="left">0.9</cell>
+<cell valign="top" halign ="left">(vii)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">1.01</cell>
+<cell valign="top" halign ="left">(ii)</cell>
+<cell valign="top" halign ="left">0.99</cell>
+<cell valign="top" halign ="left">(viii)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">1.001</cell>
+<cell valign="top" halign ="left">(iii)</cell>
+<cell valign="top" halign ="left">0.999</cell>
+<cell valign="top" halign ="left">(ix)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">1.0001</cell>
+<cell valign="top" halign ="left">(iv)</cell>
+<cell valign="top" halign ="left">0.9999</cell>
+<cell valign="top" halign ="left">(x)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">1.00001</cell>
+<cell valign="top" halign ="left">(v)</cell>
+<cell valign="top" halign ="left">0.99999</cell>
+<cell valign="top" halign ="left">(xi)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">1.000001</cell>
+<cell valign="top" halign ="left">(vi)</cell>
+<cell valign="top" halign ="left">0.999999</cell>
+<cell valign="top" halign ="left">(xii)</cell>
+</row>
+</tabular>
+
+</table>
+</statement>
+<solution id="fs-id1169739269413">
+<p id="fs-id1169739269416">a. <m>\text{ (i) } 5.100000,</m> <m>\text{ (ii) } 5.010000,</m> <m>\text{ (iii) } 5.001000,</m> <m>\text{ (iv) } 5.000100,</m> <m>\text{ (v) } 5.000010,</m> <m>\text{ (vi) } 5.000001,</m> <m>\text{ (vii) } 4.900000,</m> <m>\text{ (viii) } 4.990000,</m> <m>\text{ (ix) } 4.999000,</m> <m>\text{ (x) } 4.999900,</m> <m>\text{ (xi) } 4.999990,</m> <m>\text{ (x) } 4.999999</m> b. <m>m_{\text{ tan }}=5</m> c. <m>y=5x+3</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739273796">
+<p id="fs-id1169739273799"><emphasis effect="bold">[T]</emphasis> <m>f(x)=\frac{x+1}{x^2-1},P(0,-1)</m></p>
+<table xml:id="fs-id1169739273863" class="unnumbered" summary="This table has seven rows and four columns. The first row is a header row and it labels each column. The first column header is x, the second is Slope mPQ, the third is x, and the fourth is Slope mPQ. Under the first column are the values 0.1, 0.01, 0.001, 0.0001, 0.00001, and 0.000001. Under the second column are the labels (i), (ii), (iii), (iv), (v), and (vi). Under the third column are the values -0.1, -0.01, -0.001, -0.0001, -0.00001, and -0.000001. Under the fourth column are the labels (vii), (viii), (ix), (x), (xi), and (xii).">
+<tabular>
+
+
+
+
+<row valign="top" header="yes">
+<cell valign="top" halign ="left"><m>x</m></cell>
+<cell valign="top" halign ="left">Slope <m><m:msub>mPQ</m:msub></m></cell>
+<cell valign="top" halign ="left"><m>x</m></cell>
+<cell valign="top" halign ="left">Slope <m><m:msub>mPQ</m:msub></m></cell>
+</row>
+
+
+<row>
+<cell valign="top" halign ="left">0.1</cell>
+<cell valign="top" halign ="left">(i)</cell>
+<cell valign="top" halign ="left"><m>-0.1</m></cell>
+<cell valign="top" halign ="left">(vii)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">0.01</cell>
+<cell valign="top" halign ="left">(ii)</cell>
+<cell valign="top" halign ="left"><m>-0.01</m></cell>
+<cell valign="top" halign ="left">(viii)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">0.001</cell>
+<cell valign="top" halign ="left">(iii)</cell>
+<cell valign="top" halign ="left"><m>-0.001</m></cell>
+<cell valign="top" halign ="left">(ix)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">0.0001</cell>
+<cell valign="top" halign ="left">(iv)</cell>
+<cell valign="top" halign ="left"><m>-0.0001</m></cell>
+<cell valign="top" halign ="left">(x)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">0.00001</cell>
+<cell valign="top" halign ="left">(v)</cell>
+<cell valign="top" halign ="left"><m>-0.00001</m></cell>
+<cell valign="top" halign ="left">(xi)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">0.000001</cell>
+<cell valign="top" halign ="left">(vi)</cell>
+<cell valign="top" halign ="left"><m>-0.000001</m></cell>
+<cell valign="top" halign ="left">(xii)</cell>
+</row>
+</tabular>
+
+</table>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739269673">
+<p id="fs-id1169739269675"><emphasis effect="bold">[T]</emphasis> <m>f(x)=10<m:msup>e0.5x</m:msup>,P(0,10)</m> (Round to <m>4</m> decimal places.)</p>
+<table xml:id="fs-id1169739270127" class="unnumbered" summary="This table has seven rows and two columns. The first row is a header row and it labels each column. The first column header is x, and the second column header is Slope mPQ. Under the first column are the values -0.1, -0.01, -0.001, -0.0001, -0.00001, and -0.000001. Under the second column are the labels (i), (ii), (iii), (iv), (v), and (vi).">
+<tabular>
+
+
+<row valign="top" header="yes">
+<cell valign="top" halign ="left"><m>x</m></cell>
+<cell valign="top" halign ="left">Slope <m><m:msub>mPQ</m:msub></m></cell>
+</row>
+
+
+<row>
+<cell valign="top" halign ="left"><m>-0.1</m></cell>
+<cell valign="top" halign ="left">(i)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>-0.01</m></cell>
+<cell valign="top" halign ="left">(ii)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>-0.001</m></cell>
+<cell valign="top" halign ="left">(iii)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>-0.0001</m></cell>
+<cell valign="top" halign ="left">(iv)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left"><m>-0.00001</m></cell>
+<cell valign="top" halign ="left">(v)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">-0.000001</cell>
+<cell valign="top" halign ="left">(vi)</cell>
+</row>
+</tabular>
+
+</table>
+</statement>
+<solution id="fs-id1169739305300">
+<p id="fs-id1169739305302">a. <m>\text{ (i) } 4.8771,</m> <m>\text{ (ii) } 4.9875 \text{ (iii) } 4.9988,</m> <m>\text{ (iv) } 4.9999,</m> <m>\text{ (v) } 4.9999,</m> <m>\text{ (vi) } 4.9999</m> b. <m>m_{\text{ tan }}=5</m> c. <m>y=5x+10</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736618158">
+<p id="fs-id1169736618160"><emphasis effect="bold">[T]</emphasis> <m>f(x)=\text{ tan } (x),P(π,0)</m></p>
+<table xml:id="fs-id1169739242468" class="unnumbered" summary="This table has seven rows and two columns. The first row is a header row and it labels each column. The first column header is x, and the second column header is Slope mPQ. Under the first column are the values 3.1, 3.14, 3.141, 3.1415, 3.14159, and 3.141592. Under the second column are the labels (i), (ii), (iii), (iv), (v), and (vi).">
+<tabular>
+
+
+<row valign="top" header="yes">
+<cell valign="top" halign ="left"><m>x</m></cell>
+<cell valign="top" halign ="left">Slope <m><m:msub>mPQ</m:msub></m></cell>
+</row>
+
+
+<row>
+<cell valign="top" halign ="left">3.1</cell>
+<cell valign="top" halign ="left">(i)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">3.14</cell>
+<cell valign="top" halign ="left">(ii)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">3.141</cell>
+<cell valign="top" halign ="left">(iii)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">3.1415</cell>
+<cell valign="top" halign ="left">(iv)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">3.14159</cell>
+<cell valign="top" halign ="left">(v)</cell>
+</row>
+<row>
+<cell valign="top" halign ="left">3.141592</cell>
+<cell valign="top" halign ="left">(vi)</cell>
+</row>
+</tabular>
+
+</table>
+</statement>
+
+<p id="fs-id1169736614236"><emphasis effect="bold">[T]</emphasis> For the following position functions <m>y=s(t),</m> an object is moving along a straight line, where <m>t</m> is in seconds and <m>s</m> is in meters. Find</p>
+<ol marker="(a)">
+<li>the simplified expression for the average velocity from <m>t=2</m> to <m>t=2+h;</m></li>
+<li>the average velocity between <m>t=2</m> and <m>t=2+h,</m> where <m>\text{ (i) } h=0.1,</m> <m>\text{ (ii) } h=0.01,</m> <m>\text{ (iii) } h=0.001,</m> and <m>\text{ (iv) } h=0.0001;</m> and</li>
+<li>use the answer from a. to estimate the instantaneous velocity at <m>t=2</m> second.</li>
+</ol>
+
+<!-- Move title outside statement--> <statement id="fs-id1169736616570">
+<p id="fs-id1169736616572"><m>s(t)=\frac{1}{3}t+5</m></p>
+</statement>
+<solution id="fs-id1169736613848">
+<p id="fs-id1169736613850">a. <m>\frac{1}{3};</m> b. <m>\text{ (i) } 0.<m:mover>3–</m:mover></m> m/s, <m>\text{ (ii) } 0.<m:mover>3–</m:mover></m> m/s, <m>\text{ (iii) } 0.<m:mover>3–</m:mover></m> m/s, <m>\text{ (iv) } 0.<m:mover>3–</m:mover></m> m/s; c. <m>0.<m:mover>3–</m:mover>=\frac{1}{3}</m> m/s</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736613950">
+<p id="fs-id1169736613952"><m>s(t)=t^2-2t</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736617663">
+<p id="fs-id1169736617665"><m>s(t)=2t^3+3</m></p>
+</statement>
+<solution id="fs-id1169736617694">
+<p id="fs-id1169736617696">a. <m>2(h^2+6h+12);</m> b. <m>\text{ (i) } 25.22</m> m/s, <m>\text{ (ii) } 24.12</m> m/s, <m>\text{ (iii) } 24.01</m> m/s, <m>\text{ (iv) } 24</m> m/s; c. <m>24</m> m/s</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739252861">
+<p id="fs-id1169739252863"><m>s(t)=\frac{1}{6}{t^2}-\frac{4}{t}</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739190081">
+<p id="fs-id1169739190083">Use the following graph to evaluate a. <m>f'(1)</m> and b. <m>f'(6).</m></p>
+<description>"This graph shows two connected line segments: one going from (1, 0) to (4, 6) and the other going from (4, 6) to (8, 8).">
+<image source="CNX_Calc_Figure_03_01_201.jpg" width="50%">
+
+</statement>
+<solution id="fs-id1169739300014">
+<p id="fs-id1169739300016">a. <m>1.25;</m> b. <m>0.5</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739300035">
+<p id="fs-id1169739300037">Use the following graph to evaluate a. <m>f'(-3)</m> and b. <m>f'(1.5).</m></p>
+<description>"This graph shows two connected line segments: one going from (-4, 3) to (1, 3) and the other going from (1, 3) to (1.5, 4).">
+<image source="CNX_Calc_Figure_03_01_202.jpg" width="50%">
+
+</statement>
+
+<p id="fs-id1169739300107">For the following exercises, use the limit definition of derivative to show that the derivative does not exist at <m>x=a</m> for each of the given functions.</p>
+
+<!-- Move title outside statement--> <statement id="fs-id1169739300123">
+<p id="fs-id1169739300125"><m>f(x)=<m:msup>x1\text{ / }3</m:msup>,x=0</m></p>
+</statement>
+<solution id="fs-id1169739251992">
+<p id="fs-id1169739251994"><m>\lim_{x\to <m:msup>0-</m:msup>}\frac{<m:msup>x1\text{ / }3</m:msup>-0}{x-0}=\lim_{x\to <m:msup>0-</m:msup>}\frac{1<m:msup>x2\text{ / }3</m:msup>}=\infty </m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739252082">
+<p id="fs-id1169739252084"><m>f(x)=<m:msup>x2\text{ / }3</m:msup>,x=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739347176">
+<p id="fs-id1169739347178"><m>f(x)={<m:mtable><mrow><m:mtd>1,x\lt 1</mrow><mrow><m:mtd>x,x\geq 1</mrow>,x=1</m></p>
+</statement>
+<solution id="fs-id1169739274906">
+<p id="fs-id1169739274908"><m>\lim_{x\to <m:msup>1-</m:msup>}\frac{1-1}{x-1}=0\neq 1=\lim_{x\to <m:msup>1+</m:msup>}\frac{x-1}{x-1}</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739348377">
+<p id="fs-id1169739348380"><m>f(x)=\frac{|x|x},x=0</m></p>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739348493">
+<p id="fs-id1169739348496"><emphasis effect="bold">[T]</emphasis> The position in feet of a race car along a straight track after <m>t</m> seconds is modeled by the function <m>s(t)=8t^2-\frac{116}t^3.</m></p>
+<ol marker="(a)">
+<li>Find the average velocity of the vehicle over the following time intervals to four decimal places:
+<list id="fs-id1169739340439" list-type="enumerated" number-style="lower-roman">
+<li>[4, 4.1]</li>
+<li>[4, 4.01]</li>
+<li>[4, 4.001]</li>
+<li>[4, 4.0001]</li>
+</ol></li>
+<li>Use a. to draw a conclusion about the instantaneous velocity of the vehicle at <m>t=4</m> seconds.</li>
+</ol>
+</statement>
+<solution id="fs-id1169739340474">
+<p id="fs-id1169739340476">a. <m>\text{ (i) } 61.7244</m> ft/s, <m>\text{ (ii) } 61.0725</m> ft/s <m>\text{ (iii) } 61.0072</m> ft/s <m>\text{ (iv) } 61.0007</m> ft/s b. At <m>4</m> seconds the race car is traveling at a rate/velocity of <m>61</m> ft/s.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739325676">
+<p id="fs-id1169739325678"><emphasis effect="bold">[T]</emphasis> The distance in feet that a ball rolls down an incline is modeled by the function <m>s(t)=14t^2,</m> where <m>t</m> is seconds after the ball begins rolling.</p>
+<ol marker="(a)">
+<li>Find the average velocity of the ball over the following time intervals:
+<list id="fs-id1169739325724" list-type="enumerated" number-style="lower-roman">
+<li>[5, 5.1]</li>
+<li>[5, 5.01]</li>
+<li>[5, 5.001]</li>
+<li>[5, 5.0001]</li>
+</ol></li>
+<li>Use the answers from a. to draw a conclusion about the instantaneous velocity of the ball at <m>t=5</m> seconds.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739270339">
+<p id="fs-id1169739270341">Two vehicles start out traveling side by side along a straight road. Their position functions, shown in the following graph, are given by <m>s=f(t)</m> and <m>s=g(t),</m> where <m>s</m> is measured in feet and <m>t</m> is measured in seconds.</p>
+<description>"Two functions s = g(t) and s = f(t) are graphed. The first function s = g(t) starts at (0, 0) and arcs upward through roughly (2, 1) to (4, 4). The second function s = f(t) is a straight line passing through (0, 0) and (4, 4).">
+<image source="CNX_Calc_Figure_03_01_203.jpg" width="50%">
+
+<ol marker="(a)">
+<li>Which vehicle has traveled farther at <m>t=2</m> seconds?</li>
+<li>What is the approximate velocity of each vehicle at <m>t=3</m> seconds?</li>
+<li>Which vehicle is traveling faster at <m>t=4</m> seconds?</li>
+<li>What is true about the positions of the vehicles at <m>t=4</m> seconds?</li>
+</ol>
+</statement>
+<solution id="fs-id1169739333857">
+<p id="fs-id1169739333859">a. The vehicle represented by <m>f(t),</m> because it has traveled <m>2</m> feet, whereas <m>g(t)</m> has traveled <m>1</m> foot. b. The velocity of <m>f(t)</m> is constant at <m>1</m> ft/s, while the velocity of <m>g(t)</m> is approximately <m>2</m> ft/s. c. The vehicle represented by <m>g(t),</m> with a velocity of approximately <m>4</m> ft/s. d. Both have traveled <m>4</m> feet in <m>4</m> seconds.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739333964">
+<p id="fs-id1169739333967"><emphasis effect="bold">[T]</emphasis> The total cost <m>C(x),</m> in hundreds of dollars, to produce <m>x</m> jars of mayonnaise is given by <m>C(x)=0.000003x^3+4x+300.</m></p>
+<ol marker="(a)">
+<li>Calculate the average cost per jar over the following intervals:
+<list id="fs-id1169738894953" list-type="enumerated" number-style="lower-roman">
+<li>[100, 100.1]</li>
+<li>[100, 100.01]</li>
+<li>[100, 100.001]</li>
+<li>[100, 100.0001]</li>
+</ol></li>
+<li>Use the answers from a. to estimate the average cost to produce <m>100</m> jars of mayonnaise.</li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736615094">
+<p id="fs-id1169736615096"><emphasis effect="bold">[T]</emphasis> For the function <m>f(x)=x^3-2x^2-11x+12,</m> do the following.</p>
+<ol marker="(a)">
+<li>Use a graphing calculator to graph <m>f</m> in an appropriate viewing window.</li>
+<li>Use the ZOOM feature on the calculator to approximate the two values of <m>x=a</m> for which <m>m_{\text{ tan }}=f'(a)=0.</m></li>
+</ol>
+</statement>
+<solution id="fs-id1169739351703">
+<p id="fs-id1169739351705">a.<newline/>
+<description>"The function starts in the third quadrant, passes through the x axis at x = -3, increases to a maximum around y = 20, decreases and passes through the x axis at x = 1, continues decreasing to a minimum around y = -13, and then increases through the x axis at x = 4, after which it continues increasing.">
+<image source="CNX_Calc_Figure_03_01_204.jpg" width="50%">
+<newline/>
+b. <m>a\approx-1.361,2.694</m></p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739351745">
+<p id="fs-id1169739351747"><emphasis effect="bold">[T]</emphasis> For the function <m>f(x)=\frac{x1+x^2},</m> do the following.</p>
+<ol marker="(a)">
+<li>Use a graphing calculator to graph <m>f</m> in an appropriate viewing window.</li>
+<li>Use the ZOOM feature on the calculator to approximate the values of <m>x=a</m> for which <m>m_{\text{ tan }}=f'(a)=0.</m></li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739111315">
+<p id="fs-id1169739111317">Suppose that <m>N(x)</m> computes the number of gallons of gas used by a vehicle traveling <m>x</m> miles. Suppose the vehicle gets <m>30</m> mpg.</p>
+<ol marker="(a)">
+<li>Find a mathematical expression for <m>N(x).</m></li>
+<li>What is <m>N(100\text{ )? }</m> Explain the physical meaning.</li>
+<li>What is <m>N'(100)?</m> Explain the physical meaning.</li>
+</ol>
+</statement>
+<solution id="fs-id1169739111411">
+<p id="fs-id1169739188126">a. <m>N(x)=\frac{x30}</m> b. <m>∼3.3</m> gallons. When the vehicle travels <m>100</m> miles, it has used <m>3.3</m> gallons of gas. c. <m>\frac{130}.</m> The rate of gas consumption in gallons per mile that the vehicle is achieving after having traveled <m>100</m> miles.</p>
+</solution>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169739188191">
+<p id="fs-id1169739188193"><emphasis effect="bold">[T]</emphasis> For the function <m>f(x)=x^4-5x^2+4,</m> do the following.</p>
+<ol marker="(a)">
+<li>Use a graphing calculator to graph <m>f</m> in an appropriate viewing window.</li>
+<li>Use the <m>\text{ nDeriv }</m> function, which numerically finds the derivative, on a graphing calculator to estimate <m>f'(-2),f'(-0.5),f'(1.7),</m> and <m>f'(2.718).</m></li>
+</ol>
+</statement>
+
+
+<!-- Move title outside statement--> <statement id="fs-id1169736589315">
+<p id="fs-id1169736589317"><emphasis effect="bold">[T]</emphasis> For the function <m>f(x)=\frac{x^2}{x^2+1},</m> do the following.</p>
+<ol marker="(a)">
+<li>Use a graphing calculator to graph <m>f</m> in an appropriate viewing window.</li>
+<li>Use the <m>\text{ nDeriv }</m> function on a graphing calculator to find <m>f'(-4),f'(-2),f'(2),</m> and <m>f'(4).</m></li>
+</ol>
+</statement>
+<solution id="fs-id1169736610335">
+<p id="fs-id1169736610337">a.<newline/>
+<description>"The function starts in the second quadrant and gently decreases, touches the origin, and then it increases gently.">
+<image source="CNX_Calc_Figure_03_01_207.jpg" width="50%">
+<newline/>
+b. <m>-0.028,-0.16,0.16,0.028</m></p>
+</solution>
+
+<p> This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1. </p>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-id1169739111084">
+<term>derivative</term>
+<meaning id="fs-id1169739111089">the slope of the tangent line to a function at a point, calculated by taking the limit of the difference quotient, is the derivative</meaning>
+</definition>
+<definition id="fs-id1169739111095">
+<term>difference quotient</term>
+<meaning id="fs-id1169739111100">of a function <m>f(x)</m> at <m>a</m> is given by<newline/>
+<me>\frac{f(a+h)-f(a)h} \text{ or } \frac{f(x)-f(a)}{x-a}</me></meaning>
+</definition>
+<definition id="fs-id1169739111206">
+<term>differentiation</term>
+<meaning id="fs-id1169739111211">the process of taking a derivative</meaning>
+</definition>
+<definition id="fs-id1169739111216">
+<term>instantaneous rate of change</term>
+<meaning id="fs-id1169736619746">the rate of change of a function at any point along the function <m>a,</m> also called <m>f'(a),</m> or the derivative of the function at <m>a</m></meaning>
+</definition>
+</glossary>
+</document>
+?>

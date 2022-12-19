@@ -1,0 +1,749 @@
+<example id="fs-id1170572455414">
+<exercise id="fs-id1170572479293">
+<problem id="fs-id1170572212153">
+<title>Evaluating Functions</title>
+<para id="fs-id1170572138914">For the function <m>f(x)=3x^2+2x−1,</m> evaluate</para>
+<ol id="fs-id1170572177936" list-type="enumerated" number-style="lower-alpha">
+<li><m>f(−2)</m></item>
+<li><m>f(<m:msqrt>2</m:msqrt>)</m></item>
+<li><m>f(a+h)</m></item>
+</ol>
+</problem>
+<solution id="fs-id1170572452704">
+<para id="fs-id1170572114772">Substitute the given value for <emphasis effect="italics">x</emphasis> in the formula for <m>f(x).</m></para>
+<ol xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572223895" list-type="enumerated" number-style="lower-alpha"><li><m>f(−2)=3<m:msup>(−2)2</m:msup>+2(−2)−1=12−4−1=7</m></item>
+<li><m>f(<m:msqrt>2</m:msqrt>)=3<m:msup>(<m:msqrt>2</m:msqrt>)2</m:msup>+2<m:msqrt>2</m:msqrt>−1=6+2<m:msqrt>2</m:msqrt>−1=5+2<m:msqrt>2</m:msqrt></m></item>
+<li><m><m:mtable><m:mtr><m:mtd columnalign="right">f(a+h)=3<m:msup>(a+h)2</m:msup>+2(a+h)−1</m:mtd><m:mtd columnalign="left">=3(<m:msup>a2</m:msup>+2ah+<m:msup>h2</m:msup>)+2a+2h−1</m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd columnalign="left">=3<m:msup>a2</m:msup>+6ah+3<m:msup>h2</m:msup>+2a+2h−1</m:mtd></m:mtr></m:mtable></m></item>
+</ol></solution>
+</exercise>
+</example>
+
+<note id="fs-id1170572228787" class="checkpoint">
+<exercise id="fs-id1170572295325">
+<problem id="fs-id1170572295327">
+<para id="fs-id1170572480614">For <m>f(x)=x^2−3x+5,</m> evaluate <m>f(1)</m> and <m>f(a+h).</m></para>
+</problem>
+<solution id="fs-id1170572222665">
+<para id="fs-id1170572481149"><m>f(1)=3</m> and <m>f(a+h)=<m:msup>a2</m:msup>+2ah+<m:msup>h2</m:msup>−3a−3h+5</m></para>
+</solution>
+<commentary id="fs-id1165042887524" type="hint">
+<title>Hint</title>
+<para id="fs-id1165042563906">Substitute <m>1</m> and <m>a+h</m> for <m>x</m> in the formula for <m>f(x)<m:mtext>.</m:mtext></m>
+</para>
+</commentary>
+</exercise>
+</note>
+<example id="fs-id1170572482440">
+<exercise id="fs-id1170572212102">
+<problem id="fs-id1170572212104">
+<title>Finding Domain and Range</title>
+<para id="fs-id1170572209292">For each of the following functions, determine the i. domain and ii. range.</para>
+<ol id="fs-id1170572231065" list-type="enumerated" number-style="lower-alpha">
+<li><m>f(x)=<m:msup>(x−4)2</m:msup>+5</m></item>
+<li><m>f(x)=<m:msqrt>3x+2</m:msqrt>−1</m></item>
+<li><m>f(x)=<m:mfrac>3x−2</m:mfrac></m></item>
+</ol>
+</problem>
+<solution id="fs-id1170572251251">
+<ol id="fs-id1170572450717" list-type="enumerated" number-style="lower-alpha">
+<li>Consider <m>f(x)=<m:msup>(x−4)2</m:msup>+5.</m>
+<ol id="fs-id1170572133213" list-type="enumerated" number-style="lower-roman">
+<li>Since <m>f(x)=<m:msup>(x−4)2</m:msup>+5</m> is a real number for any real number <m>x,</m> the domain of <m>f</m> is the interval <m>(<m:mtext>−</m:mtext>∞,∞).</m></item>
+<li>Since <m><m:msup>(x−4)2</m:msup>≥0,</m> we know <m>f(x)=<m:msup>(x−4)2</m:msup>+5≥5.</m> Therefore, the range must be a subset of <m>{y|y≥5}.</m> To show that every element in this set is in the range, we need to show that for a given <m>y</m> in that set, there is a real number <m>x</m> such that <m>f(x)=<m:msup>(x−4)2</m:msup>+5=y.</m> Solving this equation for <m>x,</m> we see that we need <m>x</m> such that
+<equation id="fs-id1170573420317" class="unnumbered"><label/><m><m:msup>(x−4)2</m:msup>=y−5.</m></equation><newline/>
+This equation is satisfied as long as there exists a real number <m>x</m> such that
+<equation id="fs-id1170573581655" class="unnumbered"><label/><m>x−4=±<m:msqrt>y−5</m:msqrt>.</m></equation><newline/>
+Since <m>y≥5,</m> the square root is well-defined. We conclude that for <m>x=4±<m:msqrt>y−5</m:msqrt>,f(x)=y,</m> and therefore the range is <m>{y|y≥5}.</m></item>
+</ol></item>
+<li>Consider <m>f(x)=<m:msqrt>3x+2</m:msqrt>−1.</m>
+<ol id="fs-id1170572451982" list-type="enumerated" number-style="lower-roman">
+<li>To find the domain of <m>f,</m> we need the expression <m>3x+2≥0.</m> Solving this inequality, we conclude that the domain is <m>{x|x≥−2<m:mtext>/</m:mtext>3}.</m></item>
+<li>To find the range of <m>f,</m> we note that since <m><m:msqrt>3x+2</m:msqrt>≥0,f(x)=<m:msqrt>3x+2</m:msqrt>−1≥−1.</m> Therefore, the range of <m>f</m> must be a subset of the set <m>{y|y≥−1}.</m> To show that every element in this set is in the range of <m>f,</m> we need to show that for all <m>y</m> in this set, there exists a real number <m>x</m> in the domain such that <m>f(x)=y.</m> Let <m>y≥−1.</m> Then, <m>f(x)=y</m> if and only if
+<equation id="fs-id1170573750230" class="unnumbered"><label/><m><m:msqrt>3x+2</m:msqrt>−1=y.</m></equation><newline/>
+Solving this equation for <m>x,</m> we see that <m>x</m> must solve the equation
+<equation id="fs-id1170573396227" class="unnumbered"><label/><m><m:msqrt>3x+2</m:msqrt>=y+1.</m></equation><newline/>
+Since <m>y≥−1,</m> such an <m>x</m> could exist. Squaring both sides of this equation, we have <m>3x+2=<m:msup>(y+1)2</m:msup>.</m><newline/>
+Therefore, we need
+<equation id="fs-id1170573439299" class="unnumbered"><label/><m>3x=<m:msup>(y+1)2</m:msup>−2,</m></equation><newline/>
+which implies
+<equation id="fs-id1170573569655" class="unnumbered"><label/><m>x=<m:mfrac>13</m:mfrac><m:msup>(y+1)2</m:msup>−<m:mfrac>23</m:mfrac>.</m></equation><newline/>
+We just need to verify that <m>x</m> is in the domain of <m>f.</m> Since the domain of <m>f</m> consists of all real numbers greater than or equal to <m>−2<m:mtext>/</m:mtext>3,</m> and
+<equation id="fs-id1170573237708" class="unnumbered"><label/><m><m:mfrac>13</m:mfrac><m:msup>(y+1)2</m:msup>−<m:mfrac>23</m:mfrac>≥−<m:mfrac>23</m:mfrac>,</m></equation><newline/>
+there does exist an <m>x</m> in the domain of <m>f.</m> We conclude that the range of <m>f</m> is <m>{y|y≥−1}.</m></item>
+</ol></item>
+<li>Consider <m>f(x)=3<m:mtext>/</m:mtext>(x−2).</m>
+<ol id="fs-id1170572250495" list-type="enumerated" number-style="lower-roman">
+<li>Since <m>3<m:mtext>/</m:mtext>(x−2)</m> is defined when the denominator is nonzero, the domain is <m>{x|x≠2}.</m></item>
+<li>To find the range of <m>f,</m> we need to find the values of <m>y</m> such that there exists a real number <m>x</m> in the domain with the property that
+<equation id="fs-id1170573397682" class="unnumbered"><label/><m><m:mfrac>3x−2</m:mfrac>=y.</m></equation><newline/>
+Solving this equation for <m>x,</m> we find that
+<equation id="fs-id1170573753255" class="unnumbered"><label/><m>x=<m:mfrac>3y</m:mfrac>+2.</m></equation><newline/>
+Therefore, as long as <m>y≠0,</m> there exists a real number <m>x</m> in the domain such that <m>f(x)=y.</m> Thus, the range is <m>{y|y≠0}.</m></item>
+</ol></item></ol>
+</solution>
+</exercise>
+</example>
+<note id="fs-id1170572140698" class="checkpoint">
+<exercise id="fs-id1170572140702">
+<problem id="fs-id1170572204459">
+<para id="fs-id1170572204461">Find the domain and range for <m>f(x)=<m:msqrt>4−2x</m:msqrt>+5.</m></para>
+</problem>
+<solution id="fs-id1170572136948">
+<para id="fs-id1170572136950">Domain = <m>{x|x≤2},</m> range = <m>{y|y≥5}</m></para>
+</solution>
+<commentary id="fs-id1165043272829" type="hint">
+<title>Hint</title>
+<para id="fs-id1165042990379">Use <m>4−2x≥0<m:mtext>.</m:mtext></m></para>
+</commentary>
+</exercise>
+</note>
+</section>
+<section id="fs-id1170572108732">
+<title>Representing Functions</title>
+<para id="fs-id1170572171352">Typically, a function is represented using one or more of the following tools:</para>
+<ol id="fs-id1170572295375" list-type="bulleted" bullet-style="bullet">
+<li>A table</item>
+<li>A graph</item>
+<li>A formula</item>
+</ol>
+<para id="fs-id1170572455608">We can identify a function in each form, but we can also use them together. For instance, we can plot on a graph the values from a table or create a table from a formula.</para>
+<section id="fs-id1170572163667">
+<title>Tables</title>
+<para id="fs-id1170572243966">Functions described using a <term>table of values</term> arise frequently in real-world applications. Consider the following simple example. We can describe temperature on a given day as a function of time of day. Suppose we record the temperature every hour for a 24-hour period starting at midnight. We let our input variable <m>x</m> be the time after midnight, measured in hours, and the output variable <m>y</m> be the temperature <m>x</m> hours after midnight, measured in degrees Fahrenheit. We record our data in <link target-id="fs-id1170572114646"/>.</para>
+<table id="fs-id1170572114646" summary="A table with 12 rows and 4 columns is shown. The first column is labeled “hours after midnight” and has the values “0; 1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11”. The second column is labeled “Temperature in Fahrenheit” and has the values are “58; 54; 53; 52; 52; 55; 60; 64; 72; 75; 78; 80.” The third column is labeled “hours after midnight” and continues counting where column 1 left off with “12; 13; 14; 15; 16; 17; 18; 19; 20; 21; 22; 23”. The fourth column is labeled “Temperature in Fahrenheit” and continues counting where column 2 left off with “84; 85; 85; 83; 82; 80; 77; 74; 69; 65; 60; 58”.">
+<title>Temperature as a Function of Time of Day</title>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row valign="top">
+<entry align="center">Hours after Midnight</entry>
+<entry align="center">Temperature <m><m:mstyle mathvariant="bold" mathsize="normal">(<m:mtext>°</m:mtext>F)</m:mstyle></m></entry>
+<entry align="center">Hours after Midnight</entry>
+<entry align="center">Temperature <m><m:mstyle mathvariant="bold" mathsize="normal">(<m:mtext>°</m:mtext>F)</m:mstyle></m></entry>
+</row>
+</thead>
+<tbody>
+<row valign="top">
+<entry align="left">0</entry>
+<entry align="left">58</entry>
+<entry align="left">12</entry>
+<entry align="left">84</entry>
+</row>
+<row valign="top">
+<entry align="left">1</entry>
+<entry align="left">54</entry>
+<entry align="left">13</entry>
+<entry align="left">85</entry>
+</row>
+<row valign="top">
+<entry align="left">2</entry>
+<entry align="left">53</entry>
+<entry align="left">14</entry>
+<entry align="left">85</entry>
+</row>
+<row valign="top">
+<entry align="left">3</entry>
+<entry align="left">52</entry>
+<entry align="left">15</entry>
+<entry align="left">83</entry>
+</row>
+<row valign="top">
+<entry align="left">4</entry>
+<entry align="left">52</entry>
+<entry align="left">16</entry>
+<entry align="left">82</entry>
+</row>
+<row valign="top">
+<entry align="left">5</entry>
+<entry align="left">55</entry>
+<entry align="left">17</entry>
+<entry align="left">80</entry>
+</row>
+<row valign="top">
+<entry align="left">6</entry>
+<entry align="left">60</entry>
+<entry align="left">18</entry>
+<entry align="left">77</entry>
+</row>
+<row valign="top">
+<entry align="left">7</entry>
+<entry align="left">64</entry>
+<entry align="left">19</entry>
+<entry align="left">74</entry>
+</row>
+<row valign="top">
+<entry align="left">8</entry>
+<entry align="left">72</entry>
+<entry align="left">20</entry>
+<entry align="left">69</entry>
+</row>
+<row valign="top">
+<entry align="left">9</entry>
+<entry align="left">75</entry>
+<entry align="left">21</entry>
+<entry align="left">65</entry>
+</row>
+<row valign="top">
+<entry align="left">10</entry>
+<entry align="left">78</entry>
+<entry align="left">22</entry>
+<entry align="left">60</entry>
+</row>
+<row valign="top">
+<entry align="left">11</entry>
+<entry align="left">80</entry>
+<entry align="left">23</entry>
+<entry align="left">58</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-id1170572106936">We can see from the table that temperature is a function of time, and the temperature decreases, then increases, and then decreases again. However, we cannot get a clear picture of the behavior of the function without graphing it.</para>
+</section>
+<section id="fs-id1170572226958">
+<title>Graphs</title>
+<para id="fs-id1170572226964">Given a function <m>f</m> described by a table, we can provide a visual picture of the function in the form of a graph. Graphing the temperatures listed in <link target-id="fs-id1170572114646"/> can give us a better idea of their fluctuation throughout the day. <link target-id="CNX_Calc_Figure_01_01_005"/> shows the plot of the temperature function.</para>
+<figure id="CNX_Calc_Figure_01_01_005">
+<media id="fs-id1170572222462" alt="An image of a graph. The y axis runs from 0 to 90 and has the label “Temperature in Fahrenheit”. The x axis runs from 0 to 24 and has the label “hours after midnight”. There are 24 points on the graph, one at each increment of 1 on the x-axis. The first point is at (0, 58) and the function decreases until x = 4, where the point is (4, 52) and is the minimum value of the function. After x=4, the function increases until x = 13, where the point is (13, 85) and is the maximum of the function along with the point (14, 85). After x = 14, the function decreases until the last point on the graph, which is (23, 58).">
+<image mime-type="image/jpeg" src="CNX_Calc_Figure_01_01_005.jpg"/>
+</media>
+<caption>The graph of the data from <link target-id="fs-id1170572114646"/> shows temperature as a function of time.</caption>
+</figure>
+<para id="fs-id1170572243953">From the points plotted on the graph in <link target-id="CNX_Calc_Figure_01_01_005"/>, we can visualize the general shape of the graph. It is often useful to connect the dots in the graph, which represent the data from the table. In this example, although we cannot make any definitive conclusion regarding what the temperature was at any time for which the temperature was not recorded, given the number of data points collected and the pattern in these points, it is reasonable to suspect that the temperatures at other times followed a similar pattern, as we can see in <link target-id="CNX_Calc_Figure_01_01_014"/>.</para>
+<figure id="CNX_Calc_Figure_01_01_014">
+<media id="fs-id1170572230131" alt="An image of a graph. The y axis runs from 0 to 90 and has the label “Temperature in Fahrenheit”. The x axis runs from 0 to 24 and has the label “hours after midnight”. There are 24 points on the graph, one at each increment of 1 on the x-axis. The first point is at (0, 58) and the function decreases until x = 4, where the point is (4, 52) and is the minimum value of the function. After x=4, the function increases until x = 13, where the point is (13, 85) and is the maximum of the function along with the point (14, 85). After x = 14, the function decreases until the last point on the graph, which is (23, 58). A line connects all the points on the graph.">
+<image mime-type="image/jpeg" src="CNX_Calc_Figure_01_01_014.jpg"/>
+</media>
+<caption>Connecting the dots in <link target-id="CNX_Calc_Figure_01_01_005"/> shows the general pattern of the data.</caption>
+</figure>
+</section>
+<section id="fs-id1170572450089">
+<title>Algebraic Formulas</title>
+<para id="fs-id1170572295705">Sometimes we are not given the values of a function in table form, rather we are given the values in an explicit formula. Formulas arise in many applications. For example, the area of a circle of radius <m>r</m> is given by the formula <m>A(r)=π<m:msup>r2</m:msup>.</m> When an object is thrown upward from the ground with an initial velocity <m><m:msub>v0</m:msub></m> ft/s, its height above the ground from the time it is thrown until it hits the ground is given by the formula <m>s(t)=−16<m:msup>t2</m:msup>+<m:msub>v0</m:msub>t.</m> When <m>P</m> dollars are invested in an account at an annual interest rate <m>r</m> compounded continuously, the amount of money after <m>t</m> years is given by the formula <m>A(t)=P<m:msup>ert</m:msup>.</m> Algebraic formulas are important tools to calculate function values. Often we also represent these functions visually in graph form.</para>
+<para id="fs-id1170572216050">Given an algebraic formula for a function <m>f,</m> the graph of <m>f</m> is the set of points <m>(x,f(x)),</m> where <m>x</m> is in the domain of <m>f</m> and <m>f(x)</m> is in the range. To graph a function given by a formula, it is helpful to begin by using the formula to create a table of inputs and outputs. If the domain of <m>f</m> consists of an infinite number of values, we cannot list all of them, but because listing some of the inputs and outputs can be very useful, it is often a good way to begin.</para>
+<para id="fs-id1170572454113">When creating a table of inputs and outputs, we typically check to determine whether zero is an output. Those values of <m>x</m> where <m>f(x)=0</m> are called the <term>zeros of a function</term>. For example, the zeros of <m>f(x)=x^2−4</m> are <m>x=±2.</m> The zeros determine where the graph of <m>f</m> intersects the <m>x</m>-axis, which gives us more information about the shape of the graph of the function. The graph of a function may never intersect the <emphasis effect="italics">x</emphasis>-axis, or it may intersect multiple (or even infinitely many) times.</para>
+<para id="fs-id1170572449430">Another point of interest is the <m>y</m>-intercept, if it exists. The <m>y</m>-intercept is given by <m>(0,f(0)).</m></para>
+<para id="fs-id1170572177012">Since a function has exactly one output for each input, the graph of a function can have, at most, one <m>y</m>-intercept. If <m>x=0</m> is in the domain of a function <m>f,</m> then <m>f</m> has exactly one <m>y</m>-intercept. If <m>x=0</m> is not in the domain of <m>f,</m> then <m>f</m> has no <m>y</m>-intercept. Similarly, for any real number <m>c,</m> if <m>c</m> is in the domain of <m>f,</m> there is exactly one output <m>f(c),</m> and the line <m>x=c</m> intersects the graph of <m>f</m> exactly once. On the other hand, if <m>c</m> is not in the domain of <m>f,f(c)</m> is not defined and the line <m>x=c</m> does not intersect the graph of <m>f.</m> This property is summarized in the <term>vertical line test</term>.</para>
+<note id="fs-id1170572480864">
+<title>Rule: Vertical Line Test</title>
+<para id="fs-id1170572480870">Given a function <m>f,</m> every vertical line that may be drawn intersects the graph of <m>f</m> no more than once. If any vertical line intersects a set of points more than once, the set of points does not represent a function.</para>
+</note>
+<para id="fs-id1170572548825">We can use this test to determine whether a set of plotted points represents the graph of a function (<link target-id="CNX_Calc_Figure_01_01_006"/>).</para>
+<figure id="CNX_Calc_Figure_01_01_006">
+<media id="fs-id1170572481496" alt="An image of two graphs. The first graph is labeled “a” and is of the function “y = f(x)”. Three vertical lines run through 3 points on the function, each vertical line only passing through the function once. The second graph is labeled “b” and is of the relation “y not equal to f(x)”. Two vertical lines run through the relation, one line intercepting the relation at 3 points and the other line intercepting the relation at 3 different points.">
+<image mime-type="image/jpeg" src="CNX_Calc_Figure_01_01_006.jpg"/>
+</media>
+<caption>(a) The set of plotted points represents the graph of a function because every vertical line intersects the set of points, at most, once. (b) The set of plotted points does not represent the graph of a function because some vertical lines intersect the set of points more than once.</caption>
+</figure>
+<example id="fs-id1170572169516">
+<exercise id="fs-id1170572205057">
+<problem id="fs-id1170572205059">
+<title>Finding Zeros and <m>y</m>-Intercepts of a Function</title>
+<para id="fs-id1170572205061">Consider the function <m>f(x)=−4x+2.</m></para>
+<ol id="fs-id1170572549874" list-type="enumerated" number-style="lower-alpha">
+<li>Find all zeros of <m>f.</m></item>
+<li>Find the <m>y</m>-intercept (if any).</item>
+<li>Sketch a graph of <m>f.</m></item>
+</ol>
+</problem>
+<solution id="fs-id1170572295432">
+<ol id="fs-id1170572111812" list-type="enumerated" number-style="lower-alpha">
+<li>To find the zeros, solve <m>f(x)=−4x+2=0.</m> We discover that <m>f</m> has one zero at <m>x=1<m:mtext>/</m:mtext>2.</m></item>
+<li>The <m>y</m>-intercept is given by <m>(0,f(0))=(0,2).</m></item>
+<li>Given that <m>f</m> is a linear function of the form <m>f(x)=mx+b</m> that passes through the points <m>(1<m:mtext>/</m:mtext>2,0)</m> and <m>(0,2),</m> we can sketch the graph of <m>f</m> (<link target-id="CNX_Calc_Figure_01_01_007"/>).
+<figure id="CNX_Calc_Figure_01_01_007">
+<media id="fs-id1170572228273" alt="An image of a graph. The y axis runs from -2 to 5 and the x axis runs from -2 to 5. The graph is of the function “f(x) = -4x + 2”, which is a decreasing straight line. There are two points plotted on the function at (0, 2) and (1/2, 0).">
+<image mime-type="image/jpeg" src="CNX_Calc_Figure_01_01_007.jpg"/>
+</media>
+<caption>The function <m>f(x)=−4x+2</m> is a line with<newline/><m>x</m>-intercept <m>(1<m:mtext>/</m:mtext>2,0)</m> and <m>y</m>-intercept <m>(0,2).</m></caption>
+</figure></item>
+</ol>
+</solution>
+</exercise>
+</example>
+<example id="fs-id1170572141676">
+<exercise id="fs-id1170572228570">
+<problem id="fs-id1170572228572">
+<title>Using Zeros and <m>y</m>-Intercepts to Sketch a Graph</title>
+<para id="fs-id1170572228574">Consider the function <m>f(x)=<m:msqrt>x+3</m:msqrt>+1.</m></para>
+<ol xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170571053593" list-type="enumerated" number-style="lower-alpha"><li>Find all zeros of <m>f.</m></item>
+<li>Find the <m>y</m>-intercept (if any).</item>
+<li>Sketch a graph of <m>f.</m></item>
+</ol></problem>
+<solution id="fs-id1170572247884">
+<ol id="fs-id1170572168266" list-type="enumerated" number-style="lower-alpha">
+<li>To find the zeros, solve <m><m:msqrt>x+3</m:msqrt>+1=0.</m> This equation implies <m><m:msqrt>x+3</m:msqrt>=−1.</m> Since <m><m:msqrt>x+3</m:msqrt>≥0</m> for all <m>x,</m> this equation has no solutions, and therefore <m>f</m> has no zeros.</item>
+<li>The <m>y</m>-intercept is given by <m>(0,f(0))=(0,<m:msqrt>3</m:msqrt>+1).</m></item>
+<li>To graph this function, we make a table of values. Since we need <m>x+3≥0,</m> we need to choose values of <m>x≥−3.</m> We choose values that make the square-root function easy to evaluate.
+<table id="fs-id1170572247842" class="column-header" summary="A table with 2 rows and 3 columns. The first row is labeled “x” and has the values “-3; -2; 1”. The second row is labeled “f(x)” and has the values “1; 2; 3”.">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<tbody>
+<row valign="top">
+<entry align="center"><m><m:mtext mathvariant="bold-italic">x</m:mtext></m></entry>
+<entry align="center"><m>−3</m></entry>
+<entry align="center"><m>−2</m></entry>
+<entry align="center"><m>1</m></entry>
+</row>
+<row valign="top">
+<entry align="center"><m><m:mtext mathvariant="bold-italic">f</m:mtext><m:mo stretchy="false" mathvariant="bold">(<m:mtext mathvariant="bold-italic">x</m:mtext><m:mo stretchy="false" mathvariant="bold">)</m></entry>
+<entry align="center"><m>1</m></entry>
+<entry align="center"><m>2</m></entry>
+<entry align="center"><m>3</m></entry>
+</row>
+</tbody>
+</tgroup>
+</table></item>
+</ol>
+<para id="fs-id1170572205983">Making use of the table and knowing that, since the function is a square root, the graph of <m>f</m> should be similar to the graph of <m>y=<m:msqrt>x</m:msqrt>,</m> we sketch the graph (<link target-id="CNX_Calc_Figure_01_01_008"/>).</para>
+<figure id="CNX_Calc_Figure_01_01_008">
+<media id="fs-id1170572226866" alt="An image of a graph. The y axis runs from -2 to 4 and the x axis runs from -3 to 2. The graph is of the function “f(x) = (square root of x + 3) + 1”, which is an increasing curved function that starts at the point (-3, 1). There are 3 points plotted on the function at (-3, 1), (-2, 2), and (1, 3). The function has a y intercept at (0, 1 + square root of 3).">
+<image mime-type="image/jpeg" src="CNX_Calc_Figure_01_01_008.jpg"/>
+</media>
+<caption>The graph of <m>f(x)=<m:msqrt>x+3</m:msqrt>+1</m> has a<newline/><m>y</m>-intercept but no <m>x</m>-intercepts.</caption>
+</figure>
+</solution>
+</exercise>
+</example>
+<note id="fs-id1170572241305" class="checkpoint">
+<exercise id="fs-id1170572241309">
+<problem id="fs-id1170572241311">
+<para id="fs-id1170572549227">Find the zeros of <m>f(x)=<m:msup>x3</m:msup>−5x^2+6x.</m></para>
+</problem>
+<solution id="fs-id1170572216811">
+<para id="fs-id1170572216813"><m>x=0,2,3</m></para>
+</solution>
+<commentary id="fs-id1165042323380" type="hint">
+<title>Hint</title>
+<para id="fs-id1165042323386">Factor the polynomial.</para>
+</commentary>
+</exercise>
+</note>
+<example id="fs-id1170572175021">
+<exercise id="fs-id1170572482421">
+<problem id="fs-id1170572482423">
+<title>Finding the Height of a Free-Falling Object</title>
+<para id="fs-id1170572482425">If a ball is dropped from a height of <m>100</m> ft, its height <m>s</m> at time <m>t</m> is given by the function <m>s(t)=−16<m:msup>t2</m:msup>+100,</m> where <m>s</m> is measured in feet and <m>t</m> is measured in seconds. The domain is restricted to the interval <m>[0,c],</m> where <m>t=0</m> is the time when the ball is dropped and <m>t=c</m> is the time when the ball hits the ground.</para>
+<ol id="fs-id1170572453671" list-type="enumerated" number-style="lower-alpha">
+<li>Create a table showing the height <m>s(t)</m> when <m>t=0,0.5,1,1.5,2,<m:mtext>and</m:mtext><m:mspace width="0.2em"/>2.5.</m> Using the data from the table, determine the domain for this function. That is, find the time <m>c</m> when the ball hits the ground.</item>
+<li>Sketch a graph of <m>s.</m></item>
+</ol>
+</problem>
+<solution id="fs-id1170572286561">
+<ol id="fs-id1170572205028" list-type="enumerated" number-style="lower-alpha">
+<li><newline/><para id="fs-id1170571123140">
+<table id="fs-id1170572205037" class="column-header" summary="A table with 2 rows and 6 columns. The first row is labeled “t” and has the values “0; 0.5; 1; 1.5; 2; 2.5”. The second row is labeled “s(t)” and has the values “100; 96; 84; 64; 36; 0”.">
+<title>Height <m>s</m> as a Function of Time <m>t</m></title>
+<tgroup cols="7">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<colspec colnum="7" colname="c7"/>
+<tbody>
+<row valign="top">
+<entry align="center"><m><m:mtext mathvariant="bold-italic">t</m:mtext></m></entry>
+<entry align="center"><m>0</m></entry>
+<entry align="center"><m>0.5</m></entry>
+<entry align="center"><m>1</m></entry>
+<entry align="center"><m>1.5</m></entry>
+<entry align="center"><m>2</m></entry>
+<entry align="center"><m>2.5</m></entry>
+</row>
+<row valign="top">
+<entry align="center"><m><m:mtext mathvariant="bold-italic">s</m:mtext><m:mo stretchy="false" mathvariant="bold">(<m:mtext mathvariant="bold-italic">t</m:mtext><m:mo stretchy="false" mathvariant="bold">)</m></entry>
+<entry align="center"><m>100</m></entry>
+<entry align="center"><m>96</m></entry>
+<entry align="center"><m>84</m></entry>
+<entry align="center"><m>64</m></entry>
+<entry align="center"><m>36</m></entry>
+<entry align="center"><m>0</m></entry>
+</row>
+</tbody>
+</tgroup>
+</table></para>
+<para id="fs-id1170571031513">Since the ball hits the ground when <m>t=2.5,</m> the domain of this function is the interval <m>[0,2.5].</m></para></item>
+<li><newline/><media id="fs-id1170572480926" alt="An image of a graph. The y axis runs from 0 to 100 and is labeled “s(t), height in feet”. The x axis runs from 0 to 3 and is labeled “t, time in seconds”. The graph is of the function “s(t) = -16 t squared + 100”, which is a decreasing curved function that starts at the y intercept point (0, 100). There are 6 points plotted on the function at (0, 100), (0.5, 96), (1, 84), (1.5, 64), (2, 36), and (2.5, 0). The function has a x intercept at the last point (2.5, 0).">
+<image mime-type="image/jpeg" src="CNX_Calc_Figure_01_01_009.jpg"/>
+</media>
+</item>
+</ol>
+</solution>
+</exercise>
+</example>
+<para id="fs-id1170572481834">Note that for this function and the function <m>f(x)=−4x+2</m> graphed in <link target-id="CNX_Calc_Figure_01_01_007"/>, the values of <m>f(x)</m> are getting smaller as <m>x</m> is getting larger. A function with this property is said to be decreasing. On the other hand, for the function <m>f(x)=<m:msqrt>x+3</m:msqrt>+1</m> graphed in <link target-id="CNX_Calc_Figure_01_01_008"/>, the values of <m>f(x)</m> are getting larger as the values of <m>x</m> are getting larger. A function with this property is said to be increasing. It is important to note, however, that a function can be increasing on some interval or intervals and decreasing over a different interval or intervals. For example, using our temperature function in <link target-id="CNX_Calc_Figure_01_01_005"/>, we can see that the function is decreasing on the interval <m>(0,4),</m> increasing on the interval <m>(4,14),</m> and then decreasing on the interval <m>(14,23).</m> We make the idea of a function increasing or decreasing over a particular interval more precise in the next definition.</para>
+<note id="fs-id1170572245916">
+<title>Definition</title>
+<para id="fs-id1170572245920">We say that a function <m>f</m> is <term>increasing on the interval <m>I</m></term> if for all <m><m:msub>x1</m:msub>,<m:msub>x2</m:msub>∈I,</m></para>
+<equation id="fs-id1170572167332" class="unnumbered"><label/><m>f(<m:msub>x1</m:msub>)≤f(<m:msub>x2</m:msub>)<m:mspace width="0.2em"/><m:mtext>when</m:mtext><m:mspace width="0.2em"/><m:msub>x1</m:msub>&lt;<m:msub>x2</m:msub>.</m></equation>
+<para id="fs-id1170572243705">We say <m>f</m> is strictly increasing on the interval <m>I</m> if for all <m><m:msub>x1</m:msub>,<m:msub>x2</m:msub>∈I,</m></para>
+<equation id="fs-id1170572455510" class="unnumbered"><label/><m>f(<m:msub>x1</m:msub>)&lt;f(<m:msub>x2</m:msub>)<m:mspace width="0.2em"/><m:mtext>when</m:mtext><m:mspace width="0.2em"/><m:msub>x1</m:msub>&lt;<m:msub>x2</m:msub>.</m></equation>
+<para id="fs-id1170572228001">We say that a function <m>f</m> is <term>decreasing on the interval <m>I</m></term> if for all <m><m:msub>x1</m:msub>,<m:msub>x2</m:msub>∈I,</m></para>
+<equation id="fs-id1170572549217" class="unnumbered"><label/><m>f(<m:msub>x1</m:msub>)≥f(<m:msub>x2</m:msub>)<m:mspace width="0.2em"/><m:mtext>if</m:mtext><m:mspace width="0.2em"/><m:msub>x1</m:msub>&lt;<m:msub>x2</m:msub>.</m></equation>
+<para id="fs-id1170572544718">We say that a function <m>f</m> is strictly decreasing on the interval <m>I</m> if for all <m><m:msub>x1</m:msub>,<m:msub>x2</m:msub>∈I,</m></para>
+<equation id="fs-id1170572454409" class="unnumbered"><label/><m>f(<m:msub>x1</m:msub>)&gt;f(<m:msub>x2</m:msub>)<m:mspace width="0.2em"/><m:mtext>if</m:mtext><m:mspace width="0.2em"/><m:msub>x1</m:msub>&lt;<m:msub>x2</m:msub>.</m></equation>
+</note>
+<para id="fs-id1170572244835">For example, the function <m>f(x)=3x</m> is increasing on the interval <m>(<m:mtext>−</m:mtext>∞,∞)</m> because <m>3<m:msub>x1</m:msub>&lt;3<m:msub>x2</m:msub></m> whenever <m><m:msub>x1</m:msub>&lt;<m:msub>x2</m:msub>.</m> On the other hand, the function <m>f(x)=<m:mtext>−</m:mtext><m:msup>x3</m:msup></m> is decreasing on the interval <m>(<m:mtext>−</m:mtext>∞,∞)</m> because <m><m:mtext>−</m:mtext><m:msubsup>x13</m:msubsup>&gt;−<m:msubsup>x23</m:msubsup></m> whenever <m><m:msub>x1</m:msub>&lt;<m:msub>x2</m:msub></m> (<link target-id="CNX_Calc_Figure_01_01_010"/>).</para>
+<figure id="CNX_Calc_Figure_01_01_010">
+<media id="fs-id1170572141312" alt="An image of two graphs. The first graph is labeled “a” and is of the function “f(x) = 3x”, which is an increasing straight line that passes through the origin. The second graph is labeled “b” and is of the function “f(x) = -x cubed”, which is curved function that decreases until the function hits the origin where it becomes level, then decreases again after the origin.">
+<image mime-type="image/jpeg" src="CNX_Calc_Figure_01_01_010.jpg"/>
+</media>
+<caption>(a) The function <m>f(x)=3x</m> is increasing on the interval <m>(<m:mtext>−</m:mtext>∞,∞).</m> (b) The function <m>f(x)=<m:mtext>−</m:mtext><m:msup>x3</m:msup></m> is decreasing on the interval <m>(<m:mtext>−</m:mtext>∞,∞).</m></caption>
+</figure>
+</section>
+</section>
+<section id="fs-id1170572450766">
+<title>Combining Functions</title>
+<para id="fs-id1170572234066">Now that we have reviewed the basic characteristics of functions, we can see what happens to these properties when we combine functions in different ways, using basic mathematical operations to create new functions. For example, if the cost for a company to manufacture <m>x</m> items is described by the function <m>C(x)</m> and the revenue created by the sale of <m>x</m> items is described by the function <m>R(x),</m> then the profit on the manufacture and sale of <m>x</m> items is defined as <m>P(x)=R(x)−C(x).</m> Using the difference between two functions, we created a new function.</para>
+<para id="fs-id1170572135596">Alternatively, we can create a new function by composing two functions. For example, given the functions <m>f(x)=x^2</m> and <m>g(x)=3x+1,</m> the composite function <m>f∘g</m> is defined such that</para>
+<equation id="fs-id1170572247955" class="unnumbered"><label/><m>(f∘g)(x)=f(g(x))=<m:msup>(g(x))2</m:msup>=<m:msup>(3x+1)2</m:msup>.</m></equation>
+<para id="fs-id1170572140952">The composite function <m>g∘f</m> is defined such that</para>
+<equation id="fs-id1170572481486" class="unnumbered"><label/><m>(g∘f)(x)=g(f(x))=3f(x)+1=3x^2+1.</m></equation>
+<para id="fs-id1170572450916">Note that these two new functions are different from each other.</para>
+<section id="fs-id1170572450919">
+<title>Combining Functions with Mathematical Operators</title>
+<para id="fs-id1170572167715">To combine functions using mathematical operators, we simply write the functions with the operator and simplify. Given two functions <m>f</m> and <m>g,</m> we can define four new functions:</para>
+<equation id="fs-id1170572167731" class="unnumbered"><label/><m><m:mtable><m:mtr><m:mtd columnalign="left">(f+g)(x)=f(x)+g(x)</m:mtd><m:mtd/><m:mtd/><m:mtd columnalign="left">Sum</m:mtd></m:mtr><m:mtr><m:mtd columnalign="left">(f−g)(x)=f(x)−g(x)</m:mtd><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mtext mathvariant="italic">Difference</m:mtext></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left">(f·g)(x)=f(x)g(x)</m:mtd><m:mtd/><m:mtd/><m:mtd columnalign="left">Product</m:mtd></m:mtr><m:mtr><m:mtd columnalign="left">(<m:mfrac>fg</m:mfrac>)(x)=<m:mfrac>f(x)g(x)</m:mfrac><m:mspace width="0.2em"/><m:mtext>for</m:mtext><m:mspace width="0.2em"/>g(x)≠0</m:mtd><m:mtd/><m:mtd/><m:mtd columnalign="left">Quotient</m:mtd></m:mtr></m:mtable></m></equation>
+<example id="fs-id1170572549843">
+<exercise id="fs-id1170572549848">
+<problem id="fs-id1170572549850">
+<title>Combining Functions Using Mathematical Operations</title>
+<para id="fs-id1170572549852">Given the functions <m>f(x)=2x−3</m> and <m>g(x)=x^2−1,</m> find each of the following functions and state its domain.</para>
+<ol id="fs-id1170572169320" list-type="enumerated" number-style="lower-alpha">
+<li><m>(f+g)(x)</m></item>
+<li><m>(f−g)(x)</m></item>
+<li><m>(f·g)(x)</m></item>
+<li><m>(<m:mfrac>fg</m:mfrac>)(x)</m></item>
+</ol>
+</problem>
+<solution id="fs-id1170572228241">
+<ol id="fs-id1170572228247" list-type="enumerated" number-style="lower-alpha">
+<li><m>(f+g)(x)=(2x−3)+(x^2−1)=x^2+2x−4.</m> The domain of this function is the interval <m>(<m:mtext>−</m:mtext>∞,∞).</m></item>
+<li><m>(f−g)(x)=(2x−3)−(x^2−1)=<m:mtext>−</m:mtext>x^2+2x−2.</m> The domain of this function is the interval <m>(<m:mtext>−</m:mtext>∞,∞).</m></item>
+<li><m>(f·g)(x)=(2x−3)(x^2−1)=2<m:msup>x3</m:msup>−3x^2−2x+3.</m> The domain of this function is the interval <m>(<m:mtext>−</m:mtext>∞,∞).</m></item>
+<li><m>(<m:mfrac>fg</m:mfrac>)(x)=<m:mfrac>2x−3x^2−1</m:mfrac>.</m> The domain of this function is <m>{x|x≠<m:mtext>±</m:mtext>1}.</m></item>
+</ol>
+</solution>
+</exercise>
+</example>
+<note id="fs-id1170572548529" class="checkpoint">
+<exercise id="fs-id1170572548533">
+<problem id="fs-id1170572548535">
+<para id="fs-id1170572548538">For <m>f(x)=x^2+3</m> and <m>g(x)=2x−5,</m> find <m>(f<m:mtext>/</m:mtext>g)(x)</m> and state its domain.</para>
+</problem>
+<solution id="fs-id1170572482387">
+<para id="fs-id1170572482389"><m>(<m:mfrac>fg</m:mfrac>)(x)=<m:mfrac>x^2+32x−5</m:mfrac>.</m> The domain is <m>{x|x≠<m:mfrac>52</m:mfrac>}.</m></para>
+</solution>
+<commentary id="fs-id1165043323888" type="hint">
+<title>Hint</title>
+<para id="fs-id1165043323895">The new function <m>(f<m:mtext>/</m:mtext>g)(x)</m> is a quotient of two functions. For what values of <m>x</m> is the denominator zero?</para>
+</commentary>
+</exercise>
+</note>
+</section>
+<section id="fs-id1170572212495">
+<title>Function Composition</title>
+<para id="fs-id1170572212500">When we compose functions, we take a function of a function. For example, suppose the temperature <m>T</m> on a given day is described as a function of time <m>t</m> (measured in hours after midnight) as in <link target-id="fs-id1170572114646"/>. Suppose the cost <m>C,</m> to heat or cool a building for 1 hour, can be described as a function of the temperature <m>T.</m> Combining these two functions, we can describe the cost of heating or cooling a building as a function of time by evaluating <m>C(T(t)).</m> We have defined a new function, denoted <m>C∘T,</m> which is defined such that <m>(C∘T)(t)=C(T(t))</m> for all <m>t</m> in the domain of <m>T.</m> This new function is called a composite function. We note that since cost is a function of temperature and temperature is a function of time, it makes sense to define this new function <m>(C∘T)(t).</m> It does not make sense to consider <m>(T∘C)(t),</m> because temperature is not a function of cost.</para>
+<note id="fs-id1170572479272">
+<title>Definition</title>
+<para id="fs-id1170572479276">Consider the function <m>f</m> with domain <m>A</m> and range <m>B,</m> and the function <m>g</m> with domain <m>D</m> and range <m>E.</m> If <m>B</m> is a subset of <m>D,</m> then the <term>composite function</term> <m>(g∘f)(x)</m> is the function with domain <m>A</m> such that</para>
+<equation id="fs-id1170572176830"><m>(g∘f)(x)=g(f(x)).</m></equation>
+</note>
+<para id="fs-id1170572217742">A composite function <m>g∘f</m> can be viewed in two steps. First, the function <m>f</m> maps each input <m>x</m> in the domain of <m>f</m> to its output <m>f(x)</m> in the range of <m>f.</m> Second, since the range of <m>f</m> is a subset of the domain of <m>g,</m> the output <m>f(x)</m> is an element in the domain of <m>g,</m> and therefore it is mapped to an output <m>g(f(x))</m> in the range of <m>g.</m> In <link target-id="CNX_Calc_Figure_01_01_011"/>, we see a visual image of a composite function.</para>
+<figure id="CNX_Calc_Figure_01_01_011">
+<media id="fs-id1170572224798" alt="An image with three items. The first item is a blue bubble that has two labels: “domain of f” and “domain of g of f”. This item contains the numbers 1, 2, and 3. The second item is two bubbles: an orange bubble labeled “domain of g” and a blue bubble that is completely contained within the orange bubble and is labeled “range of f”. The blue bubble contains the numbers 0 and 1, which are thus also contained within the larger orange bubble. The orange bubble contains two numbers not contained within the smaller blue bubble, which are 2 and 3. The third item is two bubbles: an orange bubble labeled “range of g” and a blue bubble that is completely contained within the orange bubble and is labeled “range of g of f”. The blue bubble contains the numbers 4 and 5, which are thus also contained within the larger orange bubble. The orange bubble contains one number not contained within the smaller blue bubble, which is the number 3. The first item points has a blue arrow with the label “f” that points to the blue bubble in the second item. The orange bubble in the second item has an orange arrow labeled “g” that points the orange bubble in the third item. The first item has a blue arrow labeled “g of f” which points to the blue bubble in the third item. There are three blue arrows pointing from numbers in the first item to the numbers contained in the blue bubble of the second item. The first blue arrow points from the 1 to the 0, the second blue arrow points from the 2 to the 1, and the third blue arrow points from the 3 to the 0. There are 4 orange arrows pointing from the numbers contained in the orange bubble in the second item, including those also contained in the blue bubble of the second item, to the numbers contained in the orange bubble of the third item, including the numbers in the blue bubble of the third item. The first orange arrow points from 2 to 3, the second orange arrow points from 3 to 5, the third orange arrow points from 0 to 4, and the fourth orange arrow points from 1 to 5.">
+<image mime-type="image/jpeg" src="CNX_Calc_Figure_01_01_011.jpg"/>
+</media>
+<caption>For the composite function <m>g∘f,</m> we have <m>(g∘f)(1)=4,(g∘f)(2)=5,</m> and <m>(g∘f)(3)=4.</m></caption>
+</figure>
+<example id="fs-id1170572481349">
+<exercise id="fs-id1170572481355">
+<problem id="fs-id1170572481357">
+<title>Compositions of Functions Defined by Formulas</title>
+<para id="fs-id1170572481359">Consider the functions <m>f(x)=x^2+1</m> and <m>g(x)=1<m:mtext>/</m:mtext>x.</m></para>
+<ol id="fs-id1170572482111" list-type="enumerated" number-style="lower-alpha">
+<li>Find <m>(g∘f)(x)</m> and state its domain and range.</item>
+<li>Evaluate <m>(g∘f)(4),(g∘f)(−1<m:mtext>/</m:mtext>2).</m></item>
+<li>Find <m>(f∘g)(x)</m> and state its domain and range.</item>
+<li>Evaluate <m>(f∘g)(4),(f∘g)(−1<m:mtext>/</m:mtext>2).</m></item>
+</ol>
+</problem>
+<solution id="fs-id1170572222941">
+<ol xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-id1170572222946" list-type="enumerated" number-style="lower-alpha"><li>We can find the formula for <m>(g∘f)(x)</m> in two different ways. We could write
+<equation id="fs-id1170571109518" class="unnumbered"><label/><m>(g∘f)(x)=g(f(x))=g(x^2+1)=<m:mfrac>1x^2+1</m:mfrac>.</m></equation><newline/>
+Alternatively, we could write
+<equation id="fs-id1170573521539" class="unnumbered"><label/><m>(g∘f)(x)=g(f(x))=<m:mfrac>1f(x)</m:mfrac>=<m:mfrac>1x^2+1</m:mfrac>.</m></equation><newline/>
+Since <m>x^2+1≠0</m> for all real numbers <m>x,</m> the domain of <m>(g∘f)(x)</m> is the set of all real numbers. Since <m>0&lt;1<m:mtext>/</m:mtext>(x^2+1)≤1,</m> the range is, at most, the interval <m>(0,1].</m> To show that the range is this entire interval, we let <m>y=1<m:mtext>/</m:mtext>(x^2+1)</m> and solve this equation for <m>x</m> to show that for all <m>y</m> in the interval <m>(0,1],</m> there exists a real number <m>x</m> such that <m>y=1<m:mtext>/</m:mtext>(x^2+1).</m> Solving this equation for <m>x,</m> we see that <m>x^2+1=1<m:mtext>/</m:mtext>y,</m> which implies that
+<equation id="fs-id1170573368782" class="unnumbered"><label/><m>x=±<m:msqrt><m:mfrac>1y</m:mfrac>−1</m:msqrt>.</m></equation><newline/>
+If <m>y</m> is in the interval <m>(0,1],</m> the expression under the radical is nonnegative, and therefore there exists a real number <m>x</m> such that <m>1<m:mtext>/</m:mtext>(x^2+1)=y.</m> We conclude that the range of <m>g∘f</m> is the interval <m>(0,1].</m></item>
+<li><m>(g∘f)(4)=g(f(4))=g(<m:msup>42</m:msup>+1)=g(17)=<m:mfrac>117</m:mfrac></m><newline/>
+<m>(g∘f)(−<m:mfrac>12</m:mfrac>)=g(f(−<m:mfrac>12</m:mfrac>))=g(<m:msup>(−<m:mfrac>12</m:mfrac>)2</m:msup>+1)=g(<m:mfrac>54</m:mfrac>)=<m:mfrac>45</m:mfrac></m></item>
+<li>We can find a formula for <m>(f∘g)(x)</m> in two ways. First, we could write
+<equation id="fs-id1170573750183" class="unnumbered"><label/><m>(f∘g)(x)=f(g(x))=f(<m:mfrac>1x</m:mfrac>)=<m:msup>(<m:mfrac>1x</m:mfrac>)2</m:msup>+1.</m></equation><newline/>
+Alternatively, we could write
+<equation id="fs-id1170571123790" class="unnumbered"><label/><m>(f∘g)(x)=f(g(x))=<m:msup>(g(x))2</m:msup>+1=<m:msup>(<m:mfrac>1x</m:mfrac>)2</m:msup>+1.</m></equation><newline/>
+The domain of <m>f∘g</m> is the set of all real numbers <m>x</m> such that <m>x≠0.</m> To find the range of <m>f,</m> we need to find all values <m>y</m> for which there exists a real number <m>x≠0</m> such that
+<equation id="fs-id1170571118828" class="unnumbered"><label/><m><m:msup>(<m:mfrac>1x</m:mfrac>)2</m:msup>+1=y.</m></equation><newline/>
+Solving this equation for <m>x,</m> we see that we need <m>x</m> to satisfy
+<equation id="fs-id1170571118874" class="unnumbered"><label/><m><m:msup>(<m:mfrac>1x</m:mfrac>)2</m:msup>=y−1,</m></equation><newline/>
+which simplifies to
+<equation id="fs-id1170571330548" class="unnumbered"><label/><m><m:mfrac>1x</m:mfrac>=±<m:msqrt>y−1</m:msqrt>.</m></equation><newline/>
+Finally, we obtain
+<equation id="fs-id1170571282415" class="unnumbered"><label/><m>x=±<m:mfrac>1<m:msqrt>y−1</m:msqrt></m:mfrac>.</m></equation><newline/>
+Since <m>1<m:mtext>/</m:mtext><m:msqrt>y−1</m:msqrt></m> is a real number if and only if <m>y&gt;1,</m> the range of <m>f</m> is the set <m>{y|y&gt;1}.</m></item>
+<li><m>(f∘g)(4)=f(g(4))=f(<m:mfrac>14</m:mfrac>)=<m:msup>(<m:mfrac>14</m:mfrac>)2</m:msup>+1=<m:mfrac>1716</m:mfrac></m><newline/>
+<m>(f∘g)(−<m:mfrac>12</m:mfrac>)=f(g(−<m:mfrac>12</m:mfrac>))=f(−2)=<m:msup>(−2)2</m:msup>+1=5</m></item>
+</ol></solution>
+</exercise>
+</example>
+<para id="fs-id1170572173194">In <link target-id="fs-id1170572481349"/>, we can see that <m>(f∘g)(x)≠(g∘f)(x).</m> This tells us, in general terms, that the order in which we compose functions matters.</para>
+<note id="fs-id1170572483657" class="checkpoint">
+<exercise id="fs-id1170572483661">
+<problem id="fs-id1170572483663">
+<para id="fs-id1170572483665">Let <m>f(x)=2−5x.</m> Let <m>g(x)=<m:msqrt>x</m:msqrt>.</m> Find <m>(f∘g)(x).</m></para>
+</problem>
+<solution id="fs-id1170572481426">
+<para id="fs-id1170572481428"><m>(f∘g)(x)=2−5<m:msqrt>x</m:msqrt>.</m></para>
+</solution>
+</exercise>
+</note>
+<example id="fs-id1170572173789">
+<exercise id="fs-id1170572173794">
+<problem id="fs-id1170572173796">
+<title>Composition of Functions Defined by Tables</title>
+<para id="fs-id1170572173799">Consider the functions <m>f</m> and <m>g</m> described by <link target-id="fs-id1170572173822"/> and <link target-id="fs-id1170572550754"/>.</para>
+<table id="fs-id1170572173822" class="column-header" summary="A table with 2 rows and 8 columns. The first row is labeled “x” and has the values “-3; -2; -1; 0; 1; 2; 3; 4”. The second row is labeled “f(x)” and has the values “0; 4; 2; 4; -2; 0; -2; 4”.">
+<tgroup cols="9">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<colspec colnum="7" colname="c7"/>
+<colspec colnum="8" colname="c8"/>
+<colspec colnum="9" colname="c9"/>
+<tbody>
+<row valign="top">
+<entry align="left"><m><m:mtext mathvariant="bold-italic">x</m:mtext></m></entry>
+<entry align="left"><m>−3</m></entry>
+<entry align="left"><m>−2</m></entry>
+<entry align="left"><m>−1</m></entry>
+<entry align="left">0</entry>
+<entry align="left">1</entry>
+<entry align="left">2</entry>
+<entry align="left">3</entry>
+<entry align="left">4</entry>
+</row>
+<row valign="top">
+<entry align="left"><m><m:mtext mathvariant="bold-italic">f</m:mtext><m:mo stretchy="false" mathvariant="bold">(<m:mtext mathvariant="bold-italic">x</m:mtext><m:mo stretchy="false" mathvariant="bold">)</m></entry>
+<entry align="left">0</entry>
+<entry align="left">4</entry>
+<entry align="left">2</entry>
+<entry align="left">4</entry>
+<entry align="left"><m>−2</m></entry>
+<entry align="left">0</entry>
+<entry align="left"><m>−2</m></entry>
+<entry align="left">4</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<table id="fs-id1170572550754" class="column-header" summary="A table with 2 rows and 5 columns. The first row is labeled “x” and has the values “-4; -2; 0; 2; 4”. The second row is labeled “g(x)” and has the values “1; 0; 3; 0; 5”.">
+<tgroup cols="6">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<tbody>
+<row valign="top">
+<entry align="left"><m><m:mtext mathvariant="bold-italic">x</m:mtext></m></entry>
+<entry align="left"><m>−4</m></entry>
+<entry align="left"><m>−2</m></entry>
+<entry align="left">0</entry>
+<entry align="left">2</entry>
+<entry align="left">4</entry>
+</row>
+<row valign="top">
+<entry align="left"><m><m:mtext mathvariant="bold-italic">g</m:mtext><m:mo stretchy="false" mathvariant="bold">(<m:mtext mathvariant="bold-italic">x</m:mtext><m:mo stretchy="false" mathvariant="bold">)</m></entry>
+<entry align="left">1</entry>
+<entry align="left">0</entry>
+<entry align="left">3</entry>
+<entry align="left">0</entry>
+<entry align="left">5</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<ol id="fs-id1170572242030" list-type="enumerated" number-style="lower-alpha">
+<li>Evaluate <m>(g∘f)(3),(g∘f)(0).</m></item>
+<li>State the domain and range of <m>(g∘f)(x).</m></item>
+<li>Evaluate <m>(f∘f)(3),(f∘f)(1).</m></item>
+<li>State the domain and range of <m>(f∘f)(x).</m></item>
+</ol>
+</problem>
+<solution id="fs-id1170572552168">
+<ol id="fs-id1170572552174" list-type="enumerated" number-style="lower-alpha">
+<li><m>(g∘f)(3)=g(f(3))=g(−2)=0</m><newline/>
+<m><m:mspace width="0.2em"/><m:mtext/>(g∘f)(0)=g(4)=5</m></item>
+<li>The domain of <m>g∘f</m> is the set <m>{−3,−2,−1,0,1,2,3,4}.</m> Since the range of <m>f</m> is the set <m>{−2,0,2,4},</m> the range of <m>g∘f</m> is the set <m>{0,3,5}.</m></item>
+<li><m>(f∘f)(3)=f(f(3))=f(−2)=4</m><newline/>
+<m>(f∘f)(1)=f(f(1))=f(−2)=4</m></item>
+<li>The domain of <m>f∘f</m> is the set <m>{−3,−2,−1,0,1,2,3,4}.</m> Since the range of <m>f</m> is the set <m>{−2,0,2,4},</m> the range of <m>f∘f</m> is the set <m>{0,4}.</m></item>
+</ol>
+</solution>
+</exercise>
+</example>
+<example id="fs-id1170572173737">
+<exercise id="fs-id1170572173742">
+<problem id="fs-id1170572173744">
+<title>Application Involving a Composite Function</title>
+<para id="fs-id1170572173747">A store is advertising a sale of <m>20%</m> off all merchandise. Caroline has a coupon that entitles her to an additional <m>15%</m> off any item, including sale merchandise. If Caroline decides to purchase an item with an original price of <m>x</m> dollars, how much will she end up paying if she applies her coupon to the sale price? Solve this problem by using a composite function.</para>
+</problem>
+<solution id="fs-id1170572454315">
+<para id="fs-id1170572454320">Since the sale price is <m>20%</m> off the original price, if an item is <m>x</m> dollars, its sale price is given by <m>f(x)=0.80x.</m> Since the coupon entitles an individual to <m>15%</m> off the price of any item, if an item is <m>y</m> dollars, the price, after applying the coupon, is given by <m>g(y)=0.85y.</m> Therefore, if the price is originally <m>x</m> dollars, its sale price will be <m>f(x)=0.80x</m> and then its final price after the coupon will be <m>g(f(x))=0.85(0.80x)=0.68x.</m></para>
+</solution>
+</exercise>
+</example>
+<note id="fs-id1170572480210" class="checkpoint">
+<exercise id="fs-id1170572480214">
+<problem id="fs-id1170572480216">
+<para id="fs-id1170572480218">If items are on sale for <m>10%</m> off their original price, and a customer has a coupon for an additional <m>30%</m> off, what will be the final price for an item that is originally <m>x</m> dollars, after applying the coupon to the sale price?</para>
+</problem>
+<solution id="fs-id1170572213176">
+<para id="fs-id1170572213178"><m>(g∘f)(x)=0.63x</m></para>
+</solution>
+<commentary id="fs-id1165042659450" type="hint">
+<title>Hint</title>
+<para id="fs-id1165042659457">The sale price of an item with an original price of <m>x</m> dollars is <m>f(x)=0.90x.</m> The coupon price for an item that is <m>y</m> dollars is <m>g(y)=0.70y<m:mtext>.</m:mtext></m></para>
+</commentary>
+</exercise>
+</note>
+</section>
+</section>
+<section id="fs-id1170572213219">
+<title>Symmetry of Functions</title>
+<para id="fs-id1170572213225">The graphs of certain functions have symmetry properties that help us understand the function and the shape of its graph. For example, consider the function <m>f(x)=<m:msup>x4</m:msup>−2x^2−3</m> shown in <link target-id="CNX_Calc_Figure_01_01_012"/>(a). If we take the part of the curve that lies to the right of the <emphasis effect="italics">y</emphasis>-axis and flip it over the <emphasis effect="italics">y</emphasis>-axis, it lays exactly on top of the curve to the left of the <emphasis effect="italics">y</emphasis>-axis. In this case, we say the function has <term>symmetry about the <emphasis effect="italics">y</emphasis>-axis</term>. On the other hand, consider the function <m>f(x)=<m:msup>x3</m:msup>−4x</m> shown in <link target-id="CNX_Calc_Figure_01_01_012"/>(b). If we take the graph and rotate it <m>180<m:mtext>°</m:mtext></m> about the origin, the new graph will look exactly the same. In this case, we say the function has <term>symmetry about the origin</term>.</para>
+<figure id="CNX_Calc_Figure_01_01_012">
+<media id="fs-id1170572173103" alt="An image of two graphs. The first graph is labeled “(a), symmetry about the y-axis” and is of the curved function “f(x) = (x to the 4th) - 2(x squared) - 3”. The x axis runs from -3 to 4 and the y axis runs from -4 to 5. This function decreases until it hits the point (-1, -4), which is minimum of the function. Then the graph increases to the point (0,3), which is a local maximum. Then the the graph decreases until it hits the point (1, -4), before it increases again. The second graph is labeled “(b), symmetry about the origin” and is of the curved function “f(x) = x cubed - 4x”. The x axis runs from -3 to 4 and the y axis runs from -4 to 5. The graph of the function starts at the x intercept at (-2, 0) and increases until the approximate point of (-1.2, 3.1). The function then decreases, passing through the origin, until it hits the approximate point of (1.2, -3.1). The function then begins to increase again and has another x intercept at (2, 0).">
+<image mime-type="image/jpeg" src="CNX_Calc_Figure_01_01_012.jpg"/>
+</media>
+<caption>(a) A graph that is symmetric about the <m>y</m>-axis. (b) A graph that is symmetric about the origin.</caption>
+</figure>
+<para id="fs-id1170572173116">If we are given the graph of a function, it is easy to see whether the graph has one of these symmetry properties. But without a graph, how can we determine algebraically whether a function <m>f</m> has symmetry? Looking at <link target-id="CNX_Calc_Figure_01_01_013"/> again, we see that since <m>f</m> is symmetric about the <m>y</m>-axis, if the point <m>(x,y)</m> is on the graph, the point <m>(<m:mtext>−</m:mtext>x,y)</m> is on the graph. In other words, <m>f(<m:mtext>−</m:mtext>x)=f(x).</m> If a function <m>f</m> has this property, we say <m>f</m> is an even function, which has symmetry about the <emphasis effect="italics">y</emphasis>-axis. For example, <m>f(x)=x^2</m> is even because</para>
+<equation id="fs-id1170572552270" class="unnumbered"><label/><m>f(<m:mtext>−</m:mtext>x)=<m:msup>(<m:mtext>−</m:mtext>x)2</m:msup>=x^2=f(x).</m></equation>
+<para id="fs-id1170572552328">In contrast, looking at <link target-id="CNX_Calc_Figure_01_01_013"/> again, if a function <m>f</m> is symmetric about the origin, then whenever the point <m>(x,y)</m> is on the graph, the point <m>(<m:mtext>−</m:mtext>x,<m:mtext>−</m:mtext>y)</m> is also on the graph. In other words, <m>f(<m:mtext>−</m:mtext>x)=<m:mtext>−</m:mtext>f(x).</m> If <m>f</m> has this property, we say <m>f</m> is an odd function, which has symmetry about the origin. For example, <m>f(x)=<m:msup>x3</m:msup></m> is odd because</para>
+<equation id="fs-id1170572548910" class="unnumbered"><label/><m>f(<m:mtext>−</m:mtext>x)=<m:msup>(<m:mtext>−</m:mtext>x)3</m:msup>=<m:mtext>−</m:mtext><m:msup>x3</m:msup>=<m:mtext>−</m:mtext>f(x).</m></equation>
+<note id="fs-id1170572549460">
+<title>Definition</title>
+<para id="fs-id1170572549464">If <m>f(x)=f(<m:mtext>−</m:mtext>x)</m> for all <m>x</m> in the domain of <m>f,</m> then <m>f</m> is an <term>even function</term>. An even function is symmetric about the <emphasis effect="italics">y</emphasis>-axis.</para>
+<para id="fs-id1170572169613">If <m>f(<m:mtext>−</m:mtext>x)=<m:mtext>−</m:mtext>f(x)</m> for all <m>x</m> in the domain of <m>f,</m> then <m>f</m> is an <term>odd function</term>. An odd function is symmetric about the origin.</para>
+</note>
+<example id="fs-id1170572169671">
+<exercise id="fs-id1170572169677">
+<problem id="fs-id1170572169679">
+<title>Even and Odd Functions</title>
+<para id="fs-id1170572169681">Determine whether each of the following functions is even, odd, or neither.</para>
+<ol id="fs-id1170572169684" list-type="enumerated" number-style="lower-alpha">
+<li><m>f(x)=−5<m:msup>x4</m:msup>+7x^2−2</m></item>
+<li><m>f(x)=2<m:msup>x5</m:msup>−4x+5</m></item>
+<li><m>f(x)=<m:mfrac>3xx^2+1</m:mfrac></m></item>
+</ol>
+</problem>
+<solution id="fs-id1170572477848">
+<para id="fs-id1170572477853">To determine whether a function is even or odd, we evaluate <m>f(<m:mtext>−</m:mtext>x)</m> and compare it to <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) and <m><m:mtext>−</m:mtext>f(x).</m></para>
+<ol id="fs-id1170572477904" list-type="enumerated" number-style="lower-alpha">
+<li><m>f(<m:mtext>−</m:mtext>x)=−5<m:msup>(<m:mtext>−</m:mtext>x)4</m:msup>+7<m:msup>(<m:mtext>−</m:mtext>x)2</m:msup>−2=−5<m:msup>x4</m:msup>+7x^2−2=f(x).</m> Therefore, <m>f</m> is even.</item>
+<li><m>f(<m:mtext>−</m:mtext>x)=2<m:msup>(<m:mtext>−</m:mtext>x)5</m:msup>−4(<m:mtext>−</m:mtext>x)+5=−2<m:msup>x5</m:msup>+4x+5.</m> Now, <m>f(<m:mtext>−</m:mtext>x)≠f(x).</m> Furthermore, noting that <m><m:mtext>−</m:mtext>f(x)=−2<m:msup>x5</m:msup>+4x−5,</m> we see that <m>f(<m:mtext>−</m:mtext>x)≠<m:mtext>−</m:mtext>f(x).</m> Therefore, <m>f</m> is neither even nor odd.</item>
+<li><m>f(<m:mtext>−</m:mtext>x)=3(<m:mtext>−</m:mtext>x)<m:mtext>/</m:mtext>(<m:msup>(<m:mtext>−</m:mtext>x)2</m:msup>+1}=−3x<m:mtext>/</m:mtext>(x^2+1)=<m:mtext>−</m:mtext>[3x<m:mtext>/</m:mtext>(x^2+1)]=<m:mtext>−</m:mtext>f(x).</m> Therefore, <m>f</m> is odd.</item>
+</ol>
+</solution>
+</exercise>
+</example>
+<note id="fs-id1170572478816" class="checkpoint">
+<exercise id="fs-id1170572478820">
+<problem id="fs-id1170572478822">
+<para id="fs-id1170572478824">Determine whether <m>f(x)=4<m:msup>x3</m:msup>−5x</m> is even, odd, or neither.</para>
+</problem>
+<solution id="fs-id1170572547377">
+<para id="fs-id1170572547379"><m>f(x)</m> is odd.</para>
+</solution>
+<commentary id="fs-id1165042668003" type="hint">
+<title>Hint</title>
+<para id="fs-id1165042668011">Compare <m>f(<m:mtext>−</m:mtext>x)</m> with <m>f(x)</m> and <m><m:mtext>−</m:mtext>f(x)<m:mtext>.</m:mtext></m></para>
+</commentary>
+</exercise>
+</note>
+<para id="fs-id1170572547400">One symmetric function that arises frequently is the <term>absolute value function</term>, written as <m>|x|.</m> The absolute value function is defined as</para>
+<equation id="fs-id1170572547420"><m>f(x)={<m:mtable><m:mtr><m:mtd><m:mtext>−</m:mtext>x,x&lt;0</m:mtd></m:mtr><m:mtr><m:mtd>x,x≥0</m:mtd></m:mtr></m:mtable>.</m></equation>
+<para id="fs-id1170572547473">Some students describe this function by stating that it “makes everything positive.” By the definition of the absolute value function, we see that if <m>x&lt;0,</m> then <m>|x|=<m:mtext>−</m:mtext>x&gt;0,</m> and if <m>x&gt;0,</m> then <m>|x|=x&gt;0.</m> However, for <m>x=0,|x|=0.</m> Therefore, it is more accurate to say that for all nonzero inputs, the output is positive, but if <m>x=0,</m> the output <m>|x|=0.</m> We conclude that the range of the absolute value function is <m>{y|y≥0}.</m> In <link target-id="CNX_Calc_Figure_01_01_013"/>, we see that the absolute value function is symmetric about the <emphasis effect="italics">y</emphasis>-axis and is therefore an even function.</para>
+<figure id="CNX_Calc_Figure_01_01_013">
+<media id="fs-id1170572551007" alt="An image of a graph. The x axis runs from -3 to 3 and the y axis runs from -4 to 4. The graph is of the function “f(x) = absolute value of x”. The graph starts at the point (-3, 3) and decreases in a straight line until it hits the origin. Then the graph increases in a straight line until it hits the point (3, 3).">
+<image mime-type="image/jpeg" src="CNX_Calc_Figure_01_01_013.jpg"/>
+</media>
+<caption>The graph of <m>f(x)=|x|</m> is symmetric about the <m>y</m>-axis.</caption>
+</figure>
+<example id="fs-id1170572551051">
+<exercise id="fs-id1170572551056">
+<problem id="fs-id1170572551058">
+<title>Working with the Absolute Value Function</title>
+<para id="fs-id1170572551060">Find the domain and range of the function <m>f(x)=2|x−3|+4.</m></para>
+</problem>
+<solution id="fs-id1170572548716">
+<para id="fs-id1170572548722">Since the absolute value function is defined for all real numbers, the domain of this function is <m>(<m:mtext>−</m:mtext>∞,∞).</m> Since <m>|x−3|≥0</m> for all <m>x,</m> the function <m>f(x)=2|x−3|+4≥4.</m> Therefore, the range is, at most, the set <m>{y|y≥4}.</m> To see that the range is, in fact, this whole set, we need to show that for <m>y≥4</m> there exists a real number <m>x</m> such that</para>
+<equation id="fs-id1170572551112" class="unnumbered"><label/><m>2|x−3|+4=y.</m></equation>
+<para id="fs-id1170572551143">A real number <m>x</m> satisfies this equation as long as</para>
+<equation id="fs-id1170572551151" class="unnumbered"><label/><m>|x−3|=<m:mfrac>12</m:mfrac>(y−4).</m></equation>
+<para id="fs-id1170572551193">Since <m>y≥4,</m> we know <m>y−4≥0,</m> and thus the right-hand side of the equation is nonnegative, so it is possible that there is a solution. Furthermore,</para>
+<equation id="fs-id1170572366200" class="unnumbered"><label/><m>|x−3|={<m:mtable><m:mtr><m:mtd>−(x−3)<m:mspace width="1em"/><m:mtext>if</m:mtext><m:mspace width="0.2em"/>x&lt;3</m:mtd></m:mtr><m:mtr><m:mtd>x−3<m:mspace width="2em"/><m:mtext>if</m:mtext><m:mspace width="0.2em"/>x≥3</m:mtd></m:mtr></m:mtable>.</m></equation>
+<para id="fs-id1170572366286">Therefore, we see there are two solutions:</para>
+<equation id="fs-id1170572366289" class="unnumbered"><label/><m>x=±<m:mfrac>12</m:mfrac>(y−4)+3.</m></equation>
+<para id="fs-id1170572548588">The range of this function is <m>{y|y≥4}.</m></para>
+</solution>
+</exercise>
+</example>
+<note id="fs-id1170572548614" class="checkpoint">
+<exercise id="fs-id1170572548618">
+<problem id="fs-id1170572548620">
+<para id="fs-id1170572548622">For the function <m>f(x)=|x+2|−4,</m> find the domain and range.</para>
+</problem>
+<solution id="fs-id1170572176862">
+<para id="fs-id1170572176864">Domain = <m>(<m:mtext>−</m:mtext>∞,∞),</m> range = <m>{y|y≥−4}.</m></para>
+</solution>
+<commentary id="fs-id1165043422395" type="hint">
+<title>Hint</title>
+<para id="fs-id1165043422402"><m>|x+2|≥0</m> for all real numbers <m>x<m:mtext>.</m:mtext></m></para>
+</commentary>
+</exercise>
+</note>
+</section>
+<section id="fs-id1170572176915" class="key-concepts">
+<title>Key Concepts</title>
+<ol id="fs-id1170572176922" list-type="bulleted" bullet-style="bullet">
+<li>A function is a mapping from a set of inputs to a set of outputs with exactly one output for each input.</item>
+<li>If no domain is stated for a function <m>y=f(x),</m> the domain is considered to be the set of all real numbers <m>x</m> for which the function is defined.</item>
+<li>When sketching the graph of a function <m>f,</m> each vertical line may intersect the graph, at most, once.</item>
+<li>A function may have any number of zeros, but it has, at most, one <emphasis effect="italics">y</emphasis>-intercept.</item>
+<li>To define the composition <m>g∘f,</m> the range of <m>f</m> must be contained in the domain of <m>g.</m></item>
+<li>Even functions are symmetric about the <m>y</m>-axis whereas odd functions are symmetric about the origin.</item>
+</ol>
+</section>
+<section id="fs-id1170572554769" class="key-equations">
+<title>Key Equations</title>
+<ol id="fs-id1170572554776" list-type="bulleted" bullet-style="bullet">
+<li><emphasis effect="bold">Composition of two functions</emphasis><newline/>
+<m>(g∘f)(x)=g(f(x))</m></item>
+<li><emphasis effect="bold">Absolute value function</emphasis><newline/>
+<m>f(x)={<m:mtable><m:mtr><m:mtd><m:mtext>−</m:mtext>x,x&lt;0</m:mtd></m:mtr><m:mtr><m:mtd>x,x≥0</m:mtd></m:mtr></m:mtable></m></item>
+</ol>
+</section>
