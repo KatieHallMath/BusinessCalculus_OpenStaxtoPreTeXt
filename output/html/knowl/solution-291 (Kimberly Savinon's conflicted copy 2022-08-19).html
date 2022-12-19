@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:03:44-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.173.1</span><span class="period">.</span>
+</h4>
+<ol class="lower-alpha">
+<li><p>First we introduce variables for this problem. Let <span class="process-math">\(t\)</span> be the time (in seconds) after the brakes are first applied. Let <span class="process-math">\(a(t)\)</span> be the acceleration of the car (in feet per seconds squared) at time <span class="process-math">\(t.\)</span> Let <span class="process-math">\(v(t)\)</span> be the velocity of the car (in feet per second) at time <span class="process-math">\(t.\)</span> Let <span class="process-math">\(s(t)\)</span> be the car’s position (in feet) beyond the point where the brakes are applied at time <span class="process-math">\(t.\)</span> The car is traveling at a rate of <span class="process-math">\(88 \text{ ft/sec }.\)</span> Therefore, the initial velocity is <span class="process-math">\(v(0)=88\)</span> ft/sec. Since the car is decelerating, the acceleration is<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a(t)=-15\text{ft/s}^2.
+\end{equation*}
+</div>The acceleration is the derivative of the velocity,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v'(t)=-15.
+\end{equation*}
+</div>Therefore, we have an initial-value problem to solve:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v'(t)=-15,v(0)=88.
+\end{equation*}
+</div>Integrating, we find that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v(t)=-15t+C.
+\end{equation*}
+</div>Since <span class="process-math">\(v(0)=88,C=88.\)</span> Thus, the velocity function is<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v(t)=-15t+88.
+\end{equation*}
+</div>To find how long it takes for the car to stop, we need to find the time <span class="process-math">\(t\)</span> such that the velocity is zero. Solving <span class="process-math">\(-15t+88=0,\)</span> we obtain <span class="process-math">\(t=\frac{88}{15}\)</span> sec.</p></li>
+<li><p>To find how far the car travels during this time, we need to find the position of the car after <span class="process-math">\(\frac{88}{15}\)</span> sec. We know the velocity <span class="process-math">\(v(t)\)</span> is the derivative of the position <span class="process-math">\(s(t).\)</span> Consider the initial position to be <span class="process-math">\(s(0)=0.\)</span> Therefore, we need to solve the initial-value problem<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+s'(t)=-15t+88,s(0)=0.
+\end{equation*}
+</div>Integrating, we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+s(t)=-\frac{15}{2}t^2+88t+C.
+\end{equation*}
+</div>Since <span class="process-math">\(s(0)=0,\)</span> the constant is <span class="process-math">\(C=0.\)</span> Therefore, the position function is<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+s(t)=-\frac{15}{2}t^2+88t.
+\end{equation*}
+</div>After <span class="process-math">\(t=\frac{88}{15}\)</span> sec, the position is <span class="process-math">\(s(\frac{88}{15})\approx 258.133\)</span> ft.</p></li>
+</ol>
+</div>
+<span class="incontext"><a href="sec_Ch4Sec10.html#solution-291" class="internal">in-context</a></span>
+</body>
+</html>

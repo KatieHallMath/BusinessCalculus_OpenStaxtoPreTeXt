@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-11-11T14:26:27-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Exponential and Logarithmic Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="suc_Ch1Sec4.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch_second.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="suc_Ch1Sec4.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ch_second.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="active">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Integration</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="sec_Ch1Sec5"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Exponential and Logarithmic Functions</span>
+</h2>
+<section class="introduction" id="introduction-12"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ol class="decimal">
+<li id="li-221"><p id="p-derived-li-221">Identify the form of an exponential function.</p></li>
+<li id="li-222"><p id="p-derived-li-222">Explain the difference between the graphs of <span class="process-math">\(x^b\)</span> and <span class="process-math">\(b^x.\)</span></p></li>
+<li id="li-223"><p id="p-derived-li-223">Recognize the significance of the number <span class="process-math">\(e.\)</span></p></li>
+<li id="li-224"><p id="p-derived-li-224">Identify the form of a logarithmic function.</p></li>
+<li id="li-225"><p id="p-derived-li-225">Explain the relationship between exponential and logarithmic functions.</p></li>
+<li id="li-226"><p id="p-derived-li-226">Describe how to calculate a logarithm to a different base.</p></li>
+</ol>
+<p id="p-304">In this section we examine exponential and logarithmic functions. We use the properties of these functions to solve equations involving exponential or logarithmic terms, and we study the meaning and importance of the number <span class="process-math">\(e.\)</span> We also define hyperbolic and inverse hyperbolic functions, which involve combinations of exponential and logarithmic functions. (Note that we present alternative definitions of exponential and logarithmic functions in the chapter  Applications of Integrations , and prove that the functions have the same properties with either definition.)</p></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.1</span> <span class="title">Exponential Functions</span>
+</h3>
+<section class="introduction" id="introduction-13"><p id="p-305">Exponential functions arise in many applications. One common example is <dfn class="terminology">population growth</dfn>.</p>
+<p id="p-306">For example, if a population starts with <span class="process-math">\(P_0\)</span> individuals and then grows at an annual rate of <span class="process-math">\(2\%,\)</span> its population after 1 year is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170572205233.html ./knowl/CNX_Calc_Figure_01_05_001.html">
+\begin{equation*}
+P(1)=P_0+0.02P_0=P_0(1+0.02)=P_0(1.02).
+\end{equation*}
+</div>
+<p id="p-307">Its population after 2 years is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170572205233.html ./knowl/CNX_Calc_Figure_01_05_001.html">
+\begin{equation*}
+P(2)=P(1)+0.02P(1)=P(1)(1.02)=P_0(1.02)^2.
+\end{equation*}
+</div>
+<p id="p-308">In general, its population after <span class="process-math">\(t\)</span> years is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170572205233.html ./knowl/CNX_Calc_Figure_01_05_001.html">
+\begin{equation*}
+P(t)=P_0(1.02)^t,
+\end{equation*}
+</div>
+<p id="p-309">which is an exponential function. More generally, any function of the form <span class="process-math">\(f(x)=b^x,\)</span> where <span class="process-math">\(b\gt 0,b\neq 1,\)</span> is an exponential function with <dfn class="terminology">base</dfn> <span class="process-math">\(b\)</span> and <dfn class="terminology">exponent</dfn> <span class="process-math">\(x\text{.}\)</span> Exponential functions have constant bases and variable exponents. Note that a function of the form <span class="process-math">\(f(x)=x^b\)</span> for some constant <span class="process-math">\(b\)</span> is not an exponential function but a power function.</p>
+<p id="p-310">To see the difference between an exponential function and a power function, we compare the functions <span class="process-math">\(y=x^2\)</span> and <span class="process-math">\(y=2^x.\)</span> In <a href="" class="xref" data-knowl="./knowl/fs-id1170572205233.html" title="Table 1.119: Values of x^2 and 2^x">Table 1.119</a>, we see that both <span class="process-math">\(2^x\)</span> and <span class="process-math">\(x^2\)</span> approach infinity as <span class="process-math">\(x\to \infty.\)</span> Eventually, however, <span class="process-math">\(2^x\)</span> becomes larger than <span class="process-math">\(x^2\)</span> and grows more rapidly as <span class="process-math">\(x\to \infty.\)</span> In the opposite direction, as <span class="process-math">\(x\to -\infty,x^2\to \infty,\)</span> whereas <span class="process-math">\(2^x\to 0.\)</span> The line <span class="process-math">\(y=0\)</span> is a horizontal asymptote for <span class="process-math">\(y=2^x.\)</span></p>
+<figure class="table table-like" id="fs-id1170572205233"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.119<span class="period">.</span></span><span class="space"> </span>Values of <span class="process-math">\(x^2\)</span> and <span class="process-math">\(2^x\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(−3\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(−2\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(−1\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(5\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(6\)</span></td>
+</tr>
+<tr>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(x^2\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(9\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(9\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(16\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(25\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(36\)</span></td>
+</tr>
+<tr>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(2^x\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(1/8\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(1/4\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(1/2\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(8\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(16\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(32\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(64\)</span></td>
+</tr>
+</table></div></figure><p id="p-311">In <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_05_001.html" title="Figure 1.120">Figure 1.120</a>, we graph both <span class="process-math">\(y=x^2\)</span> and <span class="process-math">\(y=2^x\)</span> to show how the graphs differ.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_01_05_001"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_05_001.jpg" class="contained" alt='"An image of a graph. The x axis runs from -10 to 10 and the y axis runs from 0 to 50. The graph is of two functions. The first function is “y = x squared”, which is a parabola. The function decreases until it hits the origin and then begins increasing. The second function is “y = 2 to the power of x”, which starts slightly above the x axis, and begins increasing very rapidly, more rapidly than the first function."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.120<span class="period">.</span></span><span class="space"> </span>Both <span class="process-math">\(2^x\)</span> and <span class="process-math">\(x^2\)</span> approach infinity as <span class="process-math">\(x\to \infty,\)</span> but <span class="process-math">\(2^x\)</span> grows more rapidly than <span class="process-math">\(x^2.\)</span> As <span class="process-math">\(x\to -\infty,x^2\to \infty,\)</span> whereas <span class="process-math">\(2^x\to 0.\)</span></figcaption></figure></section><section class="subsubsection" id="subsubsection-13"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.5.1.1</span> <span class="title">Evaluating Exponential Functions</span>
+</h4>
+<p id="p-312">Recall the properties of exponents: If <span class="process-math">\(x\)</span> is a positive integer, then we define <span class="process-math">\(b^x=b\cdot b\cdots b\)</span> (with <span class="process-math">\(x\)</span> factors of <span class="process-math">\(b).\)</span> If <span class="process-math">\(x\)</span> is a negative integer, then <span class="process-math">\(x=.y\)</span> for some positive integer <span class="process-math">\(y,\)</span> and we define <span class="process-math">\(b^x=b^{-y}=1/b^y.\)</span> Also, <span class="process-math">\(b^0\)</span> is defined to be <span class="process-math">\(1.\)</span> If <span class="process-math">\(x\)</span> is a rational number, then <span class="process-math">\(x=p/q,\)</span> where <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> are integers and <span class="process-math">\(b^x=b^{p/q}=\sqrt[q]{b^p}.\)</span> For example, <span class="process-math">\(9^{3/2}=\sqrt{9^3}=27.\)</span> However, how is <span class="process-math">\(b^x\)</span> defined if <span class="process-math">\(x\)</span> is an irrational number? For example, what do we mean by <span class="process-math">\(2^\sqrt{2}\)</span> This is too complex a question for us to answer fully right now; however, we can make an approximation. In <a href="" class="xref" data-knowl="./knowl/fs-id1170572480690.html" title="Table 1.121: Values of 2^x for a List of Rational Numbers Approximating \sqrt{2}">Table 1.121</a>, we list some rational numbers approaching <span class="process-math">\(\sqrt{2},\)</span> and the values of <span class="process-math">\(2^x\)</span> for each rational number <span class="process-math">\(x\)</span> are presented as well. We claim that if we choose rational numbers <span class="process-math">\(x\)</span> getting closer and closer to <span class="process-math">\(\sqrt{2},\)</span> the values of <span class="process-math">\(2^x\)</span> get closer and closer to some number <span class="process-math">\(L.\)</span> We define that number <span class="process-math">\(L\)</span> to be <span class="process-math">\(2^\sqrt{2}.\)</span></p>
+<figure class="table table-like" id="fs-id1170572480690"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.121<span class="period">.</span></span><span class="space"> </span>Values of <span class="process-math">\(2^x\)</span> for a List of Rational Numbers Approximating <span class="process-math">\(\sqrt{2}\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(1.4\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(1.41\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(1.414\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(1.4142\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(1.41421\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(1.414213\)</span></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2^x\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2.639\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2.65737\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2.66475\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2.665119\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2.665138\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2.665143\)</span></td>
+</tr>
+</table></div></figure><article class="example example-like" id="example-31"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.122</span><span class="period">.</span><span class="space"> </span><span class="title">Bacterial Growth.</span>
+</h5>
+<p id="p-313">Suppose a particular population of bacteria is known to double in size every <span class="process-math">\(4\)</span> hours. If a culture starts with <span class="process-math">\(1000\)</span> bacteria, the number of bacteria after <span class="process-math">\(4\)</span> hours is <span class="process-math">\(n(4)=1000\cdot 2.\)</span> The number of bacteria after <span class="process-math">\(8\)</span> hours is <span class="process-math">\(n(8)=n(4)\cdot 2=1000\cdot 2^2.\)</span> In general, the number of bacteria after <span class="process-math">\(4m\)</span> hours is <span class="process-math">\(n(4m)=1000\cdot 2^m.\)</span> Letting <span class="process-math">\(t=4m,\)</span> we see that the number of bacteria after <span class="process-math">\(t\)</span> hours is <span class="process-math">\(n(t)=1000\cdot 2^{t/4}.\)</span> Find the number of bacteria after <span class="process-math">\(6\)</span> hours, <span class="process-math">\(10\)</span> hours, and <span class="process-math">\(24\)</span> hours.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-55" id="solution-55"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-55"><div class="solution solution-like"><p id="p-314">The number of bacteria after 6 hours is given by <span class="process-math">\(n(6)=1000\cdot 2^{6/4} \approx 2828\)</span> bacteria. The number of bacteria after <span class="process-math">\(10\)</span> hours is given by <span class="process-math">\(n(10)=1000\cdot 2^{10/4}≈5657\)</span> bacteria. The number of bacteria after <span class="process-math">\(24\)</span> hours is given by <span class="process-math">\(n(24)=1000\cdot 2^6=64,000\)</span> bacteria.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-25"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.123</span><span class="period">.</span>
+</h5>
+<p id="p-315">Given the exponential function <span class="process-math">\(f(x)=100\cdot 3^{x/2},\)</span> evaluate <span class="process-math">\(f(4)\)</span> and <span class="process-math">\(f(10).\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-56" id="solution-56"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-56"><div class="solution solution-like"><p id="p-316"><span class="process-math">\(f(4)=900;f(10)=24,300.\)</span></p></div></div>
+</div></article><article class="note remark-like" id="note-9"><h5 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.124</span><span class="period">.</span><span class="space"> </span><span class="title">Media.</span>
+</h5>
+<p id="p-317">Go to <a class="external" href="http://www.openstax.org/l/20_exponengrow" target="_blank">World Population Balance</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-6" id="fn-6"><sup> 1 </sup></a> for another example of exponential population growth.</p></article></section><section class="subsubsection" id="subsubsection-14"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.5.1.2</span> <span class="title">Graphing Exponential Functions</span>
+</h4>
+<p id="p-318">For any base <span class="process-math">\(b\gt 0,b\neq 1,\)</span> the exponential function <span class="process-math">\(f(x)=b^x\)</span> is defined for all real numbers <span class="process-math">\(x\)</span> and <span class="process-math">\(b^x\gt 0.\)</span> Therefore, the domain of <span class="process-math">\(f(x)=b^x\)</span> is <span class="process-math">\((-\infty,\infty)\)</span> and the range is <span class="process-math">\((0,\infty).\)</span> To graph <span class="process-math">\(b^x,\)</span> we note that for <span class="process-math">\(b\gt 1,b^x\)</span> is increasing on <span class="process-math">\((-\infty,\infty)\)</span> and <span class="process-math">\(b^x\to \infty\)</span> as <span class="process-math">\(x\to \infty,\)</span> whereas <span class="process-math">\(b^x\to 0\)</span> as <span class="process-math">\(x\to -\infty.\)</span> On the other hand, if <span class="process-math">\(0\lt b\lt 1,f(x)=b^x\)</span> is decreasing on <span class="process-math">\((-\infty,\infty)\)</span> and <span class="process-math">\(b^x\to 0\)</span> as <span class="process-math">\(x\to \infty\)</span> whereas <span class="process-math">\(b^x\to \infty\)</span> as <span class="process-math">\(x\to -\infty\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_05_002.html" title="Figure 1.125">Figure 1.125</a>).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_01_05_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_05_002.jpg" class="contained" alt='"An image of a graph. The x axis runs from -3 to 3 and the y axis runs from 0 to 4. The graph is of four functions. The first function is “f(x) = 2 to the power of x”, an increasing curved function, which starts slightly above the x axis and begins increasing. The second function is “f(x) = 4 to the power of x”, an increasing curved function, which starts slightly above the x axis and begins increasing rapidly, more rapidly than the first function. The third function is “f(x) = (1/2) to the power of x”, a decreasing curved function with decreases until it gets close to the x axis without touching it. The third function is “f(x) = (1/4) to the power of x”, a decreasing curved function with decreases until it gets close to the x axis without touching it. It decreases at a faster rate than the third function."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.125<span class="period">.</span></span><span class="space"> </span>If <span class="process-math">\(b\gt 1,\)</span> then <span class="process-math">\(b^x\)</span> is increasing on <span class="process-math">\((-\infty,\infty).\)</span> If <span class="process-math">\(0\lt b\lt 1,\)</span> then <span class="process-math">\(b^x\)</span> is decreasing on <span class="process-math">\((-\infty,\infty).\)</span></figcaption></figure><article class="note remark-like" id="note-10"><h5 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.126</span><span class="period">.</span><span class="space"> </span><span class="title">Media.</span>
+</h5>
+<p id="p-319">Visit this <a class="external" href="http://www.openstax.org/l/20_inverse" target="_blank">site</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-7" id="fn-7"><sup> 2 </sup></a> for more exploration of the graphs of exponential functions.</p></article><p id="p-320">Note that exponential functions satisfy the general laws of exponents. To remind you of these laws, we state them as rules.</p>
+<article class="note remark-like" id="note-11"><h5 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.127</span><span class="period">.</span><span class="space"> </span><span class="title">Rule: Laws of Exponents.</span>
+</h5>
+<p id="p-321">For any constants <span class="process-math">\(a\gt 0,b\gt 0,\)</span> and for all <span class="process-math">\(x\)</span> and y,</p>
+<ol class="decimal">
+<li id="li-227"><p id="p-derived-li-227"><span class="process-math">\(\displaystyle b^x\cdot b^y=b^{x+y}\)</span></p></li>
+<li id="li-228"><p id="p-derived-li-228"><span class="process-math">\(\displaystyle \frac{b^x}{b^y}=b^{x−y}\)</span></p></li>
+<li id="li-229"><p id="p-derived-li-229"><span class="process-math">\(\displaystyle (b^x)^y=b^{xy}\)</span></p></li>
+<li id="li-230"><p id="p-derived-li-230"><span class="process-math">\(\displaystyle (ab)^x=a^xb^x\)</span></p></li>
+<li id="li-231"><p id="p-derived-li-231"><span class="process-math">\(\displaystyle \frac{a^x}{b^x}=\left(\frac{a}{b}\right)^x\)</span></p></li>
+</ol></article><article class="example example-like" id="example-32"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.128</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Laws of Exponents.</span>
+</h5>
+<p id="p-322">Use the laws of exponents to simplify each of the following expressions.</p>
+<ol class="decimal">
+<li id="li-232"><p id="p-derived-li-232"><span class="process-math">\(\displaystyle \frac{(2x^{2/3})^3}{(4x^{−1/3})^2}\)</span></p></li>
+<li id="li-233"><p id="p-derived-li-233"><span class="process-math">\(\displaystyle \frac{(x^3y^{−1})^2}{(xy^2)^{−2}}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like"><ol class="decimal">
+<li id="li-234"><p id="p-derived-li-234">We can simplify as follows:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{(2x^{2/3})^3}{(4x^{−1/3})^2}= \frac{2^3(x^{2/3})^3}{4^2(x^{−1/3})^2}= \frac{8x^2}{16x^{−2/3}}= \frac{x^2x^{2/3}}{2}= \frac{x^{8/3}}{2}.
+\end{equation*}
+</div></p></li>
+<li id="li-235"><p id="p-derived-li-235">We can simplify as follows:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{(x^3y^{−1})^2}{(xy^2)^{−2}}=\frac{(x^3)^2(y^{−1})^2}{x^{−2}(y^2)^{−2}}= \frac{x^6y^{−2}}{x^{−2}y^{−4}}=x^6x^2y^{−2}y^4=x^8y^2.
+\end{equation*}
+</div></p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-26"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.129</span><span class="period">.</span>
+</h5>
+<p id="p-323">Use the laws of exponents to simplify <span class="process-math">\((6x^{−3}y^2)/(12x^{−4}y^5).\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-23" id="hint-23"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-23"><div class="hint solution-like"><p id="p-324"><span class="process-math">\(x^a/x^b=x^{a−b}\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-58" id="solution-58"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-58"><div class="solution solution-like"><p id="p-325"><span class="process-math">\(x/(2y^3)\)</span></p></div></div>
+</div></article></section></section><section class="subsection" id="subsection-24"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.2</span> <span class="title">The Number <span class="process-math">\(e \)</span></span>
+</h3>
+<p id="p-326">A special type of exponential function appears frequently in real-world applications. To describe it, consider the following example of exponential growth, which arises from <dfn class="terminology">compounding interest</dfn> in a savings account. Suppose a person invests <span class="process-math">\(P\)</span> dollars in a savings account with an annual interest rate <span class="process-math">\(r,\)</span> compounded annually. The amount of money after 1 year is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170572451390.html ./knowl/CNX_Calc_Figure_01_05_003.html">
+\begin{equation*}
+A(1)=P+rP=P(1+r).
+\end{equation*}
+</div>
+<p id="p-327">The amount of money after <span class="process-math">\(2\)</span> years is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170572451390.html ./knowl/CNX_Calc_Figure_01_05_003.html">
+\begin{equation*}
+A(2)=A(1)+rA(1)=P(1+r)+rP(1+r)=P(1+r)^2.
+\end{equation*}
+</div>
+<p id="p-328">More generally, the amount after <span class="process-math">\(t\)</span> years is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170572451390.html ./knowl/CNX_Calc_Figure_01_05_003.html">
+\begin{equation*}
+A(t)=P(1+r)^t.
+\end{equation*}
+</div>
+<p id="p-329">If the money is compounded 2 times per year, the amount of money after half a year is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170572451390.html ./knowl/CNX_Calc_Figure_01_05_003.html">
+\begin{equation*}
+A\left(\frac{1}{2}\right)=P+\left(\frac{r}{2}\right)P=P\left(1+\left(\frac{r}{2}\right)\right).
+\end{equation*}
+</div>
+<p id="p-330">The amount of money after <span class="process-math">\(1\)</span> year is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170572451390.html ./knowl/CNX_Calc_Figure_01_05_003.html">
+\begin{equation*}
+A\left(1\right)=A\left(\frac{1}{2}\right)+\left(\frac{r}{2}\right)A\left(\frac{1}{2}\right)=P\left(1+\frac{r}{2}\right)+\frac{r}{2}\left(P\left(1+\frac{r}{2}\right)\right)=P\left(1+\frac{r}{2}\right)^2.
+\end{equation*}
+</div>
+<p id="p-331">After <span class="process-math">\(t\)</span> years, the amount of money in the account is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170572451390.html ./knowl/CNX_Calc_Figure_01_05_003.html">
+\begin{equation*}
+A\left(t\right)=P\left(1+\frac{r}{2}\right)^{2t}.
+\end{equation*}
+</div>
+<p id="p-332">More generally, if the money is compounded <span class="process-math">\(n\)</span> times per year, the amount of money in the account after <span class="process-math">\(t\)</span> years is given by the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170572451390.html ./knowl/CNX_Calc_Figure_01_05_003.html">
+\begin{equation*}
+A\left(t\right)=P\left(1+\frac{r}{n}\right)^{nt}.
+\end{equation*}
+</div>
+<p id="p-333">What happens as <span class="process-math">\(n\to \infty?\)</span> To answer this question, we let <span class="process-math">\(m=n/r\)</span> and write</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170572451390.html ./knowl/CNX_Calc_Figure_01_05_003.html">
+\begin{equation*}
+\left(1+ \frac{r}{n}\right)^{nt}=\left(1+ \frac{1}{m}\right)^{mrt},
+\end{equation*}
+</div>
+<p id="p-334">and examine the behavior of <span class="process-math">\(\left(1+1/m\right)^m\)</span> as <span class="process-math">\(m\to \infty,\)</span> using a table of values (<a href="" class="xref" data-knowl="./knowl/fs-id1170572451390.html" title="Table 1.130: Values of \left(1+ \frac{1}{m}\right)^m as m\to \infty">Table 1.130</a>).</p>
+<figure class="table table-like" id="fs-id1170572451390"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.130<span class="period">.</span></span><span class="space"> </span>Values of <span class="process-math">\(\left(1+ \frac{1}{m}\right)^m\)</span> as <span class="process-math">\(m\to \infty\)</span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(m\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(10\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(100\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(1000\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(10,000\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(100,000\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(1,000,000\)</span></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\left(1+ \frac{1}{m}\right)^m\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2.5937\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2.7048\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2.71692\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2.71815\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2.718268\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(2.718280\)</span></td>
+</tr>
+</table></div></figure><p id="p-335">Looking at this table, it appears that <span class="process-math">\((1+1/m)^m\)</span> is approaching a number between <span class="process-math">\(2.7\)</span> and <span class="process-math">\(2.8\)</span> as <span class="process-math">\(m\to \infty.\)</span> In fact, <span class="process-math">\((1+1/m)^m\)</span> does approach some number as <span class="process-math">\(m\to \infty.\)</span> We call this <dfn class="terminology">number <span class="process-math">\(e\)</span></dfn>. To six decimal places of accuracy,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170572451390.html ./knowl/CNX_Calc_Figure_01_05_003.html">
+\begin{equation*}
+e≈2.718282.
+\end{equation*}
+</div>
+<p id="p-336">The letter <span class="process-math">\(e\)</span> was first used to represent this number by the Swiss mathematician Leonhard Euler during the 1720s. Although Euler did not discover the number, he showed many important connections between <span class="process-math">\(e\)</span> and logarithmic functions. We still use the notation <span class="process-math">\(e\)</span> today to honor Euler’s work because it appears in many areas of mathematics and because we can use it in many practical applications.</p>
+<p id="p-337">Returning to our savings account example, we can conclude that if a person puts <span class="process-math">\(P\)</span> dollars in an account at an annual interest rate <span class="process-math">\(r,\)</span> compounded continuously, then <span class="process-math">\(A(t)=Pe^{rt}.\)</span> This function may be familiar. Since functions involving base <span class="process-math">\(e\)</span> arise often in applications, we call the function <span class="process-math">\(f(x)=e^x\)</span> the <dfn class="terminology">natural exponential function</dfn>. Not only is this function interesting because of the definition of the number <span class="process-math">\(e,\)</span> but also, as discussed next, its graph has an important property.</p>
+<p id="p-338">Since <span class="process-math">\(e\gt 1,\)</span> we know <span class="process-math">\(e^x\)</span> is increasing on <span class="process-math">\((-\infty,\infty).\)</span> In <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_05_003.html" title="Figure 1.131">Figure 1.131</a>, we show a graph of <span class="process-math">\(f(x)=e^x\)</span> along with a tangent line to the graph of at <span class="process-math">\(x=0.\)</span> We give a precise definition of tangent line in the next chapter; but, informally, we say a tangent line to a graph of <span class="process-math">\(f\)</span> at <span class="process-math">\(x=a\)</span> is a line that passes through the point <span class="process-math">\((a,f(a))\)</span> and has the same "slope" as <span class="process-math">\(f\)</span> at that point <span class="process-math">\(.\)</span> The function <span class="process-math">\(f(x)=e^x\)</span> is the only exponential function <span class="process-math">\(b^x\)</span> with tangent line at <span class="process-math">\(x=0\)</span> that has a slope of 1. As we see later in the text, having this property makes the natural exponential function the most simple exponential function to use in many instances.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_01_05_003"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_05_003.jpg" class="contained" alt='"An image of a graph. The x axis runs from -3 to 3 and the y axis runs from 0 to 4. The graph is of the function “f(x) = e to power of x”, an increasing curved function that starts slightly above the x axis. The y intercept is at the point (0, 1). At this point, a line is drawn tangent to the function. This line has the label “slope = 1”."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.131<span class="period">.</span></span><span class="space"> </span>The graph of <span class="process-math">\(f(x)=e^x\)</span> has a tangent line with slope <span class="process-math">\(1\)</span> at <span class="process-math">\(x=0.\)</span></figcaption></figure><article class="example example-like" id="example-33"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.132</span><span class="period">.</span><span class="space"> </span><span class="title">Compounding Interest.</span>
+</h4>
+<p id="p-339">Suppose <span class="process-math">\(.500\)</span> is invested in an account at an annual interest rate of <span class="process-math">\(r=5.5%,\)</span> compounded continuously.</p>
+<ol class="decimal">
+<li id="li-236"><p id="p-derived-li-236">Let <span class="process-math">\(t\)</span> denote the number of years after the initial investment and <span class="process-math">\(A(t)\)</span> denote the amount of money in the account at time <span class="process-math">\(t.\)</span> Find a formula for <span class="process-math">\(A(t).\)</span></p></li>
+<li id="li-237"><p id="p-derived-li-237">Find the amount of money in the account after <span class="process-math">\(10\)</span> years and after <span class="process-math">\(20\)</span> years.</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-59" id="solution-59"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-59"><div class="solution solution-like"><ol class="decimal">
+<li id="li-238"><p id="p-derived-li-238">If <span class="process-math">\(P\)</span> dollars are invested in an account at an annual interest rate <span class="process-math">\(r,\)</span> compounded continuously, then <span class="process-math">\(A(t)=Pe^{rt}.\)</span> Here <span class="process-math">\(P=.500\)</span> and <span class="process-math">\(r=0.055.\)</span> Therefore, <span class="process-math">\(A(t)=500e^{0.055t}.\)</span></p></li>
+<li id="li-239"><p id="p-derived-li-239">After <span class="process-math">\(10\)</span> years, the amount of money in the account is<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A(10)=500e^{0.055\cdot 10}=500e^{0.55}≈.866.63.
+\end{equation*}
+</div>After <span class="process-math">\(20\)</span> years, the amount of money in the account is<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A(20)=500e^{0.055\cdot 20}=500e^{1.1}≈.1,502.08.
+\end{equation*}
+</div></p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-27"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.133</span><span class="period">.</span>
+</h4>
+<p id="p-340">If <span class="process-math">\(.750\)</span> is invested in an account at an annual interest rate of <span class="process-math">\(4%,\)</span> compounded continuously, find a formula for the amount of money in the account after <span class="process-math">\(t\)</span> years. Find the amount of money after <span class="process-math">\(30\)</span> years.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-24" id="hint-24"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-24"><div class="hint solution-like"><p id="p-341"><span class="process-math">\(A(t)=Pe^{rt}.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-60" id="solution-60"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-60"><div class="solution solution-like"><p id="p-342"><span class="process-math">\(A(t)=750e^{0.04t}.\)</span> After <span class="process-math">\(30\)</span> years, there will be approximately <span class="process-math">\(.2,490.09.\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.3</span> <span class="title">Logarithmic Functions</span>
+</h3>
+<p id="p-343">Using our understanding of exponential functions, we can discuss their inverses, which are the logarithmic functions. These come in handy when we need to consider any phenomenon that varies over a wide range of values, such as pH in chemistry or decibels in sound levels.</p>
+<p id="p-344">The exponential function <span class="process-math">\(f(x)=b^x\)</span> is one-to-one, with domain <span class="process-math">\((-\infty,\infty)\)</span> and range <span class="process-math">\((0,\infty).\)</span> Therefore, it has an inverse function, called the logarithmic function with base <span class="process-math">\(b.\)</span> For any <span class="process-math">\(b\gt 0,b\neq 1,\)</span> the logarithmic function with base b, denoted <span class="process-math">\(\log_b ,\)</span> has domain <span class="process-math">\((0,\infty)\)</span> and range <span class="process-math">\((-\infty,\infty),\)</span> and satisfies</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_05_004.html ./knowl/CNX_Calc_Figure_01_05_005.html">
+\begin{equation*}
+\log_b (x)=y \text{ if and only if } b^y=x.
+\end{equation*}
+</div>
+<p id="p-345">For example,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_05_004.html ./knowl/CNX_Calc_Figure_01_05_005.html" id="md-7">
+\begin{align*}
+\log_2 (8)=3 \amp \text{ since } 2^3=8,\\
+\log_{10}\left( \frac{1}{100}\right)=−2 \amp \text{ since } 10^{−2}= \frac{1}{10^2}= \frac{1}{100},\\
+\log_b (1)=0 \amp \text{ since } b^0=1 \text{ for any base } b\gt 0.
+\end{align*}
+</div>
+<p id="p-346">Furthermore, since <span class="process-math">\(y=\log_b (x)\)</span> and <span class="process-math">\(y=b^x\)</span> are inverse functions,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_05_004.html ./knowl/CNX_Calc_Figure_01_05_005.html">
+\begin{equation*}
+\log_b (b^x)=x \text{ and } b^{\log_b (x)}=x.
+\end{equation*}
+</div>
+<p id="p-347">The most commonly used logarithmic function is the function <span class="process-math">\(\log_e .\)</span> Since this function uses natural <span class="process-math">\(e\)</span> as its base, it is called the <dfn class="terminology">natural logarithm</dfn>. Here we use the notation <span class="process-math">\(\ln(x)\)</span> or <span class="process-math">\(\ln x\)</span> to mean <span class="process-math">\(\log_e (x).\)</span> For example,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_05_004.html ./knowl/CNX_Calc_Figure_01_05_005.html">
+\begin{equation*}
+\ln(e)=\log_e (e)=1,\ln(e^3)=\log_e (e^3)=3,\ln(1)=\log_e (1)=0.
+\end{equation*}
+</div>
+<p id="p-348">Since the functions <span class="process-math">\(f(x)=e^x\)</span> and <span class="process-math">\(g(x)=\ln(x)\)</span> are inverses of each other,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_05_004.html ./knowl/CNX_Calc_Figure_01_05_005.html">
+\begin{equation*}
+\ln(e^x)=x \text{ and } e^{\ln x}=x,
+\end{equation*}
+</div>
+<p id="p-349">and their graphs are symmetric about the line <span class="process-math">\(y=x\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_05_004.html" title="Figure 1.134">Figure 1.134</a>).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_01_05_004"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_05_004.jpg" class="contained" alt='"An image of a graph. The x axis runs from -3 to 3 and the y axis runs from -3 to 4. The graph is of two functions. The first function is “f(x) = e to power of x”, an increasing curved function that starts slightly above the x axis. The y intercept is at the point (0, 1) and there is no x intercept. The second function is “f(x) = ln(x)”, an increasing curved function. The x intercept is at the point (1, 0) and there is no y intercept. A dotted line with label “y = x” is also plotted on the graph, to show that the functions are mirror images over this line."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.134<span class="period">.</span></span><span class="space"> </span>The functions <span class="process-math">\(y=e^x\)</span> and <span class="process-math">\(y=\ln(x)\)</span> are inverses of each other, so their graphs are symmetric about the line <span class="process-math">\(y=x.\)</span></figcaption></figure><p id="p-350">Another frequently used logarithmic function is the function <span class="process-math">\(\log_{10} .\)</span> It is called the <dfn class="terminology">common logarithm</dfn>. Here we use the notation <span class="process-math">\(\log(x)\)</span> or <span class="process-math">\(\log x\)</span> to mean <span class="process-math">\(\log_{10} (x).\)</span> For example,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_05_004.html ./knowl/CNX_Calc_Figure_01_05_005.html">
+\begin{equation*}
+\log(10)=\log_{10} (10)=1,\log(1000)=\log_{10}(10^3)=3,\log(1)=\log_{10} (1)=0.
+\end{equation*}
+</div>
+<article class="note remark-like" id="note-12"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.135</span><span class="period">.</span><span class="space"> </span><span class="title">Media.</span>
+</h4>
+<p id="p-351">At this <a class="external" href="http://www.openstax.org/l/20_logscale" target="_blank">site</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-8" id="fn-8"><sup> 3 </sup></a> you can see an example of a base-10 logarithmic scale.</p></article><p id="p-352">In general, for any base <span class="process-math">\(b\gt 0,b\neq 1,\)</span> the function <span class="process-math">\(g(x)=\log_b (x)\)</span> is symmetric about the line <span class="process-math">\(y=x\)</span> with the function <span class="process-math">\(f(x)=b^x.\)</span> Using this fact and the graphs of the exponential functions, we graph functions <span class="process-math">\(\log_b \)</span> for several values of <span class="process-math">\(b\gt 1\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_05_005.html" title="Figure 1.136">Figure 1.136</a>).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_01_05_005"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_05_005.jpg" class="contained" alt='"An image of a graph. The x axis runs from -3 to 3 and the y axis runs from 0 to 4. The graph is of three functions. All three functions a log functions that are increasing curved functions that start slightly to the right of the y axis and have an x intercept at (1, 0). The first function is “y = log base 10 (x)”, the second function is “f(x) = ln(x)”, and the third function is “y = log base 2 (x)”. The third function increases the most rapidly, the second function increases next most rapidly, and the third function increases the slowest."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.136<span class="period">.</span></span><span class="space"> </span>Graphs of <span class="process-math">\(y=\log_b (x)\)</span> are depicted for <span class="process-math">\(b=2,e,10.\)</span></figcaption></figure><p id="p-353">Before solving some equations involving exponential and logarithmic functions, let’s review the basic properties of logarithms.</p>
+<article class="note remark-like" id="note-13"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.137</span><span class="period">.</span><span class="space"> </span><span class="title">Rule: Properties of Logarithms.</span>
+</h4>
+<p id="p-354">If <span class="process-math">\(a,b,c\gt 0,b\neq 1,\)</span> and <span class="process-math">\(r\)</span> is any real number, then</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-8">
+\begin{align*}
+1. \log_b (ac)=\log_b (a)+\log_b (c) \amp \text{ (Product property) }\\
+2. \log_b \left( \frac{a}{c}\right)=\log_b (a)−\log_b (c) \amp \text{ (Quotient property) }\\
+3. \log_b (a^r)=r\log_b (a) \amp \text{ (Power property) }
+\end{align*}
+</div></article><article class="example example-like" id="example-34"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.138</span><span class="period">.</span><span class="space"> </span><span class="title">Solving Equations Involving Exponential Functions.</span>
+</h4>
+<p id="p-355">Solve each of the following equations for <span class="process-math">\(x.\)</span></p>
+<ol class="decimal">
+<li id="li-240"><p id="p-derived-li-240"><span class="process-math">\(\displaystyle 5^x=2\)</span></p></li>
+<li id="li-241"><p id="p-derived-li-241"><span class="process-math">\(\displaystyle e^x+6e^{-x}=5\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-61" id="solution-61"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-61"><div class="solution solution-like"><ol class="decimal">
+<li id="li-242"><p id="p-derived-li-242">Applying the natural logarithm function to both sides of the equation, we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ln5^x=\ln 2.
+\end{equation*}
+</div>Using the power property of logarithms,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x\ln 5=\ln 2.
+\end{equation*}
+</div>Therefore, <span class="process-math">\(x=\ln 2/\ln 5.\)</span></p></li>
+<li id="li-243"><p id="p-derived-li-243">Multiplying both sides of the equation by <span class="process-math">\(e^x,\)</span> we arrive at the equation<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+e^{2x}+6=5e^x.
+\end{equation*}
+</div>Rewriting this equation as<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+e^{2x}−5e^x+6=0,
+\end{equation*}
+</div>we can then rewrite it as a quadratic equation in <span class="process-math">\(e^x.\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(e^x)^2−5(e^x)+6=0.
+\end{equation*}
+</div>Now we can solve the quadratic equation. Factoring this equation, we obtain<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(e^x−3)(e^x−2)=0.
+\end{equation*}
+</div>Therefore, the solutions satisfy <span class="process-math">\(e^x=3\)</span> and <span class="process-math">\(e^x=2.\)</span> Taking the natural logarithm of both sides gives us the solutions <span class="process-math">\(x=\ln 3,\ln 2.\)</span></p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-28"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.139</span><span class="period">.</span>
+</h4>
+<p id="p-356">Solve <span class="process-math">\(e^{-x}/(3+e^{-x})=1/2.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-25" id="hint-25"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-25"><div class="hint solution-like"><p id="p-357">First solve the equation for <span class="process-math">\(e^{-x}.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-62" id="solution-62"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-62"><div class="solution solution-like"><p id="p-358"><span class="process-math">\(x=\frac{\ln 3}{2}\)</span></p></div></div>
+</div></article><article class="example example-like" id="example-35"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.140</span><span class="period">.</span><span class="space"> </span><span class="title">Solving Equations Involving Logarithmic Functions.</span>
+</h4>
+<p id="p-359">Solve each of the following equations for <span class="process-math">\(x.\)</span></p>
+<ol class="decimal">
+<li id="li-244"><p id="p-derived-li-244"><span class="process-math">\(\displaystyle \ln\left(\frac{1}{x}\right)=4\)</span></p></li>
+<li id="li-245"><p id="p-derived-li-245"><span class="process-math">\(\displaystyle \log_{10}\sqrt{x}+\log_{10}x=2\)</span></p></li>
+<li id="li-246"><p id="p-derived-li-246"><span class="process-math">\(\displaystyle \ln(2x)−3\ln(x^2)=0\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-63" id="solution-63"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-63"><div class="solution solution-like"><ol class="decimal">
+<li id="li-247"><p id="p-derived-li-247">By the definition of the natural logarithm function,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ln\left(\frac{1}{x}\right)=4 \text{ if and only if } e^4=\frac{1}{2}.
+\end{equation*}
+</div>Therefore, the solution is <span class="process-math">\(x=1/e^4.\)</span></p></li>
+<li id="li-248"><p id="p-derived-li-248">Using the product and power properties of logarithmic functions, rewrite the left-hand side of the equation as<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\log_{10}\sqrt{x?+\log_{10}x=\log_{10}x\sqrt{x?=\log_{10}x^{3/2}=\frac{3}{2}\log_{10}x.
+\end{equation*}
+</div>Therefore, the equation can be rewritten as<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{3}{2}\log_{10}x=2 \text{ or } \log_{10}x=\frac{4}{3}.
+\end{equation*}
+</div>The solution is <span class="process-math">\(x=10^{4/3}=10\sqrt[3]{10}.\)</span></p></li>
+<li id="li-249"><p id="p-derived-li-249">Using the power property of logarithmic functions, we can rewrite the equation as <span class="process-math">\(\ln(2x)−\ln(x^6)=0.\)</span> Using the quotient property, this becomes<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ln\left(\frac{2}{x^5}\right)=0.
+\end{equation*}
+</div>Therefore, <span class="process-math">\(2/x^5=1,\)</span> which implies <span class="process-math">\(x=\sqrt[5]{2}.\)</span> We should then check for any extraneous solutions.</p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-29"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.141</span><span class="period">.</span>
+</h4>
+<p id="p-360">Solve <span class="process-math">\(\ln(x^3)−4&gt;\ln(x)=1.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-26" id="hint-26"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-26"><div class="hint solution-like"><p id="p-361">First use the power property, then use the product property of logarithms.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-64" id="solution-64"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-64"><div class="solution solution-like"><p id="p-362"><span class="process-math">\(x=\frac{1}{e}\)</span></p></div></div>
+</div></article><p id="p-363">When evaluating a logarithmic function with a calculator, you may have noticed that the only options are <span class="process-math">\(\log_{10}\)</span> or log, called the <dfn class="terminology">common logarithm</dfn>, or ln, which is the natural logarithm. However, exponential functions and logarithm functions can be expressed in terms of any desired base <span class="process-math">\(b.\)</span> If you need to use a calculator to evaluate an expression with a different base, you can apply the change-of-base formulas first. Using this change of base, we typically write a given exponential or logarithmic function in terms of the natural exponential and natural logarithmic functions.</p>
+<article class="note remark-like" id="note-14"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.142</span><span class="period">.</span><span class="space"> </span><span class="title">Rule: Change-of-Base Formulas.</span>
+</h4>
+<p id="p-364">Let <span class="process-math">\(a\gt 0,b\gt 0,\)</span> and <span class="process-math">\(a\neq 1,b\neq 1.\)</span></p>
+<ol class="decimal">
+<li id="li-250"><p id="p-derived-li-250"><span class="process-math">\(a^x=b^{\log_b a^x}\)</span> for any real number <span class="process-math">\(x.\)</span> If <span class="process-math">\(b=e,\)</span> this equation reduces to <span class="process-math">\(a^x=e^{\log_e a^x}=e^{x\ln a}.\)</span></p></li>
+<li id="li-251"><p id="p-derived-li-251"><span class="process-math">\(\log_a x=\frac{\log_b x}{\log_b a}\)</span> for any real number <span class="process-math">\(x\gt 0.\)</span> If <span class="process-math">\(b=e,\)</span> this equation reduces to <span class="process-math">\(\log_a x=\frac{\ln x}{\ln a}.\)</span></p></li>
+</ol></article><article class="example example-like" id="example-36"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.143</span><span class="period">.</span><span class="space"> </span><span class="title">Changing Bases.</span>
+</h4>
+<p id="p-365">Use a calculating utility to evaluate <span class="process-math">\(\log_{3}7\)</span> with the change-of-base formula presented earlier.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-65" id="solution-65"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-65"><div class="solution solution-like">
+<p id="p-366">Use the second equation with <span class="process-math">\(a=3\)</span> and <span class="process-math">\(e=3.\)</span></p>
+<p id="p-367"><span class="process-math">\(\log_{3}7=\frac{\ln 7}{\ln 3}≈1.77124.\)</span></p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-30"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.144</span><span class="period">.</span>
+</h4>
+<p id="p-368">Use the change-of-base formula and a calculating utility to evaluate <span class="process-math">\(\log_{4}6.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-27" id="hint-27"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-27"><div class="hint solution-like"><p id="p-369">Use the change of base to rewrite this expression in terms of expressions involving the natural logarithm function.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-66" id="solution-66"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-66"><div class="solution solution-like"><p id="p-370"><span class="process-math">\(1.29248\)</span></p></div></div>
+</div></article><article class="example example-like" id="example-37"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.145</span><span class="period">.</span><span class="space"> </span><span class="title">Chapter Opener: The Richter Scale for Earthquakes.</span>
+</h4>
+<figure class="figure figure-like" id="CNX_Calc_Figure_01_05_010"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_05_013.jpg" class="contained" alt='"A photograph of an earthquake fault."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.146<span class="period">.</span></span><span class="space"> </span>(credit: modification of work by Robb Hannawacker, NPS)</figcaption></figure><p id="p-371">In 1935, Charles Richter developed a scale (now known as the <dfn class="terminology">Richter scale</dfn>) to measure the magnitude of an <dfn class="terminology">earthquake</dfn>. The scale is a base-10 logarithmic scale, and it can be described as follows: Consider one earthquake with magnitude <span class="process-math">\(R_1\)</span> on the Richter scale and a second earthquake with magnitude <span class="process-math">\(R_2\)</span> on the Richter scale. Suppose <span class="process-math">\(R_1\gt R_2,\)</span> which means the earthquake of magnitude <span class="process-math">\(R_1\)</span> is stronger, but how much stronger is it than the other earthquake? A way of measuring the intensity of an earthquake is by using a seismograph to measure the amplitude of the earthquake waves. If <span class="process-math">\(A_1\)</span> is the amplitude measured for the first earthquake and <span class="process-math">\(A_2\)</span> is the amplitude measured for the second earthquake, then the amplitudes and magnitudes of the two earthquakes satisfy the following equation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R_1−R_2=\log_{10}\left(\frac{A_1}{A_2}\right).
+\end{equation*}
+</div>
+<p id="p-372">Consider an earthquake that measures 8 on the Richter scale and an earthquake that measures 7 on the Richter scale. Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+8−7=\log_{10}\left(\frac{A_1}{A_2}\right).
+\end{equation*}
+</div>
+<p id="p-373">Therefore,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\log_{10}\left(\frac{A_1}{A_2}\right)=1,
+\end{equation*}
+</div>
+<p id="p-374">which implies <span class="process-math">\(A_1/A_2=10\)</span> or <span class="process-math">\(A_1=10A_2.\)</span> Since <span class="process-math">\(A_1\)</span> is 10 times the size of <span class="process-math">\(A_2,\)</span> we say that the first earthquake is 10 times as intense as the second earthquake. On the other hand, if one earthquake measures 8 on the Richter scale and another measures 6, then the relative intensity of the two earthquakes satisfies the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\log_{10}\left(\frac{A_1}{A_2}\right)=8−6=2.
+\end{equation*}
+</div>
+<p id="p-375">Therefore, <span class="process-math">\(A_1=100A_2.\)</span> That is, the first earthquake is 100 times more intense than the second earthquake.</p>
+<p id="p-376">How can we use logarithmic functions to compare the relative severity of the magnitude 9 earthquake in Japan in 2011 with the magnitude 7.3 earthquake in Haiti in 2010?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-67" id="solution-67"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-67"><div class="solution solution-like">
+<p id="p-377">To compare the Japan and Haiti earthquakes, we can use an equation presented earlier:</p>
+<p id="p-378"><span class="process-math">\(9−7.3=\log_{10}\left(\frac{A_1}{A_2}\right).\)</span></p>
+<p id="p-379">Therefore, <span class="process-math">\(A_1/A_2=10^1.7,\)</span> and we conclude that the earthquake in Japan was approximately <span class="process-math">\(50\)</span> times more intense than the earthquake in Haiti.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-31"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.147</span><span class="period">.</span>
+</h4>
+<p id="p-380">Compare the relative severity of a magnitude <span class="process-math">\(8.4\)</span> earthquake with a magnitude <span class="process-math">\(7.4\)</span> earthquake.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-28" id="hint-28"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-28"><div class="hint solution-like"><p id="p-381"><span class="process-math">\(R_1−R_2=\log_{10}\left(A_1/A_2\right).\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-68" id="solution-68"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-68"><div class="solution solution-like"><p id="p-382">The magnitude <span class="process-math">\(8.4\)</span> earthquake is roughly <span class="process-math">\(10\)</span> times as severe as the magnitude <span class="process-math">\(7.4\)</span> earthquake.</p></div></div>
+</div></article></section><section class="conclusion" id="conclusion-5"><p id="p-383">This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at <a class="external" href="https://openstax.org/details/books/calculus-volume-1" target="_blank">https://openstax.org/details/books/calculus-volume-1.</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 4 </sup></a></p>
+<p id="p-384">Additional practice exercises are available in at the bottom on this section in OpenStax Calculus Volume 1: <a class="external" href="https://openstax.org/books/calculus-volume-1/pages/1-5-exponential-and-logarithmic-functions" target="_blank"><code class="code-inline tex2jax_ignore">https://openstax.org/books/calculus-volume-1/pages/1-1-review-of-functions</code></a></p></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-6"><div class="fn"><code class="code-inline tex2jax_ignore">openstax.org/l/20_exponengrow</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-7"><div class="fn"><code class="code-inline tex2jax_ignore">openstax.org/1/20_inverse</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-8"><div class="fn"><code class="code-inline tex2jax_ignore">openstax.org/l/20_logscale</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn"><code class="code-inline tex2jax_ignore">https://openstax.org/details/books/calculus-volume-1</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

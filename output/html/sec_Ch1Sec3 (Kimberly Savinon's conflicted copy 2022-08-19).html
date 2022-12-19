@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:02:29-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mathematical Modeling</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<meta property="book:author" content="Custom Business Calculus Edition ">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline">Custom Business Calculus Edition</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch1Sec2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="suc_Ch1Sec4.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch1Sec2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a class="next-button button toolbar-item" href="suc_Ch1Sec4.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="meta_frontmatter-preface.html" data-scroll="meta_frontmatter-preface" class="internal">Preface: OpenStax Calculus Volume 1</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2" class="internal">Preface: Business Calculus Custom Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="active">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Derivatives</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="sec_Ch1Sec3"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Mathematical Modeling</span>
+</h2>
+<section class="introduction" id="introduction-7"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc">
+<li id="li-227"><p id="p-derived-li-227">Discuss linear mathematical models for cost, revenue, profit, supply, and demand functions.</p></li>
+<li id="li-228"><p id="p-derived-li-228">Find and analyze the break-even quantity and equilibrium point.</p></li>
+<li id="li-229"><p id="p-derived-li-229">Discuss quadratic mathematical models.</p></li>
+<li id="li-230"><p id="p-derived-li-230">Find and analyze the vertex point of a quadratic function.</p></li>
+<li id="li-231"><p id="p-derived-li-231">Optimize cost, revenue, and profit functions.</p></li>
+</ul>
+<p id="p-237">Note: This is an additional section added to this custom version of the book.  It was written by Kim Savinon.</p>
+<p id="p-238">A large variety of real-world situations can be described using <dfn class="terminology">mathematical models</dfn>. A mathematical model is a method of simulating real-life situations with mathematical equations. Physicists, engineers, economists, and other researchers develop models by combining observation with quantitative data to develop equations, functions, graphs, and other mathematical tools to describe the behavior of various systems accurately. Models are useful because they help predict future outcomes. Examples of mathematical models include the study of population dynamics, investigations of weather patterns, and predictions of product sales.</p></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">Mathematical Models of Cost, Revenue, and Profit</span>
+</h3>
+<p id="p-239">Given <span class="process-math">\(x\)</span> the number of units produced, the <dfn class="terminology">cost function</dfn> <span class="process-math">\(C(x)\)</span> outputs the amount a business or company must pay in order to produce <span class="process-math">\(x\)</span> units. There are typicically two types of costs: fixed and variable. In a linear cost model, the cost function is expressed as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Busi_Calc_Figure_01_03_001.html">
+\begin{equation*}
+C(x)=mx+b
+\end{equation*}
+</div>
+<p id="fixedcost_1.3">where <span class="process-math">\(m\)</span> is the cost per unit also referred to as the <dfn class="terminology">variable</dfn> or <dfn class="terminology">marginal cost</dfn>. Here, the variable cost term <span class="process-math">\(mx\)</span> depends on the number of units produced. Some examples of variable/marginal costs are labor, material, or manufacturing costs. Additionally, <span class="process-math">\(b\)</span> represents the <dfn class="terminology">fixed costs</dfn> which is the amount one must pay to operate a business. The fixed cost is independent of the number of units produced. It is the amount one must pay if 0 units are produced since <span class="process-math">\(b\)</span> is the <span class="process-math">\(y\)</span>-intercept of the cost function. That is, <span class="process-math">\(C(0)=b\text{.}\)</span> Some examples of fixed costs are rent, utility bills, or operating costs.</p>
+<p id="p-241">The <dfn class="terminology">revenue function</dfn> outputs the payment received from selling <span class="process-math">\(x\)</span> units. In a linear model, the revenue is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Busi_Calc_Figure_01_03_001.html">
+\begin{equation*}
+R(x)=px
+\end{equation*}
+</div>
+<p id="p-242">where <span class="process-math">\(p\)</span> is the selling price per unit which is also called the <dfn class="terminology">marginal revenue</dfn>.</p>
+<p id="p-243">The <dfn class="terminology">profit function</dfn> outputs the net proceeds after paying off the expenses/costs. That is,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Busi_Calc_Figure_01_03_001.html">
+\begin{equation*}
+P(x)=R(x)-C(x)\text{.}
+\end{equation*}
+</div>
+<p id="p-244">Notice that the above definition for the profit function holds if either of our revenue or cost functions are non-linear.</p>
+<p id="p-245">If profits are negative, this is considered a <span class="process-math">\(loss\)</span> and if profits are positive, this is considered a <span class="process-math">\(gain\text{.}\)</span></p>
+<section class="subsubsection" id="subsubsection-9"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.3.1.1</span> <span class="title">Break-even Analysis</span>
+</h4>
+<p id="p-246">Companies often look for the point at which there is no <em class="emphasis">loss</em> or <em class="emphasis">gain</em>. This gives you the minimum number of units a company must produce in order to make a profit.</p>
+<article class="definition definition-like" id="definition-8"><h5 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.82</span><span class="period">.</span>
+</h5>The <dfn class="terminology">break-even quantity</dfn> is the number of units <span class="process-math">\(x\)</span> needed so that cost and revenue are equal, meaning the total profit is zero. That is, <span class="process-math">\(C(x)=R(x)\)</span> or <span class="process-math">\(P(x)=0\text{.}\)</span></article><p id="p-247">Observe that <span class="process-math">\(C(x)=R(x)\)</span> and <span class="process-math">\(P(x)=0\)</span> will yield the same break-even quantity solution since <span class="process-math">\(R=C\)</span> if and only if <span class="process-math">\(P=0\text{.}\)</span> This is illustrated in <a href="" class="xref" data-knowl="./knowl/Busi_Calc_Figure_01_03_001.html" title="Figure 1.83">Figure 1.83</a>.</p>
+<figure class="figure figure-like" id="Busi_Calc_Figure_01_03_001"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/Busi_Calc_Figure_01_03_001.png" class="contained" alt='"This figure shows two intersection lines, R(x) and C(x).  R(x) is a line through the origin. C(x) is a line with a positive y-intercept and less steep slope than R(x). The lines intersect at a point labeled break even point. Before they intersect (to the left of intersection) the region between R(X) and C(x) is shaded and labeled loss. To the right of the intersection, the region between the lines is shaded and labeled gain."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.83<span class="period">.</span></span><span class="space"> </span>The point of intersection between <span class="process-math">\(R(x)\)</span> and <span class="process-math">\(C(x) \)</span> is the break-even point. When we are to the left of the break-even point,there is net loss and to the right there is net gain.</figcaption></figure><article class="example example-like" id="example-21"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.84</span><span class="period">.</span>
+</h5>
+<p id="p-248">Peter's ice cream stand has an operating cost of $200 per week. The cost to make an ice cream sundae is $2 and they sell for $6. Compute the cost, revenue, and profit functions for one week. Then, find the break-even quantity. Let <span class="process-math">\(x\)</span> represent the number of ice cream sundaes sold.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like">Since our operating costs (fixed costs) are $200 per week and the marginal cost is $2 per ice cream sundae, then<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C(x)=2x+200\text{.}
+\end{equation*}
+</div>Since the selling price is $6 per ice cream sundae, then<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R(x)=6x\text{.}
+\end{equation*}
+</div>Using <span class="process-math">\(C(x)=2x+200\)</span> and <span class="process-math">\(R(x)=6x\text{,}\)</span> we can obtain the profit function.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P(x)=R(x)-C(x)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P(x)=6x-(2x+200)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P(x)=6x-2x-200
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P(x)=4x-200
+\end{equation*}
+</div>
+<p id="p-249">To find the break-even quantity, we may proceed by using two different methods. Both yield the same solution.</p>
+<dfn class="terminology">Method 1:</dfn><span class="process-math">\(\;R(x)=C(x)\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+6x=2x+200
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+4x=200
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=50
+\end{equation*}
+</div>
+<dfn class="terminology">Method 2:</dfn><span class="process-math">\(\;P(x)=0\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+4x-200=0
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+4x=200
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=50
+\end{equation*}
+</div>Peter must sell at least 50 ice cream sundaes in one week in order to break-even.</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-17"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.85</span><span class="period">.</span>
+</h5>
+<p id="p-250">A suit department store has an operating cost of $1000 per week. The cost to supply a suit is $50 and they sell for $150 each. Compute the cost, revenue, and profit functions for one week. Then, find the break-even quantity. Let <span class="process-math">\(x\)</span> represent the number of suits sold.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-15" id="hint-15"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-15"><div class="hint solution-like">Recall that <span class="process-math">\(P=R-C\)</span> and to find the break-even quantity, we can solve either <span class="process-math">\(R=C\)</span> or <span class="process-math">\(P=0\text{.}\)</span>
+</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like">
+<p id="p-251">The cost and revenue functions are <span class="process-math">\(C(x)=50x+1000,\;R(x)=150x.\)</span></p> Profit function:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P(x)=R(x)-C(x)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P(x)=100x-1000
+\end{equation*}
+</div>Break-even quantity:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R(x)=C(x)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+150x=50x+1000
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=10
+\end{equation*}
+</div>The department store must sell at least 10 suits in one week in order to break-even. That is, we must sell more than 10 suits to make a profit.</div></div>
+</div></article></section></section><section class="subsection" id="subsection-30"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">Mathematical Models of Supply and Demand</span>
+</h3>
+<p id="p-252">The <dfn class="terminology">demand equation</dfn> <span class="process-math">\(p(x)\)</span> gives you the price <span class="process-math">\(p\)</span> of one unit when <span class="process-math">\(x\)</span> units are wanted by the consumers. The independent variable here is <span class="process-math">\(x\text{.}\)</span> Note that as we increase the price of one unit, the number of units wanted by the consumer will drop. As a result, we expect the demand equation to be a decreasing function.</p>
+<p id="p-253">The <dfn class="terminology">supply equation</dfn> <span class="process-math">\(p(x)\)</span> gives you the price <span class="process-math">\(p\)</span> needed to make <span class="process-math">\(x\)</span> units available to the market. As we had with the demand equation, the independent variable here is <span class="process-math">\(x\text{.}\)</span> Note that suppliers will naturally want to sell more units if the price is higher. As a result, we expect the supply equation to be an increasing function. If we supply more units than the market demanded, this is considered a <em class="emphasis">surplus</em>. If we supply less units than the market demanded, this is considered a <em class="emphasis">shortage</em>.</p>
+<article class="note remark-like" id="note-4"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.86</span><span class="period">.</span>
+</h4>The supply and demand functions as given above appear to be defined backwards and in some scenarios they may be written in the form <span class="process-math">\(x=f(p)\)</span> where the independent variable is <span class="process-math">\(p\)</span> and not <span class="process-math">\(x\text{.}\)</span></article><article class="example example-like" id="example-22"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.87</span><span class="period">.</span>
+</h4>
+<p id="p-254">Suppose that 500 units of a certain item are sold per day by the entire industry at a price of $20 per item and that 1500 units can be sold per day by the same industry at a price of $15 per unit. Assuming a linear model, find the demand equation <span class="process-math">\(p(x)\)</span> where <span class="process-math">\(x\)</span> is the number of units sold per day.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
+<p id="p-255">Observe that 500 units are sold at a price of $20 per unit gives us the ordered pair <span class="process-math">\((500,20)\text{.}\)</span> Moreover, we also have that 1500 units are sold at a price of $15 per unit. That is, <span class="process-math">\((1500,15)\text{.}\)</span></p>
+<p id="p-256">Since the demand equation is linear, we can compute the slope of the line <span class="process-math">\(m\)</span> by using the above ordered pairs.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+m=\frac{y_2-y_1}{x_2-x_1}=\frac{15-20}{1500-500}=-0.005
+\end{equation*}
+</div>Using point-slope form,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p(x)-20=-0.005(x-500)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p(x)-20=-0.005x+2.5
+\end{equation*}
+</div>Hence, our demand equation is<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p(x)=-0.005x+22.5\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-18"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.88</span><span class="period">.</span>
+</h4>Suppose that when 100 units of a certain item are supplied, they are sold at a price of $1.25 per unit. When 80 more units of a certain item are supplied, the price per unit increased by $1. Assuming a linear model, find the supply equation <span class="process-math">\(p(x)\)</span> where <span class="process-math">\(x\)</span> is the number of units sold.<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-16" id="hint-16"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-16"><div class="hint solution-like">Use point-slope form to construct the linear supply equation.</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like">
+<p id="p-257">Using the ordered pairs <span class="process-math">\((100,1.25)\)</span> and <span class="process-math">\((180,2.25)\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+m=\frac{2.25-1.25}{180-100}=0.0125.
+\end{equation*}
+</div>Supply equation:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p(x)-1.25=0.0125(x-100)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p(x)=0.0125x\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article><section class="subsubsection" id="subsubsection-10"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.3.2.1</span> <span class="title">Equilibrium</span>
+</h4>
+<p id="p-258">Companies often look for the amount of units needed to guarantee there is neither a <span class="process-math">\(surplus\)</span> or <span class="process-math">\(shortage\)</span> of units. Meaning, we want supply and demand to be equal which brings us to the following definition.</p>
+<article class="definition definition-like" id="definition-9"><h5 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.89</span><span class="period">.</span>
+</h5>The <dfn class="terminology">equilibrium point</dfn><span class="process-math">\(\;(x,p)\)</span> is the number of units <span class="process-math">\(x\)</span> and selling price <span class="process-math">\(p\)</span> where supply and demand are equal. The <span class="process-math">\(x\)</span>-coordinate is the <dfn class="terminology">equilibrium quantity</dfn> and the <span class="process-math">\(p\)</span>-coordinate is the <dfn class="terminology">equilibrium price</dfn>.</article><figure class="figure figure-like" id="Busi_Calc_Figure_01_03_002"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/Busi_Calc_Figure_01_03_002.png" class="contained" alt='"This figure shows two intersection lines, supply and demand. The supply equation is an increasing line through the origin. The demand equation is a decreasing line with a positive y-intercept. The lines intersect at a point labeled equilibrium point. Before they intersect (to the left of intersection) the region between the supply and demand equations is shaded and labeled shortage. To the right of the intersection, the region between the lines is shaded and labeled surplus."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.90<span class="period">.</span></span><span class="space"> </span>The point of intersection between the supply and demand equations is the equilibrium point. When we are to the left of the break-even point, there is a shortage of items and to the right there is a surplus of items.</figcaption></figure><article class="example example-like" id="example-23"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.91</span><span class="period">.</span>
+</h5>Suppose the supply and demand equations for Peter's ice cream stand are <span class="process-math">\(p=0.3x+1\)</span> and <span class="process-math">\(p=-0.2x+11,\)</span> respectively. Find the equilibrium price and quantity. Suppose <span class="process-math">\(x\)</span> is the number of ice cream sundaes sold and the price per sundae <span class="process-math">\(p\)</span> is in dollars.<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like">In order to find the equilibrium point <span class="process-math">\((x,p),\)</span> we must set Peter's supply and demand equations equal to one another.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0.3x+1=-0.2x+11
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0.5x=10
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=20
+\end{equation*}
+</div>
+<p id="p-259">The equilibrium quantity is 20 ice cream sundaes.</p>
+<p id="p-260">Next, we can use either the supply or demand equation to solve for the equilibrium price. Notice that both equations will yield the same result.</p>
+<dfn class="terminology">Method 1:</dfn> Using the supply equation.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p=0.3(20)+1=7
+\end{equation*}
+</div>
+<dfn class="terminology">Method 2:</dfn> Using the demand equation.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p=-0.2(20)+11=7
+\end{equation*}
+</div>The equilibrium price is $7.</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-19"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.92</span><span class="period">.</span>
+</h5>The supply and demand equations for Lola's smoothie shop are <span class="process-math">\(p=0.2x+1\)</span> and <span class="process-math">\(p=-0.5x+15,\)</span> respectively. Find the equilibrium point. Suppose <span class="process-math">\(x\)</span> is the number of smoothies sold in one day and the price per smoothie <span class="process-math">\(p\)</span> is in dollars.<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-17" id="hint-17"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-17"><div class="hint solution-like">Recall that we must set the supply and demand equations equal to one another to find the equilibrium quantity.</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like">Setting Lola's supply and demand equations equal to one another,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0.2x+1=-0.5x+15
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=20
+\end{equation*}
+</div>
+<p id="p-261">The equilibrium quantity is 20 smoothies.</p> Using the supply equation:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p=0.2(20)+1=5
+\end{equation*}
+</div>The equilibrium price is $5.</div></div>
+</div></article></section></section><section class="subsection" id="subsection-31"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.3</span> <span class="title">Quadratic Mathematical Models</span>
+</h3>
+<p id="p-262">As we saw in the previous section, a quadratic polynomial is typically of the form <span class="process-math">\(f(x)=ax^2+bx+c\)</span> where if <span class="process-math">\(a\gt 0\)</span> the graph of <span class="process-math">\(f\)</span> opens upward and if <span class="process-math">\(a\lt 0\)</span> the graph of <span class="process-math">\(f\)</span> opens downward. (See <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_02_005.html" title="Figure 1.56">Figure 1.56</a>(a).) The quadratic polynomial can also be written in standard form <span class="process-math">\(f(x)=a(x-h)^2+k\text{.}\)</span> The point <span class="process-math">\((h,k)\)</span> is called the <dfn class="terminology">vertex point</dfn>. The <span class="process-math">\(x\)</span>-coordinate of the vertex point can be found using the <dfn class="terminology">vertex formula</dfn>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_02_005.html  ">
+\begin{equation*}
+h=-\frac{b}{2a}
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(a,b\)</span> are the coefficients of a quadratic polynomial in standard form, <span class="process-math">\(f(x)=ax^2+bx+c\text{.}\)</span> The <span class="process-math">\(y\)</span>-coordinate of the vertex point can be found by evaluating the quadratic function at <span class="process-math">\(h\text{.}\)</span> That is, <span class="process-math">\(k=f(h)\text{.}\)</span> Notice here that if the parabola opens upward, then the vertex is a <em class="emphasis">minimum</em> as illustrated in <span>(((xref without ref, first/last, or provisional attribute (check spelling))))</span>. Conversely, if the parabola opens downward, the vertex is a <em class="emphasis">maximum</em> as illustrated in <span>(((xref without ref, first/last, or provisional attribute (check spelling))))</span>.</p>
+<figure class="figure figure-like" id="Busi_Calc_Figure_01_03_003"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/Busi_Calc_Figure_01_03_003.png" class="contained" alt='"The graph of a parabola opening upward has a minimum at its vertex."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.93<span class="period">.</span></span><span class="space"> </span>A parabola opening upward has a minimum at its vertex.</figcaption></figure><figure class="figure figure-like" id="Busi_Calc_Figure_01_03_004"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/Busi_Calc_Figure_01_03_004.png" class="contained" alt='"The graph of a parabola opening downward has a maximum at its vertex."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.94<span class="period">.</span></span><span class="space"> </span>A parabola opening downward has a maximum at its vertex.</figcaption></figure><p id="p-263">As an example, let’s consider a mathematical model that a company could use to describe its revenue for the sale of a particular item. Recall the revenue equation <span class="process-math">\(R=p·x.\)</span> The company is interested in how the sales change as the price of the item changes. Suppose the data in <a href="" class="xref" data-knowl="./knowl/fs-id1170573493744.html" title="Table 1.95: Number of Units Sold x (in Thousands) as a Function of Price per Unit p (in Dollars)">Table 1.95</a> show the number of units a company sells as a function of the price per item.</p>
+<figure class="table table-like" id="fs-id1170573493744"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.95<span class="period">.</span></span><span class="space"> </span>Number of Units Sold <span class="process-math">\(x\)</span> (in Thousands) as a Function of Price per Unit <span class="process-math">\(p\)</span> (in Dollars)</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(p\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(6 \)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(8 \)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(10 \)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(12 \)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(14 \)</span></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(19.4 \)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(18.5 \)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(16.2 \)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(13.8 \)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(12.2 \)</span></td>
+</tr>
+</table></div></figure><p id="p-264">In <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_02_008.html" title="Figure 1.96">Figure 1.96</a>, we see the graph the number of units sold (in thousands) as a function of price (in dollars). We note from the shape of the graph that the number of units sold is likely a linear function of price per item, and the data can be closely approximated by the linear function <span class="process-math">\(x= −1.04 p+ 26 \)</span> for <span class="process-math">\(0 \leq p\leq  25 ,\)</span> where <span class="process-math">\(x\)</span> predicts the number of units sold in thousands. Using this linear function, the revenue (in thousands of dollars) can be estimated by the quadratic function</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_02_005.html   ./knowl/fs-id1170573493744.html ./knowl/CNX_Calc_Figure_01_02_008.html ./knowl/fs-id1170573569241.html ./knowl/fs-id1170573493744.html">
+\begin{equation*}
+R(p)=p\cdot( −1.04 p+ 26 )= −1.04p^2+ 26 p
+\end{equation*}
+</div>
+<p id="p-265">for <span class="process-math">\(0 \leq p\leq  25 .\)</span> In <a href="" class="xref" data-knowl="./knowl/fs-id1170573569241.html" title="Example 1.97: Maximizing Revenue">Example 1.97</a>, we use this quadratic function to predict the amount of revenue the company receives depending on the price the company charges per item. Note that we cannot conclude definitively the actual number of units sold for values of <span class="process-math">\(p,\)</span> for which no data are collected. However, given the other data values and the graph shown, it seems reasonable that the number of units sold (in thousands) if the price charged is <span class="process-math">\(p\)</span> dollars may be close to the values predicted by the linear function <span class="process-math">\(x= −1.04 p+ 26 .\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_01_02_008"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_02_008x.jpg" class="contained" alt='"An image of a graph. The y axis runs from 0 to 28 and is labeled n, units sold in thousands. The x axis runs from 0 to 28 and is labeled p, price in dollars. The graph is of the function x = -1.04p + 26, which is a decreasing line function that starts at the y intercept point (0, 26). There are 5 points plotted on the graph at (6, 19.4), (8, 18.5), (10, 16.2), (12, 13.8), and (14, 12.2). The points are not on the graph of the function line, but are very close to it. The function has an x intercept at the point (25, 0)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.96<span class="period">.</span></span><span class="space"> </span>The data collected for the number of items sold as a function of price is roughly linear. We use the linear function <span class="process-math">\(x= -1.04 p+ 26 \)</span> to estimate this function.</figcaption></figure><article class="example example-like" id="fs-id1170573569241"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.97</span><span class="period">.</span><span class="space"> </span><span class="title">Maximizing Revenue.</span>
+</h4>
+<p id="p-266">A company is interested in predicting the amount of revenue it will receive depending on the price it charges for a particular item. Using the data from <a href="" class="xref" data-knowl="./knowl/fs-id1170573493744.html" title="Table 1.95: Number of Units Sold x (in Thousands) as a Function of Price per Unit p (in Dollars)">Table 1.95</a>, the company arrives at the following quadratic function to model revenue <span class="process-math">\(R\)</span> (in thousands of dollars) as a function of price per item <span class="process-math">\(p:\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170573493744.html">
+\begin{equation*}
+R(p)=p\cdot( -1.04 p+ 26 )= -1.04p^2+ 26 p
+\end{equation*}
+</div>
+<p id="p-267">for <span class="process-math">\(0 \leq p\leq  25 .\)</span></p>
+<ol class="decimal">
+<li id="li-232"><p id="p-derived-li-232">Predict the revenue if the company sells the item at a price of <span class="process-math">\(p=\$ 5 \)</span> and <span class="process-math">\(p=\$ 17 .\)</span></p></li>
+<li id="li-233"><p id="p-derived-li-233">Find the zeros of this function and interpret the meaning of the zeros.</p></li>
+<li id="li-234"><p id="p-derived-li-234">Sketch a graph of <span class="process-math">\(R.\)</span></p></li>
+<li id="li-235"><p id="p-derived-li-235">Use the graph to determine the value of <span class="process-math">\(p\)</span> that maximizes revenue. Find the maximum revenue.</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like"><ol class="decimal">
+<li id="li-236"><p id="p-derived-li-236">Evaluating the revenue function at <span class="process-math">\(p= 5 \)</span> and <span class="process-math">\(p= 17 ,\)</span> we can conclude that<div class="displaymath process-math" data-contains-math-knowls="" id="md-3">
+\begin{gather*}
+R( 5 )= −1.04 ( 5 )^2+ 26 ( 5 )= 104 , \text{ so revenue } = \$104,000; \\
+R( 17 )= −1.04( 17 )^2+ 26 ( 17 )= 141.44 , \text{ so revenue } =\$144,440.
+\end{gather*}
+</div></p></li>
+<li id="li-237"><p id="p-derived-li-237">The zeros of this function can be found by solving the equation <span class="process-math">\(−1.04p^2+ 26 p= 0 .\)</span> When we factor the quadratic expression, we get <span class="process-math">\(p( −1.04 p+ 26 )= 0 .\)</span> The solutions to this equation are given by <span class="process-math">\(p= 0 , 25 .\)</span> For these values of <span class="process-math">\(p,\)</span> the revenue is zero. When <span class="process-math">\(p=\$ 0 ,\)</span> the revenue is zero because the company is giving away its merchandise for free. When <span class="process-math">\(p=\$ 25 ,\)</span> the revenue is zero because the price is too high, and no one will buy any items.</p></li>
+<li id="li-238">Knowing the fact that the function is quadratic, we also know the graph is a parabola. Since the leading coefficient is negative, the parabola opens downward. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_02_009.jpg" class="contained" alt='"An image of a graph. The y axis runs from 0 to 170 and is labeled “R, revenue in thousands of dollars”. The x axis runs from 0 to 28 and is labeled “p, price in dollars”. The graph is of the function “n = -1.04(p squared) + 26p”, which is a parabola that starts at the origin. The function increases until the maximum point at (12.5, 162.5) and then begins decreasing. The function has x intercepts at the origin and the point (25, 0). The y intercept is at the origin."&gt;'></div>
+</li>
+<li id="li-239"><p id="p-derived-li-239">The function is a parabola opening downward. This means that its vertex point is a maximum. Using the vertex formula:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h=\frac{-b}{2a}=\frac{-26}{2(-1.04)}=12.5.
+\end{equation*}
+</div>The maximum revenue occurs at a price of <span class="process-math">\(p=\$ 12.50 \)</span> per item. At that price, the revenue is <span class="process-math">\(R(p)= −1.04 ( 12.5 )^2 + 26 ( 12.5 )=\$ 162 , 500 .\)</span></p></li>
+</ol></div></div>
+</div></article><p id="p-268">Recall that both the supply and demand equations <span class="process-math">\(p(x)\)</span> give the price per unit given the number of units sold. This means that using either the supply or demand equation and that <span class="process-math">\(R=p\cdot x,\)</span> we can find the revenue equation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R=(\text{supply or demand equation})\cdot x.
+\end{equation*}
+</div>
+<article class="example example-like" id="example-25"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.98</span><span class="period">.</span><span class="space"> </span><span class="title">Maximizing Profit and Minimizing Cost.</span>
+</h4>
+<p id="p-269">A clothing store determines that its supply equation for <span class="process-math">\(x\)</span> dresses sold is <span class="process-math">\(p=140-0.25x\)</span> and the cost for producing <span class="process-math">\(x\)</span> dresses is <span class="process-math">\(C(x)=2000-10x+0.25x^2\text{.}\)</span></p>
+<ol class="decimal">
+<li id="li-240"><p id="p-derived-li-240">Find the revenue function <span class="process-math">\(R(x)\text{.}\)</span></p></li>
+<li id="li-241"><p id="p-derived-li-241">Find the profit function <span class="process-math">\(P(x)\text{.}\)</span></p></li>
+<li id="li-242"><p id="p-derived-li-242">How many dresses must be sold in order to maximize profits?</p></li>
+<li id="li-243"><p id="p-derived-li-243">What is the maximum profit?</p></li>
+<li id="li-244"><p id="p-derived-li-244">How many dresses must be sold in order to minimize costs?</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like"><ol class="decimal">
+<li id="li-245"><p id="p-derived-li-245">We can find the revenue equation using the supply equation.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R(x)=p\cdot x
+\end{equation*}
+</div><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R(x)=(140-0.25x)x
+\end{equation*}
+</div><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R(x)=140x-0.25x^2\text{.}
+\end{equation*}
+</div></p></li>
+<li id="li-246"><p id="p-derived-li-246">Recall,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P=R-C
+\end{equation*}
+</div><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P(x)=140x-0.25x^2-(2000-10x+0.25x^2)
+\end{equation*}
+</div><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P(x)=-0.5x^2+150x-2000\text{.}
+\end{equation*}
+</div></p></li>
+<li id="li-247"><p id="p-derived-li-247">Since the profit function is a parabola opening downward, then the vertex of the profit function is a maximum.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h=\frac{-b}{2a}=\frac{-150}{2(-0.5)}=150
+\end{equation*}
+</div>The clothing store must sell 150 dresses in order to maximize profits.</p></li>
+<li id="li-248"><p id="p-derived-li-248">Since selling 150 dresses maximizes profits, evaluating <span class="process-math">\(P(150)\)</span> will give us the maximum profits. <span class="process-math">\(P(150)=-0.5(150)^2+150(150)-2000=\$ 9,250\)</span> is the maximum profit.</p></li>
+<li id="li-249"><p id="p-derived-li-249">Observe that the cost equation <span class="process-math">\(C(x)=2000-10x+0.25x^2\)</span> is a parabola opening upward. That is, its vertex is a minimum.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h=\frac{-b}{2a}=\frac{10}{2(0.25)}=20
+\end{equation*}
+</div>The clothing store must sell 20 dresses in order to minimize costs.</p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-20"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.99</span><span class="period">.</span>
+</h4>
+<p id="p-270">The demand equation for diamond rings sold at a jewelry store in one month is <span class="process-math">\(p=-0.05x+10.2\)</span> where <span class="process-math">\(x\)</span> is the number of diamond rings sold in one month and the price of each diamond ring is in thousands of dollars.</p>
+<ol class="decimal">
+<li id="li-250"><p id="p-derived-li-250">Find the revenue function <span class="process-math">\(R(x)\text{.}\)</span></p></li>
+<li id="li-251"><p id="p-derived-li-251">How many diamond rings must be sold in order to maximize revenue?</p></li>
+<li id="li-252"><p id="p-derived-li-252">What is the maximum revenue?</p></li>
+<li id="li-253"><p id="p-derived-li-253">What is the price per diamond ring that will maximize revenue?</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-18" id="hint-18"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-18"><div class="hint solution-like">Use <span class="process-math">\(R=p\cdot x\)</span> and the vertex of a parabola opening downward to find when revenue is maximized.</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-45" id="solution-45"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-45"><div class="solution solution-like"><ol class="decimal">
+<li id="li-254">
+<p id="p-271">Using <span class="process-math">\(R=p\cdot x\)</span> we obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R(x)=(-0.05x+10.2)\cdot x=-0.05x^2+10.2x.
+\end{equation*}
+</div>
+</li>
+<li id="li-255">
+<p id="p-272">Since the graph of our revenue function <span class="process-math">\(R(x)=-0.05x^2+10.2x\)</span> opens downward, the vertex point will give us maximum revenue. Using the vertex formula,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h=-\frac{b}{2a}=-\frac{-10.2}{2(-0.05)}=102.
+\end{equation*}
+</div>
+<p class="continuation">Furthermore, selling 102 diamond rings in one month will maximize revenue.</p>
+</li>
+<li id="li-256">
+<p id="p-273">Since revenue is maximized when 102 diamond rings are sold, evaluating <span class="process-math">\(R(102)\)</span> will give us the maximum revenue.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R(102)=-0.05(102)^2+10.2(102)=520.2
+\end{equation*}
+</div>
+<p class="continuation">Recalling that the price is in thousands of dollars, revenue will also be in thousands of dollars. As a result, the maximum revenue is <span class="process-math">\(520.2\cdot(\$ 1,000)=\$ 520,200\text{.}\)</span></p>
+</li>
+<li id="li-257">
+<p id="p-274">In order to find the price per diamond ring that will maximize revenue we must evaluate the demand equation at <span class="process-math">\(x=102\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p(102)=-0.05(102)+10.2=5.1
+\end{equation*}
+</div>
+<p class="continuation">Again, since the price is in thousands of dollars, the price per diamond ring that will maximize revenue is <span class="process-math">\(5.1\cdot(\$1,000)=\$5,100\text{.}\)</span></p>
+</li>
+</ol></div></div>
+</div></article></section><p id="p-275">This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at <a class="external" href="https://openstax.org/details/books/calculus-volume-1" target="_blank">https://openstax.org/details/books/calculus-volume-1.</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-6" id="fn-6"><sup> 1 </sup></a></p></section><div class="hidden-content tex2jax_ignore" id="hk-fn-6"><div class="fn"><code class="code-inline tex2jax_ignore">https://openstax.org/details/books/calculus-volume-1</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

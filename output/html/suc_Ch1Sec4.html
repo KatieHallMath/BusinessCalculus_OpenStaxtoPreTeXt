@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-11-11T14:26:27-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Inverse Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch1Sec3.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch1Sec5.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch1Sec3.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch1Sec5.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="active">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Integration</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="suc_Ch1Sec4"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Inverse Functions</span>
+</h2>
+<section class="introduction" id="introduction-10"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ol class="decimal">
+<li id="li-185"><p id="p-derived-li-185">Determine the conditions for when a function has an inverse.</p></li>
+<li id="li-186"><p id="p-derived-li-186">Use the horizontal line test to recognize when a function is one-to-one.</p></li>
+<li id="li-187"><p id="p-derived-li-187">Find the inverse of a given function.</p></li>
+<li id="li-188"><p id="p-derived-li-188">Draw the graph of an inverse function.</p></li>
+<li id="li-189"><p id="p-derived-li-189">Evaluate inverse trigonometric functions.</p></li>
+</ol>
+<p id="p-249">An inverse function reverses the operation done by a particular function. In other words, whatever a function does, the inverse function undoes it. In this section, we define an inverse function formally and state the necessary conditions for an inverse function to exist. We examine how to find an inverse function and study the relationship between the graph of a function and the graph of its inverse. Then we apply these ideas to define and discuss properties of the inverse trigonometric functions.</p></section><section class="subsection" id="subsection-18"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">Existence of an Inverse Function</span>
+</h3>
+<p id="p-250">We begin with an example. Given a function <span class="process-math">\(f\)</span> and an output <span class="process-math">\(y=f(x),\)</span> we are often interested in finding what value or values <span class="process-math">\(x\)</span> were mapped to <span class="process-math">\(y\)</span> by <span class="process-math">\(f.\)</span> For example, consider the function <span class="process-math">\(f(x)=x^3+4.\)</span> Since any output <span class="process-math">\(y=x^3+4,\)</span> we can solve this equation for <span class="process-math">\(x\)</span> to find that the input is <span class="process-math">\(x=\sqrt[3]{y-3}.\)</span> This equation defines <span class="process-math">\(x\)</span> as a function of <span class="process-math">\(y.\)</span> Denoting this function as <span class="process-math">\(f^{−1}\text{,}\)</span> and writing <span class="process-math">\(x=f^{−1} (y)=\sqrt[3]{y-3},\)</span> we see that for any <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(f,f^{−1} (f(x))=f^{−1} (x^3+4)=x.\)</span> Thus, this new function, <span class="process-math">\(f^{−1} ,\)</span> “undid” what the original function <span class="process-math">\(f\)</span> did. A function with this property is called the inverse function of the original function.</p>
+<article class="definition definition-like" id="definition-10"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.97</span><span class="period">.</span>
+</h4>
+<p id="p-251">Given a function <span class="process-math">\(f\)</span> with domain <span class="process-math">\(D\)</span> and range <span class="process-math">\(R,\)</span> its <dfn class="terminology">inverse function</dfn> (if it exists) is the function <span class="process-math">\(f^{−1} \)</span> with domain <span class="process-math">\(R\)</span> and range <span class="process-math">\(D\)</span> such that <span class="process-math">\(f^{−1} (y)=x\)</span> if <span class="process-math">\(f(x)=y.\)</span> In other words, for a function <span class="process-math">\(f\)</span> and its inverse <span class="process-math">\(f^{−1} ,\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f^{−1} (f(x))=x \text{ for all } x \text{ in } D,\text{ and } f(f^{−1} (y))=y \text{ for all } y \text{ in } R.
+\end{equation*}
+</div></article><p id="p-252">Note that <span class="process-math">\(f^{−1} \)</span> is read as “f inverse.” Here, the <span class="process-math">\(−1\)</span> is not used as an exponent and <span class="process-math">\(f^{−1} (x)\neq 1/f(x).\)</span> <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_04_001.html" title="Figure 1.98">Figure 1.98</a> shows the relationship between the domain and range of <span class="process-math">\(f\)</span> and the domain and range of <span class="process-math">\(f^{−1} .\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_01_04_001"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_001.jpg" class="contained" alt='"An image of two bubbles. The first bubble is orange and has two labels: the top label is “Domain of f” and the bottom label is “Range of f inverse”. Within this bubble is the variable “x”. An orange arrow with the label “f” points from this bubble to the second bubble. The second bubble is blue and has two labels: the top label is “range of f” and the bottom label is “domain of f inverse”. Within this bubble is the variable “y”. A blue arrow with the label “f inverse” points from this bubble to the first bubble."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.98<span class="period">.</span></span><span class="space"> </span>Given a function <span class="process-math">\(f\)</span> and its inverse <span class="process-math">\(f^{−1} ,f^{−1} (y)=x\)</span> if and only if <span class="process-math">\(f(x)=y.\)</span> The range of <span class="process-math">\(f\)</span> becomes the domain of <span class="process-math">\(f^{−1} \)</span> and the domain of <span class="process-math">\(f\)</span> becomes the range of <span class="process-math">\(f^{−1} .\)</span></figcaption></figure><p id="p-253">Recall that a function has exactly one output for each input. Therefore, to define an inverse function, we need to map each input to exactly one output. For example, let’s try to find the inverse function for <span class="process-math">\(f(x)=x^2.\)</span> Solving the equation <span class="process-math">\(y=x^2\)</span> for <span class="process-math">\(x,\)</span> we arrive at the equation <span class="process-math">\(x=\pm \sqrt{y}.\)</span> This equation does not describe <span class="process-math">\(x\)</span> as a function of <span class="process-math">\(y\)</span> because there are two solutions to this equation for every <span class="process-math">\(y\gt 0.\)</span> The problem with trying to find an inverse function for <span class="process-math">\(f(x)=x^2\)</span> is that two inputs are sent to the same output for each output <span class="process-math">\(y\gt 0.\)</span> The function <span class="process-math">\(f(x)=x^3+4\)</span> discussed earlier did not have this problem. For that function, each input was sent to a different output. A function that sends each input to a different output is called a one-to-one function.</p>
+<article class="definition definition-like" id="definition-11"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.99</span><span class="period">.</span>
+</h4>
+<p id="p-254">We say a <span class="process-math">\(f\)</span> is a <dfn class="terminology">one-to-one function</dfn> if <span class="process-math">\(f(x_1)\neq f(x_2)\)</span> when <span class="process-math">\(x_1\neq x_2.\)</span></p></article><p id="p-255">One way to determine whether a function is one-to-one is by looking at its graph. If a function is one-to-one, then no two inputs can be sent to the same output. Therefore, if we draw a horizontal line anywhere in the <span class="process-math">\(xy\)</span>-plane, according to the <dfn class="terminology">horizontal line test</dfn>, it cannot intersect the graph more than once. We note that the horizontal line test is different from the vertical line test. The vertical line test determines whether a graph is the graph of a function. The horizontal line test determines whether a function is one-to-one (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_04_002.html" title="Figure 1.101">Figure 1.101</a>).</p>
+<article class="note remark-like" id="note-5"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.100</span><span class="period">.</span><span class="space"> </span><span class="title">Rule: Horizontal Line Test.</span>
+</h4>
+<p id="p-256">A function <span class="process-math">\(f\)</span> is one-to-one if and only if every horizontal line intersects the graph of <span class="process-math">\(f\)</span> no more than once.</p></article><figure class="figure figure-like" id="CNX_Calc_Figure_01_04_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_002.jpg" class="contained" alt='"An image of two graphs. Both graphs have an x axis that runs from -3 to 3 and a y axis that runs from -3 to 4. The first graph is of the function “f(x) = x squared”, which is a parabola. The function decreases until it hits the origin, where it begins to increase. The x intercept and y intercept are both at the origin. There are two orange horizontal lines also plotted on the graph, both of which run through the function at two points each. The second graph is of the function “f(x) = x cubed”, which is an increasing curved function. The x intercept and y intercept are both at the origin. There are three orange lines also plotted on the graph, each of which only intersects the function at one point."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.101<span class="period">.</span></span><span class="space"> </span>(a) The function <span class="process-math">\(f(x)=x^2\)</span> is not one-to-one because it fails the horizontal line test. (b) The function <span class="process-math">\(f(x)=x^3\)</span> is one-to-one because it passes the horizontal line test.</figcaption></figure><article class="example example-like" id="example-26"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.102</span><span class="period">.</span><span class="space"> </span><span class="title">Determining Whether a Function Is One-to-One.</span>
+</h4>
+<p id="p-257">For each of the following functions, use the horizontal line test to determine whether it is one-to-one.</p>
+<ol class="decimal">
+<li id="li-190"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_003.jpg" class="contained" alt='"An image of a graph. The x axis runs from -3 to 11 and the y axis runs from -3 to 11. The graph is of a step function which contains 10 horizontal steps. Each steps starts with a closed circle and ends with an open circle. The first step starts at the origin and ends at the point (1, 0). The second step starts at the point (1, 1) and ends at the point (1, 2). Each of the following 8 steps starts 1 unit higher in the y direction than where the previous step ended. The tenth and final step starts at the point (9, 9) and ends at the point (10, 9)"'></div></li>
+<li id="li-191"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_004.jpg" class="contained" alt='"An image of a graph. The x axis runs from -3 to 6 and the y axis runs from -3 to 6. The graph is of the function “f(x) = (1/x)”, a curved decreasing function. The graph of the function starts right below the x axis in the 4th quadrant and begins to decreases until it comes close to the y axis. The graph keeps decreasing as it gets closer and closer to the y axis, but never touches it due to the vertical asymptote. In the first quadrant, the graph of the function starts close to the y axis and keeps decreasing until it gets close to the x axis. As the function continues to decreases it gets closer and closer to the x axis without touching it, where there is a horizontal asymptote."'></div></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-46" id="solution-46"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-46"><div class="solution solution-like"><ol class="decimal">
+<li id="li-192">Since the horizontal line <span class="process-math">\(y=n\)</span> for any integer <span class="process-math">\(n\geq 0\)</span> intersects the graph more than once, this function is not one-to-one. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_005.jpg" class="contained" alt='"An image of a graph. The x axis runs from -3 to 11 and the y axis runs from -3 to 11. The graph is of a step function which contains 10 horizontal steps. Each steps starts with a closed circle and ends with an open circle. The first step starts at the origin and ends at the point (1, 0). The second step starts at the point (1, 1) and ends at the point (1, 2). Each of the following 8 steps starts 1 unit higher in the y direction than where the previous step ended. The tenth and final step starts at the point (9, 9) and ends at the point (10, 9). There are also two horizontal orange lines plotted on the graph, each of which run through an entire step of the function."'></div>
+</li>
+<li id="li-193">Since every horizontal line intersects the graph once (at most), this function is one-to-one. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_006.jpg" class="contained" alt='"An image of a graph. The x axis runs from -3 to 6 and the y axis runs from -3 to 6. The graph is of the function “f(x) = (1/x)”, a curved decreasing function. The graph of the function starts right below the x axis in the 4th quadrant and begins to decreases until it comes close to the y axis. The graph keeps decreasing as it gets closer and closer to the y axis, but never touches it due to the vertical asymptote. In the first quadrant, the graph of the function starts close to the y axis and keeps decreasing until it gets close to the x axis. As the function continues to decreases it gets closer and closer to the x axis without touching it, where there is a horizontal asymptote. There are also three horizontal orange lines plotted on the graph, each of which only runs through the function at one point."'></div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-21"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.103</span><span class="period">.</span>
+</h4>
+<p id="p-258">Is the function <span class="process-math">\(f\)</span> graphed in the following image one-to-one?</p>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_007.jpg" class="contained" alt='"An image of a graph. The x axis runs from -3 to 4 and the y axis runs from -3 to 5. The graph is of the function “f(x) = (x cubed) - x” which is a curved function. The function increases, decreases, then increases again. The x intercepts are at the points (-1, 0), (0,0), and (1, 0). The y intercept is at the origin."'></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-19" id="hint-19"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-19"><div class="hint solution-like"><p id="p-259">Use the horizontal line test.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-47" id="solution-47"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-47"><div class="solution solution-like"><p id="p-260">No.</p></div></div>
+</div></article></section><section class="subsection" id="subsection-19"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">Finding a Function’s Inverse</span>
+</h3>
+<section class="introduction" id="introduction-11"><p id="p-261">We can now consider one-to-one functions and show how to find their inverses. Recall that a function maps elements in the domain of <span class="process-math">\(f\)</span> to elements in the range of <span class="process-math">\(f.\)</span> The inverse function maps each element from the range of <span class="process-math">\(f\)</span> back to its corresponding element from the domain of <span class="process-math">\(f.\)</span> Therefore, to find the inverse function of a one-to-one function <span class="process-math">\(f,\)</span> given any <span class="process-math">\(y\)</span> in the range of <span class="process-math">\(f,\)</span> we need to determine which <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(f\)</span> satisfies <span class="process-math">\(f(x)=y.\)</span> Since <span class="process-math">\(f\)</span> is one-to-one, there is exactly one such value <span class="process-math">\(x.\)</span> We can find that value <span class="process-math">\(x\)</span> by solving the equation <span class="process-math">\(f(x)=y\)</span> for <span class="process-math">\(x.\)</span> Doing so, we are able to write <span class="process-math">\(x\)</span> as a function of <span class="process-math">\(y\)</span> where the domain of this function is the range of <span class="process-math">\(f\)</span> and the range of this new function is the domain of <span class="process-math">\(f.\)</span> Consequently, this function is the inverse of <span class="process-math">\(f,\)</span> and we write <span class="process-math">\(x=f^{−1} (y).\)</span> Since we typically use the variable <span class="process-math">\(x\)</span> to denote the independent variable and <span class="process-math">\(y\)</span> to denote the dependent variable, we often interchange the roles of <span class="process-math">\(x\)</span> and <span class="process-math">\(y,\)</span> and write <span class="process-math">\(y=f^{−1} (x).\)</span> Representing the inverse function in this way is also helpful later when we graph a function <span class="process-math">\(f\)</span> and its inverse <span class="process-math">\(f^{−1} \)</span> on the same axes.</p>
+<article class="note remark-like" id="fs-id1170572552427"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.104</span><span class="period">.</span><span class="space"> </span><span class="title">Problem-Solving Strategy: Finding an Inverse Function.</span>
+</h4>
+<ol class="decimal">
+<li id="li-194"><p id="p-derived-li-194">Solve the equation <span class="process-math">\(y=f(x)\)</span> for <span class="process-math">\(x.\)</span></p></li>
+<li id="li-195"><p id="p-derived-li-195">Interchange the variables <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> and write <span class="process-math">\(y=f^{−1} (x).\)</span></p></li>
+</ol></article><article class="example example-like" id="example-27"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.105</span><span class="period">.</span><span class="space"> </span><span class="title">Finding an Inverse Function.</span>
+</h4>
+<p id="p-262">Find the inverse for the function <span class="process-math">\(f(x)=3x−4.\)</span> State the domain and range of the inverse function. Verify that <span class="process-math">\(f^{−1} (f(x))=x.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-48" id="solution-48"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-48"><div class="solution solution-like">
+<p id="p-263">Follow the steps outlined in the strategy.</p>
+<p id="p-264">Step 1. If <span class="process-math">\(y=3x−4,\)</span> then <span class="process-math">\(3x=y+4\)</span> and <span class="process-math">\(x= \frac{1}{3}y+ \frac{4}{3}.\)</span></p>
+<p id="p-265">Step 2. Rewrite as <span class="process-math">\(y=\frac{1}{3}x+ \frac{4}{3}\)</span> and let <span class="process-math">\(y=f^{−1} (x).\)</span></p>
+<p id="p-266">Therefore, <span class="process-math">\(f^{−1} (x)= \frac{1}{3}x+ \frac{4}{3}.\)</span></p>
+<p id="p-267">Since the domain of <span class="process-math">\(f\)</span> is <span class="process-math">\((-\infty ,\infty ),\)</span> the range of <span class="process-math">\(f^{−1} \)</span> is <span class="process-math">\((-\infty ,\infty ).\)</span> Since the range of <span class="process-math">\(f\)</span> is <span class="process-math">\((-\infty ,\infty ),\)</span> the domain of <span class="process-math">\(f^{−1} \)</span> is <span class="process-math">\((-\infty ,\infty ).\)</span></p>
+<p id="p-268">You can verify that <span class="process-math">\(f^{−1} (f(x))=x\)</span> by writing</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f^{−1} (f(x))=f^{−1} (3x−4)= \frac{1}{3}(3x−4)+ \frac{4}{3}=x− \frac{4}{3}+ \frac{4}{3}=x.
+\end{equation*}
+</div>
+<p id="p-269">Note that for <span class="process-math">\(f^{−1} (x)\)</span> to be the inverse of <span class="process-math">\(f(x),\)</span> both <span class="process-math">\(f^{−1} (f(x))=x\)</span> and <span class="process-math">\(f(f^{−1} (x))=x\)</span> for all <span class="process-math">\(x\)</span> in the domain of the inside function.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-22"><span class="type">Hint</span><span class="period">.</span><span class="type">Solution</span><span class="period">.</span></article></section><section class="subsubsection" id="subsubsection-11"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.4.2.1</span> <span class="title">Graphing Inverse Functions</span>
+</h4>
+<p id="p-273">Let’s consider the relationship between the graph of a function <span class="process-math">\(f\)</span> and the graph of its inverse. Consider the graph of <span class="process-math">\(f\)</span> shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_04_008.html" title="Figure 1.106">Figure 1.106</a> and a point <span class="process-math">\((a,b)\)</span> on the graph. Since <span class="process-math">\(b=f(a),\)</span> then <span class="process-math">\(f^{−1} (b)=a.\)</span> Therefore, when we graph <span class="process-math">\(f^{−1} ,\)</span> the point <span class="process-math">\((b,a)\)</span> is on the graph. As a result, the graph of <span class="process-math">\(f^{−1} \)</span> is a reflection of the graph of <span class="process-math">\(f\)</span> about the line <span class="process-math">\(y=x.\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_01_04_008"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_017.jpg" class="contained" alt='"An image of two graphs. The first graph is of “y = f(x)”, which is a curved increasing function, that increases at a faster rate as x increases. The point (a, b) is on the graph of the function in the first quadrant. The second graph also graphs “y = f(x)” with the point (a, b), but also graphs the function “y = f inverse (x)”, an increasing curved function, that increases at a slower rate as x increases. This function includes the point (b, a). In addition to the two functions, there is a diagonal dotted line potted with the equation “y =x”, which shows that “f(x)” and “f inverse (x)” are mirror images about the line “y =x”."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.106<span class="period">.</span></span><span class="space"> </span>(a) The graph of this function <span class="process-math">\(f\)</span> shows point <span class="process-math">\((a,b)\)</span> on the graph of <span class="process-math">\(f.\)</span> (b) Since <span class="process-math">\((a,b)\)</span> is on the graph of <span class="process-math">\(f,\)</span> the point <span class="process-math">\((b,a)\)</span> is on the graph of <span class="process-math">\(f^{−1} .\)</span> The graph of <span class="process-math">\(f^{−1} \)</span> is a reflection of the graph of <span class="process-math">\(f\)</span> about the line <span class="process-math">\(y=x.\)</span></figcaption></figure><article class="example example-like" id="example-28"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.107</span><span class="period">.</span><span class="space"> </span><span class="title">Sketching Graphs of Inverse Functions.</span>
+</h5>
+<p id="p-274">For the graph of <span class="process-math">\(f\)</span> in the following image, sketch a graph of <span class="process-math">\(f^{−1} \)</span> by sketching the line <span class="process-math">\(y=x\)</span> and using symmetry. Identify the domain and range of <span class="process-math">\(f^{−1} .\)</span></p>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_009.jpg" class="contained" alt='"An image of a graph. The x axis runs from -2 to 2 and the y axis runs from 0 to 2. The graph is of the function “f(x) = square root of (x +2)”, an increasing curved function. The function starts at the point (-2, 0). The x intercept is at (-2, 0) and the y intercept is at the approximate point (0, 1.4)."'></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-50" id="solution-50"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like">
+<p id="p-275">Reflect the graph about the line <span class="process-math">\(y=x.\)</span> The domain of <span class="process-math">\(f^{−1} \)</span> is <span class="process-math">\([0,\infty ).\)</span> The range of <span class="process-math">\(f^{−1} \)</span> is <span class="process-math">\([−2,\infty ).\)</span> By using the preceding strategy for finding inverse functions, we can verify that the inverse function is <span class="process-math">\(f^{−1} (x)=x^2−2,\)</span> as shown in the graph.</p>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_010.jpg" class="contained" alt='"An image of a graph. The x axis runs from -2 to 2 and the y axis runs from -2 to 2. The graph is of two functions. The first function is “f(x) = square root of (x +2)”, an increasing curved function. The function starts at the point (-2, 0). The x intercept is at (-2, 0) and the y intercept is at the approximate point (0, 1.4). The second function is “f inverse (x) = (x squared) -2”, an increasing curved function that starts at the point (0, -2). The x intercept is at the approximate point (1.4, 0) and the y intercept is at the point (0, -2). In addition to the two functions, there is a diagonal dotted line potted with the equation “y =x”, which shows that “f(x)” and “f inverse (x)” are mirror images about the line “y =x”."'></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-23"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.108</span><span class="period">.</span>
+</h5>
+<p id="p-276">Sketch the graph of <span class="process-math">\(f(x)=2x+3\)</span> and the graph of its inverse using the symmetry property of inverse functions.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-21" id="hint-21"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-21"><div class="hint solution-like"><p id="p-277">The graphs are symmetric about the line <span class="process-math">\(y=x.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-51" id="solution-51"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-51"><div class="solution solution-like"><p id="p-278"> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_011.jpg" class="contained" alt='"An image of a graph. The x axis runs from -3 to 4 and the y axis runs from -3 to 5. The graph is of two functions. The first function is “f(x) = 2x +3”, an increasing straight line function. The function has an x intercept at (-1.5, 0) and a y intercept at (0, 3). The second function is “f inverse (x) = (x - 3)/2”, an increasing straight line function, which increases at a slower rate than the first function. The function has an x intercept at (3, 0) and a y intercept at (0, -1.5). In addition to the two functions, there is a diagonal dotted line potted with the equation “y =x”, which shows that “f(x)” and “f inverse (x)” are mirror images about the line “y =x”."'></div></p></div></div>
+</div></article></section><section class="subsubsection" id="subsubsection-12"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.4.2.2</span> <span class="title">Restricting Domains</span>
+</h4>
+<p id="p-279">As we have seen, <span class="process-math">\(f(x)=x^2\)</span> does not have an inverse function because it is not one-to-one. However, we can choose a subset of the domain of <span class="process-math">\(f\)</span> such that the function is one-to-one. This subset is called a <dfn class="terminology">restricted domain</dfn>. By restricting the domain of <span class="process-math">\(f,\)</span> we can define a new function <span class="process-math">\(g\)</span> such that the domain of <span class="process-math">\(g\)</span> is the restricted domain of <span class="process-math">\(f\)</span> and <span class="process-math">\(g(x)=f(x)\)</span> for all <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(g.\)</span> Then we can define an inverse function for <span class="process-math">\(g\)</span> on that domain. For example, since <span class="process-math">\(f(x)=x^2\)</span> is one-to-one on the interval <span class="process-math">\([0,\infty ),\)</span> we can define a new function <span class="process-math">\(g\)</span> such that the domain of <span class="process-math">\(g\)</span> is <span class="process-math">\([0,\infty )\)</span> and <span class="process-math">\(g(x)=x^2\)</span> for all <span class="process-math">\(x\)</span> in its domain. Since <span class="process-math">\(g\)</span> is a one-to-one function, it has an inverse function, given by the formula <span class="process-math">\(g^{-1}(x)=\sqrt{x}.\)</span> On the other hand, the function <span class="process-math">\(f(x)=x^2\)</span> is also one-to-one on the domain <span class="process-math">\((-\infty ,0].\)</span> Therefore, we could also define a new function <span class="process-math">\(h\)</span> such that the domain of <span class="process-math">\(h\)</span> is <span class="process-math">\((-\infty ,0]\)</span> and <span class="process-math">\(h(x)=x^2\)</span> for all <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(h.\)</span> Then <span class="process-math">\(h\)</span> is a one-to-one function and must also have an inverse. Its inverse is given by the formula <span class="process-math">\(h^{-1}(x)=-\sqrt{x}\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_04_012.html" title="Figure 1.109">Figure 1.109</a>).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_01_04_012"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_012.jpg" class="contained" alt='"An image of two graphs. Both graphs have an x axis that runs from -2 to 5 and a y axis that runs from -2 to 5. The first graph is of two functions. The first function is “g(x) = x squared”, an increasing curved function that starts at the point (0, 0). This function increases at a faster rate for larger values of x. The second function is “g inverse (x) = square root of x”, an increasing curved function that starts at the point (0, 0). This function increases at a slower rate for larger values of x. The first function is “h(x) = x squared”, a decreasing curved function that ends at the point (0, 0). This function decreases at a slower rate for larger values of x. The second function is “h inverse (x) = -(square root of x)”, an increasing curved function that starts at the point (0, 0). This function decreases at a slower rate for larger values of x. In addition to the two functions, there is a diagonal dotted line potted with the equation “y =x”, which shows that “f(x)” and “f inverse (x)” are mirror images about the line “y =x”."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.109<span class="period">.</span></span><span class="space"> </span>(a) For <span class="process-math">\(g(x)=x^2\)</span> restricted to <span class="process-math">\([0,\infty ),g^{-1}(x)=\sqrt{x}.\)</span> (b) For <span class="process-math">\(h(x)=x^2\)</span> restricted to <span class="process-math">\((-\infty ,0],h^{-1}(x)=-\sqrt{x}.\)</span></figcaption></figure><article class="example example-like" id="example-29"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.110</span><span class="period">.</span><span class="space"> </span><span class="title">Restricting the Domain.</span>
+</h5>
+<p id="p-280">Consider the function <span class="process-math">\(f(x)=(x+1)^2.\)</span></p>
+<ol class="decimal">
+<li id="li-196"><p id="p-derived-li-196">Sketch the graph of <span class="process-math">\(f\)</span> and use the horizontal line test to show that <span class="process-math">\(f\)</span> is not one-to-one.</p></li>
+<li id="li-197"><p id="p-derived-li-197">Show that <span class="process-math">\(f\)</span> is one-to-one on the restricted domain <span class="process-math">\([−1,\infty ).\)</span> Determine the domain and range for the inverse of <span class="process-math">\(f\)</span> on this restricted domain and find a formula for <span class="process-math">\(f^{−1} .\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-52" id="solution-52"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-52"><div class="solution solution-like"><ol class="decimal">
+<li id="li-198">The graph of <span class="process-math">\(f\)</span> is the graph of <span class="process-math">\(y=x^2\)</span> shifted left 1 unit. Since there exists a horizontal line intersecting the graph more than once, <span class="process-math">\(f\)</span> is not one-to-one. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_013.jpg" class="contained" alt='"An image of a graph. The x axis runs from -6 to 6 and the y axis runs from -2 to 10. The graph is of the function “f(x) = (x+ 1) squared”, which is a parabola. The function decreases until the point (-1, 0), where it begins it increases. The x intercept is at the point (-1, 0) and the y intercept is at the point (0, 1). There is also a horizontal dotted line plotted on the graph, which crosses through the function at two points."'></div>
+</li>
+<li id="li-199">On the interval <span class="process-math">\([−1,\infty ), f\)</span> is one-to-one. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_014.jpg" class="contained" alt='"An image of a graph. The x axis runs from -6 to 6 and the y axis runs from -2 to 10. The graph is of the function “f(x) = (x+ 1) squared”, on the interval [1, infinity). The function starts from the point (-1, 0) and increases. The x intercept is at the point (-1, 0) and the y intercept is at the point (0, 1)."'></div>  The domain and range of <span class="process-math">\(f^{−1} \)</span> are given by the range and domain of <span class="process-math">\(f,\)</span> respectively. Therefore, the domain of <span class="process-math">\(f^{−1} \)</span> is <span class="process-math">\([0,\infty )\)</span> and the range of <span class="process-math">\(f^{−1} \)</span> is <span class="process-math">\([−1,\infty ).\)</span> To find a formula for <span class="process-math">\(f^{−1} ,\)</span> solve the equation <span class="process-math">\(y=(x+1)^2\)</span> for <span class="process-math">\(x.\)</span> If <span class="process-math">\(y=(x+1)^2,\)</span> then <span class="process-math">\(x=−1\pm \sqrt{y}.\)</span> Since we are restricting the domain to the interval where <span class="process-math">\(x\geq −1,\)</span> we need <span class="process-math">\(\pm \sqrt{y}\geq 0.\)</span> Therefore, <span class="process-math">\(x=−1+\sqrt{y}.\)</span> Interchanging <span class="process-math">\(x\)</span> and <span class="process-math">\(y,\)</span> we write <span class="process-math">\(y=−1+\sqrt{x}\)</span> and conclude that <span class="process-math">\(f^{−1} (x)=−1+\sqrt{x}.\)</span>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-24"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.111</span><span class="period">.</span>
+</h5>
+<p id="p-281">Consider <span class="process-math">\(f(x)=1/x^2\)</span> restricted to the domain <span class="process-math">\((-\infty ,0).\)</span> Verify that <span class="process-math">\(f\)</span> is one-to-one on this domain. Determine the domain and range of the inverse of <span class="process-math">\(f\)</span> and find a formula for <span class="process-math">\(f^{−1} .\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-22" id="hint-22"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-22"><div class="hint solution-like"><p id="p-282">The domain and range of <span class="process-math">\(f^{−1} \)</span> is given by the range and domain of <span class="process-math">\(f,\)</span> respectively. To find <span class="process-math">\(f^{−1} ,\)</span> solve <span class="process-math">\(y=1/x^2\)</span> for <span class="process-math">\(x.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like"><p id="p-283">The domain of <span class="process-math">\(f^{−1} \)</span> is <span class="process-math">\((0,\infty ).\)</span> The range of <span class="process-math">\(f^{−1} \)</span> is <span class="process-math">\((-\infty ,0).\)</span> The inverse function is given by the formula <span class="process-math">\(f^{−1} (x)=−1/\sqrt{x}.\)</span></p></div></div>
+</div></article></section></section><section class="subsection" id="subsection-20"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.3</span> <span class="title">Inverse Trigonometric Functions</span>
+</h3>
+<p id="p-284">The six basic trigonometric functions are periodic, and therefore they are not one-to-one. However, if we restrict the domain of a trigonometric function to an interval where it is one-to-one, we can define its inverse. Consider the sine function. The sine function is one-to-one on an infinite number of intervals, but the standard convention is to restrict the domain to the interval <span class="process-math">\([− \frac{\pi}{2},\frac{\pi}{2}].\)</span> By doing so, we define the inverse sine function on the domain <span class="process-math">\([−1,1]\)</span> such that for any <span class="process-math">\(x\)</span> in the interval <span class="process-math">\([−1,1],\)</span> the inverse sine function tells us which angle <span class="process-math">\(\theta \)</span> in the interval <span class="process-math">\([−\frac{\pi}{2},\frac{\pi}{2}]\)</span> satisfies <span class="process-math">\(\sin\,\theta =x.\)</span> Similarly, we can restrict the domains of the other trigonometric functions to define <dfn class="terminology">inverse trigonometric functions</dfn>, which are functions that tell us which angle in a certain interval has a specified trigonometric value.</p>
+<article class="definition definition-like" id="definition-12"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.112</span><span class="period">.</span>
+</h4>
+<p id="p-285">The inverse sine function, denoted <span class="process-math">\(\sin^{-1} \)</span> or arcsin, and the inverse cosine function, denoted <span class="process-math">\(\cos^{-1}\)</span> or arccos, are defined on the domain <span class="process-math">\(D=\{x|−1\leq x\leq 1\}\)</span> as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-4">
+\begin{align*}
+\sin^{-1} (x) \amp =y \text{ if and only if } \sin(y)=x \text{ and } −\frac{\pi}{2}\leq y\leq \frac{\pi}{2} \\
+\cos^{-1}(x)\amp =y \text{ if and only if } \text{ cos }(y)=x \text{ and } 0\leq y\leq \pi. 
+\end{align*}
+</div>
+<p id="p-286">The inverse tangent function, denoted <span class="process-math">\(\tan^{-1} \)</span> or arctan, and inverse cotangent function, denoted <span class="process-math">\(\cot^{-1} \)</span> or arccot, are defined on the domain <span class="process-math">\(D=\{x|−\infty \lt x\lt \infty \}\)</span> as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-5">
+\begin{gather*}
+\tan^{-1} (x)=y \text{ if and only if } \text{ tan }(y)=x \text{ and } −\frac{\pi}{2}\lt y\lt \frac{\pi}{2};\\
+\cot^{-1} (x)=y \text{ if and only if } \text{ cot }(y)=x \text{ and } 0\lt y\lt \pi.
+\end{gather*}
+</div>
+<p id="p-287">The inverse cosecant function, denoted <span class="process-math">\(\csc^{-1} \)</span> or arccsc, and inverse secant function, denoted <span class="process-math">\(\sec^{-1} \)</span> or arcsec, are defined on the domain <span class="process-math">\(D=\{x||x|\geq \}\)</span> as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-6">
+\begin{gather*}
+\csc^{-1} (x)=y \text{ if and only if } \text{ csc }(y)=x \text{ and } −\frac{\pi}{2}\leq y\leq \frac{\pi}{2},y\neq 0;\\
+\sec^{-1} (x)=y \text{ if and only if } \text{ sec }(y)=x \text{ and } 0\leq y\leq \pi,y\neq \pi/2.
+\end{gather*}
+</div></article><p id="p-288">To graph the inverse trigonometric functions, we use the graphs of the trigonometric functions restricted to the domains defined earlier and reflect the graphs about the line <span class="process-math">\(y=x\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_04_015.html" title="Figure 1.113">Figure 1.113</a>).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_01_04_015"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_018.jpg" class="contained" alt='"An image of six graphs. The first graph is of the function “f(x) = sin inverse(x)”, which is an increasing curve function. The function starts at the point (-1, -(pi/2)) and increases until it ends at the point (1, (pi/2)). The x intercept and y intercept are at the origin. The second graph is of the function “f(x) = cos inverse (x)”, which is a decreasing curved function. The function starts at the point (-1, pi) and decreases until it ends at the point (1, 0). The x intercept is at the point (1, 0). The y intercept is at the point (0, (pi/2)). The third graph is of the function f(x) = tan inverse (x)”, which is an increasing curve function. The function starts close to the horizontal line “y = -(pi/2)” and increases until it comes close the “y = (pi/2)”. The function never intersects either of these lines, it always stays between them - they are horizontal asymptotes. The x intercept and y intercept are both at the origin. The fourth graph is of the function “f(x) = cot inverse (x)”, which is a decreasing curved function. The function starts slightly below the horizontal line “y = pi” and decreases until it gets close the x axis. The function never intersects either of these lines, it always stays between them - they are horizontal asymptotes. The fifth graph is of the function “f(x) = csc inverse (x)”, a decreasing curved function. The function starts slightly below the x axis, then decreases until it hits a closed circle point at (-1, -(pi/2)). The function then picks up again at the point (1, (pi/2)), where is begins to decrease and approach the x axis, without ever touching the x axis. There is a horizontal asymptote at the x axis. The sixth graph is of the function “f(x) = sec inverse (x)”, an increasing curved function. The function starts slightly above the horizontal line “y = (pi/2)”, then increases until it hits a closed circle point at (-1, pi). The function then picks up again at the point (1, 0), where is begins to increase and approach the horizontal line “y = (pi/2)”, without ever touching the line. There is a horizontal asymptote at the “y = (pi/2)”."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.113<span class="period">.</span></span><span class="space"> </span>The graph of each of the inverse trigonometric functions is a reflection about the line <span class="process-math">\(y=x\)</span> of the corresponding restricted trigonometric function.</figcaption></figure><article class="note remark-like" id="note-7"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.114</span><span class="period">.</span>
+</h4>
+<p id="p-289">Go to the following site for more comparisons of functions and their inverses.</p></article><p id="p-290">When evaluating an inverse trigonometric function, the output is an angle. For example, to evaluate <span class="process-math">\(\cos^{-1}(\frac{1}{2}),\)</span> we need to find an angle <span class="process-math">\(\theta \)</span> such that <span class="process-math">\(\text{ cos }\,\theta =\frac{1}{2}.\)</span> Clearly, many angles have this property. However, given the definition of <span class="process-math">\(\cos^{-1},\)</span> we need the angle <span class="process-math">\(\theta \)</span> that not only solves this equation, but also lies in the interval <span class="process-math">\([0,\pi].\)</span> We conclude that <span class="process-math">\(\cos^{-1}(\frac{1}{2})=\frac{\pi}{3}.\)</span></p>
+<p id="p-291">We now consider a composition of a trigonometric function and its inverse. For example, consider the two expressions <span class="process-math">\(\sin(\sin^{-1} (\frac{\sqrt{2}}{2}))\)</span> and <span class="process-math">\(\sin^{-1} (\sin(\pi)).\)</span> For the first one, we simplify as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_04_015.html ./knowl/CNX_Calc_Figure_01_04_016.html">
+\begin{equation*}
+\sin(\sin^{-1} ( \frac{\sqrt{2}}{2}))=\sin( \frac{\pi}{4})= \frac{\sqrt{2}}{2}.
+\end{equation*}
+</div>
+<p id="p-292">For the second one, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_04_015.html ./knowl/CNX_Calc_Figure_01_04_016.html">
+\begin{equation*}
+\sin^{-1} (\sin(\pi))=\sin^{-1} (0)=0.
+\end{equation*}
+</div>
+<p id="p-293">The inverse function is supposed to “undo” the original function, so why isn’t <span class="process-math">\(\sin^{-1} (\sin(\pi))=\pi?\)</span> Recalling our definition of inverse functions, a function <span class="process-math">\(f\)</span> and its inverse <span class="process-math">\(f^{−1} \)</span> satisfy the conditions <span class="process-math">\(f(f^{−1} (y))=y\)</span> for all <span class="process-math">\(y\)</span> in the domain of <span class="process-math">\(f^{−1} \)</span> and <span class="process-math">\(f^{−1} (f(x))=x\)</span> for all <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(f,\)</span> so what happened here? The issue is that the inverse sine function, <span class="process-math">\(\sin^{-1} ,\)</span> is the inverse of the restricted sine function defined on the domain <span class="process-math">\([−\frac{\pi}{2},\frac{\pi}{2}].\)</span> Therefore, for <span class="process-math">\(x\)</span> in the interval <span class="process-math">\([−\frac{\pi}{2},\frac{\pi}{2}]\text{ , }\)</span> it is true that <span class="process-math">\(\sin^{-1} (\sin\,x)=x.\)</span> However, for values of <span class="process-math">\(x\)</span> outside this interval, the equation does not hold, even though <span class="process-math">\(\sin^{-1} (\sin\,x)\)</span> is defined for all real numbers <span class="process-math">\(x.\)</span></p>
+<p id="p-294">What about <span class="process-math">\(\sin(\sin^{-1} y)?\)</span> Does that have a similar issue? The answer is no. Since the domain of <span class="process-math">\(\sin^{-1} \)</span> is the interval <span class="process-math">\([−1,1],\)</span> we conclude that <span class="process-math">\(\sin(\sin^{-1} y)=y\)</span> if <span class="process-math">\(−1\leq y\leq 1\)</span> and the expression is not defined for other values of <span class="process-math">\(y.\)</span> To summarize,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_04_015.html ./knowl/CNX_Calc_Figure_01_04_016.html">
+\begin{equation*}
+\sin(\sin^{-1} y)=y \text{ if } −1\leq y\leq 1
+\end{equation*}
+</div>
+<p id="p-295">and</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_04_015.html ./knowl/CNX_Calc_Figure_01_04_016.html">
+\begin{equation*}
+\sin^{-1} (\sin\,x)=x \text{ if } −\frac{\pi}{2}\leq x\leq \frac{\pi}{2}.
+\end{equation*}
+</div>
+<p id="p-296">Similarly, for the cosine function,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_04_015.html ./knowl/CNX_Calc_Figure_01_04_016.html">
+\begin{equation*}
+\text{ cos }(\cos^{-1}y)=y \text{ if } −1\leq y\leq 1
+\end{equation*}
+</div>
+<p id="p-297">and</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_01_04_015.html ./knowl/CNX_Calc_Figure_01_04_016.html">
+\begin{equation*}
+\cos^{-1}(\text{ cos }\,x)=x \text{ if } 0\leq x\leq \pi.
+\end{equation*}
+</div>
+<p id="p-298">Similar properties hold for the other trigonometric functions and their inverses.</p>
+<article class="example example-like" id="example-30"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.115</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating Expressions Involving Inverse Trigonometric Functions.</span>
+</h4>
+<p id="p-299">Evaluate each of the following expressions.</p>
+<ol class="decimal">
+<li id="li-200"><p id="p-derived-li-200"><span class="process-math">\(\displaystyle \sin^{-1} (− \frac{\sqrt{3}}{2})\)</span></p></li>
+<li id="li-201"><p id="p-derived-li-201"><span class="process-math">\(\displaystyle \text{ tan }(\tan^{-1} (− \frac{1}{\sqrt{3}}))\)</span></p></li>
+<li id="li-202"><p id="p-derived-li-202"><span class="process-math">\(\displaystyle \cos^{-1}(\text{ cos }( \frac{5\pi}{4}))\)</span></p></li>
+<li id="li-203"><p id="p-derived-li-203"><span class="process-math">\(\displaystyle \sin^{-1} (\text{ cos }( \frac{2\pi}{3}))\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like"><ol class="decimal">
+<li id="li-204"><p id="p-derived-li-204">Evaluating <span class="process-math">\(\sin^{-1} (-\sqrt{3}/2)\)</span> is equivalent to finding the angle <span class="process-math">\(\theta \)</span> such that <span class="process-math">\(\sin\,\theta =-\sqrt{3}/2\)</span> and <span class="process-math">\(-\pi/2\leq \theta \leq \pi/2.\)</span> The angle <span class="process-math">\(\theta =-\pi/3\)</span> satisfies these two conditions. Therefore, <span class="process-math">\(\sin^{-1} (-\sqrt{3}/2)=-\pi/3.\)</span></p></li>
+<li id="li-205"><p id="p-derived-li-205">First we use the fact that <span class="process-math">\(\tan^{-1} (−1/\sqrt{3})=-\pi/6.\)</span> Then <span class="process-math">\(\text{ tan }(\pi/6)=−1/\sqrt{3}.\)</span> Therefore, <span class="process-math">\(\text{ tan }(\tan^{-1} (−1/\sqrt{3}))=−1/\sqrt{3}.\)</span></p></li>
+<li id="li-206"><p id="p-derived-li-206">To evaluate <span class="process-math">\(\cos^{-1}(\text{ cos }(5\pi/4)),\)</span> first use the fact that <span class="process-math">\(\text{ cos }(5\pi/4)=-\sqrt{2}/2.\)</span> Then we need to find the angle <span class="process-math">\(\theta \)</span> such that <span class="process-math">\(\text{ cos }(\theta )=-\sqrt{2}/2\)</span> and <span class="process-math">\(0\leq \theta \leq \pi.\)</span> Since <span class="process-math">\(3\pi/4\)</span> satisfies both these conditions, we have <span class="process-math">\(\text{ cos }(\cos^{-1}(5\pi/4))=\text{ cos }(\cos^{-1}(-\sqrt{2}/2))=3\pi/4.\)</span></p></li>
+<li id="li-207"><p id="p-derived-li-207">Since <span class="process-math">\(\text{ cos }(2\pi/3)=−1/2,\)</span> we need to evaluate <span class="process-math">\(\sin^{-1} (−1/2).\)</span> That is, we need to find the angle <span class="process-math">\(\theta \)</span> such that <span class="process-math">\(\sin(\theta )=−1/2\)</span> and <span class="process-math">\(-\pi/2\leq \theta \leq \pi/2.\)</span> Since <span class="process-math">\(-\pi/6\)</span> satisfies both these conditions, we can conclude that <span class="process-math">\(\sin^{-1} (\text{ cos }(2\pi/3))=\sin^{-1} (−1/2)=-\pi/6.\)</span></p></li>
+</ol></div></div>
+</div></article><article class="note remark-like" id="note-8"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.116</span><span class="period">.</span><span class="space"> </span><span class="title">Project: The Maximum Value of a Function.</span>
+</h4>
+<p id="p-300">In many areas of science, engineering, and mathematics, it is useful to know the maximum value a function can obtain, even if we don’t know its exact value at a given instant. For instance, if we have a function describing the strength of a roof beam, we would want to know the maximum weight the beam can support without breaking. If we have a function that describes the speed of a train, we would want to know its maximum speed before it jumps off the rails. Safe design often depends on knowing maximum values.</p>
+<p id="p-301">This project describes a simple example of a function with a maximum value that depends on two equation coefficients. We will see that maximum values can depend on several factors other than the independent variable <span class="process-math">\(x\text{.}\)</span></p>
+<ol class="decimal">
+<li id="li-208">Consider the graph in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_04_016.html" title="Figure 1.117">Figure 1.117</a> of the function <span class="process-math">\(y=\sin\,x+\text{ cos }\,x.\)</span> Describe its overall shape. Is it periodic? How do you know? <figure class="figure figure-like" id="CNX_Calc_Figure_01_04_016"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_016.jpg" class="contained" alt='"An image of a graph. The x axis runs from -4 to 4 and the y axis runs from -4 to 4. The graph is of the function “y = sin(x) + cos(x)”, a curved wave function. The graph of the function decreases until it hits the approximate point (-(3pi/4), -1.4), where it increases until the approximate point ((pi/4), 1.4), where it begins to decrease again. The x intercepts shown on this graph of the function are at (-(5pi/4), 0), (-(pi/4), 0), and ((3pi/4), 0). The y intercept is at (0, 1)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.117<span class="period">.</span></span><span class="space"> </span>The graph of <span class="process-math">\(y=\sin\,x+\text{ cos }\,x.\)</span></figcaption></figure> Using a graphing calculator or other graphing device, estimate the <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-values of the maximum point for the graph (the first such point where <span class="process-math">\(x\)</span> \gt  0). It may be helpful to express the <span class="process-math">\(x\)</span>-value as a multiple of \pi.</li>
+<li id="li-209"><p id="p-derived-li-209">Now consider other graphs of the form <span class="process-math">\(y=A\,\sin\,x+B\,\text{ cos }\,x\)</span> for various values of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Sketch the graph when <span class="process-math">\(A\)</span> = 2 and <span class="process-math">\(B\)</span> = 1, and find the <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-values for the maximum point. (Remember to express the <span class="process-math">\(x\)</span>-value as a multiple of \pi, if possible.) Has it moved?</p></li>
+<li id="li-210"><p id="p-derived-li-210">Repeat for <span class="process-math">\(A\)</span> = 1, <span class="process-math">\(B\)</span> = 2. Is there any relationship to what you found in part (2)?</p></li>
+<li id="li-211">Complete the following table, adding a few choices of your own for <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{:}\)</span> <figure class="table table-like" id="fs-id1170572554057"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.118<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(A\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(B\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(y\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(A\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(B\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(y\)</span></th>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">0</td>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\sqrt{3}\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines">0</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\sqrt{3}\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines">12</td>
+<td class="l t b0 r0 l0 t0 lines">5</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines">2</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines">5</td>
+<td class="l t b0 r0 l0 t0 lines">12</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">2</td>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">2</td>
+<td class="l t b0 r0 l0 t0 lines">2</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">3</td>
+<td class="l t b0 r0 l0 t0 lines">4</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">4</td>
+<td class="l t b0 r0 l0 t0 lines">3</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure>
+</li>
+<li id="li-212"><p id="p-derived-li-212">Try to figure out the formula for the <span class="process-math">\(y\)</span>-values.</p></li>
+<li id="li-213"><p id="p-derived-li-213">The formula for the <span class="process-math">\(x\)</span>-values is a little harder. The most helpful points from the table are <span class="process-math">\((1,1),(1,\sqrt{3}),(\sqrt{3},1).\)</span> (Hint: Consider inverse trigonometric functions.)</p></li>
+<li id="li-214"><p id="p-derived-li-214">If you found formulas for parts (5) and (6), show that they work together. That is, substitute the <span class="process-math">\(x\)</span>-value formula you found into <span class="process-math">\(y=A\,\sin\,x+B\,\text{ cos }\,x\)</span> and simplify it to arrive at the <span class="process-math">\(y\)</span>-value formula you found.</p></li>
+</ol></article></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.4</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-215"><p id="p-derived-li-215">For a function to have an inverse, the function must be one-to-one. Given the graph of a function, we can determine whether the function is one-to-one by using the horizontal line test.</p></li>
+<li id="li-216"><p id="p-derived-li-216">If a function is not one-to-one, we can restrict the domain to a smaller domain where the function is one-to-one and then define the inverse of the function on the smaller domain.</p></li>
+<li id="li-217"><p id="p-derived-li-217">For a function <span class="process-math">\(f\)</span> and its inverse <span class="process-math">\(f^{−1} ,f(f^{−1} (x))=x\)</span> for all <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(f^{−1} \)</span> and <span class="process-math">\(f^{−1} (f(x))=x\)</span> for all <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(f.\)</span></p></li>
+<li id="li-218"><p id="p-derived-li-218">Since the trigonometric functions are periodic, we need to restrict their domains to define the inverse trigonometric functions.</p></li>
+<li id="li-219"><p id="p-derived-li-219">The graph of a function <span class="process-math">\(f\)</span> and its inverse <span class="process-math">\(f^{−1} \)</span> are symmetric about the line <span class="process-math">\(y=x.\)</span></p></li>
+</ul></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.5</span> <span class="title">Key Equations</span>
+</h3>
+<ol class="decimal"><li id="li-220"><p id="p-derived-li-220">Inverse functions <span class="process-math">\(f^{−1} (f(x))=x \text{ for all } x \text{ in } D,\text{ and } f(f^{−1} (y))=y \text{ for all } y \text{ in } R.\)</span></p></li></ol></section><section class="conclusion" id="conclusion-4"><p id="p-302">This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at <a class="external" href="https://openstax.org/details/books/calculus-volume-1" target="_blank">https://openstax.org/details/books/calculus-volume-1.</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-5" id="fn-5"><sup> 1 </sup></a></p>
+<p id="p-303">Additional practice exercises are available in at the bottom on this section in OpenStax Calculus Volume 1: <a class="external" href="https://openstax.org/books/calculus-volume-1/pages/1-4-inverse-functions" target="_blank"><code class="code-inline tex2jax_ignore">https://openstax.org/books/calculus-volume-1/pages/1-1-review-of-functions</code></a></p></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-5"><div class="fn"><code class="code-inline tex2jax_ignore">https://openstax.org/details/books/calculus-volume-1</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

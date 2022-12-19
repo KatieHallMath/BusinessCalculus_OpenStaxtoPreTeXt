@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-11-11T14:30:29-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear Approximations </title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch4Sec1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_fourth.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch4Sec3.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch4Sec1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_fourth.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch4Sec3.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="active">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Integration</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Ch4Sec2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Linear Approximations </span>
+</h2>
+<section class="introduction" id="introduction-32"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc">
+<li id="li-498"><p id="p-derived-li-498">Describe the linear approximation to a function at a point.</p></li>
+<li id="li-499"><p id="p-derived-li-499">Write the linearization of a given function.</p></li>
+</ul>
+<p id="p-1203">We have just seen how derivatives allow us to compare related quantities that are changing over time. In this section, we examine another application of derivatives: the ability to approximate functions locally by linear functions. Linear functions are the easiest functions with which to work, so they provide a useful tool for approximating function values. In addition, the ideas presented in this section are generalized later in the text when we study how to approximate functions by higher-degree polynomials .</p></section><section class="subsection" id="subsection-89"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Linear Approximation of a Function at a Point</span>
+</h3>
+<p id="p-1204">Consider a function <span class="process-math">\(f\)</span> that is differentiable at a point <span class="process-math">\(x=a.\)</span> Recall that the tangent line to the graph of <span class="process-math">\(f\)</span> at <span class="process-math">\(a\)</span> is given by the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/fs-id1165043306789.html ./knowl/CNX_Calc_Figure_04_02_002.html ./knowl/CNX_Calc_Figure_04_02_004.html">
+\begin{equation*}
+y=f(a)+f'(a)(x-a).
+\end{equation*}
+</div>
+<p id="p-1205">For example, consider the function <span class="process-math">\(f(x)=\frac{1}{x}\)</span> at <span class="process-math">\(a=2.\)</span> Since <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(x=2\)</span> and <span class="process-math">\(f'(x)=-\frac{1}{x^2},\)</span> we see that <span class="process-math">\(f'(2)=-\frac{1}{4}.\)</span> Therefore, the tangent line to the graph of <span class="process-math">\(f\)</span> at <span class="process-math">\(a=2\)</span> is given by the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/fs-id1165043306789.html ./knowl/CNX_Calc_Figure_04_02_002.html ./knowl/CNX_Calc_Figure_04_02_004.html">
+\begin{equation*}
+y=\frac{1}{2}-\frac{1}{4}(x-2).
+\end{equation*}
+</div>
+<p id="p-1206"><a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_02_001.html" title="Figure 4.11">Figure 4.11</a>(a) shows a graph of <span class="process-math">\(f(x)=\frac{1}{x}\)</span> along with the tangent line to <span class="process-math">\(f\)</span> at <span class="process-math">\(x=2.\)</span> Note that for <span class="process-math">\(x\)</span> near 2, the graph of the tangent line is close to the graph of <span class="process-math">\(f.\)</span> As a result, we can use the equation of the tangent line to approximate <span class="process-math">\(f(x)\)</span> for <span class="process-math">\(x\)</span> near 2. For example, if <span class="process-math">\(x=2.1,\)</span> the <span class="process-math">\(y\)</span> value of the corresponding point on the tangent line is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/fs-id1165043306789.html ./knowl/CNX_Calc_Figure_04_02_002.html ./knowl/CNX_Calc_Figure_04_02_004.html">
+\begin{equation*}
+y=\frac{1}{2}-\frac{1}{4}(2.1-2)=0.475.
+\end{equation*}
+</div>
+<p id="p-1207">The actual value of <span class="process-math">\(f(2.1)\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/fs-id1165043306789.html ./knowl/CNX_Calc_Figure_04_02_002.html ./knowl/CNX_Calc_Figure_04_02_004.html">
+\begin{equation*}
+f(2.1)=\frac{1}{2.1}\approx 0.47619.
+\end{equation*}
+</div>
+<p id="p-1208">Therefore, the tangent line gives us a fairly good approximation of <span class="process-math">\(f(2.1)\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_02_001.html" title="Figure 4.11">Figure 4.11</a>(b)). However, note that for values of <span class="process-math">\(x\)</span> far from 2, the equation of the tangent line does not give us a good approximation. For example, if <span class="process-math">\(x=10,\)</span> the <span class="process-math">\(y\)</span>-value of the corresponding point on the tangent line is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/fs-id1165043306789.html ./knowl/CNX_Calc_Figure_04_02_002.html ./knowl/CNX_Calc_Figure_04_02_004.html">
+\begin{equation*}
+y=\frac{1}{2}-\frac{1}{4}(10-2)=\frac{1}{2}-2=-1.5,
+\end{equation*}
+</div>
+<p id="p-1209">whereas the value of the function at <span class="process-math">\(x=10\)</span> is <span class="process-math">\(f(10)=0.1.\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_02_001"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/CNX_Calc_Figure_04_02_006.jpg" class="contained" alt='"This figure has two parts a and b. In figure a, the line f(x) = 1/x is shown with its tangent line at x = 2. In figure b, the area near the tangent point is blown up to show how good of an approximation the tangent is near x = 2."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.11<span class="period">.</span></span><span class="space"> </span>(a) The tangent line to <span class="process-math">\(f(x)=1/x\)</span> at <span class="process-math">\(x=2\)</span> provides a good approximation to <span class="process-math">\(f\)</span> for <span class="process-math">\(x\)</span> near 2. (b) At <span class="process-math">\(x=2.1,\)</span> the value of <span class="process-math">\(y\)</span> on the tangent line to <span class="process-math">\(f(x)=1/x\)</span> is 0.475. The actual value of <span class="process-math">\(f(2.1)\)</span> is <span class="process-math">\(1/2.1,\)</span> which is approximately 0.47619.</figcaption></figure><p id="p-1210">In general, for a differentiable function <span class="process-math">\(f,\)</span> the equation of the tangent line to <span class="process-math">\(f\)</span> at <span class="process-math">\(x=a\)</span> can be used to approximate <span class="process-math">\(f(x)\)</span> for <span class="process-math">\(x\)</span> near <span class="process-math">\(a.\)</span> Therefore, we can write</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/fs-id1165043306789.html ./knowl/CNX_Calc_Figure_04_02_002.html ./knowl/CNX_Calc_Figure_04_02_004.html">
+\begin{equation*}
+f(x)\approx f(a)+f'(a)(x-a) \text{ for } x \text{ near } a.
+\end{equation*}
+</div>
+<p id="p-1211">We call the linear function</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/CNX_Calc_Figure_04_02_001.html ./knowl/fs-id1165043306789.html ./knowl/CNX_Calc_Figure_04_02_002.html ./knowl/CNX_Calc_Figure_04_02_004.html" id="fs-id1165043306789">
+\begin{equation}
+L(x)=f(a)+f'(a)(x-a)\tag{4.2.1}
+\end{equation}
+</div>
+<p id="p-1212">the <dfn class="terminology">linear approximation</dfn>, or <dfn class="terminology">tangent line approximation</dfn>, of <span class="process-math">\(f\)</span> at <span class="process-math">\(x=a.\)</span> This function <span class="process-math">\(L\)</span> is also known as the <dfn class="terminology">linearization</dfn> of <span class="process-math">\(f\)</span> at <span class="process-math">\(x=a.\)</span></p>
+<p id="p-1213">To show how useful the linear approximation can be, we look at how to find the linear approximation for <span class="process-math">\(f(x)=\sqrt{x}\)</span> at <span class="process-math">\(x=9.\)</span></p>
+<article class="example example-like" id="fs-id1165043051419"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.12</span><span class="period">.</span>
+</h4>
+<p id="p-1214">Find the linear approximation of <span class="process-math">\(f(x)=\sqrt{x}\)</span> at <span class="process-math">\(x=9\)</span> and use the approximation to estimate <span class="process-math">\(\sqrt{9.1}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-235" id="solution-235"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-235"><div class="solution solution-like">
+<p id="p-1215">Since we are looking for the linear approximation at <span class="process-math">\(x=9,\)</span> using <a href="" class="xref" data-knowl="./knowl/fs-id1165043306789.html" title="Equation 4.2.1">(4.2.1)</a> we know the linear approximation is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165043306789.html ./knowl/CNX_Calc_Figure_04_02_002.html">
+\begin{equation*}
+L(x)=f(9)+f'(9)(x-9).
+\end{equation*}
+</div>
+<p id="p-1216">We need to find <span class="process-math">\(f(9)\)</span> and <span class="process-math">\(f'(9).\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165043306789.html ./knowl/CNX_Calc_Figure_04_02_002.html" id="md-62">
+\begin{align*}
+f(x)=\sqrt{x}\amp \implies \amp \amp f(9)=\sqrt{9}=3\\
+f'(x)=\frac{1}{2\sqrt{x}}\amp\implies \amp \amp f'(9)=\frac{1}{2\sqrt{9}}=\frac{1}{6}
+\end{align*}
+</div>
+<p id="p-1217">Therefore, the linear approximation is given by <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_02_002.html" title="Figure 4.13">Figure 4.13</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165043306789.html ./knowl/CNX_Calc_Figure_04_02_002.html">
+\begin{equation*}
+L(x)=3+\frac{1}{6}(x-9)
+\end{equation*}
+</div>
+<p id="p-1218">Using the linear approximation, we can estimate <span class="process-math">\(\sqrt{9.1}\)</span> by writing</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165043306789.html ./knowl/CNX_Calc_Figure_04_02_002.html">
+\begin{equation*}
+\sqrt{9.1}=f(9.1)\approx L(9.1)=3+\frac{1}{6}(9.1-9)\approx 3.0167.
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_02_002"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CNX_Calc_Figure_04_02_002.jpg" class="contained" alt='"The function f(x) = the square root of x is shown with its tangent at (9, 3). The tangent appears to be a very good approximation from x = 6 to x = 12."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.13<span class="period">.</span></span><span class="space"> </span>The local linear approximation to <span class="process-math">\(f(x)=\sqrt{x}\)</span> at <span class="process-math">\(x=9\)</span> provides an approximation to <span class="process-math">\(f\)</span> for <span class="process-math">\(x\)</span> near 9.</figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-96"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.15</span><span class="period">.</span>
+</h4>
+<p id="p-1220">Find the local linear approximation to <span class="process-math">\(f(x)=\sqrt[3]{x} \)</span> at <span class="process-math">\(x=8.\)</span> Use it to approximate <span class="process-math">\(\sqrt[3]{8.1} \)</span> to five decimal places.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-93" id="hint-93"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-93"><div class="hint solution-like"><p id="p-1221"><span class="process-math">\(L(x)=f(a)+f'(a)(x-a)\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-236" id="solution-236"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-236"><div class="solution solution-like"><p id="p-1222"><span class="process-math">\(L(x)=2+\frac{1}{12}(x-8);\)</span> 2.00833</p></div></div>
+</div></article><p id="p-1223">Linear approximations may be used in estimating roots and powers. In the next example, we find the linear approximation for <span class="process-math">\(f(x)=(1+x)^n\)</span> at <span class="process-math">\(x=0,\)</span> which can be used to estimate roots and powers for real numbers near 1. The same idea can be extended to a function of the form <span class="process-math">\(f(x)=(m+x)^n \)</span> to estimate roots and powers near a different number <span class="process-math">\(m.\)</span></p>
+<article class="example example-like" id="fs-id1165043161464"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.16</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating Roots and Powers.</span>
+</h4>
+<p id="p-1224">Find the linear approximation of <span class="process-math">\(f(x)=(1+x)^n\)</span> at <span class="process-math">\(x=0.\)</span> Use this approximation to estimate <span class="process-math">\((1.01)^3.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-237" id="solution-237"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-237"><div class="solution solution-like">
+<p id="p-1225">The linear approximation at <span class="process-math">\(x=0\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_02_004.html">
+\begin{equation*}
+L(x)=f(0)+f'(0)(x-0).
+\end{equation*}
+</div>
+<p id="p-1226">Because</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_02_004.html" id="md-63">
+\begin{align*}
+f(x)=(1+x)^n\amp\implies \amp \amp f(0)=1\\
+f'(x)=n(1+x)^{n-1}\amp\implies \amp \amp f'(0)=n,
+\end{align*}
+</div>
+<p id="p-1227">the linear approximation is given by <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_02_004.html" title="Figure 4.17">Figure 4.17</a>(a).</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_02_004.html">
+\begin{equation*}
+L(x)=1+n(x-0)=1+nx
+\end{equation*}
+</div>
+<p id="p-1228">We can approximate <span class="process-math">\((1.01)^3\)</span> by evaluating <span class="process-math">\(L(0.01)\)</span> when <span class="process-math">\(n=3.\)</span> We conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_02_004.html">
+\begin{equation*}
+(1.01)^3=f(1.01)\approx L(1.01)=1+3(0.01)=1.03.
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_02_004"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CNX_Calc_Figure_04_02_007.jpg" class="contained" alt='"This figure has two parts a and b. In figure a, the line f(x) = (1 + x)3 is shown with its tangent line at (0, 1). In figure b, the area near the tangent point is blown up to show how good of an approximation the tangent is near (0, 1)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.17<span class="period">.</span></span><span class="space"> </span>(a) The linear approximation of <span class="process-math">\(f(x)\)</span> at <span class="process-math">\(x=0\)</span> is <span class="process-math">\(L(x).\)</span> (b) The actual value of <span class="process-math">\(1.01^3\)</span> is 1.030301. The linear approximation of <span class="process-math">\(f(x)\)</span> at <span class="process-math">\(x=0\)</span> estimates <span class="process-math">\(1.01^3\)</span> to be 1.03.</figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-97"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.18</span><span class="period">.</span>
+</h4>
+<p id="p-1229">Find the linear approximation of <span class="process-math">\(f(x)=(1+x)^4\)</span> at <span class="process-math">\(x=0\)</span> without using the result from the preceding example.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-94" id="hint-94"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-94"><div class="hint solution-like"><p id="p-1230"><span class="process-math">\(f'(x)=4(1+x)^3\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-238" id="solution-238"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-238"><div class="solution solution-like"><p id="p-1231"><span class="process-math">\(L(x)=1+4x\)</span></p></div></div>
+</div></article><article class="example example-like" id="fs-id1165043100241"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.19</span><span class="period">.</span>
+</h4>
+<p id="p-1232">The profit equation for a certain product is given by <span class="process-math">\(P(x)=\frac{20}{\sqrt{x+2}}\)</span> where <span class="process-math">\(x\)</span> is the number of units sold. Use the linear approximation formula of <span class="process-math">\(P\)</span> to estimate the changes in profit as <span class="process-math">\(x\)</span> changes from 98 to 101.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-239" id="solution-239"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-239"><div class="solution solution-like">
+<p id="p-1233">Using the  linear approximation at <span class="process-math">\(x=98\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L(x)=P(98)+P'(98)(x-98)
+\end{equation*}
+</div>
+<p id="p-1234">Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-64">
+\begin{align*}
+P(x)\amp=20(x+2)^{-1/2}\\
+P'(x)\amp=-10(x+2)^{-3/2}=\frac{-10}{(x+2)^{3/2}}.
+\end{align*}
+</div>
+<p id="p-1235">We see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-65">
+\begin{align*}
+P(x)=\frac{20}{\sqrt{x+2}}\amp\implies \amp P(98)=\frac{20}{\sqrt{100}}=2\\
+P'(x)=\frac{-10}{(x+2)^{3/2}}\amp\implies \amp P'(98)=\frac{-10}{(100)^{3/2}}=-0.01
+\end{align*}
+</div>
+<p id="p-1236">Therefore, the linear approximation of <span class="process-math">\(P\)</span> at <span class="process-math">\(x=98\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L(x)=2-0.01(x-98)
+\end{equation*}
+</div>
+<p id="p-1237">The estimate for <span class="process-math">\(P(101)\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P(101)\approx L(101)=2-0.01(101-98)=1.97.
+\end{equation*}
+</div>
+<p id="p-1238">Thus, our estimate for the changes in profit as <span class="process-math">\(x\)</span> changes from 98 to 101 is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P(101)-P(98)\approx 1.97-2=-0.03.
+\end{equation*}
+</div>
+<p id="p-1239">That is, profit decreased by about 3 cents. Note that the true value for the changes in profit as <span class="process-math">\(x\)</span> changes from 98 to 101 is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P(101)-P(98)=1.970658556-2=-0.0293414437.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-98"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.20</span><span class="period">.</span>
+</h4>
+<p id="p-1240">The demand equation for a box of tea is given by <span class="process-math">\(p(x)=\frac{30}{\sqrt{x}}\)</span> where <span class="process-math">\(x\)</span> is the number of boxes of tea sold. Use the linear approximation formula of <span class="process-math">\(p\)</span> to estimate the changes in demand as <span class="process-math">\(x\)</span> changes from 9 to 10.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-95" id="hint-95"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-95"><div class="hint solution-like"><p id="p-1241"><span class="process-math">\(L(x)=f(a)+f'(a)(x-a)\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-240" id="solution-240"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-240"><div class="solution solution-like">
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L(x)=10-\frac{5}{9}(x-9)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p(10)\approx L(10)=9.\overline{4}\implies p(10)-p(9)\approx 9.\overline{4}-10=-0.\overline{5}\approx -\$0.56.
+\end{equation*}
+</div>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-90"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.2</span> <span class="title">Average Cost</span>
+</h3>
+<article class="definition definition-like" id="definition-32"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.21</span><span class="period">.</span>
+</h4>
+<p id="p-1242">The <dfn class="terminology">average cost function</dfn> <span class="process-math">\(\overline{C}(x)\)</span> is the average cost per item <span class="process-math">\(x\)</span> and it is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\overline{C}(x)=\frac{C(x)}{x}
+\end{equation*}
+</div></article><article class="example example-like" id="example-143"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.22</span><span class="period">.</span>
+</h4>
+<p id="p-1243">Assume it costs a company <span class="process-math">\(C(x)=600000+200x+0.002x^2\)</span> dollars to produce <span class="process-math">\(x\)</span> laptops in a day.</p>
+<ol class="decimal">
+<li id="li-500"><p id="p-derived-li-500">Find the marginal cost function.</p></li>
+<li id="li-501"><p id="p-derived-li-501">How much is the cost increasing when the company produces 500 laptops?</p></li>
+<li id="li-502"><p id="p-derived-li-502">Find the difference between the exact cost of producing the 501st laptop and the marginal cost when 500 laptops are produced.</p></li>
+<li id="li-503"><p id="p-derived-li-503">Find the average cost function and the average cost to produce the first 500 laptops.</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-241" id="solution-241"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-241"><div class="solution solution-like"><ol class="decimal">
+<li id="li-504">
+<p id="p-1244">Using the power rule,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C'(x)=200+0.004x
+\end{equation*}
+</div>
+</li>
+<li id="li-505">
+<p id="p-1245">The marginal cost when 500 laptops are produced is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C'(500)=200+0.004(500)=202.
+\end{equation*}
+</div>
+<p id="p-1246">When 500 laptops are produced, the cost is increasing at a rate of <span class="process-math">\(\$202\)</span> per laptop produced.</p>
+</li>
+<li id="li-506">
+<p id="p-1247">The exact cost of producing the 501st laptop is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C(501)-C(500)=700702.022-700500=202.002
+\end{equation*}
+</div>
+<p id="p-1248">The difference between the exact cost and the marginal cost function when 500 laptops are produced is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(C(501)-C(500))-C'(500)=202.002-202=0.002.
+\end{equation*}
+</div>
+</li>
+<li id="li-507">
+<p id="p-1249">Using <span class="process-math">\(\overline{C}(x)=\frac{C(x)}{x}\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\overline{C}(x)=\frac{600000+200x+0.002x^2}{x}.
+\end{equation*}
+</div>
+<p id="p-1250">Thus, the average cost of producing the first 500 laptops is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\overline{C}(500)=\frac{700500}{500}=\$ 1401.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-99"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.23</span><span class="period">.</span>
+</h4>
+<p id="p-1251">Assume it costs a company <span class="process-math">\(C(x)=900000+800x+0.009x^2\)</span> dollars to produce <span class="process-math">\(x\)</span> refrigerators in a week.</p>
+<ol class="decimal">
+<li id="li-508"><p id="p-derived-li-508">Find the marginal cost function.</p></li>
+<li id="li-509"><p id="p-derived-li-509">How much is the cost increasing when the company produces 30 refrigerators?</p></li>
+<li id="li-510"><p id="p-derived-li-510">Find the difference between the exact cost of producing the 31st refrigerator and the marginal cost when 30 refrigerators are produced.</p></li>
+<li id="li-511"><p id="p-derived-li-511">Find the average cost function and the average cost to produce the first 30 refrigerators.</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-96" id="hint-96"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-96"><div class="hint solution-like">Recall that the marginal cost is given by <span class="process-math">\(C'(x)\)</span> and the average cost is <span class="process-math">\(\overline{C}(x)=\frac{C(x)}{x}\text{.}\)</span>
+</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-242" id="solution-242"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-242"><div class="solution solution-like"><ol class="decimal">
+<li id="li-512"><p id="p-derived-li-512"><span class="process-math">\(\displaystyle C'(x)=800+0.018x\)</span></p></li>
+<li id="li-513"><p id="p-derived-li-513"><span class="process-math">\(\displaystyle C'(30)=800+0.018(30)=800.54.\)</span></p></li>
+<li id="li-514"><p id="p-derived-li-514"><span class="process-math">\(\displaystyle (C(31)-C(30))-C'(30)=0.009\)</span></p></li>
+<li id="li-515"><p id="p-derived-li-515"><span class="process-math">\(\displaystyle \overline{C}(30)=\$30800.27\)</span></p></li>
+</ol></div></div>
+</div></article></section><section class="subsection" id="subsection-91"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.3</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc"><li id="li-516"><p id="p-derived-li-516">A differentiable function <span class="process-math">\(y=f(x)\)</span> can be approximated at <span class="process-math">\(a\)</span> by the linear function<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+L(x)=f(a)+f'(a)(x-a).
+\end{equation*}
+</div></p></li></ul></section><section class="subsection" id="subsection-92"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.4</span> <span class="title">Key Equations</span>
+</h3>
+<ul class="disc">
+<li id="li-517"><p id="p-derived-li-517"><em class="emphasis">Linear approximation</em> <span class="process-math">\(L(x)=f(a)+f'(a)(x-a)\)</span></p></li>
+<li id="li-518"><p id="p-derived-li-518"><em class="emphasis">Average Cost Function</em> <span class="process-math">\(\overline{C}(x)=\frac{C(x)}{x}\)</span></p></li>
+</ul></section></section></div></main>
+</div>
+</body>
+</html>

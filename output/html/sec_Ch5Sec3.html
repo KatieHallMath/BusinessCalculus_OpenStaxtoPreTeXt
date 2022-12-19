@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-11-11T14:30:34-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Fundamental Theorem of Calculus</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch5Sec2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_fifth.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch5Sec4.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch5Sec2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_fifth.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch5Sec4.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="active">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Integration</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="sec_Ch5Sec3"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">The Fundamental Theorem of Calculus</span>
+</h2>
+<section class="introduction" id="introduction-45"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc">
+<li id="li-697"><p id="p-derived-li-697">Describe the meaning of the Mean Value Theorem for Integrals.</p></li>
+<li id="li-698"><p id="p-derived-li-698">State the meaning of the Fundamental Theorem of Calculus, Part 1.</p></li>
+<li id="li-699"><p id="p-derived-li-699">Use the Fundamental Theorem of Calculus, Part 1, to evaluate derivatives of integrals.</p></li>
+<li id="li-700"><p id="p-derived-li-700">State the meaning of the Fundamental Theorem of Calculus, Part 2.</p></li>
+<li id="li-701"><p id="p-derived-li-701">Use the Fundamental Theorem of Calculus, Part 2, to evaluate definite integrals.</p></li>
+<li id="li-702"><p id="p-derived-li-702">Explain the relationship between differentiation and integration.</p></li>
+</ul>
+<p id="p-1733">In the previous two sections, we looked at the definite integral and its relationship to the area under the curve of a function. Unfortunately, so far, the only tools we have available to calculate the value of a definite integral are geometric area formulas and limits of Riemann sums, and both approaches are extremely cumbersome. In this section we look at some more powerful and useful techniques for evaluating definite integrals.</p>
+<p id="p-1734">These new techniques rely on the relationship between differentiation and integration. This relationship was discovered and explored by both Sir Isaac Newton and Gottfried Wilhelm Leibniz (among others) during the late 1600s and early 1700s, and it is codified in what we now call the <dfn class="terminology">Fundamental Theorem of Calculus</dfn>, which has two parts that we examine in this section. Its very name indicates how central this theorem is to the entire development of calculus.</p>
+<article class="note remark-like" id="note-43"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">5.55</span><span class="period">.</span>
+</h4>
+<p id="p-1735">Isaac Newton’s contributions to mathematics and physics changed the way we look at the world. The relationships he discovered, codified as Newton’s laws and the law of universal gravitation, are still taught as foundational material in physics today, and his calculus has spawned entire fields of mathematics. To learn more, read a <a class="external" href="http://www.openstax.org/l/20_newtonbio" target="_blank">brief biography</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-16" id="fn-16"><sup> 1 </sup></a> of Newton with multimedia clips.</p></article><p id="p-1736">Before we get to this crucial theorem, however, let’s examine another important theorem, the Mean Value Theorem for Integrals, which is needed to prove the Fundamental Theorem of Calculus.</p></section><section class="subsection" id="subsection-125"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">The Mean Value Theorem for Integrals</span>
+</h3>
+<p id="p-1737">The <dfn class="terminology">Mean Value Theorem for Integrals</dfn> states that a continuous function on a closed interval takes on its average value at the same point in that interval. The theorem guarantees that if <span class="process-math">\(f(x)\)</span> is continuous, a point <span class="process-math">\(c\)</span> exists in an interval <span class="process-math">\([a,b]\)</span> such that the value of the function at <span class="process-math">\(c\)</span> is equal to the average value of <span class="process-math">\(f(x)\)</span> over <span class="process-math">\([a,b].\)</span> We state this theorem mathematically with the help of the formula for the average value of a function that we presented at the end of the preceding section.</p>
+<article class="theorem theorem-like" id="fs-id1170572224851"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.56</span><span class="period">.</span><span class="space"> </span><span class="title">The Mean Value Theorem for Integrals.</span>
+</h4>
+<p id="p-1738">If <span class="process-math">\(f(x)\)</span> is continuous over an interval <span class="process-math">\([a,b],\)</span> then there is at least one point <span class="process-math">\(c\in [a,b]\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(c)=\frac{1}{b-a} \displaystyle{ \int_{a}^{b} f(x)dx}.
+\end{equation*}
+</div>
+<p id="p-1739">This formula can also be stated as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{ \int_{a}^{b} f(x)dx}=f(c)(b-a).
+\end{equation*}
+</div></article><article class="example example-like" id="fs-id1170572141909"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.57</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Average Value of a Function.</span>
+</h4>
+<p id="p-1740">Find the average value of the function <span class="process-math">\(f(x)=8-2x\)</span> over the interval <span class="process-math">\([0,4]\)</span> and find <span class="process-math">\(c\)</span> such that <span class="process-math">\(f(c)\)</span> equals the average value of the function over <span class="process-math">\([0,4].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-311" id="solution-311"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-311"><div class="solution solution-like">
+<p id="p-1741">The formula states the mean value of <span class="process-math">\(f(x)\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_03_001.html">
+\begin{equation*}
+\frac{1}{4-0}\displaystyle{ \int_{0}^{4} (8-2x)dx}.
+\end{equation*}
+</div>
+<p id="p-1742">We can see in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_03_001.html" title="Figure 5.58">Figure 5.58</a> that the function represents a straight line and forms a right triangle bounded by the <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-axes. The area of the triangle is <span class="process-math">\(A=\frac{1}{2}(\text{ base })}{(\text{ height }).\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_03_001.html">
+\begin{equation*}
+A=\frac{1}{2}(4)}{(8)=16.
+\end{equation*}
+</div>
+<p id="p-1743">The average value is found by multiplying the area by <span class="process-math">\(1/(4-0).\)</span> Thus, the average value of the function is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_03_001.html">
+\begin{equation*}
+\frac{1}{4}(16)=4.
+\end{equation*}
+</div>
+<p id="p-1744">Set the average value equal to <span class="process-math">\(f(c)\)</span> and solve for <span class="process-math">\(c\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_03_001.html" id="md-100">
+\begin{align*}
+8-2c\amp =\amp 4\\
+c\amp =\amp 2
+\end{align*}
+</div>
+<p id="p-1745">At <span class="process-math">\(c=2,f(2)=4.\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_03_001"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_03_002.jpg" class="contained" alt='"The graph of a decreasing line f(x) = 8 – 2x over [-1,4.5]. The line y=4 is drawn over [0,4], which intersects with the line at (2,4). A line is drawn down from (2,4) to the x axis and from (4,4) to the y axis. The area under y=4 is shaded."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.58<span class="period">.</span></span><span class="space"> </span>By the Mean Value Theorem, the continuous function <span class="process-math">\(f(x)\)</span> takes on its average value at <span class="process-math">\(c\)</span> at least once over a closed interval.</figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-132"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.59</span><span class="period">.</span>
+</h4>
+<p id="p-1746">Find the average value of the function <span class="process-math">\(f(x)=\frac{x}{2}\)</span> over the interval <span class="process-math">\([0,6]\)</span> and find <span class="process-math">\(c\)</span> such that <span class="process-math">\(f(c)\)</span> equals the average value of the function over <span class="process-math">\([0,6].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-129" id="hint-129"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-129"><div class="hint solution-like"><p id="p-1747">Use the procedures from <a href="" class="xref" data-knowl="./knowl/fs-id1170572141909.html" title="Example 5.57: Finding the Average Value of a Function">Example 5.57</a> to solve the problem</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-312" id="solution-312"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-312"><div class="solution solution-like"><p id="p-1748"><span class="process-math">\(\text{ Average value }=1.5;c=3\)</span></p></div></div>
+</div></article><article class="example example-like" id="fs-id1170572451873"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.60</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Point Where a Function Takes on Its Average Value.</span>
+</h4>
+<p id="p-1749">Given <span class="process-math">\(\displaystyle{ \int_{0}^{3} x^2dx}=9,\)</span> find <span class="process-math">\(c\)</span> such that <span class="process-math">\(f(c)\)</span> equals the average value of <span class="process-math">\(f(x)=x^2\)</span> over <span class="process-math">\([0,3].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-313" id="solution-313"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-313"><div class="solution solution-like">
+<p id="p-1750">We are looking for the value of <span class="process-math">\(c\)</span> such that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_03_002.html">
+\begin{equation*}
+f(c)=\frac{1}{3-0}\displaystyle{ \int_{0}^{3} x^2dx}=\frac{1}{3}(9)=3.
+\end{equation*}
+</div>
+<p id="p-1751">Replacing <span class="process-math">\(f(c)\)</span> with <span class="process-math">\(c^2\text{,}\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_03_002.html" id="md-101">
+\begin{align*}
+c^2\amp = 3\\
+c\amp = \pm \sqrt{3}.
+\end{align*}
+</div>
+<p id="p-1752">Since <span class="process-math">\(- \sqrt{3}\)</span> is outside the interval, take only the positive value. Thus, <span class="process-math">\(c=\sqrt{3}\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_03_002.html" title="Figure 5.61">Figure 5.61</a>).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_03_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_03_003.jpg" class="contained" alt='"A graph of the parabola f(x) = x^2 over [-2, 3]. The area under the curve and above the x axis is shaded, and the point (sqrt(3), 3) is marked."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.61<span class="period">.</span></span><span class="space"> </span>Over the interval <span class="process-math">\([0,3],\)</span> the function <span class="process-math">\(f(x)=x^2\)</span> takes on its average value at <span class="process-math">\(c=\sqrt{3}.\)</span></figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-133"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.62</span><span class="period">.</span>
+</h4>
+<p id="p-1753">Given <span class="process-math">\(\displaystyle{ \int_{0}^{3} (2x^2-1)dx}=15,\)</span> find <span class="process-math">\(c\)</span> such that <span class="process-math">\(f(c)\)</span> equals the average value of <span class="process-math">\(f(x)=2x^2-1\)</span> over <span class="process-math">\([0,3].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-130" id="hint-130"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-130"><div class="hint solution-like"><p id="p-1754">Use the procedures from <a href="" class="xref" data-knowl="./knowl/fs-id1170572451873.html" title="Example 5.60: Finding the Point Where a Function Takes on Its Average Value">Example 5.60</a> to solve the problem.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-314" id="solution-314"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-314"><div class="solution solution-like"><p id="p-1755"><span class="process-math">\(c=\sqrt{3}\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-126"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">Fundamental Theorem of Calculus Part 1: Integrals and Antiderivatives</span>
+</h3>
+<p id="p-1756">As mentioned earlier, the Fundamental Theorem of Calculus is an extremely powerful theorem that establishes the relationship between differentiation and integration, and gives us a way to evaluate definite integrals without using Riemann sums or calculating areas. The theorem is comprised of two parts, the first of which, the <dfn class="terminology">Fundamental Theorem of Calculus, Part 1</dfn>, is stated here. Part 1 establishes the relationship between differentiation and integration.</p>
+<article class="theorem theorem-like" id="fs-id1170571704350"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.63</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental Theorem of Calculus, Part 1.</span>
+</h4>
+<p id="p-1757">If <span class="process-math">\(f(x)\)</span> is continuous over an interval <span class="process-math">\([a,b],\)</span> and the function <span class="process-math">\(F(x)\)</span> is defined by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F(x)=\displaystyle{ \int_{a}^{x} f(t)dt},
+\end{equation*}
+</div>
+<p id="p-1758">then <span class="process-math">\(F'(x)=f(x)\)</span> over <span class="process-math">\([a,b].\)</span></p>
+<p id="p-1759">Before we delve into the proof, a couple of subtleties are worth mentioning here. First, a comment on the notation. Note that we have defined a function, <span class="process-math">\(F(x),\)</span> as the definite integral of another function, <span class="process-math">\(f(t),\)</span> from the point <span class="process-math">\(a\)</span> to the point <span class="process-math">\(x\text{.}\)</span> At first glance, this is confusing, because we have said several times that a definite integral is a number, and here it looks like it’s a function. The key here is to notice that for any particular value of <span class="process-math">\(x\text{,}\)</span> the definite integral is a number. So the function <span class="process-math">\(F(x)\)</span> returns a number (the value of the definite integral) for each value of <span class="process-math">\(x\text{.}\)</span></p>
+<p id="p-1760">Second, it is worth commenting on some of the key implications of this theorem. There is a reason it is called the <em class="emphasis">Fundamental Theorem of Calculus</em>. Not only does it establish a relationship between integration and differentiation, but also it guarantees that any integrable function has an antiderivative. Specifically, it guarantees that any continuous function has an antiderivative.</p></article><article class="example example-like" id="fs-id1170572601345"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.64</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Derivative with the Fundamental Theorem of Calculus.</span>
+</h4>
+<p id="p-1761">Use the <a href="" class="xref" data-knowl="./knowl/fs-id1170571704350.html" title="Theorem 5.63: Fundamental Theorem of Calculus, Part 1">Theorem 5.63</a> to find the derivative of</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170571704350.html">
+\begin{equation*}
+g(x)=\displaystyle{ \int_{1}^{x} \frac{1}{t^3+1}dt.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-315" id="solution-315"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-315"><div class="solution solution-like">
+<p id="p-1762">According to the Fundamental Theorem of Calculus, the derivative is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+g'(x) =\frac{1}{x^3+1}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-134"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.65</span><span class="period">.</span>
+</h4>
+<p id="p-1763">Use the Fundamental Theorem of Calculus, Part 1 to find the derivative of <span class="process-math">\(g(r)=\displaystyle{ \int_{0}^{r} \sqrt{x^2+4}dx}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-131" id="hint-131"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-131"><div class="hint solution-like"><p id="p-1764">Follow the procedures from <a href="" class="xref" data-knowl="./knowl/fs-id1170572601345.html" title="Example 5.64: Finding a Derivative with the Fundamental Theorem of Calculus">Example 5.64</a> to solve the problem.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-316" id="solution-316"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-316"><div class="solution solution-like"><p id="p-1765"><span class="process-math">\(g'(r) =\sqrt{r^2+4}\)</span></p></div></div>
+</div></article><article class="example example-like" id="example-183"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.66</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Fundamental Theorem and the Chain Rule to Calculate Derivatives.</span>
+</h4>
+<p id="p-1766">Let <span class="process-math">\(F(x)=\displaystyle{ \int_{1}^{\sqrt{x}} \ln t\;dt}.\)</span> Find <span class="process-math">\(F'(x) .\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-317" id="solution-317"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-317"><div class="solution solution-like">
+<p id="p-1767">Letting <span class="process-math">\(u(x)=\sqrt{x},\)</span> we have <span class="process-math">\(F(x)=\displaystyle{ \int_{1}^{u(x)} \ln t dt}.\)</span> Thus, by the Fundamental Theorem of Calculus and the chain rule,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-102">
+\begin{align*}
+F'(x) \amp =\ln(u(x))\frac{du}{dx} \\
+\amp =\ln(u(x))\cdot \left(\frac{1}{2}x^{-1/2}\right)\\
+\amp =\frac{\ln\sqrt{x}}{2\sqrt{x}}.\\
+\amp =\frac{\ln x}{4\sqrt{x}}.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-135"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.67</span><span class="period">.</span>
+</h4>
+<p id="p-1768">Let <span class="process-math">\(F(x)=\displaystyle{ \int_{1}^{x^3}  e^t dt}.\)</span> Find <span class="process-math">\(F'(x) .\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-132" id="hint-132"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-132"><div class="hint solution-like"><p id="p-1769">Use the chain rule to solve the problem.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-318" id="solution-318"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-318"><div class="solution solution-like"><p id="p-1770"><span class="process-math">\(F'(x) =3x^2e^{x^3}\)</span></p></div></div>
+</div></article><article class="example example-like" id="fs-id1170572228878"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.68</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Fundamental Theorem of Calculus with Two Variable Limits of Integration.</span>
+</h4>
+<p id="p-1771">Let <span class="process-math">\(F(x)=\displaystyle{ \int_{x}^{2x} t^3dt}.\)</span> Find <span class="process-math">\(F'(x) .\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-319" id="solution-319"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-319"><div class="solution solution-like">
+<p id="p-1772">We have <span class="process-math">\(F(x)=\displaystyle{ \int_{x}^{2x} t^3dt}.\)</span> Both limits of integration are variable, so we need to split this into two integrals. We get</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-103">
+\begin{align*}
+F(x)\amp =\displaystyle{ \int_{x}^{2x} t^3dt}\\
+\amp =\displaystyle{ \int_{x}^{0} t^3dt}+\displaystyle{ \int_{0}^{2x} t^3dt}\\
+\amp =- \displaystyle{ \int_{0}^{x} t^3dt}+\displaystyle{ \int_{0}^{2x} t^3dt}.
+\end{align*}
+</div>
+<p id="p-1773">Differentiating the first term, we obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}\left[- \displaystyle{ \int_{0}^{x} t^3dt}\right]=- x^3.
+\end{equation*}
+</div>
+<p id="p-1774">Differentiating the second term, we first let <span class="process-math">\(u(x)=2x.\)</span> Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-104">
+\begin{align*}
+\frac{d}{dx}\left[\displaystyle{ \int_{0}^{2x} t^3dt}\right]\amp =\frac{d}{dx}\left[\displaystyle{ \int_{0}^{u(x)} t^3dt}\right]\\
+\amp =(u(x))^3\frac{du}{dx} \\
+\amp =(2x)^3\cdot 2\\
+\amp =16x^3.
+\end{align*}
+</div>
+<p id="p-1775">Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-105">
+\begin{align*}
+F'(x) \amp =\frac{d}{dx}\left[- \displaystyle{ \int_{0}^{x} t^3dt}\right]+\frac{d}{dx}\left[\displaystyle{ \int_{0}^{2x} t^3dt}\right]\\
+\amp =- x^3+16x^3\\
+\amp =15x^3.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-136"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.69</span><span class="period">.</span>
+</h4>
+<p id="p-1776">Let <span class="process-math">\(F(x)=\displaystyle{ \int_{x}^{x^2}  e^tdt}.\)</span> Find <span class="process-math">\(F'(x) .\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-133" id="hint-133"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-133"><div class="hint solution-like"><p id="p-1777">Use the procedures from <a href="" class="xref" data-knowl="./knowl/fs-id1170572228878.html" title="Example 5.68: Using the Fundamental Theorem of Calculus with Two Variable Limits of Integration">Example 5.68</a> to solve the problem.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-320" id="solution-320"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-320"><div class="solution solution-like"><p id="p-1778"><span class="process-math">\(F'(x) =2x e^{x^2}-e^x\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-127"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.3</span> <span class="title">Fundamental Theorem of Calculus, Part 2: The Evaluation Theorem</span>
+</h3>
+<p id="p-1779">The Fundamental Theorem of Calculus, Part 2, is perhaps the most important theorem in calculus. After tireless efforts by mathematicians for approximately 500 years, new techniques emerged that provided scientists with the necessary tools to explain many phenomena. Using calculus, astronomers could finally determine distances in space and map planetary orbits. Everyday financial problems such as calculating marginal costs or predicting total profit could now be handled with simplicity and accuracy. Engineers could calculate the bending strength of materials or the three-dimensional motion of objects. Our view of the world was forever changed with calculus.</p>
+<p id="p-1780">After finding approximate areas by adding the areas of <span class="process-math">\(n\)</span> rectangles, the application of this theorem is straightforward by comparison. It almost seems too simple that the area of an entire curved region can be calculated by just evaluating an antiderivative at the first and last endpoints of an interval.</p>
+<article class="theorem theorem-like" id="fs-id1170571660076"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.70</span><span class="period">.</span><span class="space"> </span><span class="title">The Fundamental Theorem of Calculus, Part 2.</span>
+</h4>
+<p id="p-1781">If <span class="process-math">\(f\)</span> is continuous over the interval <span class="process-math">\([a,b]\)</span> and <span class="process-math">\(F(x)\)</span> is any antiderivative of <span class="process-math">\(f(x),\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{ \int_{a}^{b} f(x)dx}=F(b)-F(a).
+\end{equation*}
+</div>
+<p id="p-1782">We often see the notation <span class="process-math">\(F(x)|_a^b\)</span> to denote the expression <span class="process-math">\(F(b)-F(a).\)</span> We use this vertical bar and associated limits <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> to indicate that we should evaluate the function <span class="process-math">\(F(x)\)</span> at the upper limit (in this case, <span class="process-math">\(b\)</span>), and subtract the value of the function <span class="process-math">\(F(x)\)</span> evaluated at the lower limit (in this case, <span class="process-math">\(a\)</span>).</p>
+<p id="p-1783">The <dfn class="terminology">Fundamental Theorem of Calculus, Part 2</dfn> (also known as the <dfn class="terminology">evaluation theorem</dfn>) states that if we can find an antiderivative for the integrand, then we can evaluate the definite integral by evaluating the antiderivative at the endpoints of the interval and subtracting.</p></article><article class="example example-like" id="fs-id1170571678911"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.71</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating an Integral with the Fundamental Theorem of Calculus.</span>
+</h4>
+<p id="p-1784">Use <a href="" class="xref" data-knowl="./knowl/fs-id1170571660076.html" title="Theorem 5.70: The Fundamental Theorem of Calculus, Part 2">Theorem 5.70</a> to evaluate</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170571660076.html">
+\begin{equation*}
+\displaystyle{ \int_{-2}^{2} (t^2-4)dt}.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-321" id="solution-321"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-321"><div class="solution solution-like">
+<p id="p-1785">Recall the power rule for <a href="sec_Ch4Sec10.html" class="internal" title="Section 4.8: Antiderivatives">Antiderivatives 4.8</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_Ch4Sec10.html ./knowl/CNX_Calc_Figure_05_03_003.html">
+\begin{equation*}
+\text{ If } y=x^n,\displaystyle{ \int x^ndx}=\frac{x^{n+1}}{n+1}+C.
+\end{equation*}
+</div>
+<p id="p-1786">Use this rule to find the antiderivative of the function and then apply the theorem. We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_Ch4Sec10.html ./knowl/CNX_Calc_Figure_05_03_003.html" id="md-106">
+\begin{align*}
+\displaystyle{ \int_{-2}^{2} (t^2-4)dt}\amp =\frac{t^3}{3}-4t\Big|_{-2}^2\\
+\amp =[\frac{(2)^3}{3}-4(2)]-[\frac{(-2)^3}{3}-4(-2)]\\
+\amp =\left(\frac{8}{3}-8\right)-\left(-\frac{8}{3}+8\left)\\
+\amp =\frac{8}{3}-8+\frac{8}{3}-8\\
+\amp =\frac{16}{3}-16\\
+\amp =-\frac{32}{3}.
+\end{align*}
+</div>
+<p id="p-1787"><em class="emphasis">Analysis</em></p>
+<p id="p-1788">Notice that we did not include the “+ <span class="process-math">\(C\)</span>” term when we wrote the antiderivative. The reason is that, according to the Fundamental Theorem of Calculus, Part 2, any antiderivative works. So, for convenience, we chose the antiderivative with <span class="process-math">\(C=0.\)</span> If we had chosen another antiderivative, the constant term would have canceled out. This always happens when evaluating a definite integral.</p>
+<p id="p-1789">The region of the area we just calculated is depicted in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_03_003.html" title="Figure 5.72">Figure 5.72</a>. Note that the region between the curve and the <span class="process-math">\(x\)</span>-axis is all below the <span class="process-math">\(x\)</span>-axis. Area is always positive, but a definite integral can still produce a negative number (a net signed area). For example, if this were a profit function, a negative number indicates the company is operating at a loss over the given interval.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_03_003"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_03_004.jpg" class="contained" alt='"The graph of the parabola f(t) = t^2 – 4 over [-4, 4]. The area above the curve and below the x axis over [-2, 2] is shaded."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.72<span class="period">.</span></span><span class="space"> </span>The evaluation of a definite integral can produce a negative value, even though area is always positive.</figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1170571561288"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.73</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating a Definite Integral Using the Fundamental Theorem of Calculus, Part 2.</span>
+</h4>
+<p id="p-1790">Evaluate the following integral using the Fundamental Theorem of Calculus, Part 2:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{ \int_{1}^{9} \frac{x-1}{\sqrt{x}}}dx.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-322" id="solution-322"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-322"><div class="solution solution-like">
+<p id="p-1791">First, eliminate the radical by rewriting the integral using rational exponents. Then, separate the numerator terms by writing each one over the denominator:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_03_004.html">
+\begin{equation*}
+\displaystyle{ \int_{1}^{9} \frac{x-1}{x^{1/2} }dx}=\displaystyle{ \int_{1}^{9} (\frac{x}{x^{1/2} }-\frac{1}{x^{1/2} })dx}\text{ . }
+\end{equation*}
+</div>
+<p id="p-1792">Use the properties of exponents to simplify:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_03_004.html">
+\begin{equation*}
+\displaystyle{ \int_{1}^{9} (\frac{x}{x^{1/2}}-\frac{1}{x^{1/2} })dx}=\displaystyle{ \int_{1}^{9} (x^{1/2} -x^{-1/2} )dx}\text{ . }
+\end{equation*}
+</div>
+<p id="p-1793">Now, integrate using the power rule:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_03_004.html" id="md-107">
+\begin{align*}
+\displaystyle{ \int_{1}^{9} (x^{1/2} -x^{-1/2} )dx}\amp =\left(\frac{x^{3/2} }{\frac{3}{2}}-\frac{x^{1/2} }{\frac{1}{2}}\right)\Big|_1^9\\
+\amp =\left[\frac{(9)^{3/2}}{\frac{3}{2}}-\frac{(9)^{1/2}}{\frac{1}{2}}\right]-\left[\frac{(1)^{3/2}}{\frac{3}{2}}-\frac{(1)^{1/2}}{\frac{1}{2}}\right]\\
+\amp =[\frac{2}{3}(27)-2(3)]-[\frac{2}{3}(1)-2(1)]\\
+\amp =18-6-\frac{2}{3}+2\\
+\amp =\frac{40}{3}.
+\end{align*}
+</div>
+<p id="p-1794">See <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_03_004.html" title="Figure 5.74">Figure 5.74</a>.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_03_004"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_03_005.jpg" class="contained" alt='"The graph of the function f(x) = (x-1) / sqrt(x) over [0,9]. The area under the graph over [1,9] is shaded."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.74<span class="period">.</span></span><span class="space"> </span>The area under the curve from <span class="process-math">\(x=1\)</span> to <span class="process-math">\(x=9\)</span> can be calculated by evaluating a definite integral.</figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-137"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.75</span><span class="period">.</span>
+</h4>
+<p id="p-1795">Use <a href="" class="xref" data-knowl="./knowl/fs-id1170571660076.html" title="Theorem 5.70: The Fundamental Theorem of Calculus, Part 2">Theorem 5.70</a> to evaluate <span class="process-math">\(\displaystyle{ \int_{1}^{2} x^{-4} dx}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-134" id="hint-134"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-134"><div class="hint solution-like"><p id="p-1796">Use the power rule.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-323" id="solution-323"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-323"><div class="solution solution-like"><p id="p-1797"><span class="process-math">\(\frac{7}{24}\)</span></p></div></div>
+</div></article><article class="example example-like" id="Marginal_Revenue_53"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.76</span><span class="period">.</span><span class="space"> </span><span class="title">Marginal Revenue.</span>
+</h4>
+<p id="p-1798">Suppose the marginal revenue for an item is <span class="process-math">\(R'(t)=-3t^2+36t\text{,}\)</span> where <span class="process-math">\(t\)</span> is the number of weeks after an advertising campaign has begun. What is the revenue collected over the first 4 weeks? Assume the marginal revenue is in hundreds of dollars per week.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-324" id="solution-324"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-324"><div class="solution solution-like">
+<p id="p-1799">We need to integrate the marginal revenue function over the interval <span class="process-math">\([0,4]\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{ \int_{0}^{4} (-3t^2+36t)dt}.
+\end{equation*}
+</div>
+<p id="p-1800">Using the power rule, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-108">
+\begin{align*}
+\displaystyle{ \int_{0}^{4} (-3t^2+36t)dt}\amp =(-t^3+18t^2)|_0^4\\
+\amp =224.
+\end{align*}
+</div>
+<p id="p-1801">Thus, the revenue collected over the first 4 weeks is <span class="process-math">\(224($ 100)=$22400\text{.}\)</span></p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-138"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.77</span><span class="period">.</span><span class="space"> </span><span class="title">Marginal Cost.</span>
+</h4>
+<p id="p-1802">The marginal cost for a bagel shop is <span class="process-math">\(C'(t)=10\sqrt{t}\)</span> dollars per day where <span class="process-math">\(t\)</span> is the number days since the shop has opened for business. What are the total costs the shop must pay over the first 9 days of opening?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-135" id="hint-135"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-135"><div class="hint solution-like"><p id="p-1803">Follow the steps in <a href="" class="xref" data-knowl="./knowl/Marginal_Revenue_53.html" title="Example 5.76: Marginal Revenue">Example 5.76</a>.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-325" id="solution-325"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-325"><div class="solution solution-like">$180</div></div>
+</div></article><article class="note remark-like" id="note-44"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">5.78</span><span class="period">.</span><span class="space"> </span><span class="title">Project: A Parachutist in Free Fall.</span>
+</h4>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_03_005"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_03_006.jpg" class="contained" alt='"Two skydivers free falling in the sky."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.79<span class="period">.</span></span><span class="space"> </span>Skydivers can adjust the velocity of their dive by changing the position of their body during the free fall. (credit: Jeremy T. Lock)</figcaption></figure><p id="p-1804">Julie is an avid <dfn class="terminology">skydiver</dfn>. She has more than 300 jumps under her belt and has mastered the art of making adjustments to her body position in the air to control how fast she falls. If she arches her back and points her belly toward the ground, she reaches a terminal velocity of approximately 120 mph (176 ft/sec). If, instead, she orients her body with her head straight down, she falls faster, reaching a terminal velocity of 150 mph (220 ft/sec).</p>
+<p id="p-1805">Since Julie will be moving (falling) in a downward direction, we assume the downward direction is positive to simplify our calculations. Julie executes her jumps from an altitude of 12,500 ft. After she exits the aircraft, she immediately starts falling at a velocity given by <span class="process-math">\(v(t)=32t.\)</span> She continues to accelerate according to this velocity function until she reaches terminal velocity. After she reaches terminal velocity, her speed remains constant until she pulls her ripcord and slows down to land.</p>
+<p id="p-1806">On her first jump of the day, Julie orients herself in the slower “belly down” position (terminal velocity is 176 ft/sec). Using this information, answer the following questions.</p>
+<ol class="decimal">
+<li id="li-703"><p id="p-derived-li-703">How long after she exits the aircraft does Julie reach terminal velocity?</p></li>
+<li id="li-704"><p id="p-derived-li-704">Based on your answer to question 1, set up an expression involving one or more integrals that represents the distance Julie falls after 30 sec.</p></li>
+<li id="li-705"><p id="p-derived-li-705">If Julie pulls her ripcord at an altitude of 3000 ft, how long does she spend in a free fall?</p></li>
+<li id="li-706"><p id="p-derived-li-706">Julie pulls her ripcord at 3000 ft. It takes 5 sec for her parachute to open completely and for her to slow down, during which time she falls another 400 ft. After her canopy is fully open, her speed is reduced to 16 ft/sec. Find the total time Julie spends in the air, from the time she leaves the airplane until the time her feet touch the ground. On Julie’s second jump of the day, she decides she wants to fall a little faster and orients herself in the “head down” position. Her terminal velocity in this position is 220 ft/sec. Answer these questions based on this velocity:</p></li>
+<li id="li-707"><p id="p-derived-li-707">How long does it take Julie to reach terminal velocity in this case?</p></li>
+<li id="li-708"><p id="p-derived-li-708">Before pulling her ripcord, Julie reorients her body in the “belly down” position so she is not moving quite as fast when her parachute opens. If she begins this maneuver at an altitude of 4000 ft, how long does she spend in a free fall before beginning the reorientation? Some jumpers wear “<dfn class="terminology">wingsuits</dfn>” (see <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_03_006.html" title="Figure 5.80">Figure 5.80</a>). These suits have fabric panels between the arms and legs and allow the wearer to glide around in a free fall, much like a flying squirrel. (Indeed, the suits are sometimes called “flying squirrel suits.”) When wearing these suits, terminal velocity can be reduced to about 30 mph (44 ft/sec), allowing the wearers a much longer time in the air. Wingsuit flyers still use parachutes to land; although the vertical velocities are within the margin of safety, horizontal velocities can exceed 70 mph, much too fast to land safely.</p></li>
+</ol>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_03_006"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_03_007.jpg" class="contained" alt='"A person falling in a wingsuit, which works to reduce the vertical velocity of a skydiver’s fall."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.80<span class="period">.</span></span><span class="space"> </span>The fabric panels on the arms and legs of a wingsuit work to reduce the vertical velocity of a skydiver’s fall. (credit: Richard Schneider)</figcaption></figure><p id="p-1807">Answer the following question based on the velocity in a wingsuit.</p>
+<ol class="decimal"><li id="li-709"><p id="p-derived-li-709">If Julie dons a wingsuit before her third jump of the day, and she pulls her ripcord at an altitude of 3000 ft, how long does she get to spend gliding around in the air?</p></li></ol></article></section><section class="subsection" id="subsection-128"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.4</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-710"><p id="p-derived-li-710">The Mean Value Theorem for Integrals states that for a continuous function over a closed interval, there is a value <span class="process-math">\(c\)</span> such that <span class="process-math">\(f(c)\)</span> equals the average value of the function. See <a href="" class="xref" data-knowl="./knowl/fs-id1170572224851.html" title="Theorem 5.56: The Mean Value Theorem for Integrals">Theorem 5.56</a>.</p></li>
+<li id="li-711"><p id="p-derived-li-711">The Fundamental Theorem of Calculus, Part 1 shows the relationship between the derivative and the integral. See <a href="" class="xref" data-knowl="./knowl/fs-id1170571704350.html" title="Theorem 5.63: Fundamental Theorem of Calculus, Part 1">Theorem 5.63</a>.</p></li>
+<li id="li-712"><p id="p-derived-li-712">The Fundamental Theorem of Calculus, Part 2 is a formula for evaluating a definite integral in terms of an antiderivative of its integrand. The total area under a curve can be found using this formula. See <a href="" class="xref" data-knowl="./knowl/fs-id1170571660076.html" title="Theorem 5.70: The Fundamental Theorem of Calculus, Part 2">Theorem 5.70</a>.</p></li>
+</ul></section><section class="subsection" id="subsection-129"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.5</span> <span class="title">Key Equations</span>
+</h3>
+<ul class="disc">
+<li id="li-713"><p id="p-derived-li-713">Mean Value Theorem for Integrals If <span class="process-math">\(f(x)\)</span> is continuous over an interval <span class="process-math">\([a,b],\)</span> then there is at least one point <span class="process-math">\(c\in [a,b]\)</span> such that <span class="process-math">\(f(c)=\frac{1}{b-a} \displaystyle{ \int_{a}^{b} f(x)dx}.\)</span></p></li>
+<li id="li-714"><p id="p-derived-li-714">Fundamental Theorem of Calculus Part 1 If <span class="process-math">\(f(x)\)</span> is continuous over an interval <span class="process-math">\([a,b],\)</span> and the function <span class="process-math">\(F(x)\)</span> is defined by <span class="process-math">\(F(x)=\displaystyle{ \int_{a}^{x} f(t)dt},\)</span> then <span class="process-math">\(F'(x) =f(x).\)</span></p></li>
+<li id="li-715"><p id="p-derived-li-715">Fundamental Theorem of Calculus Part 2 If <span class="process-math">\(f\)</span> is continuous over the interval <span class="process-math">\([a,b]\)</span> and <span class="process-math">\(F(x)\)</span> is any antiderivative of <span class="process-math">\(f(x),\)</span> then <span class="process-math">\(\displaystyle{ \int_{a}^{b} f(x)dx=F(b)-F(a)}.\)</span></p></li>
+</ul></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-16"><div class="fn"><code class="code-inline tex2jax_ignore">http://www.openstax.org/l/20_newtonbio</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

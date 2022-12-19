@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-11-11T14:30:30-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Derivatives and the Shape of a Graph</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch4Sec4.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_fourth.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch4Sec6.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch4Sec4.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_fourth.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch4Sec6.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="active">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Integration</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Ch4Sec5"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Derivatives and the Shape of a Graph</span>
+</h2>
+<section class="introduction" id="introduction-35"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc">
+<li id="li-551"><p id="p-derived-li-551">Explain how the sign of the first derivative affects the shape of a function’s graph.</p></li>
+<li id="li-552"><p id="p-derived-li-552">State the first derivative test for critical points.</p></li>
+<li id="li-553"><p id="p-derived-li-553">Use concavity and inflection points to explain how the sign of the second derivative affects the shape of a function’s graph.</p></li>
+<li id="li-554"><p id="p-derived-li-554">Explain the concavity test for a function over an open interval.</p></li>
+<li id="li-555"><p id="p-derived-li-555">Explain the relationship between a function and its first and second derivatives.</p></li>
+<li id="li-556"><p id="p-derived-li-556">State the second derivative test for local extrema.</p></li>
+</ul>
+<p id="p-1292">Earlier in this chapter we stated that if a function <span class="process-math">\(f\)</span> has a local extremum at a point <span class="process-math">\(c,\)</span> then <span class="process-math">\(c\)</span> must be a critical point of <span class="process-math">\(f.\)</span> However, a function is not guaranteed to have a local extremum at a critical point. For example, <span class="process-math">\(f(x)=x^3\)</span> has a critical point at <span class="process-math">\(x=0\)</span> since <span class="process-math">\(f(x)=3x^2\)</span> is zero at <span class="process-math">\(x=0,\)</span> but <span class="process-math">\(f\)</span> does not have a local extremum at <span class="process-math">\(x=0.\)</span> Using the results from the previous section, we are now able to determine whether a critical point of a function actually corresponds to a local extreme value. In this section, we also see how the second derivative provides information about the shape of a graph by describing whether the graph of a function curves upward or curves downward.</p></section><section class="subsection" id="subsection-97"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">The First Derivative Test</span>
+</h3>
+<p id="p-1293">Corollary <span class="process-math">\(3\)</span> of the Mean Value Theorem showed that if the derivative of a function is positive over an interval <span class="process-math">\(I\)</span> then the function is increasing over <span class="process-math">\(I.\)</span> On the other hand, if the derivative of the function is negative over an interval <span class="process-math">\(I,\)</span> then the function is decreasing over <span class="process-math">\(I\)</span> as shown in the following figure.</p>
+<figure class="figure figure-like" id="figure-121"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CNX_Calc_Figure_04_05_001.jpg" class="contained" alt="&quot;This figure is broken into four figures labeled a, b, c, and d. Figure a shows a function increasing convexly from (a, f(a)) to (b, f(b)). At two points the derivative is taken and it is noted that at both f' \gt  0. In other words, f is increasing. Figure b shows a function increasing concavely from (a, f(a)) to (b, f(b)). At two points the derivative is taken and it is noted that at both f' \gt  0. In other words, f is increasing. Figure c shows a function decreasing concavely from (a, f(a)) to (b, f(b)). At two points the derivative is taken and it is noted that at both f' \lt  0. In other words, f is decreasing. Figure d shows a function decreasing convexly from (a, f(a)) to (b, f(b)). At two points the derivative is taken and it is noted that at both f' \lt  0. In other words, f is decreasing.&quot;"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.57<span class="period">.</span></span><span class="space"> </span>Both functions are increasing over the interval <span class="process-math">\((a,b).\)</span> At each point <span class="process-math">\(x,\)</span> the derivative <span class="process-math">\(f(x)\gt 0.\)</span> Both functions are decreasing over the interval <span class="process-math">\((a,b).\)</span> At each point <span class="process-math">\(x,\)</span> the derivative <span class="process-math">\(f(x)\lt 0.\)</span></figcaption></figure><p id="p-1294">A continuous function <span class="process-math">\(f\)</span> has a local maximum at point <span class="process-math">\(c\)</span> if and only if <span class="process-math">\(f\)</span> switches from increasing to decreasing at point <span class="process-math">\(c.\)</span> Similarly, <span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(c\)</span> if and only if <span class="process-math">\(f\)</span> switches from decreasing to increasing at <span class="process-math">\(c.\)</span> If <span class="process-math">\(f\)</span> is a continuous function over an interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(c\)</span> and differentiable over <span class="process-math">\(I,\)</span> except possibly at <span class="process-math">\(c,\)</span> the only way <span class="process-math">\(f\)</span> can switch from increasing to decreasing (or vice versa) at point <span class="process-math">\(c\)</span> is if <span class="process-math">\(f'\)</span> changes sign as <span class="process-math">\(x\)</span> increases through <span class="process-math">\(c.\)</span> If <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(c,\)</span> the only way that <span class="process-math">\(f'.\)</span> can change sign as <span class="process-math">\(x\)</span> increases through <span class="process-math">\(c\)</span> is if <span class="process-math">\(f'(c)=0.\)</span> Therefore, for a function <span class="process-math">\(f\)</span> that is continuous over an interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(c\)</span> and differentiable over <span class="process-math">\(I,\)</span> except possibly at <span class="process-math">\(c,\)</span> the only way <span class="process-math">\(f\)</span> can switch from increasing to decreasing (or vice versa) is if <span class="process-math">\(f(c)=0\)</span> or <span class="process-math">\(f'(c)\)</span> is undefined. Consequently, to locate local extrema for a function <span class="process-math">\(f,\)</span> we look for points <span class="process-math">\(c\)</span> in the domain of <span class="process-math">\(f\)</span> such that <span class="process-math">\(f(c)=0\)</span> or <span class="process-math">\(f'(c)\)</span> is undefined. Recall that such points are called critical points of <span class="process-math">\(f.\)</span></p>
+<p id="p-1295">Note that <span class="process-math">\(f\)</span> need not have a local extrema at a critical point. The critical points are candidates for local extrema only. In <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_05_002.html" title="Figure 4.58">Figure 4.58</a>, we show that if a continuous function <span class="process-math">\(f\)</span> has a local extremum, it must occur at a critical point, but a function may not have a local extremum at a critical point. We show that if <span class="process-math">\(f\)</span> has a local extremum at a critical point, then the sign of <span class="process-math">\(f'\)</span> switches as <span class="process-math">\(x\)</span> increases through that point.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_05_002"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CNX_Calc_Figure_04_05_002.jpg" class="contained" alt="&quot;A function f(x) is graphed. It starts in the second quadrant and increases to x = a, which is too sharp and hence f'(a) is undefined. In this section f' \gt  0. Then, f decreases from x = a to x = b (so f' \lt  0 here), before increasing at x = b. It is noted that f'(b) = 0. While increasing from x = b to x = c, f' \gt  0. The function has an inversion point at c, and it is marked f'(c) = 0. The function increases some more to d (so f' \gt  0), which is the global maximum. It is marked that f'(d) = 0. Then the function decreases and it is marked that f' \gt  0.&quot;"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.58<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(f\)</span> has four critical points: <span class="process-math">\(a,b,c, \text{ and } d.\)</span> The function <span class="process-math">\(f\)</span> has local maxima at <span class="process-math">\(a\)</span> and <span class="process-math">\(d,\)</span> and a local minimum at <span class="process-math">\(b.\)</span> The function <span class="process-math">\(f\)</span> does not have a local extremum at <span class="process-math">\(c.\)</span> The sign of <span class="process-math">\(f\)</span> changes at all local extrema.</figcaption></figure><p id="p-1296">Using <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_05_002.html" title="Figure 4.58">Figure 4.58</a>, we summarize the main results regarding local extrema.</p>
+<ul class="disc">
+<li id="li-557"><p id="p-derived-li-557">If a continuous function <span class="process-math">\(f\)</span> has a local extremum, it must occur at a critical point <span class="process-math">\(c.\)</span></p></li>
+<li id="li-558"><p id="p-derived-li-558">The function has a local extremum at the critical point <span class="process-math">\(c\)</span> if and only if the derivative <span class="process-math">\(f'\)</span> switches sign as <span class="process-math">\(x\)</span> increases through <span class="process-math">\(c.\)</span></p></li>
+<li id="li-559"><p id="p-derived-li-559">Therefore, to test whether a function has a local extremum at a critical point <span class="process-math">\(c,\)</span> we must determine the sign of <span class="process-math">\(f'(x)\)</span> to the left and right of <span class="process-math">\(c.\)</span></p></li>
+</ul>
+<p id="p-1297">This result is known as the <dfn class="terminology">first derivative test</dfn>.</p>
+<article class="theorem theorem-like" id="fs-id1165042327970"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.59</span><span class="period">.</span><span class="space"> </span><span class="title">First Derivative Test.</span>
+</h4>
+<p id="p-1298">Suppose that <span class="process-math">\(f\)</span> is a continuous function over an interval <span class="process-math">\(I\)</span> containing a critical point <span class="process-math">\(c.\)</span> If <span class="process-math">\(f\)</span> is differentiable over <span class="process-math">\(I,\)</span> except possibly at point <span class="process-math">\(c,\)</span> then <span class="process-math">\(f(c)\)</span> satisfies one of the following descriptions:</p>
+<ol class="decimal">
+<li id="li-560"><p id="p-derived-li-560">If <span class="process-math">\(f'\)</span> changes sign from positive when <span class="process-math">\(x\lt c\)</span> to negative when <span class="process-math">\(x\gt c,\)</span> then <span class="process-math">\(f(c)\)</span> is a local maximum of <span class="process-math">\(f.\)</span></p></li>
+<li id="li-561"><p id="p-derived-li-561">If <span class="process-math">\(f'\)</span> changes sign from negative when <span class="process-math">\(x\lt c\)</span> to positive when <span class="process-math">\(x\gt c,\)</span> then <span class="process-math">\(f(c)\)</span> is a local minimum of <span class="process-math">\(f.\)</span></p></li>
+<li id="li-562"><p id="p-derived-li-562">If <span class="process-math">\(f\)</span> has the same sign for <span class="process-math">\(x\lt c\)</span> and <span class="process-math">\(x\gt c,\)</span> then <span class="process-math">\(f(c)\)</span> is neither a local maximum nor a local minimum of <span class="process-math">\(f.\)</span></p></li>
+</ol></article><p id="p-1299">We can summarize the first derivative test as a strategy for locating local extrema.</p>
+<article class="note remark-like" id="note-36"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">4.60</span><span class="period">.</span><span class="space"> </span><span class="title">Problem-Solving Strategy: Using the First Derivative Test.</span>
+</h4>
+<p id="p-1300">Consider a function <span class="process-math">\(f\)</span> that is continuous over an interval <span class="process-math">\(I.\)</span></p>
+<ol class="decimal">
+<li id="li-563"><p id="p-derived-li-563">Find all critical points of <span class="process-math">\(f\)</span> and divide the interval <span class="process-math">\(I\)</span> into smaller intervals using the critical points as endpoints.</p></li>
+<li id="li-564"><p id="p-derived-li-564">Analyze the sign of <span class="process-math">\(f\)</span> in each of the subintervals. If <span class="process-math">\(f\)</span> is continuous over a given subinterval (which is typically the case), then the sign of <span class="process-math">\(f\)</span> in that subinterval does not change and, therefore, can be determined by choosing an arbitrary test point <span class="process-math">\(x\)</span> in that subinterval and by evaluating the sign of <span class="process-math">\(f\)</span> at that test point. Use the sign analysis to determine whether <span class="process-math">\(f\)</span> is increasing or decreasing over that interval.</p></li>
+<li id="li-565"><p id="p-derived-li-565">Use <a href="" class="xref" data-knowl="./knowl/fs-id1165042327970.html" title="Theorem 4.59: First Derivative Test">Theorem 4.59</a> and the results of step <span class="process-math">\(2\)</span> to determine whether <span class="process-math">\(f\)</span> has a local maximum, a local minimum, or neither at each of the critical points.</p></li>
+</ol></article><p id="p-1301">Now let’s look at how to use this strategy to locate all local extrema for particular functions.</p>
+<article class="example example-like" id="fs-id1165043423022"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.61</span><span class="period">.</span><span class="space"> </span><span class="title">Using the First Derivative Test to Find Local Extrema.</span>
+</h4>
+<p id="p-1302">Use the first derivative test to find the location of all local extrema for <span class="process-math">\(f(x)=x^3-3x^2-9x-1.\)</span> Use a graphing utility to confirm your results.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-tabular" data-refid="hk-solution-249" id="solution-249"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-249"><div class="solution solution-like">
+<p id="p-1303">Step 1. The derivative is <span class="process-math">\(f'(x)=3x^2-6x-9.\)</span> To find the critical points, we need to find where <span class="process-math">\(f'(x)=0.\)</span> Factoring the polynomial, we conclude that the critical points must satisfy</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+3(x^2-2x-3)=3(x-3)(x+1)=0.
+\end{equation*}
+</div>
+<p id="p-1304">Therefore, the critical points are <span class="process-math">\(x=3,-1.\)</span> Now divide the interval <span class="process-math">\((-\infty,\infty)\)</span> into the smaller intervals <span class="process-math">\((-\infty,-1),(-1,3) \text{ and } (3,\infty).\)</span></p>
+<p id="p-1305">Step 2. Since <span class="process-math">\(f\)</span> is a continuous function, to determine the sign of <span class="process-math">\(f'(x)\)</span> over each subinterval, it suffices to choose a point over each of the intervals <span class="process-math">\((-\infty,-1),(-1,3) \text{ and } (3,\infty)\)</span> and determine the sign of <span class="process-math">\(f'\)</span> at each of these points. For example, let’s choose <span class="process-math">\(x=-2,x=0, \text{ and } x=4\)</span> as test points.</p>
+<figure class="table table-like" id="fs-id1165042978447"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.62<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l t b0 r0 l0 t0 lines">Interval</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Test Point</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Sign of <span class="process-math">\(f'(x)=3(x-3)(x+1)\)</span> at Test Point</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Conclusion</th>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,-1)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=-2\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((\text{ + })(-)(-)=+\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is increasing.</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((-1,3)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=0\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((\text{ + })(-)(\text{ + })=-\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is decreasing.</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((3,\infty)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=4\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((\text{ + })(\text{ + })(\text{ + })=+\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is increasing.</td>
+</tr>
+</table></div></figure><p id="p-1306">Step 3. Since <span class="process-math">\(f'\)</span> switches sign from positive to negative as <span class="process-math">\(x\)</span> increases through <span class="process-math">\(1,f\)</span> has a local maximum at <span class="process-math">\(x=-1.\)</span> Since <span class="process-math">\(f'\)</span> switches sign from negative to positive as <span class="process-math">\(x\)</span> increases through <span class="process-math">\(3,f\)</span> has a local minimum at <span class="process-math">\(x=3.\)</span> These analytical results agree with the following graph.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_05_003"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_05_008.jpg" class="contained" alt='"The function f(x) = x3 – 3x2 – 9x – 1 is graphed. It has a maximum at x = −1 and a minimum at x = 3. The function is increasing before x = −1, decreasing until x = 3, and then increasing after that."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.63<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(f\)</span> has a maximum at <span class="process-math">\(x=-1\)</span> and a minimum at <span class="process-math">\(x=3\)</span></figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-103"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.64</span><span class="period">.</span>
+</h4>
+<p id="p-1307">Use the first derivative test to locate all local extrema for <span class="process-math">\(f(x)=-x^3+\frac{3}{2}x^2+18x.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-100" id="hint-100"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-100"><div class="hint solution-like"><p id="p-1308">Find all critical points of <span class="process-math">\(f\)</span> and determine the signs of <span class="process-math">\(f'(x)\)</span> over particular intervals determined by the critical points.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-250" id="solution-250"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-250"><div class="solution solution-like"><p id="p-1309"><span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(-2\)</span> and a local maximum at <span class="process-math">\(3.\)</span></p></div></div>
+</div></article><article class="example example-like" id="fs-id1165043312782"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.65</span><span class="period">.</span><span class="space"> </span><span class="title">Using the First Derivative Test.</span>
+</h4>
+<p id="p-1310">Use the first derivative test to find the location of all local extrema for <span class="process-math">\(f(x)=5x^{1/3}-x^{5/3}.\)</span> Use a graphing utility to confirm your results.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-tabular" data-refid="hk-solution-251" id="solution-251"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-251"><div class="solution solution-like">
+<p id="p-1311">Step 1. The derivative is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f'(x)=\frac{5}{3}x^{-2/3}-\frac{5}{3}x^{2/3}=\frac{5}{3x^{2/3}}-\frac{5x^{2/3}}{3}=\frac{5-5x^{4/3}}{3x^{2/3}}=\frac{5(1-x^{4/3})}{3x^{2/3}}.
+\end{equation*}
+</div>
+<p id="p-1312">The derivative <span class="process-math">\(f'(x)=0\)</span> when <span class="process-math">\(1-x^{4/3}=0.\)</span> Therefore, <span class="process-math">\(f'(x)=0\)</span> at <span class="process-math">\(x=\pm1.\)</span> The derivative <span class="process-math">\(f'(x)\)</span> is undefined at <span class="process-math">\(x=0.\)</span> Therefore, we have three critical points: <span class="process-math">\(x=0,\)</span> <span class="process-math">\(x=1,\)</span> and <span class="process-math">\(x=-1.\)</span> Consequently, divide the interval <span class="process-math">\((-\infty,\infty)\)</span> into the smaller intervals <span class="process-math">\((-\infty,-1),(-1,0),(0,1),\)</span> and <span class="process-math">\((1,\infty).\)</span></p>
+<p id="p-1313">Step 2: Since <span class="process-math">\(f'\)</span> is continuous over each subinterval, it suffices to choose a test point <span class="process-math">\(x\)</span> in each of the intervals from step <span class="process-math">\(1\)</span> and determine the sign of <span class="process-math">\(f'\)</span> at each of these points. The points <span class="process-math">\(x=-2,x=-\frac{1}{2},x=\frac{1}{2}, \text{ and } x=2\)</span> are test points for these intervals.</p>
+<figure class="table table-like" id="table-30"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.66<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l t b0 r0 l0 t0 lines">Interval</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Test Point</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Sign of <span class="process-math">\(f'(x)=\frac{5(1-x^{4/3})}{3x^{2/3}}\)</span> at Test Point</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Conclusion</th>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,-1)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=-2\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(\frac{(\text{ + })}{(-)+}=-\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is decreasing.</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((-1,0)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=-\frac{1}{2}\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(\frac{(\text{ + })}{(\text{ + })+}=+\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is increasing.</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((0,1)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=\frac{1}{2}\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(\frac{(\text{ + })}{(\text{ + })+}=+\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is increasing.</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((1,\infty)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=2\)</span></td>
+<td class="c t b0 r0 l0 t0 lines"><span class="process-math">\(\frac{(\text{ + })}{(-)+}=-\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is decreasing.</td>
+</tr>
+</table></div></figure><p id="p-1314">Step 3: Since <span class="process-math">\(f\)</span> is decreasing over the interval <span class="process-math">\((-\infty,-1)\)</span> and increasing over the interval <span class="process-math">\((-1,0),\)</span> <span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(x=-1.\)</span> Since <span class="process-math">\(f\)</span> is increasing over the interval <span class="process-math">\((-1,0)\)</span> and the interval <span class="process-math">\((0,1),\)</span> <span class="process-math">\(f\)</span> does not have a local extremum at <span class="process-math">\(x=0.\)</span> Since <span class="process-math">\(f\)</span> is increasing over the interval <span class="process-math">\((0,1)\)</span> and decreasing over the interval <span class="process-math">\((1,\infty),f\)</span> has a local maximum at <span class="process-math">\(x=1.\)</span> The analytical results agree with the following graph.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_05_004"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_05_009.jpg" class="contained" alt='"The function f(x) = 5x1/3 – x5/3 is graphed. It decreases to its local minimum at x = −1, increases to x = 1, and then decreases after that."&gt;'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.67<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(x=-1\)</span> and a local maximum at <span class="process-math">\(x=1.\)</span></figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-104"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.68</span><span class="period">.</span>
+</h4>
+<p id="p-1315">Use the first derivative test to find all local extrema for <span class="process-math">\(f(x)=\sqrt[3]{x-1}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-101" id="hint-101"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-101"><div class="hint solution-like"><p id="p-1316">The only critical point of <span class="process-math">\(f\)</span> is <span class="process-math">\(x=1.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-252" id="solution-252"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-252"><div class="solution solution-like"><p id="p-1317"><span class="process-math">\(f\)</span> has no local extrema because <span class="process-math">\(f'\)</span> does not change sign at <span class="process-math">\(x=1.\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-98"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.2</span> <span class="title">Concavity and Points of Inflection</span>
+</h3>
+<p id="p-1318">We now know how to determine where a function is increasing or decreasing. However, there is another issue to consider regarding the shape of the graph of a function. If the graph curves, does it curve upward or curve downward? This notion is called the <dfn class="terminology">concavity</dfn> of the function.</p>
+<p id="p-1319"><a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_05_005.html" title="Figure 4.70">Figure 4.70</a>(a) shows a function <span class="process-math">\(f\)</span> with a graph that curves upward. As <span class="process-math">\(x\)</span> increases, the slope of the tangent line increases. Thus, since the derivative increases as <span class="process-math">\(x\)</span> increases, <span class="process-math">\(f'\)</span> is an increasing function. We say this function <span class="process-math">\(f\)</span> is concave up. <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_05_005.html" title="Figure 4.70">Figure 4.70</a>(b) shows a function <span class="process-math">\(f\)</span> that curves downward. As <span class="process-math">\(x\)</span> increases, the slope of the tangent line decreases. Since the derivative decreases as <span class="process-math">\(x\)</span> increases, <span class="process-math">\(f'\)</span> is a decreasing function. We say this function <span class="process-math">\(f\)</span> is concave down.</p>
+<article class="definition definition-like" id="definition-36"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.69</span><span class="period">.</span>
+</h4>
+<p id="p-1320">Let <span class="process-math">\(f\)</span> be a function that is differentiable over an open interval <span class="process-math">\(I.\)</span> If <span class="process-math">\(f'\)</span> is increasing over <span class="process-math">\(I,\)</span> we say <span class="process-math">\(f\)</span> is <dfn class="terminology">concave up</dfn> over <span class="process-math">\(I.\)</span> If <span class="process-math">\(f'\)</span> is decreasing over <span class="process-math">\(I,\)</span> we say <span class="process-math">\(f\)</span> is <dfn class="terminology">concave down</dfn> over <span class="process-math">\(I.\)</span></p></article><figure class="figure figure-like" id="CNX_Calc_Figure_04_05_005"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_05_010.jpg" class="contained" alt="&quot;This figure is broken into four figures labeled a, b, c, and d. Figure a shows a function increasing convexly from (a, f(a)) to (b, f(b)). At two points the derivative is taken and both are increasing, but the one taken further to the right is increasing more. It is noted that f' is increasing and f is concave up. Figure b shows a function increasing concavely from (a, f(a)) to (b, f(b)). At two points the derivative is taken and both are increasing, but the one taken further to the right is increasing less. It is noted that f' is decreasing and f is concave down. Figure c shows a function decreasing concavely from (a, f(a)) to (b, f(b)). At two points the derivative is taken and both are decreasing, but the one taken further to the right is decreasing less. It is noted that f' is increasing and f is concave up. Figure d shows a function decreasing convexly from (a, f(a)) to (b, f(b)). At two points the derivative is taken and both are decreasing, but the one taken further to the right is decreasing more. It is noted that f' is decreasing and f is concave down.&quot;"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.70<span class="period">.</span></span><span class="space"> </span>(a), (c) Since <span class="process-math">\(f\)</span> is increasing over the interval <span class="process-math">\((a,b),\)</span> we say <span class="process-math">\(f\)</span> is concave up over <span class="process-math">\((a,b).\)</span> (b), (d) Since <span class="process-math">\(f\)</span> is decreasing over the interval <span class="process-math">\((a,b),\)</span> we say <span class="process-math">\(f\)</span> is concave down over <span class="process-math">\((a,b).\)</span></figcaption></figure><p id="p-1321">In general, without having the graph of a function <span class="process-math">\(f,\)</span> how can we determine its concavity? By definition, a function <span class="process-math">\(f\)</span> is concave up if <span class="process-math">\(f'\)</span> is increasing. From Corollary <span class="process-math">\(3,\)</span> we know that if <span class="process-math">\(f'\)</span> is a differentiable function, then <span class="process-math">\(f'\)</span> is increasing if its derivative <span class="process-math">\(f''(x)\gt 0.\)</span> Therefore, a function <span class="process-math">\(f\)</span> that is twice differentiable is concave up when <span class="process-math">\(f''(x)\gt 0.\)</span> Similarly, a function <span class="process-math">\(f\)</span> is concave down if <span class="process-math">\(f'\)</span> is decreasing. We know that a differentiable function <span class="process-math">\(f'\)</span> is decreasing if its derivative <span class="process-math">\(f''(x)\lt 0.\)</span> Therefore, a twice-differentiable function <span class="process-math">\(f\)</span> is concave down when <span class="process-math">\(f''(x)\lt 0.\)</span> Applying this logic is known as the <dfn class="terminology">concavity test</dfn>.</p>
+<article class="theorem theorem-like" id="theorem-25"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.71</span><span class="period">.</span><span class="space"> </span><span class="title">Test for Concavity.</span>
+</h4>
+<p id="p-1322">Let <span class="process-math">\(f\)</span> be a function that is twice differentiable over an interval <span class="process-math">\(I.\)</span></p>
+<ol class="decimal">
+<li id="li-566"><p id="p-derived-li-566">If <span class="process-math">\(f''(x)\gt 0\)</span> for all <span class="process-math">\(x∈I,\)</span> then <span class="process-math">\(f\)</span> is concave up over <span class="process-math">\(I.\)</span></p></li>
+<li id="li-567"><p id="p-derived-li-567">If <span class="process-math">\(f''(x)\lt 0\)</span> for all <span class="process-math">\(x∈I,\)</span> then <span class="process-math">\(f\)</span> is concave down over <span class="process-math">\(I.\)</span></p></li>
+</ol></article><p id="p-1323">We conclude that we can determine the concavity of a function <span class="process-math">\(f\)</span> by looking at the second derivative of <span class="process-math">\(f.\)</span> In addition, we observe that a function <span class="process-math">\(f\)</span> can switch concavity (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_05_006.html" title="Figure 4.73">Figure 4.73</a>). However, a continuous function can switch concavity only at a point <span class="process-math">\(x\)</span> if <span class="process-math">\(f''(x)=0\)</span> or <span class="process-math">\(f''(x)\)</span> is undefined. Consequently, to determine the intervals where a function <span class="process-math">\(f\)</span> is concave up and concave down, we look for those values of <span class="process-math">\(x\)</span> where <span class="process-math">\(f''(x)=0\)</span> or <span class="process-math">\(f''(x)\)</span> is undefined. When we have determined these points, we divide the domain of <span class="process-math">\(f\)</span> into smaller intervals and determine the sign of <span class="process-math">\(f''\)</span> over each of these smaller intervals. If <span class="process-math">\(f''\)</span> changes sign as we pass through a point <span class="process-math">\(x,\)</span> then <span class="process-math">\(f\)</span> changes concavity. It is important to remember that a function <span class="process-math">\(f\)</span> may not change concavity at a point <span class="process-math">\(x\)</span> even if <span class="process-math">\(f''(x)=0\)</span> or <span class="process-math">\(f''(x)\)</span> is undefined. If, however, <span class="process-math">\(f\)</span> does change concavity at a point <span class="process-math">\(a\)</span> and <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(a,\)</span> we say the point <span class="process-math">\((a,f(a))\)</span> is an inflection point of <span class="process-math">\(f.\)</span></p>
+<article class="definition definition-like" id="definition-37"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.72</span><span class="period">.</span>
+</h4>
+<p id="p-1324">If <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(a\)</span> and <span class="process-math">\(f\)</span> changes concavity at <span class="process-math">\(a,\)</span> the point <span class="process-math">\((a,f(a))\)</span> is an <dfn class="terminology">inflection point</dfn> of <span class="process-math">\(f.\)</span></p></article><figure class="figure figure-like" id="CNX_Calc_Figure_04_05_006"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_05_004.jpg" class="contained" alt="&quot;A sinusoidal function is shown that has been shifted into the first quadrant. The function starts decreasing, so f' \lt  0 and f'' \gt  0. The function reaches the local minimum and starts increasing, so f' \gt  0 and f'' \gt  0. It is noted that the slope is increasing for these two intervals. The function then reaches an inflection point (a, f(a)) and from here the slop is decreasing even though the function continues to increase, so f' \gt  0 and f'' \lt  0. The function reaches the maximum and then starts decreasing, so f' \lt  0 and f'' \lt  0.&quot;"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.73<span class="period">.</span></span><span class="space"> </span>Since <span class="process-math">\(f''(x)\gt 0\)</span> for <span class="process-math">\(x\lt a,\)</span> the function <span class="process-math">\(f\)</span> is concave up over the interval <span class="process-math">\((-\infty,a).\)</span> Since <span class="process-math">\(f''(x)\lt 0\)</span> for <span class="process-math">\(x\gt a,\)</span> the function <span class="process-math">\(f\)</span> is concave down over the interval <span class="process-math">\((a,\infty).\)</span> The point <span class="process-math">\((a,f(a))\)</span> is an inflection point of <span class="process-math">\(f.\)</span></figcaption></figure><article class="example example-like" id="fs-id1165042558993"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.74</span><span class="period">.</span><span class="space"> </span><span class="title">Testing for Concavity.</span>
+</h4>
+<p id="p-1325">For the function <span class="process-math">\(f(x)=x^3-6x^2+9x+30,\)</span> determine all intervals where <span class="process-math">\(f\)</span> is concave up and all intervals where <span class="process-math">\(f\)</span> is concave down. List all inflection points for <span class="process-math">\(f.\)</span> Use a graphing utility to confirm your results.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-tabular" data-refid="hk-solution-253" id="solution-253"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-253"><div class="solution solution-like">
+<p id="p-1326">To determine concavity, we need to find the second derivative <span class="process-math">\(f''(x).\)</span> The first derivative is <span class="process-math">\(f(x)=3x^2-12x+9,\)</span> so the second derivative is <span class="process-math">\(f''(x)=6x-12.\)</span> If the function changes concavity, it occurs either when <span class="process-math">\(f''(x)=0\)</span> or <span class="process-math">\(f''(x)\)</span> is undefined. Since <span class="process-math">\(f''\)</span> is defined for all real numbers <span class="process-math">\(x,\)</span> we need only find where <span class="process-math">\(f''(x)=0.\)</span> Solving the equation <span class="process-math">\(6x-12=0,\)</span> we see that <span class="process-math">\(x=2\)</span> is the only place where <span class="process-math">\(f\)</span> could change concavity. We now test points over the intervals <span class="process-math">\((-\infty,2)\)</span> and <span class="process-math">\((2,\infty)\)</span> to determine the concavity of <span class="process-math">\(f.\)</span> The points <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=3\)</span> are test points for these intervals.</p>
+<figure class="table table-like" id="fs-id1165042960171"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.75<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l t b0 r0 l0 t0 lines">Interval</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Test Point</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Sign of <span class="process-math">\(f''(x)=6x-12\)</span> at Test Point</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Conclusion</th>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,2)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=0\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(-\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is concave down</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((2,\infty)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=3\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(+\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is concave up.</td>
+</tr>
+</table></div></figure><p id="p-1327">We conclude that <span class="process-math">\(f\)</span> is concave down over the interval <span class="process-math">\((-\infty,2)\)</span> and concave up over the interval <span class="process-math">\((2,\infty).\)</span> Since <span class="process-math">\(f\)</span> changes concavity at <span class="process-math">\(x=2,\)</span> the point <span class="process-math">\((2,f(2))=(2,32)\)</span> is an inflection point. <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_05_007.html" title="Figure 4.76">Figure 4.76</a> confirms the analytical results.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_05_007"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_05_011.jpg" class="contained" alt='"The function f(x) = x3 – 6x2 + 9x + 30 is graphed. The inflection point (2, 32) is marked, and it is roughly equidistant from the two local extrema."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.76<span class="period">.</span></span><span class="space"> </span>The given function has a point of inflection at <span class="process-math">\((2,32)\)</span> where the graph changes concavity.</figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-105"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.77</span><span class="period">.</span>
+</h4>
+<p id="p-1328">For <span class="process-math">\(f(x)=-x^3+\frac{3}{2}x^2+18x,\)</span> find all intervals where <span class="process-math">\(f\)</span> is concave up and all intervals where <span class="process-math">\(f\)</span> is concave down.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-102" id="hint-102"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-102"><div class="hint solution-like"><p id="p-1329">Find where <span class="process-math">\(f''(x)=0.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-254" id="solution-254"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-254"><div class="solution solution-like"><p id="p-1330"><span class="process-math">\(f\)</span> is concave up over the interval <span class="process-math">\((-\infty,\frac{1}{2})\)</span> and concave down over the interval <span class="process-math">\((\frac{1}{2},\infty)\)</span></p></div></div>
+</div></article><p id="p-1331">We now summarize, in <a href="" class="xref" data-knowl="./knowl/fs-id1165043353366.html" title="Table 4.78: What Derivatives Tell Us about Graphs">Table 4.78</a>, the information that the first and second derivatives of a function <span class="process-math">\(f\)</span> provide about the graph of <span class="process-math">\(f,\)</span> and illustrate this information in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_05_008.html" title="Figure 4.79">Figure 4.79</a>.</p>
+<figure class="table table-like" id="fs-id1165043353366"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.78<span class="period">.</span></span><span class="space"> </span>What Derivatives Tell Us about Graphs</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l t b0 r0 l0 t0 lines">Sign of <span class="process-math">\(f\)</span>
+</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Sign of <span class="process-math">\(f''\)</span>
+</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Is <span class="process-math">\(f\)</span> increasing or decreasing?</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Concavity</th>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">Positive</td>
+<td class="l t b0 r0 l0 t0 lines">Positive</td>
+<td class="l t b0 r0 l0 t0 lines">Increasing</td>
+<td class="l t b0 r0 l0 t0 lines">Concave up</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">Positive</td>
+<td class="l t b0 r0 l0 t0 lines">Negative</td>
+<td class="l t b0 r0 l0 t0 lines">Increasing</td>
+<td class="l t b0 r0 l0 t0 lines">Concave down</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">Negative</td>
+<td class="l t b0 r0 l0 t0 lines">Positive</td>
+<td class="l t b0 r0 l0 t0 lines">Decreasing</td>
+<td class="l t b0 r0 l0 t0 lines">Concave up</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">Negative</td>
+<td class="l t b0 r0 l0 t0 lines">Negative</td>
+<td class="l t b0 r0 l0 t0 lines">Decreasing</td>
+<td class="l t b0 r0 l0 t0 lines">Concave down</td>
+</tr>
+</table></div></figure><figure class="figure figure-like" id="CNX_Calc_Figure_04_05_008"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_05_005.jpg" class="contained" alt="&quot;A function is graphed in the first quadrant. It is broken up into four sections, with the breaks coming at the local minimum, inflection point, and local maximum, respectively. The first section is decreasing and concave up; here, f' \lt  0 and f'' \gt  0. The second section is increasing and concave up; here, f' \gt  0 and f'' \gt  0. The third section is increasing and concave down; here, f' \gt  0 and f'' \lt  0. The fourth section is increasing and concave down; here, f' \lt  0 and f'' \lt  0.&quot;"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.79<span class="period">.</span></span><span class="space"> </span>Consider a twice-differentiable function <span class="process-math">\(f\)</span> over an open interval <span class="process-math">\(I.\)</span> If <span class="process-math">\(f(x)\gt 0\)</span> for all <span class="process-math">\(x∈I,\)</span> the function is increasing over <span class="process-math">\(I.\)</span> If <span class="process-math">\(f(x)\lt 0\)</span> for all <span class="process-math">\(x∈I,\)</span> the function is decreasing over <span class="process-math">\(I.\)</span> If <span class="process-math">\(f''(x)\gt 0\)</span> for all <span class="process-math">\(x∈I,\)</span> the function is concave up. If <span class="process-math">\(f''(x)\lt 0\)</span> for all <span class="process-math">\(x∈I,\)</span> the function is concave down on <span class="process-math">\(I.\)</span></figcaption></figure></section><section class="subsection" id="subsection-99"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.3</span> <span class="title">The Second Derivative Test</span>
+</h3>
+<p id="p-1332">The first derivative test provides an analytical tool for finding local extrema, but the second derivative can also be used to locate extreme values. Using the second derivative can sometimes be a simpler method than using the first derivative.</p>
+<p id="p-1333">We know that if a continuous function has a local extrema, it must occur at a critical point. However, a function need not have a local extrema at a critical point. Here we examine how the <dfn class="terminology">second derivative test</dfn> can be used to determine whether a function has a local extremum at a critical point. Let <span class="process-math">\(f\)</span> be a twice-differentiable function such that <span class="process-math">\(f'(a)=0\)</span> and <span class="process-math">\(f''\)</span> is continuous over an open interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(a.\)</span> Suppose <span class="process-math">\(f''(a)\lt 0.\)</span> Since <span class="process-math">\(f''\)</span> is continuous over <span class="process-math">\(I,\)</span> <span class="process-math">\(f''(x)\lt 0\)</span> for all <span class="process-math">\(x∈I\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_05_009.html" title="Figure 4.80">Figure 4.80</a>). Then, by Corollary <span class="process-math">\(3,\)</span> <span class="process-math">\(f'\)</span> is a decreasing function over <span class="process-math">\(I.\)</span> Since <span class="process-math">\(f'(a)=0,\)</span> we conclude that for all <span class="process-math">\(x∈I,f'(x)\gt 0\)</span> if <span class="process-math">\(x\lt a\)</span> and <span class="process-math">\(f'(x)\lt 0\)</span> if <span class="process-math">\(x\gt a.\)</span> Therefore, by the first derivative test, <span class="process-math">\(f\)</span> has a local maximum at <span class="process-math">\(x=a.\)</span> On the other hand, suppose there exists a point <span class="process-math">\(b\)</span> such that <span class="process-math">\(f'(b)=0\)</span> but <span class="process-math">\(f''(b)\gt 0.\)</span> Since <span class="process-math">\(f''\)</span> is continuous over an open interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(b,\)</span> then <span class="process-math">\(f''(x)\gt 0\)</span> for all <span class="process-math">\(x∈I\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_05_009.html" title="Figure 4.80">Figure 4.80</a>). Then, by Corollary <span class="process-math">\(3,f'\)</span> is an increasing function over <span class="process-math">\(I.\)</span> Since <span class="process-math">\(f'(b)=0,\)</span> we conclude that for all <span class="process-math">\(x∈I,\)</span> <span class="process-math">\(f'(x)\lt 0\)</span> if <span class="process-math">\(x\lt b\)</span> and <span class="process-math">\(f'(x)\gt 0\)</span> if <span class="process-math">\(x\gt b.\)</span> Therefore, by the first derivative test, <span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(x=b.\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_05_009"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_05_006.jpg" class="contained" alt="&quot;A function f(x) is graphed in the first quadrant with a and b marked on the x-axis. The function is vaguely sinusoidal, increasing first to x = a, then decreasing to x = b, and increasing again. At (a, f(a)), the tangent is marked, and it is noted that f'(a) = 0 and f''(a) \lt  0. At (b, f(b)), the tangent is marked, and it is noted f'(b) = 0 and f''(b) \gt  0.&quot;"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.80<span class="period">.</span></span><span class="space"> </span>Consider a twice-differentiable function <span class="process-math">\(f\)</span> such that <span class="process-math">\(f''\)</span> is continuous. Since <span class="process-math">\(f(a)=0\)</span> and <span class="process-math">\(f''(a)\lt 0,\)</span> there is an interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(a\)</span> such that for all <span class="process-math">\(x\)</span> in <span class="process-math">\(I,\)</span> <span class="process-math">\(f\)</span> is increasing if <span class="process-math">\(x\lt a\)</span> and <span class="process-math">\(f\)</span> is decreasing if <span class="process-math">\(x\gt a.\)</span> As a result, <span class="process-math">\(f\)</span> has a local maximum at <span class="process-math">\(x=a.\)</span> Since <span class="process-math">\(f(b)=0\)</span> and <span class="process-math">\(f''(b)\gt 0,\)</span> there is an interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(b\)</span> such that for all <span class="process-math">\(x\)</span> in <span class="process-math">\(I,\)</span> <span class="process-math">\(f\)</span> is decreasing if <span class="process-math">\(x\lt b\)</span> and <span class="process-math">\(f\)</span> is increasing if <span class="process-math">\(x\gt b.\)</span> As a result, <span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(x=b.\)</span></figcaption></figure><article class="theorem theorem-like" id="theorem-26"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.81</span><span class="period">.</span><span class="space"> </span><span class="title">Second Derivative Test.</span>
+</h4>
+<p id="p-1334">Suppose <span class="process-math">\(f'(c)=0,f''\)</span> is continuous over an interval containing <span class="process-math">\(c.\)</span></p>
+<ol class="decimal">
+<li id="li-568"><p id="p-derived-li-568">If <span class="process-math">\(f''(c)\gt 0,\)</span> then <span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(c.\)</span></p></li>
+<li id="li-569"><p id="p-derived-li-569">If <span class="process-math">\(f''(c)\lt 0,\)</span> then <span class="process-math">\(f\)</span> has a local maximum at <span class="process-math">\(c.\)</span></p></li>
+<li id="li-570"><p id="p-derived-li-570">If <span class="process-math">\(f''(c)=0,\)</span> then the test is inconclusive.</p></li>
+</ol></article><p id="p-1335">Note that for case iii. when <span class="process-math">\(f''(c)=0,\)</span> then <span class="process-math">\(f\)</span> may have a local maximum, local minimum, or neither at <span class="process-math">\(c.\)</span> For example, the functions <span class="process-math">\(f(x)=x^3,\)</span> <span class="process-math">\(f(x)=x^4,\)</span> and <span class="process-math">\(f(x)=-x^4\)</span> all have critical points at <span class="process-math">\(x=0.\)</span> In each case, the second derivative is zero at <span class="process-math">\(x=0.\)</span> However, the function <span class="process-math">\(f(x)=x^4\)</span> has a local minimum at <span class="process-math">\(x=0\)</span> whereas the function <span class="process-math">\(f(x)=-x^4\)</span> has a local maximum at <span class="process-math">\(x,\)</span> and the function <span class="process-math">\(f(x)=x^3\)</span> does not have a local extremum at <span class="process-math">\(x=0.\)</span></p>
+<p id="p-1336">Let’s now look at how to use the second derivative test to determine whether <span class="process-math">\(f\)</span> has a local maximum or local minimum at a critical point <span class="process-math">\(c\)</span> where <span class="process-math">\(f'(c)=0.\)</span></p>
+<article class="example example-like" id="fs-id1165042710827"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.82</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Second Derivative Test.</span>
+</h4>
+<p id="p-1337">Use the second derivative to find the location of all local extrema for <span class="process-math">\(f(x)=x^5-5x^3.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-tabular" data-refid="hk-solution-255" id="solution-255"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-255"><div class="solution solution-like">
+<p id="p-1338">To apply the second derivative test, we first need to find critical points <span class="process-math">\(c\)</span> where <span class="process-math">\(f'(c)=0.\)</span> The derivative is <span class="process-math">\(f'(x)=5x^4-15x^2.\)</span> Therefore, <span class="process-math">\(f'(x)=5x^4-15x^2=5x^2(x^2-3)=0\)</span> when <span class="process-math">\(x=0,\pm\sqrt{3}.\)</span></p>
+<p id="p-1339">To determine whether <span class="process-math">\(f\)</span> has a local extrema at any of these points, we need to evaluate the sign of <span class="process-math">\(f''\)</span> at these points. The second derivative is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f''(x)=20x^3-30x=10x(2x^2-3).
+\end{equation*}
+</div>
+<p id="p-1340">In the following table, we evaluate the second derivative at each of the critical points and use the second derivative test to determine whether <span class="process-math">\(f\)</span> has a local maximum or local minimum at any of these points.</p>
+<figure class="table table-like" id="fs-id1165042705774"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.83<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="l t b0 r0 l0 t0 lines"><span class="process-math">\(f''(x)\)</span></th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Conclusion</th>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(-\sqrt{3}\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(-30\sqrt{3}\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">Local maximum</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">Second derivative test is inconclusive</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\sqrt{3}\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(30\sqrt{3}\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">Local minimum</td>
+</tr>
+</table></div></figure><p id="p-1341">By the second derivative test, we conclude that <span class="process-math">\(f\)</span> has a local maximum at <span class="process-math">\(x=-\sqrt{3}\)</span> and <span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(x=\sqrt{3}.\)</span> The second derivative test is inconclusive at <span class="process-math">\(x=0.\)</span> To determine whether <span class="process-math">\(f\)</span> has a local extrema at <span class="process-math">\(x=0,\)</span> we apply the first derivative test. To evaluate the sign of <span class="process-math">\(f'(x)=5x^2(x^2-3)\)</span> for <span class="process-math">\(x∈(-\sqrt{3},0)\)</span> and <span class="process-math">\(x∈(0,\sqrt{3}),\)</span> let <span class="process-math">\(x=-1\)</span> and <span class="process-math">\(x=1\)</span> be the two test points. Since <span class="process-math">\(f'(-1)\lt 0\)</span> and <span class="process-math">\(f'(1)\lt 0,\)</span> we conclude that <span class="process-math">\(f\)</span> is decreasing on both intervals and, therefore, <span class="process-math">\(f\)</span> does not have a local extrema at <span class="process-math">\(x=0\)</span> as shown in the following graph.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_05_010"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_05_007.jpg" class="contained" alt='"The function f(x) = x5 – 5x3 is graphed. The function increases to (negative square root of 3, 10), then decreases to an inflection point at 0, continues decreasing to (square root of 3, −10), and then increases."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.84<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(f\)</span> has a local maximum at <span class="process-math">\(x=-\sqrt{3}\)</span> and a local minimum at <span class="process-math">\(x=\sqrt{3}\)</span></figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-106"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.85</span><span class="period">.</span>
+</h4>
+<p id="p-1342">Consider the function <span class="process-math">\(f(x)=x^3-(\frac{3}{2})x^2-18x.\)</span> The points <span class="process-math">\(c=3,-2\)</span> satisfy <span class="process-math">\(f'(c)=0.\)</span> Use the second derivative test to determine whether <span class="process-math">\(f\)</span> has a local maximum or local minimum at those points.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-103" id="hint-103"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-103"><div class="hint solution-like"><p id="p-1343"><span class="process-math">\(f''(x)=6x-3\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-256" id="solution-256"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-256"><div class="solution solution-like"><p id="p-1344"><span class="process-math">\(f\)</span> has a local maximum at <span class="process-math">\(-2\)</span> and a local minimum at <span class="process-math">\(3.\)</span></p></div></div>
+</div></article><p id="p-1345">We have now developed the tools we need to determine where a function is increasing and decreasing, as well as acquired an understanding of the basic shape of the graph. In the next section we discuss what happens to a function as <span class="process-math">\(x\to\pm\infty.\)</span> At that point, we have enough tools to provide accurate graphs of a large variety of functions.</p></section><section class="subsection" id="subsection-100"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.4</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-571"><p id="p-derived-li-571">If <span class="process-math">\(c\)</span> is a critical point of <span class="process-math">\(f\)</span> and <span class="process-math">\(f'(x)\gt 0\)</span> for <span class="process-math">\(x\lt c\)</span> and <span class="process-math">\(f'(x)\lt 0\)</span> for <span class="process-math">\(x\gt c,\)</span> then <span class="process-math">\(f\)</span> has a local maximum at <span class="process-math">\(c.\)</span></p></li>
+<li id="li-572"><p id="p-derived-li-572">If <span class="process-math">\(c\)</span> is a critical point of <span class="process-math">\(f\)</span> and <span class="process-math">\(f'(x)\lt 0\)</span> for <span class="process-math">\(x\lt c\)</span> and <span class="process-math">\(f'(x)\gt 0\)</span> for <span class="process-math">\(x\gt c,\)</span> then <span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(c.\)</span></p></li>
+<li id="li-573"><p id="p-derived-li-573">If <span class="process-math">\(f''(x)\gt 0\)</span> over an interval <span class="process-math">\(I,\)</span> then <span class="process-math">\(f\)</span> is concave up over <span class="process-math">\(I.\)</span></p></li>
+<li id="li-574"><p id="p-derived-li-574">If <span class="process-math">\(f''(x)\lt 0\)</span> over an interval <span class="process-math">\(I,\)</span> then <span class="process-math">\(f\)</span> is concave down over <span class="process-math">\(I.\)</span></p></li>
+<li id="li-575"><p id="p-derived-li-575">If <span class="process-math">\(f'(c)=0\)</span> and <span class="process-math">\(f''(c)\gt 0,\)</span> then <span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(c.\)</span></p></li>
+<li id="li-576"><p id="p-derived-li-576">If <span class="process-math">\(f'(c)=0\)</span> and <span class="process-math">\(f''(c)\lt 0,\)</span> then <span class="process-math">\(f\)</span> has a local maximum at <span class="process-math">\(c.\)</span></p></li>
+<li id="li-577"><p id="p-derived-li-577">If <span class="process-math">\(f'(c)=0\)</span> and <span class="process-math">\(f''(c)=0,\)</span> then evaluate <span class="process-math">\(f'(x)\)</span> at a test point <span class="process-math">\(x\)</span> to the left of <span class="process-math">\(c\)</span> and a test point <span class="process-math">\(x\)</span> to the right of <span class="process-math">\(c,\)</span> to determine whether <span class="process-math">\(f\)</span> has a local extremum at <span class="process-math">\(c.\)</span></p></li>
+</ul></section></section></div></main>
+</div>
+</body>
+</html>

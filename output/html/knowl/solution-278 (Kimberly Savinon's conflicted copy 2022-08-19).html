@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:03:39-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.147.1</span><span class="period">.</span>
+</h4>
+<p>Step 1: We can model the problem by defining the following variables:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+n\amp=\text{ number of 1 dollar increases}\\
+x\amp=\text{ number of tickets sold (quantity)}\\
+p\amp=\text{ price per ticket}
+\end{align*}
+</div>
+<p>Step 2: We are trying to maximize the revenue. Therefore, the problem is to maximize <span class="process-math">\(R\text{.}\)</span></p>
+<p>Step 3: As mentioned in step 2 are trying to maximize the revenue. Recall that the revenue is given by <span class="process-math">\(R=p\cdot x\text{.}\)</span> Currently, the theater owner charges $5 per ticket and sells 250 tickets but for every one dollar she raises the ticket price, she will lose 10 customers. Since <span class="process-math">\(n\)</span> is the number of $1 increases, this gives us our constraints</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x\amp=250-10n\\
+p\amp=5+n
+\end{align*}
+</div>
+<p>Step 4: Using the equations from step 3, we see that the revenue equation is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R=p\cdot x=(5+n)(250-10n)\text{.}
+\end{equation*}
+</div>
+<p>Step 5: In order to determine the domain of consideration, note that we need <span class="process-math">\(x\geq 0\text{ and }p\geq0\text{.}\)</span> Using the equations from step 3:</p>
+<p><span class="process-math">\(x\geq0:\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+250-10n\amp\geq0\\
+n\amp\geq25
+\end{align*}
+</div>
+<p><span class="process-math">\(p\geq0:\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+5+n\amp\geq0\\
+n\amp\geq-5.
+\end{align*}
+</div>
+<p>Therefore, we are trying to determine whether there is a maximum revenue over the closed interval [-5,25]. Since <span class="process-math">\(R\)</span> is a continuous function over the closed, bounded interval [-5,25] it has an absolute maximum (and an absolute minimum) in that interval. To find the maximum value, look for critical points. The derivative is <span class="process-math">\(R'(n)=1\cdot(250-10n)+(5+n)\cdot(-10)=200-20n\text{.}\)</span> Therefore, the critical point is <span class="process-math">\(n=10\text{.}\)</span> When <span class="process-math">\(n=10,\; R(10)=\$2250\text{.}\)</span> When <span class="process-math">\(n=-5,\; R(-5)=\$0\text{.}\)</span> When <span class="process-math">\(n=25,\; R(25)=\$0\text{.}\)</span> Therefore, the absolute maximum occurs at <span class="process-math">\(n=10\text{.}\)</span> Note that when <span class="process-math">\(n=10,\;p=5+10=\$15.\)</span>The theater owner should charge $15 per ticket in order to maximize revenue as shown in the following figure.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/Busi_Calc_Figure_04_07_001.png" class="contained" alt='"The function \(R(n)=(5+n)(250-10n)\) over the interval [-5,25] with an absolute maximum at (10,2250)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.148<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(R(n)=(5+n)(250-10n)\)</span> has absolute maximum at (10,2250).</figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_Ch4Sec7.html#solution-278" class="internal">in-context</a></span>
+</body>
+</html>

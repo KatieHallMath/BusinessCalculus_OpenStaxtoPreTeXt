@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:02:41-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Implicit Differentiation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<meta property="book:author" content="Custom Business Calculus Edition ">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline">Custom Business Calculus Edition</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch3Sec7.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_third.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch3Sec9.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch3Sec7.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_third.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch3Sec9.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="meta_frontmatter-preface.html" data-scroll="meta_frontmatter-preface" class="internal">Preface: OpenStax Calculus Volume 1</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2" class="internal">Preface: Business Calculus Custom Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="active">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Derivatives</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Ch3Sec8"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.8</span> <span class="title">Implicit Differentiation</span>
+</h2>
+<section class="introduction" id="introduction-25"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc">
+<li id="li-546"><p id="p-derived-li-546">Find the derivative of a complicated function by using implicit differentiation.</p></li>
+<li id="li-547"><p id="p-derived-li-547">Use implicit differentiation to determine the equation of a tangent line.</p></li>
+</ul>
+<p id="p-1119">We have already studied how to find equations of tangent lines to functions and the rate of change of a function at a specific point. In all these cases we had the explicit equation for the function and differentiated these functions explicitly. Suppose instead that we want to determine the equation of a tangent line to an arbitrary curve or the rate of change of an arbitrary curve at a point. In this section, we solve these problems by finding the derivatives of functions that define <span class="process-math">\(y\)</span> implicitly in terms of <span class="process-math">\(x.\)</span></p></section><section class="subsection" id="subsection-93"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.8.1</span> <span class="title">Implicit Differentiation</span>
+</h3>
+<p id="p-1120">In most discussions of math, if the dependent variable <span class="process-math">\(y\)</span> is a function of the independent variable <span class="process-math">\(x,\)</span> we express <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x.\)</span> If this is the case, we say that <span class="process-math">\(y\)</span> is an explicit function of <span class="process-math">\(x.\)</span> For example, when we write the equation <span class="process-math">\(y=x^2+1,\)</span> we are defining <span class="process-math">\(y\)</span> explicitly in terms of <span class="process-math">\(x.\)</span> On the other hand, if the relationship between the function <span class="process-math">\(y\)</span> and the variable <span class="process-math">\(x\)</span> is expressed by an equation where <span class="process-math">\(y\)</span> is not expressed entirely in terms of <span class="process-math">\(x,\)</span> we say that the equation defines <span class="process-math">\(y\)</span> implicitly in terms of <span class="process-math">\(x.\)</span> For example, the equation <span class="process-math">\(y\geq x^2=1\)</span> defines the function <span class="process-math">\(y=x^2+1\)</span> implicitly.</p>
+<p id="p-1121">Implicit differentiation allows us to find slopes of tangents to curves that are clearly not functions (they fail the vertical line test). We are using the idea that portions of <span class="process-math">\(y\)</span> are functions that satisfy the given equation, but that <span class="process-math">\(y\)</span> is not actually a function of <span class="process-math">\(x.\)</span></p>
+<p id="p-1122">In general, an equation defines a function implicitly if the function satisfies that equation. An equation may define many different functions implicitly. For example, the functions</p>
+<p id="p-1123"><span class="process-math">\(y=\sqrt{25\geq x^2}\)</span> and <span class="process-math">\(y=\begin{cases} \sqrt{25\geq x^2} \amp\text{ if }\geq 5\lt x\lt 0 \\ -\sqrt{25\geq x^2} \amp \text{ if } 0\lt x\lt 25\end{cases},\)</span> which are illustrated in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_03_08_001.html" title="Figure 3.138">Figure 3.138</a>, are just three of the many functions defined implicitly by the equation <span class="process-math">\(x^2+y^2=25.\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_03_08_001"><div class="image-box" style="width: 67%; margin-left: 16.5%; margin-right: 16.5%;"><img src="external/CNX_Calc_Figure_03_08_001.jpg" class="contained" alt='"The circle with radius 5 and center at the origin is graphed fully in one picture. Then, only its segments in quadrants I and II are graphed. Then, only its segments in quadrants III and IV are graphed. Lastly, only its segments in quadrants II and IV are graphed."&gt;'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.138<span class="period">.</span></span><span class="space"> </span>The equation <span class="process-math">\(x^2+y^2=25\)</span> defines many functions implicitly.</figcaption></figure><p id="p-1124">If we want to find the slope of the line tangent to the graph of <span class="process-math">\(x^2+y^2=25\)</span> at the point <span class="process-math">\((3,4),\)</span> we could evaluate the derivative of the function <span class="process-math">\(y=\sqrt{25\geq x^2}\)</span> at <span class="process-math">\(x=3.\)</span> On the other hand, if we want the slope of the tangent line at the point <span class="process-math">\((3,\geq 4),\)</span> we could use the derivative of <span class="process-math">\(y=-\sqrt{25\geq x^2}.\)</span> However, it is not always easy to solve for a function defined implicitly by an equation. Fortunately, the technique of <dfn class="terminology">implicit differentiation</dfn> allows us to find the derivative of an implicitly defined function without ever solving for the function explicitly. The process of finding <span class="process-math">\(\frac{dy}{dx}\)</span> using implicit differentiation is described in the following problem-solving strategy.</p>
+<article class="note remark-like" id="note-30"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.139</span><span class="period">.</span><span class="space"> </span><span class="title">Problem-Solving Strategy: Implicit Differentiation.</span>
+</h4>
+<p id="p-1125">To perform implicit differentiation on an equation that defines a function <span class="process-math">\(y\)</span> implicitly in terms of a variable <span class="process-math">\(x,\)</span> use the following steps:</p>
+<ol class="decimal">
+<li id="li-548"><p id="p-derived-li-548">Take the derivative of both sides of the equation. Keep in mind that <span class="process-math">\(y\)</span> is a function of <span class="process-math">\(x\text{.}\)</span> Consequently, whereas <span class="process-math">\(\frac{d}{dx}(\sin x)=\cos  x,\frac{d}{dx}(\sin y)=\cos  y\frac{dy}{dx}\)</span> because we must use the chain rule to differentiate <span class="process-math">\(\sin y\)</span> with respect to <span class="process-math">\(x.\)</span></p></li>
+<li id="li-549"><p id="p-derived-li-549">Rewrite the equation so that all terms containing <span class="process-math">\(\frac{dy}{dx}\)</span> are on the left and all terms that do not contain <span class="process-math">\(\frac{dy}{dx}\)</span> are on the right.</p></li>
+<li id="li-550"><p id="p-derived-li-550">Factor out <span class="process-math">\(\frac{dy}{dx}\)</span> on the left.</p></li>
+<li id="li-551"><p id="p-derived-li-551">Solve for <span class="process-math">\(\frac{dy}{dx}\)</span> by dividing both sides of the equation by an appropriate algebraic expression.</p></li>
+</ol></article><article class="example example-like" id="fs-id1169737819953"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.140</span><span class="period">.</span><span class="space"> </span><span class="title">Using Implicit Differentiation.</span>
+</h4>
+<p id="p-1126">Assuming that <span class="process-math">\(y\)</span> is defined implicitly by the equation <span class="process-math">\(x^2+y^2=25,\)</span> find <span class="process-math">\(\frac{dy}{dx}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-209" id="solution-209"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-209"><div class="solution solution-like">
+<p id="p-1127">Follow the steps in the problem-solving strategy.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-49">
+\begin{align*}
+\frac{d}{dx}(x^2+y^2)\amp=\frac{d}{dx}(25)\amp\amp\text{ Step 1. Differentiate both sides of the equation. }\\
+\frac{d}{dx}(x^2)+\frac{d}{dx}(y^2)\amp= 0 \amp \amp\text{ Step 1.1. Use the sum rule on the left. }\\
+\amp \amp \amp \text{ On the right } \frac{d}{dx}(25)=0.\\
+2x+2y\frac{dy}{dx}\amp= 0\amp\amp \text{ Step 1.2. Take the derivatives, so } \frac{d}{dx}(x^2)=2x\\
+\amp \amp \amp\text{ and } \frac{d}{dx}(y^2)=2y\frac{dy}{dx}.\\
+2y\frac{dy}{dx}\amp= \geq 2x\amp\amp \text{ Step 2. Keep the terms with } \frac{dy}{dx} \text{ on the left. }\\
+\amp \amp \amp\text{ Move the remaining terms to the right. }\\
+\frac{dy}{dx}\amp=\geq \frac{x}{y}\amp \amp\text{ Step 4. Divide both sides of the equation by }\\
+\amp \amp \amp2y. \text{ (Step 3 does not apply in this case.) }
+\end{align*}
+</div>
+<article class="note remark-like" id="note-31"><h5 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.141</span><span class="period">.</span><span class="space"> </span><span class="title">Analysis.</span>
+</h5>
+<p id="p-1128">Note that the resulting expression for <span class="process-math">\(\frac{dy}{dx}\)</span> is in terms of both the independent variable <span class="process-math">\(x\)</span> and the dependent variable <span class="process-math">\(y.\)</span> Although in some cases it may be possible to express <span class="process-math">\(\frac{dy}{dx}\)</span> in terms of <span class="process-math">\(x\)</span> only, it is generally not possible to do so.</p></article>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1169738068274"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.142</span><span class="period">.</span><span class="space"> </span><span class="title">Using Implicit Differentiation.</span>
+</h4>
+<p id="p-1129">Assuming that <span class="process-math">\(y\)</span> is defined implicitly by the equation <span class="process-math">\(x^3 \sin y+y=4x+3,\)</span> find <span class="process-math">\(\frac{dy}{dx}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-210" id="solution-210"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-210"><div class="solution solution-like"><div class="displaymath process-math" data-contains-math-knowls="" id="md-50">
+\begin{align*}
+\frac{d}{dx}(x^3\sin y+y)\amp=\frac{d}{dx}(4x+3)\amp \amp \text{ Step 1: Differentiate both sides of the equation. }\\
+\frac{d}{dx}(x^3\sin y)+\frac{d}{dx}(y)\amp= 4\amp \amp \text{ Step 1.1: Apply the sum rule on the left. }\\
+\amp \amp \amp \text{ On the right, } \frac{d}{dx}(4x+3)=4.\\
+(\frac{d}{dx}(x^3)\cdot \sin y+\frac{d}{dx}(\sin y)\cdot x^3)+\frac{dy}{dx}\amp= 4\amp \amp \text{ Step 1.2: Use the product rule to find }\\
+\amp \amp \amp \frac{d}{dx}(x^3\sin y). \text{ Observe that } \frac{d}{dx}(y)=\frac{dy}{dx}.\\
+3x^2\sin y+(\cos  y\frac{dy}{dx})\cdot x^3+\frac{dy}{dx}\amp= 4\amp \amp \text{ Step 1.3: We know } \frac{d}{dx}(x^3)=3x^2. \text{ Use the }\\
+\amp \amp \amp \text{ chain rule to obtain } \frac{d}{dx}(\sin y)=\cos  y\frac{dy}{dx}.\\
+x^3\cos  y\frac{dy}{dx}+\frac{dy}{dx}\amp = 4\geq 3x^2\sin y \amp \amp \text{ Step 2: Keep all terms containing } \frac{dy}{dx} \text{ on the }\\
+\amp \amp \amp \text{ left. Move all other terms to the right. }\\
+\frac{dy}{dx}(x^3\cos  y+1)\amp= 4\geq 3x^2\sin y\amp \amp \text{ Step 3: Factor out } \frac{dy}{dx} \text{ on the left. }\\
+\frac{dy}{dx}\amp=\frac{4\geq 3x^2\sin y}{x^3\cos  y+1}\amp \amp \text{ Step 4: Solve for } \frac{dy}{dx} \text{ by dividing both sides of }\\
+\amp \amp \amp x^m \text{ the equation by } x^3\cos  y+1.
+\end{align*}
+</div></div></div>
+</div></article><article class="example example-like" id="fs-id1169738217476"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.143</span><span class="period">.</span><span class="space"> </span><span class="title">Using Implicit Differentiation to Find a Second Derivative.</span>
+</h4>
+<p id="p-1130">Find <span class="process-math">\(\frac{d^2y}{dx^2}\)</span> if <span class="process-math">\(x^2+y^2=25.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-211" id="solution-211"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-211"><div class="solution solution-like">
+<p id="p-1131">In <a href="" class="xref" data-knowl="./knowl/fs-id1169737819953.html" title="Example 3.140: Using Implicit Differentiation">Example 3.140</a>, we showed that <span class="process-math">\(\frac{dy}{dx}=\geq \frac{x}{y}.\)</span> We can take the derivative of both sides of this equation to find <span class="process-math">\(\frac{d^2y}{dx^2}.\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1169737819953.html" id="md-51">
+\begin{align*}
+\frac{d^2y}{dx^2}\amp=\frac{d}{dy}(\geq \frac{x}{y})\amp\amp\text{ Differentiate both sides of } \frac{dy}{dx}=\geq \frac{x}{y}.\\
+\amp =\geq \frac{(1\cdot y\geq x\frac{dy}{dx})}{y^2}\amp\amp \text{ Use the quotient rule to find } \frac{d}{dy}(\geq \frac{x}{y}).\\
+\amp =\frac{-y+x\frac{dy}{dx}}{y^2}\amp \amp \text{ Simplify. }\\
+\amp =\frac{-y+x(\geq \frac{x}{y})}{y^2}\amp\amp \text{ Substitute } \frac{dy}{dx}=\geq \frac{x}{y}.\\
+\amp =\frac{-y^2\geq x^2}{y^3}\amp\amp \text{ Simplify. }
+\end{align*}
+</div>
+<p id="p-1132">At this point we have found an expression for <span class="process-math">\(\frac{d^2y}{dx^2}.\)</span> If we choose, we can simplify the expression further by recalling that <span class="process-math">\(x^2+y^2=25\)</span> and making this substitution in the numerator to obtain <span class="process-math">\(\frac{d^2y}{dx^2}=\geq \frac{25}{y^3}.\)</span></p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-88"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.144</span><span class="period">.</span>
+</h4>
+<p id="p-1133">Find <span class="process-math">\(\frac{dy}{dx}\)</span> for <span class="process-math">\(y\)</span> defined implicitly by the equation <span class="process-math">\(4x^5+\text{ tan } y=y^2+5x.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-85" id="hint-85"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-85"><div class="hint solution-like"><p id="p-1134">Follow the problem solving strategy, remembering to apply the chain rule to differentiate <span class="process-math">\(\text{ tan }\)</span> and <span class="process-math">\(y^2.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-212" id="solution-212"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-212"><div class="solution solution-like"><p id="p-1135"><span class="process-math">\(\frac{dy}{dx}=\frac{5\geq 20x^4}{\sec^2y\geq 2y}\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-94"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.8.2</span> <span class="title">Finding Tangent Lines Implicitly</span>
+</h3>
+<p id="p-1136">Now that we have seen the technique of implicit differentiation, we can apply it to the problem of finding equations of tangent lines to curves described by equations.</p>
+<article class="example example-like" id="fs-id1169737931601"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.145</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Tangent Line to a Circle.</span>
+</h4>
+<p id="p-1137">Find the equation of the line tangent to the curve <span class="process-math">\(x^2+y^2=25\)</span> at the point <span class="process-math">\((3,\geq 4).\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-213" id="solution-213"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-213"><div class="solution solution-like">
+<p id="p-1138">Although we could find this equation without using implicit differentiation, using that method makes it much easier. In <a href="" class="xref" data-knowl="./knowl/fs-id1169737819953.html" title="Example 3.140: Using Implicit Differentiation">Example 3.140</a>, we found <span class="process-math">\(\frac{dy}{dx}=\geq \frac{x}{y}.\)</span></p>
+<p id="p-1139">The slope of the tangent line is found by substituting <span class="process-math">\((3,\geq 4)\)</span> into this expression. Consequently, the slope of the tangent line is <span class="process-math">\(\frac{dy}{dx}|_{(3,\geq 4)}=\geq \frac{3}{\geq 4}=\frac{3}{4}.\)</span></p>
+<p id="p-1140">Using the point <span class="process-math">\((3,\geq 4)\)</span> and the slope <span class="process-math">\(\frac{3}{4}\)</span> in the point-slope equation of the line, we obtain the equation <span class="process-math">\(y=\frac{3}{4}x\geq \frac{25}{4}\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_03_08_002.html" title="Figure 3.146">Figure 3.146</a>).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_03_08_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_03_08_002.jpg" class="contained" alt='"The circle with radius 5 and center at the origin is graphed. A tangent line is drawn through the point (3, \geq 4)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.146<span class="period">.</span></span><span class="space"> </span>The line <span class="process-math">\(y=\frac{3}{4}x\geq \frac{25}{4}\)</span> is tangent to <span class="process-math">\(x^2+y^2=25\)</span> at the point (3, \geq 4).</figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1169737142255"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.147</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Equation of the Tangent Line to a Curve.</span>
+</h4>
+<p id="p-1141">Find the equation of the line tangent to the graph of <span class="process-math">\(y^3+x^3\geq 3xy=0\)</span> at the point <span class="process-math">\((\frac{3}{2},\frac{3}{2})\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_03_08_003.html" title="Figure 3.148">Figure 3.148</a>). This curve is known as the folium (or leaf) of Descartes.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_03_08_003"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_03_08_003.jpg" class="contained" alt='"A folium is shown, which is a line that creates a loop that crosses over itself. In this graph, it crosses over itself at (0, 0). Its tangent line from (3/2, 3/2) is shown."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.148<span class="period">.</span></span><span class="space"> </span>Finding the tangent line to the <dfn class="terminology">folium of Descartes</dfn> at <span class="process-math">\((\frac{3}{2},\frac{3}{2}).\)</span></figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-214" id="solution-214"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-214"><div class="solution solution-like">
+<p id="p-1142">Begin by finding <span class="process-math">\(\frac{dy}{dx}.\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-52">
+\begin{align*}
+\frac{d}{dx}(y^3+x^3\geq 3xy)\amp = \frac{d}{dx}(0)\\
+3y^2\frac{dy}{dx}+3x^2\geq (3y+\frac{dy}{dx}3x)\amp = 0\\
+\frac{dy}{dx}\amp = \frac{3y\geq 3x^2}{3y^2\geq 3x}.
+\end{align*}
+</div>
+<p id="p-1143">Next, substitute <span class="process-math">\((\frac{3}{2},\frac{3}{2})\)</span> into <span class="process-math">\(\frac{dy}{dx}=\frac{3y\geq 3x^2}{3y^2\geq 3x}\)</span> to find the slope of the tangent line:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx}|_{(\frac{3}{2},\frac{3}{2})}=\geq 1.
+\end{equation*}
+</div>
+<p id="p-1144">Finally, substitute into the point-slope equation of the line to obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y=-x+3.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1169737935216"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.149</span><span class="period">.</span><span class="space"> </span><span class="title">Applying Implicit Differentiation.</span>
+</h4>
+<p id="p-1145">In a simple video game, a rocket travels in an elliptical orbit whose path is described by the equation <span class="process-math">\(4x^2+25y^2=100.\)</span> The rocket can fire missiles along lines tangent to its path. The object of the game is to destroy an incoming asteroid traveling along the positive <span class="process-math">\(x\)</span>-axis toward <span class="process-math">\((0,0).\)</span> If the rocket fires a missile when it is located at <span class="process-math">\((3,\frac{8}{5}),\)</span> where will it intersect the <span class="process-math">\(x\)</span>-axis?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-215" id="solution-215"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-215"><div class="solution solution-like">
+<p id="p-1146">To solve this problem, we must determine where the line tangent to the graph of</p>
+<p id="p-1147"><span class="process-math">\(4x^2+25y^2=100\)</span> at <span class="process-math">\((3,\frac{8}{5})\)</span> intersects the <span class="process-math">\(x\)</span>-axis. Begin by finding <span class="process-math">\(\frac{dy}{dx}\)</span> implicitly.</p>
+<p id="p-1148">Differentiating, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+8x+50y\frac{dy}{dx}=0.
+\end{equation*}
+</div>
+<p id="p-1149">Solving for <span class="process-math">\(\frac{dy}{dx},\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx}=\geq \frac{4x}{25y}.
+\end{equation*}
+</div>
+<p id="p-1150">The slope of the tangent line is <span class="process-math">\(\frac{dy}{dx}|_{(3,\frac{8}{5})}=\geq \frac{3}{10}.\)</span> The equation of the tangent line is <span class="process-math">\(y=\geq \frac{3}{10}x+\frac{5}{2}.\)</span> To determine where the line intersects the <span class="process-math">\(x\)</span>-axis, solve <span class="process-math">\(0=\geq \frac{3}{10}x+\frac{5}{2}.\)</span> The solution is <span class="process-math">\(x=\frac{25}{3}.\)</span> The missile intersects the <span class="process-math">\(x\)</span>-axis at the point <span class="process-math">\((\frac{25}{3},0).\)</span></p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-89"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.150</span><span class="period">.</span>
+</h4>
+<p id="p-1151">Find the equation of the line tangent to the hyperbola <span class="process-math">\(x^2\geq y^2=16\)</span> at the point <span class="process-math">\((5,3).\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-86" id="hint-86"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-86"><div class="hint solution-like"><p id="p-1152"><span class="process-math">\(\frac{dy}{dx}=\frac{x}{y}\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-216" id="solution-216"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-216"><div class="solution solution-like"><p id="p-1153"><span class="process-math">\(y=\frac{5}{3}x\geq \frac{16}{3}\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-95"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.8.3</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-552"><p id="p-derived-li-552">We use implicit differentiation to find derivatives of implicitly defined functions (functions defined by equations).</p></li>
+<li id="li-553"><p id="p-derived-li-553">By using implicit differentiation, we can find the equation of a tangent line to the graph of a curve.</p></li>
+</ul></section><p id="p-1154">This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1.</p></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:03:51-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.71.1</span><span class="period">.</span>
+</h4>
+<p>Recall the power rule for <a href="sec_Ch4Sec10.html" class="internal" title="Section 4.8: Antiderivatives">Antiderivatives 4.8</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_Ch4Sec10.html ./knowl/CNX_Calc_Figure_05_03_003.html">
+\begin{equation*}
+\text{ If } y=x^n,\displaystyle{ \int x^ndx}=\frac{x^{n+1}}{n+1}+C.
+\end{equation*}
+</div>
+<p>Use this rule to find the antiderivative of the function and then apply the theorem. We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_Ch4Sec10.html ./knowl/CNX_Calc_Figure_05_03_003.html">
+\begin{align*}
+\displaystyle{ \int_{-2}^{2} (t^2-4)dt}\amp =\frac{t^3}{3}-4t\Big|_{-2}^2\\
+\amp =[\frac{(2)^3}{3}-4(2)]-[\frac{(-2)^3}{3}-4(-2)]\\
+\amp =\left(\frac{8}{3}-8\right)-\left(-\frac{8}{3}+8\left)\\
+\amp =\frac{8}{3}-8+\frac{8}{3}-8\\
+\amp =\frac{16}{3}-16\\
+\amp =-\frac{32}{3}.
+\end{align*}
+</div>
+<p><em class="emphasis">Analysis</em></p>
+<p>Notice that we did not include the “+ <span class="process-math">\(C\)</span>” term when we wrote the antiderivative. The reason is that, according to the Fundamental Theorem of Calculus, Part 2, any antiderivative works. So, for convenience, we chose the antiderivative with <span class="process-math">\(C=0.\)</span> If we had chosen another antiderivative, the constant term would have canceled out. This always happens when evaluating a definite integral.</p>
+<p>The region of the area we just calculated is depicted in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_03_003.html" title="Figure 5.72">Figure 5.72</a>. Note that the region between the curve and the <span class="process-math">\(x\)</span>-axis is all below the <span class="process-math">\(x\)</span>-axis. Area is always positive, but a definite integral can still produce a negative number (a net signed area). For example, if this were a profit function, a negative number indicates the company is operating at a loss over the given interval.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_03_004.jpg" class="contained" alt='"The graph of the parabola f(t) = t^2 – 4 over [-4, 4]. The area above the curve and below the x axis over [-2, 2] is shaded."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.72<span class="period">.</span></span><span class="space"> </span>The evaluation of a definite integral can produce a negative value, even though area is always positive.</figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_Ch5Sec3.html#solution-321" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-11-11T14:30:23-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Derivative as a Function</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch3Sec1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_third.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch3Sec3.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch3Sec1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_third.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch3Sec3.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="active">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Integration</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Ch3Sec2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">The Derivative as a Function</span>
+</h2>
+<section class="introduction" id="introduction-21"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc">
+<li id="li-400"><p id="p-derived-li-400">Define the derivative function of a given function.</p></li>
+<li id="li-401"><p id="p-derived-li-401">Graph a derivative function from the graph of a given function.</p></li>
+<li id="li-402"><p id="p-derived-li-402">State the connection between derivatives and continuity.</p></li>
+<li id="li-403"><p id="p-derived-li-403">Describe three conditions for when a function does not have a derivative.</p></li>
+<li id="li-404"><p id="p-derived-li-404">Explain the meaning of a higher-order derivative.</p></li>
+</ul>
+<p id="p-760">As we have seen, the derivative of a function at a given point gives us the rate of change or slope of the tangent line to the function at that point. If we differentiate a position function at a given time, we obtain the velocity at that time. It seems reasonable to conclude that knowing the derivative of the function at every point would produce valuable information about the behavior of the function. However, the process of finding the derivative at even a handful of values using the techniques of the preceding section would quickly become quite tedious. In this section we define the derivative function and learn a process for finding it.</p></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">Derivative Functions</span>
+</h3>
+<p id="p-761">The derivative function gives the derivative of a function at each point in the domain of the original function for which the derivative is defined. We can formally define a derivative function as follows.</p>
+<article class="definition definition-like" id="definition-26"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.35</span><span class="period">.</span>
+</h4>
+<p id="p-762">Let <span class="process-math">\(f\)</span> be a function. The <dfn class="terminology">derivative function</dfn>, denoted by <span class="process-math">\(f',\)</span> is the function whose domain consists of those values of <span class="process-math">\(x\)</span> such that the following limit exists:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="fs-id1169738143059">
+\begin{equation}
+f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}.\tag{3.2.1}
+\end{equation}
+</div></article><p id="p-763">A function <span class="process-math">\(f(x)\)</span> is said to be <dfn class="terminology">differentiable at <span class="process-math">\(a\)</span></dfn> if <span class="process-math">\(f'(a)\)</span> exists. More generally, a function is said to be <dfn class="terminology">differentiable on <span class="process-math">\(S\)</span></dfn> if it is differentiable at every point in an open set <span class="process-math">\(S,\)</span> and a <dfn class="terminology">differentiable function</dfn> is one in which <span class="process-math">\(f'(x)\)</span> exists on its domain.</p>
+<p id="p-764">In the next few examples we use <a href="" class="xref" data-knowl="./knowl/fs-id1169738143059.html" title="Equation 3.2.1">(3.2.1)</a> to find the derivative of a function.</p>
+<article class="example example-like" id="fs-id1169737770972"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.36</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Derivative of a Square-Root Function.</span>
+</h4>
+<p id="p-765">Find the derivative of <span class="process-math">\(f(x)=\sqrt{x}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-141" id="solution-141"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-141"><div class="solution solution-like">
+<p id="p-766">Start directly with the definition of the derivative function. Use <a href="" class="xref" data-knowl="./knowl/fs-id1169738970614.html" title="Equation 3.1.2">(3.1.2)</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1169738970614.html" id="md-26">
+\begin{align*}
+f'(x)\amp=\lim_{h\to 0}\frac{\sqrt{x+h}-\sqrt{x}}{h}\amp \amp \text{ Substitute } f(x+h)=\sqrt{x+h} \text{ and } f(x)=\sqrt{x}\\
+\amp \amp \amp \text{ into } f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}.\\
+\amp=\lim_{h\to 0}\frac{\sqrt{x+h}-\sqrt{x}}{h}\cdot \frac{\sqrt{x+h}+\sqrt{x}}{\sqrt{x+h}+\sqrt{x}}\amp \amp\text{ Multiply numerator and denominator by }\sqrt{x+h}+\sqrt{x} \\
+\amp \amp \amp \text{ without distributing in the }\text{ denominator. }\\
+\amp =\lim_{h\to 0}\frac{h}{h(\sqrt{x+h}+\sqrt{x})}\amp \amp \text{ Multiply the numerators and simplify. }\\
+\amp =\lim_{h\to 0}\frac{1}{(\sqrt{x+h}+\sqrt{x})}\amp \amp\text{ Cancel the } h.\\
+\amp =\frac{1}{2\sqrt{x}}\amp\amp\text{ Evaluate the limit. }
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1169737774001"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.37</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Derivative of a Quadratic Function.</span>
+</h4>
+<p id="p-767">Find the derivative of the function <span class="process-math">\(f(x)=x^2-2x.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-142" id="solution-142"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-142"><div class="solution solution-like">
+<p id="p-768">Follow the same procedure here, but without having to multiply by the conjugate.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-27">
+\begin{align*}
+f'(x)\amp=\lim_{h\to 0}\frac{((x+h)^2-2(x+h))-(x^2-2x)}{h}\amp \amp\text{ Substitute } f(x+h)=(x+h)^2-2(x+h) \\
+\amp \amp \amp \text{ and }f(x)=x^2-2x \text{ into }\\
+\amp \amp \amp f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}.\\
+\amp=\lim_{h\to 0}\frac{x^2+2xh+h^2-2x-2h-x^2+2x}{h}\amp \amp\text{ Expand } (x+h)^2-2(x+h).\\
+\amp=\lim_{h\to 0}\frac{2xh-2h+h^2}{h}\amp\amp\text{ Simplify. }\\
+\amp=\lim_{h\to 0}\frac{h(2x-2+h)}{h}\amp\amp\text{ Factor out } h \text{ from the numerator. }\\
+\amp=\lim_{h\to 0}(2x-2+h)\amp\amp\text{ Cancel the common factor of } h.\\
+\amp=2x-2\amp\amp\text{ Evaluate the limit. }
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-60"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.38</span><span class="period">.</span>
+</h4>
+<p id="p-769">Find the derivative of <span class="process-math">\(f(x)=x^2.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-57" id="hint-57"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-57"><div class="hint solution-like"><p id="p-770">Use <a href="" class="xref" data-knowl="./knowl/fs-id1169738143059.html" title="Equation 3.2.1">(3.2.1)</a> and follow the example.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-143" id="solution-143"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-143"><div class="solution solution-like"><p id="p-771"><span class="process-math">\(f'(x)=2x\)</span></p></div></div>
+</div></article><p id="p-772">We use a variety of different notations to express the derivative of a function. In <a href="" class="xref" data-knowl="./knowl/fs-id1169737774001.html" title="Example 3.37: Finding the Derivative of a Quadratic Function">Example 3.37</a> we showed that if <span class="process-math">\(f(x)=x^2-2x,\)</span> then <span class="process-math">\(f'(x)=2x-2.\)</span> If we had expressed this function in the form <span class="process-math">\(y=x^2-2x,\)</span> we could have expressed the derivative as <span class="process-math">\(y'=2x-2\)</span> or <span class="process-math">\(\frac{dy}{dx}=2x-2.\)</span> We could have conveyed the same information by writing <span class="process-math">\(\frac{d}{dx}(x^2-2x)=2x-2.\)</span> Thus, for the function <span class="process-math">\(y=f(x),\)</span> each of the following notations represents the derivative of <span class="process-math">\(f(x)\text{ : }\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1169738143059.html ./knowl/fs-id1169738970614.html ./knowl/fs-id1169738143059.html ./knowl/fs-id1169737774001.html ./knowl/CNX_Calc_Figure_03_02_001.html">
+\begin{equation*}
+f'(x), \frac{dy}{dx}, y', \frac{d}{dx}(f(x)).
+\end{equation*}
+</div>
+<p id="p-773">In place of <span class="process-math">\(f'(a)\)</span> we may also use <span class="process-math">\(\frac{dy}{dx}|_{x=a}\)</span> Use of the <span class="process-math">\(\frac{dy}{dx}\)</span> notation (called Leibniz notation) is quite common in engineering and physics. To understand this notation better, recall that the derivative of a function at a point is the limit of the slopes of secant lines as the secant lines approach the tangent line. The slopes of these secant lines are often expressed in the form <span class="process-math">\(\frac{\Delta y}{\Delta x}\)</span> where <span class="process-math">\(\Delta y\)</span> is the difference in the <span class="process-math">\(y\)</span> values corresponding to the difference in the <span class="process-math">\(x\)</span> values, which are expressed as <span class="process-math">\(\Delta x\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_03_02_001.html" title="Figure 3.39">Figure 3.39</a>). Thus the derivative, which can be thought of as the instantaneous rate of change of <span class="process-math">\(y\)</span> with respect to <span class="process-math">\(x,\)</span> is expressed as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1169738143059.html ./knowl/fs-id1169738970614.html ./knowl/fs-id1169738143059.html ./knowl/fs-id1169737774001.html ./knowl/CNX_Calc_Figure_03_02_001.html">
+\begin{equation*}
+\frac{dy}{dx}=\lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x}.
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="CNX_Calc_Figure_03_02_001"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_03_02_001.jpg" class="contained" alt='"The function y = f(x) is graphed and it shows up as a curve in the first quadrant. The x-axis is marked with 0, a, and a + Δx. The y-axis is marked with 0, f(a), and f(a) + Δy. There is a straight line crossing y = f(x) at (a, f(a)) and (a + Δx, f(a) + Δy). From the point (a, f(a)), a horizontal line is drawn; from the point (a + Δx, f(a) + Δy), a vertical line is drawn. The distance from (a, f(a)) to (a + Δx, f(a)) is denoted Δx; the distance from (a + Δx, f(a) + Δy) to (a + Δx, f(a)) is denoted Δy."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.39<span class="period">.</span></span><span class="space"> </span>The derivative is expressed as <span class="process-math">\(\displaystyle{\frac{dy}{dx}=\lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x}.}\)</span></figcaption></figure></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.2</span> <span class="title">Graphing a Derivative</span>
+</h3>
+<p id="p-774">We have already discussed how to graph a function, so given the equation of a function or the equation of a derivative function, we could graph it. Given both, we would expect to see a correspondence between the graphs of these two functions, since <span class="process-math">\(f'(x)\)</span> gives the rate of change of a function <span class="process-math">\(f(x)\)</span> (or slope of the tangent line to <span class="process-math">\(f(x)).\)</span></p>
+<p id="p-775">In <a href="" class="xref" data-knowl="./knowl/fs-id1169737770972.html" title="Example 3.36: Finding the Derivative of a Square-Root Function">Example 3.36</a> we found that for <span class="process-math">\(f(x)=\sqrt{x},f'(x)=1\text{ / }2\sqrt{x}.\)</span> If we graph these functions on the same axes, as in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_03_02_002.html" title="Figure 3.40">Figure 3.40</a>, we can use the graphs to understand the relationship between these two functions. First, we notice that <span class="process-math">\(f(x)\)</span> is increasing over its entire domain, which means that the slopes of its tangent lines at all points are positive. Consequently, we expect <span class="process-math">\(f'(x)\gt 0\)</span> for all values of <span class="process-math">\(x\)</span> in its domain. Furthermore, as <span class="process-math">\(x\)</span> increases, the slopes of the tangent lines to <span class="process-math">\(f(x)\)</span> are decreasing and we expect to see a corresponding decrease in <span class="process-math">\(f'(x).\)</span> We also observe that <span class="process-math">\(f(0)\)</span> is undefined and that <span class="process-math">\(\displaystyle{\lim_{x\to 0^+}f'(x)=\text{ + }\infty} ,\)</span> corresponding to a vertical tangent to <span class="process-math">\(f(x)\)</span> at <span class="process-math">\(0.\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_03_02_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_03_02_002.jpg" class="contained" alt='"The function f(x) = the square root of x is graphed as is its derivative f’(x) = 1/(2 times the square root of x)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.40<span class="period">.</span></span><span class="space"> </span>The derivative <span class="process-math">\(f'(x)\)</span> is positive everywhere because the function <span class="process-math">\(f(x)\)</span> is increasing.</figcaption></figure><p id="p-776">In <a href="" class="xref" data-knowl="./knowl/fs-id1169737774001.html" title="Example 3.37: Finding the Derivative of a Quadratic Function">Example 3.37</a> we found that for <span class="process-math">\(f(x)=x^2-2x,f'(x)=2x-2.\)</span> The graphs of these functions are shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_03_02_003.html" title="Figure 3.41">Figure 3.41</a>. Observe that <span class="process-math">\(f(x)\)</span> is decreasing for <span class="process-math">\(x\lt 1.\)</span> For these same values of <span class="process-math">\(x,f'(x)\lt 0.\)</span> For values of <span class="process-math">\(x\gt 1,f(x)\)</span> is increasing and <span class="process-math">\(f'(x)\gt 0.\)</span> Also, <span class="process-math">\(f(x)\)</span> has a horizontal tangent at <span class="process-math">\(x=1\)</span> and <span class="process-math">\(f'(1)=0.\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_03_02_003"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_03_02_003.jpg" class="contained" alt='"The function f(x) = x squared – 2x is graphed as is its derivative f’(x) = 2x − 2."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.41<span class="period">.</span></span><span class="space"> </span>The derivative <span class="process-math">\(f'(x)\lt 0\)</span> where the function <span class="process-math">\(f(x)\)</span> is decreasing and <span class="process-math">\(f'(x)\gt 0\)</span> where <span class="process-math">\(f(x)\)</span> is increasing. The derivative is zero where the function has a horizontal tangent.</figcaption></figure><article class="example example-like" id="fs-id1169737966982"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.42</span><span class="period">.</span><span class="space"> </span><span class="title">Sketching a Derivative Using a Function.</span>
+</h4>
+<p id="p-777">Use the following graph of <span class="process-math">\(f(x)\)</span> to sketch a graph of <span class="process-math">\(f'(x).\)</span></p>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_03_02_004.jpg" class="contained" alt='"The function f(x) is roughly sinusoidal, starting at (−4, 3), decreasing to a local minimum at (−2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2)."'></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-144" id="solution-144"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-144"><div class="solution solution-like">
+<p id="p-778">The solution is shown in the following graph. Observe that <span class="process-math">\(f(x)\)</span> is increasing and <span class="process-math">\(f'(x)\gt 0\)</span> on <span class="process-math">\((–2,3).\)</span> Also, <span class="process-math">\(f(x)\)</span> is decreasing and <span class="process-math">\(f'(x)\lt 0\)</span> on <span class="process-math">\((\text{ - }\infty ,-2)\)</span> and on <span class="process-math">\((3,\text{ + }\infty ).\)</span> Also note that <span class="process-math">\(f(x)\)</span> has horizontal tangents at <span class="process-math">\(–2\)</span> and <span class="process-math">\(3,\)</span> and <span class="process-math">\(f'(-2)=0\)</span> and <span class="process-math">\(f'(3)=0.\)</span></p>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_03_02_005.jpg" class="contained" alt='"Two functions are graphed here: f(x) and f’(x). The function f(x) is the same as the above graph, that is, roughly sinusoidal, starting at (−4, 3), decreasing to a local minimum at (−2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2). The function f’(x) is an downward-facing parabola with vertex near (0.5, 1.75), y-intercept (0, 1.5), and x-intercepts (−1.9, 0) and (3, 0)."'></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-61"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.43</span><span class="period">.</span>
+</h4>
+<p id="p-779">Sketch the graph of <span class="process-math">\(f(x)=x^2-4.\)</span> On what interval is the graph of <span class="process-math">\(f'(x)\)</span> above the <span class="process-math">\(x\)</span>-axis?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-58" id="hint-58"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-58"><div class="hint solution-like"><p id="p-780">The graph of <span class="process-math">\(f'(x)\)</span> is positive where <span class="process-math">\(f(x)\)</span> is increasing.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-145" id="solution-145"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-145"><div class="solution solution-like"><p id="p-781"><span class="process-math">\((0,\text{ + }\infty )\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.3</span> <span class="title">Derivatives and Continuity</span>
+</h3>
+<p id="p-782">Now that we can graph a derivative, let’s examine the behavior of the graphs. First, we consider the relationship between differentiability and continuity. We will see that if a function is differentiable at a point, it must be continuous there; however, a function that is continuous at a point need not be differentiable at that point. In fact, a function may be continuous at a point and fail to be differentiable at the point for one of several reasons.</p>
+<article class="theorem theorem-like" id="theorem-9"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.44</span><span class="period">.</span><span class="space"> </span><span class="title">Differentiability Implies Continuity.</span>
+</h4>
+<p id="p-783">Let <span class="process-math">\(f(x)\)</span> be a function and <span class="process-math">\(a\)</span> be in its domain. If <span class="process-math">\(f(x)\)</span> is differentiable at <span class="process-math">\(a,\)</span> then <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(a.\)</span></p></article><p id="p-784">We have that differentiability implies continuity, but now we consider whether continuity implies differentiability. To determine an answer to this question, we examine the function <span class="process-math">\(f(x)=|x|.\)</span> This function is continuous everywhere; however, <span class="process-math">\(f'(0)\)</span> is undefined. This observation leads us to believe that continuity does not imply differentiability. Let’s explore further. For <span class="process-math">\(f(x)=|x|,\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_03_02_006.html ./knowl/CNX_Calc_Figure_03_02_007.html ./knowl/Busi_Calc_Figure_03_02_002.html ./knowl/CNX_Calc_Figure_03_02_009.html ./knowl/fs-id1169738218186.html">
+\begin{equation*}
+f'(0)=\lim_{x\to 0}\frac{f(x)-f(0)}{x-0}=\lim_{x\to 0}\frac{|x|-|0|}{x-0}=\lim_{x\to 0}\frac{|x|}{x}.
+\end{equation*}
+</div>
+<p id="p-785">This limit does not exist because</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_03_02_006.html ./knowl/CNX_Calc_Figure_03_02_007.html ./knowl/Busi_Calc_Figure_03_02_002.html ./knowl/CNX_Calc_Figure_03_02_009.html ./knowl/fs-id1169738218186.html" id="md-28">
+\begin{align*}
+\lim_{x\to 0^-}\frac{|x|}{x}=-1 \amp  \text{ and } \amp \lim_{x\to 0^+}\frac{|x|}{x}=1.
+\end{align*}
+</div>
+<p id="p-786">See <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_03_02_006.html" title="Figure 3.45">Figure 3.45</a>.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_03_02_006"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_03_02_006.jpg" class="contained" alt='"The function f(x) = the absolute value of x is graphed. It consists of two straight line segments: the first follows the equation y = −x and ends at the origin; the second follows the equation y = x and starts at the origin."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.45<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(f(x)=|x|\)</span> is continuous at <span class="process-math">\(0\)</span> but is not differentiable at <span class="process-math">\(0.\)</span></figcaption></figure><p id="p-787">Let’s consider some additional situations in which a continuous function fails to be differentiable. Consider the function <span class="process-math">\(f(x)=\sqrt[3]{x} \text{ : }\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_03_02_006.html ./knowl/CNX_Calc_Figure_03_02_007.html ./knowl/Busi_Calc_Figure_03_02_002.html ./knowl/CNX_Calc_Figure_03_02_009.html ./knowl/fs-id1169738218186.html">
+\begin{equation*}
+f'(0)=\lim_{x\to 0}\frac{\sqrt[3]{x} -0}{x-0}=\lim_{x\to 0}\frac{1}{\sqrt[3]{x^2}} =\text{ + }\infty .
+\end{equation*}
+</div>
+<p id="p-788">Thus <span class="process-math">\(f'(0)\)</span> does not exist. A quick look at the graph of <span class="process-math">\(f(x)=\sqrt[3]{x} \)</span> clarifies the situation. The function has a vertical tangent line at <span class="process-math">\(0\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_03_02_007.html" title="Figure 3.46">Figure 3.46</a>).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_03_02_007"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_03_02_007.jpg" class="contained" alt='"The function f(x) = the cube root of x is graphed. It has a vertical tangent at x = 0."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.46<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(f(x)=\sqrt[3]{x} \)</span> has a vertical tangent at <span class="process-math">\(x=0.\)</span> It is continuous at <span class="process-math">\(0\)</span> but is not differentiable at <span class="process-math">\(0.\)</span></figcaption></figure><p id="p-789">The function <span class="process-math">\(f(x)=x^{2/3}\)</span> also has a derivative that exhibits interesting behavior at <span class="process-math">\(0.\)</span> We see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_03_02_006.html ./knowl/CNX_Calc_Figure_03_02_007.html ./knowl/Busi_Calc_Figure_03_02_002.html ./knowl/CNX_Calc_Figure_03_02_009.html ./knowl/fs-id1169738218186.html">
+\begin{equation*}
+f'(0)=\lim_{x\to 0}\frac{x^{2/3}-0}{x-0}=\lim_{x\to 0}\frac{1}{x^{1/3}}.
+\end{equation*}
+</div>
+<p id="p-790">This limit does not exist, mainly because the slopes of the secant lines are positive if we approach 0 from the right yet the slopes of the secant lines are negative if we approach 0 from the left. That is, <span class="process-math">\(\displaystyle{\lim_{x\to 0^+}\frac{1}{x^{1/3}}\gt 0}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to 0^-}\frac{1}{x^{1/3}}\lt 0}.\)</span> We say that <span class="process-math">\(f(x)\)</span> has <em class="emphasis">cusp</em> at <span class="process-math">\(x=0\text{.}\)</span> This behavior is displayed below in <a href="" class="xref" data-knowl="./knowl/Busi_Calc_Figure_03_02_002.html" title="Figure 3.47">Figure 3.47</a> . Note that the function is approaching a vertical tangent line on each side of <span class="process-math">\(x=0\text{.}\)</span></p>
+<figure class="figure figure-like" id="Busi_Calc_Figure_03_02_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/Busi_Calc_Figure_03_02_002.png" class="contained" alt='"This figure shows the graph of \(f(x)=x^{2/3}\) near \(x=0\text{.}\) On each side of 0, the function is approaching a vertical tangent, making a cusp at \(x=0.\)"'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.47<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(f(x)=x^{2/3}\)</span> has a cusp at <span class="process-math">\(x=0.\)</span></figcaption></figure><p id="p-791">In summary:</p>
+<ol class="decimal">
+<li id="li-405"><p id="p-derived-li-405">We observe that if a function is not continuous, it cannot be differentiable, since every differentiable function must be continuous. However, if a function is continuous, it may still fail to be differentiable.</p></li>
+<li id="li-406"><p id="p-derived-li-406">We saw that <span class="process-math">\(f(x)=|x|\)</span> failed to be differentiable at <span class="process-math">\(0\)</span> because the limit of the slopes of the tangent lines on the left and right were not the same. Visually, this resulted in a sharp corner on the graph of the function at <span class="process-math">\(0.\)</span> From this we conclude that in order to be differentiable at a point, a function must be “smooth” at that point.</p></li>
+<li id="li-407"><p id="p-derived-li-407">As we saw in the example of <span class="process-math">\(f(x)=\sqrt[3]{x} ,\)</span> a function fails to be differentiable at a point where there is a vertical tangent line.</p></li>
+<li id="li-408"><p id="p-derived-li-408">As we saw with  <span class="process-math">\(f(x)=x^{2/3}\)</span> a functions may fail to differentiable at a point where there is a cusp.</p></li>
+</ol>
+<article class="example example-like" id="fs-id1169738218186"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.48</span><span class="period">.</span><span class="space"> </span><span class="title">A Piecewise Function that is Continuous and Differentiable.</span>
+</h4>
+<p id="p-792">A toy company wants to design a track for a toy car that starts out along a parabolic curve and then converts to a straight line (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_03_02_009.html" title="Figure 3.49">Figure 3.49</a>). The function that describes the track is to have the form <span class="process-math">\(f(x)=\begin{cases} \frac{1}{10}x^2+bx+c  \amp \text{ if } x\lt -10 \\ -\frac{1}{4}x+\frac{5}{2} \amp \text{ if } x\geq -10 \end{cases} \)</span> where <span class="process-math">\(x\)</span> and <span class="process-math">\(f(x)\)</span> are in inches. For the car to move smoothly along the track, the function <span class="process-math">\(f(x)\)</span> must be both continuous and differentiable at <span class="process-math">\(-10.\)</span> Find values of <span class="process-math">\(b\)</span> and <span class="process-math">\(c\)</span> that make <span class="process-math">\(f(x)\)</span> both continuous and differentiable.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_03_02_009"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_03_02_009.jpg" class="contained" alt='"A cart is drawn on a line that curves through (−10, 5) to (10, 0) with y-intercept roughly (0, 2)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.49<span class="period">.</span></span><span class="space"> </span>For the car to move smoothly along the track, the function must be both continuous and differentiable.</figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-146" id="solution-146"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-146"><div class="solution solution-like">
+<p id="p-793">For the function to be continuous at <span class="process-math">\(x=-10,\displaystyle{\lim_{x \to 10^-} f(x)=f(-10)}.\)</span> Thus, since</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to -10^-} f(x)=\frac{1}{10}(-10)^2-10b+c=10-10b+c
+\end{equation*}
+</div>
+<p id="p-794">and <span class="process-math">\(f(-10)=5,\)</span> we must have <span class="process-math">\(10-10b+c=5.\)</span> Equivalently, we have <span class="process-math">\(c=10b-5.\)</span></p>
+<p id="p-795">For the function to be differentiable at <span class="process-math">\(-10,\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f'(10)=\lim_{x\to -10}\frac{f(x)-f(-10)}{x+10}
+\end{equation*}
+</div>
+<p id="p-796">must exist. Since <span class="process-math">\(f(x)\)</span> is defined using different rules on the right and the left, we must evaluate this limit from the right and the left and then set them equal to each other:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-29">
+\begin{align*}
+\lim_{x\to \text{ - }10^-}\frac{f(x)-f(-10)}{x+10}\amp=\lim_{x\to \text{ - }10^-}\frac{\frac{1}{10}x^2+bx+c-5}{x+10}\\
+\amp=\lim_{x\to \text{ - }10^-}\frac{\frac{1}{10}x^2+bx+(10b-5)-5}{x+10}\amp\text{ Substitute } c=10b-5.\\
+\amp=\lim_{x\to \text{ - }10^-}\frac{x^2-100+10bx+100b}{10(x+10)}\\
+\amp=\lim_{x\to \text{ - }10^-}\frac{(x+10)(x-10+10b)}{10(x+10)}\amp\text{ Factor by grouping. }\\
+\amp=b-2.
+\end{align*}
+</div>
+<p id="p-797">We also have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-30">
+\begin{align*}
+\lim_{x\to \text{ - }10^+}\frac{f(x)-f(-10)}{x+10}\amp=\lim_{x\to \text{ - }10^+}\frac{-\frac{1}{4}x+\frac{5}{2}-5}{x+10}\\
+=\lim_{x\to \text{ - }10^+}\frac{\text{ - }(x+10)}{4(x+10)}\\
+=-\frac{1}{4}.
+\end{align*}
+</div>
+<p id="p-798">This gives us <span class="process-math">\(b-2=-\frac{1}{4}.\)</span> Thus <span class="process-math">\(b=\frac{7}{4}\)</span> and <span class="process-math">\(c=10(\frac{7}{4})-5=\frac{25}{2}.\)</span></p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-62"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.50</span><span class="period">.</span>
+</h4>
+<p id="p-799">Find values of <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> that make <span class="process-math">\(f(x)=\begin{cases} ax+b  \amp \text{ if } x\lt 3 \\ x^2  \amp \text{ if } x\geq 3 \end{cases} \)</span> both continuous and differentiable at <span class="process-math">\(3.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-59" id="hint-59"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-59"><div class="hint solution-like"><p id="p-800">Use <a href="" class="xref" data-knowl="./knowl/fs-id1169738218186.html" title="Example 3.48: A Piecewise Function that is Continuous and Differentiable">Example 3.48</a> as a guide.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-147" id="solution-147"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-147"><div class="solution solution-like"><p id="p-801"><span class="process-math">\(a=6\)</span> and <span class="process-math">\(b=-9\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.4</span> <span class="title">Higher-Order Derivatives</span>
+</h3>
+<p id="p-802">The derivative of a function is itself a function, so we can find the derivative of a derivative. For example, the derivative of a position function is the rate of change of position, or velocity. The derivative of velocity is the rate of change of velocity, which is acceleration. The new function obtained by differentiating the derivative is called the second derivative. Furthermore, we can continue to take derivatives to obtain the third derivative, fourth derivative, and so on. Collectively, these are referred to as <dfn class="terminology">higher-order derivatives</dfn>. The notation for the higher-order derivatives of <span class="process-math">\(y=f(x)\)</span> can be expressed in any of the following forms:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1169738143059.html ./knowl/fs-id1169737966982.html">
+\begin{equation*}
+f''(x), f'''(x),f^{(4))}(x),\dots,f^{(n)}(x)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1169738143059.html ./knowl/fs-id1169737966982.html">
+\begin{equation*}
+y''(x),y'''(x),y^{(4)}(x), \dots ,y^{(n)}(x)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1169738143059.html ./knowl/fs-id1169737966982.html">
+\begin{equation*}
+\frac{d^2y}{dx^2},\frac{d^3y}{dx^3},\frac{d^4y}{dx^4},\dots,\frac{d^ny}{dx^n}.
+\end{equation*}
+</div>
+<p id="p-803">It is interesting to note that the notation for <span class="process-math">\(\frac{d^2y}{dx^2}\)</span> may be viewed as an attempt to express <span class="process-math">\(\frac{d}{dx}(\frac{dy}{dx})\)</span> more compactly. Analogously, <span class="process-math">\(\frac{d}{dx}(\frac{d}{dx}(\frac{dy}{dx}))=\frac{d}{dx}(\frac{d^2y}{dx^2})=\frac{d^3y}{dx^3}.\)</span></p>
+<article class="example example-like" id="fs-id1169738217346"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.51</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Second Derivative.</span>
+</h4>
+<p id="p-804">For <span class="process-math">\(f(x)=2x^2-3x+1,\)</span> find <span class="process-math">\(f''(x).\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-148" id="solution-148"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-148"><div class="solution solution-like">
+<p id="p-805">First find <span class="process-math">\(f'(x).\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-31">
+\begin{align*}
+f'(x)\amp=\lim_{h\to 0}\frac{(2(x+h)^2-3(x+h)+1)-(2x^2-3x+1)}{h}\amp\amp\text{ Substitute } f(x)=2x^2-3x+1\\
+\amp \amp \amp \text{ and }\\
+\amp \amp \amp f(x+h)=2(x+h)^2-3(x+h)+1\\
+\amp \amp \amp \text{ into } f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}.\\
+\amp =\lim_{h\to 0}\frac{4xh+h^2-3h}{h}\amp\amp\text{ Simplify the numerator. }\\
+\amp=\lim_{h\to 0}(4x+h-3)\amp \amp\text{ Factor out the } h \text{ in the numerator }\\
+\amp \amp \amp \text{ and cancel with the } h \text{ in the }\\
+\amp \amp \amp \text{ denominator. }\\
+\amp =4x-3\amp \amp\text{ Take the limit. }
+\end{align*}
+</div>
+<p id="p-806">Next, find <span class="process-math">\(f''(x)\)</span> by taking the derivative of <span class="process-math">\(f'(x)=4x-3.\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-32">
+\begin{align*}
+f''(x)\amp=\lim_{h\to 0}\frac{f'(x+h)-f'(x)}{h}\amp \amp \text{ Use } f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h} \text{ with } f'(x) \text{ in }\\
+\amp \amp \amp \text{ place of } f(x).\\
+\amp =\lim_{h\to 0}\frac{(4(x+h)-3)-(4x-3)}{h}\amp \amp\text{ Substitute } f'(x+h)=4(x+h)-3 \text{ and }\\
+\amp \amp \amp f'(x)=4x-3.\\
+\amp=\lim_{h\to 0}4\amp\amp \text{ Simplify. }\\
+\amp =4\amp \amp\text{ Take the limit. }
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-63"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.52</span><span class="period">.</span>
+</h4>
+<p id="p-807">Find <span class="process-math">\(f''(x)\)</span> for <span class="process-math">\(f(x)=x^2.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-60" id="hint-60"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-60"><div class="hint solution-like"><p id="p-808">We found <span class="process-math">\(f'(x)=2x\)</span> in a previous checkpoint. Use <a href="" class="xref" data-knowl="./knowl/fs-id1169738143059.html" title="Equation 3.2.1">(3.2.1)</a> to find the derivative of <span class="process-math">\(f'(x)\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-149" id="solution-149"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-149"><div class="solution solution-like"><p id="p-809"><span class="process-math">\(f''(x)=2\)</span></p></div></div>
+</div></article><article class="example example-like" id="fs-id1169738099443"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.53</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Acceleration.</span>
+</h4>
+<p id="p-810">The position of a particle along a coordinate axis at time <span class="process-math">\(t\)</span> (in seconds) is given by <span class="process-math">\(s(t)=3t^2-4t+1\)</span> (in meters). Find the function that describes its acceleration at time <span class="process-math">\(t.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-150" id="solution-150"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-150"><div class="solution solution-like">
+<p id="p-811">Since <span class="process-math">\(v(t)=s'(t)\)</span> and <span class="process-math">\(a(t)=v'(t)=s''(t),\)</span> we begin by finding the derivative of <span class="process-math">\(s(t):\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-33">
+\begin{align*}
+s'(t)\amp=\lim_{h\to 0}\frac{s(t+h)-s(t)}{h}\\
+\amp=\lim_{h\to 0}\frac{3(t+h)^2-4(t+h)+1-(3t^2-4t+1)}{h}\\
+\amp=6t-4.
+\end{align*}
+</div>
+<p id="p-812">Next,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-34">
+\begin{align*}
+s''(t)\amp=\lim_{h\to 0}\frac{s'(t+h)-s'(t)}{h}\\
+\amp=\lim_{h\to 0}\frac{6(t+h)-4-(6t-4)}{h}\\
+\amp=6.
+\end{align*}
+</div>
+<p id="p-813">Thus, <span class="process-math">\(a=6 \text{ m/s }^2.\)</span></p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-64"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.54</span><span class="period">.</span>
+</h4>
+<p id="p-814">For <span class="process-math">\(s(t)=t^3,\)</span> find <span class="process-math">\(a(t).\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-61" id="hint-61"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-61"><div class="hint solution-like"><p id="p-815">Use <a href="" class="xref" data-knowl="./knowl/fs-id1169737966982.html" title="Example 3.42: Sketching a Derivative Using a Function">Example 3.42</a> as a guide.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-151" id="solution-151"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-151"><div class="solution solution-like"><p id="p-816"><span class="process-math">\(a(t)=6t\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-56"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.5</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-409"><p id="p-derived-li-409">The derivative of a function <span class="process-math">\(f(x)\)</span> is the function whose value at <span class="process-math">\(x\)</span> is <span class="process-math">\(f'(x).\)</span></p></li>
+<li id="li-410"><p id="p-derived-li-410">The graph of a derivative of a function <span class="process-math">\(f(x)\)</span> is related to the graph of <span class="process-math">\(f(x).\)</span> Where <span class="process-math">\(f(x)\)</span> has a tangent line with positive slope, <span class="process-math">\(f'(x)\gt 0.\)</span> Where <span class="process-math">\(f(x)\)</span> has a tangent line with negative slope, <span class="process-math">\(f'(x)\lt 0.\)</span> Where <span class="process-math">\(f(x)\)</span> has a horizontal tangent line, <span class="process-math">\(f'(x)=0.\)</span></p></li>
+<li id="li-411"><p id="p-derived-li-411">If a function is differentiable at a point, then it is continuous at that point. A function is not differentiable at a point if it is not continuous at the point, if it has a vertical tangent line at the point, or if the graph has a sharp corner or cusp.</p></li>
+<li id="li-412"><p id="p-derived-li-412">Higher-order derivatives are derivatives of derivatives, from the second derivative to the <span class="process-math">\(n\text{ th }\)</span> derivative.</p></li>
+</ul></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.6</span> <span class="title">Key Equations</span>
+</h3>
+<ul class="disc"><li id="li-413"><p id="p-derived-li-413">The derivative function <span class="process-math">\(\displaystyle{f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}}\)</span></p></li></ul></section><p id="p-817">This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1.</p></section></div></main>
+</div>
+</body>
+</html>

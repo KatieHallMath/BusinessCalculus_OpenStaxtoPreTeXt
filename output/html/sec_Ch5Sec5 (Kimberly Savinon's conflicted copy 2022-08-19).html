@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:02:56-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Definite Integral</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<meta property="book:author" content="Custom Business Calculus Edition ">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline">Custom Business Calculus Edition</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch5Sec4.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_fifth.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch_sixth.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch5Sec4.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_fifth.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ch_sixth.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="meta_frontmatter-preface.html" data-scroll="meta_frontmatter-preface" class="internal">Preface: OpenStax Calculus Volume 1</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2" class="internal">Preface: Business Calculus Custom Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="active">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Derivatives</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Ch5Sec5"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.5</span> <span class="title">The Definite Integral</span>
+</h2>
+<section class="introduction" id="introduction-44"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc">
+<li id="li-789"><p id="p-derived-li-789">Use substitution to evaluate indefinite integrals.</p></li>
+<li id="li-790"><p id="p-derived-li-790">Use substitution to evaluate definite integrals.</p></li>
+</ul>
+<p id="p-1837">The Fundamental Theorem of Calculus gave us a method to evaluate integrals without using Riemann sums. The drawback of this method, though, is that we must be able to find an antiderivative, and this is not always easy. In this section we examine a technique, called <dfn class="terminology">integration by substitution</dfn>, to help us find antiderivatives. Specifically, this method helps us find antiderivatives when the integrand is the result of a chain-rule derivative.</p>
+<p id="p-1838">At first, the approach to the substitution procedure may not appear very obvious. However, it is primarily a visual task—that is, the integrand shows you what to do; it is a matter of recognizing the form of the function. So, what are we supposed to see? We are looking for an integrand of the form <span class="process-math">\(f(g(x))g'(x)dx.\)</span> For example, in the integral <span class="process-math">\(\displaystyle{ \int  (x^2-3)^3 2xdx},\)</span> we have <span class="process-math">\(f(x)=x^3,g(x)=x^2-3,\)</span> and <span class="process-math">\(g'(x)=2x.\)</span> Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f[g(x)]g'(x)= (x^2-3)^3 (2x),
+\end{equation*}
+</div>
+<p id="p-1839">and we see that our integrand is in the correct form.</p>
+<p id="p-1840">The method is called substitution because we substitute part of the integrand with the variable <span class="process-math">\(u\)</span> and part of the integrand with <span class="process-math">\(du\text{.}\)</span> It is also referred to as <dfn class="terminology">change of variables</dfn> because we are changing variables to obtain an expression that is easier to work with for applying the integration rules.</p></section><section class="subsection" id="subsection-143"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.5.1</span> <span class="title">Substitution with Indefinite Integrals</span>
+</h3>
+<article class="theorem theorem-like" id="theorem-37"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.81</span><span class="period">.</span><span class="space"> </span><span class="title">Substitution with Indefinite Integrals.</span>
+</h4>
+<p id="p-1841">Let <span class="process-math">\(u=g(x),,\)</span> where <span class="process-math">\(g'(x)\)</span> is continuous over an interval, let <span class="process-math">\(f(x)\)</span> be continuous over the corresponding range of <span class="process-math">\(g\text{,}\)</span> and let <span class="process-math">\(F(x)\)</span> be an antiderivative of <span class="process-math">\(f(x).\)</span> Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-109">
+\begin{align*}
+\displaystyle{ \int f(g(x))g'(x)dx}\amp =\displaystyle{ \int f}(u)du\\
+\amp =F(u)+C\\
+\amp =F(g(x))+C.
+\end{align*}
+</div></article><p id="p-1842">Returning to the problem we looked at originally, we let <span class="process-math">\(u=x^2-3\)</span> and then <span class="process-math">\(du=2xdx.\)</span> Rewrite the integral in terms of <span class="process-math">\(u\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/U_Sub_5.5.html ./knowl/CNX_Calc_Figure_05_06_001.html ./knowl/CNX_Calc_Figure_05_06_003.html ./knowl/Average-Value_5.2.html ./knowl/Compounded-Continuously_1.5.html ./knowl/fs-id1170573426799.html">
+\begin{equation*}
+\displaystyle{ \int {\underbrace{(x^2-3)}_{u}}^3 \underbrace{(2xdx)}_{du}}=\displaystyle{ \int u^3du.}
+\end{equation*}
+</div>
+<p id="p-1843">Using the power rule for integrals, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/U_Sub_5.5.html ./knowl/CNX_Calc_Figure_05_06_001.html ./knowl/CNX_Calc_Figure_05_06_003.html ./knowl/Average-Value_5.2.html ./knowl/Compounded-Continuously_1.5.html ./knowl/fs-id1170573426799.html">
+\begin{equation*}
+\displaystyle{ \int u^3du=\frac{u^4}{4}+C}.
+\end{equation*}
+</div>
+<p id="p-1844">Substitute the original expression for <span class="process-math">\(x\)</span> back into the solution:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/U_Sub_5.5.html ./knowl/CNX_Calc_Figure_05_06_001.html ./knowl/CNX_Calc_Figure_05_06_003.html ./knowl/Average-Value_5.2.html ./knowl/Compounded-Continuously_1.5.html ./knowl/fs-id1170573426799.html">
+\begin{equation*}
+\frac{u^4}{4}+C=\frac{(x^2-3)^4}{4}+C.
+\end{equation*}
+</div>
+<p id="p-1845">We can generalize the procedure in the following Problem-Solving Strategy.</p>
+<article class="note remark-like" id="note-45"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">5.82</span><span class="period">.</span><span class="space"> </span><span class="title">Problem-Solving Strategy: Integration by Substitution.</span>
+</h4>
+<ol class="decimal">
+<li id="li-791"><p id="p-derived-li-791">Look carefully at the integrand and select an expression <span class="process-math">\(g(x)\)</span> within the integrand to set equal to <span class="process-math">\(u\text{.}\)</span> Let’s select <span class="process-math">\(g(x).\)</span> such that <span class="process-math">\(g'(x)\)</span> is also part of the integrand.</p></li>
+<li id="li-792"><p id="p-derived-li-792">Substitute <span class="process-math">\(u=g(x)\)</span> and <span class="process-math">\(du=g'(x)dx.\)</span> into the integral.</p></li>
+<li id="li-793"><p id="p-derived-li-793">We should now be able to evaluate the integral with respect to <span class="process-math">\(u\text{.}\)</span> If the integral can’t be evaluated we need to go back and select a different expression to use as <span class="process-math">\(u\text{.}\)</span></p></li>
+<li id="li-794"><p id="p-derived-li-794">Evaluate the integral in terms of <span class="process-math">\(u\text{.}\)</span></p></li>
+<li id="li-795"><p id="p-derived-li-795">Write the result in terms of <span class="process-math">\(x\)</span> and the expression <span class="process-math">\(g(x).\)</span></p></li>
+</ol></article><article class="example example-like" id="fs-id1170573385785"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.83</span><span class="period">.</span><span class="space"> </span><span class="title">Using Substitution to Find an Antiderivative.</span>
+</h4>
+<p id="p-1846">Use substitution to find the antiderivative of <span class="process-math">\(\displaystyle{ \int 6x (3x^2+4)^4 dx}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-326" id="solution-326"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-326"><div class="solution solution-like">
+<p id="p-1847">The first step is to choose an expression for <span class="process-math">\(u\text{.}\)</span> We choose <span class="process-math">\(u=3x^2+4.\)</span> because then <span class="process-math">\(du=6xdx.,\)</span> and we already have <span class="process-math">\(du\)</span> in the integrand. Write the integral in terms of <span class="process-math">\(u\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{ \int 6x (3x^2+4)^4dx}=\displaystyle{ \int u^4du}.
+\end{equation*}
+</div>
+<p id="p-1848">Remember that <span class="process-math">\(du\)</span> is the derivative of the expression chosen for <span class="process-math">\(u\text{,}\)</span> regardless of what is inside the integrand. Now we can evaluate the integral with respect to <span class="process-math">\(u\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-110">
+\begin{align*}
+\displaystyle{ \int u^4du}\amp =\frac{u^5}{5}+C\\
+\amp =\frac{(3x^2+4)^5}{5}+C.
+\end{align*}
+</div>
+<p id="p-1849"><em class="emphasis">Analysis</em></p>
+<p id="p-1850">We can check our answer by taking the derivative of the result of integration. We should obtain the integrand. Picking a value for <span class="process-math">\(C\)</span> of 1, we let <span class="process-math">\(y=\frac{1}{5}(3x^2+4)^5+1.\)</span> We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y=\frac{1}{5}(3x^2+4)^5+1,
+\end{equation*}
+</div>
+<p id="p-1851">so</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-111">
+\begin{align*}
+y' \amp =\frac{1}{5}\cdot 5(3x^2+4)^4 6x\\
+\amp =6x(3x^2+4)^4.
+\end{align*}
+</div>
+<p id="p-1852">This is exactly the expression we started with inside the integrand.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-139"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.84</span><span class="period">.</span>
+</h4>
+<p id="p-1853">Use substitution to find the antiderivative of <span class="process-math">\(\displaystyle{ \int 3x^2(x^3-3)^2dx}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-136" id="hint-136"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-136"><div class="hint solution-like"><p id="p-1854">Let <span class="process-math">\(u=x^3-3.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-327" id="solution-327"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-327"><div class="solution solution-like"><p id="p-1855"><span class="process-math">\(\displaystyle{ \int 3x^2(x^3-3)^2dx}=\frac{1}{3}(x^3-3)^3+C\)</span></p></div></div>
+</div></article><p id="p-1856">Sometimes we need to adjust the constants in our integral if they don’t match up exactly with the expressions we are substituting.</p>
+<article class="example example-like" id="fs-id1170571334083"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.85</span><span class="period">.</span><span class="space"> </span><span class="title">Using Substitution with Alteration.</span>
+</h4>
+<p id="p-1857">Use substitution to find the antiderivative of <span class="process-math">\(\displaystyle{ \int z\sqrt{z^2-5}dz}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-328" id="solution-328"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-328"><div class="solution solution-like">
+<p id="p-1858">Rewrite the integral as <span class="process-math">\(\displaystyle{ \int z(z^2-5)^{1/2}dz}.\)</span> Let <span class="process-math">\(u=z^2-5\)</span> and <span class="process-math">\(du=2z dz.\)</span> Now we have a problem because <span class="process-math">\(du=2z dz\)</span> and the original expression has only <span class="process-math">\(z dz.\)</span> We have to alter our expression for <span class="process-math">\(du\)</span> or the integral in <span class="process-math">\(u\)</span> will be twice as large as it should be. If we multiply both sides of the <span class="process-math">\(du\)</span> equation by <span class="process-math">\(\frac{1}{2}.\)</span> we can solve this problem. Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-112">
+\begin{align*}
+u\amp =z^2-5\\
+du\amp =2z dz\\
+\frac{1}{2}du\amp =\frac{1}{2}(2z)dz=z dz.
+\end{align*}
+</div>
+<p id="p-1859">Write the integral in terms of <span class="process-math">\(u\text{,}\)</span> but pull the <span class="process-math">\(\frac{1}{2}\)</span> outside the integration symbol:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{ \int z (z^2-5)^{1/2}dz=}\frac{1}{2}\displaystyle{ \int u^{1/2}du.}
+\end{equation*}
+</div>
+<p id="p-1860">Integrate the expression in <span class="process-math">\(u\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-113">
+\begin{align*}
+\frac{1}{2}\displaystyle{ \int u^{1/2} du}\amp =\frac{1}{2}\cdot\frac{u^{3/2}}{\frac{3}{2}}+C\\
+\amp =\frac{1}{2}\cdot\frac{2}{3}u^{3/2}+C\\
+\amp =\frac{1}{3}u^{3/2}+C\\
+\amp =\frac{1}{3}(z^2-5)^{3/2}+C.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-140"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.86</span><span class="period">.</span>
+</h4>
+<p id="p-1861">Use substitution to find the antiderivative of <span class="process-math">\(\displaystyle{ \int x^2(x^3+5)^9dx}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-137" id="hint-137"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-137"><div class="hint solution-like"><p id="p-1862">Multiply the <span class="process-math">\(du\)</span> equation by <span class="process-math">\(\frac{1}{3}.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-329" id="solution-329"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-329"><div class="solution solution-like"><p id="p-1863"><span class="process-math">\(\frac{(x^3+5)^{10}}{30}+C\)</span></p></div></div>
+</div></article><article class="example example-like" id="U_Sub_5.5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.87</span><span class="period">.</span>
+</h4>
+<p id="p-1864">Use substitution to evaluate the integral <span class="process-math">\(\displaystyle{ \int\frac{t^2+1}{(t^3+3t+1)^4}dt}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-330" id="solution-330"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-330"><div class="solution solution-like">
+<p id="p-1865">We know the derivative of <span class="process-math">\(t^3+3t+1\)</span> is <span class="process-math">\(3t^2+3,\)</span> so we set <span class="process-math">\(u=t^3+3t+1.\)</span> Then <span class="process-math">\(du=(3t^2+3)dt.\)</span> Moreover, <span class="process-math">\(\frac{1}{3}du=(t^2+1)dt.\)</span> Substituting into the integral, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{ \int\frac{t^2+1}{(t^3+3t+1)^4}dt=\frac{1}{3} \displaystyle{ \int \frac{du}{u^4}}}.
+\end{equation*}
+</div>
+<p id="p-1866">Evaluating the integral, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-114">
+\begin{align*}
+\displaystyle{\frac{1}{3}\int \frac{du}{u^4}}\amp = \displaystyle{ \frac{1}{3}\int u^{-4}du}\\
+\amp = -\frac{1}{9}u^{-3}+C.
+\end{align*}
+</div>
+<p id="p-1867">Putting the answer back in terms of <span class="process-math">\(t\text{,}\)</span> we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-115">
+\begin{align*}
+\displaystyle{ \int \frac{t^2+1}{(t^3+3t+1)^4}dt}\amp =-\frac{1}{9}u^{-3}+C\\
+\amp =-\frac{1}{9(t^3+3t+1)^3}+C.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-141"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.88</span><span class="period">.</span>
+</h4>
+<p id="p-1868">Use substitution to evaluate the integral <span class="process-math">\(\displaystyle{ \int (t+1)(t^2+2t)^7 dt.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-138" id="hint-138"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-138"><div class="hint solution-like"><p id="p-1869">Use the process from <a href="" class="xref" data-knowl="./knowl/U_Sub_5.5.html" title="Example 5.87">Example 5.87</a> to solve the problem.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-331" id="solution-331"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-331"><div class="solution solution-like"><p id="p-1870"><span class="process-math">\(\frac{1}{16}(t^2+2t)^8+C\)</span></p></div></div>
+</div></article><section class="subsubsection" id="subsubsection-24"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">5.5.1.1</span> <span class="title">Indefinite Integrals Involving Exponential and Logarithmic Functions</span>
+</h4>
+<article class="example example-like" id="example-191"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.89</span><span class="period">.</span>
+</h5>Find the antiderivative of the exponential function <span class="process-math">\(e^{-x}\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-332" id="solution-332"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-332"><div class="solution solution-like">Use substitution, setting <span class="process-math">\(u=-x\text{,}\)</span> and then <span class="process-math">\(du=-1 dx\text{.}\)</span> Multiply the <span class="process-math">\(du\)</span> by -1, so you now have <span class="process-math">\(-du=dx\text{.}\)</span> Then,<div class="displaymath process-math" data-contains-math-knowls="" id="md-116">
+\begin{align*}
+\int e^{-x} dx\amp=-\int e^u du\\
+\amp=-e^u +C\\
+\amp=-e^{-x}+C.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-142"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.90</span><span class="period">.</span>
+</h5>Find the antiderivative of the function using substitution: <span class="process-math">\(x^2e^{-2x^3}\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-139" id="hint-139"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-139"><div class="hint solution-like">Use <span class="process-math">\(u=-2x^3\text{.}\)</span>
+</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-333" id="solution-333"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-333"><div class="solution solution-like"><span class="process-math">\(-\frac{1}{6}e^{-2x^3}+C\)</span></div></div>
+</div></article><p id="p-1871">A common mistake when dealing with exponential expressions is treating the exponent on e the same way we treat exponents in polynomial expressions. We cannot use the power rule for the exponent on e. This can be especially confusing when we have both exponentials and polynomials in the same expression, as in the previous checkpoint. In these cases, we should always double-check to make sure we’re using the right rules for the functions we’re integrating.</p>
+<article class="example example-like" id="example-192"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.91</span><span class="period">.</span><span class="space"> </span><span class="title">Square Root of an Exponential Function.</span>
+</h5>Find the antiderivative of the exponential function <span class="process-math">\(e^x\sqrt{1+e^x}\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-334" id="solution-334"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-334"><div class="solution solution-like">
+<p id="p-1872">First rewrite the problem using a rational exponent:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_06_001.html">
+\begin{equation*}
+\int e^x\sqrt{1+e^x}dx=\int e^x(1+e^x)^{1/2}dx
+\end{equation*}
+</div>
+<p id="p-1873">Using substitution, chose <span class="process-math">\(u=1+e^x\text{.}\)</span> Then, <span class="process-math">\(du=e^x dx\text{.}\)</span> We have (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_06_001.html" title="Figure 5.92">Figure 5.92</a>)</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_06_001.html">
+\begin{equation*}
+\int u^{1/2}du=\frac{u^{3/2}}{3/2}+C=\frac{2}{3}u^{3/2}+C=\frac{2}{3}(1+e^x)^{3/2}+C.
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_06_001"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/CNX_Calc_Figure_05_06_001.jpg" class="contained" alt='"The graph shows an exponential function times the square root of an exponential function."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.92<span class="period">.</span></span><span class="space"> </span>The graph shows an exponential function times the square root of an exponential function.</figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-143"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.93</span><span class="period">.</span>
+</h5>Find the antiderivative of <span class="process-math">\(e^x(3e^x-2)^2\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-140" id="hint-140"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-140"><div class="hint solution-like">Use <span class="process-math">\(u=3e^x-2\text{.}\)</span>
+</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-335" id="solution-335"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-335"><div class="solution solution-like"><span class="process-math">\(\frac{1}{9}(3e^x-2)^3+C\)</span></div></div>
+</div></article><article class="example example-like" id="example-193"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.94</span><span class="period">.</span><span class="space"> </span><span class="title">Find an Antiderivative Involving <span class="process-math">\(\ln x\)</span>.</span>
+</h5>Find the antiderivative of the function <span class="process-math">\(\frac{3}{x-10}\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-336" id="solution-336"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-336"><div class="solution solution-like">
+<p id="p-1874">First factor the 3 outside the integral symbol. Then use the <span class="process-math">\(u^{-1}\)</span> rule. Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_06_003.html" id="md-117">
+\begin{align*}
+\int \frac{3}{x-10} dx\amp=3\int \frac{1}{x-10}dx\\
+\amp=3\int \frac{du}{u}\\
+\amp=3\ln|u|+C\\
+\amp=3\ln|x-10|+C,\;x\neq10.
+\end{align*}
+</div>
+<p id="p-1875">See <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_06_003.html" title="Figure 5.95">Figure 5.95</a>.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_06_003"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/CNX_Calc_Figure_05_06_003.jpg" class="contained" alt='"The graph shows the rational function 3/(x-10) with a discontinuity at x=10."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.95<span class="period">.</span></span><span class="space"> </span>The domain of this function is  <span class="process-math">\(x\neq10\text{.}\)</span></figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-144"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.96</span><span class="period">.</span>
+</h5>Find the antiderivative of <span class="process-math">\(\frac{1}{x+2}\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-141" id="hint-141"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-141"><div class="hint solution-like">Use <span class="process-math">\(u=x+2\text{.}\)</span>
+</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-337" id="solution-337"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-337"><div class="solution solution-like"><span class="process-math">\(\ln|x+2|+C\)</span></div></div>
+</div></article><article class="example example-like" id="example-194"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.97</span><span class="period">.</span><span class="space"> </span><span class="title">Finding an Antiderivative of a Rational Function.</span>
+</h5>Find the antiderivative of <span class="process-math">\(\frac{2x^3+3x}{x^4+3x^2}\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-338" id="solution-338"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-338"><div class="solution solution-like">
+<p id="p-1876">Use substitution. Let <span class="process-math">\(u=x^4+3x^2\text{,}\)</span> then <span class="process-math">\(du=4x^3+6x\text{.}\)</span> Alter <span class="process-math">\(du\)</span> by factoring out the 2. Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-118">
+\begin{align*}
+du\amp=(4x^3+6x)dx\\
+\amp=2(2x^3+3x)dx\\
+\frac{1}{2}\amp=(2x^3+3x)dx
+\end{align*}
+</div>
+<p id="p-1877">Rewite the integrand in <span class="process-math">\(u\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int\frac{2x^3+3x}{x^4+3x^2}dx=\frac{1}{2}\int u^{-1}du.
+\end{equation*}
+</div>Then we have<div class="displaymath process-math" data-contains-math-knowls="" id="md-119">
+\begin{align*}
+\frac{1}{2}\int u^{-1}du\amp=\frac{1}{2}\ln|u|+C\\
+\amp=\frac{1}{2}\ln|x^4+3x^2|+C.
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="p-1878">Exponential functions are used in many real-life applications. The number e is often associated with compounded or accelerating growth, as we have seen in earlier sections about the derivative. Although the derivative represents a rate of change or a growth rate, the integral represents the total change or the total growth. Let's look at an example in which integration of an exponential function solves a common business application.</p>
+<p id="p-1879">A price-demand function tells us the relationship between the quantity of a product demanded and the price of the product. In general, price decreases as quantity demanded increases. The marginal price-demand function is the derivative of the price-demand function and it tells us how fast the price changes at a given level of production. These functions are used in business to determine the price-elasticity of demand, and to help companies determine whether changing production levels would be profitable.</p>
+<article class="example example-like" id="example-195"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.98</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Price-Demand Equation.</span>
+</h5>Find the price-demand equation for a particular brand of toothpaste at a supermarket chain when the demand is 50 tubes per week at $2.35 per tube, given that the marginal price-demand function,  <span class="process-math">\(p'(x)\text{,}\)</span>  for <span class="process-math">\(x\)</span> number of tubes per week, is given as<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p'(x)=-0.015e^{-0.01x}.
+\end{equation*}
+</div>If the supermarket chain sells 100 tubes per week, what price should it set?<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-339" id="solution-339"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-339"><div class="solution solution-like">
+<p id="p-1880">To find the price-demand equation, integrate the marginal price-demand function. First find the antiderivative, then look at the particulars. Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-120">
+\begin{align*}
+p(x)\amp=\int -0.015e^{-0.01x}dx\\
+\amp=-0.01\int e^{-0.01x}dx.
+\end{align*}
+</div>
+<p id="p-1881">Using substitution, let  <span class="process-math">\(u=-0.01\text{ and } du=-0.01 dx.\)</span> Then, divide both sides of the <span class="process-math">\(du\)</span> equation by -0.01. This gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-121">
+\begin{align*}
+\frac{-0.015}{-0.01}\int e^udu\amp=1.5\int e^udu\\
+\amp=1.5e^u+C\\
+\amp=1.5e^{-0.01x}+C.
+\end{align*}
+</div>
+<p id="p-1882">The next step is to solve for C. We know that when the price is $2.35 per tube, the demand is 50 tubes per week. This means</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-122">
+\begin{align*}
+p(50)\amp=1.5e^{-0.01(50)}+C\\
+\amp=2.35.
+\end{align*}
+</div>Now, just solve for C:<div class="displaymath process-math" data-contains-math-knowls="" id="md-123">
+\begin{align*}
+C\amp=2.35-1.5e{-0.5}\\
+\amp=2.35-0.91\\
+\amp=1.44.
+\end{align*}
+</div>Thus,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p(x)=1.5e^{-0.01x}+1.44.
+\end{equation*}
+</div>
+<p id="p-1883">If the supermarket sells 100 tubes of toothpaste per week, the price would be</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p(100)=1.5e^{-0.01(100)}+1.44=1.5e^{-1}+1.44\approx 1.99.
+\end{equation*}
+</div>
+<p id="p-1884">The supermarket should charge $1.99 per tube if it is selling 100 tubes per week.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-145"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.99</span><span class="period">.</span><span class="space"> </span><span class="title">Average Future Value of an Account Continuously Compounded.</span>
+</h5>An account with initial amount of $2000 is compounded continuosly at an annual rate of 10% per year. What is the average amount of money in the account over the first 8 years?<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-142" id="hint-142"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-142"><div class="hint solution-like">Find the average value over the interval [0,8]. Recall the Average Value of a function over an interval is <a href="sec_Ch5Sec2.html#Average-Value_5.2" class="internal" title="Equation">Equation </a> and to find the future value of an account continuously compounded use <a href="sec_Ch1Sec5.html#Compounded-Continuously_1.5" class="internal" title="[m] [STRUCT].[NUM]">[m] [STRUCT].[NUM]</a>.</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-340" id="solution-340"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-340"><div class="solution solution-like"><span class="process-math">\(2500e^{8(0.1)}-2500\approx \$ 3063.85\)</span></div></div>
+</div></article></section><p id="p-1885">Sometimes we need to manipulate an integral in ways that are more complicated than just multiplying or dividing by a constant. We need to eliminate all the expressions within the integrand that are in terms of the original variable. When we are done, <span class="process-math">\(u\)</span> should be the only variable in the integrand. In some cases, this means solving for the original variable in terms of <span class="process-math">\(u\text{.}\)</span> This technique should become clear in the next example.</p>
+<article class="example example-like" id="fs-id1170573426799"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.100</span><span class="period">.</span><span class="space"> </span><span class="title">Finding an Antiderivative Using <span class="process-math">\(u\)</span>-Substitution.</span>
+</h4>
+<p id="p-1886">Use substitution to find the antiderivative of <span class="process-math">\(\displaystyle{ \int \frac{x}{\sqrt{x-1}}dx.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-341" id="solution-341"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-341"><div class="solution solution-like">
+<p id="p-1887">If we let <span class="process-math">\(u=x-1,\)</span> then <span class="process-math">\(du=dx.\)</span> But this does not account for the <span class="process-math">\(x\)</span> in the numerator of the integrand. We need to express <span class="process-math">\(x\)</span> in terms of <span class="process-math">\(u\text{.}\)</span> If <span class="process-math">\(u=x-1,\)</span> then <span class="process-math">\(x=u+1.\)</span> Now we can rewrite the integral in terms of <span class="process-math">\(u\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-124">
+\begin{align*}
+\displaystyle{ \int \frac{x}{\sqrt{x-1}}dx}\amp =\displaystyle{ \int \frac{u+1}{\sqrt{u}}du}\\
+\amp =\displaystyle{ \int \sqrt{u}+\frac{1}{\sqrt{u}}du}\\
+\amp =\displaystyle{ \int (u^{1/2}+u^{-1/2})du}.
+\end{align*}
+</div>
+<p id="p-1888">Then we integrate in the usual way, replace <span class="process-math">\(u\)</span> with the original expression, and factor and simplify the result. Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-125">
+\begin{align*}
+\displaystyle{ \int (u^{1/2}+u^{-1/2})du}\amp =\frac{2}{3}u^{3/2}+2u^{1/2}+C\\
+\amp =\frac{2}{3}(x-1)^{3/2}+2(x-1)^{1/2}+C\\
+\amp =(x-1)^{1/2}\left[\frac{2}{3}(x-1)+2\right]+C\\
+\amp =(x-1)^{1/2}\left(\frac{2}{3}x-\frac{2}{3}+\frac{6}{3}\right)\\
+\amp =(x-1)^{1/2}\left(\frac{2}{3}x+\frac{4}{3}\right)\\
+\amp =\frac{2}{3}(x-1)^{1/2}(x+2)+C.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-146"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.101</span><span class="period">.</span>
+</h4>
+<p id="p-1889">Use substitution to evaluate the indefinite integral <span class="process-math">\(\displaystyle{ \int\frac{t^2}{\sqrt{t-1}} dt}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-143" id="hint-143"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-143"><div class="hint solution-like"><p id="p-1890">Use the process from <a href="" class="xref" data-knowl="./knowl/fs-id1170573426799.html" title="Example 5.100: Finding an Antiderivative Using u-Substitution">Example 5.100</a> to solve the problem.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-342" id="solution-342"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-342"><div class="solution solution-like"><p id="p-1891"><span class="process-math">\(\frac{2}{5}\sqrt{(t-1)^5}+\frac{4}{3}\sqrt{(t-1)^3}+2\sqrt{t-1}+C\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-144"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.5.2</span> <span class="title">Substitution for Definite Integrals</span>
+</h3>
+<p id="p-1892">Substitution can be used with definite integrals, too. However, using substitution to evaluate a definite integral requires a change to the limits of integration. If we change variables in the integrand, the limits of integration change as well.</p>
+<article class="theorem theorem-like" id="theorem-38"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.102</span><span class="period">.</span><span class="space"> </span><span class="title">Substitution with Definite Integrals.</span>
+</h4>
+<p id="p-1893">Let <span class="process-math">\(u=g(x)\)</span> and let <span class="process-math">\(g'\)</span> be continuous over an interval <span class="process-math">\([a,b],\)</span> and let <span class="process-math">\(f\)</span> be continuous over the range of <span class="process-math">\(u=g(x).\)</span> Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{ \int_{a}^{b} f(g(x))g'(x)dx}=\displaystyle{ \int_{g(a)}^{g(b)}f(u)du}.
+\end{equation*}
+</div></article><p id="p-1894">Although we will not formally prove this theorem, we justify it with some calculations here. From the substitution rule for indefinite integrals, if <span class="process-math">\(F(x)\)</span> is an antiderivative of <span class="process-math">\(f(x),\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170571215481.html ./knowl/fs-id1170573593895.html">
+\begin{equation*}
+\displaystyle{ \int f(g(x))g'(x)dx=F(g(x))+C.}
+\end{equation*}
+</div>
+<p id="p-1895">Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1170571215481.html ./knowl/fs-id1170573593895.html" id="md-126">
+\begin{align*}
+\displaystyle{ \int_{a}^{b} f[g(x)]g'(x)dx}\amp =\left.F(g(x))\right|_{x=a}^{x=b}\\
+\amp =F(g(b))-F(g(a))\\
+\amp =\left.F(u)\right|_{u=g(a)}^{u=g(b)}\\
+\amp =\displaystyle{ \int_{g(a)}^{g(b)}f(u)du},
+\end{align*}
+</div>
+<p id="p-1896">and we have the desired result.</p>
+<article class="example example-like" id="fs-id1170571215481"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.103</span><span class="period">.</span><span class="space"> </span><span class="title">Using Substitution to Evaluate a Definite Integral.</span>
+</h4>
+<p id="p-1897">Use substitution to evaluate <span class="process-math">\(\displaystyle{ \int_{0}^{1} x^2(1+2x^3)^5}dx.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-343" id="solution-343"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-343"><div class="solution solution-like">
+<p id="p-1898">Let <span class="process-math">\(u=1+2x^3,\)</span> so <span class="process-math">\(du=6x^2dx.\)</span> Since the original function includes one factor of <span class="process-math">\(x^2\)</span> and <span class="process-math">\(du=6x^2dx,\)</span> multiply both sides of the <span class="process-math">\(du\)</span> equation by <span class="process-math">\(1/6.\)</span> Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-127">
+\begin{align*}
+du\amp = 6x^2dx\\
+\frac{1}{6}du\amp = x^2dx.
+\end{align*}
+</div>
+<p id="p-1899">To adjust the limits of integration, note that when <span class="process-math">\(x=0,u=1+2(0)=1,\)</span> and when <span class="process-math">\(x=1,u=1+2(1)=3.\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{ \int_{0}^{1} x^2(1+2x^3)^5dx=\frac{1}{6}\displaystyle{ \int_{1}^{3} u^5du}}.
+\end{equation*}
+</div>
+<p id="p-1900">Evaluating this expression, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-128">
+\begin{align*}
+\frac{1}{6}\displaystyle{ \int_{1}^{3} u^5du}\amp =\left.\left(\frac{1}{6}\right)\left(\frac{u^6}{6}\right)\right|_1^3\\
+\amp =\frac{1}{36}\left[(3)^6-(1)^6\right]\\
+\amp =\frac{182}{9}.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-147"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.104</span><span class="period">.</span>
+</h4>
+<p id="p-1901">Use substitution to evaluate the definite integral <span class="process-math">\(\displaystyle{ \int_{-1}^{0}y(2y^2-3)^5dy}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-144" id="hint-144"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-144"><div class="hint solution-like"><p id="p-1902">Use the steps from <a href="" class="xref" data-knowl="./knowl/fs-id1170571215481.html" title="Example 5.103: Using Substitution to Evaluate a Definite Integral">Example 5.103</a> to solve the problem.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-344" id="solution-344"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-344"><div class="solution solution-like"><p id="p-1903"><span class="process-math">\(\frac{91}{3}\)</span></p></div></div>
+</div></article><section class="subsubsection" id="subsubsection-25"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">5.5.2.1</span> <span class="title">Definite Integrals Involving Exponential and Logarithmic Functions</span>
+</h4>
+<article class="example example-like" id="fs-id1170573593895"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.105</span><span class="period">.</span><span class="space"> </span><span class="title">Using Substitution with an Exponential Function.</span>
+</h5>
+<p id="p-1904">Use substitution to evaluate <span class="process-math">\(\displaystyle{ \int_{0}^{1} xe^{4x^2+3}dx}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-345" id="solution-345"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-345"><div class="solution solution-like">
+<p id="p-1905">Let <span class="process-math">\(u=4x^3+3.\)</span> Then, <span class="process-math">\(du=8xdx.\)</span> To adjust the limits of integration, we note that when <span class="process-math">\(x=0,u=3,\)</span> and when <span class="process-math">\(x=1,u=7.\)</span> So our substitution gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-129">
+\begin{align*}
+\displaystyle{ \int_{0}^{1} xe^{4x^2+3}dx}\amp =\frac{1}{8}\displaystyle{ \int_{3}^{7} e^udu}\\
+\amp =\left.\frac{1}{8}e^u\right|_3^7\\
+\amp =\frac{e^7-e^3}{8}\\
+\amp\approx 134.568.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-148"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.106</span><span class="period">.</span>
+</h5>
+<p id="p-1906">Use substitution to evaluate <span class="process-math">\(\displaystyle{ \int_{0}^{1} (x^3+1)e^{x^4+4x+3} dx}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-145" id="hint-145"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-145"><div class="hint solution-like"><p id="p-1907">Use the process from <a href="" class="xref" data-knowl="./knowl/fs-id1170573593895.html" title="Example 5.105: Using Substitution with an Exponential Function">Example 5.105</a> to solve the problem.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-346" id="solution-346"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-346"><div class="solution solution-like"><p id="p-1908"><span class="process-math">\(\frac{1}{4}(e^8-e^3)\approx 740.218\)</span></p></div></div>
+</div></article><article class="example example-like" id="example-199"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.107</span><span class="period">.</span>
+</h5>Evaluate<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_A^4\frac{1}{2x+1}dx\text{ where }0\lt A\lt 4\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-347" id="solution-347"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-347"><div class="solution solution-like">
+<p id="p-1909">Let <span class="process-math">\(u=2x+1.\)</span> Then, <span class="process-math">\(du=2dx.\)</span> To adjust the limits of integration, we note that when <span class="process-math">\(x=A,\;u=2A+1,\)</span> and when <span class="process-math">\(x=4,\;u=9.\)</span> So our substitution gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-130">
+\begin{align*}
+\displaystyle{ \int_{A}^{4} \frac{1}{2x+1}}\amp =\frac{1}{2}\displaystyle{ \int_{2A+1}^{9} \frac{1}{u}du}\\
+\amp =\left.\frac{1}{2}\ln|u|\right|_{2A+1}^9\\
+\amp =\frac{\ln 9-\ln|2A+1|}{2}.\\
+\amp =\frac{\ln 9-\ln(2A+1)}{2}\text{ since }0\lt A\lt 4.
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="p-1910">Substitution may be only one of the techniques needed to evaluate a definite integral. All of the properties and rules of integration apply independently, and trigonometric functions may need to be rewritten using a trigonometric identity before we can apply substitution. Also, we have the option of replacing the original expression for <span class="process-math">\(u\)</span> after we find the antiderivative, which means that we do not have to change the limits of integration.</p></section></section><section class="subsection" id="subsection-145"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.5.3</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-796"><p id="p-derived-li-796">Substitution is a technique that simplifies the integration of functions that are the result of a chain-rule derivative. The term ‘substitution’ refers to changing variables or substituting the variable <span class="process-math">\(u\)</span> and <span class="process-math">\(du\)</span> for appropriate expressions in the integrand.</p></li>
+<li id="li-797"><p id="p-derived-li-797">When using substitution for a definite integral, we also have to change the limits of integration.</p></li>
+</ul></section><section class="subsection" id="subsection-146"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.5.4</span> <span class="title">Key Equations</span>
+</h3>
+<ul class="disc">
+<li id="li-798"><p id="p-derived-li-798"><em class="emphasis">Substitution with Indefinite Integrals</em><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{ \int f(g(x))g'(x)dx=\displaystyle{ \int f(u)du}}=F(u)+C=F(g(x))+C
+\end{equation*}
+</div></p></li>
+<li id="li-799"><p id="p-derived-li-799"><em class="emphasis">Substitution with Definite Integrals</em><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{ \int_{a}^{b} f(g(x))g'(x)dx}=\displaystyle{ \int_{g(a)}^{g(b)}f(u)du}
+\end{equation*}
+</div></p></li>
+</ul></section></section></div></main>
+</div>
+</body>
+</html>

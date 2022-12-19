@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:02:48-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Applied Optimization Problems</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<meta property="book:author" content="Custom Business Calculus Edition ">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline">Custom Business Calculus Edition</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch4Sec6.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_fourth.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch4Sec10.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch4Sec6.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_fourth.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch4Sec10.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="meta_frontmatter-preface.html" data-scroll="meta_frontmatter-preface" class="internal">Preface: OpenStax Calculus Volume 1</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2" class="internal">Preface: Business Calculus Custom Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="active">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Derivatives</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="sec_Ch4Sec7"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.7</span> <span class="title">Applied Optimization Problems</span>
+</h2>
+<section class="introduction" id="introduction-36"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc"><li id="li-685"><p id="p-derived-li-685">Set up and solve optimization problems in several applied fields.</p></li></ul>
+<p id="p-1483">One common application of calculus is calculating the minimum or maximum value of a function. For example, companies often want to minimize production costs or maximize revenue. In manufacturing, it is often desirable to minimize the amount of material used to package a product with a certain volume. In this section, we show how to set up these types of minimization and maximization problems and solve them by using the tools developed in this chapter.</p></section><section class="subsection" id="subsection-118"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Solving Optimization Problems over a Closed, Bounded Interval</span>
+</h3>
+<p id="p-1484">The basic idea of the <dfn class="terminology">optimization problems</dfn> that follow is the same. We have a particular quantity that we are interested in maximizing or minimizing. However, we also have some auxiliary condition that needs to be satisfied. For example, in <a href="" class="xref" data-knowl="./knowl/fs-id1165043431956.html" title="Example 4.135: Maximizing the Area of a Garden">Example 4.135</a>, we are interested in maximizing the area of a rectangular garden. Certainly, if we keep making the side lengths of the garden larger, the area will continue to become larger. However, what if we have some restriction on how much fencing we can use for the perimeter? In this case, we cannot make the garden as large as we like. Let's look at how we can maximize the area of a rectangle subject to some constraint on the perimeter.</p>
+<article class="example example-like" id="fs-id1165043431956"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.135</span><span class="period">.</span><span class="space"> </span><span class="title">Maximizing the Area of a Garden.</span>
+</h4>
+<p id="p-1485">A rectangular garden is to be constructed using a rock wall as one side of the garden and wire fencing for the other three sides (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_001.html" title="Figure 4.136">Figure 4.136</a>). Given <span class="process-math">\(100\)</span> ft of wire fencing, determine the dimensions that would create a garden of maximum area. What is the maximum area?</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_07_001"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_07_001.jpg" class="contained" alt='"A drawing of a garden has x and y written on the vertical and horizontal sides, respectively. There is a rock wall running along the entire bottom horizontal length of the drawing."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.136<span class="period">.</span></span><span class="space"> </span>We want to determine the measurements <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> that will create a garden with a maximum area using <span class="process-math">\(100\)</span> ft of fencing.</figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-273" id="solution-273"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-273"><div class="solution solution-like">
+<p id="p-1486">Let <span class="process-math">\(x\)</span> denote the length of the side of the garden perpendicular to the rock wall and <span class="process-math">\(y\)</span> denote the length of the side parallel to the rock wall. Then the area of the garden is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_001.html ./knowl/CNX_Calc_Figure_04_07_002.html">
+\begin{equation*}
+A=x\cdot y.
+\end{equation*}
+</div>
+<p id="p-1487">We want to find the maximum possible area subject to the constraint that the total fencing is <span class="process-math">\(100 \text{ ft }.\)</span> From <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_001.html" title="Figure 4.136">Figure 4.136</a>, the total amount of fencing used will be <span class="process-math">\(2x+y.\)</span> Therefore, the constraint equation is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_001.html ./knowl/CNX_Calc_Figure_04_07_002.html">
+\begin{equation*}
+2x+y=100.
+\end{equation*}
+</div>
+<p id="p-1488">Solving this equation for <span class="process-math">\(y,\)</span> we have <span class="process-math">\(y=100-2x.\)</span> Thus, we can write the area as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_001.html ./knowl/CNX_Calc_Figure_04_07_002.html">
+\begin{equation*}
+A(x)=x\cdot(100-2x)=100x-2x^2.
+\end{equation*}
+</div>
+<p id="p-1489">Before trying to maximize the area function <span class="process-math">\(A(x)=100x-2x^2,\)</span> we need to determine the domain under consideration. To construct a rectangular garden, we certainly need the lengths of both sides to be positive. Therefore, we need <span class="process-math">\(x\gt 0\)</span> and <span class="process-math">\(y\gt 0.\)</span> Since <span class="process-math">\(y=100-2x,\)</span> if <span class="process-math">\(y\gt 0,\)</span> then <span class="process-math">\(x\lt 50.\)</span> Therefore, we are trying to determine the maximum value of <span class="process-math">\(A(x)\)</span> for <span class="process-math">\(x\)</span> over the open interval <span class="process-math">\((0,50).\)</span> We do not know that a function necessarily has a maximum value over an open interval. However, we do know that a continuous function has an absolute maximum (and absolute minimum) over a closed interval. Therefore, let's consider the function <span class="process-math">\(A(x)=100x-2x^2\)</span> over the closed interval <span class="process-math">\([0,50].\)</span> If the maximum value occurs at an interior point, then we have found the value <span class="process-math">\(x\)</span> in the open interval <span class="process-math">\((0,50)\)</span> that maximizes the area of the garden. Therefore, we consider the following problem:</p>
+<p id="p-1490">Maximize <span class="process-math">\(A(x)=100x-2x^2\)</span> over the interval <span class="process-math">\([0,50].\)</span></p>
+<p id="p-1491">As mentioned earlier, since <span class="process-math">\(A\)</span> is a continuous function on a closed, bounded interval, by the extreme value theorem, it has a maximum and a minimum. These extreme values occur either at endpoints or critical points. At the endpoints, <span class="process-math">\(A(x)=0.\)</span> Since the area is positive for all <span class="process-math">\(x\)</span> in the open interval <span class="process-math">\((0,50),\)</span> the maximum must occur at a critical point. Differentiating the function <span class="process-math">\(A(x),\)</span> we obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_001.html ./knowl/CNX_Calc_Figure_04_07_002.html">
+\begin{equation*}
+A'(x)=100-4x.
+\end{equation*}
+</div>
+<p id="p-1492">Therefore, the only critical point is <span class="process-math">\(x=25\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_002.html" title="Figure 4.137">Figure 4.137</a>). We conclude that the maximum area must occur when <span class="process-math">\(x=25.\)</span> Then we have <span class="process-math">\(y=100-2x=100-2(25)=50.\)</span> To maximize the area of the garden, let <span class="process-math">\(x=25\)</span> ft and <span class="process-math">\(y=50 \text{ ft }.\)</span> The area of this garden is <span class="process-math">\(1250\text{ft}^2\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_07_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_07_002.jpg" class="contained" alt='"The function A(x) = 100x-2x^2 is graphed. At its maximum there is an intersection of two dashed lines and text that reads "Maximum area is 1250 square feet when x = 25 feet.""'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.137<span class="period">.</span></span><span class="space"> </span>To maximize the area of the garden, we need to find the maximum value of the function <span class="process-math">\(A(x)=100x-2x^2.\)</span></figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-115"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.138</span><span class="period">.</span>
+</h4>
+<p id="p-1493">Determine the maximum area if we want to make the same rectangular garden as in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_002.html" title="Figure 4.137">Figure 4.137</a>, but we have <span class="process-math">\(200\)</span> ft of fencing.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-112" id="hint-112"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-112"><div class="hint solution-like"><p id="p-1494">We need to maximize the function <span class="process-math">\(A(x)=200x-2x^2\)</span> over the interval <span class="process-math">\([0,100].\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-274" id="solution-274"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-274"><div class="solution solution-like"><p id="p-1495">The maximum area is <span class="process-math">\(5000\text{ ft}^2\)</span></p></div></div>
+</div></article><p id="p-1496">Now let's look at a general strategy for solving optimization problems similar to <a href="" class="xref" data-knowl="./knowl/fs-id1165043431956.html" title="Example 4.135: Maximizing the Area of a Garden">Example 4.135</a>.</p>
+<article class="note remark-like" id="note-38"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">4.139</span><span class="period">.</span><span class="space"> </span><span class="title">Problem-Solving Strategy: Solving Optimization Problems.</span>
+</h4>
+<ol class="decimal">
+<li id="li-686"><p id="p-derived-li-686">Introduce all variables. If applicable, draw a figure and label all variables.</p></li>
+<li id="li-687"><p id="p-derived-li-687">Determine which quantity is to be maximized or minimized, and for what range of values of the other variables (if this can be determined at this time).</p></li>
+<li id="li-688"><p id="p-derived-li-688">Write a formula for the quantity to be maximized or minimized in terms of the variables. This formula may involve more than one variable.</p></li>
+<li id="li-689"><p id="p-derived-li-689">Write any equations relating the independent variables in the formula from step <span class="process-math">\(3.\)</span> Use these equations to write the quantity to be maximized or minimized as a function of one variable.</p></li>
+<li id="li-690"><p id="p-derived-li-690">Identify the domain of consideration for the function in step <span class="process-math">\(4\)</span> based on the physical problem to be solved.</p></li>
+<li id="li-691"><p id="p-derived-li-691">Locate the maximum or minimum value of the function from step <span class="process-math">\(4.\)</span> This step typically involves looking for critical points and evaluating a function at endpoints.</p></li>
+</ol></article><p id="p-1497">Now let's apply this strategy to maximize the volume of an open-top box given a constraint on the amount of material to be used.</p>
+<article class="example example-like" id="fs-id1165043024669"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.140</span><span class="period">.</span><span class="space"> </span><span class="title">Maximizing the Volume of a Box.</span>
+</h4>
+<p id="p-1498">An open-top box is to be made from a <span class="process-math">\(24\)</span> in. by <span class="process-math">\(36\)</span> in. piece of cardboard by removing a square from each corner of the box and folding up the flaps on each side. What size square should be cut out of each corner to get a box with the maximum volume?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-275" id="solution-275"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-275"><div class="solution solution-like">
+<p id="p-1499">Step 1: Let <span class="process-math">\(x\)</span> be the side length of the square to be removed from each corner (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_003.html" title="Figure 4.141">Figure 4.141</a>). Then, the remaining four flaps can be folded up to form an open-top box. Let <span class="process-math">\(V\)</span> be the volume of the resulting box.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_07_003"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_07_003.jpg" class="contained" alt='"There are two figures for this figure. The first one is a rectangle with sides 24 in and 36 in, with each corner having a square of side length x taken out of it. In the second picture, there is a box with side lengths x in, 24-2x in, and 36-2x in."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.141<span class="period">.</span></span><span class="space"> </span>A square with side length <span class="process-math">\(x\)</span> inches is removed from each corner of the piece of cardboard. The remaining flaps are folded to form an open-top box.</figcaption></figure><p id="p-1500">Step 2: We are trying to maximize the volume of a box. Therefore, the problem is to maximize <span class="process-math">\(V.\)</span></p>
+<p id="p-1501">Step 3: As mentioned in step <span class="process-math">\(2,\)</span> are trying to maximize the volume of a box. The volume of a box is <span class="process-math">\(V=L\cdot W\cdot H,\)</span> where <span class="process-math">\(L,W, \text{ and } H\)</span> are the length, width, and height, respectively.</p>
+<p id="p-1502">Step 4: From <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_003.html" title="Figure 4.141">Figure 4.141</a>, we see that the height of the box is <span class="process-math">\(x\)</span> inches, the length is <span class="process-math">\(36-2x\)</span> inches, and the width is <span class="process-math">\(24-2x\)</span> inches. Therefore, the volume of the box is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html">
+\begin{equation*}
+V(x)=(36-2x)(24-2x)x=4x^3-120x^2+864x.
+\end{equation*}
+</div>
+<p id="p-1503">Step 5: To determine the domain of consideration, let's examine <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_003.html" title="Figure 4.141">Figure 4.141</a>. Certainly, we need <span class="process-math">\(x\gt 0.\)</span> Furthermore, the side length of the square cannot be greater than or equal to half the length of the shorter side, <span class="process-math">\(24\)</span> in.; otherwise, one of the flaps would be completely cut off. Therefore, we are trying to determine whether there is a maximum volume of the box for <span class="process-math">\(x\)</span> over the open interval <span class="process-math">\((0,12).\)</span> Since <span class="process-math">\(V\)</span> is a continuous function over the closed interval <span class="process-math">\([0,12],\)</span> we know <span class="process-math">\(V\)</span> will have an absolute maximum over the closed interval. Therefore, we consider <span class="process-math">\(V\)</span> over the closed interval <span class="process-math">\([0,12]\)</span> and check whether the absolute maximum occurs at an interior point.</p>
+<p id="p-1504">Step 6: Since <span class="process-math">\(V(x)\)</span> is a continuous function over the closed, bounded interval <span class="process-math">\([0,12],\)</span> <span class="process-math">\(V\)</span> must have an absolute maximum (and an absolute minimum). Since <span class="process-math">\(V(x)=0\)</span> at the endpoints and <span class="process-math">\(V(x)\gt 0\)</span> for <span class="process-math">\(0\lt x\lt 12,\)</span> the maximum must occur at a critical point. The derivative is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html">
+\begin{equation*}
+V'(x)=12x^2-240x+864.
+\end{equation*}
+</div>
+<p id="p-1505">To find the critical points, we need to solve the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html">
+\begin{equation*}
+12x^2-240x+864=0.
+\end{equation*}
+</div>
+<p id="p-1506">Dividing both sides of this equation by <span class="process-math">\(12,\)</span> the problem simplifies to solving the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html">
+\begin{equation*}
+x^2-20x+72=0.
+\end{equation*}
+</div>
+<p id="p-1507">Using the quadratic formula, we find that the critical points are</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html" id="md-70">
+\begin{align*}
+x\amp=\frac{20\pm\sqrt{(-20)^2-4(1)(72)}}{2}\\
+x\amp=\frac{20\pm\sqrt{112}}{2}\\
+x\amp=\frac{20\pm 4\sqrt{7}}{2}\\
+x\amp=10\pm 2\sqrt{7}.
+\end{align*}
+</div>
+<p id="p-1508">Since <span class="process-math">\(10+2\sqrt{7}\)</span> is not in the domain of consideration, the only critical point we need to consider is <span class="process-math">\(10-2\sqrt{7}.\)</span> Therefore, the volume is maximized if we let <span class="process-math">\(x=10-2\sqrt{7} \text{ in }.\)</span> The maximum volume is <span class="process-math">\(V(10-2\sqrt{7})=640+448\sqrt{7}\approx 1825 \text{ in. }^3\)</span> as shown in the following graph.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_07_004"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_07_004.jpg" class="contained" alt='"The function V(x) = 4x3 – 120x2 + 864x is graphed. At its maximum there is an intersection of two dashed lines and text that reads “Maximum volume is approximately 1825 cubic inches when x ≈ 4.7 inches.”"'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.142<span class="period">.</span></span><span class="space"> </span>Maximizing the volume of the box leads to finding the maximum value of a cubic polynomial.</figcaption></figure>
+</div></div>
+</div></article><article class="note remark-like" id="note-39"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">4.143</span><span class="period">.</span>
+</h4>
+<p id="p-1509">Watch a <a class="external" href="http://www.openstax.org/l/20_boxvolume" target="_blank">video</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-17" id="fn-17"><sup> 1 </sup></a> about optimizing the volume of a box.</p></article><article class="exercise exercise-like" id="exercise-116"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.144</span><span class="period">.</span>
+</h4>
+<p id="p-1510">Suppose the dimensions of the cardboard in <a href="" class="xref" data-knowl="./knowl/fs-id1165043024669.html" title="Example 4.140: Maximizing the Volume of a Box">Example 4.140</a> are 20 in. by 30 in. Let <span class="process-math">\(x\)</span> be the side length of each square and write the volume of the open-top box as a function of <span class="process-math">\(x.\)</span> Determine the domain of consideration for <span class="process-math">\(x.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-113" id="hint-113"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-113"><div class="hint solution-like"><p id="p-1511">The volume of the box is <span class="process-math">\(L\cdot W\cdot H.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-276" id="solution-276"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-276"><div class="solution solution-like"><p id="p-1512"><span class="process-math">\(V(x)=x(20-2x)(30-2x).\)</span> The domain is <span class="process-math">\([0,10].\)</span></p></div></div>
+</div></article><p id="p-1513">In business, companies are interested in <dfn class="terminology">maximizing revenue</dfn>. In the following example, we consider a scenario in which a company has collected data on how many cars it is able to lease, depending on the price it charges its customers to rent a car. Let's use these data to determine the price the company should charge to maximize the amount of money it brings in.</p>
+<article class="example example-like" id="fs-id1165043353574"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.145</span><span class="period">.</span><span class="space"> </span><span class="title">Maximizing Revenue.</span>
+</h4>
+<p id="p-1514">Owners of a car rental company have determined that if they charge customers <span class="process-math">\(p\)</span> dollars per day to rent a car, where <span class="process-math">\(50\leq p\leq 200,\)</span> the number of cars <span class="process-math">\(n\)</span> they rent per day can be modeled by the linear function <span class="process-math">\(n(p)=1000-5p.\)</span> If they charge <span class="process-math">\(\$ 50\)</span> per day or less, they will rent all their cars. If they charge <span class="process-math">\(\$ 200\)</span> per day or more, they will not rent any cars. Assuming the owners plan to charge customers between $50 per day and <span class="process-math">\(\$ 200\)</span> per day to rent a car, how much should they charge to maximize their revenue?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-277" id="solution-277"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-277"><div class="solution solution-like">
+<p id="p-1515">Step 1: Let <span class="process-math">\(p\)</span> be the price charged per car per day and let <span class="process-math">\(n\)</span> be the number of cars rented per day. Let <span class="process-math">\(R\)</span> be the revenue per day.</p>
+<p id="p-1516">Step 2: The problem is to maximize <span class="process-math">\(R.\)</span></p>
+<p id="p-1517">Step 3: The revenue (per day) is equal to the number of cars rented per day times the price charged per car per day—that is, <span class="process-math">\(R=n \times  p.\)</span></p>
+<p id="p-1518">Step 4: Since the number of cars rented per day is modeled by the linear function <span class="process-math">\(n(p)=1000-5p,\)</span> the revenue <span class="process-math">\(R\)</span> can be represented by the function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R(p)=n \times  p=(1000-5p)p=-5p^2+1000p.
+\end{equation*}
+</div>
+<p id="p-1519">Step 5: Since the owners plan to charge between <span class="process-math">\(\$ 50\)</span> per car per day and <span class="process-math">\(\$ 200\)</span> per car per day, the problem is to find the maximum revenue <span class="process-math">\(R(p)\)</span> for <span class="process-math">\(p\)</span> in the closed interval <span class="process-math">\([50,200].\)</span></p>
+<p id="p-1520">Step 6: Since <span class="process-math">\(R\)</span> is a continuous function over the closed, bounded interval <span class="process-math">\([50,200],\)</span> it has an absolute maximum (and an absolute minimum) in that interval. To find the maximum value, look for critical points. The derivative is <span class="process-math">\(R'(p)=-10p+1000.\)</span> Therefore, the critical point is <span class="process-math">\(p=100\)</span> When <span class="process-math">\(p=100,\)</span> <span class="process-math">\(R(100)=\$ 50,000.\)</span> When <span class="process-math">\(p=50,\)</span> <span class="process-math">\(R(p)=\$ 37,500.\)</span> When <span class="process-math">\(p=200,\)</span> <span class="process-math">\(R(p)=\$ 0.\)</span> Therefore, the absolute maximum occurs at <span class="process-math">\(p=\$ 100.\)</span> The car rental company should charge <span class="process-math">\(\$ 100\)</span> per day per car to maximize revenue as shown in the following figure.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_07_010"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_07_010.jpg" class="contained" alt='"The function R(p) is graphed. At its maximum there is an intersection of two dashed lines and text that reads "Maximum revenue is $50,000 per day when the price charged per car is $100 per day.""'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.146<span class="period">.</span></span><span class="space"> </span>To maximize revenue, a car rental company has to balance the price of a rental against the number of cars people will rent at that price.</figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="example-162"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.147</span><span class="period">.</span>
+</h4>A theater owner charges $5 per ticket and sells 250 tickets. By checking other theaters, the owner decided that for every one dollar she raises the ticket price, she will lose 10 customers. What should she charge to maximize revenue?<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-278" id="solution-278"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-278"><div class="solution solution-like">
+<p id="p-1521">Step 1: We can model the problem by defining the following variables:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-71">
+\begin{align*}
+n\amp=\text{ number of 1 dollar increases}\\
+x\amp=\text{ number of tickets sold (quantity)}\\
+p\amp=\text{ price per ticket}
+\end{align*}
+</div>
+<p id="p-1522">Step 2: We are trying to maximize the revenue. Therefore, the problem is to maximize <span class="process-math">\(R\text{.}\)</span></p>
+<p id="p-1523">Step 3: As mentioned in step 2 are trying to maximize the revenue. Recall that the revenue is given by <span class="process-math">\(R=p\cdot x\text{.}\)</span> Currently, the theater owner charges $5 per ticket and sells 250 tickets but for every one dollar she raises the ticket price, she will lose 10 customers. Since <span class="process-math">\(n\)</span> is the number of $1 increases, this gives us our constraints</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-72">
+\begin{align*}
+x\amp=250-10n\\
+p\amp=5+n
+\end{align*}
+</div>
+<p id="p-1524">Step 4: Using the equations from step 3, we see that the revenue equation is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R=p\cdot x=(5+n)(250-10n)\text{.}
+\end{equation*}
+</div>
+<p id="p-1525">Step 5: In order to determine the domain of consideration, note that we need <span class="process-math">\(x\geq 0\text{ and }p\geq0\text{.}\)</span> Using the equations from step 3:</p>
+<p id="p-1526"><span class="process-math">\(x\geq0:\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-73">
+\begin{align*}
+250-10n\amp\geq0\\
+n\amp\geq25
+\end{align*}
+</div>
+<p id="p-1527"><span class="process-math">\(p\geq0:\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-74">
+\begin{align*}
+5+n\amp\geq0\\
+n\amp\geq-5.
+\end{align*}
+</div>
+<p id="p-1528">Therefore, we are trying to determine whether there is a maximum revenue over the closed interval [-5,25]. Since <span class="process-math">\(R\)</span> is a continuous function over the closed, bounded interval [-5,25] it has an absolute maximum (and an absolute minimum) in that interval. To find the maximum value, look for critical points. The derivative is <span class="process-math">\(R'(n)=1\cdot(250-10n)+(5+n)\cdot(-10)=200-20n\text{.}\)</span> Therefore, the critical point is <span class="process-math">\(n=10\text{.}\)</span> When <span class="process-math">\(n=10,\; R(10)=\$2250\text{.}\)</span> When <span class="process-math">\(n=-5,\; R(-5)=\$0\text{.}\)</span> When <span class="process-math">\(n=25,\; R(25)=\$0\text{.}\)</span> Therefore, the absolute maximum occurs at <span class="process-math">\(n=10\text{.}\)</span> Note that when <span class="process-math">\(n=10,\;p=5+10=\$15.\)</span>The theater owner should charge $15 per ticket in order to maximize revenue as shown in the following figure.</p>
+<figure class="figure figure-like" id="Busi_Calc_Figure_04_07_001 "><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/Busi_Calc_Figure_04_07_001.png" class="contained" alt='"The function \(R(n)=(5+n)(250-10n)\) over the interval [-5,25] with an absolute maximum at (10,2250)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.148<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(R(n)=(5+n)(250-10n)\)</span> has absolute maximum at (10,2250).</figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-117"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.149</span><span class="period">.</span>
+</h4>
+<p id="p-1529">A car rental company charges its customers <span class="process-math">\(p\)</span> dollars per day, where <span class="process-math">\(60\leq p\leq 150.\)</span> It has found that the number of cars rented per day can be modeled by the linear function <span class="process-math">\(n(p)=750-5p.\)</span> How much should the company charge each customer to maximize revenue?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-114" id="hint-114"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-114"><div class="hint solution-like"><p id="p-1530"><span class="process-math">\(R(p)=n \times  p,\)</span> where <span class="process-math">\(n\)</span> is the number of cars rented and <span class="process-math">\(p\)</span> is the price charged per car.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-279" id="solution-279"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-279"><div class="solution solution-like"><p id="p-1531">The company should charge <span class="process-math">\(\$ 75\)</span> per car per day.</p></div></div>
+</div></article></section><section class="subsection" id="subsection-119"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.2</span> <span class="title">Solving Optimization Problems when the Interval Is Not Closed or Is Unbounded</span>
+</h3>
+<p id="p-1532">In the previous examples, we considered functions on closed, bounded domains. Consequently, by the extreme value theorem, we were guaranteed that the functions had absolute extrema. Let's now consider functions for which the domain is neither closed nor bounded.</p>
+<p id="p-1533">Many functions still have at least one absolute extrema, even if the domain is not closed or the domain is unbounded. For example, the function <span class="process-math">\(f(x)=x^2+4\)</span> over <span class="process-math">\((-\infty,\infty)\)</span> has an absolute minimum of <span class="process-math">\(4\)</span> at <span class="process-math">\(x=0.\)</span> Therefore, we can still consider functions over unbounded domains or open intervals and determine whether they have any absolute extrema. In the next example, we try to minimize a function over an unbounded domain. We will see that, although the domain of consideration is <span class="process-math">\((0,\infty),\)</span> the function has an absolute minimum.</p>
+<p id="p-1534">In the following example, we look at constructing a box of least surface area with a prescribed volume. It is not difficult to show that for a closed-top box, by symmetry, among all boxes with a specified volume, a cube will have the smallest surface area. Consequently, we consider the modified problem of determining which open-topped box with a specified volume has the smallest surface area.</p>
+<article class="example example-like" id="fs-id1165042327673"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.150</span><span class="period">.</span><span class="space"> </span><span class="title">Minimizing Surface Area.</span>
+</h4>
+<p id="p-1535">A rectangular box with a square base, an open top, and a volume of <span class="process-math">\(216\)</span> in.3 is to be constructed. What should the dimensions of the box be to minimize the surface area of the box? What is the minimum surface area?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-280" id="solution-280"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-280"><div class="solution solution-like">
+<p id="p-1536">Step 1: Draw a rectangular box and introduce the variable <span class="process-math">\(x\)</span> to represent the length of each side of the square base; let <span class="process-math">\(y\)</span> represent the height of the box. Let <span class="process-math">\(S\)</span> denote the surface area of the open-top box.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_07_008"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_07_008.jpg" class="contained" alt='"A box with square base is shown. The base has side length x, and the height is y."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.151<span class="period">.</span></span><span class="space"> </span>We want to minimize the surface area of a square-based box with a given volume.</figcaption></figure><p id="p-1537">Step 2: We need to minimize the surface area. Therefore, we need to minimize <span class="process-math">\(S.\)</span></p>
+<p id="p-1538">Step 3: Since the box has an open top, we need only determine the area of the four vertical sides and the base. The area of each of the four vertical sides is <span class="process-math">\(x\cdot y.\)</span> The area of the base is <span class="process-math">\(x^2.\)</span> Therefore, the surface area of the box is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_009.html">
+\begin{equation*}
+S=4xy+x^2.
+\end{equation*}
+</div>
+<p id="p-1539">Step 4: Since the volume of this box is <span class="process-math">\(x^2y\)</span> and the volume is given as <span class="process-math">\(216 \text{ in. }^3,\)</span> the constraint equation is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_009.html">
+\begin{equation*}
+x^2y=216.
+\end{equation*}
+</div>
+<p id="p-1540">Solving the constraint equation for <span class="process-math">\(y,\)</span> we have <span class="process-math">\(y=\frac{216}{x^2}.\)</span> Therefore, we can write the surface area as a function of <span class="process-math">\(x\)</span> only:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_009.html">
+\begin{equation*}
+S(x)=4x\left(\frac{216}{x^2}\right)+x^2.
+\end{equation*}
+</div>
+<p id="p-1541">Therefore, <span class="process-math">\(S(x)=\frac{864}{x}+x^2.\)</span></p>
+<p id="p-1542">Step 5: Since we are requiring that <span class="process-math">\(x^2y=216,\)</span> we cannot have <span class="process-math">\(x=0.\)</span> Therefore, we need <span class="process-math">\(x\gt 0.\)</span> On the other hand, <span class="process-math">\(x\)</span> is allowed to have any positive value. Note that as <span class="process-math">\(x\)</span> becomes large, the height of the box <span class="process-math">\(y\)</span> becomes correspondingly small so that <span class="process-math">\(x^2y=216.\)</span> Similarly, as <span class="process-math">\(x\)</span> becomes small, the height of the box becomes correspondingly large. We conclude that the domain is the open, unbounded interval <span class="process-math">\((0,\infty).\)</span> Note that, unlike the previous examples, we cannot reduce our problem to looking for an absolute maximum or absolute minimum over a closed, bounded interval. However, in the next step, we discover why this function must have an absolute minimum over the interval <span class="process-math">\((0,\infty).\)</span></p>
+<p id="p-1543">Step 6: Note that as <span class="process-math">\(x\to0^+,\)</span> <span class="process-math">\(S(x)\to\infty.\)</span> Also, as <span class="process-math">\(x\to\infty,\)</span> <span class="process-math">\(S(x)\to\infty.\)</span> Since <span class="process-math">\(S\)</span> is a continuous function that approaches infinity at the ends, it must have an absolute minimum at some <span class="process-math">\(x\in(0,\infty).\)</span> This minimum must occur at a critical point of <span class="process-math">\(S.\)</span> The derivative is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_009.html">
+\begin{equation*}
+S'(x)=-\frac{864}{x^2}+2x.
+\end{equation*}
+</div>
+<p id="p-1544">Therefore, <span class="process-math">\(S'(x)=0\)</span> when <span class="process-math">\(2x=\frac{864}{x^2}.\)</span> Solving this equation for <span class="process-math">\(x,\)</span> we obtain <span class="process-math">\(x^3=432,\)</span> so <span class="process-math">\(x=\sqrt[3]{432}=6\sqrt[3]{2}.\)</span> Since this is the only critical point of <span class="process-math">\(S,\)</span> the absolute minimum must occur at <span class="process-math">\(x=6\sqrt[3]{2}\)</span> (see <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_009.html" title="Figure 4.152">Figure 4.152</a>). When <span class="process-math">\(x=6\sqrt[3]{2},\)</span> <span class="process-math">\(y=\frac{216}{(6\sqrt[3]{2})^2}=3\sqrt[3]{2} \text{ in }.\)</span> Therefore, the dimensions of the box should be <span class="process-math">\(x=6\sqrt[3]{2} \text{ in }.\)</span> and <span class="process-math">\(y=3\sqrt[3]{2} \text{ in }.\)</span> With these dimensions, the surface area is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_009.html">
+\begin{equation*}
+S(6\sqrt[3]{2})=\frac{864}{6\sqrt[3]{2}}+(6\sqrt[3]{2})^2=108\sqrt[3]{4} \text{ in. }^2&gt;
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_07_009"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_07_009.jpg" class="contained" alt='"The function \(S(x) = 864/x + x^2\) is graphed. At its minimum there is a dashed line and text that reads "Minimum surface area is 108 times the cube root of 4 square inches when x = 6 times the cube root of 2 inches.""'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.152<span class="period">.</span></span><span class="space"> </span>We can use a graph to determine the dimensions of a box of given the volume and the minimum surface area.</figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="example-164"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.153</span><span class="period">.</span><span class="space"> </span><span class="title">Minimizing Cost.</span>
+</h4>A company must produce a sturdy rectangular container with a square base and a volume of 128 cubic ft. The cost to produce the top and sides of this box is $2 per square foot and the cost to produce the bottom is $6 per square foot. FInd the dimensions of the box that will minimize cost.<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-281" id="solution-281"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-281"><div class="solution solution-like">
+<p id="p-1545">Step 1: Draw a rectangular box and introduce the variable <span class="process-math">\(x\)</span> to represent the length of each side of the square base; let <span class="process-math">\(h\)</span> represent the height of the box. Let <span class="process-math">\(C\)</span> denote the cost of producing the box.</p>
+<figure class="figure figure-like" id="Busi_Calc_Figure_04_07_003 "><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/Busi_Calc_Figure_04_07_003%20.jpg" class="contained" alt='"A box with square base is shown. The base has side length x, and the height is h."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.154<span class="period">.</span></span><span class="space"> </span>We want to minimize the cost to produce a square-based box with a given volume.</figcaption></figure>--&gt; <p id="p-1546">Step 2: We need to minimize the cost. Therefore, we need to minimize <span class="process-math">\(C.\)</span></p>
+<p id="p-1547">Step 3: We need to determine the cost of the four vertical sides, the top, and the base. In order to find the cost, we must first find the surface area of the box. The area of each of the four vertical sides is <span class="process-math">\(x\cdot h.\)</span> The area of the base and top are both <span class="process-math">\(x^2.\)</span> Since the cost to produce the top and sides of this box is $2 per square foot and the cost to produce the bottom is $6 per square foot, then the cost is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Busi_Calc_Figure_04_07_002.html">
+\begin{equation*}
+C=2x^2+8xh+6x^2=8x^2+8xh
+\end{equation*}
+</div>
+<p id="p-1548">Step 4: Since the volume of this box is <span class="process-math">\(x^2h\)</span> and the volume is given as <span class="process-math">\(128\)</span> cubic ft, the constraint equation is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Busi_Calc_Figure_04_07_002.html">
+\begin{equation*}
+x^2h=128.
+\end{equation*}
+</div>
+<p id="p-1549">Solving the constraint equation for <span class="process-math">\(h,\)</span> we have <span class="process-math">\(h=\frac{128}{x^2}.\)</span> Therefore, we can write the cost as a function of <span class="process-math">\(x\)</span> only:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Busi_Calc_Figure_04_07_002.html">
+\begin{equation*}
+C(x)=8x^2+8x\cdot\frac{128}{x^2}=8x^2+\frac{1024}{x}.
+\end{equation*}
+</div>
+<p id="p-1550">Step 5: Since we are requiring that <span class="process-math">\(x^2h=128,\)</span> we cannot have <span class="process-math">\(x=0.\)</span> Therefore, we need <span class="process-math">\(x\gt 0.\)</span> On the other hand, <span class="process-math">\(x\)</span> is allowed to have any positive value. Note that as <span class="process-math">\(x\)</span> becomes large, the height of the box <span class="process-math">\(h\)</span> becomes correspondingly small so that <span class="process-math">\(x^2h=128.\)</span> Similarly, as <span class="process-math">\(x\)</span> becomes small, the height of the box becomes correspondingly large. We conclude that the domain is the open, unbounded interval <span class="process-math">\((0,\infty).\)</span> Note that, unlike the previous examples, we cannot reduce our problem to looking for an absolute maximum or absolute minimum over a closed, bounded interval. However, in the next step, we discover why this function must have an absolute minimum over the interval <span class="process-math">\((0,\infty).\)</span></p>
+<p id="p-1551">Step 6: Note that as <span class="process-math">\(x\to0^+,\)</span> <span class="process-math">\(C(x)\to\infty.\)</span> Also, as <span class="process-math">\(x\to\infty,\)</span> <span class="process-math">\(C(x)\to\infty.\)</span> Since <span class="process-math">\(C\)</span> is a continuous function that approaches infinity at the ends, it must have an absolute minimum at some <span class="process-math">\(x\in(0,\infty).\)</span> This minimum must occur at a critical point of <span class="process-math">\(C.\)</span> The derivative is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Busi_Calc_Figure_04_07_002.html">
+\begin{equation*}
+C'(x)=16x-\frac{1024}{x^2}.
+\end{equation*}
+</div>
+<p id="p-1552">Therefore, <span class="process-math">\(C'(x)=0\)</span> when <span class="process-math">\(16x=\frac{1024}{x^2}.\)</span> Solving this equation for <span class="process-math">\(x,\)</span> we obtain <span class="process-math">\(x^3=64,\)</span> so <span class="process-math">\(x=4.\)</span> Since this is the only critical point of <span class="process-math">\(C,\)</span> the absolute minimum must occur at <span class="process-math">\(x=4\)</span> (see <a href="" class="xref" data-knowl="./knowl/Busi_Calc_Figure_04_07_002.html" title="Figure 4.155">Figure 4.155</a>). When <span class="process-math">\(x=4,\)</span> <span class="process-math">\(h=\frac{128}{4^2}=8\)</span> feet. Therefore, the dimensions of the box should be <span class="process-math">\(x=4\)</span> feet and <span class="process-math">\(h=8\)</span> feet. With these dimensions, the cost is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Busi_Calc_Figure_04_07_002.html">
+\begin{equation*}
+C(4)=8(4)^2+\frac{1024}{4}=\$384.
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="Busi_Calc_Figure_04_07_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/Busi_Calc_Figure_04_07_002.png" class="contained" alt='"The function \(C(x)=8x^2+\frac{1024}{x}\) is graphed on the interval \((0,\infty)\) and has an absolute minimum at (4,384)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.155<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(C(x)=8x^2+\frac{1024}{x}\)</span> has an absolute minimum at (4,384).</figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-118"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.156</span><span class="period">.</span>
+</h4>
+<p id="p-1553">Consider the an open-top box, which is to have volume <span class="process-math">\(216 \text{ in. }^3.\)</span> Suppose the cost of the material for the base is <span class="process-math">\(20\text{ cents }/\text{ in. }^2 \)</span> and the cost of the material for the sides is <span class="process-math">\(30\text{ cents }/\text{ in. }^2 \)</span> and we are trying to minimize the cost of this box. Write the cost as a function of the side lengths of the base. (Let <span class="process-math">\(x\)</span> be the side length of the base and <span class="process-math">\(y\)</span> be the height of the box.)</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-115" id="hint-115"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-115"><div class="hint solution-like"><p id="p-1554">If the cost of one of the sides is <span class="process-math">\(30\text{ cents }/\text{ in. }^2 ,\)</span> the cost of that side is <span class="process-math">\(0.30xy.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-282" id="solution-282"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-282"><div class="solution solution-like"><p id="p-1555"><span class="process-math">\(C(x)=\frac{259.2}{x}+0.2x^2\)</span> dollars</p></div></div>
+</div></article></section><section class="subsection" id="subsection-120"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.3</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-692"><p id="p-derived-li-692">To solve an optimization problem, begin by drawing a picture and introducing variables.</p></li>
+<li id="li-693"><p id="p-derived-li-693">Find an equation relating the variables.</p></li>
+<li id="li-694"><p id="p-derived-li-694">Find a function of one variable to describe the quantity that is to be minimized or maximized.</p></li>
+<li id="li-695"><p id="p-derived-li-695">Look for critical points to locate local extrema.</p></li>
+</ul></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-17"><div class="fn"><code class="code-inline tex2jax_ignore">http://www.openstax.org/l/20_boxvolume</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-11-11T14:30:55-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.127.1</span><span class="period">.</span>
+</h4>
+<p>Step 1. The function <span class="process-math">\(f\)</span> is defined as long as the denominator is not zero. Therefore, the domain is the set of all real numbers <span class="process-math">\(x\)</span> except <span class="process-math">\(x=\pm1.\)</span></p>
+<p>Step 2. Find the intercepts. If <span class="process-math">\(x=0,\)</span> then <span class="process-math">\(f(x)=0,\)</span> so <span class="process-math">\(0\)</span> is an intercept. If <span class="process-math">\(y=0,\)</span> then <span class="process-math">\(\frac{x^2}{(1-x^2)}=0,\)</span> which implies <span class="process-math">\(x=0.\)</span> Therefore, <span class="process-math">\((0,0)\)</span> is the only intercept.</p>
+<p>Step 3. Evaluate the limits at infinity. Since <span class="process-math">\(f\)</span> is a rational function, divide the numerator and denominator by the highest power in the denominator: <span class="process-math">\(x^2.\)</span> We obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to\pm\infty}\frac{x^2}{1-x^2}=\lim_{x\to\pm\infty}\frac{1}{1/x^2-1}=-1.
+\end{equation*}
+</div>
+<p>Therefore, <span class="process-math">\(f\)</span> has a horizontal asymptote of <span class="process-math">\(y=-1\)</span> as <span class="process-math">\(x\to\infty\)</span> and <span class="process-math">\(x\to-\infty.\)</span></p>
+<p>Step 4. To determine whether <span class="process-math">\(f\)</span> has any vertical asymptotes, first check to see whether the denominator has any zeroes. We find the denominator is zero when <span class="process-math">\(x=\pm1.\)</span> To determine whether the lines <span class="process-math">\(x=1\)</span> or <span class="process-math">\(x=-1\)</span> are vertical asymptotes of <span class="process-math">\(f,\)</span> evaluate <span class="process-math">\(\displaystyle{\lim_{x\to1}f(x)}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to-1}f(x).}\)</span> By looking at each one-sided limit as <span class="process-math">\(x\to1,\)</span> we see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to1^+}\frac{x^2}{1-x^2}=-\infty \text{ and } \lim_{x\to1^-}\frac{x^2}{1-x^2}=\infty.
+\end{equation*}
+</div>
+<p>In addition, by looking at each one-sided limit as <span class="process-math">\(x\to-1,\)</span> we find that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to-1^+}\frac{x^2}{1-x^2}=\infty \text{ and } \lim_{x\to-1^-}\frac{x^2}{1-x^2}=-\infty.
+\end{equation*}
+</div>
+<p>Step 5. Calculate the first derivative:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f'(x)=\frac{2x(1-x^2)+2x(x^2)}{(1-x^2)^2}=\frac{2x}{(1-x^2)^2}.
+\end{equation*}
+</div>
+<p>Critical points occur at points <span class="process-math">\(x\)</span> where <span class="process-math">\(f'(x)=0\)</span> or <span class="process-math">\(f'(x)\)</span> is undefined. We see that <span class="process-math">\(f'(x)=0\)</span> when <span class="process-math">\(x=0.\)</span> The derivative <span class="process-math">\(f'\)</span> is not undefined at any point in the domain of <span class="process-math">\(f.\)</span> However, <span class="process-math">\(x=\pm1\)</span> are not in the domain of <span class="process-math">\(f.\)</span> Therefore, to determine where <span class="process-math">\(f\)</span> is increasing and where <span class="process-math">\(f\)</span> is decreasing, divide the interval <span class="process-math">\((-\infty,\infty)\)</span> into four smaller intervals: <span class="process-math">\((-\infty,-1),\)</span> <span class="process-math">\((-1,0),\)</span> <span class="process-math">\((0,1),\)</span> and <span class="process-math">\((1,\infty),\)</span> and choose a test point in each interval to determine the sign of <span class="process-math">\(f'(x)\)</span> in each of these intervals. The values <span class="process-math">\(x=-2,\)</span> <span class="process-math">\(x=-\frac{1}{2},\)</span> <span class="process-math">\(x=\frac{1}{2},\)</span> and <span class="process-math">\(x=2\)</span> are good choices for test points as shown in the following table.</p>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.128<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l t b0 r0 l0 t0 lines">Interval</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Test Point</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Sign of <span class="process-math">\(f'(x)=\frac{2x}{(1-x^2)^2}\)</span>
+</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Conclusion</th>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,-1)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=-2\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(-/+=-\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is decreasing.</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((-1,0)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=-1/2\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(-/+=-\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is decreasing.</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((0,1)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=1/2\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(+/+=+\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is increasing.</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((1,\infty)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=2\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(+/+=+\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is increasing.</td>
+</tr>
+</table></div></figure><p>From this analysis, we conclude that <span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(x=0\)</span> but no local maximum.</p>
+<p>Step 6. Calculate the second derivative:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+f''(x)\amp=\frac{(1-x^2)^2(2)-2x(2(1-x^2)(-2x))}{(1-x^2)^4}\\
+\amp=\frac{(1-x^2)}{[2(1-x^2)+8x^2]}{(1-x^2)^4}\\
+\amp=\frac{2(1-x^2)+8x^2}{(1-x^2)^3}\\
+\amp=\frac{6x^2+2}{(1-x^2)^3}.
+\end{align*}
+</div>
+<p>To determine the intervals where <span class="process-math">\(f\)</span> is concave up and where <span class="process-math">\(f\)</span> is concave down, we first need to find all points <span class="process-math">\(x\)</span> where <span class="process-math">\(f''(x)=0\)</span> or <span class="process-math">\(f''(x)\)</span> is undefined. Since the numerator <span class="process-math">\(6x^2+2\neq 0\)</span> for any <span class="process-math">\(x,\)</span> <span class="process-math">\(f''(x)\)</span> is never zero. Furthermore, <span class="process-math">\(f''\)</span> is not undefined for any <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(f.\)</span> However, as discussed earlier, <span class="process-math">\(x=\pm1\)</span> are not in the domain of <span class="process-math">\(f.\)</span> Therefore, to determine the concavity of <span class="process-math">\(f,\)</span> we divide the interval <span class="process-math">\((-\infty,\infty)\)</span> into the three smaller intervals <span class="process-math">\((-\infty,-1),\)</span> <span class="process-math">\((-1,-1),\)</span> and <span class="process-math">\((1,\infty),\)</span> and choose a test point in each of these intervals to evaluate the sign of <span class="process-math">\(f''(x).\)</span> in each of these intervals. The values <span class="process-math">\(x=-2,\)</span> <span class="process-math">\(x=0,\)</span> and <span class="process-math">\(x=2\)</span> are possible test points as shown in the following table.</p>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.129<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l t b0 r0 l0 t0 lines">Interval</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Test Point</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Sign of <span class="process-math">\(f''(x)=\frac{6x^2+2}{(1-x^2)^3}\)</span>
+</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Conclusion</th>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((-\infty,-1)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=-2\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(+/-=-\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is concave down.</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((-1,-1)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=0\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(+/+=+\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is concave up.</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\((1,\infty)\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(x=2\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(+/-=-\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(f\)</span> is concave down.</td>
+</tr>
+</table></div></figure><p>Combining all this information, we arrive at the graph of <span class="process-math">\(f\)</span> shown below. Note that, although <span class="process-math">\(f\)</span> changes concavity at <span class="process-math">\(x=-1\)</span> and <span class="process-math">\(x=1,\)</span> there are no inflection points at either of these places because <span class="process-math">\(f\)</span> is not continuous at <span class="process-math">\(x=-1\)</span> or <span class="process-math">\(x=1.\)</span></p>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_06_016.jpg" class="contained" alt='"The function f(x) = x2/(1 − x2) is graphed. It has asymptotes y = −1, x = −1, and x = 1."'></div>
+</div>
+<span class="incontext"><a href="sec_Ch4Sec6.html#solution-269" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-11-11T14:30:56-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>Let <span class="process-math">\(x\)</span> denote the length of the side of the garden perpendicular to the rock wall and <span class="process-math">\(y\)</span> denote the length of the side parallel to the rock wall. Then the area of the garden is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_001.html ./knowl/CNX_Calc_Figure_04_07_002.html">
+\begin{equation*}
+A=x\cdot y.
+\end{equation*}
+</div>
+<p>We want to find the maximum possible area subject to the constraint that the total fencing is <span class="process-math">\(100 \text{ ft }.\)</span> From <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_001.html" title="Figure 4.136">Figure 4.136</a>, the total amount of fencing used will be <span class="process-math">\(2x+y.\)</span> Therefore, the constraint equation is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_001.html ./knowl/CNX_Calc_Figure_04_07_002.html">
+\begin{equation*}
+2x+y=100.
+\end{equation*}
+</div>
+<p>Solving this equation for <span class="process-math">\(y,\)</span> we have <span class="process-math">\(y=100-2x.\)</span> Thus, we can write the area as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_001.html ./knowl/CNX_Calc_Figure_04_07_002.html">
+\begin{equation*}
+A(x)=x\cdot(100-2x)=100x-2x^2.
+\end{equation*}
+</div>
+<p>Before trying to maximize the area function <span class="process-math">\(A(x)=100x-2x^2,\)</span> we need to determine the domain under consideration. To construct a rectangular garden, we certainly need the lengths of both sides to be positive. Therefore, we need <span class="process-math">\(x\gt 0\)</span> and <span class="process-math">\(y\gt 0.\)</span> Since <span class="process-math">\(y=100-2x,\)</span> if <span class="process-math">\(y\gt 0,\)</span> then <span class="process-math">\(x\lt 50.\)</span> Therefore, we are trying to determine the maximum value of <span class="process-math">\(A(x)\)</span> for <span class="process-math">\(x\)</span> over the open interval <span class="process-math">\((0,50).\)</span> We do not know that a function necessarily has a maximum value over an open interval. However, we do know that a continuous function has an absolute maximum (and absolute minimum) over a closed interval. Therefore, let's consider the function <span class="process-math">\(A(x)=100x-2x^2\)</span> over the closed interval <span class="process-math">\([0,50].\)</span> If the maximum value occurs at an interior point, then we have found the value <span class="process-math">\(x\)</span> in the open interval <span class="process-math">\((0,50)\)</span> that maximizes the area of the garden. Therefore, we consider the following problem:</p>
+<p>Maximize <span class="process-math">\(A(x)=100x-2x^2\)</span> over the interval <span class="process-math">\([0,50].\)</span></p>
+<p>As mentioned earlier, since <span class="process-math">\(A\)</span> is a continuous function on a closed, bounded interval, by the extreme value theorem, it has a maximum and a minimum. These extreme values occur either at endpoints or critical points. At the endpoints, <span class="process-math">\(A(x)=0.\)</span> Since the area is positive for all <span class="process-math">\(x\)</span> in the open interval <span class="process-math">\((0,50),\)</span> the maximum must occur at a critical point. Differentiating the function <span class="process-math">\(A(x),\)</span> we obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_001.html ./knowl/CNX_Calc_Figure_04_07_002.html">
+\begin{equation*}
+A'(x)=100-4x.
+\end{equation*}
+</div>
+<p>Therefore, the only critical point is <span class="process-math">\(x=25\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_002.html" title="Figure 4.137">Figure 4.137</a>). We conclude that the maximum area must occur when <span class="process-math">\(x=25.\)</span> Then we have <span class="process-math">\(y=100-2x=100-2(25)=50.\)</span> To maximize the area of the garden, let <span class="process-math">\(x=25\)</span> ft and <span class="process-math">\(y=50 \text{ ft }.\)</span> The area of this garden is <span class="process-math">\(1250\text{ft}^2\)</span></p>
+<figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_07_002.jpg" class="contained" alt='"The function A(x) = 100x-2x^2 is graphed. At its maximum there is an intersection of two dashed lines and text that reads "Maximum area is 1250 square feet when x = 25 feet.""'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.137<span class="period">.</span></span><span class="space"> </span>To maximize the area of the garden, we need to find the maximum value of the function <span class="process-math">\(A(x)=100x-2x^2.\)</span></figcaption></figure>
+</div></body>
+</html>

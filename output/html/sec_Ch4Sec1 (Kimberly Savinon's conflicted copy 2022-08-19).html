@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:02:42-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Elasticity of Demand</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<meta property="book:author" content="Custom Business Calculus Edition ">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline">Custom Business Calculus Edition</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch_fourth.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_fourth.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch4Sec2.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch_fourth.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_fourth.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch4Sec2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="meta_frontmatter-preface.html" data-scroll="meta_frontmatter-preface" class="internal">Preface: OpenStax Calculus Volume 1</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2" class="internal">Preface: Business Calculus Custom Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="active">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Derivatives</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Ch4Sec1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Elasticity of Demand</span>
+</h2>
+<section class="introduction" id="introduction-28"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc">
+<li id="li-564"><p id="p-derived-li-564">Define and interpret elasticity of demand</p></li>
+<li id="li-565"><p id="p-derived-li-565">Understand what the elasticity of demand tells us about an objects demand function</p></li>
+<li id="li-566"><p id="p-derived-li-566">Understand what it means for demand to be elastic, in-elastic and unit elastic.</p></li>
+<li id="li-567"><p id="p-derived-li-567">Learn how to use elasticity of demand to maximize revenue.</p></li>
+</ul>
+<p id="p-1204">Note: This section is a custom section added to OpenStax Calculus. It was written by Kim Savinon, Katie Hall and  Andrew Miller.</p>
+<p id="p-1205">In previous sections, we've learned about the demand function. Sometimes, when the price of a object changes a little bit, we see a huge change in demand. But other times, we can have a large change in prince and still not see a big change in demand.  The <dfn class="terminology">elasticity of demand</dfn> helps us quantify these relative changes.</p></section><section class="subsection" id="subsection-100"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.1.1</span> <span class="title">Definition and Examples</span>
+</h3>
+<p id="p-1206">We want to observe how sentitive the demand for a product is to changes in price. Elasticity of demand will help us quantify this sensitivity. To help get a feel for how we should define this quanitity, we will work through a motivating example.</p>
+<p id="p-1207">Let's study how the changes in price effect changes in demand for furniture versus gas. As we increase the price of furniture, we expect to get less demand.  This is because furniture is not a necessity. On the other hand, when we increase the price of gas, we expect demand to be about the same since gas is a necessity.</p>
+<p id="p-1208">To analyze this effectively, we want to compare these different effects on demand. However,  an increase of <span class="process-math">\(\$1\)</span> to the price of gas is very different than increase the price of furniture by <span class="process-math">\(\$1\)</span> since, for example, the price of a couch is (generally) much more than the price of a gallon of gas. For this reason, when we consider price increases, we want to consider the percent change in price. We can find the percent change in price by doing <span class="process-math">\(\dfrac{\Delta P}{p}.\)</span>  We will compare this to the percent change in demand <span class="process-math">\(\left(\dfrac{\Delta x}{x}\right)\)</span> by taking the ratio or quotient.</p>
+<p id="p-1209">We also notice that when we increase price, we generally expect demand to decrease. Since one quanitity is going up while the other is going down, the ratio of their percent changes would give a negative quantity.  Since we prefer to deal with positive quantities, we will multiply by <span class="process-math">\(-1\text{.}\)</span> Putting these ideas together leads to the following quotient:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn_Elasticity2.html ./knowl/ex_Elasticity1.html ./knowl/eqn_Elasticity.html">
+\begin{equation*}
+-\dfrac{\frac{\Delta x}{x}}{\frac{\Delta p}{p}} = -\dfrac{p \Delta x}{x \Delta p}. 
+\end{equation*}
+</div>
+<p id="p-1210">Using our knowledge of calculus, we can use the derivative <span class="process-math">\(\frac{dx}{dp}\)</span> in place of the ratio of changes. This leads us to the following definition.</p>
+<article class="definition definition-like" id="definition-30"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2</span><span class="period">.</span>
+</h4>
+<p id="p-1211">If the demand equation is given by <span class="process-math">\(x=f(p)\)</span> where <span class="process-math">\(p\)</span> is the price per item and <span class="process-math">\(x\)</span> is the number of items sold at that price, then <dfn class="terminology">elasticity of demand</dfn> <span class="process-math">\(E\)</span> is defined as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eqn_Elasticity">
+\begin{equation}
+E(p)= \dfrac{-p}{x}\cdot\dfrac{dx}{dp} \tag{4.1.1}
+\end{equation}
+</div></article><p id="p-1212">An important thing to note here is that, previously, we often wrote the demand function as <span class="process-math">\(p=g(x)\)</span> where <span class="process-math">\(x\)</span> (items demanded) was the input and price was the output. Here, we want to make sure the function is written as <span class="process-math">\(x=f(p)\)</span> where <span class="process-math">\(p\)</span> is the input. This will mean we sometimes need to solve for <span class="process-math">\(x\text{.}\)</span></p>
+<p id="p-1213">When analyzing elasticity of demand, we often was to know if something like a 10% change in price will lead to more than or less than a 10% change in demand.  The following terms capture this idea.</p>
+<article class="definition definition-like" id="definition-31"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3</span><span class="period">.</span>
+</h4>
+<p id="p-1214">If the percent change in demand is less than the percent change in price, which leads to <span class="process-math">\(E(p)\lt 1\text{,}\)</span> we say that demand is <dfn class="terminology">inelastic</dfn>.</p>
+<p id="p-1215">If the percent change in demand is more than the percent change in price, which leads to <span class="process-math">\(E(p)&gt;1\text{,}\)</span> we say that demand is <dfn class="terminology">elastic</dfn>.</p>
+<p id="p-1216">If the percent change in demand is eqaul to the percent change in price, which leads to <span class="process-math">\(E(p)=1\text{,}\)</span> we say that demand is <dfn class="terminology">unit elastic</dfn>.</p></article><p id="p-1217">Products like milk and gas have inelastic demand since they are necessities. For these products, the percent change in price is more than the percent change in demand so <span class="process-math">\(E(p)\lt 1\text{.}\)</span>  For products like furniture or vehicles, the demand is elastic. When price changes by a small percentage, demand changes by a bigger percentage and thus <span class="process-math">\(E(p)&gt;1.\)</span>  In many situations, the elasticity of demand may be greater then one from some <span class="process-math">\(p\)</span> values and less than one for others. Thus demand is not always either elastic or inelastic for a given product.</p>
+<article class="example example-like" id="ex_Elasticity1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Elasticity of Demand of Soda at Different Prices.</span>
+</h4>
+<p id="p-1218">The demand equation for one 20 oz soda is given by <span class="process-math">\(p=2-x\text{,}\)</span> where <span class="process-math">\(p\)</span> is the price of one soda and <span class="process-math">\(x\)</span> is the number of hundreds of sodas sold in one week. Find the elasticity of demand when <span class="process-math">\(p=0.75,\;1.50, \text{ and }1.00\text{.}\)</span> Then determine if demand is elastic, inelastic or unit elastic in each case.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-229" id="solution-229"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-229"><div class="solution solution-like">
+<p id="p-1219">We know that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn_Elasticity2.html" id="eqn_Elasticity2">
+\begin{equation}
+E(p)= \dfrac{-p}{x}\dfrac{dx}{dp} .\tag{4.1.2}
+\end{equation}
+</div>
+<p id="p-1220">To find <span class="process-math">\(\frac{dx}{dp},\)</span> we need to rewrite the demand equation so that it is of the form <span class="process-math">\(x=f(p)\text{.}\)</span> We get</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn_Elasticity2.html" id="md-59">
+\begin{align*}
+p \amp = 2-x \\
+x+p \amp = 2 \\
+x \amp = 2-p 
+\end{align*}
+</div>
+<p id="p-1221">Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn_Elasticity2.html">
+\begin{equation*}
+\frac{dx}{dp}=\frac{d}{dp}(2-p)=-1.
+\end{equation*}
+</div>
+<p id="p-1222">Plugging in to <a href="" class="xref" data-knowl="./knowl/eqn_Elasticity2.html" title="Equation 4.1.2">(4.1.2)</a>, we get that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn_Elasticity2.html">
+\begin{equation*}
+E(p)= \dfrac{-p}{x}\dfrac{dx}{dp}=-\dfrac{p}{2-p}\cdot (-1) =\frac{p}{2-p}.
+\end{equation*}
+</div>
+<p id="p-1223">Now we can evaluate  <span class="process-math">\(E(p)\)</span> at each of the given <span class="process-math">\(p \)</span> values.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn_Elasticity2.html" id="md-60">
+\begin{align*}
+E(0.75) \amp =\frac{0.75}{2-0.75}=0.6 \amp \amp E\lt 1, \text{ inelastic } \\
+E(1.50) \amp =\frac{1.50}{2-1.50}=3 \amp \amp E&gt;1, \text{ elastic }\\
+E(1.00) \amp =\frac{1.00}{2-1.00}=1\amp \amp E=1, \text{ unit elastic } 
+\end{align*}
+</div>
+</div></div>
+</div></article><p id="p-1224">When we defined elasticity of demand, we defined it as the (negative) ratio of percent change in demand over percent change in price. Since when price goes up, (usually) demand goes down, we can think of this as measuring</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn_Elasticity2.html ./knowl/ex_Elasticity1.html ./knowl/eqn_Elasticity.html">
+\begin{equation*}
+E(p)=\frac{\% \text{ decrease in demand}}{\% \text{ increase in price}} \text{.}
+\end{equation*}
+</div>
+<p id="p-1225">So, for example, if <span class="process-math">\(E(p)=1/2 \text{,}\)</span> we can interpret this as saying that a 1% decrease in demand comes from a 2% increase in price. If <span class="process-math">\(E(p)=2=\frac{2}{1} \text{,}\)</span> we can interpret this as saying that a 2% decrease in demand comes from a 1% increase in price (or alternatively a 1% increase in price leads to a 2% decrease in demand.).</p>
+<article class="example example-like" id="ex_Elasticity2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Interpretting Elasticity of Demand.</span>
+</h4>
+<p id="p-1226">In <a href="" class="xref" data-knowl="./knowl/ex_Elasticity1.html" title="Example 4.4: Elasticity of Demand of Soda at Different Prices">Example 4.4</a>, we found the elasticity of demand for soda at three different prices. Interpret each of these values in terms of relative percent changes of price and demand.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-230" id="solution-230"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-230"><div class="solution solution-like">
+<p id="p-1227">We found that <span class="process-math">\(E(0.75)=0.6=\frac{0.6}{1}=\frac{3}{5} \)</span> so we can either say that a 1% increase in price leads to a 0.6% decrease in demand or, similarly, that a 5% increase in price leads to a 3% decrease in demand.</p>
+<p id="p-1228">We found that <span class="process-math">\(E(1.50)=3=\frac{3}{1} \)</span> so we can say that a 1% increase in price leads to a 3% decrease in demand.</p>
+<p id="p-1229">We found that <span class="process-math">\(E(1.00)=1=\frac{1}{1} \)</span> so we can say that a 1% increase in price leads to a 1% decrease in demand.</p>
+<p id="p-1230">There's a few things to note here. First, there are lots of equivalent fractions so, for example, since we can write <span class="process-math">\(E(1.50)=3=\frac{6}{2} \text{,}\)</span> we could have also said a 2% increase in price leads to a 6% decrease in demand. Second, we can also switch which quantities are increasing and decreasing. So, for example, for <span class="process-math">\(E(0.75)=\frac{3}{5} \text{,}\)</span> we get that a 5% <em class="emphasis">decrease</em> in price leads to a <span class="process-math">\(3% \)</span> <em class="emphasis">increase</em> in demand.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-94"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.6</span><span class="period">.</span>
+</h4>The demand equation for school lunches is <span class="process-math">\(10-\frac{x}{10}\text{,}\)</span> where <span class="process-math">\(x \)</span> is the number of lunches purchased and <span class="process-math">\(p \)</span> is the price in dollars. Find <span class="process-math">\(E(p) \text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-91" id="hint-91"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-91"><div class="hint solution-like">Make sure you solve for <span class="process-math">\(x \)</span> first, then plug into <a href="" class="xref" data-knowl="./knowl/eqn_Elasticity.html" title="Equation 4.1.1">(4.1.1)</a>.</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-231" id="solution-231"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-231"><div class="solution solution-like"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E(p)=\frac{p}{10-p} 
+\end{equation*}
+</div></div></div>
+</div></article></section><section class="subsection" id="subsection-101"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.1.2</span> <span class="title">Elasticity of Demand and Revenue</span>
+</h3>
+<p id="p-1231">We've seen that when demand is elastic, (<span class="process-math">\(E&gt;1\)</span>), when we make a change to the price, the change to demand (as a percent) is larger then the percent change to price. For example, when <span class="process-math">\(E=2 \text{,}\)</span> a 10% increase in price leads to a 20% decrease in demand. If we consider the revenue, since price only goes up 10% but demand goes down 20%, we will get less revenue overall. Therefore, if <span class="process-math">\(E&gt;1\text{,}\)</span> increasing price decreases revenue. On the other hand, when demand is inelastic, (<span class="process-math">\(E \lt 1\)</span>), when we make a change to the price, the change to demand (as a percent) is smaller then the percent change to price. For example, when <span class="process-math">\(E=1/2 \text{,}\)</span> a 20% increase in price leads to a 10% decrease in demand. If we consider the revenue, since price goes up 20% but demand only goes down 10%, we will get more revenue overall. Therefore, if <span class="process-math">\(E\lt 1\text{,}\)</span> increasing price increases revenue. Right in the middle of these cases, when <span class="process-math">\(E=1 \text{,}\)</span> we are at an equilibrium point and revenue is maximized. This is summarized below.</p>
+<article class="note remark-like" id="note-32"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Using Elasticity of Demand to Tell us About Revenue.</span>
+</h4>
+<ul class="disc">
+<li id="li-568"><p id="p-derived-li-568">When <span class="process-math">\(E=1 \)</span> revenue is maximized.</p></li>
+<li id="li-569"><p id="p-derived-li-569">If <span class="process-math">\(E\gt 1 \text{,}\)</span> increasing price decreases revenue.</p></li>
+<li id="li-570"><p id="p-derived-li-570">If <span class="process-math">\(E\lt 1 \text{,}\)</span> increasing price increases revenue.</p></li>
+</ul></article><article class="example example-like" id="example-138"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Maximizing the Revenue.</span>
+</h4>The consumer demand equation for chicken tenders at "The Rent" is given by <span class="process-math">\(x=(36-2p)^2\text{,}\)</span> where <span class="process-math">\(p \)</span> is the price of the tenders and <span class="process-math">\(x\)</span> is the demand in weekly sales. Find the price they should charge in order to maximize revenue.<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-232" id="solution-232"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-232"><div class="solution solution-like">We know that we need <span class="process-math">\(E=1\)</span> to maximize revenue. We already have the demand equation in terms of "<span class="process-math">\(x=\)</span>", so we can take the derivative and plug it into the elasticity of demand formula.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dx}{dp}=\frac{d}{dp}(36-2p)^2=2(36-2p)(-2)=-4(36-2p) 
+\end{equation*}
+</div>Thus,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E =-\frac{dx}{dp}\frac{p}{x} = 4(36-2p)\frac{p}{(36-2p)^2}=\frac{4p}{36-2p}.
+\end{equation*}
+</div>To maximize revenue, we set <span class="process-math">\(E=1\text{.}\)</span> This gives<div class="displaymath process-math" data-contains-math-knowls="" id="md-61">
+\begin{gather*}
+E=\frac{4p}{36-2p}=1 \\
+4p=36-2p \\
+6p=36 \\
+p=6 
+\end{gather*}
+</div>Therefore, they should charge <span class="process-math">\(\$6\)</span> to maximize revenue.</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-95"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.9</span><span class="period">.</span>
+</h4>A small grocery store makes their own candy bats. The elasticity of demand is given by <span class="process-math">\(E(p)=\frac{p}{5-p}\)</span> where <span class="process-math">\(p\)</span> is the price of each candy bar and <span class="process-math">\(x\)</span> is the number of candy bars they sell in one week. How much should this small grocery store set as the price for their candy bars in order to maximize revenue?<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-92" id="hint-92"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-92"><div class="hint solution-like">We need <span class="process-math">\(E=1 \)</span> to maximize revenue.</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-233" id="solution-233"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-233"><div class="solution solution-like"><span class="process-math">\(p=\$2.50\)</span></div></div>
+</div></article><article class="example example-like" id="example-139"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Change in Demand of Football Tickets.</span>
+</h4>Assume the price of student season tickets for football is <span class="process-math">\(\$40\)</span> and <span class="process-math">\(E(40)=1.75\text{.}\)</span> If the price increases by <span class="process-math">\(\$4\text{,}\)</span> what is the approximate change to demand?<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-234" id="solution-234"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-234"><div class="solution solution-like">We know that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E(p)=\frac{\% \text{ decrease in demand}}{\% \text{ increase in price}} \text{.}
+\end{equation*}
+</div>Let's find the <span class="process-math">\(\% \text{increase in price }\)</span> and then we can plug that and the elasticity into the above expression. Since the price goes up <span class="process-math">\(\$4\)</span> and was originally <span class="process-math">\(\$40\text{,}\)</span> the percent change in price is<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\dfrac{4}{40}=\dfrac{1}{10}=0.10 \text{ or } 10\% 
+\end{equation*}
+</div>Thus we get,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E(p)=1.75=\frac{\% \text{ decrease in demand}}{10\%} \text{.}
+\end{equation*}
+</div>Solving for <span class="process-math">\(\% \text{ decrease in demand}\)</span> gives us:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\% \text{ decrease in demand}=17.5\%. 
+\end{equation*}
+</div>Thus demand will decrease by 17.5%.</div></div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

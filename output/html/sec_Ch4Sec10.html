@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-11-11T14:30:33-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Antiderivatives</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch4Sec7.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_fourth.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch_fifth.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch4Sec7.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_fourth.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ch_fifth.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="active">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Integration</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Ch4Sec10"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.8</span> <span class="title">Antiderivatives</span>
+</h2>
+<section class="introduction" id="introduction-40"><h3 class="heading">Learning Objectives.<span></span>
+</h3>Note: This is section 4.10 in the standard OpenStax Calculus book. This book skips the sections on L'Hopital's Rule and Newton's Method. <ul class="disc">
+<li id="li-623"><p id="p-derived-li-623">Find the general antiderivative of a given function.</p></li>
+<li id="li-624"><p id="p-derived-li-624">Explain the terms and notation used for an indefinite integral.</p></li>
+<li id="li-625"><p id="p-derived-li-625">State the power rule for integrals.</p></li>
+<li id="li-626"><p id="p-derived-li-626">Use antidifferentiation to solve simple initial-value problems.</p></li>
+</ul>
+<p id="p-1527">At this point, we have seen how to calculate derivatives of many functions and have been introduced to a variety of their applications. We now ask a question that turns this process around: Given a function <span class="process-math">\(f,\)</span> how do we find a function with the derivative <span class="process-math">\(f\)</span> and why would we be interested in such a function?</p>
+<p id="p-1528">We answer the first part of this question by defining antiderivatives. The antiderivative of a function <span class="process-math">\(f\)</span> is a function with a derivative <span class="process-math">\(f.\)</span> Why are we interested in antiderivatives? The need for antiderivatives arises in many situations, and we look at various examples throughout the remainder of the text. Here we examine one specific example that involves rectilinear motion. In our examination in <a href="ch_third.html" class="internal" title="Chapter 3: Derivatives">Derivatives 3</a> of rectilinear motion, we showed that given a position function <span class="process-math">\(s(t)\)</span> of an object, then its velocity function <span class="process-math">\(v(t)\)</span> is the derivative of <span class="process-math">\(s(t)\)</span>—that is, <span class="process-math">\(v(t)=s'(t).\)</span> Furthermore, the acceleration <span class="process-math">\(a(t)\)</span> is the derivative of the velocity <span class="process-math">\(v(t)\)</span>—that is, <span class="process-math">\(a(t)=v'(t)=s\text{ ″ }(t).\)</span> Now suppose we are given an acceleration function <span class="process-math">\(a,\)</span> but not the velocity function <span class="process-math">\(v\)</span> or the position function <span class="process-math">\(s.\)</span> Since <span class="process-math">\(a(t)=v'(t),\)</span> determining the velocity function requires us to find an antiderivative of the acceleration function. Then, since <span class="process-math">\(v(t)=s'(t),\)</span> determining the position function requires us to find an antiderivative of the velocity function. Rectilinear motion is just one case in which the need for antiderivatives arises. We will see many more examples throughout the remainder of the text. For now, let’s look at the terminology and notation for antiderivatives, and determine the antiderivatives for several types of functions. We examine various techniques for finding antiderivatives of more complicated functions later in the text, Volume 2.</p></section><section class="subsection" id="subsection-108"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.8.1</span> <span class="title">The Reverse of Differentiation</span>
+</h3>
+<p id="p-1529">At this point, we know how to find derivatives of various functions. We now ask the opposite question. Given a function <span class="process-math">\(f,\)</span> how can we find a function with derivative <span class="process-math">\(f?\)</span> If we can find a function <span class="process-math">\(F\)</span> derivative <span class="process-math">\(f,\)</span> we call <span class="process-math">\(F\)</span> an antiderivative of <span class="process-math">\(f.\)</span></p>
+<article class="definition definition-like" id="definition-41"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.157</span><span class="period">.</span>
+</h4>
+<p id="p-1530">A function <span class="process-math">\(F\)</span> is an <dfn class="terminology">antiderivative</dfn> of the function <span class="process-math">\(f\)</span> if</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F'(x)=f(x)
+\end{equation*}
+</div>
+<p id="p-1531">for all <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(f.\)</span></p></article><p id="p-1532">Consider the function <span class="process-math">\(f(x)=2x.\)</span> Knowing the power rule of differentiation, we conclude that <span class="process-math">\(F(x)=x^2\)</span> is an antiderivative of <span class="process-math">\(f\)</span> since <span class="process-math">\(F'(x)=2x.\)</span> Are there any other antiderivatives of <span class="process-math">\(f?\)</span> Yes; since the derivative of any constant <span class="process-math">\(C\)</span> is zero, <span class="process-math">\(x^2+C\)</span> is also an antiderivative of <span class="process-math">\(2x.\)</span> Therefore, <span class="process-math">\(x^2+5\)</span> and <span class="process-math">\(x^2-\sqrt{2}\)</span> are also antiderivatives. Are there any others that are not of the form <span class="process-math">\(x^2+C\)</span> for some constant <span class="process-math">\(C?\)</span> The answer is no. From Corollary <span class="process-math">\(2\)</span> of the Mean Value Theorem, we know that if <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are differentiable functions such that <span class="process-math">\(F'(x)=G'(x),\)</span> then <span class="process-math">\(F(x)-G(x)=C\)</span> for some constant <span class="process-math">\(C.\)</span> This fact leads to the following important theorem.</p>
+<article class="theorem theorem-like" id="theorem-28"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.158</span><span class="period">.</span><span class="space"> </span><span class="title">General Form of an Antiderivative.</span>
+</h4>
+<p id="p-1533">Let <span class="process-math">\(F\)</span> be an antiderivative of <span class="process-math">\(f\)</span> over an interval <span class="process-math">\(I.\)</span> Then,</p>
+<ol class="lower-alpha">
+<li id="li-627"><p id="p-derived-li-627">for each constant <span class="process-math">\(C,\)</span> the function <span class="process-math">\(F(x)+C\)</span> is also an antiderivative of <span class="process-math">\(f\)</span> over <span class="process-math">\(I;\)</span></p></li>
+<li id="li-628"><p id="p-derived-li-628">if <span class="process-math">\(G\)</span> is an antiderivative of <span class="process-math">\(f\)</span> over <span class="process-math">\(I,\)</span> there is a constant <span class="process-math">\(C\)</span> for which <span class="process-math">\(G(x)=F(x)+C\)</span> over <span class="process-math">\(I.\)</span></p></li>
+</ol>
+<p id="p-1534">In other words, the most general form of the antiderivative of <span class="process-math">\(f\)</span> over <span class="process-math">\(I\)</span> is <span class="process-math">\(F(x)+C.\)</span></p></article><p id="p-1535">We use this fact and our knowledge of derivatives to find all the antiderivatives for several functions.</p>
+<article class="example example-like" id="fs-id1165042616955"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.159</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Antiderivatives.</span>
+</h4>
+<p id="p-1536">For each of the following functions, find all antiderivatives.</p>
+<ol class="lower-alpha">
+<li id="li-629"><p id="p-derived-li-629"><span class="process-math">\(\displaystyle f(x)=3x^2\)</span></p></li>
+<li id="li-630"><p id="p-derived-li-630"><span class="process-math">\(\displaystyle f(x)=\frac{1}{x}\)</span></p></li>
+<li id="li-631"><p id="p-derived-li-631"><span class="process-math">\(\displaystyle f(x)=4x^3+2x\)</span></p></li>
+<li id="li-632"><p id="p-derived-li-632"><span class="process-math">\(\displaystyle f(x)=e^x\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-283" id="solution-283"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-283"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-633"><p id="p-derived-li-633">Because<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}(x^3)=3x^2
+\end{equation*}
+</div>then <span class="process-math">\(F(x)=x^3\)</span> is an antiderivative of <span class="process-math">\(3x^2.\)</span> Therefore, every antiderivative of <span class="process-math">\(3x^2\)</span> is of the form <span class="process-math">\(x^3+C\)</span> for some constant <span class="process-math">\(C,\)</span> and every function of the form <span class="process-math">\(x^3+C\)</span> is an antiderivative of <span class="process-math">\(3x^2.\)</span></p></li>
+<li id="li-634"><p id="p-derived-li-634">Let <span class="process-math">\(f(x)=\ln |x|.\)</span> For <span class="process-math">\(x\gt 0,f(x)=\ln (x)\)</span> and<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}(\ln  x)=\frac{1}{x}.
+\end{equation*}
+</div>For <span class="process-math">\(x\lt 0,f(x)=\ln (-x)\)</span> and<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}(\ln (-x))=-\frac{1}{-x}=\frac{1}{x}.
+\end{equation*}
+</div>Therefore,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}(\ln |x|)=\frac{1}{x}.
+\end{equation*}
+</div>Thus, <span class="process-math">\(F(x)=\ln |x|\)</span> is an antiderivative of <span class="process-math">\(\frac{1}{x}.\)</span> Therefore, every antiderivative of <span class="process-math">\(\frac{1}{x}\)</span> is of the form <span class="process-math">\(\ln |x|+C\)</span> for some constant <span class="process-math">\(C\)</span> and every function of the form <span class="process-math">\(\ln |x|+C\)</span> is an antiderivative of <span class="process-math">\(\frac{1}{x}.\)</span></p></li>
+<li id="li-635"><p id="p-derived-li-635">We have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}(x^4)=4x^3
+\end{equation*}
+</div>then <span class="process-math">\(F(x)=x^4\)</span> is an antiderivative of <span class="process-math">\(4x^3.\)</span> Similarly,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}(x^2)=2x
+\end{equation*}
+</div>then <span class="process-math">\(F(x)=x^2\)</span> is an antiderivative of <span class="process-math">\(2x.\)</span> Therefore, every antiderivative of <span class="process-math">\(4x^3+2x\)</span> is of the form <span class="process-math">\(x^4+x^2+C\)</span> for some constant <span class="process-math">\(C,\)</span> and every function of the form <span class="process-math">\(x^4+x^2+C\)</span> is an antiderivative of <span class="process-math">\(4x^3+2x.\)</span></p></li>
+<li id="li-636"><p id="p-derived-li-636">Since<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}(e^x)=e^x,
+\end{equation*}
+</div>then <span class="process-math">\(F(x)=e^x\)</span> is an antiderivative of <span class="process-math">\(e^x.\)</span> Therefore, every antiderivative of <span class="process-math">\(e^x\)</span> is of the form <span class="process-math">\(e^x+C\)</span> for some constant <span class="process-math">\(C\)</span> and every function of the form <span class="process-math">\(e^x+C\)</span> is an antiderivative of <span class="process-math">\(e^x.\)</span></p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-119"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.160</span><span class="period">.</span>
+</h4>
+<p id="p-1537">Find all antiderivatives of <span class="process-math">\(f(x)=-\frac{1}{x^2}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-116" id="hint-116"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-116"><div class="hint solution-like"><p id="p-1538">What function has a derivative of <span class="process-math">\(-\frac{1}{x^2}?\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-284" id="solution-284"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-284"><div class="solution solution-like"><p id="p-1539"><span class="process-math">\(\frac{1}{x}\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-109"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.8.2</span> <span class="title">Indefinite Integrals</span>
+</h3>
+<p id="p-1540">We now look at the formal notation used to represent antiderivatives and examine some of their properties. These properties allow us to find antiderivatives of more complicated functions. Given a function <span class="process-math">\(f,\)</span> we use the notation <span class="process-math">\(f'(x)\)</span> or <span class="process-math">\(\frac{df}{dx}\)</span> to denote the derivative of <span class="process-math">\(f.\)</span> Here we introduce notation for antiderivatives. If <span class="process-math">\(F\)</span> is an antiderivative of <span class="process-math">\(f,\)</span> we say that <span class="process-math">\(F(x)+C\)</span> is the most general antiderivative of <span class="process-math">\(f\)</span> and write</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_10_001.html ./knowl/fs-id1165043092431.html ./knowl/fs-id1165043393824.html ./knowl/fs-id1165043393824.html ./knowl/ch_fifth.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\int f(x)dx =F(x)+C.
+\end{equation*}
+</div>
+<p id="p-1541">The symbol <span class="process-math">\(\int  \)</span> is called an integral sign, and <span class="process-math">\(\int f(x)dx \)</span> is called the indefinite integral of <span class="process-math">\(f.\)</span></p>
+<article class="definition definition-like" id="definition-42"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.161</span><span class="period">.</span>
+</h4>
+<p id="p-1542">Given a function <span class="process-math">\(f,\)</span> the <dfn class="terminology">indefinite integral</dfn> of <span class="process-math">\(f,\)</span> denoted</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int f(x)dx ,
+\end{equation*}
+</div>
+<p id="p-1543">is the most general antiderivative of <span class="process-math">\(f.\)</span> If <span class="process-math">\(F\)</span> is an antiderivative of <span class="process-math">\(f,\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int f(x)dx =F(x)+C.
+\end{equation*}
+</div>
+<p id="p-1544">The expression <span class="process-math">\(f(x)\)</span> is called the integrand and the variable <span class="process-math">\(x\)</span> is the variable of integration.</p></article><p id="p-1545">Given the terminology introduced in this definition, the act of finding the antiderivatives of a function <span class="process-math">\(f\)</span> is usually referred to as integrating <span class="process-math">\(f.\)</span></p>
+<p id="p-1546">For a function <span class="process-math">\(f\)</span> and an antiderivative <span class="process-math">\(F,\)</span> the functions <span class="process-math">\(F(x)+C,\)</span> where <span class="process-math">\(C\)</span> is any real number, is often referred to as the family of antiderivatives of <span class="process-math">\(f.\)</span> For example, since <span class="process-math">\(x^2\)</span> is an antiderivative of <span class="process-math">\(2x\)</span> and any antiderivative of <span class="process-math">\(2x\)</span> is of the form <span class="process-math">\(x^2+C,\)</span> we write</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_10_001.html ./knowl/fs-id1165043092431.html ./knowl/fs-id1165043393824.html ./knowl/fs-id1165043393824.html ./knowl/ch_fifth.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\int 2x dx=x^2+C .
+\end{equation*}
+</div>
+<p id="p-1547">The collection of all functions of the form <span class="process-math">\(x^2+C,\)</span> where <span class="process-math">\(C\)</span> is any real number, is known as the family of antiderivatives of <span class="process-math">\(2x.\)</span> <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_10_001.html" title="Figure 4.162">Figure 4.162</a> shows a graph of this family of antiderivatives.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_10_001"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_10_001.jpg" class="contained" alt='"The graphs for y = x2 + 2, y = x2 + 1, y = x2, y = x2 - 1, and y = x2 - 2 are shown."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.162<span class="period">.</span></span><span class="space"> </span>The family of antiderivatives of <span class="process-math">\(2x\)</span> consists of all functions of the form <span class="process-math">\(x^2+C,\)</span> where <span class="process-math">\(C\)</span> is any real number.</figcaption></figure><p id="p-1548">For some functions, evaluating indefinite integrals follows directly from properties of derivatives. For example, for <span class="process-math">\(n\neq -1,\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_10_001.html ./knowl/fs-id1165043092431.html ./knowl/fs-id1165043393824.html ./knowl/fs-id1165043393824.html ./knowl/ch_fifth.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\int x^ndx=\frac{x^{n+1}}{n+1}+C ,
+\end{equation*}
+</div>
+<p id="p-1549">which comes directly from</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_10_001.html ./knowl/fs-id1165043092431.html ./knowl/fs-id1165043393824.html ./knowl/fs-id1165043393824.html ./knowl/ch_fifth.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\frac{d}{dx}\left(\frac{x^{n+1}}{n+1}\right)=(n+1)\frac{x^n}{n+1}=x^n.
+\end{equation*}
+</div>
+<p id="p-1550">This fact is known as the power rule for integrals.</p>
+<article class="theorem theorem-like" id="theorem-29"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.163</span><span class="period">.</span><span class="space"> </span><span class="title">Power Rule for Integrals.</span>
+</h4>
+<p id="p-1551">For <span class="process-math">\(n\neq -1,\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int x^ndx=\frac{x^{n+1}}{n+1}+C .
+\end{equation*}
+</div></article><p id="p-1552">Evaluating indefinite integrals for some other functions is also a straightforward calculation. The following table lists the indefinite integrals for several common functions.</p>
+<figure class="table table-like" id="fs-id1165043092431"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.164<span class="period">.</span></span><span class="space"> </span>Integration Formulas</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l t b0 r0 l0 t0 lines">Differentiation Formula</th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Indefinite Integral</th>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\frac{d}{dx}(k)=0\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\int kdx= \int kx^0dx  =kx+C\)</span></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\frac{d}{dx}(x^n)=nx^{n-1}\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">
+<span class="process-math">\(\int x^ndn =\frac{x^{n+1}}{n+1}+C\)</span> for <span class="process-math">\(n\neq -1\)</span>
+</td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\frac{d}{dx}(\ln |x|)=\frac{1}{x}\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\int \frac{1}{x}dx=\ln |x| +C\)</span></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\frac{d}{dx}(e^x)=e^x\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\int e^xdx =e^x+C\)</span></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\frac{d}{dx}(a^x)=(\ln a)a^x\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\int a^xdx =\frac{a^x}{\ln a}+C\)</span></td>
+</tr>
+</table></div></figure><p id="p-1553">From the definition of indefinite integral of <span class="process-math">\(f,\)</span> we know</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_10_001.html ./knowl/fs-id1165043092431.html ./knowl/fs-id1165043393824.html ./knowl/fs-id1165043393824.html ./knowl/ch_fifth.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\int f(x)dx=F(x)+C 
+\end{equation*}
+</div>
+<p id="p-1554">if and only if <span class="process-math">\(F\)</span> is an antiderivative of <span class="process-math">\(f.\)</span> Therefore, when claiming that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_10_001.html ./knowl/fs-id1165043092431.html ./knowl/fs-id1165043393824.html ./knowl/fs-id1165043393824.html ./knowl/ch_fifth.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\int f(x)dx=F(x)+C 
+\end{equation*}
+</div>
+<p id="p-1555">it is important to check whether this statement is correct by verifying that <span class="process-math">\(F'(x)=f(x).\)</span></p>
+<article class="example example-like" id="fs-id1165043393824"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.165</span><span class="period">.</span><span class="space"> </span><span class="title">Verifying an Indefinite Integral.</span>
+</h4>
+<p id="p-1556">Each of the following statements is of the form <span class="process-math">\(\int f(x)dx=F(x)+C .\)</span> Verify that each statement is correct by showing that <span class="process-math">\(F'(x)=f(x).\)</span></p>
+<ol class="lower-alpha">
+<li id="li-637"><p id="p-derived-li-637"><span class="process-math">\(\displaystyle \int (x+e^x) dx=\frac{x^2}{2}+e^x+C\)</span></p></li>
+<li id="li-638"><p id="p-derived-li-638"><span class="process-math">\(\displaystyle \int xe^xdx =xe^x-e^x+C\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-285" id="solution-285"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-285"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-639"><p id="p-derived-li-639">Since<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}\left(\frac{x^2}{2}+e^x+C\right)=x+e^x,
+\end{equation*}
+</div>the statement<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int (x+e^x) dx=\frac{x^2}{2}+e^x+C
+\end{equation*}
+</div>is correct. Note that we are verifying an indefinite integral for a sum. Furthermore, <span class="process-math">\(\frac{x^2}{2}\)</span> and <span class="process-math">\(e^x\)</span> are antiderivatives of <span class="process-math">\(x\)</span> and <span class="process-math">\(e^x,\)</span> respectively, and the sum of the antiderivatives is an antiderivative of the sum. We discuss this fact again later in this section.</p></li>
+<li id="li-640"><p id="p-derived-li-640">Using the product rule, we see that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}(xe^x-e^x+C)=e^x+xe^x-e^x=xe^x.
+\end{equation*}
+</div>Therefore, the statement<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int xe^xdx =xe^x-e^x+C
+\end{equation*}
+</div>is correct. Note that we are verifying an indefinite integral for a product. The antiderivative <span class="process-math">\(xe^x-e^x\)</span> is not a product of the antiderivatives. Furthermore, the product of antiderivatives, <span class="process-math">\(x^2e^x/2\)</span> is not an antiderivative of <span class="process-math">\(xe^x\)</span> since<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}\left(\frac{x^2e^x}{2}\right)=xe^x+\frac{x^2e^x}{2}\neq xe^x.
+\end{equation*}
+</div>In general, the product of antiderivatives is not an antiderivative of a product.</p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-120"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.166</span><span class="period">.</span>
+</h4>
+<p id="p-1557">Verify that <span class="process-math">\(\int 3\sqrt{x} dx=2\sqrt{x^3}+C. \)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-117" id="hint-117"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-117"><div class="hint solution-like"><p id="p-1558">Calculate <span class="process-math">\(\displaystyle{\frac{d}{dx}\left(2\sqrt{x^3}+C\right)}.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-286" id="solution-286"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-286"><div class="solution solution-like"><p id="p-1559"><span class="process-math">\(\displaystyle{\frac{d}{dx}\left(2\sqrt{x^3}+C\right)=\frac{d}{dx}\left(2x^{3/2}+C\right)=3\sqrt{x}}\)</span></p></div></div>
+</div></article><p id="p-1560">In <a href="" class="xref" data-knowl="./knowl/fs-id1165043092431.html" title="Table 4.164: Integration Formulas">Table 4.164</a>, we listed the indefinite integrals for many elementary functions. Let’s now turn our attention to evaluating indefinite integrals for more complicated functions. For example, consider finding an antiderivative of a sum <span class="process-math">\(f+g.\)</span> In <a href="" class="xref" data-knowl="./knowl/fs-id1165043393824.html" title="Example 4.165: Verifying an Indefinite Integral">Example 4.165</a>a. we showed that an antiderivative of the sum <span class="process-math">\(x+e^x\)</span> is given by the sum <span class="process-math">\((\frac{x^2}{2})+e^x\)</span>—that is, an antiderivative of a sum is given by a sum of antiderivatives. This result was not specific to this example. In general, if <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are antiderivatives of any functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g,\)</span> respectively, then</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_10_001.html ./knowl/fs-id1165043092431.html ./knowl/fs-id1165043393824.html ./knowl/fs-id1165043393824.html ./knowl/ch_fifth.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\frac{d}{dx}(F(x)+G(x))=F'(x)+G'(x)=f(x)+g(x).
+\end{equation*}
+</div>
+<p id="p-1561">Therefore, <span class="process-math">\(F(x)+G(x)\)</span> is an antiderivative of <span class="process-math">\(f(x)+g(x)\)</span> and we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_10_001.html ./knowl/fs-id1165043092431.html ./knowl/fs-id1165043393824.html ./knowl/fs-id1165043393824.html ./knowl/ch_fifth.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\int (f(x)+g(x)) dx=F(x)+G(x)+C.
+\end{equation*}
+</div>
+<p id="p-1562">Similarly,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_10_001.html ./knowl/fs-id1165043092431.html ./knowl/fs-id1165043393824.html ./knowl/fs-id1165043393824.html ./knowl/ch_fifth.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\int (f(x)-g(x)) dx=F(x)-G(x)+C.
+\end{equation*}
+</div>
+<p id="p-1563">In addition, consider the task of finding an antiderivative of <span class="process-math">\(kf(x),\)</span> where <span class="process-math">\(k\)</span> is any real number. Since</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_10_001.html ./knowl/fs-id1165043092431.html ./knowl/fs-id1165043393824.html ./knowl/fs-id1165043393824.html ./knowl/ch_fifth.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\frac{d}{dx}(kf(x))=k\frac{d}{dx}F(x)=kf'(x)
+\end{equation*}
+</div>
+<p id="p-1564">for any real number <span class="process-math">\(k,\)</span> we conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_10_001.html ./knowl/fs-id1165043092431.html ./knowl/fs-id1165043393824.html ./knowl/fs-id1165043393824.html ./knowl/ch_fifth.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\int kf(x)dx =kF(x)+C.
+\end{equation*}
+</div>
+<p id="p-1565">These properties are summarized next.</p>
+<article class="theorem theorem-like" id="fs-id1165043425485"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.167</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Indefinite Integrals.</span>
+</h4>
+<p id="p-1566">Let <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> be antiderivatives of <span class="process-math">\(f\)</span> and <span class="process-math">\(g,\)</span> respectively, and let <span class="process-math">\(k\)</span> be any real number.</p>
+<p id="p-1567">Sums and Differences</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int (f(x)\pm g(x))dx=F(x)\pm G(x)+C 
+\end{equation*}
+</div>
+<p id="p-1568">Constant Multiples</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int kf(x)dx=kF(x)+C 
+\end{equation*}
+</div></article><p id="p-1569">From this theorem, we can evaluate any integral involving a sum, difference, or constant multiple of functions with antiderivatives that are known. Evaluating integrals involving products, quotients, or compositions is more complicated (see <a href="" class="xref" data-knowl="./knowl/fs-id1165043393824.html" title="Example 4.165: Verifying an Indefinite Integral">Example 4.165</a>b. for an example involving an antiderivative of a product.) We look at and address integrals involving these more complicated functions in <a href="ch_fifth.html" class="internal" title="Chapter 5: Integration">Introduction to Integration 5</a>. In the next example, we examine how to use this theorem to calculate the indefinite integrals of several functions.</p>
+<article class="example example-like" id="fs-id1165043248811"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.168</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating Indefinite Integrals.</span>
+</h4>
+<p id="p-1570">Evaluate each of the following indefinite integrals:</p>
+<ol class="lower-alpha">
+<li id="li-641"><p id="p-derived-li-641"><span class="process-math">\(\displaystyle \int (5x^3-7x^2+3x+4)dx \)</span></p></li>
+<li id="li-642"><p id="p-derived-li-642"><span class="process-math">\(\displaystyle \int \frac{x^2+4\sqrt[3]{x} }{x} dx\)</span></p></li>
+<li id="li-643"><p id="p-derived-li-643"><span class="process-math">\(\displaystyle \int (x+1)(x+2) dx \)</span></p></li>
+<li id="li-644"><p id="p-derived-li-644"><span class="process-math">\(\displaystyle \int (2^x+7e^x) dx \)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-287" id="solution-287"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-287"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-645"><p id="p-derived-li-645">Using <a href="" class="xref" data-knowl="./knowl/fs-id1165043425485.html" title="Theorem 4.167: Properties of Indefinite Integrals">Theorem 4.167</a>, we can integrate each of the four terms in the integrand separately. We obtain<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html">
+\begin{equation*}
+\int (5x^3-7x^2+3x+4)dx = \int 5x^3dx-  \int 7x^2dx + \int 3x dx + \int 4dx .
+\end{equation*}
+</div>From the second part of <a href="" class="xref" data-knowl="./knowl/fs-id1165043425485.html" title="Theorem 4.167: Properties of Indefinite Integrals">Theorem 4.167</a>, each coefficient can be written in front of the integral sign, which gives<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html">
+\begin{equation*}
+\int 5x^3dx-  \int 7x^2dx + \int 3x dx + \int 4dx =5 \int x^3dx-7  \int x^2dx +3 \int x dx +4 \int 1dx. 
+\end{equation*}
+</div>Using the power rule for integrals, we conclude that<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html">
+\begin{equation*}
+\int (5x^3-7x^2+3x+4)dx =\frac{5}{4}x^4-\frac{7}{3}x^3+\frac{3}{2}x^2+4x+C.
+\end{equation*}
+</div></p></li>
+<li id="li-646"><p id="p-derived-li-646">Rewrite the integrand as<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{x^2+4\sqrt[3]{x} }{x}=\frac{x^2}{x}+\frac{4\sqrt[3]{x}}{x}.
+\end{equation*}
+</div>Then, to evaluate the integral, integrate each of these terms separately. Using the power rule, we have<div class="displaymath process-math" data-contains-math-knowls="" id="md-75">
+\begin{align*}
+\int (x+\frac{4}{x^{2/3}}) dx\amp = \int x dx+4  \int x^{-2/3}  dx\\
+\amp =\frac{1}{2}x^2+4\frac{1}{(\frac{-2}{3})+1}x^{(-2/3)+1}+C\\
+\amp =\frac{1}{2}x^2+12x^{1/3}+C.
+\end{align*}
+</div></p></li>
+<li id="li-647"><p id="p-derived-li-647">Rewrite the integrand as<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(x+1)(x+2)=x^2+3x+2.
+\end{equation*}
+</div>Therefore,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int (x+1)(x+2) dx = \int x^2+3x+2 dx =\frac{1}{3}x^3+\frac{3}{2}x^2+2x+C.
+\end{equation*}
+</div></p></li>
+<li id="li-648"><p id="p-derived-li-648">Using <a href="" class="xref" data-knowl="./knowl/fs-id1165043425485.html" title="Theorem 4.167: Properties of Indefinite Integrals">Theorem 4.167</a>, we can integrate each of the two terms in the integrand separately. We obtain<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\int (2^x+7e^x)dx = \int 2^xdx+\int 7e^xdx .
+\end{equation*}
+</div>From the second part of <a href="" class="xref" data-knowl="./knowl/fs-id1165043425485.html" title="Theorem 4.167: Properties of Indefinite Integrals">Theorem 4.167</a>, each coefficient can be written in front of the integral sign, which gives<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\int 2^xdx+7\int e^xdx. 
+\end{equation*}
+</div>Using <a href="" class="xref" data-knowl="./knowl/fs-id1165043092431.html" title="Table 4.164: Integration Formulas">Table 4.164</a>, we conclude that<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165043425485.html ./knowl/fs-id1165043425485.html ./knowl/fs-id1165043092431.html">
+\begin{equation*}
+\int (2^x+7e^x)dx =  \frac{2^x}{\ln 2}+7e^x+C.
+\end{equation*}
+</div></p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-121"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.169</span><span class="period">.</span>
+</h4>
+<p id="p-1571">Evaluate <span class="process-math">\(\int (4x^3-5x^2+x-7)dx .\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-118" id="hint-118"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-118"><div class="hint solution-like"><p id="p-1572">Integrate each term in the integrand separately, making use of the power rule.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-288" id="solution-288"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-288"><div class="solution solution-like"><p id="p-1573"><span class="process-math">\(x^4-\frac{5}{3}x^3+\frac{1}{2}x^2-7x+C\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-110"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.8.3</span> <span class="title">Initial-Value Problems</span>
+</h3>
+<p id="p-1574">We look at techniques for integrating a large variety of functions involving products, quotients, and compositions later in the text. Here we turn to one common use for antiderivatives that arises often in many applications: solving differential equations.</p>
+<p id="p-1575">A differential equation is an equation that relates an unknown function and one or more of its derivatives. The equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165042349924.html " id="fs-id1165042349924">
+\begin{equation}
+\frac{dy}{dx}=f(x)\tag{4.8.1}
+\end{equation}
+</div>
+<p id="p-1576">is a simple example of a differential equation. Solving this equation means finding a function <span class="process-math">\(y\)</span> with a derivative <span class="process-math">\(f.\)</span> Therefore, the solutions of <a href="" class="xref" data-knowl="./knowl/fs-id1165042349924.html" title="Equation 4.8.1">(4.8.1)</a> are the antiderivatives of <span class="process-math">\(f.\)</span> If <span class="process-math">\(F\)</span> is one antiderivative of <span class="process-math">\(f,\)</span> every function of the form <span class="process-math">\(y=F(x)+C\)</span> is a solution of that differential equation. For example, the solutions of</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165042349924.html ">
+\begin{equation*}
+\frac{dy}{dx}=6x^2
+\end{equation*}
+</div>
+<p id="p-1577">are given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165042349924.html ">
+\begin{equation*}
+y= \int 6x^2dx=2x^3+C .
+\end{equation*}
+</div>
+<p id="p-1578">Sometimes we are interested in determining whether a particular solution curve passes through a certain point <span class="process-math">\((x_0,y_0)\)</span>—that is, <span class="process-math">\(y(x_0)=y_0.\)</span> The problem of finding a function <span class="process-math">\(y\)</span> that satisfies a differential equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165042349924.html ">
+\begin{equation*}
+\frac{dy}{dx}=f(x)
+\end{equation*}
+</div>
+<p id="p-1579">with the additional condition</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165042349924.html ">
+\begin{equation*}
+y(x_0)=y_0
+\end{equation*}
+</div>
+<p id="p-1580">is an example of an <dfn class="terminology">initial-value problem</dfn>. The condition <span class="process-math">\(y(x_0)=y_0\)</span> is known as an initial condition. For example, looking for a function <span class="process-math">\(y\)</span> that satisfies the differential equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165042349924.html ">
+\begin{equation*}
+\frac{dy}{dx}=6x^2
+\end{equation*}
+</div>
+<p id="p-1581">and the initial condition</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1165042349924.html ">
+\begin{equation*}
+y(1)=5
+\end{equation*}
+</div>
+<p id="p-1582">is an example of an initial-value problem. Since the solutions of the differential equation are <span class="process-math">\(y=2x^3+C,\)</span> to find a function <span class="process-math">\(y\)</span> that also satisfies the initial condition, we need to find <span class="process-math">\(C\)</span> such that <span class="process-math">\(y(1)=2(1)^3+C=5.\)</span> From this equation, we see that <span class="process-math">\(C=3,\)</span> and we conclude that <span class="process-math">\(y=2x^3+3\)</span> is the solution of this initial-value problem as shown in the following graph.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_10_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_10_002.jpg" class="contained" alt='"The graphs for y = 2x3 + 6, y = 2x3 + 3, y = 2x3, and y = 2x3 - 3 are shown."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.170<span class="period">.</span></span><span class="space"> </span>Some of the solution curves of the differential equation <span class="process-math">\(\frac{dy}{dx}=6x^2\)</span> are displayed. The function <span class="process-math">\(y=2x^3+3\)</span> satisfies the differential equation and the initial condition <span class="process-math">\(y(1)=5.\)</span></figcaption></figure><article class="example example-like" id="example-168"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.171</span><span class="period">.</span><span class="space"> </span><span class="title">Solving an Initial-Value Problem.</span>
+</h4>
+<p id="p-1583">Solve the initial-value problem</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx}=2e^x,\;y(0)=5.
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-289" id="solution-289"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-289"><div class="solution solution-like">
+<p id="p-1584">First we need to solve the differential equation. If <span class="process-math">\(\frac{dy}{dx}=2e^x,\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y= \int 2e^x dx =2e^x+C.
+\end{equation*}
+</div>
+<p id="p-1585">Next we need to look for a solution <span class="process-math">\(y\)</span> that satisfies the initial condition. The initial condition <span class="process-math">\(y(0)=5\)</span> means we need a constant <span class="process-math">\(C\)</span> such that <span class="process-math">\(2e^0+C=5.\)</span> Therefore,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C=5-2e^0=3.
+\end{equation*}
+</div>
+<p id="p-1586">The solution of the initial-value problem is <span class="process-math">\(y=2e^x+3.\)</span></p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-122"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.172</span><span class="period">.</span>
+</h4>
+<p id="p-1587">Solve the initial value problem <span class="process-math">\(\frac{dy}{dx}=3x^{-2},y(1)=2.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-119" id="hint-119"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-119"><div class="hint solution-like"><p id="p-1588">Find all antiderivatives of <span class="process-math">\(f(x)=3x^{-2}.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-290" id="solution-290"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-290"><div class="solution solution-like"><p id="p-1589"><span class="process-math">\(y=-\frac{3}{x}+5\)</span></p></div></div>
+</div></article><p id="p-1590">Initial-value problems arise in many applications. Next we consider a problem in which a driver applies the brakes in a car. We are interested in how long it takes for the car to stop. Recall that the velocity function <span class="process-math">\(v(t)\)</span> is the derivative of a position function <span class="process-math">\(s(t),\)</span> and the acceleration <span class="process-math">\(a(t)\)</span> is the derivative of the velocity function. In earlier examples in the text, we could calculate the velocity from the position and then compute the acceleration from the velocity. In the next example we work the other way around. Given an acceleration function, we calculate the velocity function. We then use the velocity function to determine the position function.</p>
+<article class="example example-like" id="fs-id1165042640762"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.173</span><span class="period">.</span><span class="space"> </span><span class="title">Decelerating Car.</span>
+</h4>
+<p id="p-1591">A car is traveling at the rate of <span class="process-math">\(88\)</span> ft/sec <span class="process-math">\((60\)</span> mph) when the brakes are applied. The car begins decelerating at a constant rate of <span class="process-math">\(15\)</span> ft/sec2.</p>
+<ol class="lower-alpha">
+<li id="li-649"><p id="p-derived-li-649">How many seconds elapse before the car stops?</p></li>
+<li id="li-650"><p id="p-derived-li-650">How far does the car travel during that time?</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-291" id="solution-291"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-291"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-651"><p id="p-derived-li-651">First we introduce variables for this problem. Let <span class="process-math">\(t\)</span> be the time (in seconds) after the brakes are first applied. Let <span class="process-math">\(a(t)\)</span> be the acceleration of the car (in feet per seconds squared) at time <span class="process-math">\(t.\)</span> Let <span class="process-math">\(v(t)\)</span> be the velocity of the car (in feet per second) at time <span class="process-math">\(t.\)</span> Let <span class="process-math">\(s(t)\)</span> be the car’s position (in feet) beyond the point where the brakes are applied at time <span class="process-math">\(t.\)</span> The car is traveling at a rate of <span class="process-math">\(88 \text{ ft/sec }.\)</span> Therefore, the initial velocity is <span class="process-math">\(v(0)=88\)</span> ft/sec. Since the car is decelerating, the acceleration is<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a(t)=-15\text{ft/s}^2.
+\end{equation*}
+</div>The acceleration is the derivative of the velocity,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v'(t)=-15.
+\end{equation*}
+</div>Therefore, we have an initial-value problem to solve:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v'(t)=-15,v(0)=88.
+\end{equation*}
+</div>Integrating, we find that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v(t)=-15t+C.
+\end{equation*}
+</div>Since <span class="process-math">\(v(0)=88,C=88.\)</span> Thus, the velocity function is<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v(t)=-15t+88.
+\end{equation*}
+</div>To find how long it takes for the car to stop, we need to find the time <span class="process-math">\(t\)</span> such that the velocity is zero. Solving <span class="process-math">\(-15t+88=0,\)</span> we obtain <span class="process-math">\(t=\frac{88}{15}\)</span> sec.</p></li>
+<li id="li-652"><p id="p-derived-li-652">To find how far the car travels during this time, we need to find the position of the car after <span class="process-math">\(\frac{88}{15}\)</span> sec. We know the velocity <span class="process-math">\(v(t)\)</span> is the derivative of the position <span class="process-math">\(s(t).\)</span> Consider the initial position to be <span class="process-math">\(s(0)=0.\)</span> Therefore, we need to solve the initial-value problem<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+s'(t)=-15t+88,s(0)=0.
+\end{equation*}
+</div>Integrating, we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+s(t)=-\frac{15}{2}t^2+88t+C.
+\end{equation*}
+</div>Since <span class="process-math">\(s(0)=0,\)</span> the constant is <span class="process-math">\(C=0.\)</span> Therefore, the position function is<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+s(t)=-\frac{15}{2}t^2+88t.
+\end{equation*}
+</div>After <span class="process-math">\(t=\frac{88}{15}\)</span> sec, the position is <span class="process-math">\(s(\frac{88}{15})\approx 258.133\)</span> ft.</p></li>
+</ol></div></div>
+</div></article><article class="example example-like" id="example-170"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.174</span><span class="period">.</span><span class="space"> </span><span class="title">Marginal Cost.</span>
+</h4>Find the cost function, <span class="process-math">\(C(x)\text{,}\)</span> if the marginal cost is <span class="process-math">\(10e^x+40x-100\)</span> and fixed costs are $1000.<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-292" id="solution-292"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-292"><div class="solution solution-like">Recall that the marginal cost is <span class="process-math">\(C'(x)\text{.}\)</span> Thus,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C(x)=\int 10e^x+40x-100 dx=10e^x+20x^2-100x+C.
+\end{equation*}
+</div>Using <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fixedcost_1.3" missing or not unique]</code>, <span class="process-math">\(C(0)=1000\)</span> which we can use to find our integration contant:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+10e^0+20(0)-100(0)+C=1000
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C=990.
+\end{equation*}
+</div>Therefore, <span class="process-math">\(C(x)=10e^x+20x^2-100x+990\text{.}\)</span>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-123"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.175</span><span class="period">.</span><span class="space"> </span><span class="title">Marginal Profit.</span>
+</h4>
+<p id="p-1592">Find the profit function, <span class="process-math">\(P(x)\text{,}\)</span> if the marginal profit is <span class="process-math">\(2x^2+4x\)</span> where <span class="process-math">\(x\)</span> is the number of units sold and profit is in dollars. Assume that the profit earned is 0 dollars when 0 units are sold.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-120" id="hint-120"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-120"><div class="hint solution-like"><p id="p-1593">Recall that the marginal profit is <span class="process-math">\(P'(x).\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-293" id="solution-293"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-293"><div class="solution solution-like"><p id="p-1594"><span class="process-math">\(P(x)=\frac{2}{3}x^3+2x^2\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-111"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.8.4</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-653"><p id="p-derived-li-653">If <span class="process-math">\(F\)</span> is an antiderivative of <span class="process-math">\(f,\)</span> then every antiderivative of <span class="process-math">\(f\)</span> is of the form <span class="process-math">\(F(x)+C\)</span> for some constant <span class="process-math">\(C.\)</span></p></li>
+<li id="li-654"><p id="p-derived-li-654">Solving the initial-value problem<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx}=f(x),y(x_0)=y_0
+\end{equation*}
+</div>requires us first to find the set of antiderivatives of <span class="process-math">\(f\)</span> and then to look for the particular antiderivative that also satisfies the initial condition.</p></li>
+</ul></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-11-11T14:26:28-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Continuity</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch2Sec3.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_second.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch_third.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch2Sec3.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_second.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ch_third.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="active">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Integration</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Ch2Sec4"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Continuity</span>
+</h2>
+<section class="introduction" id="introduction-18"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ol class="decimal">
+<li id="li-366"><p id="p-derived-li-366">Explain the three conditions for continuity at a point.</p></li>
+<li id="li-367"><p id="p-derived-li-367">Describe three kinds of discontinuities.</p></li>
+<li id="li-368"><p id="p-derived-li-368">Define continuity on an interval.</p></li>
+<li id="li-369"><p id="p-derived-li-369">Provide an example of the intermediate value theorem.</p></li>
+</ol>
+<p id="p-605">Many functions have the property that their graphs can be traced with a pencil without lifting the pencil from the page. Such functions are called continuous. Other functions have points at which a break in the graph occurs, but satisfy this property over intervals contained in their domains. They are continuous on these intervals and are said to have a discontinuity at a point where a break occurs.</p>
+<p id="p-606">We begin our investigation of continuity by exploring what it means for a function to have continuity at a point. Intuitively, a function is continuous at a particular point if there is no break in its graph at that point.</p></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Continuity at a Point</span>
+</h3>
+<p id="p-607">Before we look at a formal definition of what it means for a function to be continuous at a point, let’s consider various functions that fail to meet our intuitive notion of what it means to be continuous at a point. We then create a list of conditions that prevent such failures.</p>
+<p id="p-608">Our first function of interest is shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_04_001.html" title="Figure 2.88">Figure 2.88</a>. We see that the graph of <span class="process-math">\(f(x)\)</span> has a hole at <span class="process-math">\(a\text{.}\)</span> In fact, <span class="process-math">\(f(a)\)</span> is undefined. At the very least, for <span class="process-math">\(f(x)\)</span> to be continuous at <span class="process-math">\(a\text{,}\)</span> we need the following condition:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_02_04_001.html ./knowl/CNX_Calc_Figure_02_04_002.html ./knowl/CNX_Calc_Figure_02_04_003.html ./knowl/CNX_Calc_Figure_02_04_004.html ./knowl/CNX_Calc_Figure_02_04_005.html ./knowl/fs-id1170573430304.html ./knowl/fs-id1170573430304.html">
+\begin{equation*}
+\text{ i. } f(a) \text{ is defined. }
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_04_001"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_04_001.jpg" class="contained" alt='"A graph of an increasing linear function f(x) which crosses the x axis from quadrant three to quadrant two and which crosses the y axis from quadrant two to quadrant one. A point a greater than zero is marked on the x axis. The point on the function f(x) above a is an open circle; the function is not defined at a."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.88<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(f(x)\)</span> is not continuous at <span class="process-math">\(a\)</span> because <span class="process-math">\(f(a)\)</span> is undefined.</figcaption></figure><p id="p-609">However, as we see in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_04_002.html" title="Figure 2.89">Figure 2.89</a>, this condition alone is insufficient to guarantee continuity at the point <span class="process-math">\(a\text{.}\)</span> Although <span class="process-math">\(f(a)\)</span> is defined, the function has a gap at <span class="process-math">\(a\text{.}\)</span> In this example, the gap exists because <span class="process-math">\(\displaystyle{\lim_{x\to a}f(x)}\)</span> does not exist. We must add another condition for continuity at <span class="process-math">\(a\)</span>—namely,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_02_04_001.html ./knowl/CNX_Calc_Figure_02_04_002.html ./knowl/CNX_Calc_Figure_02_04_003.html ./knowl/CNX_Calc_Figure_02_04_004.html ./knowl/CNX_Calc_Figure_02_04_005.html ./knowl/fs-id1170573430304.html ./knowl/fs-id1170573430304.html">
+\begin{equation*}
+\text{ ii. } \lim_{x\to a}f(x) \text{ exists. }
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_04_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_04_002.jpg" class="contained" alt='"The graph of a piecewise function f(x) with two parts. The first part is an increasing linear function that crosses from quadrant three to quadrant one at the origin. A point a greater than zero is marked on the x axis. At fa. on this segment, there is a solid circle. The other segment is also an increasing linear function. It exists in quadrant one for values of x greater than a. At x=a, this segment has an open circle."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.89<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(f(x)\)</span> is not continuous at <span class="process-math">\(a\)</span> because <span class="process-math">\(\displaystyle{\lim_{x\to a}f(x)}\)</span> does not exist.</figcaption></figure><p id="p-610">However, as we see in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_04_003.html" title="Figure 2.90">Figure 2.90</a>, these two conditions by themselves do not guarantee continuity at a point. The function in this figure satisfies both of our first two conditions, but is still not continuous at <span class="process-math">\(a\text{.}\)</span> We must add a third condition to our list:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_02_04_001.html ./knowl/CNX_Calc_Figure_02_04_002.html ./knowl/CNX_Calc_Figure_02_04_003.html ./knowl/CNX_Calc_Figure_02_04_004.html ./knowl/CNX_Calc_Figure_02_04_005.html ./knowl/fs-id1170573430304.html ./knowl/fs-id1170573430304.html">
+\begin{equation*}
+\text{ iii. } \lim_{x\to a}f(x)=f(a).
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_04_003"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_04_003.jpg" class="contained" alt='"The graph of a piecewise function with two parts. The first part is an increasing linear function that crosses the x axis from quadrant three to quadrant two and which crosses the y axis from quadrant two to quadrant one. A point a greater than zero is marked on the x axis. At this point, there is an open circle on the linear function. The second part is a point at x=a above the line."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.90<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(f(x)\)</span> is not continuous at <span class="process-math">\(a\)</span> because <span class="process-math">\(\displaystyle{\lim_{x\to a}f(x)\neq f(a).}\)</span></figcaption></figure><p id="p-611">Now we put our list of conditions together and form a definition of continuity at a point.</p>
+<article class="definition definition-like" id="definition-20"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.91</span><span class="period">.</span>
+</h4>
+<p id="p-612">A function <span class="process-math">\(f(x)\)</span> is <dfn class="terminology">continuous at a point</dfn> <span class="process-math">\(a\)</span> if and only if the following three conditions are satisfied:</p>
+<ol class="lower-alpha">
+<li id="li-370"><p id="p-derived-li-370"><span class="process-math">\(f(a)\)</span> is defined</p></li>
+<li id="li-371"><p id="p-derived-li-371"><span class="process-math">\(\displaystyle{\lim_{x\to a}f(x)}\)</span> exists</p></li>
+<li id="li-372"><p id="p-derived-li-372"><span class="process-math">\(\displaystyle \lim_{x\to a}f(x)=f(a)\)</span></p></li>
+</ol>
+<p id="p-613">A function is <dfn class="terminology">discontinuous at a point</dfn> <span class="process-math">\(a\)</span> if it fails to be continuous at <span class="process-math">\(a\text{.}\)</span></p></article><p id="p-614">The following procedure can be used to analyze the continuity of a function at a point using this definition.</p>
+<article class="note remark-like" id="fs-id1170573398041"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">2.92</span><span class="period">.</span><span class="space"> </span><span class="title">Problem-Solving Strategy: Determining Continuity at a Point.</span>
+</h4>
+<ol class="decimal">
+<li id="li-373"><p id="p-derived-li-373">Check to see if <span class="process-math">\(f(a)\)</span> is defined. If <span class="process-math">\(f(a)\)</span> is undefined, we need go no further. The function is not continuous at <span class="process-math">\(a\text{.}\)</span> If <span class="process-math">\(f(a)\)</span> is defined, continue to step 2.</p></li>
+<li id="li-374"><p id="p-derived-li-374">Compute <span class="process-math">\(\displaystyle{\lim_{x\to a}f(x).}\)</span> In some cases, we may need to do this by first computing <span class="process-math">\(\displaystyle{\lim_{x\to a^-}f(x)}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to a^+}f(x).}\)</span> If <span class="process-math">\(\displaystyle{\lim_{x\to a}f(x)}\)</span> does not exist (that is, it is not a real number), then the function is not continuous at <span class="process-math">\(a\)</span> and the problem is solved. If <span class="process-math">\(\lim_{x\to a}f(x)\)</span> exists, then continue to step 3.</p></li>
+<li id="li-375"><p id="p-derived-li-375">Compare <span class="process-math">\(f(a)\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to a}f(x).}\)</span> If <span class="process-math">\(\displaystyle{\lim_{x\to a}f(x)\neq f(a),}\)</span> then the function is not continuous at <span class="process-math">\(a\text{.}\)</span> If <span class="process-math">\(\displaystyle{\lim_{x\to a}f(x)=f(a),}\)</span> then the function is continuous at <span class="process-math">\(a\text{.}\)</span></p></li>
+</ol></article><p id="p-615">The next three examples demonstrate how to apply this definition to determine whether a function is continuous at a given point. These examples illustrate situations in which each of the conditions for continuity in the definition succeed or fail.</p>
+<article class="example example-like" id="fs-id1170573442080"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.93</span><span class="period">.</span><span class="space"> </span><span class="title">Determining Continuity at a Point, Condition 1.</span>
+</h4>
+<p id="p-616">Using the definition, determine whether the function <span class="process-math">\(f(x)=(x^2-4)/(x-2)\)</span> is continuous at <span class="process-math">\(x=2.\)</span> Justify the conclusion.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-109" id="solution-109"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-109"><div class="solution solution-like">
+<p id="p-617">Let’s begin by trying to calculate <span class="process-math">\(f(2).\)</span> We can see that <span class="process-math">\(f(2)=0/0,\)</span> which is undefined. Therefore, <span class="process-math">\(f(x)=\frac{x^2-4}{x-2}\)</span> is discontinuous at 2 because <span class="process-math">\(f(2)\)</span> is undefined. The graph of <span class="process-math">\(f(x)\)</span> is shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_04_004.html" title="Figure 2.94">Figure 2.94</a>.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_04_004"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_04_004.jpg" class="contained" alt='"A graph of the given function. There is a line which crosses the x axis from quadrant three to quadrant two and which crosses the y axis from quadrant two to quadrant one. At a point in quadrant one, there is an open circle where the function is not defined."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.94<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(f(x)\)</span> is discontinuous at 2 because <span class="process-math">\(f(2)\)</span> is undefined.</figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1170573389760"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.95</span><span class="period">.</span><span class="space"> </span><span class="title">Determining Continuity at a Point, Condition 2.</span>
+</h4>
+<p id="p-618">Using the definition, determine whether the function <span class="process-math">\(f(x)=\begin{cases}-x^2+4\amp\text{ if } x\leq 3\\4x-8\amp\text{ if } x\gt 3 \end{cases}\)</span> is continuous at <span class="process-math">\(x=3.\)</span> Justify the conclusion.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-110" id="solution-110"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-110"><div class="solution solution-like">
+<p id="p-619">Let’s begin by trying to calculate <span class="process-math">\(f(3).\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_02_04_005.html">
+\begin{equation*}
+f(3)=-(3^2)+4=-5.
+\end{equation*}
+</div>
+<p id="p-620">Thus, <span class="process-math">\(f(3)\)</span> is defined. Next, we calculate <span class="process-math">\(\displaystyle{\lim_{x\to 3}f(x).}\)</span> To do this, we must compute <span class="process-math">\(\displaystyle{\lim_{x\to  3^-}f(x)}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to  3^+}f(x)}\text{ : }\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_02_04_005.html">
+\begin{equation*}
+\lim_{x\to  3^-}f(x)=-(3^2)+4=-5
+\end{equation*}
+</div>
+<p id="p-621">and</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_02_04_005.html">
+\begin{equation*}
+\lim_{x\to  3^+}f(x)=4(3)-8=4.
+\end{equation*}
+</div>
+<p id="p-622">Therefore, <span class="process-math">\(\displaystyle{\lim_{x\to 3}f(x)}\)</span> does not exist. Thus, <span class="process-math">\(f(x)\)</span> is not continuous at 3. The graph of <span class="process-math">\(f(x)\)</span> is shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_04_005.html" title="Figure 2.96">Figure 2.96</a>.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_04_005"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_04_005.jpg" class="contained" alt='"A graph of the given piecewise function, which has two parts. The first is a downward opening parabola which is symmetric about the y axis. Its vertex is on the y axis, greater than zero. There is a closed circle on the parabola for x=3. The second part is an increasing linear function in the first quadrant, which exists for values of x \gt  3. There is an open circle at the end of the line where x would be 3."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.96<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(f(x)\)</span> is not continuous at 3 because <span class="process-math">\(\displaystyle{\lim_{x\to 3}f(x)}\)</span> does not exist.</figcaption></figure>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1170573429945"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.97</span><span class="period">.</span><span class="space"> </span><span class="title">Determining Continuity at a Point, Condition 3.</span>
+</h4>
+<p id="p-623">Using the definition, determine whether the function  <span class="process-math">\(f(x)=\begin{cases} \frac{x^2-4x+3}{x-1}\amp\text{ if } x\neq 1 \\ -2\amp\text{ if } x=1 \end{cases}\)</span> is continuous at <span class="process-math">\(x=1.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-111" id="solution-111"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-111"><div class="solution solution-like">
+<p id="p-624">First, observe that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(1)=-2.
+\end{equation*}
+</div>
+<p id="p-625">Next,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x\to 1}f(x)=\lim_{x\to 1}\frac{x^2-4x+3}{x-1}=\lim_{x\to 1}\frac{(x-3)(x-1)}{x-1}=\lim_{x\to 1}x-3=-2.
+\end{equation*}
+</div>
+<p id="p-626">Last, compare <span class="process-math">\(f(1)\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to 1}f(x).}\)</span> We see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(1)=-2=\lim_{x\to 1}f(x).
+\end{equation*}
+</div>
+<p id="p-627">Since all three of the conditions in the definition of continuity are satisfied, <span class="process-math">\(f(x)\)</span> is continuous at <span class="process-math">\(x=1.\)</span></p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-50"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.98</span><span class="period">.</span>
+</h4>
+<p id="p-628">Using the definition, determine whether the function <span class="process-math">\(f(x)=\begin{cases}2x+1\amp\text{ if } x\lt 1\\2\amp\text{ if } x=1\\-x+4\amp\text{ if } x\gt 1 \end{cases}\)</span> is continuous at <span class="process-math">\(x=1.\)</span> If the function is not continuous at 1, indicate the condition for continuity at a point that fails to hold.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-47" id="hint-47"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-47"><div class="hint solution-like"><p id="p-629">Check each condition of the definition.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-112" id="solution-112"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-112"><div class="solution solution-like"><p id="p-630"><span class="process-math">\(f\)</span> is not continuous at 1 because <span class="process-math">\(\displaystyle{f(1)=2\neq 3=\lim_{x\to 1}f(x).}\)</span></p></div></div>
+</div></article><p id="p-631">By applying the definition of continuity and previously established theorems concerning the evaluation of limits, we can state the following theorem.</p>
+<article class="theorem theorem-like" id="fs-id1170573430304"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.99</span><span class="period">.</span><span class="space"> </span><span class="title">Continuity of Polynomials and Rational Functions.</span>
+</h4>
+<p id="p-632">Polynomials and rational functions are continuous at every point in their domains.</p></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-633">Previously, we showed that if <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> are polynomials, <span class="process-math">\(\displaystyle{\lim_{x\to a}p(x)=p(a)}\)</span> for every polynomial <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to a}\frac{p(x)}{q(x)}=\frac{p(a)}{q(a)}}\)</span> as long as <span class="process-math">\(q(a)\neq 0.\)</span> Therefore, polynomials and rational functions are continuous on their domains.</p></article></div>
+<p id="p-634">We now apply <a href="" class="xref" data-knowl="./knowl/fs-id1170573430304.html" title="Theorem 2.99: Continuity of Polynomials and Rational Functions">Theorem 2.99</a> to determine the points at which a given rational function is continuous.</p>
+<article class="example example-like" id="fs-id1170573381194"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.100</span><span class="period">.</span><span class="space"> </span><span class="title">Continuity of a Rational Function.</span>
+</h4>
+<p id="p-635">For what values of <span class="process-math">\(x\)</span> is <span class="process-math">\(f(x)=\frac{x+1}{x-5}\)</span> continuous?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-113" id="solution-113"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-113"><div class="solution solution-like"><p id="p-636">The rational function <span class="process-math">\(f(x)=\frac{x+1}{x-5}\)</span> is continuous for every value of <span class="process-math">\(x\)</span> except <span class="process-math">\(x=5.\)</span></p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-51"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.101</span><span class="period">.</span>
+</h4>
+<p id="p-637">For what values of <span class="process-math">\(x\)</span> is <span class="process-math">\(f(x)=3x^4-4x^2\)</span> continuous?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-48" id="hint-48"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-48"><div class="hint solution-like"><p id="p-638">Use <a href="" class="xref" data-knowl="./knowl/fs-id1170573430304.html" title="Theorem 2.99: Continuity of Polynomials and Rational Functions">Theorem 2.99</a></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-114" id="solution-114"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-114"><div class="solution solution-like"><p id="p-639"><span class="process-math">\(f(x)\)</span> is continuous at every real number.</p></div></div>
+</div></article></section><section class="subsection" id="subsection-43"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.2</span> <span class="title">Types of Discontinuities</span>
+</h3>
+<p id="p-640">As we have seen in <a href="" class="xref" data-knowl="./knowl/fs-id1170573442080.html" title="Example 2.93: Determining Continuity at a Point, Condition 1">Example 2.93</a> and <a href="" class="xref" data-knowl="./knowl/fs-id1170573389760.html" title="Example 2.95: Determining Continuity at a Point, Condition 2">Example 2.95</a>, discontinuities take on several different appearances. We classify the types of discontinuities we have seen thus far as removable discontinuities, infinite discontinuities, or jump discontinuities. Intuitively, a <dfn class="terminology">removable discontinuity</dfn> is a discontinuity for which there is a hole in the graph, a <dfn class="terminology">jump discontinuity</dfn> is a noninfinite discontinuity for which the sections of the function do not meet up, and an <dfn class="terminology">infinite discontinuity</dfn> is a discontinuity located at a vertical asymptote. <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_04_006.html" title="Figure 2.102">Figure 2.102</a> illustrates the differences in these types of discontinuities. Although these terms provide a handy way of describing three common types of discontinuities, keep in mind that not all discontinuities fit neatly into these categories.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_04_006"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_04_006.jpg" class="contained" alt='"Three graphs, each showing a different discontinuity. The first is removable discontinuity. Here, the given function is a line with positive slope. At a point x=a, where a\gt 0, there is an open circle on the line and a closed circle a few units above the line. The second is a jump discontinuity. Here, there are two lines with positive slope. The first line exists for x\lt =a, and the second exists for x\gt a, where a\gt 0. The first line ends at a solid circle where x=a, and the second begins a few units up with an open circle at x=a. The third discontinuity type is infinite discontinuity. Here, the function has two parts separated by an asymptote x=a. The first segment is a curve stretching along the x axis to 0 as x goes to negative infinity and along the y axis to infinity as x goes to zero. The second segment is a curve stretching along the y axis to negative infinity as x goes to zero and along the x axis to 0 as x goes to infinity."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.102<span class="period">.</span></span><span class="space"> </span>Discontinuities are classified as (a) removable, (b) jump, or (c) infinite.</figcaption></figure><p id="p-641">These three discontinuities are formally defined as follows:</p>
+<article class="definition definition-like" id="definition-21"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.103</span><span class="period">.</span>
+</h4>
+<p id="p-642">If <span class="process-math">\(f(x)\)</span> is discontinuous at <span class="process-math">\(a\text{,}\)</span> then</p>
+<ol class="decimal">
+<li id="li-376"><p id="p-derived-li-376"><span class="process-math">\(f\)</span> has a removable discontinuity at <span class="process-math">\(a\)</span> if <span class="process-math">\(\displaystyle{\lim_{x\to a}f(x)}\)</span> exists. (Note: When we state that <span class="process-math">\(\displaystyle{\displaystyle{\lim_{x\to a}f(x)}}\)</span> exists, we mean that <span class="process-math">\(\displaystyle{\lim_{x\to a}f(x)=L,}\)</span> where <span class="process-math">\(L\)</span> is a real number.)</p></li>
+<li id="li-377"><p id="p-derived-li-377"><span class="process-math">\(f\)</span> has a jump discontinuity at <span class="process-math">\(a\)</span> if <span class="process-math">\(\displaystyle{\lim_{x\to a^-}f(x)}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to a^+}f(x)}\)</span> both exist, but <span class="process-math">\(\displaystyle{\lim_{x\to a^-}f(x)\neq \lim_{x\to a^+}f(x).}\)</span> (Note: When we state that <span class="process-math">\(\displaystyle{\lim_{x\to a^-}f(x)}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to a^+}f(x)}\)</span> both exist, we mean that both are real-valued and that neither take on the values <span class="process-math">\(\pm\infty\)</span> .)</p></li>
+<li id="li-378"><p id="p-derived-li-378"><span class="process-math">\(f\)</span> has an infinite discontinuity at <span class="process-math">\(a\)</span> if <span class="process-math">\(\displaystyle{\lim_{x\to a^-}f(x)=\pm \infty }\)</span> or <span class="process-math">\(\displaystyle{\lim_{x\to a^+}f(x)=\pm \infty .}\)</span></p></li>
+</ol></article><article class="example example-like" id="fs-id1170570976348"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.104</span><span class="period">.</span><span class="space"> </span><span class="title">Classifying a Discontinuity.</span>
+</h4>
+<p id="p-643">In <a href="" class="xref" data-knowl="./knowl/fs-id1170573442080.html" title="Example 2.93: Determining Continuity at a Point, Condition 1">Example 2.93</a>, we showed that <span class="process-math">\(f(x)=\frac{x^2-4}{x-2}\)</span> is discontinuous at <span class="process-math">\(x=2.\)</span> Classify this discontinuity as removable, jump, or infinite.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-115" id="solution-115"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-115"><div class="solution solution-like">
+<p id="p-644">To classify the discontinuity at 2 we must evaluate <span class="process-math">\(\displaystyle{\lim_{x\to 2}f(x)}\text{ : }\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-16">
+\begin{align*}
+\lim_{x\to 2}f(x)\amp=\lim_{x\to 2}\frac{x^2-4}{x-2}\\
+\amp=\lim_{x\to 2}\frac{(x-2)(x+2)}{x-2}\\
+\amp=\lim_{x\to 2}(x+2)\\
+\amp=4.
+\end{align*}
+</div>
+<p id="p-645">Since <span class="process-math">\(f\)</span> is discontinuous at 2 and <span class="process-math">\(\displaystyle{\lim_{x\to 2}f(x)}\)</span> exists, <span class="process-math">\(f\)</span> has a removable discontinuity at <span class="process-math">\(x=2.\)</span></p>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1170573426544"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.105</span><span class="period">.</span><span class="space"> </span><span class="title">Classifying a Discontinuity.</span>
+</h4>
+<p id="p-646">In <a href="" class="xref" data-knowl="./knowl/fs-id1170573389760.html" title="Example 2.95: Determining Continuity at a Point, Condition 2">Example 2.95</a>, we showed that <span class="process-math">\(f(x)=\begin{cases}-x^2+4\amp\text{ if } x\leq 3\\4x-8\amp\text{ if } x\gt 3\end{cases}\)</span> is discontinuous at <span class="process-math">\(x=3.\)</span> Classify this discontinuity as removable, jump, or infinite.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-116" id="solution-116"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-116"><div class="solution solution-like"><p id="p-647">Earlier, we showed that <span class="process-math">\(f\)</span> is discontinuous at 3 because <span class="process-math">\(\displaystyle{\lim_{x\to 3}f(x)}\)</span> does not exist. However, since <span class="process-math">\(\displaystyle{\lim_{x\to  3^-}f(x)=-5}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to  3^+}f(x)=4}\)</span> both exist, we conclude that the function has a jump discontinuity at 3.</p></div></div>
+</div></article><article class="example example-like" id="fs-id1170573355402"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.106</span><span class="period">.</span><span class="space"> </span><span class="title">Classifying a Discontinuity.</span>
+</h4>
+<p id="p-648">Determine whether <span class="process-math">\(f(x)=\frac{x+2}{x+1}\)</span> is continuous at -1. If the function is discontinuous at -1, classify the discontinuity as removable, jump, or infinite.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-117" id="solution-117"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-117"><div class="solution solution-like"><p id="p-649">The function value <span class="process-math">\(f(-1)\)</span> is undefined. Therefore, the function is not continuous at -1. To determine the type of discontinuity, we must determine the limit at -1. We see that <span class="process-math">\(\displaystyle{\lim_{x\to  -1^-}\frac{x+2}{x+1}=-\infty }\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to  -1^+}\frac{x+2}{x+1}=+\infty .}\)</span> Therefore, the function has an infinite discontinuity at -1.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-52"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.107</span><span class="period">.</span>
+</h4>
+<p id="p-650">For <span class="process-math">\(f(x)=\begin{cases}x^2\amp\text{ if } x\neq 1\\3\amp\text{ if } x=1 \end{cases},\)</span> decide whether <span class="process-math">\(f\)</span> is continuous at 1. If <span class="process-math">\(f\)</span> is not continuous at 1, classify the discontinuity as removable, jump, or infinite.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-49" id="hint-49"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-49"><div class="hint solution-like"><p id="p-651">Follow the steps in <a href="" class="xref" data-knowl="./knowl/fs-id1170573398041.html" title="Note 2.92: Problem-Solving Strategy: Determining Continuity at a Point">Note 2.92</a>. If the function is discontinuous at 1, look at <span class="process-math">\(\lim_{x\to 1}f(x)\)</span> and use the definition to determine the type of discontinuity.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-118" id="solution-118"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-118"><div class="solution solution-like"><p id="p-652">Discontinuous at 1; removable</p></div></div>
+</div></article></section><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.3</span> <span class="title">Continuity over an Interval</span>
+</h3>
+<p id="p-653">Now that we have explored the concept of continuity at a point, we extend that idea to <dfn class="terminology">continuity over an interval</dfn>. As we develop this idea for different types of intervals, it may be useful to keep in mind the intuitive idea that a function is continuous over an interval if we can use a pencil to trace the function between any two points in the interval without lifting the pencil from the paper. In preparation for defining continuity on an interval, we begin by looking at the definition of what it means for a function to be continuous from the right at a point and continuous from the left at a point.</p>
+<article class="note remark-like" id="note-19"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">2.108</span><span class="period">.</span><span class="space"> </span><span class="title">Continuity from the Right and from the Left.</span>
+</h4>
+<p id="p-654">A function <span class="process-math">\(f(x)\)</span> is said to be <dfn class="terminology">continuous from the right</dfn> at <span class="process-math">\(a\)</span> if <span class="process-math">\(\displaystyle{\lim_{x\to a^+}f(x)=f(a).}\)</span></p>
+<p id="p-655">A function <span class="process-math">\(f(x)\)</span> is said to be <dfn class="terminology">continuous from the left</dfn> at <span class="process-math">\(a\)</span> if <span class="process-math">\(\displaystyle{\lim_{x\to a^-}f(x)=f(a).}\)</span></p></article><p id="p-656">A function is continuous over an open interval if it is continuous at every point in the interval. A function <span class="process-math">\(f(x)\)</span> is continuous over a closed interval of the form <span class="process-math">\([a,b]\)</span> if it is continuous at every point in <span class="process-math">\((a,b)\)</span> and is continuous from the right at <span class="process-math">\(a\)</span> and is continuous from the left at <span class="process-math">\(b\text{.}\)</span> Analogously, a function <span class="process-math">\(f(x)\)</span> is continuous over an interval of the form <span class="process-math">\((a,b]\)</span> if it is continuous over <span class="process-math">\((a,b)\)</span> and is continuous from the left at <span class="process-math">\(b\text{.}\)</span> Continuity over other types of intervals are defined in a similar fashion.</p>
+<p id="p-657">Requiring that <span class="process-math">\(\displaystyle{\lim_{x\to a^+}f(x)=f(a)}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to b^-}f(x)=f(b)}\)</span> ensures that we can trace the graph of the function from the point <span class="process-math">\((a,f(a))\)</span> to the point <span class="process-math">\((b,f(b))\)</span> without lifting the pencil. If, for example, <span class="process-math">\(\displaystyle{\lim_{x\to a^+}f(x)\neq f(a),}\)</span> we would need to lift our pencil to jump from <span class="process-math">\(f(a)\)</span> to the graph of the rest of the function over <span class="process-math">\((a,b].\)</span></p>
+<article class="example example-like" id="fs-id1170573395559"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.109</span><span class="period">.</span><span class="space"> </span><span class="title">Continuity on an Interval.</span>
+</h4>
+<p id="p-658">State the interval(s) over which the function <span class="process-math">\(f(x)=\frac{x-1}{x^2+2x}\)</span> is continuous.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-119" id="solution-119"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-119"><div class="solution solution-like"><p id="p-659">Since <span class="process-math">\(f(x)=\frac{x-1}{x^2+2x}\)</span> is a rational function, it is continuous at every point in its domain. The domain of <span class="process-math">\(f(x)\)</span> is the set <span class="process-math">\((-\infty ,-2)\cup (-2,0)\cup (0,+\infty ).\)</span> Thus, <span class="process-math">\(f(x)\)</span> is continuous over each of the intervals <span class="process-math">\((-\infty ,-2),(-2,0),\)</span> and <span class="process-math">\((0,+\infty ).\)</span></p></div></div>
+</div></article><article class="example example-like" id="fs-id1170573387892"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.110</span><span class="period">.</span><span class="space"> </span><span class="title">Continuity over an Interval.</span>
+</h4>
+<p id="p-660">State the interval(s) over which the function <span class="process-math">\(f(x)=\sqrt{4-x^2}\)</span> is continuous.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-120" id="solution-120"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-120"><div class="solution solution-like"><p id="p-661">From the limit laws, we know that <span class="process-math">\(\displaystyle{\lim_{x\to a}\sqrt{4-x^2}=\sqrt{4-a^2}}\)</span> for all values of <span class="process-math">\(a\)</span> in <span class="process-math">\((-2,2).\)</span> We also know that <span class="process-math">\(\displaystyle{\lim_{x\to  -2^+}\sqrt{4-x^2}=0}\)</span> exists and <span class="process-math">\(\displaystyle{\lim_{x\to  2^-}\sqrt{4-x^2}=0}\)</span> exists. Therefore, <span class="process-math">\(f(x)\)</span> is continuous over the interval <span class="process-math">\([-2,2].\)</span></p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-53"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.111</span><span class="period">.</span>
+</h4>
+<p id="p-662">State the interval(s) over which the function <span class="process-math">\(f(x)=\sqrt{x+3}\)</span> is continuous.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-50" id="hint-50"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-50"><div class="hint solution-like"><p id="p-663">Use <a href="" class="xref" data-knowl="./knowl/fs-id1170573387892.html" title="Example 2.110: Continuity over an Interval">Example 2.110</a> as a guide for solving.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-121" id="solution-121"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-121"><div class="solution solution-like"><p id="p-664"><span class="process-math">\([-3,+\infty )\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.4</span> <span class="title">The Intermediate Value Theorem</span>
+</h3>
+<p id="p-665">Functions that are continuous over intervals of the form <span class="process-math">\([a,b],\)</span> where <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are real numbers, exhibit many useful properties. Throughout our study of calculus, we will encounter many powerful theorems concerning such functions. The first of these theorems is the <dfn class="terminology">Intermediate Value Theorem</dfn>.</p>
+<article class="theorem theorem-like" id="theorem-8"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.112</span><span class="period">.</span><span class="space"> </span><span class="title">The Intermediate Value Theorem.</span>
+</h4>
+<p id="p-666">Let <span class="process-math">\(f\)</span> be continuous over a closed, bounded interval <span class="process-math">\([a,b].\)</span> If <span class="process-math">\(z\)</span> is any real number between <span class="process-math">\(f(a)\)</span> and <span class="process-math">\(f(b),\)</span> then there is a number <span class="process-math">\(c\)</span> in <span class="process-math">\([a,b]\)</span> satisfying <span class="process-math">\(f(c)=z\)</span> in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_04_007.html" title="Figure 2.113">Figure 2.113</a>.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_04_007"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_04_007.jpg" class="contained" alt='"A diagram illustrating the intermediate value theorem. There is a generic continuous curved function shown over the interval [a,b]. The points fa. and fb. are marked, and dotted lines are drawn from a, b, fa., and fb. to the points (a, fa.) and (b, fb.).  A third point, c, is plotted between a and b. Since the function is continuous, there is a value for fc. along the curve, and a line is drawn from c to (c, fc.) and from (c, fc.) to fc., which is labeled as z on the y axis."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.113<span class="period">.</span></span><span class="space"> </span>There is a number <span class="process-math">\(c\in[a,b]\)</span> that satisfies <span class="process-math">\(f(c)=z.\)</span></figcaption></figure></article><article class="example example-like" id="fs-id1170571120881"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.114</span><span class="period">.</span><span class="space"> </span><span class="title">Application of the Intermediate Value Theorem.</span>
+</h4>
+<p id="p-667">Show that  <span class="process-math">\(f(x)=x^2-11x+10\)</span> has at least one zero.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-122" id="solution-122"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-122"><div class="solution solution-like">
+<p id="p-668">Since <span class="process-math">\(f(x)=x^2-11x+10\)</span> is continuous over <span class="process-math">\((-\infty ,+\infty ),\)</span> it is continuous over any closed interval of the form <span class="process-math">\([a,b].\)</span> If you can find an interval <span class="process-math">\([a,b]\)</span> such that <span class="process-math">\(f(a)\)</span> and <span class="process-math">\(f(b)\)</span> have opposite signs, you can use the Intermediate Value Theorem to conclude there must be a real number <span class="process-math">\(c\)</span> in <span class="process-math">\((a,b)\)</span> that satisfies <span class="process-math">\(f(c)=0.\)</span> Note that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(2)=-8\lt 0
+\end{equation*}
+</div>
+<p id="p-669">and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(0)=10\gt 0.
+\end{equation*}
+</div>
+<p id="p-670">Using the Intermediate Value Theorem, we can see that there must be a real number <span class="process-math">\(c\)</span> in <span class="process-math">\([0,2]\)</span> that satisfies <span class="process-math">\(f(c)=0.\)</span> Therefore, <span class="process-math">\(f(x)=x^2-11x+10\)</span> has at least one zero.</p>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1170573439386"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.115</span><span class="period">.</span><span class="space"> </span><span class="title">When Can You Apply the Intermediate Value Theorem?</span>
+</h4>
+<p id="p-671">If <span class="process-math">\(f(x)\)</span> is continuous over <span class="process-math">\([0,2],f(0)\gt 0\)</span> and <span class="process-math">\(f(2)\gt 0,\)</span> can we use the Intermediate Value Theorem to conclude that <span class="process-math">\(f(x)\)</span> has no zeros in the interval <span class="process-math">\([0,2\text{ ]? }\)</span> Explain.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-123" id="solution-123"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-123"><div class="solution solution-like"><p id="p-672">No. The Intermediate Value Theorem only allows us to conclude that we can find a value between <span class="process-math">\(f(0)\)</span> and <span class="process-math">\(f(2);\)</span> it doesn’t allow us to conclude that we can’t find other values. To see this more clearly, consider the function <span class="process-math">\(f(x)=(x-1)^2.\)</span> It satisfies <span class="process-math">\(f(0)=1\gt 0,f(2)=1\gt 0,\)</span> and <span class="process-math">\(f(1)=0.\)</span></p></div></div>
+</div></article><article class="example example-like" id="fs-id1170570996536"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.116</span><span class="period">.</span><span class="space"> </span><span class="title">When Can You Apply the Intermediate Value Theorem?</span>
+</h4>
+<p id="p-673">For <span class="process-math">\(f(x)=1/x,f(-1)=-1\lt 0\)</span> and <span class="process-math">\(f(1)=1\gt 0.\)</span> Can we conclude that <span class="process-math">\(f(x)\)</span> has a zero in the interval <span class="process-math">\([-1,1]?\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-124" id="solution-124"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-124"><div class="solution solution-like"><p id="p-674">No. The function is not continuous over <span class="process-math">\([-1,1].\)</span> The Intermediate Value Theorem does not apply here.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-54"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.117</span><span class="period">.</span>
+</h4>
+<p id="p-675">Show that <span class="process-math">\(f(x)=x^3-x^2-3x+1\)</span> has a zero over the interval <span class="process-math">\([0,1].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-51" id="hint-51"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-51"><div class="hint solution-like"><p id="p-676">Find <span class="process-math">\(f(0)\)</span> and <span class="process-math">\(f(1).\)</span> Apply the Intermediate Value Theorem.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-125" id="solution-125"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-125"><div class="solution solution-like"><p id="p-677"><span class="process-math">\(f(0)=1\gt 0,f(1)=-2\lt 0;f(x)\)</span> is continuous over <span class="process-math">\([0,1].\)</span> It must have a zero on this interval.</p></div></div>
+</div></article></section><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.5</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-379"><p id="p-derived-li-379">For a function to be continuous at a point, it must be defined at that point, its limit must exist at the point, and the value of the function at that point must equal the value of the limit at that point.</p></li>
+<li id="li-380"><p id="p-derived-li-380">Discontinuities may be classified as removable, jump, or infinite.</p></li>
+<li id="li-381"><p id="p-derived-li-381">A function is continuous over an open interval if it is continuous at every point in the interval. It is continuous over a closed interval if it is continuous at every point in its interior and is continuous at its endpoints.</p></li>
+<li id="li-382"><p id="p-derived-li-382">The Intermediate Value Theorem guarantees that if a function is continuous over a closed interval, then the function takes on every value between the values at its endpoints.</p></li>
+</ul></section><p id="p-678">This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1.</p></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:03:39-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.140.1</span><span class="period">.</span>
+</h4>
+<p>Step 1: Let <span class="process-math">\(x\)</span> be the side length of the square to be removed from each corner (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_003.html" title="Figure 4.141">Figure 4.141</a>). Then, the remaining four flaps can be folded up to form an open-top box. Let <span class="process-math">\(V\)</span> be the volume of the resulting box.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_07_003.jpg" class="contained" alt='"There are two figures for this figure. The first one is a rectangle with sides 24 in and 36 in, with each corner having a square of side length x taken out of it. In the second picture, there is a box with side lengths x in, 24-2x in, and 36-2x in."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.141<span class="period">.</span></span><span class="space"> </span>A square with side length <span class="process-math">\(x\)</span> inches is removed from each corner of the piece of cardboard. The remaining flaps are folded to form an open-top box.</figcaption></figure><p>Step 2: We are trying to maximize the volume of a box. Therefore, the problem is to maximize <span class="process-math">\(V.\)</span></p>
+<p>Step 3: As mentioned in step <span class="process-math">\(2,\)</span> are trying to maximize the volume of a box. The volume of a box is <span class="process-math">\(V=L\cdot W\cdot H,\)</span> where <span class="process-math">\(L,W, \text{ and } H\)</span> are the length, width, and height, respectively.</p>
+<p>Step 4: From <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_003.html" title="Figure 4.141">Figure 4.141</a>, we see that the height of the box is <span class="process-math">\(x\)</span> inches, the length is <span class="process-math">\(36-2x\)</span> inches, and the width is <span class="process-math">\(24-2x\)</span> inches. Therefore, the volume of the box is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html">
+\begin{equation*}
+V(x)=(36-2x)(24-2x)x=4x^3-120x^2+864x.
+\end{equation*}
+</div>
+<p>Step 5: To determine the domain of consideration, let's examine <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_07_003.html" title="Figure 4.141">Figure 4.141</a>. Certainly, we need <span class="process-math">\(x\gt 0.\)</span> Furthermore, the side length of the square cannot be greater than or equal to half the length of the shorter side, <span class="process-math">\(24\)</span> in.; otherwise, one of the flaps would be completely cut off. Therefore, we are trying to determine whether there is a maximum volume of the box for <span class="process-math">\(x\)</span> over the open interval <span class="process-math">\((0,12).\)</span> Since <span class="process-math">\(V\)</span> is a continuous function over the closed interval <span class="process-math">\([0,12],\)</span> we know <span class="process-math">\(V\)</span> will have an absolute maximum over the closed interval. Therefore, we consider <span class="process-math">\(V\)</span> over the closed interval <span class="process-math">\([0,12]\)</span> and check whether the absolute maximum occurs at an interior point.</p>
+<p>Step 6: Since <span class="process-math">\(V(x)\)</span> is a continuous function over the closed, bounded interval <span class="process-math">\([0,12],\)</span> <span class="process-math">\(V\)</span> must have an absolute maximum (and an absolute minimum). Since <span class="process-math">\(V(x)=0\)</span> at the endpoints and <span class="process-math">\(V(x)\gt 0\)</span> for <span class="process-math">\(0\lt x\lt 12,\)</span> the maximum must occur at a critical point. The derivative is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html">
+\begin{equation*}
+V'(x)=12x^2-240x+864.
+\end{equation*}
+</div>
+<p>To find the critical points, we need to solve the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html">
+\begin{equation*}
+12x^2-240x+864=0.
+\end{equation*}
+</div>
+<p>Dividing both sides of this equation by <span class="process-math">\(12,\)</span> the problem simplifies to solving the equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html">
+\begin{equation*}
+x^2-20x+72=0.
+\end{equation*}
+</div>
+<p>Using the quadratic formula, we find that the critical points are</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html ./knowl/CNX_Calc_Figure_04_07_003.html">
+\begin{align*}
+x\amp=\frac{20\pm\sqrt{(-20)^2-4(1)(72)}}{2}\\
+x\amp=\frac{20\pm\sqrt{112}}{2}\\
+x\amp=\frac{20\pm 4\sqrt{7}}{2}\\
+x\amp=10\pm 2\sqrt{7}.
+\end{align*}
+</div>
+<p>Since <span class="process-math">\(10+2\sqrt{7}\)</span> is not in the domain of consideration, the only critical point we need to consider is <span class="process-math">\(10-2\sqrt{7}.\)</span> Therefore, the volume is maximized if we let <span class="process-math">\(x=10-2\sqrt{7} \text{ in }.\)</span> The maximum volume is <span class="process-math">\(V(10-2\sqrt{7})=640+448\sqrt{7}\approx 1825 \text{ in. }^3\)</span> as shown in the following graph.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_04_07_004.jpg" class="contained" alt='"The function V(x) = 4x3 – 120x2 + 864x is graphed. At its maximum there is an intersection of two dashed lines and text that reads “Maximum volume is approximately 1825 cubic inches when x ≈ 4.7 inches.”"'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.142<span class="period">.</span></span><span class="space"> </span>Maximizing the volume of the box leads to finding the maximum value of a cubic polynomial.</figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_Ch4Sec7.html#solution-275" class="internal">in-context</a></span>
+</body>
+</html>

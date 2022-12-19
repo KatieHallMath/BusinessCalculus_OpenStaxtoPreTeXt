@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:02:52-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Definite Integral</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<meta property="book:author" content="Custom Business Calculus Edition ">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline">Custom Business Calculus Edition</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch5Sec1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_fifth.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch5Sec3.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch5Sec1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_fifth.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch5Sec3.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="meta_frontmatter-preface.html" data-scroll="meta_frontmatter-preface" class="internal">Preface: OpenStax Calculus Volume 1</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2" class="internal">Preface: Business Calculus Custom Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="active">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Derivatives</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Ch5Sec2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">The Definite Integral</span>
+</h2>
+<section class="introduction" id="introduction-40"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc">
+<li id="li-747"><p id="p-derived-li-747">State the definition of the definite integral.</p></li>
+<li id="li-748"><p id="p-derived-li-748">Explain the terms integrand, limits of integration, and variable of integration.</p></li>
+<li id="li-749"><p id="p-derived-li-749">Explain when a function is integrable.</p></li>
+<li id="li-750"><p id="p-derived-li-750">Describe the relationship between the definite integral and net area.</p></li>
+<li id="li-751"><p id="p-derived-li-751">Use geometry and the properties of definite integrals to evaluate them.</p></li>
+<li id="li-752"><p id="p-derived-li-752">Calculate the average value of a function.</p></li>
+</ul>
+<p id="p-1680">In the preceding section we defined the area under a curve in terms of Riemann sums:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A=\lim_{n\to \infty }\displaystyle{\sum_{i=1}^n  f(x_i^* )\Delta x} .
+\end{equation*}
+</div>
+<p id="p-1681">However, this definition came with restrictions. We required <span class="process-math">\(f(x)\)</span> to be continuous and nonnegative. Unfortunately, real-world problems don’t always meet these restrictions. In this section, we look at how to apply the concept of the area under the curve to a broader set of functions through the use of the definite integral.</p></section><section class="subsection" id="subsection-130"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.1</span> <span class="title">Definition and Notation</span>
+</h3>
+<p id="p-1682">The definite integral generalizes the concept of the area under a curve. We lift the requirements that <span class="process-math">\(f(x)\)</span> be continuous and nonnegative, and define the definite integral as follows.</p>
+<article class="definition definition-like" id="definition-46"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.26</span><span class="period">.</span>
+</h4>
+<p id="p-1683">If <span class="process-math">\(f(x)\)</span> is a function defined on an interval <span class="process-math">\([a,b],\)</span> the <dfn class="terminology">definite integral</dfn> of <span class="process-math">\(f\)</span> from <span class="process-math">\(a\)</span> to <span class="process-math">\(b\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{\int_{a}^{b} f(x)dx} = \displaystyle{ \lim_{n \to \infty}  }\displaystyle{\sum_{i=1}^n  f(x_i^* )\Delta x} ,
+\end{equation*}
+</div>
+<p id="p-1684">provided the limit exists. If this limit exists, the function <span class="process-math">\(f(x)\)</span> is said to be integrable on <span class="process-math">\([a,b],\)</span> or is an <dfn class="terminology">integrable function</dfn>.</p></article><p id="p-1685">The integral symbol in the previous definition should look familiar. We have seen similar notation in the chapter on <a href="ch_fourth.html" class="internal" title="Chapter 4: Application of Derivatives">Applications of Derivatives 4</a>, where we used the indefinite integral symbol (without the <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> above and below) to represent an antiderivative. Although the notation for indefinite integrals may look similar to the notation for a definite integral, they are not the same. A definite integral is a number. An indefinite integral is a family of functions. Later in this chapter we examine how these concepts are related. However, close attention should always be paid to notation so we know whether we’re working with a definite integral or an indefinite integral.</p>
+<p id="p-1686">Integral notation goes back to the late seventeenth century and is one of the contributions of Gottfried Wilhelm <dfn class="terminology">Leibniz</dfn>, who is often considered to be the codiscoverer of calculus, along with Isaac Newton. The integration symbol <span class="process-math">\(\int\)</span> is an elongated S, suggesting sigma or summation. On a definite integral, above and below the summation symbol are the boundaries of the interval, <span class="process-math">\([a,b].\)</span> The numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are <span class="process-math">\(x\)</span>-values and are called the <dfn class="terminology">limits of integration</dfn>; specifically, <span class="process-math">\(a\)</span> is the lower limit and <span class="process-math">\(b\)</span> is the upper limit. To clarify, we are using the word <em class="emphasis">limit</em> in two different ways in the context of the definite integral. First, we talk about the limit of a sum as <span class="process-math">\(n\to \infty .\)</span> Second, the boundaries of the region are called the limits of integration.</p>
+<p id="p-1687">We call the function <span class="process-math">\(f(x)\)</span> the <dfn class="terminology">integrand</dfn>, and the dx indicates that <span class="process-math">\(f(x)\)</span> is a function with respect to <span class="process-math">\(x\text{,}\)</span> called the <dfn class="terminology">variable of integration</dfn>. Note that, like the index in a sum, the variable of integration is a <dfn class="terminology">dummy variable</dfn>, and has no impact on the computation of the integral. We could use any variable we like as the variable of integration:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ch_fourth.html">
+\begin{equation*}
+\displaystyle{\int_{a}^{b} f(x)dx} =\displaystyle{\int_{a}^{b} f(t)dt} =\displaystyle{\int_{a}^{b} f(u)du} 
+\end{equation*}
+</div>
+<p id="p-1688">Previously, we discussed the fact that if <span class="process-math">\(f(x)\)</span> is continuous on <span class="process-math">\([a,b],\)</span> then the limit <span class="process-math">\(\lim_{n\to \infty }\displaystyle{\sum_{i=1}^n  f(x_i^* )\Delta x} \)</span> exists and is unique. This leads to the following theorem, which we state without proof.</p>
+<article class="theorem theorem-like" id="theorem-32"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.27</span><span class="period">.</span><span class="space"> </span><span class="title">Continuous Functions Are Integrable.</span>
+</h4>
+<p id="p-1689">If <span class="process-math">\(f(x)\)</span> is continuous on <span class="process-math">\([a,b],\)</span> then <span class="process-math">\(f\)</span> is integrable on <span class="process-math">\([a,b].\)</span></p></article><p id="p-1690">Functions that are not continuous on <span class="process-math">\([a,b]\)</span> may still be integrable, depending on the nature of the discontinuities. For example, functions with a finite number of jump discontinuities on a closed interval are integrable.</p>
+<p id="p-1691">It is also worth noting here that we have retained the use of a regular partition in the Riemann sums. This restriction is not strictly necessary. Any partition can be used to form a Riemann sum. However, if a nonregular partition is used to define the definite integral, it is not sufficient to take the limit as the number of subintervals goes to infinity. Instead, we must take the limit as the width of the largest subinterval goes to zero. This introduces a little more complex notation in our limits and makes the calculations more difficult without really gaining much additional insight, so we stick with regular partitions for the Riemann sums.</p></section><section class="subsection" id="subsection-131"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.2</span> <span class="title">Evaluating Definite Integrals</span>
+</h3>
+<p id="p-1692">Evaluating definite integrals this way can be quite tedious because of the complexity of the calculations. Later in this chapter we develop techniques for evaluating definite integrals without taking limits of Riemann sums. However, for now, we can rely on the fact that definite integrals represent the area under the curve, and we can evaluate definite integrals by using geometric formulas to calculate that area. We do this to confirm that definite integrals do, indeed, represent areas, so we can then discuss what to do in the case of a curve of a function dropping below the <span class="process-math">\(x\)</span>-axis.</p>
+<article class="example example-like" id="fs-id1170571775733"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.28</span><span class="period">.</span><span class="space"> </span><span class="title">Using Geometric Formulas to Calculate Definite Integrals.</span>
+</h4>
+<p id="p-1693">Use the formula for the area of a circle to evaluate <span class="process-math">\(\displaystyle{\int_{3}^{6} \sqrt{9-(x-3)^2}dx} .\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-298" id="solution-298"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-298"><div class="solution solution-like">
+<p id="p-1694">The function describes a semicircle with radius 3. To find</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_001.html">
+\begin{equation*}
+\displaystyle{\int_{3}^{6} \sqrt{9-(x-3)^2 }dx} ,
+\end{equation*}
+</div>
+<p id="p-1695">we want to find the area under the curve over the interval <span class="process-math">\([3,6].\)</span> The formula for the area of a circle is <span class="process-math">\(A=\pi r^2.\)</span> The area of a semicircle is just one-half the area of a circle, or <span class="process-math">\(A=(\frac{1}{2})\pi r^2.\)</span> The shaded area in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_02_001.html" title="Figure 5.29">Figure 5.29</a> covers one-half of the semicircle, or <span class="process-math">\(A=(\frac{1}{4})\pi r^2.\)</span> Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_001.html" id="md-90">
+\begin{align*}
+\int_{3}^{6}\sqrt{9- (x-3)^2 }\amp =\frac{1}{4}\pi (3)^2 \\
+\amp =\frac{9}{4}\pi\\
+\approx 7.069.
+\end{align*}
+</div>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_02_001"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_02_009.jpg" class="contained" alt='"A graph of a semi circle in quadrant one over the interval [0,6] with center at (3,0). The area under the curve over the interval [3,6] is shaded in blue."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.29<span class="period">.</span></span><span class="space"> </span>The value of the integral of the function <span class="process-math">\(f(x)\)</span> over the interval <span class="process-math">\([3,6]\)</span> is the area of the shaded region.</figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-126"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.30</span><span class="period">.</span>
+</h4>
+<p id="p-1696">Use the formula for the area of a trapezoid to evaluate <span class="process-math">\(\displaystyle{\int_{2}^{4} (2x+3)dx} .\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-123" id="hint-123"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-123"><div class="hint solution-like"><p id="p-1697">Graph the function <span class="process-math">\(f(x)\)</span> and calculate the area under the function on the interval <span class="process-math">\([2,4].\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-299" id="solution-299"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-299"><div class="solution solution-like"><p id="p-1698">18 square units</p></div></div>
+</div></article></section><section class="subsection" id="subsection-132"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.3</span> <span class="title">Area and the Definite Integral</span>
+</h3>
+<section class="introduction" id="introduction-41"><p id="p-1699">When we defined the definite integral, we lifted the requirement that <span class="process-math">\(f(x)\)</span> be nonnegative. But how do we interpret “the area under the curve” when <span class="process-math">\(f(x)\)</span> is negative?</p></section><section class="subsubsection" id="subsubsection-22"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">5.2.3.1</span> <span class="title">Net Signed Area</span>
+</h4>
+<p id="p-1700">Let us return to the Riemann sum. Consider, for example, the function <span class="process-math">\(f(x)=2-2x^2\)</span> (shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_02_002.html" title="Figure 5.31">Figure 5.31</a>) on the interval <span class="process-math">\([0,2].\)</span> Use <span class="process-math">\(n=8\)</span> and choose <span class="process-math">\({x_i^* \text{ } }\)</span> as the left endpoint of each interval. Construct a rectangle on each subinterval of height <span class="process-math">\(f(x_i^* )\)</span> and width Δ<span class="process-math">\(x\text{.}\)</span> When <span class="process-math">\(f(x_i^* )\)</span> is positive, the product <span class="process-math">\(f(x_i^* )\Delta x\)</span> represents the area of the rectangle, as before. When <span class="process-math">\(f(x_i^* )\)</span> is negative, however, the product <span class="process-math">\(f(x_i^* )\Delta x\)</span> represents the negative of the area of the rectangle. The Riemann sum then becomes</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_002.html ./knowl/CNX_Calc_Figure_05_02_003.html ./knowl/CNX_Calc_Figure_05_02_004.html ./knowl/fs-id1170572449111.html">
+\begin{equation*}
+\displaystyle{\sum_{i=1}^{8}f(x_i^* )\Delta x} =(\text{ Area of rectangles above the } x\text{ -axis })-(\text{ Area of rectangles below the } x\text{ -axis })
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_02_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_02_003.jpg" class="contained" alt='"A graph of a downward opening parabola over [-1, 2] with vertex at (0,2) and x-intercepts at (-1,0) and (1,0). Eight rectangles are drawn evenly over [0,2] with heights determined by the value of the function at the left endpoints of each."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.31<span class="period">.</span></span><span class="space"> </span>For a function that is partly negative, the Riemann sum is the area of the rectangles above the <span class="process-math">\(x\)</span>-axis less the area of the rectangles below the <span class="process-math">\(x\)</span>-axis.</figcaption></figure><p id="p-1701">Taking the limit as <span class="process-math">\(n\to \infty ,\)</span> the Riemann sum approaches the area between the curve above the <span class="process-math">\(x\)</span>-axis and the <span class="process-math">\(x\)</span>-axis, less the area between the curve below the <span class="process-math">\(x\)</span>-axis and the <span class="process-math">\(x\)</span>-axis, as shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_02_003.html" title="Figure 5.32">Figure 5.32</a>. Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_002.html ./knowl/CNX_Calc_Figure_05_02_003.html ./knowl/CNX_Calc_Figure_05_02_004.html ./knowl/fs-id1170572449111.html" id="md-91">
+\begin{align*}
+\displaystyle{\int_{0}^{2} f(x)dx} \amp =\lim_{n\to \infty }\displaystyle{\sum_{i=1}^n  f(c_i)\Delta x} \\
+\amp =A_1-A_2.
+\end{align*}
+</div>
+<p id="p-1702">The quantity <span class="process-math">\(A_1-A_2\)</span> is called the <dfn class="terminology">net signed area</dfn>.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_02_003"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_02_002.jpg" class="contained" alt='"A graph of a downward opening parabola over [-2, 2] with vertex at (0,2) and x-intercepts at (-1,0) and (1,0). The area in quadrant one under the curve is shaded blue and labeled A1. The area in quadrant four above the curve and to the left of x=2 is shaded blue and labeled A2."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.32<span class="period">.</span></span><span class="space"> </span>In the limit, the definite integral equals area <span class="process-math">\(A_{1}\)</span>  less area <span class="process-math">\(A_{2}\)</span> , or the net signed area.</figcaption></figure><p id="p-1703">Notice that net signed area can be positive, negative, or zero. If the area above the <span class="process-math">\(x\)</span>-axis is larger, the net signed area is positive. If the area below the <span class="process-math">\(x\)</span>-axis is larger, the net signed area is negative. If the areas above and below the <span class="process-math">\(x\)</span>-axis are equal, the net signed area is zero.</p>
+<article class="example example-like" id="fs-id1170572449111"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.33</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Net Signed Area.</span>
+</h5>
+<p id="p-1704">Find the net signed area between the curve of the function <span class="process-math">\(f(x)=2x\)</span> and the <span class="process-math">\(x\)</span>-axis over the interval <span class="process-math">\([-3,3].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-300" id="solution-300"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-300"><div class="solution solution-like">
+<p id="p-1705">The function produces a straight line that forms two triangles: one from <span class="process-math">\(x=-3\)</span> to <span class="process-math">\(x=0\)</span> and the other from <span class="process-math">\(x=0\)</span> to <span class="process-math">\(x=3\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_02_004.html" title="Figure 5.34">Figure 5.34</a>). Using the geometric formula for the area of a triangle, <span class="process-math">\(A=\frac{1}{2}bh,\)</span> the area of triangle <span class="process-math">\(A_{1}\)</span> , above the axis, is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_004.html">
+\begin{equation*}
+A_1=\frac{1}{2}3(6)=9,
+\end{equation*}
+</div>
+<p id="p-1706">where 3 is the base and <span class="process-math">\(2(3)=6\)</span> is the height. The area of triangle <span class="process-math">\(A_{2}\)</span> , below the axis, is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_004.html">
+\begin{equation*}
+A_2=\frac{1}{2}(3)}{(6)=9,
+\end{equation*}
+</div>
+<p id="p-1707">where 3 is the base and 6 is the height. Thus, the net area is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_004.html">
+\begin{equation*}
+\displaystyle{\int_{-3}^{3}2xdx} =A_1-A_2=9-9=0.
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_02_004"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_02_005.jpg" class="contained" alt='"A graph of an increasing line over [-6, 6] going through the origin and (-3, -6) and (3,6). The area under the line in quadrant one over [0,3] is shaded blue and labeled A1, and the area above the line in quadrant three over [-3,0] is shaded blue and labeled A2."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.34<span class="period">.</span></span><span class="space"> </span>The area above the curve and below the <span class="process-math">\(x\)</span>-axis equals the area below the curve and above the <span class="process-math">\(x\)</span>-axis.</figcaption></figure><p id="p-1708">Analysis</p>
+<p id="p-1709">If <span class="process-math">\(A_{1}\)</span>  is the area above the <span class="process-math">\(x\)</span>-axis and <span class="process-math">\(A_{2}\)</span>  is the area below the <span class="process-math">\(x\)</span>-axis, then the net area is <span class="process-math">\(A_1-A_2.\)</span> Since the areas of the two triangles are equal, the net area is zero.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-127"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.35</span><span class="period">.</span>
+</h5>
+<p id="p-1710">Find the net signed area of <span class="process-math">\(f(x)=x-2\)</span> over the interval <span class="process-math">\([0,6],\)</span> illustrated in the following image.</p>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_02_006.jpg" class="contained" alt='"A graph of an increasing line going through (-2,-4), (0,-2), (2,0), (4,2) and (6,4). The area above the curve in quadrant four is shaded blue and labeled A2, and the area under the curve and to the left of x=6 in quadrant one is shaded and labeled A1."'></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-124" id="hint-124"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-124"><div class="hint solution-like"><p id="p-1711">Use the solving method described in <a href="" class="xref" data-knowl="./knowl/fs-id1170572449111.html" title="Example 5.33: Finding the Net Signed Area">Example 5.33</a>.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-301" id="solution-301"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-301"><div class="solution solution-like"><p id="p-1712">6</p></div></div>
+</div></article></section><section class="subsubsection" id="subsubsection-23"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">5.2.3.2</span> <span class="title">Total Area</span>
+</h4>
+<p id="p-1713">One application of the definite integral is finding <dfn class="terminology">displacement</dfn> when given a velocity function. If <span class="process-math">\(v(t)\)</span> represents the velocity of an object as a function of time, then the area under the curve tells us how far the object is from its original position. This is a very important application of the definite integral, and we examine it in more detail later in the chapter. For now, we’re just going to look at some basics to get a feel for how this works by studying constant velocities.</p>
+<p id="p-1714">When velocity is a constant, the area under the curve is just velocity times time. This idea is already very familiar. If a car travels away from its starting position in a straight line at a speed of 75 mph for 2 hours, then it is 150 mi away from its original position (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_02_006.html" title="Figure 5.36">Figure 5.36</a>). Using integral notation, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_006.html ./knowl/CNX_Calc_Figure_05_02_007.html ./knowl/CNX_Calc_Figure_05_02_008.html ./knowl/fs-id1170572163843.html">
+\begin{equation*}
+\displaystyle{\int_{0}^{2} 75dt} =150.
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_02_006"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_02_015.jpg" class="contained" alt='"A graph in quadrant 1 with the x-axis labeled as t (hours) and y-axis labeled as v (mi/hr). The area under the line v(t) = 75 is shaded blue over [0,2]."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.36<span class="period">.</span></span><span class="space"> </span>The area under the curve <span class="process-math">\(v(t)=75\)</span> tells us how far the car is from its starting point at a given time.</figcaption></figure><p id="p-1715">In the context of displacement, net signed area allows us to take direction into account. If a car travels straight north at a speed of 60 mph for 2 hours, it is 120 mi north of its starting position. If the car then turns around and travels south at a speed of 40 mph for 3 hours, it will be back at it starting position (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_02_007.html" title="Figure 5.37">Figure 5.37</a>). Again, using integral notation, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_006.html ./knowl/CNX_Calc_Figure_05_02_007.html ./knowl/CNX_Calc_Figure_05_02_008.html ./knowl/fs-id1170572163843.html" id="md-92">
+\begin{align*}
+\displaystyle{\int_{0}^{2} 60dt} +\displaystyle{\int_{2}^{5} -40dt} \amp =120-120\\
+\amp =0.
+\end{align*}
+</div>
+<p id="p-1716">In this case the displacement is zero.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_02_007"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_02_016.jpg" class="contained" alt='"A graph in quadrants one and four with the x-axis labeled as t (hours) and the y axis labeled as v (mi/hr). The first part of the graph is the line v(t) = 60 over [0,2], and the area under the line in quadrant one is shaded. The second part of the graph is the line v(t) = -40 over [2,5], and the area above the line in quadrant four is shaded."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.37<span class="period">.</span></span><span class="space"> </span>The area above the axis and the area below the axis are equal, so the net signed area is zero.</figcaption></figure><p id="p-1717">Suppose we want to know how far the car travels overall, regardless of direction. In this case, we want to know the area between the curve and the <span class="process-math">\(x\)</span>-axis, regardless of whether that area is above or below the axis. This is called the <dfn class="terminology">total area</dfn>.</p>
+<p id="p-1718">Graphically, it is easiest to think of calculating total area by adding the areas above the axis and the areas below the axis (rather than subtracting the areas below the axis, as we did with net signed area). To accomplish this mathematically, we use the absolute value function. Thus, the total distance traveled by the car is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_006.html ./knowl/CNX_Calc_Figure_05_02_007.html ./knowl/CNX_Calc_Figure_05_02_008.html ./knowl/fs-id1170572163843.html" id="md-93">
+\begin{align*}
+\displaystyle{\int_{0}^{2} |60|dt} +\displaystyle{\int_{2}^{5} |-40|dt} \amp =\displaystyle{\int_{0}^{2} 60dt} +\displaystyle{\int_{2}^{5} 40dt} \\
+\amp =120+120\\
+\amp =240.
+\end{align*}
+</div>
+<p id="p-1719">Bringing these ideas together formally, we state the following definitions.</p>
+<article class="definition definition-like" id="definition-47"><h5 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.38</span><span class="period">.</span>
+</h5>
+<p id="p-1720">Let <span class="process-math">\(f(x)\)</span> be an integrable function defined on an interval <span class="process-math">\([a,b].\)</span> Let <span class="process-math">\(A_{1}\)</span>  represent the area between <span class="process-math">\(f(x)\)</span> and the <span class="process-math">\(x\)</span>-axis that lies above the axis and let <span class="process-math">\(A_{2}\)</span>  represent the area between <span class="process-math">\(f(x)\)</span> and the <span class="process-math">\(x\)</span>-axis that lies below the axis. Then, the net signed area between <span class="process-math">\(f(x)\)</span> and the <span class="process-math">\(x\)</span>-axis is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{\int_{a}^{b} f(x)dx} =A_1-A_2.
+\end{equation*}
+</div>
+<p id="p-1721">The total area between <span class="process-math">\(f(x)\)</span> and the <span class="process-math">\(x\)</span>-axis is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{a}^{b}|f(x)|dx=A_1+A_2.
+\end{equation*}
+</div></article><article class="example example-like" id="fs-id1170572163843"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.39</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Total Area.</span>
+</h5>
+<p id="p-1722">Find the total area between <span class="process-math">\(f(x)=x-2\)</span> and the <span class="process-math">\(x\)</span>-axis over the interval <span class="process-math">\([0,6].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-302" id="solution-302"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-302"><div class="solution solution-like">
+<p id="p-1723">Calculate the <span class="process-math">\(x\)</span>-intercept as <span class="process-math">\((2,0)\)</span> (set <span class="process-math">\(y=0,\)</span> solve for <span class="process-math">\(x\)</span>). To find the total area, take the area below the <span class="process-math">\(x\)</span>-axis over the subinterval <span class="process-math">\([0,2]\)</span> and add it to the area above the <span class="process-math">\(x\)</span>-axis on the subinterval <span class="process-math">\([2,6]\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_02_008.html" title="Figure 5.40">Figure 5.40</a>).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_02_008"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_02_008.jpg" class="contained" alt='"A graph of a increasing line f(x) = x-2 going through the points (-2,-4), (0,2), (2,0), (4,2), and (6,4). The area under the line in quadrant one and to the left of the line x=6 is shaded and labeled A1. The area above the line in quadrant four is shaded and labeled A2."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.40<span class="period">.</span></span><span class="space"> </span>The total area between the line and the x-axis over <span class="process-math">\([0,6]\)</span> is <span class="process-math">\(A_{2}\)</span>  plus <span class="process-math">\(A_{1}\)</span> .</figcaption></figure><p id="p-1724">We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_008.html">
+\begin{equation*}
+\displaystyle{\int_{0}^{6} |(x-2)|dx} =A_2+A_1.
+\end{equation*}
+</div>
+<p id="p-1725">Then, using the formula for the area of a triangle, we obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_008.html">
+\begin{equation*}
+A_2=\frac{1}{2}bh=\frac{1}{2}\cdot 2\cdot 2=2
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_008.html">
+\begin{equation*}
+A_1=\frac{1}{2}bh=\frac{1}{2}\cdot 4\cdot 4=8.
+\end{equation*}
+</div>
+<p id="p-1726">The total area, then, is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_008.html">
+\begin{equation*}
+A_1+A_2=8+2=10.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-128"><h5 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.41</span><span class="period">.</span>
+</h5>
+<p id="p-1727">Find the total area between the function <span class="process-math">\(f(x)=2x\)</span> and the <span class="process-math">\(x\)</span>-axis over the interval <span class="process-math">\([-3,3].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-125" id="hint-125"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-125"><div class="hint solution-like"><p id="p-1728">Review the solving strategy in <a href="" class="xref" data-knowl="./knowl/fs-id1170572163843.html" title="Example 5.39: Finding the Total Area">Example 5.39</a>.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-303" id="solution-303"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-303"><div class="solution solution-like"><p id="p-1729">18</p></div></div>
+</div></article></section></section><section class="subsection" id="subsection-133"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.4</span> <span class="title">Properties of the Definite Integral</span>
+</h3>
+<p id="p-1730">The properties of indefinite integrals apply to definite integrals as well. Definite integrals also have properties that relate to the limits of integration. These properties, along with the rules of integration that we examine later in this chapter, help us manipulate expressions to evaluate definite integrals.</p>
+<article class="note remark-like" id="note-42"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">5.42</span><span class="period">.</span><span class="space"> </span><span class="title">Rule: Properties of the Definite Integral.</span>
+</h4>
+<ol class="lower-alpha">
+<li id="li-753"><p id="p-derived-li-753"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{\int_{a}^{a} f(x)dx=0} 
+\end{equation*}
+</div>If the limits of integration are the same, the integral is just a line and contains no area.</p></li>
+<li id="li-754"><p id="p-derived-li-754"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{\int_{b}^{a} f(x)dx} =-\displaystyle{\int_{a}^{b} f(x)dx} 
+\end{equation*}
+</div>If the limits are reversed, then place a negative sign in front of the integral.</p></li>
+<li id="li-755"><p id="p-derived-li-755"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{\int_{a}^{b} [f(x)+g(x)]dx} =\displaystyle{\int_{a}^{b} f(x)dx} +\displaystyle{\int_{a}^{b} g(x)dx} 
+\end{equation*}
+</div>The integral of a sum is the sum of the integrals.</p></li>
+<li id="li-756"><p id="p-derived-li-756"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{\int_{a}^{b} [f(x)-g(x)]dx=\displaystyle{\int_{a}^{b} f(x)dx-\displaystyle{\int_{a}^{b} g(x)dx} } } 
+\end{equation*}
+</div>The integral of a difference is the difference of the integrals.</p></li>
+<li id="li-757"><p id="p-derived-li-757"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{\int_{a}^{b} cf(x)dx} =c\displaystyle{\int_{a}^{b} f(x)} 
+\end{equation*}
+</div>for constant <span class="process-math">\(c\text{.}\)</span> The integral of the product of a constant and a function is equal to the constant multiplied by the integral of the function.</p></li>
+<li id="li-758"><p id="p-derived-li-758"><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{\int_{a}^{b} f(x)dx} =\displaystyle{\int_{a}^{c} f(x)dx} +\displaystyle{\int_{c}^{b} f(x)dx} 
+\end{equation*}
+</div>Although this formula normally applies when <span class="process-math">\(c\)</span> is between <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> the formula holds for all values of <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\text{,}\)</span> provided <span class="process-math">\(f(x)\)</span> is integrable on the largest interval.</p></li>
+</ol></article><article class="example example-like" id="fs-id1170572274820"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.43</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Properties of the Definite Integral.</span>
+</h4>
+<p id="p-1731">Use the properties of the definite integral to express the definite integral of <span class="process-math">\(f(x)=-3x^3+2x+2\)</span> over the interval <span class="process-math">\([-2,1]\)</span> as the sum of three definite integrals.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-304" id="solution-304"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-304"><div class="solution solution-like">
+<p id="p-1732">Using integral notation, we have <span class="process-math">\(\displaystyle{\int_{-2}^{1}(-3x^3+2x+2)dx} .\)</span> We apply properties 3. and 5. to get</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-94">
+\begin{align*}
+\displaystyle{\int_{-2}^{1}(-3x^3+2x+2)dx} \amp =\displaystyle{\int_{-2}^{1}-3x^3dx} +\displaystyle{\int_{-2}^{1}2xdx} +\displaystyle{\int_{-2}^{1}2dx} \\
+\amp =-3\displaystyle{\int_{-2}^{1}x^3dx} +2\displaystyle{\int_{-2}^{1}xdx} +\displaystyle{\int_{-2}^{1}2dx} .
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-129"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.44</span><span class="period">.</span>
+</h4>
+<p id="p-1733">Use the properties of the definite integral to express the definite integral of <span class="process-math">\(f(x)=6x^3-4x^2+2x-3\)</span> over the interval <span class="process-math">\([1,3]\)</span> as the sum of four definite integrals.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-126" id="hint-126"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-126"><div class="hint solution-like"><p id="p-1734">Use the solving strategy from <a href="" class="xref" data-knowl="./knowl/fs-id1170572274820.html" title="Example 5.43: Using the Properties of the Definite Integral">Example 5.43</a> and the properties of definite integrals.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-305" id="solution-305"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-305"><div class="solution solution-like"><p id="p-1735"><span class="process-math">\(6\displaystyle{\int_{1}^{3} x^3dx} -4\displaystyle{\int_{1}^{3} x^2dx} +2\displaystyle{\int_{1}^{3} xdx} -\int_{1}^{3}3dx\)</span></p></div></div>
+</div></article><article class="example example-like" id="fs-id1170572098842"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.45</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Properties of the Definite Integral.</span>
+</h4>
+<p id="p-1736">If it is known that <span class="process-math">\(\displaystyle{\int_{0}^{8} f(x)dx} =10\)</span> and <span class="process-math">\(\displaystyle{\int_{0}^{5} f(x)dx} =5,\)</span> find the value of <span class="process-math">\(\displaystyle{\int_{5}^{8} f(x)dx} .\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-306" id="solution-306"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-306"><div class="solution solution-like">
+<p id="p-1737">By property 6.,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{\int_{a}^{b} f(x)dx} =\displaystyle{\int_{a}^{c} f(x)dx} +\displaystyle{\int_{c}^{b} f(x)dx} .
+\end{equation*}
+</div>
+<p id="p-1738">Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-95">
+\begin{align*}
+\displaystyle{\int_{0}^{8} f(x)dx} \amp = \displaystyle{\int_{0}^{5} f(x)dx} +\displaystyle{\int_{5}^{8} f(x)dx} \\
+10\amp = 5+\displaystyle{\int_{5}^{8} f(x)dx} \\
+5\amp = \displaystyle{\int_{5}^{8} f(x)dx} .
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-130"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.46</span><span class="period">.</span>
+</h4>
+<p id="p-1739">If it is known that <span class="process-math">\(\displaystyle{\int_{1}^{5} f(x)dx} =-3\)</span> and <span class="process-math">\(\displaystyle{\int_{2}^{5} f(x)dx} =4,\)</span> find the value of <span class="process-math">\(\displaystyle{\int_{1}^{2} f(x)dx} .\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-127" id="hint-127"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-127"><div class="hint solution-like"><p id="p-1740">Use the solving strategy from <a href="" class="xref" data-knowl="./knowl/fs-id1170572098842.html" title="Example 5.45: Using the Properties of the Definite Integral">Example 5.45</a> and the rule on properties of definite integrals.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-307" id="solution-307"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-307"><div class="solution solution-like"><p id="p-1741">-7</p></div></div>
+</div></article></section><section class="subsection" id="subsection-134"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.5</span> <span class="title">Comparison Properties of Integrals</span>
+</h3>
+<p id="p-1742">A picture can sometimes tell us more about a function than the results of computations. Comparing functions by their graphs as well as by their algebraic expressions can often give new insight into the process of integration. Intuitively, we might say that if a function <span class="process-math">\(f(x)\)</span> is above another function <span class="process-math">\(g(x),\)</span> then the area between <span class="process-math">\(f(x)\)</span> and the <span class="process-math">\(x\)</span>-axis is greater than the area between <span class="process-math">\(g(x)\)</span> and the <span class="process-math">\(x\)</span>-axis. This is true depending on the interval over which the comparison is made. The properties of definite integrals are valid whether <span class="process-math">\(a\lt b,a=b,\)</span> or <span class="process-math">\(a\gt b.\)</span> The following properties, however, concern only the case <span class="process-math">\(a\leq b,\)</span> and are used when we want to compare the sizes of integrals.</p>
+<article class="theorem theorem-like" id="theorem-33"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.47</span><span class="period">.</span><span class="space"> </span><span class="title">Comparison Theorem.</span>
+</h4>
+<ol class="lower-roman">
+<li id="li-759"><p id="p-derived-li-759">If <span class="process-math">\(f(x)\geq 0\)</span> for <span class="process-math">\(a\leq x\leq b,\)</span> then<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{\int_{a}^{b} f(x)dx} \geq 0.
+\end{equation*}
+</div></p></li>
+<li id="li-760"><p id="p-derived-li-760">If <span class="process-math">\(f(x)\geq g(x)\)</span> for <span class="process-math">\(a\leq x\leq b,\)</span> then<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\displaystyle{\int_{a}^{b} f(x)dx} \geq \displaystyle{\int_{a}^{b} g(x)dx} .
+\end{equation*}
+</div></p></li>
+<li id="li-761"><p id="p-derived-li-761">If <span class="process-math">\(m\)</span> and <span class="process-math">\(M\)</span> are constants such that <span class="process-math">\(m\leq f(x)\leq M\)</span> for <span class="process-math">\(a\leq x\leq b,\)</span> then<div class="displaymath process-math" data-contains-math-knowls="" id="md-96">
+\begin{align*}
+m(b-a)\amp \leq \displaystyle{\int_{a}^{b} f(x)dx} \\
+\amp \leq M(b-a).
+\end{align*}
+</div></p></li>
+</ol></article><article class="example example-like" id="fs-id1170571769594"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.48</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing Two Functions over a Given Interval.</span>
+</h4>
+<p id="p-1743">Compare <span class="process-math">\(f(x)=\sqrt{1+x^2}\)</span> and <span class="process-math">\(g(x)=\sqrt{1+x}\)</span> over the interval <span class="process-math">\([0,1].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-308" id="solution-308"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-308"><div class="solution solution-like">
+<p id="p-1744">Graphing these functions is necessary to understand how they compare over the interval <span class="process-math">\([0,1].\)</span> Initially, when graphed on a graphing calculator, <span class="process-math">\(f(x)\)</span> appears to be above <span class="process-math">\(g(x)\)</span> everywhere. However, on the interval <span class="process-math">\([0,1],\)</span> the graphs appear to be on top of each other. We need to zoom in to see that, on the interval <span class="process-math">\([0,1],g(x)\)</span> is above <span class="process-math">\(f(x).\)</span> The two functions intersect at <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=1\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_02_009.html" title="Figure 5.49">Figure 5.49</a>).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_02_009"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_02_011.jpg" class="contained" alt='"A graph of the function f(x) = sqrt(1 + x^2) in red and g(x) = sqrt(1 + x) in blue over [-2, 3]. The function f(x) appears above g(x) except over the interval [0,1]. A second, zoomed-in graph shows this interval more clearly."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.49<span class="period">.</span></span><span class="space"> </span>(a) The function <span class="process-math">\(f(x)\)</span> appears above the function <span class="process-math">\(g(x)\)</span> except over the interval <span class="process-math">\([0,1]\)</span> (b) Viewing the same graph with a greater zoom shows this more clearly.</figcaption></figure><p id="p-1745">We can see from the graph that over the interval <span class="process-math">\([0,1],g(x)\geq f(x).\)</span> Comparing the integrals over the specified interval <span class="process-math">\([0,1],\)</span> we also see that <span class="process-math">\(\displaystyle{\int_{0}^{1} g(x)dx} \geq \displaystyle{\int_{0}^{1} f(x)dx} \)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_02_010.html" title="Figure 5.50">Figure 5.50</a>). The thin, red-shaded area shows just how much difference there is between these two integrals over the interval <span class="process-math">\([0,1].\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_02_010"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_02_012.jpg" class="contained" alt='"A graph showing the functions f(x) = sqrt(1 + x^2) and g(x) = sqrt(1 + x) over [-3, 3]. The area under g(x) in quadrant one over [0,1] is shaded. The area under g(x) and f(x) is included in this shaded area. The second, zoomed-in graph shows more clearly that equality between the functions only holds at the endpoints."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.50<span class="period">.</span></span><span class="space"> </span>(a) The graph shows that over the interval <span class="process-math">\([0,1],g(x)\geq f(x),\)</span> where equality holds only at the endpoints of the interval. (b) Viewing the same graph with a greater zoom shows this more clearly.</figcaption></figure>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-135"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.6</span> <span class="title">Average Value of a Function</span>
+</h3>
+<p id="p-1746">We often need to find the average of a set of numbers, such as an average test grade. Suppose you received the following test scores in your algebra class: 89, 90, 56, 78, 100, and 69. Your semester grade is your average of test scores and you want to know what grade to expect. We can find the average by adding all the scores and dividing by the number of scores. In this case, there are six test scores. Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_011.html">
+\begin{equation*}
+\frac{89+90+56+78+100+69}{6}=\frac{482}{6}\approx 80.33.
+\end{equation*}
+</div>
+<p id="p-1747">Therefore, your average test grade is approximately 80.33, which translates to a B- at most schools.</p>
+<p id="p-1748">Suppose, however, that we have a function <span class="process-math">\(v(t)\)</span> that gives us the speed of an object at any time <span class="process-math">\(t\text{,}\)</span> and we want to find the object’s average speed. The function <span class="process-math">\(v(t)\)</span> takes on an infinite number of values, so we can’t use the process just described. Fortunately, we can use a definite integral to find the average value of a function such as this.</p>
+<p id="p-1749">Let <span class="process-math">\(f(x)\)</span> be continuous over the interval <span class="process-math">\([a,b]\)</span> and let <span class="process-math">\([a,b]\)</span> be divided into <span class="process-math">\(n\)</span> subintervals of width <span class="process-math">\(\Delta x=(b-a)\text{ / }n.\)</span> Choose a representative <span class="process-math">\(x_i^* \)</span> in each subinterval and calculate <span class="process-math">\(f(x_i^* )\)</span> for <span class="process-math">\(i=1,2\text{ ,…, } n.\)</span> In other words, consider each <span class="process-math">\(f(x_i^* )\)</span> as a sampling of the function over each subinterval. The average value of the function may then be approximated as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_011.html">
+\begin{equation*}
+\frac{f(x_1^*)+f(x_2^* )+ \cdots +f(x_n^* )}{n},
+\end{equation*}
+</div>
+<p id="p-1750">which is basically the same expression used to calculate the average of discrete values.</p>
+<p id="p-1751">But we know <span class="process-math">\(\Delta x=\frac{b-a}{n},\)</span> so <span class="process-math">\(n=\frac{b-a}{\Delta x},\)</span> and we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_011.html">
+\begin{equation*}
+\frac{f(x_1^*)+f(x_2^* )+ \cdots +f(x_n^* )}{n}=\frac{f(x_1^*)+f(x_2^* )+ \cdots +f(x_n^* )}{\frac{(b-a)}{\Delta x}}.
+\end{equation*}
+</div>
+<p id="p-1752">Following through with the algebra, the numerator is a sum that is represented as <span class="process-math">\(\displaystyle{\sum_{i=1}^n  f(x_i^* )} ,\)</span> and we are dividing by a fraction. To divide by a fraction, invert the denominator and multiply. Thus, an approximate value for the average value of the function is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_011.html" id="md-97">
+\begin{align*}
+\frac{\displaystyle{\sum_{i=1}^n  f(x_i^* )} }{\frac{(b-a)}{\Delta x}}\amp =\left(\frac{\Delta x}{b-a}\right)\displaystyle{\sum_{i=1}^n  f(x_i^* )} \\
+\amp =\left(\frac{1}{b-a}\right)\displaystyle{\sum_{i=1}^n  f(x_i^* )\Delta x} .
+\end{align*}
+</div>
+<p id="p-1753">This is a Riemann sum. Then, to get the <em class="emphasis">exact</em> average value, take the limit as <span class="process-math">\(n\)</span> goes to infinity. Thus, the average value of a function is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_011.html">
+\begin{equation*}
+\frac{1}{b-a} \displaystyle{ \lim_{n \to \infty}  }\displaystyle{\sum_{i=1}^n  f(x_i)\Delta x} =\frac{1}{b-a}\displaystyle{\int_{a}^{b} f(x)dx} .
+\end{equation*}
+</div>
+<article class="definition definition-like" id="definition-48"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.51</span><span class="period">.</span>
+</h4>
+<p id="p-1754">Let <span class="process-math">\(f(x)\)</span> be continuous over the interval <span class="process-math">\([a,b].\)</span> Then, the <dfn class="terminology">average value of the function</dfn> <span class="process-math">\(f(x)\)</span> (or <dfn class="terminology"><span class="process-math">\(f_{\text{ave}}\)</span></dfn>) on <span class="process-math">\([a,b]\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f_{\text{ ave }}=\frac{1}{b-a}\displaystyle{\int_{a}^{b} f(x)dx} .
+\end{equation*}
+</div></article><article class="example example-like" id="fs-id1170571712593"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.52</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Average Value of a Linear Function.</span>
+</h4>
+<p id="p-1755">Find the average value of <span class="process-math">\(f(x)=x+1\)</span> over the interval <span class="process-math">\([0,5].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-309" id="solution-309"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-309"><div class="solution solution-like">
+<p id="p-1756">First, graph the function on the stated interval, as shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_02_011.html" title="Figure 5.53">Figure 5.53</a>.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_05_02_011"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_02_017.jpg" class="contained" alt='"A graph in quadrant one showing the shaded area under the function f(x) = x + 1 over [0,5]."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.53<span class="period">.</span></span><span class="space"> </span>The graph shows the area under the function <span class="process-math">\(f(x)=x+1\)</span> over <span class="process-math">\([0,5].\)</span></figcaption></figure><p id="p-1757">The region is a trapezoid lying on its side, so we can use the area formula for a trapezoid <span class="process-math">\(A=\frac{1}{2}h(a+b),\)</span> where <span class="process-math">\(h\)</span> represents height, and <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> represent the two parallel sides. Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_011.html" id="md-98">
+\begin{align*}
+\displaystyle{\int_{0}^{5} x} +1dx\amp =\frac{1}{2}h(a+b)\\
+\amp =\frac{1}{2}\cdot 5\cdot (1+6)\\
+\amp =\frac{35}{2}.
+\end{align*}
+</div>
+<p id="p-1758">Thus the average value of the function is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_02_011.html">
+\begin{equation*}
+\frac{1}{5-0}\displaystyle{\int_{0}^{5} x} +1dx=\frac{1}{5}\cdot \frac{35}{2}=\frac{7}{2}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-131"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.54</span><span class="period">.</span>
+</h4>
+<p id="p-1759">Find the average value of <span class="process-math">\(f(x)=6-2x\)</span> over the interval <span class="process-math">\([0,3].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-128" id="hint-128"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-128"><div class="hint solution-like"><p id="p-1760">Use the average value formula, and use geometry to evaluate the integral.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-310" id="solution-310"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-310"><div class="solution solution-like"><p id="p-1761">3</p></div></div>
+</div></article></section><section class="subsection" id="subsection-136"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.7</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-762"><p id="p-derived-li-762">The definite integral can be used to calculate net signed area, which is the area above the <span class="process-math">\(x\)</span>-axis less the area below the <span class="process-math">\(x\)</span>-axis. Net signed area can be positive, negative, or zero.</p></li>
+<li id="li-763"><p id="p-derived-li-763">The component parts of the definite integral are the integrand, the variable of integration, and the limits of integration.</p></li>
+<li id="li-764"><p id="p-derived-li-764">Continuous functions on a closed interval are integrable. Functions that are not continuous may still be integrable, depending on the nature of the discontinuities.</p></li>
+<li id="li-765"><p id="p-derived-li-765">The properties of definite integrals can be used to evaluate integrals.</p></li>
+<li id="li-766"><p id="p-derived-li-766">The area under the curve of many functions can be calculated using geometric formulas.</p></li>
+<li id="li-767"><p id="p-derived-li-767">The average value of a function can be calculated using definite integrals.</p></li>
+</ul></section><section class="subsection" id="subsection-137"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.8</span> <span class="title">Key Equations</span>
+</h3>
+<ul class="disc">
+<li id="li-768"><p id="p-derived-li-768">Definite Integral <span class="process-math">\(\displaystyle{\int_{a}^{b} f(x)dx} = \displaystyle{ \lim_{n \to \infty}  }\displaystyle{\sum_{i=1}^n  f(x_i^* )\Delta x}\)</span></p></li>
+<li id="li-769"><p id="p-derived-li-769">Properties of the Definite Integral<div class="displaymath process-math" data-contains-math-knowls="" id="md-99">
+\begin{gather*}
+\displaystyle{\int_{a}^{a} f(x)dx=0} \\
+\displaystyle{\int_{b}^{a} f(x)dx} =-\displaystyle{\int_{a}^{b} f(x)dx} \\
+\displaystyle{\int_{a}^{b} [f(x)+g(x)]dx} =\displaystyle{\int_{a}^{b} f(x)dx} +\displaystyle{\int_{a}^{b} g(x)dx} \\
+\displaystyle{\int_{a}^{b}[f(x)-g(x)]dx=\displaystyle{\int_{a}^{b}f(x)dx-\displaystyle{\int_{a}^{b}g(x)dx} } } \\
+\displaystyle{\int_{a}^{b} cf(x)dx} =c\displaystyle{\int_{a}^{b} f(x)} \text{ for constant }c\\
+\displaystyle{\int_{a}^{b} f(x)dx} =\displaystyle{\int_{a}^{c} f(x)dx} +\displaystyle{\int_{c}^{b} f(x)dx} 
+\end{gather*}
+</div></p></li>
+</ul></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:02:42-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Derivatives of Exponential and Logarithmic Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<meta property="book:author" content="Custom Business Calculus Edition ">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline">Custom Business Calculus Edition</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch3Sec8.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_third.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch_fourth.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch3Sec8.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_third.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ch_fourth.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="meta_frontmatter-preface.html" data-scroll="meta_frontmatter-preface" class="internal">Preface: OpenStax Calculus Volume 1</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2" class="internal">Preface: Business Calculus Custom Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="active">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Derivatives</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Ch3Sec9"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.9</span> <span class="title">Derivatives of Exponential and Logarithmic Functions</span>
+</h2>
+<section class="introduction" id="introduction-26"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc">
+<li id="li-554"><p id="p-derived-li-554">Find the derivative of exponential functions.</p></li>
+<li id="li-555"><p id="p-derived-li-555">Find the derivative of logarithmic functions.</p></li>
+</ul>
+<p id="p-1155">So far, we have learned how to differentiate a variety of functions, including trigonometric, inverse, and implicit functions. In this section, we explore derivatives of exponential and logarithmic functions. As we discussed in <a href="sec_Ch1Sec5.html" class="internal" title="Section 1.5: Exponential and Logarithmic Functions">Exponential and Logarithmic Functions 1.5</a>, exponential functions play an important role in modeling population growth and the decay of radioactive materials. Logarithmic functions can help rescale large quantities and are particularly helpful for rewriting complicated expressions.</p></section><section class="subsection" id="subsection-96"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.9.1</span> <span class="title">Derivative of the Exponential Function</span>
+</h3>
+<p id="p-1156">Just as when we found the derivatives of other functions, we can find the derivatives of exponential and logarithmic functions using formulas.</p>
+<p id="p-1157">We know that <span class="process-math">\(2.7182\lt e\lt 2.7183.\)</span></p>
+<p id="p-1158">The graph of <span class="process-math">\(E(x)=e^x\)</span> together with the line <span class="process-math">\(y=x+1\)</span> are shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_03_09_002.html" title="Figure 3.151">Figure 3.151</a>. This line is tangent to the graph of <span class="process-math">\(E(x)=e^x\)</span> at <span class="process-math">\(x=0.\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_03_09_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_03_09_002.jpg" class="contained" alt='"Graph of the function ex along with its tangent at (0, 1), x + 1."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.151<span class="period">.</span></span><span class="space"> </span>The tangent line to <span class="process-math">\(E(x)=e^x\)</span> at <span class="process-math">\(x=0\)</span> has slope 1.</figcaption></figure><p id="p-1159">Now that we have laid out our basic assumptions, we begin our investigation by exploring the derivative of <span class="process-math">\(B(x)=b^x,b\gt 0.\)</span> Recall that we have assumed that <span class="process-math">\(B'(0)\)</span> exists. By applying the limit definition to the derivative we conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_03_09_002.html">
+\begin{equation*}
+B'(0)=\lim_{h\to 0}\frac{b^{0+h}- b^0}{h}=\lim_{h\to 0}\frac{b^h- 1}{h}.
+\end{equation*}
+</div>
+<p id="p-1160">Turning to <span class="process-math">\(B'(x),\)</span> we obtain the following.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_03_09_002.html" id="md-53">
+\begin{align*}
+B'(x)\amp=\lim_{h\to 0}\frac{b^{x+h}- b^x}{h}\amp \amp \text{ Apply the limit definition of the derivative. }\\
+\amp=\lim_{h\to 0}\frac{b^xb^h- b^x}{h}\amp\amp\text{ Note that } b^{x+h}=b^xb^h.\\
+\amp=\lim_{h\to 0}\frac{b^x(b^h- 1)}{h}\amp\amp\text{ Factor out } b^x.\\
+\amp=b^x\lim_{h\to 0}\frac{b^h- 1}{h}\amp\amp\text{ Apply a property of limits. }\\
+\amp=b^xB'(0)\amp\amp\text{ Use } B'(0)=\lim_{h\to 0}\frac{b^{0+h}- b^0}{h}=\lim_{h\to 0}\frac{b^h- 1}{h}.
+\end{align*}
+</div>
+<p id="p-1161">We see that on the basis of the assumption that <span class="process-math">\(B(x)=b^x\)</span> is differentiable at <span class="process-math">\(0,B(x)\)</span> is not only differentiable everywhere, but its derivative is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_03_09_002.html">
+\begin{equation*}
+B'(x)=b^xB'(0).
+\end{equation*}
+</div>
+<p id="p-1162">For <span class="process-math">\(E(x)=e^x,E'(0)=1.\)</span> Thus, we have <span class="process-math">\(E'(x)=e^x.\)</span> (The value of <span class="process-math">\(B'(0)\)</span> for an arbitrary function of the form <span class="process-math">\(B(x)=b^x,b\gt 0,\)</span> will be derived later.)</p>
+<article class="theorem theorem-like" id="theorem-18"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.152</span><span class="period">.</span><span class="space"> </span><span class="title">Derivative of the Natural Exponential Function.</span>
+</h4>
+<p id="p-1163">Let <span class="process-math">\(E(x)=e^x\)</span> be the natural exponential function. Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E'(x)=e^x.
+\end{equation*}
+</div>
+<p id="p-1164">In general,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{d}{dx}(e^{g(x)})=e^{g(x)}g'(x).
+\end{equation*}
+</div></article><article class="example example-like" id="fs-id1169738223456"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.153</span><span class="period">.</span><span class="space"> </span><span class="title">Derivative of an Exponential Function.</span>
+</h4>
+<p id="p-1165">Find the derivative of <span class="process-math">\(f(x)=e^{2x^2+x}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-217" id="solution-217"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-217"><div class="solution solution-like">
+<p id="p-1166">Using the derivative formula and the chain rule,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-54">
+\begin{align*}
+f'(x)\amp=e^{2x^2+x}\frac{d}{dx}(2x^2+x)\\
+\amp=e^{2x^2+x}\cdot(4x+1).
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1169737140879"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.154</span><span class="period">.</span><span class="space"> </span><span class="title">Combining Differentiation Rules.</span>
+</h4>
+<p id="p-1167">Find the derivative of <span class="process-math">\(y=\frac{e^{x^2}}{x}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-218" id="solution-218"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-218"><div class="solution solution-like">
+<p id="p-1168">Use the derivative of the natural exponential function, the quotient rule, and the chain rule.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-55">
+\begin{align*}
+y'\amp=\frac{(e^{x^2}\cdot 2)x\cdot x- 1\cdot e^{x^2}}{x^2}\amp \amp\text{ Apply the quotient rule. }\\
+\amp =\frac{e^{x^2}(2x^2- 1)}{x^2}\amp \amp\text{ Simplify. }
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-90"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.155</span><span class="period">.</span>
+</h4>
+<p id="p-1169">Find the derivative of <span class="process-math">\(h(x)=xe^{2x}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-87" id="hint-87"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-87"><div class="hint solution-like"><p id="p-1170">Don’t forget to use the product rule.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-219" id="solution-219"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-219"><div class="solution solution-like"><p id="p-1171"><span class="process-math">\(h'(x)=e^{2x}+2xe^{2x}\)</span></p></div></div>
+</div></article><article class="example example-like" id="fs-id1169737949367"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.156</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the Natural Exponential Function.</span>
+</h4>
+<p id="p-1172">A colony of mosquitoes has an initial population of 1000. After <span class="process-math">\(t\)</span> days, the population is given by <span class="process-math">\(A(t)=1000e^{0.3t}.\)</span> Show that the ratio of the rate of change of the population, <span class="process-math">\(A'(t),\)</span> to the population, <span class="process-math">\(A(t)\)</span> is constant.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-220" id="solution-220"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-220"><div class="solution solution-like">
+<p id="p-1173">First find <span class="process-math">\(A'(t).\)</span> By using the chain rule, we have <span class="process-math">\(A'(t)=300e^{0.3t}.\)</span> Thus, the ratio of the rate of change of the population to the population is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A'(t)=\frac{300e^{0.3t}}{1000e^{0.3t}}=0.3.
+\end{equation*}
+</div>
+<p id="p-1174">The ratio of the rate of change of the population to the population is the constant 0.3.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-91"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.157</span><span class="period">.</span>
+</h4>
+<p id="p-1175">If <span class="process-math">\(A(t)=1000e^{0.3t}\)</span> describes the mosquito population after <span class="process-math">\(t\)</span> days, as in the preceding example, what is the rate of change of <span class="process-math">\(A(t)\)</span> after 4 days?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-88" id="hint-88"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-88"><div class="hint solution-like"><p id="p-1176">Find <span class="process-math">\(A'(4).\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-221" id="solution-221"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-221"><div class="solution solution-like"><p id="p-1177">996</p></div></div>
+</div></article><article class="example example-like" id="example-131"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.158</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the Natural Exponential Function to an Account with Interest Compounded Continuously.</span>
+</h4>
+<p id="p-1178">If <span class="process-math">\(A(t)=2500e^{0.012t}\)</span> is the future value of an account in dollars with interest compounded continuously after <span class="process-math">\(t\)</span> years, what is the rate of change of <span class="process-math">\(A(t)\)</span> after 4 years?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-222" id="solution-222"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-222"><div class="solution solution-like">
+<p id="p-1179">First find <span class="process-math">\(A'(t).\)</span> By using the chain rule, we have <span class="process-math">\(A'(t)=2500e^{0.012t}\cdot 0.012=30e^{0.012t}.\)</span> Thus, the rate of change of the future value of the account after 4 years is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A'(4)=30e^{0.012(4)}\approx \$31.48.
+\end{equation*}
+</div>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-97"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.9.2</span> <span class="title">Derivative of the Logarithmic Function</span>
+</h3>
+<p id="p-1180">Now that we have the derivative of the natural exponential function, we can use implicit differentiation to find the derivative of its inverse, the natural logarithmic function.</p>
+<article class="theorem theorem-like" id="theorem-19"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.159</span><span class="period">.</span><span class="space"> </span><span class="title">The Derivative of the Natural Logarithmic Function.</span>
+</h4>
+<p id="p-1181">If <span class="process-math">\(x\gt 0\)</span> and <span class="process-math">\(y=\ln  x,\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx}=\frac{1}{x}.
+\end{equation*}
+</div>
+<p id="p-1182">More generally, let <span class="process-math">\(g(x)\)</span> be a differentiable function. For all values of <span class="process-math">\(x\)</span> for which <span class="process-math">\(g'(x)\gt 0,\)</span> the derivative of <span class="process-math">\(h(x)=\ln  (g(x))\)</span> is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h'(x)=\frac{1}{g(x)}g'(x).
+\end{equation*}
+</div></article><p id="p-1183">The graph of <span class="process-math">\(y=\ln  x\)</span> and its derivative <span class="process-math">\(\frac{dy}{dx}=\frac{1}{x}\)</span> are shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_03_09_003.html" title="Figure 3.160">Figure 3.160</a>.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_03_09_003"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_03_09_003.jpg" class="contained" alt='"Graph of the function ln x along with its derivative 1/x. The function ln x is increasing on (0, + \infty ). Its derivative is decreasing but greater than 0 on (0, + \infty )."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.160<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(\text{ The function } y=\ln  x\)</span> is increasing on <span class="process-math">\((0,\text{ + }\infty ).\)</span> Its derivative <span class="process-math">\(y'=\frac{1}{x}\)</span> is greater than zero on <span class="process-math">\((0,\text{ + }\infty ).\)</span></figcaption></figure><article class="example example-like" id="fs-id1169738211098"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.161</span><span class="period">.</span><span class="space"> </span><span class="title">Taking a Derivative of a Natural Logarithm.</span>
+</h4>
+<p id="p-1184">Find the derivative of <span class="process-math">\(f(x)=\ln  (x^3+3x- 4).\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-223" id="solution-223"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-223"><div class="solution solution-like">
+<p id="p-1185">Use <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fs-id1169737919348" missing or not unique]</code> directly.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-56">
+\begin{align*}
+f'(x)\amp=\frac{1}{x^3+3x- 4}\cdot (3x^2+3)\amp\amp\text{ Use } g(x)=x^3+3x- 4 \text{ in } h'(x)=\frac{1}{g(x)}g'(x).\\
+\amp=\frac{3x^2+3}{x^3+3x- 4}\amp\amp\text{ Rewrite. }
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1169738244488"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.162</span><span class="period">.</span><span class="space"> </span><span class="title">Using Properties of Logarithms in a Derivative.</span>
+</h4>
+<p id="p-1186">Find the derivative of <span class="process-math">\(f(x)=\ln  \left(\frac{x^2e^x}{5x+1}\right).\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-224" id="solution-224"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-224"><div class="solution solution-like">
+<p id="p-1187">At first glance, taking this derivative appears rather complicated. However, by using the properties of logarithms prior to finding the derivative, we can make the problem much simpler. Applying properties of logarithms and then differentiating,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-57">
+\begin{align*}
+f(x)\amp=\ln  \left(\frac{x^2e^x}{5x+1}\right)=\ln  (x^2e^x)-\ln (5x+1)\\
+\amp=2\ln x+\ln e^x-\ln(5x+1)\\
+\amp=2\ln x+x-\ln(5x+1)\\
+f'(x)\amp=\frac{2}{x}+1-\frac{5}{5x+1}\amp\amp\text{ Apply sum rule and } h'(x)=\frac{1}{g(x)}g'(x).
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-92"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.163</span><span class="period">.</span>
+</h4>
+<p id="p-1188">Differentiate: <span class="process-math">\(f(x)=\ln\left((3x+2)^5\right).\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-89" id="hint-89"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-89"><div class="hint solution-like"><p id="p-1189">Use a property of logarithms to simplify before taking the derivative.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-225" id="solution-225"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-225"><div class="solution solution-like"><p id="p-1190"><span class="process-math">\(f'(x)=\frac{15}{3x+2}\)</span></p></div></div>
+</div></article><p id="p-1191">Now that we can differentiate the natural logarithmic function, we can use this result to find the derivatives of <span class="process-math">\(y=log_bx\)</span> and <span class="process-math">\(y=b^x\)</span> for <span class="process-math">\(b\gt 0,b\neq 1.\)</span></p>
+<article class="theorem theorem-like" id="fs-id1169738238181"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.164</span><span class="period">.</span><span class="space"> </span><span class="title">Derivatives of General Exponential and Logarithmic Functions.</span>
+</h4>
+<p id="p-1192">Let <span class="process-math">\(b\gt 0,b\neq 1,\)</span> and let <span class="process-math">\(g(x)\)</span> be a differentiable function.</p>
+<ol class="decimal">
+<li id="li-556"><p id="p-derived-li-556">If, <span class="process-math">\(y=\log_bx,\)</span> then<div class="displaymath process-math" data-contains-math-knowls="" id="men-16">
+\begin{equation}
+\frac{dy}{dx}=\frac{1}{x \ln  b}.\tag{3.9.1}
+\end{equation}
+</div>More generally, if <span class="process-math">\(h(x)=\log_b(g(x)),\)</span> then for all values of <span class="process-math">\(x\)</span> for which <span class="process-math">\(g(x)\gt 0,\)</span><div class="displaymath process-math" data-contains-math-knowls="" id="fs-id1169738186308">
+\begin{equation}
+h'(x)=\frac{g'(x)}{g(x) \ln  b}.\tag{3.9.2}
+\end{equation}
+</div></p></li>
+<li id="li-557"><p id="p-derived-li-557">If <span class="process-math">\(y=b^x,\)</span> then<div class="displaymath process-math" data-contains-math-knowls="" id="men-18">
+\begin{equation}
+\frac{dy}{dx}=b^x\ln  b.\tag{3.9.3}
+\end{equation}
+</div>More generally, if <span class="process-math">\(h(x)=b^{g(x)},\)</span> then<div class="displaymath process-math" data-contains-math-knowls="" id="fs-id1169738045159">
+\begin{equation}
+h'(x)=b^{g(x)}g\text{ ' }(x) \ln  b.\tag{3.9.4}
+\end{equation}
+</div></p></li>
+</ol></article><article class="example example-like" id="fs-id1169737145066"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.165</span><span class="period">.</span><span class="space"> </span><span class="title">Applying Derivative Formulas.</span>
+</h4>
+<p id="p-1193">Find the derivative of <span class="process-math">\(h(x)=\frac{3^x}{3^x+2}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-226" id="solution-226"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-226"><div class="solution solution-like">
+<p id="p-1194">Use the quotient rule and <a href="" class="xref" data-knowl="./knowl/fs-id1169738238181.html" title="Theorem 3.164: Derivatives of General Exponential and Logarithmic Functions">Theorem 3.164</a>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1169738238181.html" id="md-58">
+\begin{align*}
+h'(x)\amp=\frac{3^x \ln  3(3^x+2)- 3^x \ln  3(3^x)}{(3^x+2)^2}\amp\amp\text{ Apply the quotient rule. }\\
+\amp=\frac{2\cdot 3^x \ln  3}{(3^x+2)^2}\amp\amp\text{ Simplify. }
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1169738219393"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.166</span><span class="period">.</span>
+</h4>
+<p id="p-1195">Find the slope of the line tangent to the graph of <span class="process-math">\(y=\log_{2} (3x+1)\)</span> at <span class="process-math">\(x=1.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-227" id="solution-227"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-227"><div class="solution solution-like">
+<p id="p-1196">To find the slope, we must evaluate <span class="process-math">\(\frac{dy}{dx}\)</span> at <span class="process-math">\(x=1.\)</span> Using <a href="" class="xref" data-knowl="./knowl/fs-id1169738186308.html" title="Equation 3.9.2">(3.9.2)</a>, we see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1169738186308.html">
+\begin{equation*}
+\frac{dy}{dx}=\frac{3}{ \ln  2(3x+1)}.
+\end{equation*}
+</div>
+<p id="p-1197">By evaluating the derivative at <span class="process-math">\(x=1,\)</span> we see that the tangent line has slope</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1169738186308.html">
+\begin{equation*}
+\frac{dy}{dx}|_{x=1}=\frac{3}{4 \ln  2}=\frac{3}{ \ln  16}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-93"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.167</span><span class="period">.</span>
+</h4>
+<p id="p-1198">Find the slope for the line tangent to <span class="process-math">\(y=3^x\)</span> at <span class="process-math">\(x=2.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-90" id="hint-90"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-90"><div class="hint solution-like"><p id="p-1199">Evaluate the derivative at <span class="process-math">\(x=2.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-228" id="solution-228"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-228"><div class="solution solution-like"><p id="p-1200"><span class="process-math">\(9 \ln  (3)\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-98"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.9.3</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-558"><p id="p-derived-li-558">On the basis of the assumption that the exponential function <span class="process-math">\(y=b^x,b\gt 0\)</span> is continuous everywhere and differentiable at 0, this function is differentiable everywhere and there is a formula for its derivative.</p></li>
+<li id="li-559"><p id="p-derived-li-559">We can use a formula to find the derivative of <span class="process-math">\(y=\ln  x,\)</span> and the relationship <span class="process-math">\(\log_bx=\frac{\ln  x}{\ln  b}\)</span> allows us to extend our differentiation formulas to include logarithms with arbitrary bases.</p></li>
+</ul></section><section class="subsection" id="subsection-99"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.9.4</span> <span class="title">Key Equations</span>
+</h3>
+<ul class="disc">
+<li id="li-560"><p id="p-derived-li-560"><em class="emphasis">Derivative of the natural exponential function</em> <span class="process-math">\(\frac{d}{dx}(e^{g(x)})=e^{g(x)}g'(x)\)</span></p></li>
+<li id="li-561"><p id="p-derived-li-561"><em class="emphasis">Derivative of the natural logarithmic function</em> <span class="process-math">\(\frac{d}{dx}(\ln  g(x))=\frac{1}{g(x)}g'(x)\)</span></p></li>
+<li id="li-562"><p id="p-derived-li-562"><em class="emphasis">Derivative of the general exponential function</em> <span class="process-math">\(\frac{d}{dx}(b^{g(x)})=b^{g(x)}g'(x) \ln  b\)</span></p></li>
+<li id="li-563"><p id="p-derived-li-563"><em class="emphasis">Derivative of the general logarithmic function</em> <span class="process-math">\(\frac{d}{dx}(\log_bg(x))=\frac{g'(x)}{g(x) \ln  b}\)</span></p></li>
+</ul></section><p id="p-1201">This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1.</p></section></div></main>
+</div>
+</body>
+</html>

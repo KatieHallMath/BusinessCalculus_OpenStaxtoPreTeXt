@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-11-11T14:31:03-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<p>First, eliminate the radical by rewriting the integral using rational exponents. Then, separate the numerator terms by writing each one over the denominator:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_03_004.html">
+\begin{equation*}
+\displaystyle{ \int_{1}^{9} \frac{x-1}{x^{1/2} }dx}=\displaystyle{ \int_{1}^{9} (\frac{x}{x^{1/2} }-\frac{1}{x^{1/2} })dx}\text{ . }
+\end{equation*}
+</div>
+<p>Use the properties of exponents to simplify:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_03_004.html">
+\begin{equation*}
+\displaystyle{ \int_{1}^{9} (\frac{x}{x^{1/2}}-\frac{1}{x^{1/2} })dx}=\displaystyle{ \int_{1}^{9} (x^{1/2} -x^{-1/2} )dx}\text{ . }
+\end{equation*}
+</div>
+<p>Now, integrate using the power rule:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_05_03_004.html">
+\begin{align*}
+\displaystyle{ \int_{1}^{9} (x^{1/2} -x^{-1/2} )dx}\amp =\left(\frac{x^{3/2} }{\frac{3}{2}}-\frac{x^{1/2} }{\frac{1}{2}}\right)\Big|_1^9\\
+\amp =\left[\frac{(9)^{3/2}}{\frac{3}{2}}-\frac{(9)^{1/2}}{\frac{1}{2}}\right]-\left[\frac{(1)^{3/2}}{\frac{3}{2}}-\frac{(1)^{1/2}}{\frac{1}{2}}\right]\\
+\amp =[\frac{2}{3}(27)-2(3)]-[\frac{2}{3}(1)-2(1)]\\
+\amp =18-6-\frac{2}{3}+2\\
+\amp =\frac{40}{3}.
+\end{align*}
+</div>
+<p>See <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_05_03_004.html" title="Figure 5.74">Figure 5.74</a>.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_05_03_005.jpg" class="contained" alt='"The graph of the function f(x) = (x-1) / sqrt(x) over [0,9]. The area under the graph over [1,9] is shaded."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.74<span class="period">.</span></span><span class="space"> </span>The area under the curve from <span class="process-math">\(x=1\)</span> to <span class="process-math">\(x=9\)</span> can be calculated by evaluating a definite integral.</figcaption></figure>
+</div></body>
+</html>

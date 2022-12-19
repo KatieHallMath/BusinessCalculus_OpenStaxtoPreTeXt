@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:02:44-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Maxima and Minima</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<meta property="book:author" content="Custom Business Calculus Edition ">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline">Custom Business Calculus Edition</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch4Sec2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_fourth.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch4Sec4.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch4Sec2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_fourth.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch4Sec4.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="meta_frontmatter-preface.html" data-scroll="meta_frontmatter-preface" class="internal">Preface: OpenStax Calculus Volume 1</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2" class="internal">Preface: Business Calculus Custom Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="active">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Derivatives</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Ch4Sec3"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Maxima and Minima</span>
+</h2>
+<section class="introduction" id="introduction-30"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc">
+<li id="li-592"><p id="p-derived-li-592">Define absolute extrema.</p></li>
+<li id="li-593"><p id="p-derived-li-593">Define local extrema.</p></li>
+<li id="li-594"><p id="p-derived-li-594">Explain how to find the critical points of a function over an interval.</p></li>
+<li id="li-595"><p id="p-derived-li-595">Describe how to use critical points to locate absolute extrema over an interval.</p></li>
+</ul>
+<p id="p-1281">Given a particular function, we are often interested in determining the largest and smallest values of the function. This information is important in creating accurate graphs. Finding the maximum and minimum values of a function also has practical significance because we can use this method to solve optimization problems, such as maximizing profit, minimizing the amount of material used in manufacturing an aluminum can, or finding the maximum height a rocket can reach. In this section, we look at how to use derivatives to find the largest and smallest values for a function.</p></section><section class="subsection" id="subsection-106"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.1</span> <span class="title">Absolute Extrema</span>
+</h3>
+<p id="p-1282">Consider the function <span class="process-math">\(f(x)=x^2+1\)</span> over the interval <span class="process-math">\((-\infty ,\infty ).\)</span> As <span class="process-math">\(x\to \pm \infty ,\)</span> <span class="process-math">\(f(x)\to \infty .\)</span> Therefore, the function does not have a largest value. However, since <span class="process-math">\(x^2+1\geq 1\)</span> for all real numbers <span class="process-math">\(x\)</span> and <span class="process-math">\(x^2+1=1\)</span> when <span class="process-math">\(x=0,\)</span> the function has a smallest value, 1, when <span class="process-math">\(x=0.\)</span> We say that 1 is the absolute minimum of <span class="process-math">\(f(x)=x^2+1\)</span> and it occurs at <span class="process-math">\(x=0.\)</span> We say that <span class="process-math">\(f(x)=x^2+1\)</span> does not have an absolute maximum (see the following figure).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_03_001"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CNX_Calc_Figure_04_03_001.jpg" class="contained" alt='"The function f(x) = x2 + 1 is graphed, and its minimum of 1 is seen to be at x = 0."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.24<span class="period">.</span></span><span class="space"> </span>The given function has an absolute minimum of 1 at <span class="process-math">\(x=0.\)</span> The function does not have an absolute maximum.</figcaption></figure><article class="definition definition-like" id="definition-33"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.25</span><span class="period">.</span>
+</h4>
+<p id="p-1283">Let <span class="process-math">\(f\)</span> be a function defined over an interval <span class="process-math">\(I\)</span> and let <span class="process-math">\(c∈I.\)</span> We say <span class="process-math">\(f\)</span> has an <dfn class="terminology">absolute maximum</dfn> on <span class="process-math">\(I\)</span> at <span class="process-math">\(c\)</span> if <span class="process-math">\(f(c)\geq f(x)\)</span> for all <span class="process-math">\(x∈I.\)</span> We say <span class="process-math">\(f\)</span> has an <dfn class="terminology">absolute minimum</dfn> on <span class="process-math">\(I\)</span> at <span class="process-math">\(c\)</span> if <span class="process-math">\(f(c)\leq f(x)\)</span> for all <span class="process-math">\(x∈I.\)</span> If <span class="process-math">\(f\)</span> has an absolute maximum on <span class="process-math">\(I\)</span> at <span class="process-math">\(c\)</span> or an absolute minimum on <span class="process-math">\(I\)</span> at <span class="process-math">\(c,\)</span> we say <span class="process-math">\(f\)</span> has an <dfn class="terminology">absolute extremum</dfn> on <span class="process-math">\(I\)</span> at <span class="process-math">\(c.\)</span></p></article><p id="p-1284">Before proceeding, let’s note two important issues regarding this definition. First, the term <em class="emphasis">absolute</em> here does not refer to absolute value. An absolute extremum may be positive, negative, or zero. Second, if a function <span class="process-math">\(f\)</span> has an absolute extremum over an interval <span class="process-math">\(I\)</span> at <span class="process-math">\(c,\)</span> the absolute extremum is <span class="process-math">\(f(c).\)</span> The real number <span class="process-math">\(c\)</span> is a point in the domain at which the absolute extremum occurs. For example, consider the function <span class="process-math">\(f(x)=1/(x^2+1)\)</span> over the interval <span class="process-math">\((-\infty ,\infty ).\)</span> Since</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_03_002.html ./knowl/CNX_Calc_Figure_04_03_002.html ./knowl/CNX_Calc_Figure_04_03_002.html">
+\begin{equation*}
+f(0)=1\geq \frac{1}{x^2+1}=f(x)
+\end{equation*}
+</div>
+<p id="p-1285">for all real numbers <span class="process-math">\(x,\)</span> we say <span class="process-math">\(f\)</span> has an absolute maximum over <span class="process-math">\((-\infty ,\infty )\)</span> at <span class="process-math">\(x=0.\)</span> The absolute maximum is <span class="process-math">\(f(0)=1.\)</span> It occurs at <span class="process-math">\(x=0,\)</span> as shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_03_002.html" title="Figure 4.26">Figure 4.26</a>(b).</p>
+<p id="p-1286">A function may have both an absolute maximum and an absolute minimum, just one extremum, or neither. <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_03_002.html" title="Figure 4.26">Figure 4.26</a> shows several functions and some of the different possibilities regarding absolute extrema. However, the following theorem, called the <dfn class="terminology">Extreme Value Theorem</dfn>, guarantees that a continuous function <span class="process-math">\(f\)</span> over a closed, bounded interval <span class="process-math">\([a,b]\)</span> has both an absolute maximum and an absolute minimum.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_03_002"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/CNX_Calc_Figure_04_03_010.jpg" class="contained" alt='"This figure has six parts a, b, c, d, e, and f. In figure a, the line f(x) = x3 is shown, and it is noted that it has no absolute minimum and no absolute maximum. In figure b, the line f(x) = 1/(x2 + 1) is shown, which is near 0 for most of its length and rises to a bump at (0, 1); it has no absolute minimum, but does have an absolute maximum of 1 at x = 0. In figure c, the line f(x) = cos x is shown, which has absolute minimums of −1 at ±π, ±3π, … and absolute maximums of 1 at 0, ±2π, ±4π, …. In figure d, the piecewise function f(x) = 2 – x2 for 0 ≤ x \lt  2 and x – 3 for 2 ≤ x ≤ 4 is shown, with absolute maximum of 2 at x = 0 and no absolute minimum. In figure e, the function f(x) = (x – 2)2 is shown on [1, 4], which has absolute maximum of 4 at x = 4 and absolute minimum of 0 at x = 2. In figure f, the function f(x) = x/(2 − x) is shown on [0, 2), with absolute minimum of 0 at x = 0 and no absolute maximum."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.26<span class="period">.</span></span><span class="space"> </span>Graphs (a), (b), and (c) show several possibilities for absolute extrema for functions with a domain of <span class="process-math">\((-\infty ,\infty ).\)</span> Graphs (d), (e), and (f) show several possibilities for absolute extrema for functions with a domain that is a bounded interval.</figcaption></figure><article class="theorem theorem-like" id="theorem-21"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.27</span><span class="period">.</span><span class="space"> </span><span class="title">Extreme Value Theorem.</span>
+</h4>
+<p id="p-1287">If <span class="process-math">\(f\)</span> is a continuous function over the closed, bounded interval <span class="process-math">\([a,b],\)</span> then there is a point in <span class="process-math">\([a,b]\)</span> at which <span class="process-math">\(f\)</span> has an absolute maximum over <span class="process-math">\([a,b]\)</span> and there is a point in <span class="process-math">\([a,b]\)</span> at which <span class="process-math">\(f\)</span> has an absolute minimum over <span class="process-math">\([a,b].\)</span></p></article><p id="p-1288">The proof of the extreme value theorem is beyond the scope of this text. Typically, it is proved in a course on real analysis. There are a couple of key points to note about the statement of this theorem. For the extreme value theorem to apply, the function must be continuous over a closed, bounded interval. If the interval <span class="process-math">\(I\)</span> is open or the function has even one point of discontinuity, the function may not have an absolute maximum or absolute minimum over <span class="process-math">\(I.\)</span> For example, consider the functions shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_03_002.html" title="Figure 4.26">Figure 4.26</a>(d), (e), and (f). All three of these functions are defined over bounded intervals. However, the function in graph (e) is the only one that has both an absolute maximum and an absolute minimum over its domain. The extreme value theorem cannot be applied to the functions in graphs (d) and (f) because neither of these functions is continuous over a closed, bounded interval. Although the function in graph (d) is defined over the closed interval <span class="process-math">\([0,4],\)</span> the function is discontinuous at <span class="process-math">\(x=2.\)</span> The function has an absolute maximum over <span class="process-math">\([0,4]\)</span> but does not have an absolute minimum. The function in graph (f) is continuous over the half-open interval <span class="process-math">\([0,2),\)</span> but is not defined at <span class="process-math">\(x=2,\)</span> and therefore is not continuous over a closed, bounded interval. The function has an absolute minimum over <span class="process-math">\([0,2),\)</span> but does not have an absolute maximum over <span class="process-math">\([0,2).\)</span> These two graphs illustrate why a function over a bounded interval may fail to have an absolute maximum and/or absolute minimum.</p>
+<p id="p-1289">Before looking at how to find absolute extrema, let’s examine the related concept of local extrema. This idea is useful in determining where absolute extrema occur.</p></section><section class="subsection" id="subsection-107"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.2</span> <span class="title">Local Extrema and Critical Points</span>
+</h3>
+<p id="p-1290">Consider the function <span class="process-math">\(f\)</span> shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_03_003.html" title="Figure 4.28">Figure 4.28</a>. The graph can be described as two mountains with a valley in the middle. The absolute maximum value of the function occurs at the higher peak, at <span class="process-math">\(x=2.\)</span> However, <span class="process-math">\(x=0\)</span> is also a point of interest. Although <span class="process-math">\(f(0)\)</span> is not the largest value of <span class="process-math">\(f,\)</span> the value <span class="process-math">\(f(0)\)</span> is larger than <span class="process-math">\(f(x)\)</span> for all <span class="process-math">\(x\)</span> near 0. We say <span class="process-math">\(f\)</span> has a local maximum at <span class="process-math">\(x=0.\)</span> Similarly, the function <span class="process-math">\(f\)</span> does not have an absolute minimum, but it does have a local minimum at <span class="process-math">\(x=1\)</span> because <span class="process-math">\(f(1)\)</span> is less than <span class="process-math">\(f(x)\)</span> for <span class="process-math">\(x\)</span> near 1.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_03_003"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CNX_Calc_Figure_04_03_003.jpg" class="contained" alt='"The function f(x) is shown, which curves upward from quadrant III, slows down in quadrant II, achieves a local maximum on the y-axis, decreases to achieve a local minimum in quadrant I at x = 1, increases to a local maximum at x = 2 that is greater than the other local maximum, and then decreases rapidly through quadrant IV."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.28<span class="period">.</span></span><span class="space"> </span>This function <span class="process-math">\(f\)</span> has two local maxima and one local minimum. The local maximum at <span class="process-math">\(x=2\)</span> is also the absolute maximum.</figcaption></figure><article class="definition definition-like" id="definition-34"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.29</span><span class="period">.</span>
+</h4>
+<p id="p-1291">A function <span class="process-math">\(f\)</span> has a <dfn class="terminology">local maximum</dfn> at <span class="process-math">\(c\)</span> if there exists an open interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(c\)</span> such that <span class="process-math">\(I\)</span> is contained in the domain of <span class="process-math">\(f\)</span> and <span class="process-math">\(f(c)\geq f(x)\)</span> for all <span class="process-math">\(x∈I.\)</span> A function <span class="process-math">\(f\)</span> has a <dfn class="terminology">local minimum</dfn> at <span class="process-math">\(c\)</span> if there exists an open interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(c\)</span> such that <span class="process-math">\(I\)</span> is contained in the domain of <span class="process-math">\(f\)</span> and <span class="process-math">\(f(c)\leq f(x)\)</span> for all <span class="process-math">\(x∈I.\)</span> A function <span class="process-math">\(f\)</span> has a <dfn class="terminology">local extremum</dfn> at <span class="process-math">\(c\)</span> if <span class="process-math">\(f\)</span> has a local maximum at <span class="process-math">\(c\)</span> or <span class="process-math">\(f\)</span> has a local minimum at <span class="process-math">\(c.\)</span></p></article><p id="p-1292">Note that if <span class="process-math">\(f\)</span> has an absolute extremum at <span class="process-math">\(c\)</span> and <span class="process-math">\(f\)</span> is defined over an interval containing <span class="process-math">\(c,\)</span> then <span class="process-math">\(f(c)\)</span> is also considered a local extremum. If an absolute extremum for a function <span class="process-math">\(f\)</span> occurs at an endpoint, we do not consider that to be a local extremum, but instead refer to that as an endpoint extremum.</p>
+<p id="p-1293">Given the graph of a function <span class="process-math">\(f,\)</span> it is sometimes easy to see where a local maximum or local minimum occurs. However, it is not always easy to see, since the interesting features on the graph of a function may not be visible because they occur at a very small scale. Also, we may not have a graph of the function. In these cases, how can we use a formula for a function to determine where these extrema occur?</p>
+<p id="p-1294">To answer this question, let’s look at <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_03_003.html" title="Figure 4.28">Figure 4.28</a> again. The local extrema occur at <span class="process-math">\(x=0,\)</span> <span class="process-math">\(x=1,\)</span> and <span class="process-math">\(x=2.\)</span> Notice that at <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=1,\)</span> the derivative <span class="process-math">\(f'(x)=0.\)</span> At <span class="process-math">\(x=2,\)</span> the derivative <span class="process-math">\(f'(x)\)</span> does not exist, since the function <span class="process-math">\(f\)</span> has a corner there. In fact, if <span class="process-math">\(f\)</span> has a local extremum at a point <span class="process-math">\(x=c,\)</span> the derivative <span class="process-math">\(f'(c)\)</span> must satisfy one of the following conditions: either <span class="process-math">\(f'(c)=0\)</span> or <span class="process-math">\(f'(c)\)</span> is undefined. Such a value <span class="process-math">\(c\)</span> is known as a critical point and it is important in finding extreme values for functions.</p>
+<article class="definition definition-like" id="definition-35"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.30</span><span class="period">.</span>
+</h4>
+<p id="p-1295">Let <span class="process-math">\(c\)</span> be an interior point in the domain of <span class="process-math">\(f.\)</span> We say that <span class="process-math">\(c\)</span> is a <dfn class="terminology">critical point</dfn> of <span class="process-math">\(f\)</span> if <span class="process-math">\(f'(c)=0\)</span> or <span class="process-math">\(f'(c)\)</span> is undefined.</p></article><p id="p-1296">As mentioned earlier, if <span class="process-math">\(f\)</span> has a local extremum at a point <span class="process-math">\(x=c,\)</span> then <span class="process-math">\(c\)</span> must be a critical point of <span class="process-math">\(f.\)</span> This fact is known as <dfn class="terminology">Fermat’s theorem</dfn>.</p>
+<article class="theorem theorem-like" id="fs-id1165041796868"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.31</span><span class="period">.</span><span class="space"> </span><span class="title">Fermat’s Theorem.</span>
+</h4>
+<p id="p-1297">If <span class="process-math">\(f\)</span> has a local extremum at <span class="process-math">\(c\)</span> and <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(c,\)</span> then <span class="process-math">\(f'(c)=0.\)</span></p></article><p id="p-1298">From Fermat’s theorem, we conclude that if <span class="process-math">\(f\)</span> has a local extremum at <span class="process-math">\(c,\)</span> then either <span class="process-math">\(f'(c)=0\)</span> or <span class="process-math">\(f'(c)\)</span> is undefined. In other words, local extrema can only occur at critical points.</p>
+<p id="p-1299">Note this theorem does not claim that a function <span class="process-math">\(f\)</span> must have a local extremum at a critical point. Rather, it states that critical points are candidates for local extrema. For example, consider the function <span class="process-math">\(f(x)=x^3.\)</span> We have <span class="process-math">\(f'(x)=3x^2=0\)</span> when <span class="process-math">\(x=0.\)</span> Therefore, <span class="process-math">\(x=0\)</span> is a critical point. However, <span class="process-math">\(f(x)=x^3\)</span> is increasing over <span class="process-math">\((-\infty ,\infty ),\)</span> and thus <span class="process-math">\(f\)</span> does not have a local extremum at <span class="process-math">\(x=0.\)</span> In <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_03_004.html" title="Figure 4.32">Figure 4.32</a>, we see several different possibilities for critical points. In some of these cases, the functions have local extrema at critical points, whereas in other cases the functions do not. Note that these graphs do not show all possibilities for the behavior of a function at a critical point.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_04_03_004"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CNX_Calc_Figure_04_03_004.jpg" class="contained" alt='"This figure has five parts a, b, c, d, and e. In figure a, a parabola is shown facing down in quadrant I; there is a horizontal tangent line at the local maximum marked f’(c) = 0. In figure b, there is a function drawn with an asymptote at c, meaning that the function increases toward infinity on both sides of c; it is noted that f’(c) is undefined. In figure c, a version of the absolute value graph is shown that has been shifted so that its minimum is in quadrant I with x = c. It is noted that f’(c) is undefined. In figure d, a version of the function f(x) = x3 is shown that has been shifted so that its inflection point is in quadrant I with x = c. Its inflection point at (c, f(c)) has a horizontal line through it, and it is noted that f’(c) = 0. In figure e, a version of the function f(x) = x1/3 is shown that has been shifted so that its inflection point is in quadrant I with x = c. Its inflection point at (c, f(c)) has a vertical line through it, and it is noted that f’(c) is undefined."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.32<span class="period">.</span></span><span class="space"> </span>(a–e) A function <span class="process-math">\(f\)</span> has a critical point at <span class="process-math">\(c\)</span> if <span class="process-math">\(f'(c)=0\)</span> or <span class="process-math">\(f'(c)\)</span> is undefined. A function may or may not have a local extremum at a critical point.</figcaption></figure><p id="p-1300">Later in this chapter we look at analytical methods for determining whether a function actually has a local extremum at a critical point. For now, let’s turn our attention to finding critical points. We will use graphical observations to determine whether a critical point is associated with a local extremum.</p>
+<article class="example example-like" id="fs-id1165041979119"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.33</span><span class="period">.</span><span class="space"> </span><span class="title">Locating Critical Points.</span>
+</h4>
+<p id="p-1301">For each of the following functions, find all critical points. Use a graphing utility to determine whether the function has a local extremum at each of the critical points.</p>
+<ol class="lower-alpha">
+<li id="li-596"><p id="p-derived-li-596"><span class="process-math">\(\displaystyle f(x)=\frac{1}{3}x^3-\frac{5}{2}x^2+4x\)</span></p></li>
+<li id="li-597"><p id="p-derived-li-597"><span class="process-math">\(\displaystyle f(x)=(x^2-1)^3\)</span></p></li>
+<li id="li-598"><p id="p-derived-li-598"><span class="process-math">\(\displaystyle f(x)=\frac{4x}{1+x^2}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-243" id="solution-243"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-243"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-599">The derivative <span class="process-math">\(f'(x)=x^2-5x+4\)</span> is defined for all real numbers <span class="process-math">\(x.\)</span> Therefore, we only need to find the values for <span class="process-math">\(x\)</span> where <span class="process-math">\(f'(x)=0.\)</span> Since <span class="process-math">\(f'(x)=x^2-5x+4=(x-4)}{(x-1),\)</span> the critical points are <span class="process-math">\(x=1\)</span> and <span class="process-math">\(x=4.\)</span> From the graph of <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_03_005.html" title="Figure 4.34">Figure 4.34</a>, we see that <span class="process-math">\(f\)</span> has a local maximum at <span class="process-math">\(x=1\)</span> and a local minimum at <span class="process-math">\(x=4.\)</span> <figure class="figure figure-like" id="CNX_Calc_Figure_04_03_005"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CNX_Calc_Figure_04_03_005.jpg" class="contained" alt='"The function f(x) = (1/3) x3 – (5/2) x2 + 4x is graphed. The function has local maximum at x = 1 and local minimum at x = 4."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.34<span class="period">.</span></span><span class="space"> </span>This function has a local maximum and a local minimum.</figcaption></figure>
+</li>
+<li id="li-600">Using the chain rule, we see the derivative is<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_03_006.html">
+\begin{equation*}
+f'(x)=3(x^2-1)^2(2x)=6x(x^2-1)^2.
+\end{equation*}
+</div>Therefore, <span class="process-math">\(f\)</span> has critical points when <span class="process-math">\(x=0\)</span> and when <span class="process-math">\(x^2-1=0.\)</span> We conclude that the critical points are <span class="process-math">\(x=0,\pm 1.\)</span> From the graph of <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_03_006.html" title="Figure 4.35">Figure 4.35</a>, we see that <span class="process-math">\(f\)</span> has a local (and absolute) minimum at <span class="process-math">\(x=0,\)</span> but does not have a local extremum at <span class="process-math">\(x=1\)</span> or <span class="process-math">\(x=-1.\)</span> <figure class="figure figure-like" id="CNX_Calc_Figure_04_03_006"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CNX_Calc_Figure_04_03_006.jpg" class="contained" alt='"The function f(x) = (x2 − 1)3 is graphed. The function has local minimum at x = 0, and inflection points at x = ±1."&gt;'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.35<span class="period">.</span></span><span class="space"> </span>This function has three critical points: <span class="process-math">\(x=0,\)</span> <span class="process-math">\(x=1,\)</span> and <span class="process-math">\(x=-1.\)</span> The function has a local (and absolute) minimum at <span class="process-math">\(x=0,\)</span> but does not have extrema at the other two critical points.</figcaption></figure>
+</li>
+<li id="li-601">By the chain rule, we see that the derivative is<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_04_03_007.html">
+\begin{equation*}
+f'(x)=\frac{(1+x^2)(4)-4x(2x)}{(1+x^2)^2}=\frac{4-4x^2}{(1+x^2)^2}.
+\end{equation*}
+</div>The derivative is defined everywhere. Therefore, we only need to find values for <span class="process-math">\(x\)</span> where <span class="process-math">\(f'(x)=0.\)</span> Solving <span class="process-math">\(f'(x)=0,\)</span> we see that <span class="process-math">\(4-4x^2=0,\)</span> which implies <span class="process-math">\(x=\pm 1.\)</span> Therefore, the critical points are <span class="process-math">\(x=\pm 1.\)</span> From the graph of <span class="process-math">\(f\)</span> in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_03_007.html" title="Figure 4.36">Figure 4.36</a>, we see that <span class="process-math">\(f\)</span> has an absolute maximum at <span class="process-math">\(x=1\)</span> and an absolute minimum at <span class="process-math">\(x=-1.\)</span> Hence, <span class="process-math">\(f\)</span> has a local maximum at <span class="process-math">\(x=1\)</span> and a local minimum at <span class="process-math">\(x=-1.\)</span> (Note that if <span class="process-math">\(f\)</span> has an absolute extremum over an interval <span class="process-math">\(I\)</span> at a point <span class="process-math">\(c\)</span> that is not an endpoint of <span class="process-math">\(I,\)</span> then <span class="process-math">\(f\)</span> has a local extremum at <span class="process-math">\(c.)\)</span> <figure class="figure figure-like" id="CNX_Calc_Figure_04_03_007"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CNX_Calc_Figure_04_03_007.jpg" class="contained" alt='"The function f(x) = 4x/(1 + x2) is graphed. The function has local/absolute maximum at x = 1 and local/absolute minimum at x = −1."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.36<span class="period">.</span></span><span class="space"> </span>This function has an absolute maximum and an absolute minimum.</figcaption></figure>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-100"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.37</span><span class="period">.</span>
+</h4>
+<p id="p-1302">Find all critical points for <span class="process-math">\(f(x)=x^3-\frac{1}{2}x^2-2x+1.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-97" id="hint-97"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-97"><div class="hint solution-like"><p id="p-1303">Calculate <span class="process-math">\(f'(x).\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-244" id="solution-244"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-244"><div class="solution solution-like"><p id="p-1304"><span class="process-math">\(x=-\frac{2}{3},\)</span> <span class="process-math">\(x=1\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-108"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.3</span> <span class="title">Locating Absolute Extrema</span>
+</h3>
+<p id="p-1305">The extreme value theorem states that a continuous function over a closed, bounded interval has an absolute maximum and an absolute minimum. As shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_04_03_002.html" title="Figure 4.26">Figure 4.26</a>, one or both of these absolute extrema could occur at an endpoint. If an absolute extremum does not occur at an endpoint, however, it must occur at an interior point, in which case the absolute extremum is a local extremum. Therefore, by <a href="" class="xref" data-knowl="./knowl/fs-id1165041796868.html" title="Theorem 4.31: Fermat’s Theorem">Theorem 4.31</a>, the point <span class="process-math">\(c\)</span> at which the local extremum occurs must be a critical point. We summarize this result in the following theorem.</p>
+<article class="theorem theorem-like" id="fs-id1165040757685"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.38</span><span class="period">.</span><span class="space"> </span><span class="title">Location of Absolute Extrema.</span>
+</h4>
+<p id="p-1306">Let <span class="process-math">\(f\)</span> be a continuous function over a closed, bounded interval <span class="process-math">\(I.\)</span> The absolute maximum of <span class="process-math">\(f\)</span> over <span class="process-math">\(I\)</span> and the absolute minimum of <span class="process-math">\(f\)</span> over <span class="process-math">\(I\)</span> must occur at endpoints of <span class="process-math">\(I\)</span> or at critical points of <span class="process-math">\(f\)</span> in <span class="process-math">\(I.\)</span></p></article><p id="p-1307">With this idea in mind, let’s examine a procedure for locating absolute extrema.</p>
+<article class="note remark-like" id="note-34"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">4.39</span><span class="period">.</span><span class="space"> </span><span class="title">Problem-Solving Strategy: Locating Absolute Extrema over a Closed Interval.</span>
+</h4>
+<p id="p-1308">Consider a continuous function <span class="process-math">\(f\)</span> defined over the closed interval <span class="process-math">\([a,b].\)</span></p>
+<ol class="decimal">
+<li id="li-602"><p id="p-derived-li-602">Evaluate <span class="process-math">\(f\)</span> at the endpoints <span class="process-math">\(x=a\)</span> and <span class="process-math">\(x=b.\)</span></p></li>
+<li id="li-603"><p id="p-derived-li-603">Find all critical points of <span class="process-math">\(f\)</span> that lie over the interval <span class="process-math">\((a,b)\)</span> and evaluate <span class="process-math">\(f\)</span> at those critical points.</p></li>
+<li id="li-604"><p id="p-derived-li-604">Compare all values found in (1) and (2). From <a href="" class="xref" data-knowl="./knowl/fs-id1165040757685.html" title="Theorem 4.38: Location of Absolute Extrema">Theorem 4.38</a>, the absolute extrema must occur at endpoints or critical points. Therefore, the largest of these values is the absolute maximum of <span class="process-math">\(f.\)</span> The smallest of these values is the absolute minimum of <span class="process-math">\(f.\)</span></p></li>
+</ol></article><p id="p-1309">Now let’s look at how to use this strategy to find the absolute maximum and absolute minimum values for continuous functions.</p>
+<article class="example example-like" id="fs-id1165042035517"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.40</span><span class="period">.</span><span class="space"> </span><span class="title">Locating Absolute Extrema.</span>
+</h4>
+<p id="p-1310">For each of the following functions, find the absolute maximum and absolute minimum over the specified interval and state where those values occur.</p>
+<ol class="lower-alpha">
+<li id="li-605"><p id="p-derived-li-605"><span class="process-math">\(f(x)=-x^2+3x-2\)</span> over <span class="process-math">\([1,3].\)</span></p></li>
+<li id="li-606"><p id="p-derived-li-606"><span class="process-math">\(f(x)=x^2-3x^{2/3}\)</span> over <span class="process-math">\([0,2].\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-tabular" data-refid="hk-solution-245" id="solution-245"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-245"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-607">Step 1. Evaluate <span class="process-math">\(f\)</span> at the endpoints <span class="process-math">\(x=1\)</span> and <span class="process-math">\(x=3.\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(1)=0 \text{ and } f(3)=-2
+\end{equation*}
+</div>Step 2. Since <span class="process-math">\(f'(x)=-2x+3,\)</span> <span class="process-math">\(f'\)</span> is defined for all real numbers <span class="process-math">\(x.\)</span> Therefore, there are no critical points where the derivative is undefined. It remains to check where <span class="process-math">\(f'(x)=0.\)</span> Since <span class="process-math">\(f'(x)=-2x+3=0\)</span> at <span class="process-math">\(x=\frac{3}{2}\)</span> and <span class="process-math">\(\frac{3}{2}\)</span> is in the interval <span class="process-math">\([1,3],\)</span> <span class="process-math">\(f(\frac{3}{2})\)</span> is a candidate for an absolute extremum of <span class="process-math">\(f\)</span> over <span class="process-math">\([1,3].\)</span> We evaluate <span class="process-math">\(f(\frac{3}{2})\)</span> and find<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(\frac{3}{2})=\frac{1}{4}.
+\end{equation*}
+</div>Step 3. We set up the following table to compare the values found in steps 1 and 2. <figure class="table table-like" id="fs-id1165042088411"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.41<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c t b0 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="c t b0 r0 l0 t0 lines"><span class="process-math">\(f(x)\)</span></th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Conclusion</th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\frac{3}{2}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\frac{1}{4}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Absolute maximum</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Absolute minimum</td>
+</tr>
+</table></div></figure> From the table, we find that the absolute maximum of <span class="process-math">\(f\)</span> over the interval [1, 3] is <span class="process-math">\(\frac{1}{4},\)</span> and it occurs at <span class="process-math">\(x=\frac{3}{2}.\)</span> The absolute minimum of <span class="process-math">\(f\)</span> over the interval [1, 3] is <span class="process-math">\(-2,\)</span> and it occurs at <span class="process-math">\(x=3\)</span> as shown in the following graph. <figure class="figure figure-like" id="CNX_Calc_Figure_04_03_008"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CNX_Calc_Figure_04_03_008.jpg" class="contained" alt='"The function f(x) = – x2 + 3x – 2 is graphed from (1, 0) to (3, −2), with its maximum marked at (3/2, 1/4)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.42<span class="period">.</span></span><span class="space"> </span>This function has both an absolute maximum and an absolute minimum.</figcaption></figure>
+</li>
+<li id="li-608">Step 1. Evaluate <span class="process-math">\(f\)</span> at the endpoints <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=2.\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(0)=0 \text{ and } f(2)=4-3\sqrt[3]{4} \approx -0.762
+\end{equation*}
+</div>Step 2. The derivative of <span class="process-math">\(f\)</span> is given by<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f'(x)=2x-\frac{2}{x^{1/3}}=\frac{2x^{4/3}-2}{x^{1/3}}
+\end{equation*}
+</div>for <span class="process-math">\(x\neq 0.\)</span> The derivative is zero when <span class="process-math">\(2x^{4/3}-2=0,\)</span> which implies <span class="process-math">\(x=\pm 1.\)</span> The derivative is undefined at <span class="process-math">\(x=0.\)</span> Therefore, the critical points of <span class="process-math">\(f\)</span> are <span class="process-math">\(x=0,1,-1.\)</span> The point <span class="process-math">\(x=0\)</span> is an endpoint, so we already evaluated <span class="process-math">\(f(0)\)</span> in step 1. The point <span class="process-math">\(x=-1\)</span> is not in the interval of interest, so we need only evaluate <span class="process-math">\(f(1).\)</span> We find that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(1)=-2.
+\end{equation*}
+</div>Step 3. We compare the values found in steps 1 and 2, in the following table. <figure class="table table-like" id="fs-id1165041848355"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.43<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c t b0 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="c t b0 r0 l0 t0 lines"><span class="process-math">\(f(x)\)</span></th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Conclusion</th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Absolute maximum</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Absolute minimum</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-0.762\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure> We conclude that the absolute maximum of <span class="process-math">\(f\)</span> over the interval [0, 2] is zero, and it occurs at <span class="process-math">\(x=0.\)</span> The absolute minimum is -2, and it occurs at <span class="process-math">\(x=1\)</span> as shown in the following graph. <figure class="figure figure-like" id="CNX_Calc_Figure_04_03_009"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/CNX_Calc_Figure_04_03_009.jpg" class="contained" alt='"The function f(x) = x2 – 3x2/3 is graphed from (0, 0) to (2, −0.762), with its minimum marked at (1, −2)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.44<span class="period">.</span></span><span class="space"> </span>This function has an absolute maximum at an endpoint of the interval.</figcaption></figure>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-101"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.45</span><span class="period">.</span>
+</h4>
+<p id="p-1311">Find the absolute maximum and absolute minimum of <span class="process-math">\(f(x)=x^2-4x+3\)</span> over the interval <span class="process-math">\([1,4].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-98" id="hint-98"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-98"><div class="hint solution-like"><p id="p-1312">Look for critical points. Evaluate <span class="process-math">\(f\)</span> at all critical points and at the endpoints.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-246" id="solution-246"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-246"><div class="solution solution-like"><p id="p-1313">The absolute maximum is <span class="process-math">\(3\)</span> and it occurs at <span class="process-math">\(x=4.\)</span> The absolute minimum is <span class="process-math">\(-1\)</span> and it occurs at <span class="process-math">\(x=2.\)</span></p></div></div>
+</div></article><p id="p-1314">At this point, we know how to locate absolute extrema for continuous functions over closed intervals.</p>
+<p id="p-1315">We will next determine the location and existence of absolute extrema on intervals that are not closed. Let us consider the existence of absolute extrema by analyzing the graph of <span class="process-math">\(f(x)=x^2-4x\)</span> on the interval (1,5) as shown in <a href="" class="xref" data-knowl="./knowl/Busi_Calc_Figure_04_03_001.html" title="Figure 4.46">Figure 4.46</a>. Note that here the interval (1,5) is not closed. We can see that the absolute minimum exists and is <span class="process-math">\(f(2)=-4\text{.}\)</span> If an absolute maximum existed, it would be at <span class="process-math">\(x=5\text{,}\)</span> but <span class="process-math">\(f\)</span> is not defined at <span class="process-math">\(x=5\)</span> since it is not included in our given interval. Here, we would say that the absolute maximum of <span class="process-math">\(f\)</span> over the inteval (1,5) DNE.</p>
+<figure class="figure figure-like" id="Busi_Calc_Figure_04_03_001"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/Busi_Calc_Figure_04_03_001.png" class="contained" alt='"The figure shows the graph of \(f(x)=x^2-4x\) on the interval from \(x=1\) to \(x=5\text{.}\) There are open circles at the endpoints."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.46<span class="period">.</span></span><span class="space"> </span>The given function has an absolute minimum of -4 at <span class="process-math">\(x=1.\)</span> The function does not have an absolute maximum.</figcaption></figure><p id="p-1316">A problem-solving strategy has been outlined below for intervals that are not closed.</p>
+<article class="note remark-like" id="note-35"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">4.47</span><span class="period">.</span><span class="space"> </span><span class="title">Problem-Solving Strategy: Locating and Determining the Existence of Absolute Extrema over an Interval that is not Closed.</span>
+</h4>
+<p id="p-1317">Consider a continuous function <span class="process-math">\(f\)</span> defined over an interval that is not closed i.e.<span class="process-math">\((a,b],\;[a,b),\text{ or }(a,b).\)</span></p>
+<ol class="decimal">
+<li id="li-609"><p id="p-derived-li-609"><span class="process-math">\(f\)</span><span class="process-math">\(x=a\)</span><span class="process-math">\(x=b\)</span><ul class="disc">
+<li id="li-610"><p id="p-derived-li-610">If the left endpoint <span class="process-math">\(a\)</span> is not included in the interval (i.e. the given interval is (a,b]), then evaluate <span class="process-math">\(\displaystyle{\lim_{x\to a^+}f(x)}\)</span> and <span class="process-math">\(f(b).\)</span></p></li>
+<li id="li-611"><p id="p-derived-li-611">If the right endpoint <span class="process-math">\(b\)</span> is not included in the interval (i.e. the given interval is [a,b)), then evaluate <span class="process-math">\(\displaystyle{\lim_{x\to b^-}f(x)}\)</span> and <span class="process-math">\(f(a).\)</span></p></li>
+<li id="li-612"><p id="p-derived-li-612">If both the left and right endpoints <span class="process-math">\(a \text{ and } b\)</span> are not included in the interval (i.e. the given interval is (a,b)), then evaluate <span class="process-math">\(\displaystyle{\lim_{x\to a^+}f(x)}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x\to b^-}f(x)}.\)</span></p></li>
+</ul></p></li>
+<li id="li-613"><p id="p-derived-li-613">Find all critical points of <span class="process-math">\(f\)</span> that lie over the interval <span class="process-math">\((a,b)\)</span> and evaluate <span class="process-math">\(f\)</span> at those critical points.</p></li>
+<li id="li-614"><p id="p-derived-li-614">Compare all values found in (1) and (2). We know that the absolute extrema must occur at endpoints or critical points. However, if absolute extrema occurs at an endpoint not included in the interval, we say the absolute maximum or absolute minimum DNE. Therefore, the largest of these values is the absolute maximum of <span class="process-math">\(f\)</span> if it occurred at a point included in the interval. The smallest of these values is the absolute minimum of <span class="process-math">\(f\)</span> if it occurred at a point included in the interval. Otherwise, the absolute maximum or absolute minimum DNE.</p></li>
+</ol></article><article class="example example-like" id="example-146"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.48</span><span class="period">.</span>
+</h4>
+<p id="p-1318">Find the absolute maximum and absolute minimum of <span class="process-math">\(f(x)=2+(x+5)e^x\)</span> over the following intervals.</p>
+<ol class="lower-alpha">
+<li id="li-615"><p id="p-derived-li-615">[-7,1]</p></li>
+<li id="li-616"><p id="p-derived-li-616">(-7,1]</p></li>
+<li id="li-617"><p id="p-derived-li-617">[-7,1)</p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image has-tabular" data-refid="hk-solution-247" id="solution-247"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-247"><div class="solution solution-like">Step 1. Evaluate <span class="process-math">\(f\)</span> at the endpoints <span class="process-math">\(x=-7\)</span> and <span class="process-math">\(x=1.\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(-7)\approx 1.9982 \text{ and } f(1)\approx 18.3097
+\end{equation*}
+</div>Step 2. Using the product rule, <span class="process-math">\(f'(x)=e^x+(x+5)e^x=e^x(x+6).\)</span> Note that <span class="process-math">\(f'\)</span> is defined for all real numbers <span class="process-math">\(x.\)</span> Therefore, there are no critical points where the derivative is undefined. It remains to check where <span class="process-math">\(f'(x)=0.\)</span> We know that <span class="process-math">\(e^x\neq 0\)</span> for all real numbers <span class="process-math">\(x\text{.}\)</span> Thus, <span class="process-math">\(f'(x)=e^x(x+6)=0\)</span> at <span class="process-math">\(x=-6\)</span> and note that it is in the intervals <span class="process-math">\([-7,1],\;[-7,1)\text{ and }(-7,1].\)</span><span class="process-math">\(f(-6)\)</span> is a candidate for an absolute extremum of <span class="process-math">\(f\)</span> over the intervals <span class="process-math">\([-7,1],\;[-7,1)\text{ and }(-7,1].\)</span> We evaluate <span class="process-math">\(f(-6)\)</span> and find<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(-6)\approx 1.9975.
+\end{equation*}
+</div>Step 3. We set up the following tables to compare the values found in steps 1 and 2. <ol class="lower-alpha">
+<li id="li-618">For the interval <span class="process-math">\([-7,1]\)</span> <figure class="table table-like" id="table-25"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.49<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c t b0 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="c t b0 r0 l0 t0 lines"><span class="process-math">\(f(x)\)</span></th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Conclusion</th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-7\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1.9982\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-6\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1.9975\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Absolute minimum</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(18.3097\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Absolute maximum</td>
+</tr>
+</table></div></figure> From the table, we find that the absolute maximum of <span class="process-math">\(f\)</span> over the interval [-7,1] is <span class="process-math">\(2+6e\approx 18.3097,\)</span> and it occurs at <span class="process-math">\(x=1.\)</span> The absolute minimum of <span class="process-math">\(f\)</span> over the interval [-7, 1] is <span class="process-math">\(2-e^{-6}\approx 1.9975,\)</span> and it occurs at <span class="process-math">\(x=-6\)</span> as shown in the following graph. <figure class="figure figure-like" id="Busi_Calc_Figure_04_03_002 "><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/Busi_Calc_Figure_04_03_002.png" class="contained" alt='"The function \(f(x) = 2+(x+5)e^x\) is graphed on the interval [-7,1] with both closed endpoints at x=-7 and x=1."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.50<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(f(x) = 2+(x+5)e^x\)</span> on the interval [-7,1].</figcaption></figure>
+</li>
+<li id="li-619">For the interval <span class="process-math">\((-7,1]\)</span> <figure class="table table-like" id="table-26"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.51<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c t b0 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="c t b0 r0 l0 t0 lines"><span class="process-math">\(f(x)\)</span></th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Conclusion</th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-7\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1.9982\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-6\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1.9975\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Absolute minimum</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(18.3097\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Absolute maximum</td>
+</tr>
+</table></div></figure> From the table, we find that the absolute maximum of <span class="process-math">\(f\)</span> over the interval (-7,1] is <span class="process-math">\(2+6e\approx 18.3097,\)</span> and it occurs at <span class="process-math">\(x=1.\)</span> The absolute minimum of <span class="process-math">\(f\)</span> over the interval (-7, 1] is <span class="process-math">\(2-e^{-6}\approx 1.9975,\)</span> and it occurs at <span class="process-math">\(x=-6\)</span> as shown in the following graph. <figure class="figure figure-like" id="Busi_Calc_Figure_04_03_003 "><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/Busi_Calc_Figure_04_03_003.png" class="contained" alt='"The function \(f(x) = 2+(x+5)e^x\) is graphed on the interval (-7,1] with an open left endpoint at x=-7 and closed right endpoint at x=1."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.52<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(f(x) = 2+(x+5)e^x\)</span> on the interval (-7,1].</figcaption></figure>
+</li>
+<li id="li-620">For the interval <span class="process-math">\([-7,1)\)</span> <figure class="table table-like" id="table-27"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.53<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c t b0 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="c t b0 r0 l0 t0 lines"><span class="process-math">\(f(x)\)</span></th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Conclusion</th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-7\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1.9982\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-6\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1.9975\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Absolute minimum</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(18.3097\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Absolute maximum DNE</td>
+</tr>
+</table></div></figure> From the table, we find that the absolute maximum of <span class="process-math">\(f\)</span> over the interval [-7,1) DNE since <span class="process-math">\(x=1\)</span> is not included in the interval. The absolute minimum of <span class="process-math">\(f\)</span> over the interval [-7, 1) is <span class="process-math">\(2-e^{-6}\approx 1.9975,\)</span> and it occurs at <span class="process-math">\(x=-6\)</span> as shown in the following graph. <figure class="figure figure-like" id="Busi_Calc_Figure_04_03_004 "><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/Busi_Calc_Figure_04_03_004.png" class="contained" alt='"The function \(f(x) = 2+(x+5)e^x\) is graphed on the interval [-7,1) with a closed left endpoint at x=-7 and open right endpoint at x=1."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.54<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(f(x) = 2+(x+5)e^x\)</span> on the interval [-7,1).</figcaption></figure>
+</li>
+</ol>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-102"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.55</span><span class="period">.</span>
+</h4>
+<p id="p-1319">Find the absolute maximum and absolute minimum of <span class="process-math">\(g(x)=12x^2-32x\)</span> over the interval <span class="process-math">\([-2,3)\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-99" id="hint-99"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-99"><div class="hint solution-like">Look for critical points. Evaluate <span class="process-math">\(g\)</span> at all critical points and at the endpoints.</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-tabular" data-refid="hk-solution-248" id="solution-248"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-248"><div class="solution solution-like">From <span class="process-math">\(g'(x)=-32x-32\text{,}\)</span> we obtain a critical value at <span class="process-math">\(x=-1\)</span> which is included in the interval <span class="process-math">\([-2,3)\text{.}\)</span> The results are summarized in the following table. <figure class="table table-like" id="table-28"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.56<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c t b0 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="c t b0 r0 l0 t0 lines"><span class="process-math">\(g(x)\)</span></th>
+<th scope="col" class="l t b0 r0 l0 t0 lines">Conclusion</th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-1\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(16\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Absolute maximum</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-240\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">Absolute minimum DNE</td>
+</tr>
+</table></div></figure>
+</div></div>
+</div></article><p id="p-1320">In this section, we determined the value and existence of absolute extrema over any given interval. We also defined local extrema and determined that if a function <span class="process-math">\(f\)</span> has a local extremum at a point <span class="process-math">\(c,\)</span> then <span class="process-math">\(c\)</span> must be a critical point of <span class="process-math">\(f.\)</span> However, <span class="process-math">\(c\)</span> being a critical point is not a sufficient condition for <span class="process-math">\(f\)</span> to have a local extremum at <span class="process-math">\(c.\)</span> Later in this chapter, we show how to determine whether a function actually has a local extremum at a critical point. </p></section><section class="subsection" id="subsection-109"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.4</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-621"><p id="p-derived-li-621">A function may have both an absolute maximum and an absolute minimum, have just one absolute extremum, or have no absolute maximum or absolute minimum.</p></li>
+<li id="li-622"><p id="p-derived-li-622">If a function has a local extremum, the point at which it occurs must be a critical point. However, a function need not have a local extremum at a critical point.</p></li>
+<li id="li-623"><p id="p-derived-li-623">A continuous function over a closed, bounded interval has an absolute maximum and an absolute minimum. Each extremum occurs at a critical point or an endpoint. If the interval is not closed, then there may not exist an absolute maximum or minimum.</p></li>
+</ul></section></section></div></main>
+</div>
+</body>
+</html>

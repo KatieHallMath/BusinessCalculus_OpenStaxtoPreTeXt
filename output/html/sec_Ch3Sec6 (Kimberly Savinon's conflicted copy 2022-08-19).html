@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:02:40-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Chain Rule</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<meta property="book:author" content="Custom Business Calculus Edition ">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline">Custom Business Calculus Edition</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch3Sec5.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_third.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch3Sec7.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch3Sec5.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_third.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch3Sec7.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="meta_frontmatter-preface.html" data-scroll="meta_frontmatter-preface" class="internal">Preface: OpenStax Calculus Volume 1</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2" class="internal">Preface: Business Calculus Custom Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="active">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Derivatives</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="sec_Ch3Sec6"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.6</span> <span class="title">The Chain Rule</span>
+</h2>
+<section class="introduction" id="introduction-23"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ul class="disc">
+<li id="li-522"><p id="p-derived-li-522">State the chain rule for the composition of two functions.</p></li>
+<li id="li-523"><p id="p-derived-li-523">Apply the chain rule together with the power rule.</p></li>
+<li id="li-524"><p id="p-derived-li-524">Apply the chain rule and the product/quotient rules correctly in combination when both are necessary.</p></li>
+</ul>
+<p id="p-1000">We have seen the techniques for differentiating basic functions <span class="process-math">\((x^n,\text{ etc }.)\)</span> as well as sums, differences, products, quotients, and constant multiples of these functions. However, these techniques do not allow us to differentiate compositions of functions, such as <span class="process-math">\(h(x)=(9x+1)^2\)</span> or <span class="process-math">\(k(x)=\sqrt{3x^2+1}.\)</span> In this section, we study the rule for finding the derivative of the composition of two or more functions.</p></section><section class="subsection" id="subsection-82"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.6.1</span> <span class="title">Deriving the Chain Rule</span>
+</h3>
+<p id="p-1001">When we have a function that is a composition of two or more functions, we could use all of the techniques we have already learned to differentiate it. However, using all of those techniques to break down a function into simpler parts that we are able to differentiate can get cumbersome. Instead, we use the <dfn class="terminology">chain rule</dfn>, which states that the derivative of a composite function is the derivative of the outer function evaluated at the inner function times the derivative of the inner function.</p>
+<p id="p-1002">To put this rule into context, let’s take a look at an example: <span class="process-math">\(h(x)=h(x)=(9x+1)^2.\)</span> We can think of the derivative of this function with respect to <span class="process-math">\(x\)</span> as the rate of change of <span class="process-math">\((9x+1)^2\)</span> relative to the change in <span class="process-math">\(x.\)</span> Consequently, we want to know how <span class="process-math">\((9x+1)^2\)</span> changes as <span class="process-math">\(x\)</span> changes. We can think of this event as a chain reaction: As <span class="process-math">\(x\)</span> changes, <span class="process-math">\(9x+1\)</span> changes, which leads to a change in <span class="process-math">\((9x+1)^2.\)</span> This chain reaction gives us hints as to what is involved in computing the derivative of <span class="process-math">\((9x+1)^2.\)</span> First of all, a change in <span class="process-math">\(x\)</span> forcing a change in <span class="process-math">\(9x+1\)</span> suggests that somehow the derivative of <span class="process-math">\(9x+1\)</span> is involved. In addition, the change in <span class="process-math">\(9x+1\)</span> forcing a change in <span class="process-math">\((9x+1)^2\)</span> suggests that the derivative of <span class="process-math">\(u^2\)</span> with respect to <span class="process-math">\(u,\)</span> where <span class="process-math">\(u=9x+1,\)</span> is also part of the final derivative.</p>
+<p id="p-1003">We can take a more formal look at the derivative of <span class="process-math">\(h(x)=(9x+1)^2\)</span> by setting up the limit that would give us the derivative at a specific value <span class="process-math">\(a\)</span> in the domain of <span class="process-math">\(h(x)=(9x+1)^2.\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h'(a)=\lim_{x\to a}\frac{(9x+1)^2-(9a+1)^2}{x-a}.
+\end{equation*}
+</div>
+<p id="p-1004">This expression does not seem particularly helpful; however, we can modify it by factoring the numerator using the difference of squares formula to obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-44">
+\begin{align*}
+h'(a)\amp=\lim_{x\to a}\frac{\big((9x+1)+(9a+1)\big)\big((9x+1)-(9a+1)\big)}{x-a}.\\
+\amp=\lim_{x\to a}\frac{(9x+9a+2)(9x-9a)}{x-a}\\
+\amp=\lim_{x\to a}\frac{(9x+9a+2)\cdot 9\cdot(x-a)}{x-a}\\
+\amp=\lim_{x\to a}(9x+9a+2)\cdot 9\\
+\amp=(18a+2)\cdot 9\\
+\amp=2(9a+1)^1\cdot 9
+\end{align*}
+</div>
+<p id="p-1005">Thus, <span class="process-math">\(h'(a)=2(9a+1)\cdot 9\)</span></p>
+<p id="p-1006">In other words, if <span class="process-math">\(h(x)=(9x+1)^2,\)</span> then <span class="process-math">\(h'(x)=2(9x+1)\cdot 9.\)</span> Thus, if we think of <span class="process-math">\(h(x)=(9x+1)^2\)</span> as the composition <span class="process-math">\((f\circ g)(x)=f(g(x))\)</span> where <span class="process-math">\(f(x)=x^2\)</span> and <span class="process-math">\(g(x)=9x+1,\)</span> then the derivative of <span class="process-math">\(h(x)=(9x+1)^2\)</span> is the product of the derivative of <span class="process-math">\(g(x)=9x+1\)</span> and the derivative of the function <span class="process-math">\(f(x)=x^2\)</span> evaluated at the function <span class="process-math">\(g(x)=9x+1.\)</span> At this point, we anticipate that for <span class="process-math">\(h(x)=(g(x))^2,\)</span> it is quite likely that <span class="process-math">\(h'(x)=2(g(x))\cdot g'(x).\)</span> As we determined above, this is the case for <span class="process-math">\(h(x)=(9x+1)^2.\)</span></p>
+<p id="p-1007">Now that we have derived a special case of the chain rule, we state the general case and then apply it in a general form to other composite functions. </p>
+<article class="note remark-like" id="note-24"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.103</span><span class="period">.</span><span class="space"> </span><span class="title">Rule: The Chain Rule.</span>
+</h4>
+<p id="p-1008">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be functions. For all <span class="process-math">\(x\)</span> in the domain of <span class="process-math">\(g\)</span> for which <span class="process-math">\(g\)</span> is differentiable at <span class="process-math">\(x\)</span> and <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(g(x),\)</span> the derivative of the composite function</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h(x)=(f\circ g)(x)=f(g(x))
+\end{equation*}
+</div>
+<p id="p-1009">is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h'(x)=f'(g(x))g'(x).
+\end{equation*}
+</div>
+<p id="p-1010">Alternatively, if <span class="process-math">\(y\)</span> is a function of <span class="process-math">\(u,\)</span> and <span class="process-math">\(u\)</span> is a function of <span class="process-math">\(x,\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx}=\frac{dy}{du}\cdot \frac{du}{dx}.
+\end{equation*}
+</div></article><article class="note remark-like" id="note-25"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.104</span><span class="period">.</span>
+</h4>
+<p id="p-1011">Watch an <a class="external" href="http://www.openstax.org/l/20_chainrule2" target="_blank">animation</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-16" id="fn-16"><sup> 1 </sup></a> of the chain rule.</p></article><article class="note remark-like" id="note-26"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.105</span><span class="period">.</span><span class="space"> </span><span class="title">Problem-Solving Strategy: Applying the Chain Rule.</span>
+</h4>
+<ol class="decimal">
+<li id="li-525"><p id="p-derived-li-525">To differentiate <span class="process-math">\(h(x)=f(g(x)),\)</span> begin by identifying <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x).\)</span></p></li>
+<li id="li-526"><p id="p-derived-li-526">Find <span class="process-math">\(f'(x)\)</span> and evaluate it at <span class="process-math">\(g(x)\)</span> to obtain <span class="process-math">\(f'(g(x)).\)</span></p></li>
+<li id="li-527"><p id="p-derived-li-527">Find <span class="process-math">\(g'(x).\)</span></p></li>
+<li id="li-528"><p id="p-derived-li-528">Write <span class="process-math">\(h'(x)=f'(g(x))\cdot g'(x).\)</span></p></li>
+</ol>
+<p id="p-1012">Note: When applying the chain rule to the composition of two or more functions, keep in mind that we work our way from the outside function in. It is also useful to remember that the derivative of the composition of two functions can be thought of as having two parts; the derivative of the composition of three functions has three parts; and so on. Also, remember that we never evaluate a derivative at a derivative.</p></article></section><section class="subsection" id="subsection-83"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.6.2</span> <span class="title">The Chain and Power Rules Combined</span>
+</h3>
+<p id="p-1013">We can now apply the chain rule to composite functions, but note that we often need to use it with other rules. For example, to find derivatives of functions of the form <span class="process-math">\(h(x)=(g(x))^n ,\)</span> we need to use the chain rule combined with the power rule. To do so, we can think of <span class="process-math">\(h(x)=(g(x))^n \)</span> as <span class="process-math">\(f(g(x))\)</span> where <span class="process-math">\(f(x)=x^n.\)</span> Then <span class="process-math">\(f'(x)=nx^{n-1}.\)</span> Thus, <span class="process-math">\(f'(g(x))=n(g(x))^{n-1}.\)</span> This leads us to the derivative of a power function using the chain rule,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fs-id1169739222795.html">
+\begin{equation*}
+h'(x)=n(g(x))^{n-1}g'(x)
+\end{equation*}
+</div>
+<article class="note remark-like" id="note-27"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.106</span><span class="period">.</span><span class="space"> </span><span class="title">Rule: Power Rule for Composition of Functions.</span>
+</h4>
+<p id="p-1014">For all values of <span class="process-math">\(x\)</span> for which the derivative is defined, if</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h(x)=(g(x))^n .
+\end{equation*}
+</div>
+<p id="p-1015">Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="fs-id1169739222795">
+\begin{equation}
+h'(x)=n(g(x))^{n-1}g'(x).\tag{3.6.1}
+\end{equation}
+</div></article><article class="example example-like" id="fs-id1169739274312"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.107</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Chain and Power Rules.</span>
+</h4>
+<p id="p-1016">Find the derivative of <span class="process-math">\(h(x)=\frac{1}{(3x^2+1)^2}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-185" id="solution-185"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-185"><div class="solution solution-like">
+<p id="p-1017">First, rewrite <span class="process-math">\(h(x)=\frac{1}{(3x^2+1)^2}=(3x^2+1)^{-2}.\)</span></p>
+<p id="p-1018">Applying the power rule with <span class="process-math">\(g(x)=3x^2+1,\)</span> we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h'(x)=- 2(3x^2+1)^{- 3}(6x).
+\end{equation*}
+</div>
+<p id="p-1019">Rewriting back to the original form gives us</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h'(x)=\frac{- 12x}{(3x^2+1)^3}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-78"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.108</span><span class="period">.</span>
+</h4>
+<p id="p-1020">Find the derivative of <span class="process-math">\(h(x)=(2x^3+2x- 1)^4.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-75" id="hint-75"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-75"><div class="hint solution-like"><p id="p-1021">Use <a href="" class="xref" data-knowl="./knowl/fs-id1169739222795.html" title="Equation 3.6.1">(3.6.1)</a> with <span class="process-math">\(g(x)=2x^3+2x- 1\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-186" id="solution-186"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-186"><div class="solution solution-like"><p id="p-1022"><span class="process-math">\(h'(x)=4(2x^3+2x- 1)^3(6x^2+2)=8(3x^2+1)(2x^3+2x- 1)^3\)</span></p></div></div>
+</div></article><article class="example example-like" id="fs-id1169739302258"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.109</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Chain and Power Rules.</span>
+</h4>
+<p id="p-1023">Find the derivative of <span class="process-math">\(k(x)=\sqrt{3x^2+1}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-187" id="solution-187"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-187"><div class="solution solution-like">
+<p id="p-1024">First recall that <span class="process-math">\(\sqrt{3x^2+1}=(3x^2+1)^{1/2},\)</span> so we can rewrite <span class="process-math">\(k(x)=\sqrt{3x^2+1}\)</span> as <span class="process-math">\(k(x)=(3x^2+1)^{1/2}.\)</span></p>
+<p id="p-1025">Applying the power rule with <span class="process-math">\(g(x)=3x^2+1,\)</span> we obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+k'(x)=\frac{1}{2}(3x^2+1)^{-1/2}\cdot 6x=3x(3x^2+1)^{-1/2}=\frac{3x}{\sqrt{3x^2+1}}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1169739190027"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.110</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Equation of a Tangent Line.</span>
+</h4>
+<p id="p-1026">Find the equation of a line tangent to the graph of <span class="process-math">\(h(x)=\frac{1}{(3x-5)^2}\)</span> at <span class="process-math">\(x=2.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-188" id="solution-188"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-188"><div class="solution solution-like">
+<p id="p-1027">Because we are finding an equation of a line, we need a point. The <span class="process-math">\(x\)</span>-coordinate of the point is 2. To find the <span class="process-math">\(y\)</span>-coordinate, substitute 2 into <span class="process-math">\(h(x).\)</span> Since <span class="process-math">\(h(2)=\frac{1}{(3(2)- 5)^2}=1,\)</span> the point is <span class="process-math">\((2,1).\)</span></p>
+<p id="p-1028">For the slope, we need <span class="process-math">\(h'(2).\)</span> To find <span class="process-math">\(h'(x),\)</span> first we rewrite <span class="process-math">\(h(x)=(3x- 5)^{-2}\)</span> and apply the power rule to obtain</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h'(x)=-2(3x- 5)^{-3}(3)=- 6(3x-5)^{-3}.
+\end{equation*}
+</div>
+<p id="p-1029">By substituting, we have <span class="process-math">\(h'(2)=-6(3(2)-5)^{-3}=-6.\)</span> Therefore, the line has equation <span class="process-math">\(y-1=-6(x-2).\)</span> Rewriting, the equation of the line is <span class="process-math">\(y=-6x+13.\)</span></p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-79"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.111</span><span class="period">.</span>
+</h4>
+<p id="p-1030">Find the equation of the line tangent to the graph of <span class="process-math">\(f(x)=(x^2- 2)^3\)</span> at <span class="process-math">\(x=- 2.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-76" id="hint-76"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-76"><div class="hint solution-like"><p id="p-1031">Use the preceding example as a guide.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-189" id="solution-189"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-189"><div class="solution solution-like"><p id="p-1032"><span class="process-math">\(y=- 48x- 88\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-84"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.6.3</span> <span class="title">Combining the Chain Rule with Other Rules</span>
+</h3>
+<p id="p-1033">Now that we can combine the chain rule and the power rule, we examine how to combine the chain rule with the other rules we have learned. In particular, we can use it with the formulas for the derivatives of  quotient or product rule.</p>
+<article class="example example-like" id="fs-id1169739298047"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.112</span><span class="period">.</span><span class="space"> </span><span class="title">Combining the Chain Rule with the Product Rule.</span>
+</h4>
+<p id="p-1034">Find the derivative of <span class="process-math">\(h(x)=(2x+1)^5(3x- 2)^7.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-190" id="solution-190"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-190"><div class="solution solution-like">
+<p id="p-1035">First apply the product rule, then apply the chain rule to each term of the product.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-45">
+\begin{align*}
+h'(x)\amp=\frac{d}{dx}((2x+1)^5)\cdot (3x- 2)^7+\frac{d}{dx}((3x- 2)^7)\cdot (2x+1)^5\amp\amp\text{ Apply the product rule. }\\
+\amp=5(2x+1)^4\cdot 2\cdot (3x- 2)^7+7(3x- 2)^6\cdot 3\cdot (2x+1)^5\amp\amp\text{ Apply the chain rule. }\\
+\amp=10(2x+1)^4(3x- 2)^7+21(3x- 2)^6(2x+1)^5\amp\amp\text{ Simplify. }\\
+\amp=(2x+1)^4(3x- 2)^6(10(3x- 2)+21(2x+1))\amp\amp\text{ Factor out } (2x+1)^4(3x- 2)^6.\\
+\amp=(2x+1)^4(3x- 2)^6(72x+1)\amp\amp\text{ Simplify. }
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-80"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.113</span><span class="period">.</span>
+</h4>
+<p id="p-1036">Find the derivative of <span class="process-math">\(h(x)=\frac{x}{(2x+3)^3}.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-77" id="hint-77"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-77"><div class="hint solution-like"><p id="p-1037">Start out by applying the quotient rule. Remember to use the chain rule to differentiate the denominator.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-191" id="solution-191"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-191"><div class="solution solution-like"><p id="p-1038"><span class="process-math">\(h'(x)=\frac{3- 4x}{(2x+3)^4}\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-85"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.6.4</span> <span class="title"></span>
+</h3>
+<article class="example example-like" id="fs-id1169736613849"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.114</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Chain Rule with Functional Values.</span>
+</h4>
+<p id="p-1039">Let <span class="process-math">\(h(x)=f(g(x)).\)</span> If <span class="process-math">\(g(1)=4,g'(1)=3,\)</span> and <span class="process-math">\(f'(4)=7,\)</span> find <span class="process-math">\(h'(1).\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-192" id="solution-192"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-192"><div class="solution solution-like">
+<p id="p-1040">Use the chain rule, then substitute.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-46">
+\begin{align*}
+h'(1)\amp=f'(g(1))g'(1)\amp \amp\text{ Apply the chain rule. }\\
+\amp=f'(4)\cdot 3\amp\amp\text{ Substitute } g(1)=4 \text{ and } g'(1)=3.\\
+\amp=7\cdot 3\amp\amp\text{ Substitute } f'(4)=7.\\
+\amp=21\amp\amp\text{ Simplify. }
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-81"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.115</span><span class="period">.</span>
+</h4>
+<p id="p-1041">Given <span class="process-math">\(h(x)=f(g(x)).\)</span> If <span class="process-math">\(g(2)=- 3,g'(2)=4,\)</span> and <span class="process-math">\(f'(- 3)=7,\)</span> find <span class="process-math">\(h'(2).\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-78" id="hint-78"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-78"><div class="hint solution-like"><p id="p-1042">Follow <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fs-id1169736593542" missing or not unique]</code>.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-193" id="solution-193"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-193"><div class="solution solution-like"><p id="p-1043"><span class="process-math">\(28\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-86"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.6.5</span> <span class="title">The Chain Rule Using Leibniz’s Notation</span>
+</h3>
+<p id="p-1044">As with other derivatives that we have seen, we can express the chain rule using Leibniz’s notation. This notation for the chain rule is used heavily in physics applications.</p>
+<p id="p-1045"><span class="process-math">\(\text{ For } h(x)=f(g(x)),\)</span> let <span class="process-math">\(u=g(x)\)</span> and <span class="process-math">\(y=h(x)=g(u).\)</span> Thus,</p>
+<p id="p-1046"><span class="process-math">\(h'(x)=\frac{dy}{dx},\;f'(g(x))=f'(u)=\frac{dy}{du}\text{ and } g'(x)=\frac{du}{dx}.\)</span></p>
+<p id="p-1047">Consequently,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx}=h'(x)=f'(g(x))g'(x)=\frac{dy}{du}\cdot \frac{du}{dx}.
+\end{equation*}
+</div>
+<article class="note remark-like" id="note-28"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">3.116</span><span class="period">.</span><span class="space"> </span><span class="title">Rule: Chain Rule Using Leibniz’s Notation.</span>
+</h4>
+<p id="p-1048">If <span class="process-math">\(y\)</span> is a function of <span class="process-math">\(u,\)</span> and <span class="process-math">\(u\)</span> is a function of <span class="process-math">\(x,\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx}=\frac{dy}{du}\cdot \frac{du}{dx}.
+\end{equation*}
+</div></article><article class="example example-like" id="fs-id1169739264200"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.117</span><span class="period">.</span><span class="space"> </span><span class="title">Taking a Derivative Using Leibniz’s Notation, Example 1.</span>
+</h4>
+<p id="p-1049">Find the derivative of <span class="process-math">\(y=(\frac{x}{3x+2})^5.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-194" id="solution-194"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-194"><div class="solution solution-like">
+<p id="p-1050">First, let <span class="process-math">\(u=\frac{x}{3x+2}.\)</span> Thus, <span class="process-math">\(y=u^5.\)</span> Next, find <span class="process-math">\(\frac{du}{dx}\)</span> and <span class="process-math">\(\frac{dy}{du}.\)</span> Using the quotient rule,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{du}{dx}=\frac{2}{(3x+2)^2}
+\end{equation*}
+</div>
+<p id="p-1051">and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{du}=5u^4.
+\end{equation*}
+</div>
+<p id="p-1052">Finally, we put it all together.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-47">
+\begin{align*}
+\frac{dy}{dx}\amp=\frac{dy}{du}\cdot \frac{du}{dx}\amp\amp\text{ Apply the chain rule. }\\
+\amp=5u^4\cdot \frac{2}{(3x+2)^2} \amp \amp \text{ Substitute } \frac{dy}{du}=5u^4 \text{ and } \frac{du}{dx}=\frac{2}{(3x+2)^2}.\\
+\amp=5(\frac{x}{3x+2})^4\cdot \frac{2}{(3x+2)^2}\amp\amp\text{ Substitute } u=\frac{x}{3x+2}.\\
+\amp=\frac{10x^4}{(3x+2)^6}\amp\amp\text{ Simplify. }
+\end{align*}
+</div>
+<p id="p-1053">It is important to remember that, when using the Leibniz form of the chain rule, the final answer must be expressed entirely in terms of the original variable given in the problem.</p>
+</div></div>
+</div></article></section><section class="subsection" id="subsection-87"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.6.6</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-529"><p id="p-derived-li-529">The chain rule allows us to differentiate compositions of two or more functions. It states that for <span class="process-math">\(h(x)=f(g(x)),\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+h'(x)=f'(g(x))g'(x).
+\end{equation*}
+</div>In Leibniz’s notation this rule takes the form<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dy}{dx}=\frac{dy}{du}\cdot \frac{du}{dx}.
+\end{equation*}
+</div></p></li>
+<li id="li-530"><p id="p-derived-li-530">We can use the chain rule with other rules that we have learned, and we can derive formulas for some of them.</p></li>
+<li id="li-531"><p id="p-derived-li-531">The chain rule combines with the power rule to form a new rule:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{ If } h(x)=(g(x))^n ,\text{ then } h'(x)=n(g(x))^{n-1}g'(x).
+\end{equation*}
+</div></p></li>
+</ul></section><section class="subsection" id="subsection-88"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.6.7</span> <span class="title">Key Equations</span>
+</h3>
+<ul class="disc">
+<li id="li-532"><p id="p-derived-li-532">The chain rule <span class="process-math">\(h'(x)=f'(g(x))g'(x)\)</span></p></li>
+<li id="li-533"><p id="p-derived-li-533">The power rule for functions <span class="process-math">\(h'(x)=n(g(x))^{n-1}g'(x)\)</span></p></li>
+</ul></section><p id="p-1054">This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1.</p></section><div class="hidden-content tex2jax_ignore" id="hk-fn-16"><div class="fn"><code class="code-inline tex2jax_ignore">http://www.openstax.org/l/20_chainrule2</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:06:19-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="note remark-like"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">1.116</span><span class="period">.</span><span class="space"> </span><span class="title">Project: The Maximum Value of a Function.</span>
+</h4>
+<p>In many areas of science, engineering, and mathematics, it is useful to know the maximum value a function can obtain, even if we don’t know its exact value at a given instant. For instance, if we have a function describing the strength of a roof beam, we would want to know the maximum weight the beam can support without breaking. If we have a function that describes the speed of a train, we would want to know its maximum speed before it jumps off the rails. Safe design often depends on knowing maximum values.</p>
+<p>This project describes a simple example of a function with a maximum value that depends on two equation coefficients. We will see that maximum values can depend on several factors other than the independent variable <span class="process-math">\(x\text{.}\)</span></p>
+<ol class="decimal">
+<li>Consider the graph in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_01_04_016.html" title="Figure 1.117">Figure 1.117</a> of the function <span class="process-math">\(y=\sin\,x+\text{ cos }\,x.\)</span> Describe its overall shape. Is it periodic? How do you know? <figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_01_04_016.jpg" class="contained" alt='"An image of a graph. The x axis runs from -4 to 4 and the y axis runs from -4 to 4. The graph is of the function “y = sin(x) + cos(x)”, a curved wave function. The graph of the function decreases until it hits the approximate point (-(3pi/4), -1.4), where it increases until the approximate point ((pi/4), 1.4), where it begins to decrease again. The x intercepts shown on this graph of the function are at (-(5pi/4), 0), (-(pi/4), 0), and ((3pi/4), 0). The y intercept is at (0, 1)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.117<span class="period">.</span></span><span class="space"> </span>The graph of <span class="process-math">\(y=\sin\,x+\text{ cos }\,x.\)</span></figcaption></figure> Using a graphing calculator or other graphing device, estimate the <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-values of the maximum point for the graph (the first such point where <span class="process-math">\(x\)</span> \gt  0). It may be helpful to express the <span class="process-math">\(x\)</span>-value as a multiple of \pi.</li>
+<li><p>Now consider other graphs of the form <span class="process-math">\(y=A\,\sin\,x+B\,\text{ cos }\,x\)</span> for various values of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Sketch the graph when <span class="process-math">\(A\)</span> = 2 and <span class="process-math">\(B\)</span> = 1, and find the <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-values for the maximum point. (Remember to express the <span class="process-math">\(x\)</span>-value as a multiple of \pi, if possible.) Has it moved?</p></li>
+<li><p>Repeat for <span class="process-math">\(A\)</span> = 1, <span class="process-math">\(B\)</span> = 2. Is there any relationship to what you found in part (2)?</p></li>
+<li>Complete the following table, adding a few choices of your own for <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{:}\)</span> <figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.118<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(A\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(B\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(y\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(A\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(B\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(x\)</span></th>
+<th scope="col" class="l t b3 r0 l0 t0 lines"><span class="process-math">\(y\)</span></th>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">0</td>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\sqrt{3}\)</span></td>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines">0</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines"><span class="process-math">\(\sqrt{3}\)</span></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines">12</td>
+<td class="l t b0 r0 l0 t0 lines">5</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines">2</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines">5</td>
+<td class="l t b0 r0 l0 t0 lines">12</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">2</td>
+<td class="l t b0 r0 l0 t0 lines">1</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">2</td>
+<td class="l t b0 r0 l0 t0 lines">2</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">3</td>
+<td class="l t b0 r0 l0 t0 lines">4</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l t b0 r0 l0 t0 lines">4</td>
+<td class="l t b0 r0 l0 t0 lines">3</td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+<td class="l t b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure>
+</li>
+<li><p>Try to figure out the formula for the <span class="process-math">\(y\)</span>-values.</p></li>
+<li><p>The formula for the <span class="process-math">\(x\)</span>-values is a little harder. The most helpful points from the table are <span class="process-math">\((1,1),(1,\sqrt{3}),(\sqrt{3},1).\)</span> (Hint: Consider inverse trigonometric functions.)</p></li>
+<li><p>If you found formulas for parts (5) and (6), show that they work together. That is, substitute the <span class="process-math">\(x\)</span>-value formula you found into <span class="process-math">\(y=A\,\sin\,x+B\,\text{ cos }\,x\)</span> and simplify it to arrive at the <span class="process-math">\(y\)</span>-value formula you found.</p></li>
+</ol></article><span class="incontext"><a href="suc_Ch1Sec4.html#note-8" class="internal">in-context</a></span>
+</body>
+</html>

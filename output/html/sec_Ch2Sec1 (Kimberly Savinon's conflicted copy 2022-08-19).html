@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:02:32-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>A Preview of Calculus</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<meta property="book:author" content="Custom Business Calculus Edition ">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline">Custom Business Calculus Edition</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch_second.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_second.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch2Sec2.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch_second.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_second.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch2Sec2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="meta_frontmatter-preface.html" data-scroll="meta_frontmatter-preface" class="internal">Preface: OpenStax Calculus Volume 1</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2" class="internal">Preface: Business Calculus Custom Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="active">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="internal">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Derivatives</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="sec_Ch2Sec1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">A Preview of Calculus</span>
+</h2>
+<section class="introduction" id="introduction-12"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ol class="decimal">
+<li id="li-325"><p id="p-derived-li-325">Describe the tangent problem and how it led to the idea of a derivative.</p></li>
+<li id="li-326"><p id="p-derived-li-326">Explain how the idea of a limit is involved in solving the tangent problem.</p></li>
+<li id="li-327"><p id="p-derived-li-327">Recognize a tangent to a curve at a point as the limit of secant lines.</p></li>
+<li id="li-328"><p id="p-derived-li-328">Identify instantaneous velocity as the limit of average velocity over a small time interval.</p></li>
+<li id="li-329"><p id="p-derived-li-329">Describe the area problem and how it was solved by the integral.</p></li>
+<li id="li-330"><p id="p-derived-li-330">Explain how the idea of a limit is involved in solving the area problem.</p></li>
+<li id="li-331"><p id="p-derived-li-331">Recognize how the ideas of limit, derivative, and integral led to the studies of infinite series and multivariable calculus.</p></li>
+</ol>
+<p id="p-415">As we embark on our study of calculus, we shall see how its development arose from common solutions to practical problems in areas such as engineering physics—like the space travel problem posed in the chapter opener. Two key problems led to the initial formulation of calculus: (1) the tangent problem, or how to determine the slope of a line tangent to a curve at a point; and (2) the area problem, or how to determine the area under a curve.</p></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">The Tangent Problem and Differential Calculus</span>
+</h3>
+<p id="p-416">Rate of change is one of the most critical concepts in calculus. We begin our investigation of rates of change by looking at the graphs of the three lines <span class="process-math">\(f(x)=−2x−3,g(x)=\frac{1}{2}x+1,\)</span> and <span class="process-math">\(h(x)=2,\)</span> shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_01_001.html" title="Figure 2.2">Figure 2.2</a>.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_01_001"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/CNX_Calc_Figure_02_01_001.jpg" class="contained" alt='"Three graphs of different linear functions are shown. The first is f(x) = -2x – 3, with slope of -2 and y intercept of -3. The second is g(x) = x / 2 + 1, with slope of 1/2 and y intercept of 1. The third is h(x) = 2, with slope of 0 and y intercept of 2. The rate of change of each is constant, as determined by the slope."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2<span class="period">.</span></span><span class="space"> </span>The rate of change of a linear function is constant in each of these three graphs, with the constant determined by the slope.</figcaption></figure><p id="p-417">As we move from left to right along the graph of <span class="process-math">\(f(x)=−2x−3,\)</span> we see that the graph decreases at a constant rate. For every 1 unit we move to the right along the <span class="process-math">\(x\)</span>-axis, the <span class="process-math">\(y\)</span>-coordinate decreases by 2 units. This <dfn class="terminology">rate of change</dfn> is determined by the slope (−2) of the line. Similarly, the slope of 1/2 in the function <span class="process-math">\(g(x)\)</span> tells us that for every change in <span class="process-math">\(x\)</span> of 1 unit there is a corresponding change in <span class="process-math">\(y\)</span> of 1/2 unit. The function <span class="process-math">\(h(x)=2\)</span> has a slope of zero, indicating that the values of the function remain constant. We see that the slope of each linear function indicates the rate of change of the function.</p>
+<p id="p-418">Compare the graphs of these three functions with the graph of <span class="process-math">\(k(x)=x^2\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_01_002.html" title="Figure 2.3">Figure 2.3</a>). The graph of <span class="process-math">\(k(x)=x^2\)</span> starts from the left by decreasing rapidly, then begins to decrease more slowly and level off, and then finally begins to increase—slowly at first, followed by an increasing rate of increase as it moves toward the right. Unlike a linear function, no single number represents the rate of change for this function. We quite naturally ask: How do we measure the rate of change of a nonlinear function?</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_01_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_01_002.jpg" class="contained" alt='"A graph of the parabola k(x) = x^2, which opens up and has its vertex at the origin."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(k(x)=x^2\)</span> does not have a constant rate of change.</figcaption></figure><p id="p-419">We can approximate the rate of change of a function <span class="process-math">\(f(x)\)</span> at a point <span class="process-math">\((a,f(a))\)</span> on its graph by taking another point <span class="process-math">\((x,f(x))\)</span> on the graph of <span class="process-math">\(f(x),\)</span> drawing a line through the two points, and calculating the slope of the resulting line. Such a line is called a <dfn class="terminology">secant</dfn> line. <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_01_003.html" title="Figure 2.4">Figure 2.4</a> shows a secant line to a function <span class="process-math">\(f(x)\)</span> at a point <span class="process-math">\((a,f(a)).\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_01_003"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_01_003.jpg" class="contained" alt='"A graph showing a generic curved function going through the points (0,0), (a, fa.), and (x, f(x)). A straight line called the secant line is drawn through the points (a, fa.), and (x, f(x)), going below the curved function between a and x and going above the curved function at values greater than x or less than a. The curved function and the secant line cross once more at some point in the third quadrant. The slope of the secant line is ( f(x) – fa. ) / (x – a)."&gt;'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span>The slope of a secant line through a point <span class="process-math">\((a,f(a))\)</span> estimates the rate of change of the function at the point <span class="process-math">\((a,f(a)).\)</span></figcaption></figure><p id="p-420">We formally define a secant line as follows:</p>
+<article class="definition definition-like" id="definition-13"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5</span><span class="period">.</span>
+</h4>
+<p id="p-421">The secant to the function <span class="process-math">\(f(x)\)</span> through the points <span class="process-math">\((a,f(a))\)</span> and <span class="process-math">\((x,f(x))\)</span> is the line passing through these points. Its slope is given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+m_{\sec}=\frac{f(x)−f(a)}{x−a}.
+\end{equation*}
+</div></article><p id="p-422">The accuracy of approximating the rate of change of the function with a secant line depends on how close <span class="process-math">\(x\)</span> is to <span class="process-math">\(a\text{.}\)</span> As we see in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_01_004.html" title="Figure 2.6">Figure 2.6</a>, if <span class="process-math">\(x\)</span> is closer to <span class="process-math">\(a\text{,}\)</span> the slope of the secant line is a better measure of the rate of change of <span class="process-math">\(f(x)\)</span> at <span class="process-math">\(a\text{.}\)</span></p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_01_004"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_01_004.jpg" class="contained" alt='"This graph is the same as the previous secant line and generic curved function graph. However, another point x is added, this time plotted closer to a on the x-axis. As such, another secant line is drawn through the points (a, fa.) and the new, closer (x, f(x)). The line stays much closer to the generic curved function around (a, fa.). The slope of this secant line has become a better approximation of the rate of change of the generic function."&gt;'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6<span class="period">.</span></span><span class="space"> </span>As <span class="process-math">\(x\)</span> gets closer to <span class="process-math">\(a\text{,}\)</span> the slope of the secant line becomes a better approximation to the rate of change of the function <span class="process-math">\(f(x)\)</span> at <span class="process-math">\(a\text{.}\)</span></figcaption></figure><p id="p-423">The secant lines themselves approach a line that is called the <dfn class="terminology">tangent</dfn> to the function <span class="process-math">\(f(x)\)</span> at <span class="process-math">\(a\)</span> (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_01_005.html" title="Figure 2.8">Figure 2.8</a>). The slope of the tangent line to the graph at <span class="process-math">\(a\)</span> measures the rate of change of the function at <span class="process-math">\(a\text{.}\)</span> This value also represents the derivative of the function <span class="process-math">\(f(x)\)</span> at <span class="process-math">\(a\text{,}\)</span> or the rate of change of the function at <span class="process-math">\(a\text{.}\)</span> This derivative is denoted by <span class="process-math">\(f′(a).\)</span> <dfn class="terminology">Differential calculus</dfn> is the field of calculus concerned with the study of derivatives and their applications.</p>
+<article class="note remark-like" id="note-15"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Media.</span>
+</h4>
+<p id="fs-id1170571137117">For an interactive demonstration of the slope of a secant line that you can manipulate yourself, visit this applet (Note: this site requires a Java browser plugin): <a class="external" href="http://www.openstax.org/l/20_mathinsight" target="_blank">Math Insight</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-12" id="fn-12"><sup> 1 </sup></a>.</p></article><figure class="figure figure-like" id="CNX_Calc_Figure_02_01_005"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_01_005.jpg" class="contained" alt='"This graph is a continuation of the previous two. This time, the graph contains the curved function, the two secant lines, and a tangent line. As x approaches a, the secant lines approach the tangent line."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.8<span class="period">.</span></span><span class="space"> </span>Solving the <dfn class="terminology">Tangent Problem</dfn>: As <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\text{,}\)</span> the secant lines approach the tangent line.</figcaption></figure><p id="p-425"><a href="" class="xref" data-knowl="./knowl/fs-id1170573387465.html" title="Example 2.9: Finding Slopes of Secant Lines">Example 2.9</a> illustrates how to find slopes of secant lines. These slopes estimate the slope of the tangent line or, equivalently, the rate of change of the function at the point at which the slopes are calculated.</p>
+<article class="example example-like" id="fs-id1170573387465"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Slopes of Secant Lines.</span>
+</h4>
+<p id="p-426">Estimate the slope of the tangent line (rate of change) to <span class="process-math">\(f(x)=x^2\)</span> at <span class="process-math">\(x=1\)</span> by finding slopes of secant lines through <span class="process-math">\((1,1)\)</span> and each of the following points on the graph of <span class="process-math">\(f(x)=x^2.\)</span></p>
+<ol class="decimal">
+<li id="li-332"><p id="p-derived-li-332"><span class="process-math">\(\displaystyle (2,4)\)</span></p></li>
+<li id="li-333"><p id="p-derived-li-333"><span class="process-math">\(\displaystyle (\frac{3}{2},\frac{9}{4})\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-69" id="solution-69"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-69"><div class="solution solution-like">
+<p id="p-427">Use the formula for the slope of a secant line from the definition.</p>
+<ol class="decimal">
+<li id="li-334"><p id="p-derived-li-334"><span class="process-math">\(\displaystyle m_{\sec}= \frac{4−1}{2−1}=3\)</span></p></li>
+<li id="li-335"><p id="p-derived-li-335"><span class="process-math">\(\displaystyle m_{\sec}= \frac{\frac{9}{4}−1}{\frac{3}{2}−1}=\frac{5}{2}=2.5\)</span></p></li>
+</ol>
+<p id="p-428">The point in part b. is closer to the point <span class="process-math">\((1,1),\)</span> so the slope of 2.5 is closer to the slope of the tangent line. A good estimate for the slope of the tangent would be in the range of 2 to 2.5 (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_01_011.html" title="Figure 2.10">Figure 2.10</a>).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_01_011"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_01_011.jpg" class="contained" alt='"Two graphs of the parabola f(x) = x^2 are shown. The first has a secant line drawn, intersecting the parabola at (1,1) and (2,4). The second has a secant line drawn, intersecting the parabola at (1,1) and (3/2, 9/4). These lines provide successively closer approximations to the tangent line to the function at (1,1)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.10<span class="period">.</span></span><span class="space"> </span>The secant lines to <span class="process-math">\(f(x)=x^2\)</span> at <span class="process-math">\((1,1)\)</span> through (a) <span class="process-math">\((2,4)\)</span> and (b) <span class="process-math">\((\frac{3}{2},\frac{9}{4})\)</span> provide successively closer approximations to the tangent line to <span class="process-math">\(f(x)=x^2\)</span> at <span class="process-math">\((1,1).\)</span></figcaption></figure>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-32"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.11</span><span class="period">.</span>
+</h4>
+<p id="p-429">Estimate the slope of the tangent line (rate of change) to <span class="process-math">\(f(x)=x^2\)</span> at <span class="process-math">\(x=1\)</span> by finding slopes of secant lines through <span class="process-math">\((1,1)\)</span> and the point <span class="process-math">\((\frac{5}{4},\frac{25}{16})\)</span> on the graph of <span class="process-math">\(f(x)=x^2.\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-29" id="hint-29"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-29"><div class="hint solution-like"><p id="p-430">Use <a href="" class="xref" data-knowl="./knowl/fs-id1170573387465.html" title="Example 2.9: Finding Slopes of Secant Lines">Example 2.9</a> and <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_01_011.html" title="Figure 2.10">Figure 2.10</a> as a solving guide.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-70" id="solution-70"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-70"><div class="solution solution-like"><p id="p-431">2.25</p></div></div>
+</div></article><p id="p-432">We continue our investigation by exploring a related question. Keeping in mind that velocity may be thought of as the rate of change of position, suppose that we have a function, <span class="process-math">\(s(t),\)</span> that gives the position of an object along a coordinate axis at any given time <span class="process-math">\(t \text{.}\)</span> Can we use these same ideas to create a reasonable definition of the instantaneous velocity at a given time <span class="process-math">\(t=a?\)</span> We start by approximating the instantaneous velocity with an average velocity. First, recall that the speed of an object traveling at a constant rate is the ratio of the distance traveled to the length of time it has traveled. We define the <dfn class="terminology">average velocity</dfn> of an object over a time period to be the change in its position divided by the length of the time period.</p>
+<article class="definition definition-like" id="definition-14"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.12</span><span class="period">.</span>
+</h4>
+<p id="p-433">Let <span class="process-math">\(s(t)\)</span> be the position of an object moving along a coordinate axis at time <span class="process-math">\(t \text{.}\)</span> The <dfn class="terminology">average velocity</dfn> of the object over a time interval <span class="process-math">\([a,t]\)</span> where <span class="process-math">\(a\lt t\)</span> (or <span class="process-math">\([t,a]\)</span> if <span class="process-math">\(t\lt a)\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+v_{\text{ ave }}= \frac{s(t)−s(a)}{t−a}.
+\end{equation*}
+</div></article><p id="p-434">As <span class="process-math">\(t \)</span> is chosen closer to <span class="process-math">\(a\text{,}\)</span> the average velocity becomes closer to the instantaneous velocity. Note that finding the average velocity of a position function over a time interval is essentially the same as finding the slope of a secant line to a function. Furthermore, to find the slope of a tangent line at a point <span class="process-math">\(a\text{,}\)</span> we let the <span class="process-math">\(x\)</span>-values approach <span class="process-math">\(a\)</span> in the slope of the secant line. Similarly, to find the instantaneous velocity at time <span class="process-math">\(a\text{,}\)</span> we let the <span class="process-math">\(t \)</span>-values approach <span class="process-math">\(a\)</span> in the average velocity. This process of letting <span class="process-math">\(x\)</span> or <span class="process-math">\(t \)</span> approach <span class="process-math">\(a\)</span> in an expression is called taking a <dfn class="terminology">limit</dfn>. Thus, we may define the <dfn class="terminology">instantaneous velocity</dfn> as follows.</p>
+<article class="definition definition-like" id="definition-15"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.13</span><span class="period">.</span>
+</h4>
+<p id="p-435">For a position function <span class="process-math">\(s(t),\)</span> the instantaneous velocity at a time <span class="process-math">\(t=a\)</span> is the value that the average velocities approach on intervals of the form <span class="process-math">\([a,t]\)</span> and <span class="process-math">\([t,a]\)</span> as the values of <span class="process-math">\(t \)</span> become closer to <span class="process-math">\(a\text{,}\)</span> provided such a value exists.</p></article><p id="p-436"><a href="" class="xref" data-knowl="./knowl/fs-id1170573397285.html" title="Example 2.14: Finding Average Velocity">Example 2.14</a> illustrates this concept of limits and average velocity.</p>
+<article class="example example-like" id="fs-id1170573397285"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.14</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Average Velocity.</span>
+</h4>
+<p id="p-437">A rock is dropped from a height of 64 ft. It is determined that its height (in feet) above ground <span class="process-math">\(t \)</span> seconds later (for <span class="process-math">\(0≤t≤2)\)</span> is given by <span class="process-math">\(s(t)=−16t^2+64.\)</span> Find the average velocity of the rock over each of the given time intervals. Use this information to guess the instantaneous velocity of the rock at time <span class="process-math">\(t=0.5.\)</span></p>
+<ol class="decimal">
+<li id="li-336"><p id="p-derived-li-336"><span class="process-math">\(\displaystyle [0.49,0.5]\)</span></p></li>
+<li id="li-337"><p id="p-derived-li-337"><span class="process-math">\(\displaystyle [0.5,0.51]\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-71" id="solution-71"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-71"><div class="solution solution-like">
+<p id="p-438">Substitute the data into the formula for the definition of average velocity.</p>
+<ol class="decimal">
+<li id="li-338"><p id="p-derived-li-338"><span class="process-math">\(\displaystyle v_{\text{ave}}= \frac{s(0.5)−s(0.49)}{0.5−0.49}=−15.84\)</span></p></li>
+<li id="li-339"><p id="p-derived-li-339"><span class="process-math">\(\displaystyle v_{\text{ave}}= \frac{s(0.51)−s(0.5)}{0.51−0.5}=−16.16\)</span></p></li>
+</ol>
+<p id="p-439">The instantaneous velocity is somewhere between −15.84 and −16.16 ft/sec. A good guess might be −16 ft/sec.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-33"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.15</span><span class="period">.</span>
+</h4>
+<p id="p-440">An object moves along a coordinate axis so that its position at time <span class="process-math">\(t \)</span> is given by <span class="process-math">\(s(t)=t^3.\)</span> Estimate its instantaneous velocity at time <span class="process-math">\(t=2\)</span> by computing its average velocity over the time interval <span class="process-math">\([2,2.001].\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-30" id="hint-30"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-30"><div class="hint solution-like"><p id="p-441">Use <span class="process-math">\(v_{\text{ave}}= \frac{s(2.001)−s(2)}{2.001−2}.\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-72" id="solution-72"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-72"><div class="solution solution-like"><p id="p-442">12.006001</p></div></div>
+</div></article></section><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.2</span> <span class="title">The Area Problem and Integral Calculus</span>
+</h3>
+<p id="p-443">We now turn our attention to a classic question from calculus. Many quantities in physics—for example, quantities of work—may be interpreted as the area under a curve. This leads us to ask the question: How can we find the area between the graph of a function and the <span class="process-math">\(x\)</span>-axis over an interval (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_01_006.html" title="Figure 2.16">Figure 2.16</a>)?</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_01_006"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_01_006.jpg" class="contained" alt='"A graph is shown of a generic curved function f(x) shaped like a hill in quadrant one. An area under the function is shaded above the x-axis and between x=a and x=b."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.16<span class="period">.</span></span><span class="space"> </span>The <dfn class="terminology">Area Problem</dfn>: How do we find the area of the shaded region?</figcaption></figure><p id="p-444">As in the answer to our previous questions on velocity, we first try to approximate the solution. We approximate the area by dividing up the interval <span class="process-math">\([a,b]\)</span> into smaller intervals in the shape of rectangles. The approximation of the area comes from adding up the areas of these rectangles (<a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_01_007.html" title="Figure 2.17">Figure 2.17</a>).</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_01_007"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_01_007.jpg" class="contained" alt='"The graph is the same as the previous image, with one difference. Instead of the area completely shaded under the curved function, the interval [a, b] is divided into smaller intervals in the shape of rectangles. The rectangles have the same small width. The height of each rectangle is the height of the function at the midpoint of the base of that specific rectangle."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.17<span class="period">.</span></span><span class="space"> </span>The area of the region under the curve is approximated by summing the areas of thin rectangles.</figcaption></figure><p id="p-445">As the widths of the rectangles become smaller (approach zero), the sums of the areas of the rectangles approach the area between the graph of <span class="process-math">\(f(x)\)</span> and the <span class="process-math">\(x\)</span>-axis over the interval <span class="process-math">\([a,b].\)</span> Once again, we find ourselves taking a limit. Limits of this type serve as a basis for the definition of the definite integral. <dfn class="terminology">Integral calculus</dfn> is the study of integrals and their applications.</p>
+<article class="example example-like" id="fs-id1170573406196"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.18</span><span class="period">.</span><span class="space"> </span><span class="title">Estimation Using Rectangles.</span>
+</h4>
+<p id="p-446">Estimate the area between the <span class="process-math">\(x\)</span>-axis and the graph of <span class="process-math">\(f(x)=x^2+1\)</span> over the interval <span class="process-math">\([0,3]\)</span> by using the three rectangles shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_01_008.html" title="Figure 2.19">Figure 2.19</a>.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_01_008"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_01_008.jpg" class="contained" alt='"A graph of the parabola f(x) – x^2 + 1 drawn on graph paper with all units shown. The rectangles completely contained under the function and above the x-axis in the interval [0,3] are shaded. This strategy sets the heights of the rectangles as the smaller of the two corners that could intersect with the function. As such, the rectangles are shorter than the height of the function."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.19<span class="period">.</span></span><span class="space"> </span>The area of the region under the curve of <span class="process-math">\(f(x)=x^2+1\)</span> can be estimated using rectangles.</figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-73" id="solution-73"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-73"><div class="solution solution-like"><p id="p-447">The areas of the three rectangles are 1 unit<span class="process-math">\(^2\text{,}\)</span> 2 unit<span class="process-math">\(^2\text{,}\)</span> and 5 unit<span class="process-math">\(^2\text{.}\)</span> Using these rectangles, our area estimate is 8 unit<span class="process-math">\(^2\text{.}\)</span></p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-34"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.20</span><span class="period">.</span>
+</h4>
+<p id="p-448">Estimate the area between the <span class="process-math">\(x\)</span>-axis and the graph of <span class="process-math">\(f(x)=x^2+1\)</span> over the interval <span class="process-math">\([0,3]\)</span> by using the three rectangles shown here:</p>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_01_009.jpg" class="contained" alt='"A graph of the same parabola f(x) = x^2 + 1, but with a different shading strategy over the interval [0,3]. This time, the shaded rectangles are given the height of the taller corner that could intersect with the function. As such, the rectangles go higher than the height of the function'></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-31" id="hint-31"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-31"><div class="hint solution-like"><p id="p-449">Use <a href="" class="xref" data-knowl="./knowl/fs-id1170573406196.html" title="Example 2.18: Estimation Using Rectangles">Example 2.18</a> as a guide.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-74" id="solution-74"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-74"><div class="solution solution-like"><p id="p-450">16 unit<span class="process-math">\(^2\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.3</span> <span class="title">Other Aspects of Calculus</span>
+</h3>
+<p id="p-451">So far, we have studied functions of one variable only. Such functions can be represented visually using graphs in two dimensions; however, there is no good reason to restrict our investigation to two dimensions. Suppose, for example, that instead of determining the velocity of an object moving along a coordinate axis, we want to determine the velocity of a rock fired from a catapult at a given time, or of an airplane moving in three dimensions. We might want to graph real-value functions of two variables or determine volumes of solids of the type shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_01_010.html" title="Figure 2.21">Figure 2.21</a>. These are only a few of the types of questions that can be asked and answered using <dfn class="terminology">multivariable calculus</dfn>. Informally, multivariable calculus can be characterized as the study of the calculus of functions of two or more variables. However, before exploring these and other ideas, we must first lay a foundation for the study of calculus in one variable by exploring the concept of a limit.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_01_010"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_01_010.jpg" class="contained" alt='"A diagram in three dimensional space, over the x, y, and z axis where z = f(x,y). The base is the x,y axis, and the height is the z axis. The base is a rectangle contained in the x,y axis plane. The top is a surface of changing height with corners located directly above those of the rectangle in the x,y plane.. The highest point is above the corner at x=0, y=0. The lowest point is at the corner somewhere in the first quadrant of the x, y plane. The other two points are roughly the same height and located above the corners on the x axis and y axis. Lines are drawn connecting the corners of the rectangle to those of the surface."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.21<span class="period">.</span></span><span class="space"> </span>We can use multivariable calculus to find the volume between a surface defined by a function of two variables and a plane.</figcaption></figure></section><section class="subsection" id="subsection-43"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.4</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-340"><p id="p-derived-li-340">Differential calculus arose from trying to solve the problem of determining the slope of a line tangent to a curve at a point. The slope of the tangent line indicates the rate of change of the function, also called the derivative. Calculating a derivative requires finding a limit.</p></li>
+<li id="li-341"><p id="p-derived-li-341">Integral calculus arose from trying to solve the problem of finding the area of a region between the graph of a function and the <span class="process-math">\(x\)</span>-axis. We can approximate the area by dividing it into thin rectangles and summing the areas of these rectangles. This summation leads to the value of a function called the integral. The integral is also calculated by finding a limit and, in fact, is related to the derivative of a function.</p></li>
+<li id="li-342"><p id="p-derived-li-342">Multivariable calculus enables us to solve problems in three-dimensional space, including determining motion in space and finding volumes of solids.</p></li>
+</ul></section><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.5</span> <span class="title">Key Equations</span>
+</h3>
+<ul class="disc">
+<li id="li-343"><p id="p-derived-li-343">Slope of a Secant Line <span class="process-math">\(m_{\sec}= \frac{f(x)−f(a)}{x−a}\)</span></p></li>
+<li id="li-344"><p id="p-derived-li-344">Average Velocity over Interval <span class="process-math">\([a,t]\)</span> <span class="process-math">\(v_{\text{ave}}=\frac{s(t)−s(a)}{t−a}\)</span></p></li>
+</ul></section><p id="p-452">This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1.</p></section><div class="hidden-content tex2jax_ignore" id="hk-fn-12"><div class="fn"><code class="code-inline tex2jax_ignore">openstax.org/l/20_mathinsight</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

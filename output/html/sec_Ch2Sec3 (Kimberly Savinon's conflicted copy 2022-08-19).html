@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-19T11:02:35-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Limit Laws</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="OpenStax Calculus">
+<meta property="book:author" content="Custom Business Calculus Edition ">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">OpenStax Calculus:</span> <span class="subtitle">Volume 1</span></a></h1>
+<p class="byline">Custom Business Calculus Edition</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_Ch2Sec2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_second.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Ch2Sec4.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_Ch2Sec2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_second.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Ch2Sec4.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="meta_frontmatter-preface.html" data-scroll="meta_frontmatter-preface" class="internal">Preface: OpenStax Calculus Volume 1</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2" class="internal">Preface: Business Calculus Custom Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Functions and Graphs</span></a><ul>
+<li><a href="sec_Ch1Sec1.html" data-scroll="sec_Ch1Sec1" class="internal">Review of Functions</a></li>
+<li><a href="sec_Ch1Sec2.html" data-scroll="sec_Ch1Sec2" class="internal">Basic Classes of Functions</a></li>
+<li><a href="sec_Ch1Sec3.html" data-scroll="sec_Ch1Sec3" class="internal">Mathematical Modeling</a></li>
+<li><a href="suc_Ch1Sec4.html" data-scroll="suc_Ch1Sec4" class="internal">Inverse Functions</a></li>
+<li><a href="sec_Ch1Sec5.html" data-scroll="sec_Ch1Sec5" class="internal">Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_second.html" data-scroll="ch_second" class="internal"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_Ch2Sec1.html" data-scroll="sec_Ch2Sec1" class="internal">A Preview of Calculus</a></li>
+<li><a href="sec_Ch2Sec2.html" data-scroll="sec_Ch2Sec2" class="internal">The Limit of a Function</a></li>
+<li><a href="sec_Ch2Sec3.html" data-scroll="sec_Ch2Sec3" class="active">The Limit Laws</a></li>
+<li><a href="sec_Ch2Sec4.html" data-scroll="sec_Ch2Sec4" class="internal">Continuity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_third.html" data-scroll="ch_third" class="internal"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="sec_Ch3Sec1.html" data-scroll="sec_Ch3Sec1" class="internal">Defining the Derivative</a></li>
+<li><a href="sec_Ch3Sec2.html" data-scroll="sec_Ch3Sec2" class="internal">The Derivative as a Function</a></li>
+<li><a href="sec_Ch3Sec3.html" data-scroll="sec_Ch3Sec3" class="internal">Differentiation Rules</a></li>
+<li><a href="sec_Ch3Sec4.html" data-scroll="sec_Ch3Sec4" class="internal">Derivatives as Rates of Change</a></li>
+<li><a href="sec_Ch3Sec5.html" data-scroll="sec_Ch3Sec5" class="internal">Derivatives of Trigonometric Functions(not covered)</a></li>
+<li><a href="sec_Ch3Sec6.html" data-scroll="sec_Ch3Sec6" class="internal">The Chain Rule</a></li>
+<li><a href="sec_Ch3Sec7.html" data-scroll="sec_Ch3Sec7" class="internal">Derivatives of Inverse Functions</a></li>
+<li><a href="sec_Ch3Sec8.html" data-scroll="sec_Ch3Sec8" class="internal">Implicit Differentiation</a></li>
+<li><a href="sec_Ch3Sec9.html" data-scroll="sec_Ch3Sec9" class="internal">Derivatives of Exponential and Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fourth.html" data-scroll="ch_fourth" class="internal"><span class="codenumber">4</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch4Sec1.html" data-scroll="sec_Ch4Sec1" class="internal">Elasticity of Demand</a></li>
+<li><a href="sec_Ch4Sec2.html" data-scroll="sec_Ch4Sec2" class="internal">Linear Approximations </a></li>
+<li><a href="sec_Ch4Sec3.html" data-scroll="sec_Ch4Sec3" class="internal">Maxima and Minima</a></li>
+<li><a href="sec_Ch4Sec4.html" data-scroll="sec_Ch4Sec4" class="internal">The Mean Value Theorem(not covered)</a></li>
+<li><a href="sec_Ch4Sec5.html" data-scroll="sec_Ch4Sec5" class="internal">Derivatives and the Shape of a Graph</a></li>
+<li><a href="sec_Ch4Sec6.html" data-scroll="sec_Ch4Sec6" class="internal">Limits at Infinity and Asymptotes</a></li>
+<li><a href="sec_Ch4Sec7.html" data-scroll="sec_Ch4Sec7" class="internal">Applied Optimization Problems</a></li>
+<li><a href="sec_Ch4Sec10.html" data-scroll="sec_Ch4Sec10" class="internal">Antiderivatives</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_fifth.html" data-scroll="ch_fifth" class="internal"><span class="codenumber">5</span> <span class="title">Application of Derivatives</span></a><ul>
+<li><a href="sec_Ch5Sec1.html" data-scroll="sec_Ch5Sec1" class="internal">Approximating Areas</a></li>
+<li><a href="sec_Ch5Sec2.html" data-scroll="sec_Ch5Sec2" class="internal">The Definite Integral</a></li>
+<li><a href="sec_Ch5Sec3.html" data-scroll="sec_Ch5Sec3" class="internal">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_Ch5Sec4.html" data-scroll="sec_Ch5Sec4" class="internal">Integration Formulas and the Net Change Theorem(not covered)</a></li>
+<li><a href="sec_Ch5Sec5.html" data-scroll="sec_Ch5Sec5" class="internal">The Definite Integral</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_sixth.html" data-scroll="ch_sixth" class="internal"><span class="codenumber">6</span> <span class="title">Application of Derivatives</span></a><ul><li><a href="sec_Ch6Sec1.html" data-scroll="sec_Ch6Sec1" class="internal">Areas between Curves</a></li></ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_Ch2Sec3"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">The Limit Laws</span>
+</h2>
+<section class="introduction" id="introduction-14"><h3 class="heading">Learning Objectives.<span></span>
+</h3>
+<ol class="decimal">
+<li id="li-408"><p id="p-derived-li-408">Recognize the basic limit laws.</p></li>
+<li id="li-409"><p id="p-derived-li-409">Use the limit laws to evaluate the limit of a function.</p></li>
+<li id="li-410"><p id="p-derived-li-410">Evaluate the limit of a function by factoring.</p></li>
+<li id="li-411"><p id="p-derived-li-411">Use the limit laws to evaluate the limit of a polynomial or rational function.</p></li>
+<li id="li-412"><p id="p-derived-li-412">Evaluate the limit of a function by factoring or by using conjugates.</p></li>
+</ol>
+<p id="p-539">In the previous section, we evaluated limits by looking at graphs or by constructing a table of values. In this section, we establish laws for calculating limits and learn how to apply these laws.  We begin by restating two useful limit results from the previous section. These two results, together with the limit laws, serve as a foundation for calculating many limits.</p></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">Evaluating Limits with the Limit Laws</span>
+</h3>
+<p id="p-540">The first two limit laws were stated in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fs-id1170572086324" missing or not unique]</code> and we repeat them here. These basic results, together with the other limit laws, allow us to evaluate limits of many algebraic functions.</p>
+<article class="theorem theorem-like" id="fs-id1170572451153"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.63</span><span class="period">.</span><span class="space"> </span><span class="title">Basic Limit Results.</span>
+</h4>
+<p id="p-541">For any real number <span class="process-math">\(a\)</span> and any constant <span class="process-math">\(c\text{,}\)</span></p>
+<ol class="lower-roman">
+<li id="li-413"><p id="p-derived-li-413"><span class="process-math">\(\displaystyle \lim_{x \to a }x=a\)</span></p></li>
+<li id="li-414"><p id="p-derived-li-414"><span class="process-math">\(\displaystyle \lim_{x \to a }c=c\)</span></p></li>
+</ol></article><article class="example example-like" id="fs-id1170572111463"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.64</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating a Basic Limit.</span>
+</h4>
+<p id="p-542">Evaluate each of the following limits using <a href="" class="xref" data-knowl="./knowl/fs-id1170572451153.html" title="Theorem 2.63: Basic Limit Results">Theorem 2.63</a>.</p>
+<ol class="lower-alpha">
+<li id="li-415"><p id="p-derived-li-415"><span class="process-math">\(\displaystyle \lim_{x \to 2 }x\)</span></p></li>
+<li id="li-416"><p id="p-derived-li-416"><span class="process-math">\(\displaystyle \lim_{x \to 2 }5\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-90" id="solution-90"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-90"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-417"><p id="p-derived-li-417">The limit of <span class="process-math">\(x\)</span> as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\)</span> is <span class="process-math">\(a\text{:}\)</span> <span class="process-math">\(\displaystyle{\lim_{x \to 2 }x=2.}\)</span></p></li>
+<li id="li-418"><p id="p-derived-li-418">The limit of a constant is that constant: <span class="process-math">\(\displaystyle{\lim_{x \to 2 }5=5.}\)</span></p></li>
+</ol></div></div>
+</div></article><p id="p-543">We now take a look at the <dfn class="terminology">limit laws</dfn>, the individual properties of limits. The proofs that these laws hold are omitted here.</p>
+<article class="theorem theorem-like" id="theorem-5"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.65</span><span class="period">.</span><span class="space"> </span><span class="title">Limit Laws.</span>
+</h4>
+<p id="p-544">Let <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> be defined for all <span class="process-math">\(x\neq a\)</span> over some open interval containing <span class="process-math">\(a\text{.}\)</span> Assume that <span class="process-math">\(L \)</span> and <span class="process-math">\(M \)</span> are real numbers such that <span class="process-math">\(\displaystyle{\lim_{x \to a }f(x)=L}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x \to a }g(x)=M.}\)</span> Let <span class="process-math">\(c\)</span> be a constant. Then, each of the following statements holds:</p>
+<p id="p-545"><dfn class="terminology">Sum law for limits</dfn>: <span class="process-math">\(\displaystyle{\lim_{x \to a }(f(x)+g(x))=\lim_{x \to a }f(x)+\lim_{x \to a }g(x)=L+M}\)</span></p>
+<p id="p-546"><dfn class="terminology">Difference law for limits</dfn>: <span class="process-math">\(\displaystyle{\lim_{x \to a }(f(x)-g(x))=\lim_{x \to a }f(x)-\lim_{x \to a }g(x)=L-M}\)</span></p>
+<p id="p-547"><dfn class="terminology">Constant multiple law for limits</dfn>: <span class="process-math">\(\displaystyle{\lim_{x \to a }cf(x)=c\cdot \lim_{x \to a }f(x)=cL}\)</span></p>
+<p id="p-548"><dfn class="terminology">Product law for limits</dfn>: <span class="process-math">\(\displaystyle{\lim_{x \to a }(f(x)\cdot g(x))=\lim_{x \to a }f(x)\cdot \lim_{x \to a }g(x)=L\cdot M}\)</span></p>
+<p id="p-549"><dfn class="terminology">Quotient law for limits</dfn>: <span class="process-math">\(\displaystyle{\lim_{x \to a }\frac{f(x)}{g(x)}=\displaystyle{\frac{\lim_{x \to a }f(x)}{\lim_{x \to a }g(x)}}=\frac{L}{M}}\)</span> for <span class="process-math">\(M\neq 0\)</span></p>
+<p id="p-550"><dfn class="terminology">Power law for limits</dfn>: <span class="process-math">\(\displaystyle{\lim_{x \to a }(f(x))^n=(\lim_{x \to a }f(x))^n=L^n}\)</span> for every positive integer <span class="process-math">\(n\text{.}\)</span></p>
+<p id="p-551"><dfn class="terminology">Root law for limits</dfn>: <span class="process-math">\(\displaystyle{\lim_{x \to a }\sqrt[n]{f(x)}=\sqrt[n]{\lim_{x \to a }f(x)}=\sqrt[n]{L}}\)</span> for all <span class="process-math">\(L\)</span> if <span class="process-math">\(n\)</span> is odd and for <span class="process-math">\(L\geq 0\)</span> if <span class="process-math">\(n\)</span> is even.</p></article><p id="p-552">We now practice applying these limit laws to evaluate a limit.</p>
+<article class="example example-like" id="fs-id1170572451489"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.66</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating a Limit Using Limit Laws.</span>
+</h4>
+<p id="p-553">Use the limit laws to evaluate <span class="process-math">\(\displaystyle{\lim_{x \to -3 }(4x+2).}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-91" id="solution-91"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-91"><div class="solution solution-like">
+<p id="p-554">Let’s apply the limit laws one step at a time to be sure we understand how they work. We need to keep in mind the requirement that, at each application of a limit law, the new limits must exist for the limit law to be applied.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-10">
+\begin{align*}
+\lim_{x \to -3 }(4x+2)    \amp=\lim_{x \to -3 }4x+\lim_{x \to -3 }2   \amp\text{ Apply the sum law. }\\
+\amp=4\cdot \lim_{x \to -3 }x+\lim_{x \to -3 }2\amp\text{ Apply the constant multiple law. }\\
+\amp=4\cdot (-3)+2=-10.                       \amp\text{ Apply the basic limit results and simplify. }
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="fs-id1170572509954"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.67</span><span class="period">.</span><span class="space"> </span><span class="title">Using Limit Laws Repeatedly.</span>
+</h4>
+<p id="p-556">Use the limit laws to evaluate <span class="process-math">\(\displaystyle{\lim_{x \to 2 }\frac{2x^2-3x+1}{x^3+4}.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-92" id="solution-92"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-92"><div class="solution solution-like">
+<p id="p-557">To find this limit, we need to apply the limit laws several times. Again, we need to keep in mind that as we rewrite the limit in terms of other limits, each new limit must exist for the limit law to be applied.</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-11">
+\begin{align*}
+\lim_{x \to 2 }\frac{2x^2-3x+1}{x^3+4}\amp=\displaystyle{\frac{\lim_{x \to 2 }(2x^2-3x+1)}{\lim_{x \to 2 }(x^3+4)}}\amp\text{ Apply the quotient law, making sure that. } (2)^3+4\neq 0\\
+\amp=\displaystyle{\frac{2\cdot \lim_{x \to 2 }x^2-3\cdot \lim_{x \to 2 }x+\lim_{x \to 2 }1}{\lim_{x \to 2 }x^3+\lim_{x \to 2 }4}}\amp\text{ Apply the sum law and constant multiple law. }\\
+\amp=\displaystyle{\frac{2\cdot \lim_{x \to 2 }x^2-3\cdot \lim_{x \to 2 }x+\lim_{x \to 2 }1}{(\lim_{x \to 2 }x)^3+\lim_{x \to 2 }4}}\amp\text{ Apply the power law. }\\
+\amp=\displaystyle{\frac{2(4)-3(2)+1}{(2)^3+4}=\frac{1}{4}.}\amp\text{ Apply the basic limit laws and simplify. }
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-42"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.68</span><span class="period">.</span>
+</h4>
+<p id="p-559">Use the limit laws to evaluate <span class="process-math">\(\displaystyle{\lim_{x \to 6 }(2x-1)\sqrt{x+4}.}\)</span> In each step, indicate the limit law applied.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-39" id="hint-39"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-39"><div class="hint solution-like"><p id="p-560">Begin by applying the product law.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-93" id="solution-93"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-93"><div class="solution solution-like"><p id="p-561"><span class="process-math">\(11\sqrt{10}\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">Limits of Polynomial and Rational FunctionsLimits of Polynomial and Rational Functions</span>
+</h3>
+<p id="p-562">By now you have probably noticed that, in each of the previous examples, it has been the case that <span class="process-math">\(\lim_{x \to a }f(x)=f(a).\)</span> This is not always true, but it does hold for all polynomials for any choice of <span class="process-math">\(a\)</span> and for all rational functions at all values of <span class="process-math">\(a\)</span> for which the rational function is defined.</p>
+<article class="theorem theorem-like" id="fs-id1170572557796"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.69</span><span class="period">.</span>
+</h4>
+<p id="p-563">Let <span class="process-math">\(p(x)\)</span> and <span class="process-math">\(q(x)\)</span> be polynomial functions. Let <span class="process-math">\(a\)</span> be a real number. Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to a }p(x)=p(a)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to a }\frac{p(x)}{q(x)}=\frac{p(a)}{q(a)} \text{ when } q(a)\neq 0.
+\end{equation*}
+</div></article><p id="p-564"><a href="" class="xref" data-knowl="./knowl/fs-id1170572305829.html" title="Example 2.70: Evaluating a Limit of a Rational Function">Example 2.70</a> applies this result.</p>
+<article class="example example-like" id="fs-id1170572305829"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.70</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating a Limit of a Rational Function.</span>
+</h4>
+<p id="p-565">Evaluate the <span class="process-math">\(\displaystyle{\lim_{x \to 3 }\frac{2x^2-3x+1}{5x+4}.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-94" id="solution-94"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-94"><div class="solution solution-like">
+<p id="p-566">Since 3 is in the domain of the rational function <span class="process-math">\(f(x)=\frac{2x^2-3x+1}{5x+4},\)</span> we can calculate the limit by substituting 3 for <span class="process-math">\(x\)</span> into the function. Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to 3 }\frac{2x^2-3x+1}{5x+4}=\frac{10}{19}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-43"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.71</span><span class="period">.</span>
+</h4>
+<p id="p-567">Evaluate <span class="process-math">\(\displaystyle{\lim_{x \to -2 }(3x^3-2x+7).}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-40" id="hint-40"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-40"><div class="hint solution-like"><p id="p-568">Use <a href="" class="xref" data-knowl="./knowl/fs-id1170572557796.html" title="Theorem 2.69">Theorem 2.69</a></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-95" id="solution-95"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-95"><div class="solution solution-like"><p id="p-569">-13;</p></div></div>
+</div></article></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">Additional Limit Evaluation Techniques</span>
+</h3>
+<p id="p-570">As we have seen, we may evaluate easily the limits of polynomials and limits of some (but not all) rational functions by direct substitution. However, as we saw in the introductory section on limits, it is certainly possible for <span class="process-math">\(\lim_{x \to a }f(x)\)</span> to exist when <span class="process-math">\(f(a)\)</span> is undefined. The following observation allows us to evaluate many limits of this type:</p>
+<p id="p-571">If for all <span class="process-math">\(x\neq a,f(x)=g(x)\)</span> over some open interval containing <span class="process-math">\(a\text{,}\)</span> then <span class="process-math">\(\displaystyle{\lim_{x \to a }f(x)=\lim_{x \to a }g(x).}\)</span></p>
+<p id="p-572">To understand this idea better, consider the limit <span class="process-math">\(\displaystyle{\lim_{x \to 1 }\frac{x^2-1}{x-1}.}\)</span></p>
+<p id="p-573">The function</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_02_03_001.html ./knowl/fs-id1170571669713.html ./knowl/fs-id1170572307613.html ./knowl/fs-id1170571612021.html ./knowl/fs-id1170571669713.html ./knowl/fs-id1170572307613.html ./knowl/fs-id1170571612021.html ./knowl/fs-id1170571648139.html ./knowl/fs-id1170571648139.html ./knowl/fs-id1170571679268.html ./knowl/CNX_Calc_Figure_02_03_002.html ./knowl/fs-id1170571558882.html ./knowl/CNX_Calc_Figure_02_03_003.html ./knowl/fs-id1170571558882.html ./knowl/fs-id1170571611196.html" id="md-12">
+\begin{align*}
+f(x)\amp=\frac{x^2-1}{x-1}\\
+\amp=\frac{(x-1)(x+1)}{x-1}
+\end{align*}
+</div>
+<p id="p-574">and the function <span class="process-math">\(g(x)=x+1\)</span> are identical for all values of <span class="process-math">\(x\neq 1.\)</span> The graphs of these two functions are shown in <a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_03_001.html" title="Figure 2.72">Figure 2.72</a>.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_03_001"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/CNX_Calc_Figure_02_03_001.jpg" class="contained" alt='"Two graphs side by side. The first is a graph of g(x) = x + 1, a linear function with y intercept at (0,1) and x intercept at (-1,0). The second is a graph of f(x) = (x^2 – 1) / (x – 1). This graph is identical to the first for all x not equal to 1, as there is an open circle at (1,2) in the second graph."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.72<span class="period">.</span></span><span class="space"> </span>The graphs of <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> are identical for all <span class="process-math">\(x\neq 1.\)</span> Their limits at 1 are equal.</figcaption></figure><p id="p-575">We see that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/CNX_Calc_Figure_02_03_001.html ./knowl/fs-id1170571669713.html ./knowl/fs-id1170572307613.html ./knowl/fs-id1170571612021.html ./knowl/fs-id1170571669713.html ./knowl/fs-id1170572307613.html ./knowl/fs-id1170571612021.html ./knowl/fs-id1170571648139.html ./knowl/fs-id1170571648139.html ./knowl/fs-id1170571679268.html ./knowl/CNX_Calc_Figure_02_03_002.html ./knowl/fs-id1170571558882.html ./knowl/CNX_Calc_Figure_02_03_003.html ./knowl/fs-id1170571558882.html ./knowl/fs-id1170571611196.html" id="md-13">
+\begin{align*}
+\lim_{x \to 1 }\frac{x^2-1}{x-1}\amp=\lim_{x \to 1 }\frac{(x-1)}{(x+1)}{x-1}\\
+\amp=\lim_{x \to 1 }(x+1)\\
+\amp=2.
+\end{align*}
+</div>
+<p id="p-576">The limit has the form <span class="process-math">\(\displaystyle{\lim_{x \to a }\frac{f(x)}{g(x)},}\)</span> where <span class="process-math">\(\displaystyle{\lim_{x \to a }f(x)=0}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x \to a }g(x)=0.}\)</span> (In this case, we say that <span class="process-math">\(f(x)/g(x)\)</span> has the indeterminate form <span class="process-math">\(0/0\text{ .) }\)</span> The following Problem-Solving Strategy provides a general outline for evaluating limits of this type.</p>
+<article class="note remark-like" id="note-17"><h4 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">2.73</span><span class="period">.</span><span class="space"> </span><span class="title">Problem-Solving Strategy: Calculating a Limit When <span class="process-math">\(f(x)/g(x)\)</span> has the Indeterminate Form 0/0.</span>
+</h4>
+<ol class="lower-alpha">
+<li id="li-419"><p id="p-577">First, we need to make sure that our function has the appropriate form and cannot be evaluated immediately using the limit laws.</p></li>
+<li id="li-420">
+<p id="p-578">We then need to find a function that is equal to <span class="process-math">\(h(x)=f(x)/g(x)\)</span> for all <span class="process-math">\(x\neq a\)</span> over some interval containing <span class="process-math">\(a\text{.}\)</span> To do this, we may need to try one or more of the following steps:</p>
+<ol class="lower-roman">
+<li id="li-421"><p id="p-579">If <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> are polynomials, we should factor each function and cancel out any common factors.</p></li>
+<li id="li-422"><p id="p-580">If the numerator or denominator contains a difference involving a square root, we should try multiplying the numerator and denominator by the conjugate of the expression involving the square root.</p></li>
+<li id="li-423"><p id="p-581">If <span class="process-math">\(f(x)/g(x)\)</span> is a complex fraction, we begin by simplifying it.</p></li>
+</ol>
+</li>
+<li id="li-424"><p id="p-582">Last, we apply the limit laws.</p></li>
+</ol></article><p id="p-583">The next examples demonstrate the use of this Problem-Solving Strategy. <a href="" class="xref" data-knowl="./knowl/fs-id1170571669713.html" title="Example 2.74: Evaluating a Limit by Factoring and Canceling">Example 2.74</a> illustrates the factor-and-cancel technique; <a href="" class="xref" data-knowl="./knowl/fs-id1170572307613.html" title="Example 2.76: Evaluating a Limit by Multiplying by a Conjugate">Example 2.76</a> shows multiplying by a conjugate. In <a href="" class="xref" data-knowl="./knowl/fs-id1170571612021.html" title="Example 2.78: Evaluating a Limit by Simplifying a Complex Fraction">Example 2.78</a>, we look at simplifying a complex fraction.</p>
+<article class="example example-like" id="fs-id1170571669713"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.74</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating a Limit by Factoring and Canceling.</span>
+</h4>
+<p id="p-584">Evaluate <span class="process-math">\(\displaystyle{\lim_{x \to 3 }\frac{x^2-3x}{2x^2-5x-3}.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-96" id="solution-96"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-96"><div class="solution solution-like">
+<p id="p-585">Step 1. The function <span class="process-math">\(f(x)=\frac{x^2-3x}{2x^2-5x-3}\)</span> is undefined for <span class="process-math">\(x=3.\)</span> In fact, if we substitute 3 into the function we get <span class="process-math">\(0/0,\)</span> which is undefined. Factoring and canceling is a good strategy:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to 3 }\frac{x^2-3x}{2x^2-5x-3}=\lim_{x \to 3 }\frac{x(x-3)}{(x-3)}{(2x+1)}
+\end{equation*}
+</div>
+<p id="p-586">Step 2. For all <span class="process-math">\(x\neq 3,\frac{x^2-3x}{2x^2-5x-3}=\frac{x}{2x+1}.\)</span> Therefore,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to 3 }\frac{x(x-3)}{(x-3)}{(2x+1)}=\lim_{x \to 3 }\frac{x}{2x+1}.
+\end{equation*}
+</div>
+<p id="p-587">Step 3. Evaluate using the limit laws:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to 3 }\frac{x}{2x+1}=\frac{3}{7}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-44"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.75</span><span class="period">.</span>
+</h4>
+<p id="p-588">Evaluate <span class="process-math">\(\displaystyle{\lim_{x \to -3 }\frac{x^2+4x+3}{x^2-9}.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-41" id="hint-41"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-41"><div class="hint solution-like"><p id="p-589">Follow the steps in the Problem-Solving Strategy and <a href="" class="xref" data-knowl="./knowl/fs-id1170571669713.html" title="Example 2.74: Evaluating a Limit by Factoring and Canceling">Example 2.74</a>.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-97" id="solution-97"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-97"><div class="solution solution-like"><p id="p-590"><span class="process-math">\(\frac{1}{3}\)</span></p></div></div>
+</div></article><article class="example example-like" id="fs-id1170572307613"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.76</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating a Limit by Multiplying by a Conjugate.</span>
+</h4>
+<p id="p-591">Evaluate <span class="process-math">\(\displaystyle{\lim_{x \to -1 }\frac{\sqrt{x+2}-1}{x+1}.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-98" id="solution-98"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-98"><div class="solution solution-like">
+<p id="p-592">Step 1. <span class="process-math">\(\frac{\sqrt{x+2}-1}{x+1}\)</span> has the form <span class="process-math">\(0/0\)</span> at -1. Let’s begin by multiplying by <span class="process-math">\(\sqrt{x+2}+1,\)</span> the conjugate of <span class="process-math">\(\sqrt{x+2}-1,\)</span> on the numerator and denominator:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to -1 }\frac{\sqrt{x+2}-1}{x+1}=\lim_{x \to -1 }\frac{\sqrt{x+2}-1}{x+1}\cdot \frac{\sqrt{x+2}+1}{\sqrt{x+2}+1}.
+\end{equation*}
+</div>
+<p id="p-593">Step 2. We then multiply out the numerator. We don’t multiply out the denominator because we are hoping that the <span class="process-math">\((x+1)\)</span> in the denominator cancels out in the end:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+=\lim_{x \to -1 }\frac{x+1}{(x+1)}{(\sqrt{x+2}+1)}.
+\end{equation*}
+</div>
+<p id="p-594">Step 3. Then we cancel:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+=\lim_{x \to -1 }\frac{1}{\sqrt{x+2}+1}.
+\end{equation*}
+</div>
+<p id="p-595">Step 4. Last, we apply the limit laws:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to -1 }\frac{1}{\sqrt{x+2}+1}=\frac{1}{2}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-45"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.77</span><span class="period">.</span>
+</h4>
+<p id="p-596">Evaluate <span class="process-math">\(\displaystyle{\lim_{x \to 5 }\frac{\sqrt{x-1}-2}{x-5}.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-42" id="hint-42"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-42"><div class="hint solution-like"><p id="p-597">Follow the steps in the Problem-Solving Strategy and <a href="" class="xref" data-knowl="./knowl/fs-id1170572307613.html" title="Example 2.76: Evaluating a Limit by Multiplying by a Conjugate">Example 2.76</a>.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-99" id="solution-99"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-99"><div class="solution solution-like"><p id="p-598"><span class="process-math">\(\frac{1}{4}\)</span></p></div></div>
+</div></article><article class="example example-like" id="fs-id1170571612021"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.78</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating a Limit by Simplifying a Complex Fraction.</span>
+</h4>
+<p id="p-599">Evaluate <span class="process-math">\(\displaystyle{\lim_{x \to 1 }\frac{\frac{1}{x+1}-\frac{1}{2}}{x-1}.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-100" id="solution-100"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-100"><div class="solution solution-like">
+<p id="p-600">Step 1. <span class="process-math">\(\frac{\frac{1}{x+1}-\frac{1}{2}}{x-1}\)</span> has the form <span class="process-math">\(0/0\)</span> at 1. We simplify the algebraic fraction by multiplying by <span class="process-math">\(2(x+1)/2(x+1):\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to 1 }\frac{\frac{1}{x+1}-\frac{1}{2}}{x-1}=\lim_{x \to 1 }\frac{\frac{1}{x+1}-\frac{1}{2}}{x-1}\cdot \frac{2(x+1)}{2(x+1)}.
+\end{equation*}
+</div>
+<p id="p-601">Step 2. Next, we multiply through the numerators. Do not multiply the denominators because we want to be able to cancel the factor <span class="process-math">\((x-1)\text{ : }\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+=\lim_{x \to 1 }\frac{2-(x+1)}{2(x-1)}{(x+1)}.
+\end{equation*}
+</div>
+<p id="p-602">Step 3. Then, we simplify the numerator:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+=\lim_{x \to 1 }\frac{-x+1}{2(x-1)(x+1)}.
+\end{equation*}
+</div>
+<p id="p-603">Step 4. Now we factor out -1 from the numerator:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+=\lim_{x \to 1 }\frac{-(x-1)}{2(x-1)(x+1)}.
+\end{equation*}
+</div>
+<p id="p-604">Step 5. Then, we cancel the common factors of <span class="process-math">\((x-1)\text{ : }\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+=\lim_{x \to 1 }\frac{-1}{2(x+1)}.
+\end{equation*}
+</div>
+<p id="p-605">Step 6. Last, we evaluate using the limit laws:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to 1 }\frac{-1}{2(x+1)}=-\frac{1}{4}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-46"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.79</span><span class="period">.</span>
+</h4>
+<p id="p-606">Evaluate <span class="process-math">\(\displaystyle{\lim_{x \to -3 }\frac{\frac{1}{x+2}+1}{x+3}.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-43" id="hint-43"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-43"><div class="hint solution-like"><p id="p-607">Follow the steps in the Problem-Solving Strategy and <a href="" class="xref" data-knowl="./knowl/fs-id1170571612021.html" title="Example 2.78: Evaluating a Limit by Simplifying a Complex Fraction">Example 2.78</a>.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-101" id="solution-101"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-101"><div class="solution solution-like"><p id="p-608">-1;</p></div></div>
+</div></article><p id="p-609"><a href="" class="xref" data-knowl="./knowl/fs-id1170571648139.html" title="Example 2.80: Evaluating a Limit When the Limit Laws Do Not Apply">Example 2.80</a> does not fall neatly into any of the patterns established in the previous examples. However, with a little creativity, we can still use these same techniques.</p>
+<article class="example example-like" id="fs-id1170571648139"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.80</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating a Limit When the Limit Laws Do Not Apply.</span>
+</h4>
+<p id="p-610">Evaluate <span class="process-math">\(\displaystyle{\lim_{x \to 0 }\left(\frac{1}{x}+\frac{5}{x(x-5)}\right).}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-102" id="solution-102"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-102"><div class="solution solution-like">
+<p id="p-611">Both <span class="process-math">\(1/x\)</span> and <span class="process-math">\(5/x(x-5)\)</span> fail to have a limit at zero. Since neither of the two functions has a limit at zero, we cannot apply the sum law for limits; we must use a different strategy. In this case, we find the limit by performing addition and then applying one of our previous strategies. Observe that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-14">
+\begin{align*}
+\frac{1}{x}+\frac{5}{x(x-5)}\amp=\frac{x-5+5}{x(x-5)}\\
+\amp=\frac{x}{x(x-5)}.
+\end{align*}
+</div>
+<p id="p-612">Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-15">
+\begin{align*}
+\lim_{x \to 0 }\left(\frac{1}{x}+\frac{5}{x(x-5)}\right)\amp=\lim_{x \to 0 }\frac{x}{x(x-5)}\\
+\amp=\lim_{x \to 0 }\frac{1}{x-5}\\
+\amp=-\frac{1}{5}.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-47"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.81</span><span class="period">.</span>
+</h4>
+<p id="p-613">Evaluate <span class="process-math">\(\displaystyle{\lim_{x \to 3 }\left(\frac{1}{x-3}-\frac{4}{x^2-2x-3}\right).}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-44" id="hint-44"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-44"><div class="hint solution-like"><p id="p-614">Use the same technique as <a href="" class="xref" data-knowl="./knowl/fs-id1170571648139.html" title="Example 2.80: Evaluating a Limit When the Limit Laws Do Not Apply">Example 2.80</a>. Don’t forget to factor <span class="process-math">\(x^2-2x-3\)</span> before getting a common denominator.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-103" id="solution-103"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-103"><div class="solution solution-like"><p id="p-615"><span class="process-math">\(\frac{1}{4}\)</span></p></div></div>
+</div></article><p id="p-616">Let’s now revisit one-sided limits. Simple modifications in the limit laws allow us to apply them to one-sided limits. For example, to apply the limit laws to a limit of the form <span class="process-math">\(\displaystyle{\lim_{x\to a^-} h(x),}\)</span> we require the function <span class="process-math">\(h(x)\)</span> to be defined over an open interval of the form <span class="process-math">\((b,a);\)</span> for a limit of the form <span class="process-math">\(\displaystyle{\lim_{x \to a^+} h(x),}\)</span> we require the function <span class="process-math">\(h(x)\)</span> to be defined over an open interval of the form <span class="process-math">\((a,c).\)</span> <a href="" class="xref" data-knowl="./knowl/fs-id1170571679268.html" title="Example 2.82: Evaluating a One-Sided Limit Using the Limit Laws">Example 2.82</a> illustrates this point.</p>
+<article class="example example-like" id="fs-id1170571679268"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.82</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating a One-Sided Limit Using the Limit Laws.</span>
+</h4>
+<p id="p-617">Evaluate each of the following limits, if possible.</p>
+<ol class="lower-alpha">
+<li id="li-425"><p id="p-derived-li-425"><span class="process-math">\(\displaystyle \lim_{x \to 3^-}\sqrt{x-3}\)</span></p></li>
+<li id="li-426"><p id="p-derived-li-426"><span class="process-math">\(\displaystyle \lim_{x \to 3^+}\sqrt{x-3}\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-104" id="solution-104"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-104"><div class="solution solution-like">
+<p id="p-618"><a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_03_002.html" title="Figure 2.83">Figure 2.83</a> illustrates the function <span class="process-math">\(f(x)=\sqrt{x-3}\)</span> and aids in our understanding of these limits.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_03_002"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_03_002.jpg" class="contained" alt='"A graph of the function f(x) = sqrt(x-3). Visually, the function looks like the top half of a parabola opening to the right with vertex at (3,0)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.83<span class="period">.</span></span><span class="space"> </span>The graph shows the function <span class="process-math">\(f(x)=\sqrt{x-3}.\)</span></figcaption></figure><ol class="lower-alpha">
+<li id="li-427"><p id="p-derived-li-427">The function <span class="process-math">\(f(x)=\sqrt{x-3}\)</span> is defined over the interval <span class="process-math">\([3,+\infty).\)</span> Since this function is not defined to the left of 3, we cannot apply the limit laws to compute <span class="process-math">\(\displaystyle{\lim_{x \to 3^-}\sqrt{x-3}.}\)</span> In fact, since <span class="process-math">\(f(x)=\sqrt{x-3}\)</span> is undefined to the left of 3, <span class="process-math">\(\displaystyle{\lim_{x \to 3^-}\sqrt{x-3}}\)</span> does not exist.</p></li>
+<li id="li-428"><p id="p-derived-li-428">Since <span class="process-math">\(f(x)=\sqrt{x-3}\)</span> is defined to the right of 3, the limit laws do apply to <span class="process-math">\(\displaystyle{\lim_{x \to 3^+}\sqrt{x-3}.}\)</span> By applying these limit laws we obtain <span class="process-math">\(\displaystyle{\lim_{x \to 3^+}\sqrt{x-3}=0.}\)</span></p></li>
+</ol>
+</div></div>
+</div></article><p id="p-619">In <a href="" class="xref" data-knowl="./knowl/fs-id1170571558882.html" title="Example 2.84">Example 2.84</a> we look at one-sided limits of a piecewise-defined function and use these limits to draw a conclusion about a two-sided limit of the same function.</p>
+<article class="example example-like" id="fs-id1170571558882"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.84</span><span class="period">.</span>
+</h4>
+<p id="p-620">For <span class="process-math">\(f(x)=\begin{cases} 4x-3\amp\text{ if } x\lt 2\\ (x-3)^2\amp\text{ if } x\geq 2 \end{cases},\)</span> evaluate each of the following limits:</p>
+<ol class="lower-alpha">
+<li id="li-429"><p id="p-derived-li-429"><span class="process-math">\(\displaystyle \lim_{x \to 2^-}f(x)\)</span></p></li>
+<li id="li-430"><p id="p-derived-li-430"><span class="process-math">\(\displaystyle \lim_{x \to 2^+}f(x)\)</span></p></li>
+<li id="li-431"><p id="p-derived-li-431"><span class="process-math">\(\displaystyle \lim_{x \to 2 }f(x)\)</span></p></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-105" id="solution-105"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-105"><div class="solution solution-like">
+<p id="p-621"><a href="" class="xref" data-knowl="./knowl/CNX_Calc_Figure_02_03_003.html" title="Figure 2.85">Figure 2.85</a> illustrates the function <span class="process-math">\(f(x)\)</span> and aids in our understanding of these limits.</p>
+<figure class="figure figure-like" id="CNX_Calc_Figure_02_03_003"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_03_003.jpg" class="contained" alt='"The graph of a piecewise function with two segments. For x\lt 2, the function is linear with the equation 4x-3. There is an open circle at (2,5). The second segment is a parabola and exists for x\gt =2, with the equation (x-3)^2. There is a closed circle at (2,1). The vertex of the parabola is at (3,0)."'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.85<span class="period">.</span></span><span class="space"> </span>This graph shows a function <span class="process-math">\(f(x).\)</span></figcaption></figure><ol class="lower-alpha">
+<li id="li-432"><p id="p-derived-li-432">Since <span class="process-math">\(f(x)=4x-3\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\((-\infty,2),\)</span> replace <span class="process-math">\(f(x)\)</span> in the limit with <span class="process-math">\(4x-3\)</span> and apply the limit laws:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to 2^-}f(x)=\lim_{x \to 2^-}(4x-3)=5.
+\end{equation*}
+</div></p></li>
+<li id="li-433"><p id="p-derived-li-433">Since <span class="process-math">\(f(x)=(x-3)^2\)</span> for all <span class="process-math">\(x\)</span> in <span class="process-math">\((2,+\infty),\)</span> replace <span class="process-math">\(f(x)\)</span> in the limit with <span class="process-math">\((x-3)^2\)</span> and apply the limit laws:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to 2^+}f(x)=\lim_{x \to 2^+}(x-3)^2=1.
+\end{equation*}
+</div></p></li>
+<li id="li-434"><p id="p-derived-li-434">Since <span class="process-math">\(\displaystyle{\lim_{x \to 2^-}f(x)=5}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x \to 2^+}f(x)=1,}\)</span> we conclude that <span class="process-math">\(\displaystyle{\lim_{x \to 2 }f(x)}\)</span> does not exist.</p></li>
+</ol>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-48"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.86</span><span class="period">.</span>
+</h4>
+<p id="p-622">Graph <span class="process-math">\(f(x)=\begin{cases}-x-2 \amp \text{ if } x\lt -1 \\ 2 \amp \text{ if } x=-1 \\ x^3 \amp \text{ if } x\gt -1 \end{cases} \)</span> and evaluate <span class="process-math">\(\displaystyle{\lim_{x\to -1^-}f(x).}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-45" id="hint-45"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-45"><div class="hint solution-like"><p id="p-623">Use the method in <a href="" class="xref" data-knowl="./knowl/fs-id1170571558882.html" title="Example 2.84">Example 2.84</a> to evaluate the limit.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-106" id="solution-106"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-106"><div class="solution solution-like"><p id="p-624"> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CNX_Calc_Figure_02_03_004.jpg" class="contained" alt='"The graph of a piecewise function with three segments. The first is a linear function, -x-2, for x\lt -1. The x intercept is at (-2,0), and there is an open circle at (-1,-1). The next segment is simply the point (-1, 2). The third segment is the function x^3 for x \gt  -1, which crossed the x axis and y axis at the origin."'></div> <span class="process-math">\(\displaystyle{\lim_{x\to -1^-}f(x)=-1}\)</span></p></div></div>
+</div></article><p id="p-625">We now turn our attention to evaluating a limit of the form <span class="process-math">\(\displaystyle{\lim_{x \to a }\frac{f(x)}{g(x)},}\)</span> where <span class="process-math">\(\displaystyle{\lim_{x \to a }f(x)=K,}\)</span> where <span class="process-math">\(K\neq 0\)</span> and <span class="process-math">\(\displaystyle{\lim_{x \to a }g(x)=0.}\)</span> That is, <span class="process-math">\(f(x)/g(x)\)</span> has the form <span class="process-math">\(K/0,K\neq 0\)</span> at <span class="process-math">\(a\text{.}\)</span></p>
+<article class="example example-like" id="fs-id1170571611196"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.87</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluating a Limit of the Form <span class="process-math">\(K/0,K\neq 0\)</span> Using the Limit Laws.</span>
+</h4>
+<p id="p-626">Evaluate <span class="process-math">\(\displaystyle{\lim_{x \to 2^-}\frac{x-3}{x^2-2x}.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-107" id="solution-107"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-107"><div class="solution solution-like">
+<p id="p-627">Step 1. After substituting in <span class="process-math">\(x=2,\)</span> we see that this limit has the form <span class="process-math">\(-1/0.\)</span> That is, as <span class="process-math">\(x\)</span> approaches 2 from the left, the numerator approaches -1; and the denominator approaches 0. Consequently, the magnitude of <span class="process-math">\(\frac{x-3}{x(x-2)}\)</span> becomes infinite. To get a better idea of what the limit is, we need to factor the denominator:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to 2^-}\frac{x-3}{x^2-2x}=\lim_{x \to 2^-}\frac{x-3}{x(x-2)}.
+\end{equation*}
+</div>
+<p id="p-628">Step 2. Since <span class="process-math">\(x-2\)</span> is the only part of the denominator that is zero when 2 is substituted, we then separate <span class="process-math">\(1/(x-2)\)</span> from the rest of the function:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+=\lim_{x \to 2^-}\frac{x-3}{x}\cdot \frac{1}{x-2}.
+\end{equation*}
+</div>
+<p id="p-629">Step 3. <span class="process-math">\(\displaystyle{\lim_{x \to 2^-}\frac{x-3}{x}=-\frac{1}{2}}\)</span> and <span class="process-math">\(\displaystyle{\lim_{x \to 2^-}\frac{1}{x-2}=-\infty.}\)</span> Therefore, the product of <span class="process-math">\((x-3)/x\)</span> and <span class="process-math">\(1/(x-2)\)</span> has a limit of <span class="process-math">\(+\infty\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{x \to 2^-}\frac{x-3}{x^2-2x}=+\infty.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-49"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.88</span><span class="period">.</span>
+</h4>
+<p id="p-630">Evaluate <span class="process-math">\(\displaystyle{\lim_{x \to 1 }\frac{x+2}{(x-1)^2}.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-46" id="hint-46"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-46"><div class="hint solution-like"><p id="p-631">Use the methods from <a href="" class="xref" data-knowl="./knowl/fs-id1170571611196.html" title="Example 2.87: Evaluating a Limit of the Form K/0,K\neq 0 Using the Limit Laws">Example 2.87</a>.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-108" id="solution-108"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-108"><div class="solution solution-like"><p id="p-632"><span class="process-math">\(+\infty\)</span></p></div></div>
+</div></article></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.4</span> <span class="title">Key Concepts</span>
+</h3>
+<ul class="disc">
+<li id="li-435"><p id="p-derived-li-435">The limit laws allow us to evaluate limits of functions without having to go through step-by-step processes each time.</p></li>
+<li id="li-436"><p id="p-derived-li-436">For polynomials and rational functions, <span class="process-math">\(\displaystyle{\lim_{x \to a }f(x)=f(a).}\)</span></p></li>
+<li id="li-437"><p id="p-derived-li-437">You can evaluate the limit of a function by factoring and canceling, by multiplying by a conjugate, or by simplifying a complex fraction.</p></li>
+</ul></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.5</span> <span class="title">Key Equations</span>
+</h3>
+<ul class="disc"><li id="li-438"><p id="p-derived-li-438">Basic Limit Results <span class="process-math">\(\displaystyle{\lim_{x \to a }x=a.\; \lim_{x \to a }c=c}\)</span></p></li></ul></section><p id="p-633">This book is a custom edition based on OpenStax Calculus Volume 1. You can download the original for free at https://openstax.org/details/books/calculus-volume-1.</p></section></div></main>
+</div>
+</body>
+</html>
